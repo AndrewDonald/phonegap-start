@@ -1,0 +1,62 @@
+// User reset
+
+* { // creates a natural box model layout
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+} // asume normalize.css
+
+
+// structure
+
+.container {
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 1em;
+}
+
+
+// type
+
+body {
+    font-family: arial;   
+}
+
+.main-content {
+    h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: .2em;
+    }
+} // .main-content
+
+
+// style
+
+    // variables
+    $global-header-height: 8em;
+    $global-footer-height: 6em;
+
+.global-header {
+    position: fixed;
+    top: 0; left: 0;
+    background-color: gray;
+    height: $global-header-height;
+}
+
+.main-content {
+    background-color: orange;
+    margin-top: $global-header-height;
+    margin-bottom: $global-footer-height;
+    z-index: -1; // so header will be on top
+    min-height: 50em; // to make it long so you can see the scrolling
+}
+
+.global-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: $global-footer-height;
+    background-color: gray;
+}
