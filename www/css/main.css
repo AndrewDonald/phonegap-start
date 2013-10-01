@@ -20,7 +20,7 @@ body {
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-nav#main-nav .monarch {position: absolute; left: 100px; top: 0; height: 15px;}
+nav#main-nav .monarch {position: absolute; left: 115px; top: 0; height: 28px;}
 nav#main-nav .main-nav-controls {padding: 10px 5px 0 0;}
 
 /*
@@ -43,7 +43,7 @@ footer {
 }
 */
 nav.send-message-con form.send-message-form {position: relative; width: 100%; padding-left: 6px;}
-    nav.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 88px;}
+    nav.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
         nav.send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
     nav.send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
         nav.send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
