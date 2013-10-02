@@ -1,27 +1,42 @@
 /* Bootstrap overrides */
-.navbar-form {padding: 0;}
+.navbar {background: none;}
+.navbar-form {padding: 0; margin-left: 0 !important; margin-right: 0 !important; border: none !important;}
+.form-group {margin-bottom: 0 !important;}
 .form-control {height: 35px;}
 
-/* Global */
+/* GLOBAL: Vars */
+.blue {color: #006DCC;}
+.dark-blue {color: #002A80;}
+.light-blue {color: #4A86E8;}
+.orange {color: #f90;}
+
+/* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 
 body {
     font-family: arial;
     font-size: 12px;
-    padding: 50px 0;
-    margin: 0;  
+    padding: 0;
+    margin: 0;
+    background: #fff url("../img/bg-1.jpg") 0 0 no-repeat fixed;
+    background-size: 100% 100%;  
 }
 
-.logo {height: 40px; margin-top: 9px;}
+nav#header {box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75);}
+nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
+
+.logo {height: 42px; margin-top: 6px;}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
-.content {background-color: #fff; position: relative; width: 100%; padding: 10px;}
+.content {position: absolute; top: 0; left: 0; width: 100%; padding: 60px 10px; background-color: rgba(255,255,255,0.25);}
 
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-nav#main-nav .monarch {position: absolute; left: 115px; top: 0; height: 28px;}
-nav#main-nav .main-nav-controls {padding: 10px 5px 0 0;}
+nav#header {background: rgba(255, 255, 255, 0.75);}
+nav#header .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
+nav#header .main-nav-controls {padding: 10px 5px 0 0;}
+nav#header #stream-status {padding: 0 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5); border-top: 1px solid #CCCCCC;}
 
 /*
 header {
@@ -42,8 +57,12 @@ footer {
     background-color: gray;
 }
 */
-nav.send-message-con form.send-message-form {position: relative; width: 100%; padding-left: 6px;}
-    nav.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
-        nav.send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
-    nav.send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
-        nav.send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+
+nav#footer {background: rgba(255, 255, 255, 0.75);}
+nav#footer.send-message-con form.send-message-form {position: relative; width: 100%; padding-left: 6px;}
+    nav#footer.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
+        nav#footer.send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
+    nav#footer.send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
+        nav#footer.send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+
+

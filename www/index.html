@@ -29,16 +29,18 @@
         <title>LucidLife</title>
     </head>
     <body class="home">
-    <!--
+        <!-- LOADER -->
+        <!--
         <div class="app">
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received" onclick="startApp();">Device is Ready</p>
             </div>
         </div>
-    -->
+        -->
 
-        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- HEADER -->
+        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
             <img src="img/lucidlife.png" class="logo">
             <img src="img/butterfly3-anim.gif" class="monarch">
             <div class="main-nav-controls btn-group pull-right">
@@ -47,16 +49,17 @@
                 <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-filter"></span></button>
                 <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
             </div>
+            <div id="stream-status" class="clearfix">
+                <span id="stream-name" class="pull-left"><b>~ThisIsMyStream</b></span>
+                <span id="filter-info" class="pull-right">
+                    <span class="glyphicon glyphicon-filter"></span>
+                    m&f 25-40 &gt;10kms
+                </span>
+            </div>
         </nav>
-       
-        <div class="content">
-            <h1>Main Content</h1>
-            <p><b>START</b></p>
-            <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
-            <p><b>END</b></p>
-        </div>
 
-        <nav class="send-message-con navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <!-- FOOTER -->
+        <nav id="footer" class="send-message-con navbar navbar-default navbar-fixed-bottom" role="navigation">
             <form class="send-message-form navbar-form clearfix">
                 <div class="send-message-entry form-group pull-left">
                     <input id="send-message" type="text" class="form-control" placeholder="enter message">
@@ -67,7 +70,19 @@
                 </div>
             </form>
         </nav>
+       
+        <!-- BODY (CONTENT) -->
+        <div class="content">
+            <div id="home">
+                <h1>Main Content</h1>
+                <p><b>START</b></p>
+                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
+                <p><b>END</b></p>
+            </div>
+        </div>
 
+        
+        <!-- SCRIPTS -->
         <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
