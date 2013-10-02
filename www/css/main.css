@@ -28,7 +28,7 @@ nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
 .logo {height: 42px; margin-top: 6px;}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
-.content {position: absolute; top: 0; left: 0; width: 100%; padding: 60px 10px; background-color: rgba(255,255,255,0.25);}
+.content {position: absolute; top: 0; left: 0; width: 100%; padding: 75px 10px 50px; background-color: rgba(255,255,255,0.25);}
 
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
