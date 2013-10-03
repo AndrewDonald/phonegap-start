@@ -1,8 +1,9 @@
 /* Bootstrap overrides */
-.navbar {background: none;}
+.navbar {background: none; min-height: 0;}
 .navbar-form {padding: 0; margin-left: 0 !important; margin-right: 0 !important; border: none !important;}
 .form-group {margin-bottom: 0 !important;}
-.form-control {height: 35px;}
+.form-control {height: 34px;}
+.label {font-size: 10px; padding: 1px 3px;}
 
 /* GLOBAL: Vars */
 .blue {color: #006DCC;}
@@ -30,25 +31,31 @@ nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
 .logo {height: 42px; margin-top: 6px;}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
-.content {transition: padding-top 0.75s; -webkit-transition: padding-top 0.75s; position: absolute; top: 0; left: 0; width: 100%; padding: 55px 10px 50px; background-color: rgba(255,255,255,0.25);}
-    body.client-header-expanded .content {transition: padding-top 0.75s; -webkit-transition: padding-top 0.75s; padding-top: 110px;}
+.divider {color: #999; font-weight: bold; margin-right: -2px;}
+.content {transition: padding-top 1s; -webkit-transition: padding-top 1s; position: absolute; top: 0; left: 0; width: 100%; padding: 57px 10px 50px; background-color: rgba(255,255,255,0.25);}
+    body.client-header-expanded .content {transition: padding-top 1s; -webkit-transition: padding-top 1s; padding-top: 112px;}
+    body.stream-activity-filters-expanded .content {transition: padding-top 1s; -webkit-transition: padding-top 1s; padding-bottom: 75px;}
 
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+sup.indicator {margin-left: 1px; top: -0.5em;}
+    sup.indicator .label {box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); border: 1px solid #fff; border-radius: 5px;}
+button sup.indicator {position: absolute; top: -7px; right: 2px; margin-left: 0;}
+    button sup.indicator .label { box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
 
 nav#header {background: rgba(255, 255, 255, 0.75);}
 nav#header .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
 nav#header .main-nav-controls {padding: 10px 5px 0 0;}
 nav#header #stream-header {padding: 0 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5); box-shadow: 0px 1px 1px #ccc inset;}
-    nav#header #stream-header .status {cursor: pointer; padding: 4px 0 2px;}
+    nav#header #stream-header .status {cursor: pointer; padding: 6px 0 4px;}
     nav#header #stream-header .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
         nav#header #stream-header .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3;}
         nav#header #stream-header .status .stream {width: 50%; }
         nav#header #stream-header .status h1.stream-name  {display: inline; margin: 0; padding: 0; font-size: 12px; line-height: 1.3; height: 17px; overflow: hidden;}
         nav#header #stream-header .status h1.stream-name:before {content: "~";}
-    nav#header #stream-header .client-header {display: none; position: relative; cursor: pointer; margin: 3px 0 2px; border-radius: 5px; border: 1px solid transparent;}
+    nav#header #stream-header .client-header {display: none; position: relative; cursor: pointer; margin: 0 0 2px 0; border-radius: 5px; border: 1px solid transparent;}
         nav#header #stream-header .client-header .client-pic {max-width: 50px; max-height: 50px; margin-right: 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
-        nav#header #stream-header .client-header .client-bio {position: absolute; top: 0; height: 50px; padding: 3px 5px; overflow: hidden; text-overflow: ellipsis; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+        nav#header #stream-header .client-header .client-bio {position: absolute; top: 0; height: 50px; padding: 3px 5px; overflow: auto; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 /*
 header {
     position: fixed;
@@ -70,10 +77,17 @@ footer {
 */
 
 nav#footer {background: rgba(255, 255, 255, 0.75);}
-nav#footer.send-message-con form.send-message-form {position: relative; width: 100%; padding-left: 6px;}
-    nav#footer.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
-        nav#footer.send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
-    nav#footer.send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
-        nav#footer.send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+    nav#footer .status {transition: opacity 0.5s 0.25s; opacity: 1; cursor: pointer; position: relative; text-align: left;}
+        nav#footer .stream-activity-filters { display: none; padding: 3px 0 0 6px; text-align: center;}
+        nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3; margin-left: 8px;}
+        nav#footer .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
+            nav#footer .stream-activity-filters-media.all-selected .btn {opacity: 0.5;}
+                body.stream-activity-filters-expanded nav#footer .filter-status {transition: opacity 0.5s, display 0s 0.5s; opacity: 0; display: none;}
+                nav#footer .filter-status > span {margin-left: 5px;}
+                nav#footer .filter-status > span:first-child {margin-left: 8px;}
 
-
+    nav#footer.send-message-con form.send-message-form {margin: 3px 0; position: relative; width: 100%; padding-left: 5px;}
+        nav#footer.send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
+            nav#footer.send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
+        nav#footer.send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
+            nav#footer.send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
