@@ -32,9 +32,8 @@ nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
 .divider {color: #999; font-weight: bold; margin-right: -2px;}
-.content {transition: padding-top 1s; -webkit-transition: padding-top 1s; position: absolute; top: 0; left: 0; width: 100%; padding: 57px 10px 50px; background-color: rgba(255,255,255,0.25);}
+.content {transition: padding-top 1s; -webkit-transition: padding-top 1s; position: absolute; top: 0; left: 0; width: 100%; padding: 57px 10px 70px; background-color: rgba(255,255,255,0.25);}
     body.client-header-expanded .content {transition: padding-top 1s; -webkit-transition: padding-top 1s; padding-top: 112px;}
-    body.stream-activity-filters-expanded .content {transition: padding-top 1s; -webkit-transition: padding-top 1s; padding-bottom: 75px;}
 
 .label {box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
 form {padding: 0;}
@@ -77,12 +76,12 @@ footer {
 */
 
 nav#footer {background: rgba(255, 255, 255, 0.75);}
-    nav#footer .status {transition: opacity 0.5s 0.25s; opacity: 1; position: relative; text-align: left;}
+    nav#footer .status {position: relative; text-align: left;}
         nav#footer .stream-activity-filters { display: none; padding: 3px 0 0 6px; text-align: center;}
-        nav#footer .status .toggle {margin-left: 3px;}
-        /*nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3; margin-left: 8px;}
-        /*nav#footer .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}*/
-            body.stream-activity-filters-expanded nav#footer .filter-status {transition: opacity 0.5s, display 0s 0.5s; opacity: 0; display: none;}
+        nav#footer .status .toggle {cursor: pointer; margin-left: 3px;}
+        nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3; margin-left: 8px;}
+        nav#footer .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
+            /*body.stream-activity-filters-expanded nav#footer .filter-status {transition: opacity 0.5s, display 0s 0.5s; opacity: 0; display: none;}*/
             nav#footer .filter-status > span {margin-left: 5px;}
             nav#footer .filter-status > span:first-child {margin-left: 8px;}
 

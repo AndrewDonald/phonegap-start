@@ -11,9 +11,9 @@ $('#stream-header .status').on('click',function(){
 
 
 $('#footer .status .toggle').on('click',function(){
-    $('body').toggleClass('stream-activity-filters-expanded');
-    $(this).children('span').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
-    $(this).siblings('.stream-activity-filters').slideToggle('fast');
+    $(this)
+        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
+        .siblings('.stream-activity-filters, .filter-status').slideToggle('fast');
 });
 
 
