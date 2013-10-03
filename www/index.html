@@ -24,7 +24,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
@@ -49,12 +49,23 @@
                 <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-filter"></span></button>
                 <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
             </div>
-            <div id="stream-status" class="clearfix">
-                <span id="stream-name" class="pull-left"><b>~ThisIsMyStream</b></span>
-                <span id="filter-info" class="pull-right">
-                    <span class="glyphicon glyphicon-filter"></span>
-                    m&f 25-40 &gt;10kms
-                </span>
+            <div id="stream-header" class="clearfix">
+                <div class="status">
+                    <span class="toggle glyphicon glyphicon-chevron-down"></span>
+                    <span class="stream pull-left">
+                        <h1 class="stream-name">LucidLife</h1>
+                    </span>
+                    <span class="filter pull-right">
+                        <span class="glyphicon glyphicon-filter"></span>
+                        <span class="filter-status">m&f 25-40 &lt;10km</span>
+                    </span>
+                </div>
+                <div class="client-header">
+                    <img class="client-pic" src="img/logo-with-name.png" alt="LucidLife">
+                    <span class="client-bio">
+                        LucidLife is a scrappy self-funded startup based out of Toronto, Canada. Our mission is to create a service that helps interesting people find other interesting people, right now. The solution has evolved over time but the problem is as real as ever, join us on our journey!
+                    </span>
+                </div>
             </div>
         </nav>
 

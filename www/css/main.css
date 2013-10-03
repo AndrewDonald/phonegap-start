@@ -16,10 +16,12 @@
 body {
     font-family: arial;
     font-size: 12px;
+    color: #333;
     padding: 0;
     margin: 0;
     background: #fff url("../img/bg-1.jpg") 0 0 no-repeat fixed;
-    background-size: 100% 100%;  
+    background-size: 100% 100%; 
+    line-height: 1.2; 
 }
 
 nav#header {box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75);}
@@ -28,7 +30,8 @@ nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
 .logo {height: 42px; margin-top: 6px;}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
-.content {position: absolute; top: 0; left: 0; width: 100%; padding: 75px 10px 50px; background-color: rgba(255,255,255,0.25);}
+.content {transition: padding-top 0.75s; -webkit-transition: padding-top 0.75s; position: absolute; top: 0; left: 0; width: 100%; padding: 55px 10px 50px; background-color: rgba(255,255,255,0.25);}
+    body.client-header-expanded .content {transition: padding-top 0.75s; -webkit-transition: padding-top 0.75s; padding-top: 110px;}
 
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
@@ -36,8 +39,16 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 nav#header {background: rgba(255, 255, 255, 0.75);}
 nav#header .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
 nav#header .main-nav-controls {padding: 10px 5px 0 0;}
-nav#header #stream-status {padding: 0 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5); border-top: 1px solid #CCCCCC;}
-
+nav#header #stream-header {padding: 0 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5); box-shadow: 0px 1px 1px #ccc inset;}
+    nav#header #stream-header .status {cursor: pointer; padding: 4px 0 2px;}
+    nav#header #stream-header .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
+        nav#header #stream-header .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3;}
+        nav#header #stream-header .status .stream {width: 50%; }
+        nav#header #stream-header .status h1.stream-name  {display: inline; margin: 0; padding: 0; font-size: 12px; line-height: 1.3; height: 17px; overflow: hidden;}
+        nav#header #stream-header .status h1.stream-name:before {content: "~";}
+    nav#header #stream-header .client-header {display: none; position: relative; cursor: pointer; margin: 3px 0 2px; border-radius: 5px; border: 1px solid transparent;}
+        nav#header #stream-header .client-header .client-pic {max-width: 50px; max-height: 50px; margin-right: 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+        nav#header #stream-header .client-header .client-bio {position: absolute; top: 0; height: 50px; padding: 3px 5px; overflow: hidden; text-overflow: ellipsis; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 /*
 header {
     position: fixed;
