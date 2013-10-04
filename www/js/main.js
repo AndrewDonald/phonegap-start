@@ -5,6 +5,13 @@ function startApp(){
 }
 */
 
+var _ll = {};
+_ll.pane = {};
+_ll.pane.stream = ["All", "People", "Chat", "Photos", "Videos", "Audio"];
+_ll.pane.stream.active = 1;
+_ll.pane.personal = ["Chat", "Connections", "History"];
+_ll.pane.personal.active = 0;
+
 $(function() {
     /*
     // Trigger Info to be peeked at
@@ -12,6 +19,21 @@ $(function() {
         $(this).click();
     });
     */
+
+    // Set to default Stream Pane
+    $('body').addClass(_ll.pane.stream[_ll.pane.stream.active].toLowerCase() + "-pane-active");
+
+    // STREAM PANES CONTROLLER: Slide through the various Stream Panes
+    $('.content #home').on('click',function(){
+        _ll.pane.stream.active++;
+        if(_ll.pane.stream.active == _ll.pane.stream.length){
+            _ll.pane.stream.active = 0;
+        }
+        console.log(_ll.pane.stream.join("-pane-active ").toLowerCase());
+        $('body')
+            .removeClass((_ll.pane.stream.join("-pane-active ")).toLowerCase())
+            .addClass(_ll.pane.stream[_ll.pane.stream.active].toLowerCase() + "-pane-active");
+    });
 });
 
 // MAIN-MENU INFO: Toggle Hide/Show All Indicators andd Info Popup

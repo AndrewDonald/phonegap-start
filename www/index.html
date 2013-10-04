@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home active-pane-people">
+    <body class="home">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -67,7 +67,7 @@
                     <!-- Client Badge -->
                     <div class="_client-badge">
                         <div class="client-title">
-                            <img class="client-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                            <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
                             Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes.
                         </div>
                         <div class="client-bio">
@@ -87,7 +87,7 @@
         </nav>
 
         <!-- FOOTER -->
-        <nav id="footer" class="send-message-con navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <div class="status clearfix">
                 <div class="activity-icon-hilighter"></div>
                 <span class="toggle glyphicon glyphicon-chevron-up"></span>
@@ -118,7 +118,7 @@
                 <div class="_user-badge">
                     <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
                     <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur.
                     </div> 
                 </div>
 <!--
@@ -169,15 +169,19 @@
 
 
             </div>
-            <form class="send-message-form navbar-form clearfix">
-                <div class="send-message-entry form-group pull-left">
-                    <input id="send-message" type="text" class="form-control" placeholder="enter message">
+            <div class="global-user-input">
+                <div id="send-message-con">
+                    <form class="send-message-form navbar-form clearfix">
+                        <div class="send-message-entry form-group pull-left">
+                            <input id="send-message" type="text" class="form-control" placeholder="enter message">
+                        </div>
+                        <div class="send-message-controls btn-group pull-right">
+                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
+                            <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                        </div>
+                    </form>
                 </div>
-                <div class="send-message-controls btn-group pull-right">
-                    <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
-                    <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
-                </div>
-            </form>
+            </div>
         </nav>
        
         <!-- BODY (CONTENT) -->
