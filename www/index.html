@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home">
+    <body class="home active-pane-people">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -44,31 +44,44 @@
             <img src="img/lucidlife.png" class="logo">
             <img src="img/butterfly3-anim.gif" class="monarch">
             <div class="main-nav-controls btn-group pull-right">
-                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
-                <button type="button" class="btn btn-warning"><span class="tilde">~</span></button>
-                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-filter"></span></button>
-                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
+                <button type="button" class="search btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
+                <button type="button" class="info btn btn-warning"><span class="glyphicon glyphicon-info-sign"></span></button>
+                <button type="button" class="settings btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
             </div>
-            <div id="stream-header" class="clearfix">
-                <div class="status">
+            <div id="stream-header">
+                <div class="status clearfix">
                     <span class="toggle glyphicon glyphicon-chevron-down"></span>
                     <span class="stream pull-left">
                         <h1 class="stream-name">LucidLife</h1><sup class="indicator"><span class="label label-warning">1693</span></sup>
                     </span>
                     <span class="filter pull-right">
                         <span class="glyphicon glyphicon-filter"></span>
-                        <span class="filter-status">
-                            <sup class="indicator"><span class="label label-primary">m&f</span></sup>
-                            <sup class="indicator"><span class="label label-primary">25-40</span></sup>
-                            <sup class="indicator"><span class="label label-primary">&lt;10km</span></sup>
-                        </span>
+                        <span class="stream-activity-status">m&f 25-40 &lt;10km</span>
                     </span>
                 </div>
-                <div class="client-header">
-                    <img class="client-pic" src="img/logo-with-name.png" alt="LucidLife">
-                    <span class="client-bio">
-                        LucidLife is a scrappy self-funded startup based out of Toronto, Canada. Our mission is to create a service that helps interesting people find other interesting people, right now. The solution has evolved over time but the problem is as real as ever, join us on our journey!
-                    </span>
+                <div class="public-panel">
+                    <!-- Public Poll (1-click form) -->
+                    <!-- Public Survey (multiple inputs form) -->
+                    <!-- Public Promotion -->
+                    <!-- Public App/Game -->
+                    <!-- Client Badge -->
+                    <div class="_client-badge">
+                        <div class="client-title">
+                            <img class="client-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes.
+                        </div>
+                        <div class="client-bio">
+                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                            Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
+
+                            Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
+
+                            Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
+
+                            Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -76,45 +89,85 @@
         <!-- FOOTER -->
         <nav id="footer" class="send-message-con navbar navbar-default navbar-fixed-bottom" role="navigation">
             <div class="status clearfix">
-                <span class="filter-status">
-                    <span class="glyphicon glyphicon-user"></span><sup class="indicator"><span class="label label-primary">1693</span></sup>
-                    <span class="glyphicon glyphicon-comment"></span><sup class="indicator"><span class="label label-primary">394</span></sup>
-                    <span class="glyphicon glyphicon-picture"></span><sup class="indicator"><span class="label label-primary">37</span></sup>
-                    <span class="glyphicon glyphicon-film"></span><sup class="indicator"><span class="label label-primary">2</span></sup>
-                    <span class="glyphicon glyphicon-headphones"></span><sup class="indicator"><span class="label label-primary">5</span></sup>
-                    <span class="divider">|</span>
-                    <span class="glyphicon glyphicon-envelope"></span><sup class="indicator"><span class="label label-danger">17</span></sup>
+                <div class="activity-icon-hilighter"></div>
+                <span class="toggle glyphicon glyphicon-chevron-up"></span>
+                <span class="stream-activity-status pull-left">
+                    <span class="activity-icon activity-all glyphicon glyphicon-asterisk"><sup class="indicator"><span class="label label-primary">213</span></sup></span>
+                    <span class="activity-icon activity-people glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></span>
+                    <span class="activity-icon activity-chat glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></span>
+                    <span class="activity-icon activity-photo glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></span>
+                    <span class="activity-icon activity-video glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></span>
+                    <span class="activity-icon activity-audio glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></span>
                 </span>
-                <div class="stream-activity-filters pull-left">
-                    <div class="btn-group">
-                        <button type="button" class="activity-all btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-asterisk"></span><sup class="indicator"><span class="label label-primary">2131</span></sup>
-                        </button>
-                    </div>
-                    <div class="stream-activity-filters-media btn-group">
-                        <button type="button" class="activity-people btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-user"></span><sup class="indicator"><span class="label label-primary">1693</span></sup>
-                        </button>
-                        <button type="button" class="activity-chat btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-comment"></span><sup class="indicator"><span class="label label-primary">394</span></sup>
-                        </button>
-                        <button type="button" class="activity-pictures btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-picture"></span><sup class="indicator"><span class="label label-primary">37</span></sup>
-                        </button>
-                        <button type="button" class="activity-videos btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-film"></span><sup class="indicator"><span class="label label-primary">2</span></sup>
-                        </button>
-                        <button type="button" class="activity-audio btn btn-sm btn-success">
-                            <span class="glyphicon glyphicon-headphones"></span><sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="private-chat btn btn-sm btn-warning">
-                            <span class="glyphicon glyphicon-envelope"></span><sup class="indicator"><span class="label label-danger">17</span></sup>
-                        </button>
+                <span class="personal-status pull-right">
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-envelope pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-eye-open pull-right"><sup class="indicator"><span class="label label-danger">6</span></sup></span>
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-home pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-globe pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-heart-empty pull-right"><sup class="indicator"><span class="label label-danger">6</span></sup></span>
+                    <span class="activity-icon activity-private-chat glyphicon glyphicon-bookmark pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
+                 </span> 
+            </div>
+            <div class="private-panel">
+
+                <!-- Connections Book:  See a list of people from your connections book who are online now -->
+                <!-- Contact Summary:   See who has contacted, viewed, messaged or requested to be friends with you recently -->
+                <!-- Private App/Games: Play games against other person (1:1) -->
+                <!-- Private Chat:      Privately chat with someone -->
+                <!-- User Badgeadge     See more info on a Connection -->
+                <div class="_user-badge">
+                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                    <div class="user-bio">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+                    </div> 
+                </div>
+<!--
+                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
+                    <div class="wrapper main-area clearfix pull-left">
+                        <div class="badge-main pull-left">
+                            <div class="id-wrapper">
+                                <div data-userid="2" title="Andrew Donald, M, 34, 0km, 5d, ~All" class="photo"><img src="/img/fetch.php?k=profile_2-b.jpg" class="user-photo"></div>
+                                <div data-userid="2" title="connect" class="info">
+                                    <div class="name">Andrew Donald</div>
+                                    <div data-time-created="1380315132000" class="time">6d</div>
+                                    <div class="profile-info">
+                                        <div class="account-info">
+                                            <span class="last-login-date">[last login date]<sup>(login)</sup></span>
+                                            <span class="join-date">[join date]<sup>(joined)</sup></span>
+                                        </div>
+                                        <div class="personal-info">
+                                            <span class="gender">M </span>
+                                            <span class="age">34 </span>
+                                            <span class="distance">0km</span>
+                                        </div>
+                                        <div class="location-info">
+                                            <span class="city">[city], </span>
+                                            <span class="country">[country].</span>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="email">[email]</span>
+                                            <span class="phone">[phone]</span>
+                                        </div>
+                                        <div class="connections-info">
+                                        <span class="stream-info">
+                                            <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
+                                        </span>
+                                        <span class="buddy-info">
+                                            <span class="buddies">[buddies]</span> <span class="buddies-common">/ [buddies common]</span>
+                                        </span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <a data-page="#STREAM~All" data-stream="All" class="stream">All</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <span class="toggle glyphicon glyphicon-chevron-up"></span>
+-->
+
+
+
             </div>
             <form class="send-message-form navbar-form clearfix">
                 <div class="send-message-entry form-group pull-left">

@@ -1,38 +1,47 @@
+/* Method from PhoneGap Example
 function startApp(){
     $('.app').addClass('hide');
     $('.page.home').removeClass('hide');
 }
+*/
 
+$(function() {
+    /*
+    // Trigger Info to be peeked at
+    $('#header .main-nav-controls .info').click().animate({delay: 0}, 2000, function(){
+        $(this).click();
+    });
+    */
+});
+
+// MAIN-MENU INFO: Toggle Hide/Show All Indicators andd Info Popup
+$('#header .main-nav-controls .info').on('click',function(){
+    $(this).toggleClass('active');
+    if($(this).is('.active')){
+        $('#stream-header .status:not(".active")').click();
+        $('.indicator').fadeIn(500);
+    }else{
+        $('#stream-header .status.active').click();
+        $('.indicator').fadeOut(500);
+    }
+});
+
+// STREAM HEADER Toggle Hide/Show Stream Info
 $('#stream-header .status').on('click',function(){
-    $(this).children('.toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-    $(this).next().slideToggle('fast');
-    $('body').toggleClass('client-header-expanded');
-});
-
-
-$('#footer .status .toggle').on('click',function(){
     $(this)
-        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
-        .siblings('.stream-activity-filters, .filter-status').slideToggle('fast');
+        .toggleClass('active')
+        .children('.toggle')
+            .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    $(this).next().slideToggle('fast');
+    $('body').toggleClass('public-panel-expanded');
 });
 
-
-$('.stream-activity-filters button').on('click',function(){
-    $(this).toggleClass('btn-warning btn-success');
-    if($(this).is('.activity-all.btn-warning')){ // If Show All Activities is deselected
-        $('.stream-activity-filters-media .btn').removeClass('btn-success').addClass('btn-warning');
-        $('.stream-activity-filters-media .btn.activity-people').addClass('btn-success');
-    }else if($(this).is('.activity-all.btn-success')){ // If Show All Activities is selected
-        $('.stream-activity-filters-media .btn').removeClass('btn-warning').addClass('btn-success');
-    }else if($(this).parent('.stream-activity-filters-media').size() > 0){ // If any single activity is selected
-        $('.stream-activity-filters .btn.activity-all').removeClass('btn-success').addClass('btn-warning');
-    }
-
-    if($('.stream-activity-filters-media .btn.btn-warning').size() == 0){ // If all activity buttons are selected
-        $('.stream-activity-filters .btn.activity-all').removeClass('btn-warning').addClass('btn-success');
-    }
-
-    if($('.stream-activity-filters .btn.btn-success').size() == 0){ // If No activity buttons are selected
-        $('.stream-activity-filters-media .btn.activity-people').removeClass('btn-warning').addClass('btn-success');
-    }
+// STREAM FOOTER Toggle Hide/Show Stream Activity and Personal Indicators
+$('#footer .status').on('click',function(){
+    $(this)
+        .toggleClass('active')
+        .children('.toggle')
+            .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    $(this).next().slideToggle('fast');
+    $('body').toggleClass('private-panel-expanded');
 });
