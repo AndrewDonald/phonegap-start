@@ -20,18 +20,16 @@ $(function() {
     });
     */
 
-    // Set to default Stream Pane
-    $('body').addClass(_ll.pane.stream[_ll.pane.stream.active].toLowerCase() + "-pane-active");
+    // Set to default Stream Pane & Personal Pane
+    $('body')
+        .addClass(_ll.pane.stream[_ll.pane.stream.active].toLowerCase() + "-pane-active")
+        .addClass("private-chat-pane-active");
 
     // STREAM PANES CONTROLLER: Slide through the various Stream Panes
     $('.content #home').on('click',function(){
-        _ll.pane.stream.active++;
-        if(_ll.pane.stream.active == _ll.pane.stream.length){
-            _ll.pane.stream.active = 0;
-        }
-        console.log(_ll.pane.stream.join("-pane-active ").toLowerCase());
+        _ll.pane.stream.active = (_ll.pane.stream.active++ < _ll.pane.stream.length - 1) ? _ll.pane.stream.active : 0;
         $('body')
-            .removeClass((_ll.pane.stream.join("-pane-active ")).toLowerCase())
+            .removeClass((_ll.pane.stream.join("-pane-active ") + "-pane-active").toLowerCase())
             .addClass(_ll.pane.stream[_ll.pane.stream.active].toLowerCase() + "-pane-active");
     });
 });

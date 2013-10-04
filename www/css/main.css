@@ -3,7 +3,7 @@
 .navbar-form {padding: 0; margin-left: 0 !important; margin-right: 0 !important; border: none !important;}
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
-.label {font-size: 10px; padding: 0 3px 3px;}
+.label {font-size: 10px; padding: 0 3px;}
 .btn-lg {padding: 9px 16px;}
 
 /* GLOBAL: Vars */
@@ -40,7 +40,7 @@ nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-.indicator {display: none;}
+.indicator {display: none; font-family: "Arial"}
 sup.indicator {margin-left: 3px; top: -0.5em;}
 button sup.indicator {position: absolute; top: -8px; right: 2px; margin-left: 0;}
    
@@ -56,7 +56,7 @@ nav#header #stream-header {padding: 0 5px; background: none repeat scroll 0 0 rg
         nav#header #stream-header .status h1.stream-name:before {content: "~";}
     
     /* PUBLIC PANEL */
-    nav#header #stream-header .public-panel {display: none; position: relative; padding: 2px 5px 10px 2px; margin: 0 0 5px; max-height: 150px; overflow: auto;}
+    nav#header #stream-header .public-panel {display: none; position: relative; padding: 2px 5px 10px 2px; margin: 0 0 5px; max-height: 200px; overflow: auto;}
         /* PUBLIC PANEL COMPONENTS */
         ._client-poll {}       
         ._client-survey {}
@@ -87,39 +87,38 @@ footer {
 */
 
 nav#footer {background: rgba(255, 255, 255, 0.75);}
-    nav#footer .status {position: relative; text-align: left; padding: 3px 0 0;}
-        nav#footer .stream-activity-filters { display: none; padding: 3px 0 0 6px; text-align: center;}
-        nav#footer .status .toggle {cursor: pointer; margin-left: 3px;}
-        nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3; margin-left: 2px;}
+    nav#footer .status {position: relative; text-align: left; padding: 3px 0 2px;}
+        nav#footer .status .toggle {cursor: pointer;}
+        nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3;}
         nav#footer .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
-            nav#footer .status .activity-icon {font-size: 12px;}
-            nav#footer .status .activity-icon .indicator {position: absolute; top: -15px;}
-                nav#footer .stream-activity-status .activity-icon .indicator {left: -8px;}
-                nav#footer .personal-status .activity-icon .indicator {right: -4px;}
-            nav#footer .status .activity-icon-hilighter {position: absolute; bottom: 2px; height: 16px; width: 18px; border: 1px solid #666; border-radius: 3px; background-color: #fa1;}
+            nav#footer .status .status-icon {font-size: 16px;}
+            nav#footer .status .status-icon .indicator {position: absolute; top: -15px;}
+                nav#footer .stream-activity-status .status-icon .indicator {left: -8px;}
+                nav#footer .personal-status .status-icon .indicator {right: -4px;}
+            nav#footer .status .status-icon-hilighter {position: absolute; bottom: 5px; height: 18px; width: 20px; border: 1px solid #666; border-radius: 3px; background-color: #fa1;}
                 nav#footer .stream-activity-status {width: 50%;}
-                    nav#footer .stream-activity-status .activity-icon {margin-left: 10px;}
-                    nav#footer .stream-activity-status .activity-icon:first-child {margin-left: 5px;}
-                        body.all-pane-active nav#footer .status .activity-icon-hilighter {left: 2px;}
-                        body.people-pane-active nav#footer .status .activity-icon-hilighter {left: 27px;}
-                        body.chat-pane-active nav#footer .status .activity-icon-hilighter {left: 52px;}
-                        body.photos-pane-active nav#footer .status .activity-icon-hilighter {left: 77px;}
-                        body.videos-pane-active nav#footer .status .activity-icon-hilighter {left: 102px;}
-                        body.audio-pane-active nav#footer .status .activity-icon-hilighter {left: 127px;}
+                    nav#footer .stream-activity-status .status-icon {margin-left: 5px;}
+                    nav#footer .stream-activity-status .status-icon:first-child {margin-left: 5px;}
+                        body.all-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 3px;}
+                        body.people-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 27px;}
+                        body.chat-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 51px;}
+                        body.photos-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 75px;}
+                        body.videos-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 99px;}
+                        body.audio-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 123px;}
                 nav#footer .personal-status {}
-                    nav#footer .personal-status .activity-icon {margin-right: 10px;} 
-                    nav#footer .personal-status .activity-icon:first-child {margin-right: 5px;} 
+                    nav#footer .personal-status .status-icon {margin-right: 10px;} 
+                    nav#footer .personal-status .status-icon:first-child {margin-right: 5px;} 
                         /*
-                        body. nav#footer .status .activity-icon-hilighter {right: 112px;}
-                        body. nav#footer .status .activity-icon-hilighter {right: 90px;}
-                        body. nav#footer .status .activity-icon-hilighter {right: 68px;}
+                        body. nav#footer .status .status-icon-hilighter {right: 112px;}
+                        body. nav#footer .status .status-icon-hilighter {right: 90px;}
+                        body. nav#footer .status .status-icon-hilighter {right: 68px;}
                         */
-                        body.history-pane-active nav#footer .status .activity-icon-hilighter {right: 46px;}
-                        body.connections-pane-active nav#footer .status .activity-icon-hilighter {right: 24px;}
-                        body.private-chat-pane-active nav#footer .status .activity-icon-hilighter {right: 2px;}
+                        body.history-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 60px;}
+                        body.connections-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 33px;}
+                        body.private-chat-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 8px;}
         
         /* PRIVATE PANEL */
-        nav#footer .private-panel {display: none; position: relative; padding: 2px 5px 5px 2px; margin: 5px 0 0; max-height: 150px; overflow: auto;}
+        nav#footer .private-panel {display: none; position: relative; padding: 2px 5px 5px 2px; margin: 5px 0 0; max-height: 200px; overflow: auto;}
         
             /* PRIVATE PANEL COMPONENTS */
             ._connections-book {}   /* See a list of people from your connections book who are online now */
