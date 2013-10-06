@@ -68,10 +68,10 @@ $(function() {
 $('#header .main-nav-controls .info').on('click',function(){
     $(this).toggleClass('active');
     if($(this).is('.active')){
-        $('#stream-header .status:not(".active")').click();
+        $('body').toggleClass('public-panels-peek');
         $('.indicator').fadeIn(500);
     }else{
-        $('#stream-header .status.active').click();
+        $('body').toggleClass('public-panels-active');
         $('.indicator').fadeOut(500);
     }
 });
