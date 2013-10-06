@@ -42,51 +42,113 @@
         <!-- HEADER -->
         <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="masthead">
-                <img src="img/lucidlife.png" class="logo">
-                <img src="img/butterfly3-anim.gif" class="monarch">
-                <div class="main-nav-controls btn-group pull-right">
-                    <button type="button" class="search btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
-                    <button type="button" class="info btn btn-warning"><span class="glyphicon glyphicon-info-sign"></span></button>
-                    <button type="button" class="settings btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
+                <div class="main-nav-left">
+                    <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-align-justify"></span></button>
+                </div>
+                <center>
+                    <img src="img/butterfly.gif" class="monarch">
+                    <img src="img/lucidlife.png" class="logo">
+                </center>
+                <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
+                <div class="main-nav-right">
+                    <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </div>
-            <div class="stream-and-filter-header clearfix">
-                <button class="btn-lucid stream pull-left">
-                    <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
-                    <h1 id="stream-name">LucidLife</h1>
-                    <sup class="indicator"><span class="label label-warning">1693</span></sup>
-                </button>
-                <button class="btn-lucid filter pull-right">
-                    <span class="glyphicon glyphicon-filter"></span>
-                    <span class="filter-info">m&f 25-40 &lt;10km</span>
-                    <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
-                </button>
-            </div>
-            <div class="public-panels">
-                <!-- Public Poll (1-click form) -->
-                <!-- Public Survey (multiple inputs form) -->
-                <!-- Public Promotion -->
-                <!-- Public App/Game -->
-                <!-- Client Badge -->
 
-                <div class="public-panel stream-and-filter-panel active">
-
-                    <div class="stream-and-filter-carousel carousel slide">
-                        <!-- Indicators -->
+            <!-- STREAM CONTROLS PANEL -->
+            <div class="panel panel-lucid stream-controls-panel">
+                <div class="panel-heading clearfix">
+                    <!--<div class="stream-and-filter-header clearfix">-->
+                        <button class="btn-lucid stream-controls-toggle pull-left">
+                            <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
+                            <h1 id="stream-name">LucidLife</h1>
+                            <sup class="indicator"><span class="label label-warning">1693</span></sup>
+                        </button>
+                        <button class="btn-lucid filter-controls-toggle pull-right">
+                            <span class="glyphicon glyphicon-filter"></span>
+                            <span class="filter-info">m&f 25-40 &lt;10km</span>
+                            <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
+                        </button>
+                    <!--</div>-->
+                </div>
+                <div class="panel-body">
+                    <div class="stream-controls-carousel carousel slide">
+                        <!-- CAROUSEL INDICATORS -->
                         <ol class="carousel-indicators">
-                            <li data-target=".stream-and-filter-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target=".stream-and-filter-carousel" data-slide-to="1"></li>
+                            <li data-target=".stream-controls-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target=".stream-controls-carousel" data-slide-to="1"></li>
                         </ol>
 
-                        <!-- Wrapper for slides -->
+                        <!-- CAROUSEL -->
+                        <div class="carousel-inner">
+                            <!-- CURRENT Pane -->
+                            <div class="item active">
+                                <div class="panel panel-default pull-left">
+                                    <div class="panel-heading"><h5>Auto Associated</h5></div>
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">[on/off] | ~StreamName | [x]ddddd ddd ddd dd ddd ddd dd sfg fsh sfhdfsh </li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default pull-left">
+                                    <div class="panel-heading"><h5>User Added</h5></div>
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li><li class="list-group-item">[on/off] | ~StreamName | [x]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="carousel-caption"><h3>CURRENT</h3></div>
+                            </div>
+                            <!-- HISTORY Pane -->
+                            <div class="item">
+                                <div class="pane">
+                                    <div class="header"></div>
+                                    <div class="body">
+                                        <ul class="stream-list">
+                                            <li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li><li>[on/off] | ~StreamName | [x]</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- CAROUSEL CAPTION -->
+                                <div class="carousel-caption"><h3>HISTORY</h3></div>
+                            </div>
+                        </div>
+
+                        <!-- CAROUSEL CONTROLS -->
+                        <a class="left carousel-control" href=".stream-controls-carousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href=".stream-controls-carousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PUBLIC PANEL -->
+            <div class="public-panel">
+                <!-- PUBLIC PANEL MENU -->
+                <!-- ****** TBD ****** -->
+
+                <div class="panel-item lucidlife-promo-1 active">
+                    <div class="lucidlife-promo-1-carousel carousel slide">
+                        <!-- CAROUSEL INDICATORS -->
+                        <ol class="carousel-indicators">
+                            <li data-target=".lucidlife-promo-1-carousel" data-slide-to="0" class="active"></li>
+                        </ol>
+
+                        <!-- CAROUSEL -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="_client-badge">
-                                    <div class="client-title">
-                                        <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                                        PANEL 1
+                                <div class="_promo">
+                                    <div class="header">
+                                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
                                     </div>
-                                    <div class="client-bio">
+                                    <div class="body">
                                         Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
 
                                         Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
@@ -96,43 +158,16 @@
                                         Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
 
                                         Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
+
+                                        <button class="btn btn-warning">ok</button>
                                     </div>
                                 </div>
-                                <div class="carousel-caption">slide 1</div>
-                            </div>
-                            <div class="item">
-                                <div class="_client-badge">
-                                    <div class="client-title">
-                                        <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                                        PANEL 2
-                                    </div>
-                                    <div class="client-bio">
-                                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-
-                                         Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
-                                    </div>
-                                </div>
-                                <div class="carousel-caption">slide 2</div>
-                            </div>
-                            <div class="item">
-                                <div class="_client-badge">
-                                    <div class="client-title">
-                                        <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                                        PANEL 3
-                                    </div>
-                                    <div class="client-bio">
-                                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-                                    </div>
-                                </div>
-                                <div class="carousel-caption">slide 2</div>
+                                <!-- CAROUSEL CAPTION -->
+                                <div class="carousel-caption">LUCIDLIFE PROMOTION #1 (CAPTION)</div>
                             </div>
                         </div>
 
-                        <!-- Controls -->
+                        <!-- CAROUSEL CONTROLS -->
                         <a class="left carousel-control" href=".stream-and-filter-carousel" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
@@ -142,10 +177,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="toggle">
                 <span class="open-panel glyphicon glyphicon-chevron-down"></span>
                 <span class="close-panel glyphicon glyphicon-chevron-up"></span>
             </div>
+
             <div class="stream-pane-menu-con">
                 <span class="stream-pane-menu">
                     <!--<div class="status-icon-hilighter"></div>-->

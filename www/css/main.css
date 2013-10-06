@@ -1,11 +1,18 @@
-/* Bootstrap overrides */
+/* BOTSTRAP OVERRIDES */
 .navbar {background: none; min-height: 0;}
 .navbar-form {padding: 0; margin-left: 0 !important; margin-right: 0 !important; border: none !important;}
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
 .btn-lg {padding: 9px 16px;}
-.carousel {padding: 5px;}  
+.carousel {padding: 5px;}
+    .carousel .carousel-inner .item {margin: 20px 15px 10px;}
+    .carousel .carousel-control {width: 20px; color: #277; text-shadow: none; opacity: 1;}
+    .carousel .carousel-control.left, .carousel .carousel-control.right {background: none;}
+    .carousel .carousel-control:hover, .carousel-control:focus {color: #277; opacity:; 1;}
+    .carousel .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {z-index: 100; top: 5px; left: 4px; font-size: 12px;}
+    .carousel .carousel-caption {top: -21px; padding: 0; color: #277; text-shadow: none; z-index: 100;}
+        .carousel .carousel-caption h3 {margin: 0; padding: 0; font-size: 16px;}
 
 /* GLOBAL: Vars */
 .blue {color: #006DCC;}
@@ -30,25 +37,35 @@ body {
 nav#header {box-shadow: 0 1px 5px #333;}
 nav#footer {box-shadow: 0 -1px 5px #333;}
 
-.logo {height: 42px; margin-top: 6px;}
+
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
 .toggle {cursor: pointer; color: #277;}
 .divider {color: #999; font-weight: bold; margin-right: -2px;}
 .content {position: absolute; top: 0; left: 0; width: 100%; padding: 110px 10px 55px; background-color: rgba(255,255,255,0.25);}
-body.public-panels-peek .content {padding-top: 145px;}
-body.public-panels-active .content {padding-top: 345px;}
+body.public-panel-peek .content {padding-top: 145px;}
+body.public-panel-active .content {padding-top: 345px;}
 
 .label {box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
+.panel.panel-lucid {margin: 0; color: #227777; background-image: none; background-repeat: none; background-color: transparent; border: none; border-top: 1px solid #FFFFFF; border-radius: 0;} 
+    .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.8); border: none; border-radius: 0; overflow-x: auto;}
+    .panel.panel-lucid > .panel-body {max-height: 150px; padding: 0; background: rgba(255, 255, 255, 0.9); overflow: auto;}
+
+.carousel .carousel-inner .item .panel {max-width: 235px; margin: 0 10px 20px;}
+.carousel .carousel-inner .item .panel:first-child {margin-left: 0;}
+.carousel .carousel-inner .item .panel:only-child {margin: 0 10px 0 0; max-width: 245px;}
 
 
 .indicator {display: none; font-family: Arial}
 
-.btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/ margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 2px solid #277; border-radius: 5px 5px 5px 5px;}
-    .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/ color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff;}
+.btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
+    margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
+    .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
+    .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
+        color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff; border-width: 2px;}
 
 .status-icon {font-size: 18px;}
     .status-icon .indicator {position: absolute; top: -15px; left: -8px;}
@@ -56,37 +73,41 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
    
 nav#header {}
     nav#header .masthead {position: relative; background-color: #224499;}
-        nav#header .masthead .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
-        nav#header .masthead .main-nav-controls {padding: 10px 5px 0 0;}
+        nav#header .masthead .main-nav-left {position: absolute; top: 0; left: 5px;}
+            nav#header .masthead .main-nav-left .btn {color: #f90; font-size: 30px; padding: 0;}
+        nav#header .masthead .monarch {height: 35px; margin: 0 -5px 0 -8px; width: 50px;}
+        nav#header .masthead .logo {height: 42px;}
+        /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
+        nav#header .masthead .main-nav-right {position: absolute; top: 0; right: 5px;}
+            nav#header .masthead .main-nav-right .btn {color: #f90; font-size: 30px; padding: 0;}
     nav#header .stream-and-filter-header {color: #249; background-color: rgba(160, 220, 230, 0.8); border-top: 1px solid #fff;}
         nav#header #stream-header {cursor: pointer; padding: 5px;}
-                nav#header .stream-and-filter-header .stream h1#stream-name  {display: inline-block; margin: 0 5px 0 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
-                nav#header .stream-and-filter-header .stream h1#stream-name:before {content: "~";}
-                nav#header .stream-and-filter-header .filter .filter-info {font-weight: bold; margin-left: -1px;}
+                nav#header .stream-controls-toggle #stream-name  {display: inline-block; margin: 0 5px 0 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
+                nav#header .stream-controls-toggle #stream-name:before {content: "~";}
+                nav#header .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px;}
 
-        /* PUBLIC PANELS */
-        nav#header .public-panels {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
-        body.public-panels-active nav#header .public-panels {display: block;}
-            nav#header .public-panels .public-panel {display: none;}
-            body.public-panels-active nav#header .public-panels .public-panel.active {display: block;}
+        /* PUBLIC PANEL */
+        nav#header .public-panel {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
+        body.public-panel-active nav#header .panel-item {display: block;}
+            nav#header .public-panel .panel-item {display: none;}
+            body.public-panel-active nav#header .public-panel .panel-item.active {display: block;}
 
-            /* PUBLIC PANELS - PANELS */
-            ._client-poll {}       
-            ._client-survey {}
-            ._client-promotion {}
-            ._public-game {}
-            ._client-badge {}
-                ._client-badge .client-pic {width: 100px; margin: 0 10px 10px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
-                ._client-badge .client-title {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-                ._client-badge .client-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
-        
+            /* PUBLIC PANEL - COMPONENTS */
+            ._promo {}
+                ._promo .header {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
+                    ._promo .header .pic {width: 100px; margin: 0 10px 10px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
+                ._promo .body {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+            ._poll {}       
+            ._survey {}
+            ._game {}
+            ._app {}
+            
         /* PUBLIC PANEL TOGGLE */
-
         nav#header .toggle {display: none; padding: 10px 0 7px; text-align: center; border-top: 1px solid #666; background-color: rgba(160, 220, 230, 0.8); box-shadow: 0 -1px 3px #000000 inset;}
-        body.public-panels-peek nav#header .toggle, body.public-panels-active nav#header .toggle {display: block;}
+        body.public-panel-peek nav#header .toggle, body.public-panel-active nav#header .toggle {display: block;}
             nav#header .toggle .close-panel {display: none;}
-                body.public-panels-active nav#header .toggle .open-panel {display: none;}
-                body.public-panels-active nav#header .toggle .close-panel {display: inline-block;}
+                body.public-panel-active nav#header .toggle .open-panel {display: none;}
+                body.public-panel-active nav#header .toggle .close-panel {display: inline-block;}
 
         /* STREAM PANE MENU */
         nav#header .stream-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
@@ -100,26 +121,6 @@ nav#header {}
                 body.stream-pane-active-4 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 199px;}
                 body.stream-pane-active-5 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 247px;}
                 */
-
-    /*
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ccf;
-    height: 50px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: gray;
-}
-*/
 
 nav#footer {}
     nav#footer .private-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
