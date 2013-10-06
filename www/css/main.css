@@ -47,12 +47,12 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .indicator {display: none; font-family: Arial}
 
-.btn-lucid {transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s; margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 2px solid #277; border-radius: 5px 5px 5px 5px;}
-    .btn-lucid.active {transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s; color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff;}
+.btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/ margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 2px solid #277; border-radius: 5px 5px 5px 5px;}
+    .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/ color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff;}
 
 .status-icon {font-size: 18px;}
     .status-icon .indicator {position: absolute; top: -15px; left: -8px;}
-    .status-icon-hilighter {transition: left 1s; -webkit-transition: left 1s; background-color: rgba(255,180,0,0.8); border: 2px solid #FFFFFF; border-radius: 7px; bottom: -3px; height: 31px; position: absolute; width: 35.5px;}
+    /*.status-icon-hilighter {transition: left 1s; -webkit-transition: left 1s; background-color: rgba(255,180,0,0.8); border: 2px solid #FFFFFF; border-radius: 7px; bottom: -3px; height: 31px; position: absolute; width: 35.5px;}*/
    
 nav#header {}
     nav#header .masthead {position: relative; background-color: #224499;}
@@ -92,12 +92,14 @@ nav#header {}
         nav#header .stream-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
             nav#header .stream-pane-menu-con .stream-pane-menu {position: relative;}
                 /* "BODY" Alterations */
+                /*
                 body.stream-pane-active-0 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 5px;}
                 body.stream-pane-active-1 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 53px;}
                 body.stream-pane-active-2 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 102px;}
                 body.stream-pane-active-3 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 150px;}
                 body.stream-pane-active-4 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 199px;}
                 body.stream-pane-active-5 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 247px;}
+                */
 
     /*
 header {
@@ -139,8 +141,10 @@ nav#footer {}
         nav#footer .private-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
             nav#footer .private-pane-menu-con .private-pane-menu {position: relative;}
                 /* "BODY" Alterations */
+                /*
                 body.private-pane-active-0 nav#footer .private-pane-menu-con .private-pane-menu .status-icon-hilighter {left: 5px;}
                 body.private-pane-active-1 nav#footer .private-pane-menu-con .private-pane-menu .status-icon-hilighter {left: 53px;}
+                */
 
     /* GOBAL USER INPUT */
     nav#footer .global-user-input {padding: 5px 0; box-shadow: 0 0 3px #999; background-color: #224499;}
