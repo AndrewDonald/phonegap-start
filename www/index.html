@@ -41,73 +41,108 @@
 
         <!-- HEADER -->
         <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <img src="img/lucidlife.png" class="logo">
-            <img src="img/butterfly3-anim.gif" class="monarch">
-            <div class="main-nav-controls btn-group pull-right">
-                <button type="button" class="search btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
-                <button type="button" class="info btn btn-warning"><span class="glyphicon glyphicon-info-sign"></span></button>
-                <button type="button" class="settings btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
-            </div>
-            <div id="stream-header">
-                <div class="status clearfix">
-                    <span class="toggle glyphicon glyphicon-chevron-down"></span>
-                    <span class="stream pull-left">
-                        <h1 class="stream-name">LucidLife</h1><sup class="indicator"><span class="label label-warning">1693</span></sup>
-                    </span>
-                    <span class="filter pull-right">
-                        <span class="glyphicon glyphicon-filter"></span>
-                        <span class="stream-activity-status">m&f 25-40 &lt;10km</span>
-                    </span>
+            <div class="masthead">
+                <img src="img/lucidlife.png" class="logo">
+                <img src="img/butterfly3-anim.gif" class="monarch">
+                <div class="main-nav-controls btn-group pull-right">
+                    <button type="button" class="search btn btn-warning"><span class="glyphicon glyphicon-search"></span></button>
+                    <button type="button" class="info btn btn-warning"><span class="glyphicon glyphicon-info-sign"></span></button>
+                    <button type="button" class="settings btn btn-warning"><span class="glyphicon glyphicon-cog"></span></button>
                 </div>
-                <div class="public-panel">
-                    <!-- Public Poll (1-click form) -->
-                    <!-- Public Survey (multiple inputs form) -->
-                    <!-- Public Promotion -->
-                    <!-- Public App/Game -->
-                    <!-- Client Badge -->
-                    <div class="_client-badge">
-                        <div class="client-title">
-                            <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes.
+            </div>
+            <div class="stream-and-filter-header clearfix">
+                <button class="btn-lucid stream pull-left">
+                    <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
+                    <h1 id="stream-name">LucidLife</h1>
+                    <sup class="indicator"><span class="label label-warning">1693</span></sup>
+                </button>
+                <button class="btn-lucid filter pull-right">
+                    <span class="glyphicon glyphicon-filter"></span>
+                    <span class="filter-info">m&f 25-40 &lt;10km</span>
+                    <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
+                </button>
+            </div>
+            <div class="public-panels">
+                <!-- Public Poll (1-click form) -->
+                <!-- Public Survey (multiple inputs form) -->
+                <!-- Public Promotion -->
+                <!-- Public App/Game -->
+                <!-- Client Badge -->
+
+                <div class="public-panel stream-and-filter-panel">
+
+                    <div class="stream-and-filter-carousel carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target=".stream-and-filter-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target=".stream-and-filter-carousel" data-slide-to="1"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="_client-badge">
+                                    <div class="client-title">
+                                        <img class="client-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes.
+                                    </div>
+                                    <div class="client-bio">
+                                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
+
+                                        Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
+
+                                        Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
+
+                                        Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
+                                    </div>
+                                </div>
+                                <div class="carousel-caption">slide 1</div>
+                            </div>
+                            <div class="item">
+                                <div>Pane 2</div>
+                                <div class="carousel-caption">slide 2</div>
+                            </div>
                         </div>
-                        <div class="client-bio">
-                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
 
-                            Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-
-                            Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
-
-                            Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
-
-                            Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
-                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href=".stream-and-filter-carousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href=".stream-and-filter-carousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
                     </div>
                 </div>
+            </div>
+            <div class="toggle">
+                <span class="open-panel glyphicon glyphicon-chevron-down"></span>
+                <span class="close-panel glyphicon glyphicon-chevron-up"></span>
+            </div>
+            <div class="stream-pane-menu-con">
+                <span class="stream-pane-menu">
+                    <div class="status-icon-hilighter"></div>
+                    <button class="btn-lucid status-icon people-stream-pane glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></button>
+                    <button class="btn-lucid status-icon all-stream-pane glyphicon glyphicon-asterisk "><sup class="indicator"><span class="label label-primary">105</span></sup></button>
+                    <button class="btn-lucid status-icon chat-stream-pane glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></button>
+                    <button class="btn-lucid status-icon photos-stream-pane glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></button>
+                    <button class="btn-lucid status-icon videos-stream-pane glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                    <button class="btn-lucid status-icon audio-stream-pane glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+                </span>
             </div>
         </nav>
 
         <!-- FOOTER -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <div class="status clearfix">
-                
-                <span class="toggle glyphicon glyphicon-chevron-up"></span>
-                <span class="stream-activity-status pull-left">
+            <div class="private-pane-menu-con">
+                <span class="private-pane-menu">
                     <div class="status-icon-hilighter"></div>
-                    <span class="status-icon all-stream-pane glyphicon glyphicon-asterisk"><sup class="indicator"><span class="label label-primary">213</span></sup></span>
-                    <span class="status-icon people-stream-pane glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></span>
-                    <span class="status-icon chat-stream-pane glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></span>
-                    <span class="status-icon photos-stream-pane glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></span>
-                    <span class="status-icon videos-stream-pane glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></span>
-                    <span class="status-icon audio-stream-pane glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></span>
-                </span>
-                <span class="personal-status pull-right">
-                    <div class="status-icon-hilighter"></div>
-                    <span class="status-icon activity-private-chat glyphicon glyphicon-comment pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
-                    <span class="status-icon activity-connections glyphicon glyphicon-book pull-right"><sup class="indicator"><span class="label label-danger">6</span></sup></span>
-                    <span class="status-icon activity-history glyphicon glyphicon-calendar pull-right"><sup class="indicator"><span class="label label-danger">17</span></sup></span>
+                    <button class="btn-lucid status-icon connections-private-pane glyphicon glyphicon-book"><sup class="indicator"><span class="label label-danger">17</span></sup></button>
+                    <button class="btn-lucid status-icon chat-private-pane glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-danger">17</span></sup></button>
                  </span> 
             </div>
-            <div class="private-panel">
+            <div class="private-panels">
 
                 <!-- Connections Book:  See a list of people from your connections book who are online now -->
                 <!-- Contact Summary:   See who has contacted, viewed, messaged or requested to be friends with you recently -->
@@ -117,7 +152,25 @@
                 <div class="_user-badge">
                     <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
                     <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur.
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                    </div> 
+                </div>
+                 <div class="_user-badge">
+                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                    <div class="user-bio">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                    </div> 
+                </div>
+                 <div class="_user-badge">
+                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                    <div class="user-bio">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                    </div> 
+                </div>
+                 <div class="_user-badge">
+                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                    <div class="user-bio">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
                     </div> 
                 </div>
 <!--
@@ -165,8 +218,6 @@
                 </div>
 -->
 
-
-
             </div>
             <div class="global-user-input">
                 <div id="send-message-con">
@@ -203,6 +254,7 @@
         </script>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/touchswipe.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

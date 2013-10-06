@@ -5,6 +5,7 @@
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
 .btn-lg {padding: 9px 16px;}
+.carousel {padding: 5px;}  
 
 /* GLOBAL: Vars */
 .blue {color: #006DCC;}
@@ -26,47 +27,79 @@ body {
     line-height: 1.4; 
 }
 
-nav#header {box-shadow: 0 1px 5px rgba(0, 0, 0, 0.75);}
-nav#footer {box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);}
+nav#header {box-shadow: 0 1px 5px #333;}
+nav#footer {box-shadow: 0 -1px 5px #333;}
 
 .logo {height: 42px; margin-top: 6px;}
 .hide {display: none;}
 .tilde {color: #fff; font-size: 22px; font-weight: bold; line-height: 0.7;}
+.toggle {cursor: pointer; color: #277;}
 .divider {color: #999; font-weight: bold; margin-right: -2px;}
-.content {transition: padding-top 1s; -webkit-transition: padding-top 1s; position: absolute; top: 0; left: 0; width: 100%; padding: 60px 10px 55px; background-color: rgba(255,255,255,0.25);}
-    body.public-panel-expanded .content {transition: padding-top 1s; -webkit-transition: padding-top 1s; padding-top: 112px;}
+.content {position: absolute; top: 0; left: 0; width: 100%; padding: 110px 10px 55px; background-color: rgba(255,255,255,0.25);}
+body.public-panels-peek .content {padding-top: 145px;}
+body.public-panels-active .content {padding-top: 345px;}
 
 .label {box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-.indicator {display: none; font-family: "Arial"}
-sup.indicator {margin-left: 3px; top: -0.5em;}
-button sup.indicator {position: absolute; top: -8px; right: 2px; margin-left: 0;}
+
+
+.indicator {display: none; font-family: Arial}
+
+.btn-lucid {transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s; margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 2px solid #277; border-radius: 5px 5px 5px 5px;}
+    .btn-lucid.active {transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s; color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff;}
+
+.status-icon {font-size: 18px;}
+    .status-icon .indicator {position: absolute; top: -15px; left: -8px;}
+    .status-icon-hilighter {transition: left 1s; -webkit-transition: left 1s; background-color: rgba(255,180,0,0.8); border: 2px solid #FFFFFF; border-radius: 7px; bottom: -3px; height: 31px; position: absolute; width: 35.5px;}
    
-nav#header {background: rgba(255, 255, 255, 0.75);}
-nav#header .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
-nav#header .main-nav-controls {padding: 10px 5px 0 0;}
-nav#header #stream-header {padding: 0 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5); box-shadow: 0px 1px 1px #ccc inset;}
-    nav#header #stream-header .status {cursor: pointer; padding: 6px 0 4px;}
-    nav#header #stream-header .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
-        nav#header #stream-header .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3;}
-        nav#header #stream-header .status .stream {width: 50%;}
-        nav#header #stream-header .status h1.stream-name  {display: inline; margin: 0; padding: 0; font-size: 12px; line-height: 1.3; height: 17px; overflow: hidden;}
-        nav#header #stream-header .status h1.stream-name:before {content: "~";}
-    
-    /* PUBLIC PANEL */
-    nav#header #stream-header .public-panel {display: none; position: relative; padding: 2px 5px 10px 2px; margin: 0 0 5px; max-height: 200px; overflow: auto;}
-        /* PUBLIC PANEL COMPONENTS */
-        ._client-poll {}       
-        ._client-survey {}
-        ._client-promotion {}
-        ._public-game {}
-        ._client-badge {}
-            nav#header #stream-header .public-panel ._client-badge .client-pic {width: 100px; margin: 0 10px 10px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
-            nav#header #stream-header .public-panel ._client-badge .client-title {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-            nav#header #stream-header .public-panel ._client-badge .client-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
-/*
+nav#header {}
+    nav#header .masthead {position: relative; background-color: #224499;}
+        nav#header .masthead .monarch {position: absolute; left: 120px; top: -1; height: 25px;}
+        nav#header .masthead .main-nav-controls {padding: 10px 5px 0 0;}
+    nav#header .stream-and-filter-header {color: #249; background-color: rgba(160, 220, 230, 0.8); border-top: 1px solid #fff;}
+        nav#header #stream-header {cursor: pointer; padding: 5px;}
+                nav#header .stream-and-filter-header .stream h1#stream-name  {display: inline-block; margin: 0 5px 0 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
+                nav#header .stream-and-filter-header .stream h1#stream-name:before {content: "~";}
+                nav#header .stream-and-filter-header .filter .filter-info {font-weight: bold; margin-left: -1px;}
+
+        /* PUBLIC PANELS */
+        nav#header .public-panels {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
+        body.public-panels-active nav#header .public-panels {display: block;}
+            nav#header .public-panels .public-panel {display: none;}
+            body.public-panels-active nav#header .public-panels .public-panel.active {display: block;}
+
+            /* PUBLIC PANELS - PANELS */
+            ._client-poll {}       
+            ._client-survey {}
+            ._client-promotion {}
+            ._public-game {}
+            ._client-badge {}
+                ._client-badge .client-pic {width: 100px; margin: 0 10px 10px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
+                ._client-badge .client-title {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
+                ._client-badge .client-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+        
+        /* PUBLIC PANEL TOGGLE */
+
+        nav#header .toggle {display: none; padding: 10px 0 7px; text-align: center; border-top: 1px solid #666; background-color: rgba(160, 220, 230, 0.8); box-shadow: 0 -1px 3px #000000 inset;}
+        body.public-panels-peek nav#header .toggle, body.public-panels-active nav#header .toggle {display: block;}
+            nav#header .toggle .close-panel {display: none;}
+                body.public-panels-active nav#header .toggle .open-panel {display: none;}
+                body.public-panels-active nav#header .toggle .close-panel {display: inline-block;}
+
+        /* STREAM PANE MENU */
+        nav#header .stream-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
+            nav#header .stream-pane-menu-con .stream-pane-menu {position: relative;}
+                /* "BODY" Alterations */
+                body.stream-pane-active-0 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 5px;}
+                body.stream-pane-active-1 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 53px;}
+                body.stream-pane-active-2 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 102px;}
+                body.stream-pane-active-3 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 150px;}
+                body.stream-pane-active-4 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 199px;}
+                body.stream-pane-active-5 nav#header .stream-pane-menu-con .stream-pane-menu .status-icon-hilighter {left: 247px;}
+
+    /*
 header {
     position: fixed;
     top: 0;
@@ -86,51 +119,31 @@ footer {
 }
 */
 
-nav#footer {background: rgba(255, 255, 255, 0.75);}
-    nav#footer .status {position: relative; text-align: left; padding: 3px 0 2px;}
-        nav#footer .status .toggle {cursor: pointer;}
-        nav#footer .status .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 0.3;}
-        nav#footer .status:hover .toggle {transition: opacity 0.5s; -webkit-transition: opacity 0.5s; opacity: 1;}
-            nav#footer .status .status-icon {font-size: 16px;}
-            nav#footer .status .status-icon .indicator {position: absolute; top: -15px;}
-                nav#footer .stream-activity-status .status-icon .indicator {left: -8px;}
-                nav#footer .personal-status .status-icon .indicator {right: -4px;}
-            nav#footer .status .status-icon-hilighter {position: absolute; bottom: 5px; height: 18px; width: 20px; border: 1px solid #666; border-radius: 3px; background-color: #fa1;}
-                nav#footer .stream-activity-status {width: 50%;}
-                    nav#footer .stream-activity-status .status-icon {margin-left: 5px;}
-                    nav#footer .stream-activity-status .status-icon:first-child {margin-left: 5px;}
-                        body.all-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 3px;}
-                        body.people-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 27px;}
-                        body.chat-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 51px;}
-                        body.photos-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 75px;}
-                        body.videos-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 99px;}
-                        body.audio-pane-active nav#footer .status .stream-activity-status .status-icon-hilighter {left: 123px;}
-                nav#footer .personal-status {}
-                    nav#footer .personal-status .status-icon {margin-right: 10px;} 
-                    nav#footer .personal-status .status-icon:first-child {margin-right: 5px;} 
-                        /*
-                        body. nav#footer .status .status-icon-hilighter {right: 112px;}
-                        body. nav#footer .status .status-icon-hilighter {right: 90px;}
-                        body. nav#footer .status .status-icon-hilighter {right: 68px;}
-                        */
-                        body.history-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 60px;}
-                        body.connections-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 33px;}
-                        body.private-chat-pane-active nav#footer .status .personal-status .status-icon-hilighter {right: 8px;}
+nav#footer {}
+    nav#footer .private-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
+        nav#footer .private-pane-menu-con .private-pane-menu {position: relative;}
         
-        /* PRIVATE PANEL */
-        nav#footer .private-panel {display: none; position: relative; padding: 2px 5px 5px 2px; margin: 5px 0 0; max-height: 200px; overflow: auto;}
+        /* PRIVATE PANELS */
+        nav#footer .private-panels {display: none; position: relative; padding: 2px 5px 5px 2px; margin: 5px 0 0; max-height: 200px; overflow: auto;}
         
-            /* PRIVATE PANEL COMPONENTS */
+            /* PRIVATE PANELS COMPONENTS */
             ._connections-book {}   /* See a list of people from your connections book who are online now */
             ._contact-summary {}    /* See who has contacted, viewed, messaged or requested to be friends with you recently */
             ._private-game {}       /* play games against other person (1:1) */
             ._private-chat {}       /* privately chat with someone */
             ._user-badge {}         /* See who is contacting you */
-                nav#footer .private-panel ._user-badge .user-pic {width: 50px; margin: 0 10px 3px 0; box-shadow: 0px 0px 2px #666; height: 50px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #999;}
-                nav#footer .private-panel ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+                ._user-badge .user-pic {width: 50px; margin: 0 10px 3px 0; box-shadow: 0px 0px 2px #666; height: 50px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #999;}
+                ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
     
+        /* Personal PANE MENU */
+        nav#footer .private-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
+            nav#footer .private-pane-menu-con .private-pane-menu {position: relative;}
+                /* "BODY" Alterations */
+                body.private-pane-active-0 nav#footer .private-pane-menu-con .private-pane-menu .status-icon-hilighter {left: 5px;}
+                body.private-pane-active-1 nav#footer .private-pane-menu-con .private-pane-menu .status-icon-hilighter {left: 53px;}
+
     /* GOBAL USER INPUT */
-    nav#footer .global-user-input {padding: 3px 0; box-shadow: 0 0 3px #999;}
+    nav#footer .global-user-input {padding: 5px 0; box-shadow: 0 0 3px #999; background-color: #224499;}
         nav#footer .global-user-input #send-message-con form.send-message-form {margin: 0; position: relative; width: 100%; padding-left: 5px;}
             nav#footer .global-user-input #send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
                 nav#footer .global-user-input #send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
