@@ -10,9 +10,14 @@
     .carousel .carousel-control {width: 20px; color: #277; text-shadow: none; opacity: 1;}
     .carousel .carousel-control.left, .carousel .carousel-control.right {background: none;}
     .carousel .carousel-control:hover, .carousel-control:focus {color: #277; opacity:; 1;}
-    .carousel .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {z-index: 100; top: 5px; left: 4px; font-size: 12px;}
-    .carousel .carousel-caption {top: -21px; padding: 0; color: #277; text-shadow: none; z-index: 100;}
+    .carousel .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {display: none; z-index: 100; top: 5px; left: 4px; font-size: 12px;}
+    .carousel .carousel-caption {top: -21px; padding: 0; color: #277; text-shadow: none; z-index: 100; height: 17px;}
         .carousel .carousel-caption h3 {margin: 0; padding: 0; font-size: 16px;}
+    .carousel .carousel-indicators {top: -4px; z-index: 100; height: 15px; margin-bottom: 0;}
+        .carousel .carousel-indicators > li {margin: 0; border-radius: 2px; border-color: #277; height: 5px; width: 20px; background-color: transparent;}
+        .carousel .carousel-indicators > li.active {background-color: #277;} 
+.panel .panel-heading {padding: 5px; color: #333;}
+.panel .panel-body {padding: 5px;}
 
 /* GLOBAL: Vars */
 .blue {color: #006DCC;}
@@ -50,14 +55,33 @@ body.public-panel-active .content {padding-top: 345px;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-.panel.panel-lucid {margin: 0; color: #227777; background-image: none; background-repeat: none; background-color: transparent; border: none; border-top: 1px solid #FFFFFF; border-radius: 0;} 
-    .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.8); border: none; border-radius: 0; overflow-x: auto;}
-    .panel.panel-lucid > .panel-body {max-height: 150px; padding: 0; background: rgba(255, 255, 255, 0.9); overflow: auto;}
+.panel > .panel-body > .carousel {padding: 10px 0px;} 
+.panel.panel-lucid {position: relative;}
+    .panel.panel-lucid .panel-nav.left, .panel .panel-nav.right {position: absolute; top: 45px; z-index: 0;}
+    .panel.panel-lucid .panel-nav.left {left: 5px;}
+    .panel.panel-lucid .panel-nav.right {right: 5px;}
+    .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
+    .panel.panel-lucid {margin: 0; color: #227777; background-image: none; background-repeat: none; background-color: transparent; border: none; border-top: 1px solid #FFFFFF; border-radius: 0;} 
+        .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.8); border: none; border-radius: 0; overflow-x: auto;}
+        .panel.panel-lucid > .panel-body {max-height: 150px; padding: 0; background: rgba(255, 255, 255, 0.9); overflow: auto;}
+            .panel.panel-lucid > .panel-body > .carousel {display: none;}
 
-.carousel .carousel-inner .item .panel {max-width: 235px; margin: 0 10px 20px;}
-.carousel .carousel-inner .item .panel:first-child {margin-left: 0;}
-.carousel .carousel-inner .item .panel:only-child {margin: 0 10px 0 0; max-width: 245px;}
+.carousel .carousel-inner .item {color: #333;}
+.carousel .carousel-inner .item > .panel {margin: 0 5px 20px;}
+    .carousel .carousel-inner .item > .panel > .panel-body {padding: 0;}
+.carousel .carousel-inner .item > h4 {margin: 20px 0 0 5px;}
 
+.toggle-on-off {margin: 2px;}  
+.toggle-on-off .badge {background-color: #ff0; color: #999; margin-right: 10px; width: 30px;}
+.toggle-on-off.on .badge.off {display: none;}
+.toggle-on-off.off .badge.on {display: none;}
+
+.stream-name:before {content: "~";}
+
+/*
+.carousel .carousel-inner .item > .panel:first-child {margin-left: 0;}
+.carousel .carousel-inner .item > .panel:only-child {margin: 0 10px 0 0; max-width: 245px;}
+*/
 
 .indicator {display: none; font-family: Arial}
 

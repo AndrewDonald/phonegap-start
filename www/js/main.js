@@ -64,6 +64,15 @@ $(function() {
     });
 });
 
+//* EVENT HANDLERS *//
+// STREAM CONTROLS BUTTON
+$('.stream-controls-toggle').on('click',function(){
+    $(this).toggleClass('active');
+    $('.stream-controls-carousel').toggle();
+    $('body').toggleClass('private-panel-expanded');
+});
+
+
 // MAIN-MENU INFO: Toggle Hide/Show All Indicators andd Info Popup
 $('#header .main-nav-controls .info').on('click',function(){
     $(this).toggleClass('active');
@@ -95,6 +104,12 @@ $('#footer .status').on('click',function(){
     $(this).next().slideToggle('fast');
     $('body').toggleClass('private-panel-expanded');
 });
+
+// TOGGLE ON/OFF SELETOR BUTTONS
+$('.toggle-on-off > .toggle-target').on('click',function(){
+    $(this).toggleClass('btn-info btn-default').parent('.toggle-on-off').toggleClass('on off');
+});
+
 
 /* UTILS */
 // Alter classes by partial match using "*" wildcard. ie: $('#foo').alterClass('foo-* bar-*', 'foobar')
