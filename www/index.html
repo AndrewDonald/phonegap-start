@@ -42,7 +42,7 @@
         <!-- HEADER -->
         <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="masthead">
-                <div class="main-nav-left">
+                <div class="main-nav left">
                     <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-align-justify"></span></button>
                 </div>
                 <center>
@@ -50,7 +50,7 @@
                     <img src="img/lucidlife.png" class="logo">
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
-                <div class="main-nav-right">
+                <div class="main-nav right">
                     <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </div>
@@ -75,133 +75,154 @@
                     <!--</div>-->
                 </div>
                 <div class="panel-body">
-                    <div class="stream-controls-carousel carousel slide">
+                    <div class="stream-controls-carousel panel-carousel carousel slide">
                         <!-- CAROUSEL INDICATORS -->
-                        <ol class="carousel-indicators">
-                            <li data-target=".stream-controls-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target=".stream-controls-carousel" data-slide-to="1"></li>
-                        </ol>
+                        <div class="carousel-indicators">
+                            <button class="btn-lucid status-icon glyphicon glyphicon-user active" data-target=".stream-controls-carousel" data-slide-to="0">
+                                <span class="">current</span><sup class="indicator">6</sup>
+                            </button>
+                            <button class="btn-lucid status-icon glyphicon glyphicon-calendar" data-target=".stream-controls-carousel" data-slide-to="1">
+                                <span>history</span><sup class="indicator">3</sup>
+                            </button>
+                        </div>
 
                         <!-- CAROUSEL -->
                         <div class="carousel-inner">
                             <!-- CURRENT Pane -->
                             <div class="item active">
                                 <h4>Auto Associated</h4>
-                                    <div class="clearfix">
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName1</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName2</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName3</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName4</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
-                                        <div class="toggle-on-off off btn-group pull-left">
-                                            <button class="toggle-target btn btn-default">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName5</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
-                                        <div class="toggle-on-off off btn-group pull-left">
-                                            <button class="toggle-target btn btn-default">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName6</span>
-                                            </button>
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        </div>
+                                <div class="clearfix">
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName1</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
                                     </div>
-
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName2</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName3</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName4</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName5</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off on btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName6</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName7</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                    <div class="toggle-on-off btn-group pull-left">
+                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <button class="toggle-target btn btn-default clearfix">
+                                            <span class="stream-name pull-left">StreamName8</span>
+                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <br/>
                                 <h4>User Added</h4>
                                     <div class="panel-body clearfix">
                                         <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName7</span>
-                                            </button>
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName9</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                            </button>
                                         </div>
                                         <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName8</span>
-                                            </button>
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName10</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                            </button>
                                         </div>
-                                        <div class="toggle-on-off off btn-group pull-left">
-                                            <button class="toggle-target btn btn-default">
-                                                <span class="badge on">on</span><span class="badge off">off</span>
-                                                <span class="stream-name">StreamName9</span>
-                                            </button>
+                                        <div class="toggle-on-off btn-group pull-left">
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName11</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+                                            </button>
                                         </div>
                                     </div>
 
-                                <div class="carousel-caption"><h3>CURRENT</h3></div>
+                                <!--
+                                <div class="carousel-caption">
+                                    <h3><span class="btn-lucid status-icon glyphicon glyphicon-user"><sup class="indicator"></span>CURRENT</h3>
+                                </div>
+                                -->
                             </div>
 
                             <!-- HISTORY Pane -->
                             <div class="item">
                                     <div class="clearfix">
-                                        <div class="toggle-on-off btn-group pull-left">
-                                            <button class="add btn btn-warning"><span class="glyphicon glyphicon-ok"></span></button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="stream-name">StreamName7</span>
-                                            </button>
+                                        <div class="toggle-on-off go btn-group pull-left">
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName6</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </button>
+                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
                                         </div>
 
-                                        <div class="toggle-on-off btn-group pull-left">
-                                            <button class="add btn btn-warning"><span class="glyphicon glyphicon-ok"></span></button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-                                            <button class="toggle-target btn btn-info">
-                                                <span class="stream-name">StreamName8</span>
-                                            </button>
+                                        <div class="toggle-on-off go on btn-group pull-left">
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName6</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </button>
+                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
                                         </div>
 
-                                        <div class="toggle-on-off btn-group pull-left">
-                                            <button class="add btn btn-warning"><span class="glyphicon glyphicon-ok"></span></button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-                                            <button class="toggle-target btn btn-default">
-                                                <span class="stream-name">StreamName9</span>
-                                            </button>
+                                        <div class="toggle-on-off go btn-group pull-left">
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName6</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </button>
+                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
                                         </div>
 
-                                        <div class="toggle-on-off btn-group pull-left">
-                                            <button class="add btn btn-warning"><span class="glyphicon glyphicon-ok"></span></button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-                                            <button class="toggle-target btn btn-default">
-                                                <span class="stream-name">StreamName10</span>
-                                            </button>
+                                        <div class="toggle-on-off go on btn-group pull-left">
                                             <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                            <button class="toggle-target btn btn-default clearfix">
+                                                <span class="stream-name pull-left">StreamName6</span>
+                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </button>
+                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
                                         </div>
-
                                     </div>
                                 <!-- CAROUSEL CAPTION -->
-                                <div class="carousel-caption"><h3>HISTORY</h3></div>
+                                <!--<div class="carousel-caption"><h3>HISTORY</h3></div>-->
                             </div>
                         </div>
 
@@ -280,6 +301,13 @@
                     <button class="btn-lucid status-icon photos-stream-pane glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></button>
                     <button class="btn-lucid status-icon videos-stream-pane glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></button>
                     <button class="btn-lucid status-icon audio-stream-pane glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+
+                    <button class="btn-lucid status-icon people2-stream-pane glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></button>
+                    <button class="btn-lucid status-icon all2-stream-pane glyphicon glyphicon-asterisk "><sup class="indicator"><span class="label label-primary">105</span></sup></button>
+                    <button class="btn-lucid status-icon chat2-stream-pane glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></button>
+                    <button class="btn-lucid status-icon photos2-stream-pane glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></button>
+                    <button class="btn-lucid status-icon videos2-stream-pane glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                    <button class="btn-lucid status-icon audio2-stream-pane glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></button>
                 </span>
             </div>
         </nav>

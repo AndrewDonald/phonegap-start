@@ -7,7 +7,7 @@ function startApp(){
 
 var _ll = {};
 _ll.pane = {};
-_ll.pane.stream = ["People", "All", "Chat", "Photos", "Videos", "Audio"];
+_ll.pane.stream = ["People", "All", "Chat", "Photos", "Videos", "Audio","People2", "All2", "Chat2", "Photos2", "Videos2", "Audio2"];
 _ll.pane.stream.active = 0;
 _ll.pane.private = ["Connections", "Chat"];
 _ll.pane.private.active = 0;
@@ -72,7 +72,7 @@ $('.stream-controls-toggle').on('click',function(){
     $('body').toggleClass('private-panel-expanded');
 });
 
-
+/*
 // MAIN-MENU INFO: Toggle Hide/Show All Indicators andd Info Popup
 $('#header .main-nav-controls .info').on('click',function(){
     $(this).toggleClass('active');
@@ -85,6 +85,7 @@ $('#header .main-nav-controls .info').on('click',function(){
     }
 });
 
+
 // STREAM HEADER Toggle Hide/Show Stream Info
 $('#stream-header .status').on('click',function(){
     $(this)
@@ -96,7 +97,7 @@ $('#stream-header .status').on('click',function(){
 });
 
 // STREAM FOOTER Toggle Hide/Show Stream Activity and Personal Indicators
-$('#footer .status').on('click',function(){
+$('#footer .private-panels').on('click',function(){
     $(this)
         .toggleClass('active')
         .children('.toggle')
@@ -104,10 +105,35 @@ $('#footer .status').on('click',function(){
     $(this).next().slideToggle('fast');
     $('body').toggleClass('private-panel-expanded');
 });
+*/
 
 // TOGGLE ON/OFF SELETOR BUTTONS
-$('.toggle-on-off > .toggle-target').on('click',function(){
-    $(this).toggleClass('btn-info btn-default').parent('.toggle-on-off').toggleClass('on off');
+$('.toggle-on-off').on('click',function(){
+    $(this).toggleClass('on');
+});
+
+// STREAM PANEL MENU
+$('.stream-pane-menu > .btn-lucid').on('click',function(){
+    _ll.pane.stream.active = $(this).index();
+    console.log(_ll.pane.stream.active);
+    $('body')
+        .alterClass('stream-pane-active-*','')
+        .addClass('stream-pane-active-' + _ll.pane.stream.active);
+
+    $('.stream-pane-menu > .status-icon').removeClass('active');
+    $('.stream-pane-menu > .status-icon:eq(' + _ll.pane.stream.active + ')').addClass('active');
+});
+
+// PRIVATE PANEL MENU
+$('.private-pane-menu > .btn-lucid').on('click',function(){
+    _ll.pane.private.active = $(this).index();
+    console.log(_ll.pane.stream.active);
+    $('body')
+        .alterClass('private-pane-active-*','')
+        .addClass('private-pane-active-' + _ll.pane.private.active);
+
+    $('.private-pane-menu > .status-icon').removeClass('active');
+    $('.private-pane-menu > .status-icon:eq(' + _ll.pane.private.active + ')').addClass('active');
 });
 
 

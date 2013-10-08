@@ -7,15 +7,18 @@
 .btn-lg {padding: 9px 16px;}
 .carousel {padding: 5px;}
     .carousel .carousel-inner .item {margin: 20px 15px 10px;}
+    .carousel.panel-carousel .carousel-inner .item {padding: 30px 2px 0;}
     .carousel .carousel-control {width: 20px; color: #277; text-shadow: none; opacity: 1;}
     .carousel .carousel-control.left, .carousel .carousel-control.right {background: none;}
     .carousel .carousel-control:hover, .carousel-control:focus {color: #277; opacity:; 1;}
     .carousel .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {display: none; z-index: 100; top: 5px; left: 4px; font-size: 12px;}
-    .carousel .carousel-caption {top: -21px; padding: 0; color: #277; text-shadow: none; z-index: 100; height: 17px;}
-        .carousel .carousel-caption h3 {margin: 0; padding: 0; font-size: 16px;}
-    .carousel .carousel-indicators {top: -4px; z-index: 100; height: 15px; margin-bottom: 0;}
+    .carousel .carousel-caption {top: 16px; left: 0; padding: 0; color: #277; text-shadow: none; z-index: 100; max-height: 45px;}
+        .carousel .carousel-caption h3 {position: absolute; left: 0; margin: 0; padding: 0; font-size: 16px;}
+    .carousel .carousel-indicators {top: 0; z-index: 100; height: 35px; margin-bottom: 0;}
         .carousel .carousel-indicators > li {margin: 0; border-radius: 2px; border-color: #277; height: 5px; width: 20px; background-color: transparent;}
-        .carousel .carousel-indicators > li.active {background-color: #277;} 
+        .carousel .carousel-indicators > li.active {background-color: #277;}
+        .carousel .carousel-indicators .btn-lucid.active {height: auto; width: auto; margin: 0 2px;}
+
 .panel .panel-heading {padding: 5px; color: #333;}
 .panel .panel-body {padding: 5px;}
 
@@ -30,7 +33,8 @@
 
 body {
     font-family: arial;
-    font-size: 12px;
+    font-weight: normal;
+    font-size: 14px;
     color: #333;
     padding: 0;
     margin: 0;
@@ -69,12 +73,14 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .carousel .carousel-inner .item {color: #333;}
 .carousel .carousel-inner .item > .panel {margin: 0 5px 20px;}
     .carousel .carousel-inner .item > .panel > .panel-body {padding: 0;}
-.carousel .carousel-inner .item > h4 {margin: 20px 0 0 5px;}
+.carousel .carousel-inner .item > h4 {margin: 0 0 0 5px;}
+.stream-controls-carousel.carousel > .carousel-indicators {}
 
-.toggle-on-off {margin: 2px;}  
-.toggle-on-off .badge {background-color: #ff0; color: #999; margin-right: 10px; width: 30px;}
-.toggle-on-off.on .badge.off {display: none;}
-.toggle-on-off.off .badge.on {display: none;}
+.toggle-on-off {margin: 2px;}
+.toggle-on-off .toggle-target {padding-left: 5px; padding-right: 5px; display: inline-block; font-size: 14px; min-width: 205px;}
+.toggle-on-off.go .toggle-target {min-width: 170px;}
+.toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #fff; opacity: 0.3;}
+.toggle-on-off.on .toggle-target .badge {opacity: 1; background-color: #8dd;}
 
 .stream-name:before {content: "~";}
 
@@ -86,29 +92,31 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-    margin: 3px 5px; padding: 5px 7px; cursor: pointer; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
+    margin: 3px 5px; padding: 5px 7px; cursor: pointer; font-size: 16px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
     .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
         color: #fff; background-color: rgba(255,180,0,0.8); border-color: #fff; border-width: 2px;}
+        .carousel-indicators .btn-lucid > span {display: block; font-size: 12px; font-family: Arial; margin-top: 5px;}
 
-.status-icon {font-size: 18px;}
+.status-icon {}
     .status-icon .indicator {position: absolute; top: -15px; left: -8px;}
     /*.status-icon-hilighter {transition: left 1s; -webkit-transition: left 1s; background-color: rgba(255,180,0,0.8); border: 2px solid #FFFFFF; border-radius: 7px; bottom: -3px; height: 31px; position: absolute; width: 35.5px;}*/
    
 nav#header {}
     nav#header .masthead {position: relative; background-color: #224499;}
-        nav#header .masthead .main-nav-left {position: absolute; top: 0; left: 5px;}
-            nav#header .masthead .main-nav-left .btn {color: #f90; font-size: 30px; padding: 0;}
-        nav#header .masthead .monarch {height: 35px; margin: 0 -5px 0 -8px; width: 50px;}
+        nav#header .masthead .main-nav {position: absolute; top: 0;}
+        nav#header .masthead .main-nav.left {left: 5px;}
+        nav#header .masthead .main-nav.right {right: 5px;}
+            nav#header .masthead .main-nav .btn {color: #f90; font-size: 30px; padding: 0; text-shadow: 1px 1px 0px #fff;}
+        nav#header .masthead .monarch {height: 35px; margin: 0 -5px 0 0; width: 50px;}
         nav#header .masthead .logo {height: 42px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
-        nav#header .masthead .main-nav-right {position: absolute; top: 0; right: 5px;}
-            nav#header .masthead .main-nav-right .btn {color: #f90; font-size: 30px; padding: 0;}
+        
     nav#header .stream-and-filter-header {color: #249; background-color: rgba(160, 220, 230, 0.8); border-top: 1px solid #fff;}
         nav#header #stream-header {cursor: pointer; padding: 5px;}
                 nav#header .stream-controls-toggle #stream-name  {display: inline-block; margin: 0 5px 0 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
                 nav#header .stream-controls-toggle #stream-name:before {content: "~";}
-                nav#header .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px;}
+                nav#header .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px;}
 
         /* PUBLIC PANEL */
         nav#header .public-panel {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
@@ -134,7 +142,7 @@ nav#header {}
                 body.public-panel-active nav#header .toggle .close-panel {display: inline-block;}
 
         /* STREAM PANE MENU */
-        nav#header .stream-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff;}
+        nav#header .stream-pane-menu-con {text-align: center; background-color: rgba(200, 240, 250, 0.8); border-top: 1px solid #fff; height: 37px; overflow: auto; white-space: nowrap;}
             nav#header .stream-pane-menu-con .stream-pane-menu {position: relative;}
                 /* "BODY" Alterations */
                 /*
