@@ -65,11 +65,10 @@
                         <button class="btn-lucid stream-controls-toggle pull-left">
                             <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
                             <h1 id="stream-name">LucidLife</h1>
-                            <sup class="indicator"><span class="label label-warning">1693</span></sup>
+                            <sup class="indicator"><span class="label label-primary">1693</span></sup>
                         </button>
                         <button class="btn-lucid filter-controls-toggle pull-right">
-                            <span class="glyphicon glyphicon-filter"></span>
-                            <span class="filter-info">m&f 25-40 &lt;10km</span>
+                            <div><span class="glyphicon glyphicon-filter"></span><span class="filter-info">m&f 25-40 &lt;10km</span></div>
                             <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
                         </button>
                     <!--</div>-->
@@ -287,28 +286,29 @@
                 </div>
             </div>
 
-            <div class="toggle">
-                <span class="open-panel glyphicon glyphicon-chevron-down"></span>
-                <span class="close-panel glyphicon glyphicon-chevron-up"></span>
-            </div>
+            
 
             <div class="stream-pane-menu-con">
-                <span class="stream-pane-menu">
+            
+                <span class="panel-nav left glyphicon glyphicon-chevron-left"></span>
+                <span class="panel-nav right glyphicon glyphicon-chevron-right"></span>
+            
+                <div class="stream-pane-menu">
                     <!--<div class="status-icon-hilighter"></div>-->
-                    <button id="people-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></button>
-                    <button id="all-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><sup class="indicator"><span class="label label-primary">105</span></sup></button>
-                    <button id="chat-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></button>
-                    <button id="photos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></button>
-                    <button id="videos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></button>
-                    <button id="audio-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+                    <button id="people-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><span>people</span><sup class="indicator"><span class="label label-primary">213</span></sup></button>
+                    <button id="all-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><span>all</span><sup class="indicator"><span class="label label-primary">105</span></sup></button>
+                    <button id="chat-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><span>chat</span><sup class="indicator"><span class="label label-primary">46</span></sup></button>
+                    <button id="photos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><span>photos</span><sup class="indicator"><span class="label label-primary">37</span></sup></button>
+                    <button id="videos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><span>videos</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                    <button id="audio-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><span>audio</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
 
-                    <button id="people2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><sup class="indicator"><span class="label label-primary">213</span></sup></button>
-                    <button id="all2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><sup class="indicator"><span class="label label-primary">105</span></sup></button>
-                    <button id="chat2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">46</span></sup></button>
-                    <button id="photos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><sup class="indicator"><span class="label label-primary">37</span></sup></button>
-                    <button id="videos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><sup class="indicator"><span class="label label-primary">2</span></sup></button>
-                    <button id="audio2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><sup class="indicator"><span class="label label-primary">5</span></sup></button>
-                </span>
+                    <button id="people2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><span>people2</span><sup class="indicator"><span class="label label-primary">213</span></sup></button>
+                    <button id="all2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><span>all2</span><sup class="indicator"><span class="label label-primary">105</span></sup></button>
+                    <button id="chat2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><span>chat2</span><sup class="indicator"><span class="label label-primary">46</span></sup></button>
+                    <button id="photos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><span>photos2</span><sup class="indicator"><span class="label label-primary">37</span></sup></button>
+                    <button id="videos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><span>videos2</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                    <button id="audio2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><span>audio2</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+                </div>
             </div>
         </nav>
 
@@ -317,8 +317,8 @@
             <div class="private-pane-menu-con">
                 <span class="private-pane-menu">
                     <!--<div class="status-icon-hilighter"></div>-->
-                    <button id="connections-private-pane" class="btn-lucid status-icon glyphicon glyphicon-book"><sup class="indicator"><span class="label label-danger">17</span></sup></button>
-                    <button id="chat-private-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-danger">17</span></sup></button>
+                    <button id="connections-private-pane" class="btn-lucid status-icon glyphicon glyphicon-book"><sup class="indicator"><span class="label label-primary">17</span></sup></button>
+                    <button id="chat-private-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">17</span></sup></button>
                  </span> 
             </div>
             <div class="private-panels">
