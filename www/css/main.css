@@ -61,7 +61,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .panel > .panel-body > .carousel {padding: 10px 0px;} 
 .panel.panel-lucid {position: relative;}
-    .panel.panel-lucid .panel-nav.left, .panel .panel-nav.right {position: absolute; top: 45px; z-index: 0;}
+    .panel.panel-lucid .panel-nav.left, .panel .panel-nav.right {display: none; position: absolute; top: 60px; z-index: 0;}
+    body.stream-controls-panel-expanded .panel.panel-lucid .panel-nav.left, body.stream-controls-panel-expanded .panel.panel-lucid .panel-nav.right {display: block;}
     .panel.panel-lucid .panel-nav.left {left: 5px;}
     .panel.panel-lucid .panel-nav.right {right: 5px;}
     .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
@@ -99,7 +100,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
         .carousel-indicators .btn-lucid > span {display: block; font-size: 12px; font-family: Arial; margin-top: 5px;}
 
 .status-icon {}
-    .status-icon .indicator {position: absolute; top: -15px; left: -8px;}
+    .status-icon .indicator {position: absolute; top: -3px; left: -8px;}
+    .status-icon.active .indicator {display: block;}
     /*.status-icon-hilighter {transition: left 1s; -webkit-transition: left 1s; background-color: rgba(255,180,0,0.8); border: 2px solid #FFFFFF; border-radius: 7px; bottom: -3px; height: 31px; position: absolute; width: 35.5px;}*/
    
 nav#header {}
