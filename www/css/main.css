@@ -41,7 +41,7 @@ nav#footer {box-shadow: 0 -1px 5px #333;}
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 .divider {color: #999; font-weight: bold; margin-right: -2px;}
-.content {position: absolute; top: 0; left: 0; width: 100%; padding: 110px 10px 55px; background-color: rgba(255,255,255,0.25);}
+.content {position: absolute; top: 0; left: 0; width: 100%; padding: 90px 10px 100px; background-color: rgba(255,255,255,0.25);}
 body.public-panel-peek .content {padding-top: 145px;}
 body.public-panel-active .content {padding-top: 345px;}
 
@@ -62,10 +62,10 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .panel.panel-lucid .panel-nav.left.scroll-menu, .panel.panel-lucid .panel-nav.right.scroll-menu {display: block;}
     .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
          .panel .panel-heading.panel-nav {position: relative; white-space: nowrap; text-align: center;}
-        .panel .panel-heading.panel-nav .panel-menu {position: relative; overflow: auto; border-bottom: 1px solid #fff; box-shadow: 0 -3px 10px #666 inset}
+        .panel .panel-heading.panel-nav .panel-menu {position: relative; overflow: auto; border-bottom: 1px solid #fff;}
             .panel .panel-heading.panel-nav .panel-menu > button:first-child {margin-left: 20px;}
             .panel .panel-heading.panel-nav .panel-menu > button:last-child {margin-right: 20px;}
-        .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;  box-shadow: none;}
+        .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;}
             .panel .panel-heading.panel-nav .panel-menu.btn-group > label {margin-bottom: 1px; margin-top: 0; min-height: 0; width: 16.75%; font-size: 18px; border: none; border-radius: 5px;}
             .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active:hover,
             .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active:focus {background-color: rgba(255,180,0,0.7);}
@@ -92,7 +92,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off .toggle-target .name {color: #333; text-shadow: none;}
 .toggle-on-off.on .toggle-target {height: 35px; color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); background-image: linear-gradient(to bottom, #5CB85C 0px, #449D44 100%);}
 .toggle-on-off.go .toggle-target {min-width: 170px;}
-.toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #333; opacity: 0.3;}
+.toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #000; opacity: 0.3;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
 .indicator {display: none; font-family: Arial}
@@ -101,7 +101,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     margin: 5px 0 5px; min-width: 50px; min-height: 50px; padding: 5px 7px; cursor: pointer; font-size: 22px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
 .btn-lucid:hover, .btn-lucid:focus {color: #277; background-color: rgba(50,160,160,0.5);}
 .btn-lucid.active:hover, .btn-lucid.active:focus {background-color: rgba(255,180,0,0.7);}
-    .btn-lucid.tilde {width: 50px; height: 50px; font-size: 44px; line-height: 0.58;}
+    .btn-lucid.tilde {margin-bottom: 3px; height: 50px; font-size: 44px; line-height: 0.45;}
         .btn-lucid.tilde .indicator {top: 0; left: 20px;}
     .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
     .stream-controls-panel > .panel-heading .btn-lucid .glyphicon {font-size: 14px; margin-right: 2px;}  
@@ -138,7 +138,7 @@ nav#header {}
             /* PUBLIC PANEL - COMPONENTS */
             ._promo {}
                 ._promo .header {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-                    ._promo .header .pic {width: 100px; margin: 0 10px 10px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
+                    ._promo .header .pic {width: 100px; margin: 0 10px 5px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
                 ._promo .body {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
             ._poll {}       
             ._survey {}
