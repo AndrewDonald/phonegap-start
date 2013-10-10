@@ -77,9 +77,8 @@
 
                     <!-- Panel Menu (Start) -->
                     <div class="panel-menu btn-group pull-left" data-toggle="buttons">
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-eye-open active">
-                            <input type="checkbox" name="stream-types" id="show-all">
-                            <span>toggle</span>
+                        <label class="btn-alerts btn btn-lucid glyphicon glyphicon-eye-open">
+                            <span>alerts</span>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
                         </label>
                         <label class="btn btn-lucid status-icon glyphicon glyphicon-user active">
@@ -111,7 +110,20 @@
                     <!-- Panel Menu (End) -->
                 </div>
                 <!-- Panel Nav (End) -->
-                <div class="panel-body"><!-- empty --></div>
+                <div class="panel-body">
+                    <div class="alerts-panel alert alert-warning">
+                        <a href="#" class="alert-link">
+                            <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
+                            <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                            <span class="alert-message">You just recieved a message from LucidLife!</span>
+                        </a>
+                        <a href="#" class="alert-link">
+                            <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
+                            <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                            <span class="alert-message">Jon Jones is requesting to connect with you!</span>
+                        </a>
+                    </div>
+                </div>
             </nav>
             <!-- STREAM SHOW PANEL (END) -->
         </nav>
@@ -439,7 +451,7 @@
         <!-- FOOTER (END) -->
        
         <!-- BODY (CONTENT) -->
-        <div class="content">
+        <div class="stream-content">
             <div id="home">
                 <h1>Main Content</h1>
                 <div class="_promo">

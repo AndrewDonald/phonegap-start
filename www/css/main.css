@@ -7,6 +7,8 @@
 .btn-lg {padding: 9px 16px;}
 .btn .badge {right: 0px;}
 .navbar {border: none;}
+.alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
+    .alert a.alert-link {text-decoration: none;}
 .carousel {padding: 5px;}
     .carousel .carousel-inner .item {margin: 20px 15px 10px;}
     .carousel.panel-carousel .carousel-inner .item {padding: 30px 2px 0;}
@@ -41,13 +43,19 @@ nav#footer {box-shadow: 0 -1px 5px #333;}
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 .divider {color: #999; font-weight: bold; margin-right: -2px;}
-.content {position: absolute; top: 0; left: 0; width: 100%; padding: 90px 10px 100px; background-color: rgba(255,255,255,0.25);}
-body.public-panel-peek .content {padding-top: 145px;}
-body.public-panel-active .content {padding-top: 345px;}
+.stream-content {position: absolute; top: 0; left: 0; width: 100%; padding: 90px 10px 100px; background-color: rgba(255,255,255,0.25);}
+body.public-panel-peek .stream-content {padding-top: 145px;}
+body.public-panel-active .stream-content {padding-top: 345px;}
 
 .label {box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+
+.alert{}
+    .alert .alert-message {padding-right: 25px;}
+    .alert > a img {width: 25px; height: auto; margin: 0 5px 5px 0; border: 1px solid #A47E3C; border-radius: 5px; padding: 2px;}
+        .alert a.alert-link {display: block; padding: 5px; min-height: 35px; font-weight: normal; line-height: 1.15; border-bottom: 1px dotted #A47E3C; }
+.alerts-panel {display: none;}
 
 /* PANEL */
 .panel > .panel-body > .carousel {padding: 0px;} 

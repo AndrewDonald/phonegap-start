@@ -5,12 +5,13 @@ function startApp(){
 }
 */
 
-var _lucid = {};
-_lucid.panel = {};
-_lucid.panel.stream = ["people", "chat", "photos", "videos", "audio"];
-_lucid.panel.stream.active = 0;
-_lucid.panel.apps = ["stream","filter","people", "chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
-_lucid.panel.apps.active = 0;
+var _lucid                      = {};
+_lucid.panel                    = {};
+_lucid.panel.stream             = {};
+_lucid.panel.stream.show        = ["people", "chat", "photos", "videos", "audio"];
+_lucid.panel.stream.show.active = 0;
+_lucid.panel.apps               = ["stream","filter","people", "chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
+_lucid.panel.apps.active        = 0;
 
 $(function() {
     /*
@@ -36,13 +37,13 @@ $(function() {
     });
 
     // ENABLE BOOTSTRAP CAROUSEL SWIPING GESTURES
-    $("#home").swipe( {
+    $(".stream-content").swipe({
         //Generic swipe handler for all directions
         swipeLeft:function(event, direction, distance, duration, fingerCount) {
-            swipeStreamPane('right'); 
+            swipeStreamPanel('right'); 
         },
         swipeRight: function() {
-            swipeStreamPane('left'); 
+            swipeStreamPanel('left'); 
         },
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
@@ -83,106 +84,59 @@ $(".stream-pane-menu-con").animate({
 
 });
 
-//* EVENT HANDLERS *//
-// STREAM CONTROLS BUTTON
-$('.stream-private-pane').on('click',function(){
-    $(this).toggleClass('active');
-    $('.stream-controls-carousel').toggle();
-    $('body').toggleClass('stream-controls-panel-expanded');
-});
 
-/*
-// MAIN-MENU INFO: Toggle Hide/Show All Indicators andd Info Popup
-$('#header .main-nav-controls .info').on('click',function(){
-    $(this).toggleClass('active');
-    if($(this).is('.active')){
-        $('body').toggleClass('public-panels-peek');
-        $('.indicator').fadeIn(500);
-    }else{
-        $('body').toggleClass('public-panels-active');
-        $('.indicator').fadeOut(500);
-    }
-});
-
-
-// STREAM HEADER Toggle Hide/Show Stream Info
-$('#stream-header .status').on('click',function(){
-    $(this)
-        .toggleClass('active')
-        .children('.toggle')
-            .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-    $(this).next().slideToggle('fast');
-    $('body').toggleClass('public-panel-expanded');
-});
-
-// STREAM FOOTER Toggle Hide/Show Stream Activity and Personal Indicators
-$('#footer .private-panels').on('click',function(){
-    $(this)
-        .toggleClass('active')
-        .children('.toggle')
-            .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-    $(this).next().slideToggle('fast');
-    $('body').toggleClass('private-panel-expanded');
-});
-*/
-
+//* EVENT HANDLERS *//////////////////////////////////////////////////////////////
 // TOGGLE ON/OFF SELETOR BUTTONS
 $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
 });
 
-// STREAM PANEL MENU
-$('.stream-pane-menu > .btn-lucid').on('click',function(){
-    _lucid.panel.stream.active = $(this).index();
-    $('body')
-        .alterClass('stream-pane-active-*','')
-        .addClass('stream-pane-active-' + _lucid.panel.stream.active);
-
-    $('.stream-pane-menu > .status-icon').removeClass('active');
-    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
+$('.btn-alerts').on('click',function(){
+    $('.alerts-panel').slideToggle('fast');
 });
+
+$('.alerts-panel .alert-link').on('click',function(){
+    $(this).remove();
+});
+
+
 
 // PANEL MENU
 $('.panel > .panel-nav > .panel-menu:not(".btn-group")').on('click', '.btn', function(){
     var panel = $(this).data('panel');
     var panelType = $(this).data('panel-type');
     _lucid.panel[panel].active = $(this).index();
-    
-    /*
-    $('body')
-        .alterClass('private-pane-active-*','')
-        .addClass('private-pane-active-' + _lucid.panel.private.active);
-    */
 
     $(this).siblings('.btn').removeClass('active');
     $('.panel:not(".' + panelType + '-panel")').removeClass('active');
     
-
     $(this).toggleClass('active');
     $('.panel .' + panelType + '-panel').toggleClass('active');
 });
 
-
 // STREAM PANE Swipe handler
-function swipeStreamPane(direction){
+function swipeStreamPanel(direction){
     if(direction.toLowerCase() == "left"){
-        _lucid.panel.stream.active = (_lucid.panel.stream.active-- > 0) ? _lucid.panel.stream.active : (_lucid.panel.stream.length - 1);
+        _lucid.panel.stream.show.active = (_lucid.panel.stream.show.active-- > 0) ? _lucid.panel.stream.show.active : (_lucid.panel.stream.show.length - 1);
     }else{
-        _lucid.panel.stream.active = (_lucid.panel.stream.active++ < _lucid.panel.stream.length - 1) ? _lucid.panel.stream.active : 0;
+        _lucid.panel.stream.show.active = (_lucid.panel.stream.show.active++ < _lucid.panel.stream.show.length - 1) ? _lucid.panel.stream.show.active : 0;
     }
 
     $('body')
         .alterClass('stream-pane-active-*','')
-        .addClass('stream-pane-active-' + _lucid.panel.stream.active);
+        .addClass('stream-pane-active-' + _lucid.panel.stream.show.active);
 
     $('.stream-pane-menu > .status-icon').removeClass('active')
-    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
+    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.show.active + ')').addClass('active');
 
-    $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane');
+    $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.show.active].toLowerCase() + '-stream-pane');
 }
 
-/* UTILS */
+/* UTILS */////////////////////////////////////////////////////////////////////
 // Alter classes by partial match using "*" wildcard. ie: $('#foo').alterClass('foo-* bar-*', 'foobar')
+//    $('body')
+//        .alterClass('private-pane-active-*','')
+//        .addClass('private-pane-active-' + _lucid.panel.private.active);
 $.fn.alterClass = function ( removals, additions ) {
     var self = this;
 
