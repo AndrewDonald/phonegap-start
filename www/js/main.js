@@ -48,20 +48,18 @@ $(function() {
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
 
-    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
+    $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.show.active + ')').addClass('active');
 
     // STREAM PANES CONTROLLER: Slide through the various Stream Panes
-    $('.content #home').on('click',function(){
+    $('.stream-content #home').on('click',function(){
         // STREAM PANES
-        _lucid.panel.stream.active = (_lucid.panel.stream.active++ < _lucid.panel.stream.length - 1) ? _lucid.panel.stream.active : 0;
+        _lucid.panel.stream.show.active = (_lucid.panel.stream.show.active++ < _lucid.panel.stream.show.length - 1) ? _lucid.panel.stream.show.active : 0;
         $('body')
             .alterClass('stream-pane-active-*','')
-            .addClass('stream-pane-active-' + _lucid.panel.stream.active);
+            .addClass('stream-pane-active-' + _lucid.panel.stream.show.active);
 
-        $('.stream-pane-menu > .status-icon').removeClass('active')
-        $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
-
-        $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane');
+        $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn').removeClass('active')
+        $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.show.active + ')').addClass('active');
 /*
         var offset = $('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane').offset();
 $(".stream-pane-menu-con").animate({
