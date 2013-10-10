@@ -99,8 +99,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
     margin: 5px 0 5px; min-width: 50px; min-height: 50px; padding: 5px 7px; cursor: pointer; font-size: 22px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
-.btn-lucid:hover, .btn-lucid:focus {color: #277; background-color: rgba(50,160,160,0.5);}
-.btn-lucid.active:hover, .btn-lucid.active:focus {background-color: rgba(255,180,0,0.7);}
+.btn-lucid:hover, .btn-lucid:focus {color: #277; /*background-color: rgba(50,160,160,0.5);*/}
+.btn-lucid.active:hover, .btn-lucid.active:focus {/*background-color: rgba(255,180,0,0.7);*/}
     .btn-lucid.tilde {margin-bottom: 3px; height: 50px; font-size: 44px; line-height: 0.45;}
         .btn-lucid.tilde .indicator {top: 0; left: 20px;}
     .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
