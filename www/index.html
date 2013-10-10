@@ -39,8 +39,10 @@
         </div>
         -->
 
-        <!-- HEADER -->
+
+        <!-- HEADER (END) -->
         <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!-- MASTHEAD (START) -->
             <div class="masthead">
                 <div class="main-nav left">
                     <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-align-justify"></span></button>
@@ -54,190 +56,460 @@
                     <button type="button" class="search btn btn-link"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </div>
+            <!-- MASTHEAD (END) -->
 
-            <!-- STREAM CONTROLS PANEL -->
-            <div class="panel panel-lucid stream-controls-panel">
-                <!-- PANEL NAV -->
-                <span class="panel-nav left glyphicon glyphicon-chevron-left"></span>
-                <span class="panel-nav right glyphicon glyphicon-chevron-right"></span>
-                <div class="panel-heading clearfix">
-                    <!--<div class="stream-and-filter-header clearfix">-->
-                        <button class="btn-lucid stream-controls-toggle pull-left">
-                            <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
+            <!-- STREAM SHOW PANEL (START) -->
+            <div class="panel panel-lucid stream-show-panel">
+                
+                <!-- Panel Nav (Start) -->
+                <div class="panel-heading panel-nav">
+                    <!-- STREAM INFO PANEL (START) -->
+                    <div class="info clearfix">
+                        <div class="stream-controls-toggle pull-left">
                             <h1 id="stream-name">LucidLife</h1>
                             <sup class="indicator"><span class="label label-primary">1693</span></sup>
-                        </button>
-                        <button class="btn-lucid filter-controls-toggle pull-right">
+                        </div>
+                        <div class="filter-controls-toggle pull-right">
                             <div><span class="glyphicon glyphicon-filter"></span><span class="filter-info">m&f 25-40 &lt;10km</span></div>
-                            <!--<span class="toggle glyphicon glyphicon-chevron-down"></span>-->
-                        </button>
-                    <!--</div>-->
-                </div>
-                <div class="panel-body">
-                    <div class="stream-controls-carousel panel-carousel carousel slide">
-                        <!-- CAROUSEL INDICATORS -->
-                        <div class="carousel-indicators">
-                            <button class="btn-lucid status-icon glyphicon glyphicon-user active" data-target=".stream-controls-carousel" data-slide-to="0">
-                                <span class="">current</span><sup class="indicator">6</sup>
-                            </button>
-                            <button class="btn-lucid status-icon glyphicon glyphicon-calendar" data-target=".stream-controls-carousel" data-slide-to="1">
-                                <span>history</span><sup class="indicator">3</sup>
-                            </button>
                         </div>
-
-                        <!-- CAROUSEL -->
-                        <div class="carousel-inner">
-                            <!-- CURRENT Pane -->
-                            <div class="item active">
-                                <h4>Auto Associated</h4>
-                                <div class="clearfix">
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName1</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName2</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName3</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName4</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName5</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off on btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName6</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName7</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                    <div class="toggle-on-off btn-group pull-left">
-                                        <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                        <button class="toggle-target btn btn-default clearfix">
-                                            <span class="stream-name pull-left">StreamName8</span>
-                                            <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <br/>
-                                <h4>User Added</h4>
-                                    <div class="panel-body clearfix">
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName9</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                            </button>
-                                        </div>
-                                        <div class="toggle-on-off on btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName10</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                            </button>
-                                        </div>
-                                        <div class="toggle-on-off btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName11</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                <!--
-                                <div class="carousel-caption">
-                                    <h3><span class="btn-lucid status-icon glyphicon glyphicon-user"><sup class="indicator"></span>CURRENT</h3>
-                                </div>
-                                -->
-                            </div>
-
-                            <!-- HISTORY Pane -->
-                            <div class="item">
-                                    <div class="clearfix">
-                                        <div class="toggle-on-off go btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName6</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
-                                            </button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
-                                        </div>
-
-                                        <div class="toggle-on-off go on btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName6</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
-                                            </button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
-                                        </div>
-
-                                        <div class="toggle-on-off go btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName6</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
-                                            </button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
-                                        </div>
-
-                                        <div class="toggle-on-off go on btn-group pull-left">
-                                            <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                                            <button class="toggle-target btn btn-default clearfix">
-                                                <span class="stream-name pull-left">StreamName6</span>
-                                                <span class="badge pull-right"><span class="glyphicon glyphicon-plus"></span></span>
-                                            </button>
-                                            <button class="add btn btn-success"><span class="glyphicon glyphicon-play"></span></button>
-                                        </div>
-                                    </div>
-                                <!-- CAROUSEL CAPTION -->
-                                <!--<div class="carousel-caption"><h3>HISTORY</h3></div>-->
-                            </div>
-                        </div>
-
-                        <!-- CAROUSEL CONTROLS -->
-                        <a class="left carousel-control" href=".stream-controls-carousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href=".stream-controls-carousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
                     </div>
+                    <!-- STREAM INFO PANEL (END) -->
+
+                    <!-- Panel Menu (Start) -->
+                    <div class="panel-menu btn-group pull-left" data-toggle="buttons">
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-eye-open active">
+                            <input type="checkbox" name="stream-types" id="show-all">
+                            <span>toggle</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-user active">
+                            <input type="radio" name="stream-types" id="show-people">
+                            <span>people</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-comment">
+                            <input type="radio" name="stream-types" id="show-chat">
+                            <span>chat</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-picture">
+                            <input type="radio" name="stream-types" id="show-photos">
+                            <span>photos</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-film">
+                            <input type="radio" name="stream-types" id="show-videos">
+                            <span>videos</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                        <label class="btn btn-lucid status-icon glyphicon glyphicon-headphones">
+                            <input type="radio" name="stream-types" id="show-audio">
+                            <span>audio</span>
+                            <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                        </label>
+                    </div>
+                    <!-- Panel Menu (End) -->
+                </div>
+                <!-- Panel Nav (End) -->
+                <div class="panel-body"><!-- empty --></div>
+            </nav>
+            <!-- STREAM SHOW PANEL (END) -->
+        </nav>
+        <!-- HEADER (END) -->
+
+        <!-- FOOTER (START) -->
+        <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <!-- APPS PANEL -->
+            <div class="panel panel-lucid apps-panel">
+                <!-- Panel Nav -->
+                <div class="panel-heading panel-nav">
+                    <!-- Panel Left/Right -->
+                    <span class="panel-nav left glyphicon glyphicon-chevron-left scroll-menu"></span>
+                    <span class="panel-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
+                    <!-- Panel Menu -->
+                    <div class="panel-menu">
+                        <button id="apps-stream-panel" class="btn btn-lucid status-icon tilde" data-panel="apps" data-panel-type="stream">
+                            ~<span>stream</span>
+                            <sup class="indicator"><span class="label label-primary">3</span></sup>
+                        </button>
+                        <button id="apps-filter-panel" class="btn btn-lucid status-icon glyphicon glyphicon-filter" data-panel="apps" data-panel-type="filter">
+                            <span>filter</span>
+                            <sup class="indicator"><span class="label label-primary">7</span></sup>
+                        </button>
+                        <button id="apps-connections-pane" class="btn btn-lucid status-icon glyphicon glyphicon-book" data-panel="apps" data-panel-type="people">
+                            <span>people</span>
+                            <sup class="indicator"><span class="label label-primary">213</span></sup>
+                        </button>
+                        <button id="apps-chat-panel" class="btn btn-lucid status-icon glyphicon glyphicon-comment" data-panel="apps" data-panel-type="chat">
+                            <span>chat</span>
+                            <sup class="indicator"><span class="label label-primary">105</span></sup>
+                        </button>
+                        <button id="apps-polls-panel" class="btn btn-lucid status-icon glyphicon glyphicon-question-sign" data-panel="apps" data-panel-type="polls">
+                            <span>polls</span>
+                            <sup class="indicator"><span class="label label-primary">3</span></sup>
+                        </button>
+                        <button id="apps-surveys-panel" class="btn btn-lucid status-icon glyphicon glyphicon-list-alt" data-panel="apps" data-panel-type="surverys">
+                            <span>surveys</span>
+                            <sup class="indicator"><span class="label label-primary">1</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-gift" data-panel="apps" data-panel-type="promos">
+                            <span>promos</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-tower" data-panel="apps" data-panel-type="games">
+                            <span>games</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-bookmark" data-panel="apps" data-panel-type="favorites">
+                            <span>favorites</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-phone-alt" data-panel="apps" data-panel-type="app1">
+                            <span>app1</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-plane" data-panel="apps" data-panel-type="app2">
+                            <span>app2</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-music" data-panel="apps" data-panel-type="app3">
+                            <span>app3</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-briefcase" data-panel="apps" data-panel-type="app4">
+                            <span>app4</span>
+                            <sup class="indicator"><span class="label label-primary">5</span></sup>
+                        </button>
+                    </div> 
+                </div>
+                <!-- APPS PANEL-BODY (START) -->
+                <div class="panel-body">
+                    
+                    <!-- PEOPLE PANEL (START)-->
+                    <div class="panel people-panel">
+                        <!-- Panel Nav -->
+                        <div class="panel-heading panel-nav">
+                            <!-- Panel Left/Right -->
+                            <span class="panel-nav left glyphicon glyphicon-chevron-left"></span>
+                            <span class="panel-nav right glyphicon glyphicon-chevron-right"></span>
+                            <!-- Panel Menu -->
+                            <div class="panel-menu">
+                                <button id="stream-panel" class="btn-lucid status-icon glyphicon glyphicon-heart">~<span>connected</span><sup class="indicator"><span class="label label-primary">30</span></sup></button>
+                                <button id="filter-private-panel" class="btn-lucid status-icon glyphicon glyphicon-heart-empty"><span>requests</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+                                <button id="connections-private-panel" class="btn-lucid status-icon glyphicon glyphicon-ban-circle"><span>blocked</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                            </div> 
+                        </div>
+                        <!-- Panel-Body (Start) -->
+                        <div class="panel-body">
+                            Connections Stuff goes here
+                            <div class="_user-badge">
+                                <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                                <div class="user-bio">
+                                    Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                                </div> 
+                            </div>
+                             <div class="_user-badge">
+                                <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                                <div class="user-bio">
+                                    Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                                </div> 
+                            </div>
+                             <div class="_user-badge">
+                                <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                                <div class="user-bio">
+                                    Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                                </div> 
+                            </div>
+                             <div class="_user-badge">
+                                <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
+                                <div class="user-bio">
+                                    Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- Panel-Body (End) -->
+                    </div>
+                    <!-- PEOPLE PANEL (END)-->
+
+                    <!-- STREAM PANEL (START)-->
+                    <div class="panel panel-carousel stream-panel">
+                        <!-- Panel Nav -->
+                        <div class="panel-heading panel-nav">
+                            <!-- Panel Left/Right -->
+                            <span class="panel-nav left glyphicon glyphicon-chevron-left"></span>
+                            <span class="panel-nav right glyphicon glyphicon-chevron-right"></span>
+                            <!-- Panel Menu -->
+                            <div class="panel-menu"><!-- Carousel Indicators --></div> 
+                        </div>
+                        <!-- Panel-Body (Start) -->
+                        <div class="panel-body">
+                            <!-- Carousel (Start) -->
+                            <div class="stream-controls-carousel panel-carousel carousel slide">
+                                <!-- Carousel Indicators (Start) -->
+                                <div class="carousel-indicators">
+                                    <button class="btn-lucid status-icon glyphicon glyphicon-user active" data-target=".stream-controls-carousel" data-slide-to="0">
+                                        <span class="">current</span>
+                                        <!--<sup class="indicator">6</sup>-->
+                                    </button>
+                                    <button class="btn-lucid status-icon glyphicon glyphicon-calendar" data-target=".stream-controls-carousel" data-slide-to="1">
+                                        <span>history</span>
+                                        <!--<sup class="indicator">3</sup>-->
+                                    </button>
+                                </div>
+                                <!-- Carousel Indicators (Start) -->
+
+                                <!-- Carousel Panes (Start)-->
+                                <div class="carousel-inner">
+                                    <!-- CURRENT Pane (Start)-->
+                                    <div class="item active">
+                                        <h4>~Auto Associated</h4>
+                                        <div class="clearfix">
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName1</span>
+                                                    <span class="badge pull-right">176</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName2</span>
+                                                    <span class="badge pull-right">112</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName3</span>
+                                                    <span class="badge pull-right">87</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName4</span>
+                                                    <span class="badge pull-right">61</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName5</span>
+                                                    <span class="badge pull-right">16</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off on btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName6</span>
+                                                    <span class="badge pull-right">11</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName7</span>
+                                                    <span class="badge pull-right">5</span>
+                                                </button>
+                                            </div>
+                                            <div class="toggle-on-off btn-group pull-left">
+                                                <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                <button class="toggle-target btn btn-default clearfix">
+                                                    <span class="name stream-name pull-left">StreamName8</span>
+                                                    <span class="badge pull-right">3</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <h4>~User Added</h4>
+                                            <div class="panel-body clearfix">
+                                                <div class="toggle-on-off on btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName9</span>
+                                                        <span class="badge pull-right">96</span>
+                                                    </button>
+                                                </div>
+                                                <div class="toggle-on-off on btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName10</span>
+                                                        <span class="badge pull-right">39</span>
+                                                    </button>
+                                                </div>
+                                                <div class="toggle-on-off btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName11</span>
+                                                        <span class="badge pull-right">23</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        <!--
+                                        <div class="carousel-caption">
+                                            <h3><span class="btn-lucid status-icon glyphicon glyphicon-user"><sup class="indicator"></span>CURRENT</h3>
+                                        </div>
+                                        -->
+                                    </div>
+                                    <!-- CURRENT Pane (End)-->
+
+                                    <!-- HISTORY Pane (Start) -->
+                                    <div class="item">
+                                            <div class="clearfix">
+                                                <div class="toggle-on-off go btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName6</span>
+                                                        <span class="badge pull-right">46</span>
+                                                    </button>
+                                                    <button class="add btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                                                </div>
+
+                                                <div class="toggle-on-off go on btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName6</span>
+                                                        <span class="badge pull-right">85</span>
+                                                    </button>
+                                                    <button class="add btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                                                </div>
+
+                                                <div class="toggle-on-off go btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName6</span>
+                                                        <span class="badge pull-right">130</span>
+                                                    </button>
+                                                    <button class="add btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                                                </div>
+
+                                                <div class="toggle-on-off go on btn-group pull-left">
+                                                    <button class="remove btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                                                    <button class="toggle-target btn btn-default clearfix">
+                                                        <span class="name stream-name pull-left">StreamName6</span>
+                                                        <span class="badge pull-right">8</span>
+                                                    </button>
+                                                    <button class="add btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                                                </div>
+                                            </div>
+                                        <!-- Carousel Caption -->
+                                        <!--<div class="carousel-caption"><h3>HISTORY</h3></div>-->
+                                    </div>
+                                    <!-- HISTORY Pane (End) -->
+                                </div>
+                                <!-- Carousel Panes (End)-->
+
+                                <!-- Carousel Controls (Start) -->
+                                <a class="left carousel-control" href=".stream-controls-carousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href=".stream-controls-carousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                                <!-- Carousel Controls (End) -->
+                            </div>
+                            <!-- Carousel (End) -->
+                        </div>
+                        <!-- Panel-Body (End) -->
+                    </div>
+                    <!-- STREAM PANEL (END) -->
+                </div>
+                <!-- APPS PANEL-BODY (END) -->
+            </div>
+            <!-- APPS PANEL (END) -->
+
+            <!-- GLOBAL USER INPUT (START) -->
+            <div class="global-user-input">
+                <div id="send-message-con">
+                    <form class="send-message-form navbar-form clearfix">
+                        <div class="send-message-entry form-group pull-left">
+                            <input id="send-message" type="text" class="form-control" placeholder="enter message">
+                        </div>
+                        <div class="send-message-controls btn-group pull-right">
+                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
+                            <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <!-- GLOBAL USER INPUT (END) -->
+        </nav>
+        <!-- FOOTER (END) -->
+       
+        <!-- BODY (CONTENT) -->
+        <div class="content">
+            <div id="home">
+                <h1>Main Content</h1>
+                <p><b>START</b></p>
+                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
+                <p><b>END</b></p>
+            </div>
+        </div>
 
-            <!-- PUBLIC PANEL -->
-            <div class="public-panel">
+        <!-- SCRIPTS -->
+        <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/touchswipe.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
+
+
+<!--
+                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
+                    <div class="wrapper main-area clearfix pull-left">
+                        <div class="badge-main pull-left">
+                            <div class="id-wrapper">
+                                <div data-userid="2" title="Andrew Donald, M, 34, 0km, 5d, ~All" class="photo"><img src="/img/fetch.php?k=profile_2-b.jpg" class="user-photo"></div>
+                                <div data-userid="2" title="connect" class="info">
+                                    <div class="name">Andrew Donald</div>
+                                    <div data-time-created="1380315132000" class="time">6d</div>
+                                    <div class="profile-info">
+                                        <div class="account-info">
+                                            <span class="last-login-date">[last login date]<sup>(login)</sup></span>
+                                            <span class="join-date">[join date]<sup>(joined)</sup></span>
+                                        </div>
+                                        <div class="personal-info">
+                                            <span class="gender">M </span>
+                                            <span class="age">34 </span>
+                                            <span class="distance">0km</span>
+                                        </div>
+                                        <div class="location-info">
+                                            <span class="city">[city], </span>
+                                            <span class="country">[country].</span>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="email">[email]</span>
+                                            <span class="phone">[phone]</span>
+                                        </div>
+                                        <div class="connections-info">
+                                        <span class="stream-info">
+                                            <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
+                                        </span>
+                                        <span class="buddy-info">
+                                            <span class="buddies">[buddies]</span> <span class="buddies-common">/ [buddies common]</span>
+                                        </span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <a data-page="#STREAM~All" data-stream="All" class="stream">All</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+-->
+
+<!-- PUBLIC PANEL -->
+            <div class="public-panel" style="display: none !important;">
                 <!-- PUBLIC PANEL MENU -->
                 <!-- ****** TBD ****** -->
 
@@ -285,156 +557,3 @@
                     </div>
                 </div>
             </div>
-
-            
-
-            <div class="stream-pane-menu-con">
-            
-                <span class="panel-nav left glyphicon glyphicon-chevron-left"></span>
-                <span class="panel-nav right glyphicon glyphicon-chevron-right"></span>
-            
-                <div class="stream-pane-menu">
-                    <!--<div class="status-icon-hilighter"></div>-->
-                    <button id="people-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><span>people</span><sup class="indicator"><span class="label label-primary">213</span></sup></button>
-                    <button id="all-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><span>all</span><sup class="indicator"><span class="label label-primary">105</span></sup></button>
-                    <button id="chat-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><span>chat</span><sup class="indicator"><span class="label label-primary">46</span></sup></button>
-                    <button id="photos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><span>photos</span><sup class="indicator"><span class="label label-primary">37</span></sup></button>
-                    <button id="videos-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><span>videos</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
-                    <button id="audio-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><span>audio</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
-
-                    <button id="people2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-user"><span>people2</span><sup class="indicator"><span class="label label-primary">213</span></sup></button>
-                    <button id="all2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-asterisk "><span>all2</span><sup class="indicator"><span class="label label-primary">105</span></sup></button>
-                    <button id="chat2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><span>chat2</span><sup class="indicator"><span class="label label-primary">46</span></sup></button>
-                    <button id="photos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-picture"><span>photos2</span><sup class="indicator"><span class="label label-primary">37</span></sup></button>
-                    <button id="videos2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-film"><span>videos2</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
-                    <button id="audio2-stream-pane" class="btn-lucid status-icon glyphicon glyphicon-headphones"><span>audio2</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- FOOTER -->
-        <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <div class="private-pane-menu-con">
-                <span class="private-pane-menu">
-                    <!--<div class="status-icon-hilighter"></div>-->
-                    <button id="connections-private-pane" class="btn-lucid status-icon glyphicon glyphicon-book"><sup class="indicator"><span class="label label-primary">17</span></sup></button>
-                    <button id="chat-private-pane" class="btn-lucid status-icon glyphicon glyphicon-comment"><sup class="indicator"><span class="label label-primary">17</span></sup></button>
-                 </span> 
-            </div>
-            <div class="private-panels">
-
-                <!-- Connections Book:  See a list of people from your connections book who are online now -->
-                <!-- Contact Summary:   See who has contacted, viewed, messaged or requested to be friends with you recently -->
-                <!-- Private App/Games: Play games against other person (1:1) -->
-                <!-- Private Chat:      Privately chat with someone -->
-                <!-- User Badgeadge     See more info on a Connection -->
-                <div class="_user-badge">
-                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
-                    <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
-                    </div> 
-                </div>
-                 <div class="_user-badge">
-                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
-                    <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
-                    </div> 
-                </div>
-                 <div class="_user-badge">
-                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
-                    <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
-                    </div> 
-                </div>
-                 <div class="_user-badge">
-                    <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
-                    <div class="user-bio">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius.
-                    </div> 
-                </div>
-<!--
-                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
-                    <div class="wrapper main-area clearfix pull-left">
-                        <div class="badge-main pull-left">
-                            <div class="id-wrapper">
-                                <div data-userid="2" title="Andrew Donald, M, 34, 0km, 5d, ~All" class="photo"><img src="/img/fetch.php?k=profile_2-b.jpg" class="user-photo"></div>
-                                <div data-userid="2" title="connect" class="info">
-                                    <div class="name">Andrew Donald</div>
-                                    <div data-time-created="1380315132000" class="time">6d</div>
-                                    <div class="profile-info">
-                                        <div class="account-info">
-                                            <span class="last-login-date">[last login date]<sup>(login)</sup></span>
-                                            <span class="join-date">[join date]<sup>(joined)</sup></span>
-                                        </div>
-                                        <div class="personal-info">
-                                            <span class="gender">M </span>
-                                            <span class="age">34 </span>
-                                            <span class="distance">0km</span>
-                                        </div>
-                                        <div class="location-info">
-                                            <span class="city">[city], </span>
-                                            <span class="country">[country].</span>
-                                        </div>
-                                        <div class="contact-info">
-                                            <span class="email">[email]</span>
-                                            <span class="phone">[phone]</span>
-                                        </div>
-                                        <div class="connections-info">
-                                        <span class="stream-info">
-                                            <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
-                                        </span>
-                                        <span class="buddy-info">
-                                            <span class="buddies">[buddies]</span> <span class="buddies-common">/ [buddies common]</span>
-                                        </span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <a data-page="#STREAM~All" data-stream="All" class="stream">All</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
--->
-
-            </div>
-            <div class="global-user-input">
-                <div id="send-message-con">
-                    <form class="send-message-form navbar-form clearfix">
-                        <div class="send-message-entry form-group pull-left">
-                            <input id="send-message" type="text" class="form-control" placeholder="enter message">
-                        </div>
-                        <div class="send-message-controls btn-group pull-right">
-                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
-                            <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
-       
-        <!-- BODY (CONTENT) -->
-        <div class="content">
-            <div id="home">
-                <h1>Main Content</h1>
-                <p><b>START</b></p>
-                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
-                <p><b>END</b></p>
-            </div>
-        </div>
-
-        
-        <!-- SCRIPTS -->
-        <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/touchswipe.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-    </body>
-</html>
-

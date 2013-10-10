@@ -5,12 +5,12 @@ function startApp(){
 }
 */
 
-var _ll = {};
-_ll.pane = {};
-_ll.pane.stream = ["People", "All", "Chat", "Photos", "Videos", "Audio","People2", "All2", "Chat2", "Photos2", "Videos2", "Audio2"];
-_ll.pane.stream.active = 0;
-_ll.pane.private = ["Connections", "Chat"];
-_ll.pane.private.active = 0;
+var _lucid = {};
+_lucid.panel = {};
+_lucid.panel.stream = ["people", "chat", "photos", "videos", "audio"];
+_lucid.panel.stream.active = 0;
+_lucid.panel.apps = ["stream","filter","people", "chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
+_lucid.panel.apps.active = 0;
 
 $(function() {
     /*
@@ -47,46 +47,45 @@ $(function() {
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
 
-    // DISPLAY DEFAULT STREAM & PERSONAL PANES 
-    $('body')
-        .addClass('stream-pane-active-' + _ll.pane.stream.active)
-        .addClass('private-pane-active-' + _ll.pane.private.active);
-
-    $('.stream-pane-menu > .status-icon:eq(' + _ll.pane.stream.active + ')').addClass('active');
+    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
 
     // STREAM PANES CONTROLLER: Slide through the various Stream Panes
     $('.content #home').on('click',function(){
         // STREAM PANES
-        _ll.pane.stream.active = (_ll.pane.stream.active++ < _ll.pane.stream.length - 1) ? _ll.pane.stream.active : 0;
+        _lucid.panel.stream.active = (_lucid.panel.stream.active++ < _lucid.panel.stream.length - 1) ? _lucid.panel.stream.active : 0;
         $('body')
             .alterClass('stream-pane-active-*','')
-            .addClass('stream-pane-active-' + _ll.pane.stream.active);
+            .addClass('stream-pane-active-' + _lucid.panel.stream.active);
 
         $('.stream-pane-menu > .status-icon').removeClass('active')
-        $('.stream-pane-menu > .status-icon:eq(' + _ll.pane.stream.active + ')').addClass('active');
+        $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
 
-        $(".stream-pane-menu-con").scrollTo('#' + _ll.pane.stream[_ll.pane.stream.active].toLowerCase() + '-stream-pane');
+        $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane');
 /*
-        var offset = $('#' + _ll.pane.stream[_ll.pane.stream.active].toLowerCase() + '-stream-pane').offset();
+        var offset = $('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane').offset();
 $(".stream-pane-menu-con").animate({
     scrollTop: offset.top,
     scrollLeft: offset.left
 });
 */
+/*
         // PRIVATE PANES
-        _ll.pane.private.active = (_ll.pane.private.active++ < _ll.pane.private.length - 1) ? _ll.pane.private.active : 0;
+        _lucid.panel.private.active = (_lucid.panel.private.active++ < _lucid.panel.private.length - 1) ? _lucid.panel.private.active : 0;
         $('body')
             .alterClass('private-pane-active-*','')
-            .addClass('private-pane-active-' + _ll.pane.private.active);
+            .addClass('private-pane-active-' + _lucid.panel.private.active);
 
         $('.private-pane-menu > .status-icon').removeClass('active')
-        $('.private-pane-menu > .status-icon:eq(' + _ll.pane.private.active + ')').addClass('active');
+        $('.private-pane-menu > .status-icon:eq(' + _lucid.panel.private.active + ')').addClass('active');
+*/
+
     });
+
 });
 
 //* EVENT HANDLERS *//
 // STREAM CONTROLS BUTTON
-$('.stream-controls-toggle').on('click',function(){
+$('.stream-private-pane').on('click',function(){
     $(this).toggleClass('active');
     $('.stream-controls-carousel').toggle();
     $('body').toggleClass('stream-controls-panel-expanded');
@@ -134,43 +133,52 @@ $('.toggle-on-off').on('click',function(){
 
 // STREAM PANEL MENU
 $('.stream-pane-menu > .btn-lucid').on('click',function(){
-    _ll.pane.stream.active = $(this).index();
+    _lucid.panel.stream.active = $(this).index();
     $('body')
         .alterClass('stream-pane-active-*','')
-        .addClass('stream-pane-active-' + _ll.pane.stream.active);
+        .addClass('stream-pane-active-' + _lucid.panel.stream.active);
 
     $('.stream-pane-menu > .status-icon').removeClass('active');
-    $('.stream-pane-menu > .status-icon:eq(' + _ll.pane.stream.active + ')').addClass('active');
+    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
 });
 
-// PRIVATE PANEL MENU
-$('.private-pane-menu > .btn-lucid').on('click',function(){
-    _ll.pane.private.active = $(this).index();
+// PANEL MENU
+$('.panel > .panel-nav > .panel-menu:not(".btn-group")').on('click', '.btn', function(){
+    var panel = $(this).data('panel');
+    var panelType = $(this).data('panel-type');
+    _lucid.panel[panel].active = $(this).index();
+    
+    /*
     $('body')
         .alterClass('private-pane-active-*','')
-        .addClass('private-pane-active-' + _ll.pane.private.active);
+        .addClass('private-pane-active-' + _lucid.panel.private.active);
+    */
 
-    $('.private-pane-menu > .status-icon').removeClass('active');
-    $('.private-pane-menu > .status-icon:eq(' + _ll.pane.private.active + ')').addClass('active');
+    $(this).siblings('.btn').removeClass('active');
+    $('.panel:not(".' + panelType + '-panel")').removeClass('active');
+    
+
+    $(this).toggleClass('active');
+    $('.panel .' + panelType + '-panel').toggleClass('active');
 });
 
 
 // STREAM PANE Swipe handler
 function swipeStreamPane(direction){
     if(direction.toLowerCase() == "left"){
-        _ll.pane.stream.active = (_ll.pane.stream.active-- > 0) ? _ll.pane.stream.active : (_ll.pane.stream.length - 1);
+        _lucid.panel.stream.active = (_lucid.panel.stream.active-- > 0) ? _lucid.panel.stream.active : (_lucid.panel.stream.length - 1);
     }else{
-        _ll.pane.stream.active = (_ll.pane.stream.active++ < _ll.pane.stream.length - 1) ? _ll.pane.stream.active : 0;
+        _lucid.panel.stream.active = (_lucid.panel.stream.active++ < _lucid.panel.stream.length - 1) ? _lucid.panel.stream.active : 0;
     }
 
     $('body')
         .alterClass('stream-pane-active-*','')
-        .addClass('stream-pane-active-' + _ll.pane.stream.active);
+        .addClass('stream-pane-active-' + _lucid.panel.stream.active);
 
     $('.stream-pane-menu > .status-icon').removeClass('active')
-    $('.stream-pane-menu > .status-icon:eq(' + _ll.pane.stream.active + ')').addClass('active');
+    $('.stream-pane-menu > .status-icon:eq(' + _lucid.panel.stream.active + ')').addClass('active');
 
-    $(".stream-pane-menu-con").scrollTo('#' + _ll.pane.stream[_ll.pane.stream.active].toLowerCase() + '-stream-pane');
+    $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane');
 }
 
 /* UTILS */
