@@ -72,8 +72,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
             .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active {background-color: rgba(255,180,0,0.6); color: #fff; border: 2px solid #fff;}
                 .panel .panel-heading.panel-nav .panel-menu.btn-group > label > span {display: none;}
     .panel.panel-lucid {margin: 0; color: #227777; background-image: none; background-repeat: none; background-color: transparent; border: none; border-top: 1px solid #FFFFFF; border-radius: 0;} 
-        .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.8); border: none; border-radius: 0; overflow-x: auto;}
-        .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background: rgba(255, 255, 255, 0.7); overflow: auto;}
+        .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.95); border: none; border-radius: 0; overflow-x: auto;}
+        .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background: rgba(255, 255, 255, 0.95); overflow: auto;}
             .panel.panel-lucid > .panel-body > .carousel {display: none;}
             .panel.apps-panel > .panel-body .panel .panel-body {padding: 0;}
     .panel.apps-panel > .panel-body > .panel {display: none; background: none;}
