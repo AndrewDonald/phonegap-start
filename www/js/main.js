@@ -8,9 +8,9 @@ function startApp(){
 var _lucid                      = {};
 _lucid.panel                    = {};
 _lucid.panel.stream             = {};
-_lucid.panel.stream.show        = ["people", "chat", "photos", "videos", "audio"];
+_lucid.panel.stream.show        = ["all","people","chat","photos","videos","audio","stream","filter","profile"];
 _lucid.panel.stream.show.active = 0;
-_lucid.panel.apps               = ["stream","filter","people", "chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
+_lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
 _lucid.panel.apps.active        = 0;
 
 $(function() {

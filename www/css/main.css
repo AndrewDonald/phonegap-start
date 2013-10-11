@@ -42,12 +42,12 @@ nav#footer {box-shadow: 0 -1px 5px #333;}
 .stream-name:before {content: "~";}
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
-.divider {color: #999; font-weight: bold; margin-right: -2px;}
+/*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
 .stream-content {position: absolute; top: 0; left: 0; width: 100%; padding: 90px 10px 100px; background-color: rgba(255,255,255,0.25);}
 body.public-panel-peek .stream-content {padding-top: 145px;}
 body.public-panel-active .stream-content {padding-top: 345px;}
 
-.label {box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75); border: 1px solid #fff; border-radius: 5px;}
+.label-lucid {color: #fff; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
@@ -66,7 +66,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .panel-nav.left, .panel-nav.right {position: absolute; top: 20px; z-index: 100; color: #277; opacity: 0.6; text-shadow: 0 0 3px #fff;}
     .panel-nav.left {left: 0;}
     .panel-nav.right {right: 0;}
-    .panel.panel-lucid .panel-nav.left, .panel .panel-nav.right {display: none; position: absolute; top: 0; z-index: 0; height: 100%; padding: 22px 0; font-size: 20px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; /*background-color: rgba(255, 255, 255, 0.5)*/}
+    .panel.panel-lucid .panel-nav.left, .panel .panel-nav.right {display: none; position: absolute; top: 0; z-index: 101; height: 100%; padding: 22px 0; font-size: 20px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; /*background-color: rgba(255, 255, 255, 0.5)*/}
     .panel.panel-lucid .panel-nav.left.scroll-menu, .panel.panel-lucid .panel-nav.right.scroll-menu {display: block;}
     .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
          .panel .panel-heading.panel-nav {position: relative; white-space: nowrap; text-align: center;}
@@ -74,11 +74,16 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
             .panel .panel-heading.panel-nav .panel-menu > button:first-child {margin-left: 20px;}
             .panel .panel-heading.panel-nav .panel-menu > button:last-child {margin-right: 20px;}
         .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;}
-            .panel .panel-heading.panel-nav .panel-menu.btn-group > label {margin-bottom: 1px; margin-top: 0; min-height: 0; width: 16.75%; font-size: 18px; border: none; border-radius: 5px;}
-            .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active:hover,
-            .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active:focus {background-color: rgba(255,180,0,0.7);}
-            .panel .panel-heading.panel-nav .panel-menu.btn-group > label.active {background-color: rgba(255,180,0,0.6); color: #fff; border: 2px solid #fff;}
-                .panel .panel-heading.panel-nav .panel-menu.btn-group > label > span {display: none;}
+        .panel .panel-heading.panel-nav .panel-menu .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}
+        /*
+            .panel .panel-heading.panel-nav .panel-menu > label {margin-bottom: 1px; margin-top: 0; min-height: 0; width: 16.75%; border: none; border-radius: 5px;}
+            /*.panel .panel-heading.panel-nav .panel-menu > label:first-child {color: #999};*/
+        /*
+            .panel .panel-heading.panel-nav .panel-menu > label.active:hover,
+            .panel .panel-heading.panel-nav .panel-menu > label.active:focus {background-color: rgba(255,180,0,0.7);}
+            .panel .panel-heading.panel-nav .panel-menu > label.active {background-color: rgba(255,180,0,0.6); color: #fff; border: 2px solid #fff;}
+                
+        */
     .panel.panel-lucid {margin: 0; color: #227777; background-image: none; background-repeat: none; background-color: transparent; border: none; border-top: 1px solid #FFFFFF; border-radius: 0;} 
         .panel.panel-lucid > .panel-heading {padding: 0; background: rgba(160, 220, 230, 0.95); border: none; border-radius: 0; overflow-x: auto;}
         .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background: rgba(255, 255, 255, 0.95); overflow: auto;}
@@ -106,20 +111,21 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-    margin: 5px 0 5px; min-width: 50px; min-height: 50px; padding: 5px 7px; cursor: pointer; font-size: 22px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px 5px 5px 5px;}
+    position: relative; margin: 6px 3px 1px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px;}
 .btn-lucid:hover, .btn-lucid:focus {color: #277; /*background-color: rgba(50,160,160,0.5);*/}
 .btn-lucid.active:hover, .btn-lucid.active:focus {/*background-color: rgba(255,180,0,0.7);*/}
-    .btn-lucid.tilde {margin-bottom: 3px; height: 50px; font-size: 44px; line-height: 0.45;}
+    .btn-lucid.tilde {margin-bottom: -1px; font-size: 44px; line-height: 0.57;}
         .btn-lucid.tilde .indicator {top: 0; left: 20px;}
     .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
     .stream-controls-panel > .panel-heading .btn-lucid .glyphicon {font-size: 14px; margin-right: 2px;}  
+    .btn-lucid img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 4px;}
     .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-        color: #fff; background-color: rgba(255,180,0,0.6); border-color: #fff; border-width: 2px; padding: 4px 6px;}
-        .btn-lucid > span {display: block; font-size: 12px; font-family: Arial; margin-top: 5px;}
+        color: #fff; background-color: rgba(255,180,0,0.6); border-color: #fff; border-width: 2px;}
+        .btn-lucid label {display: block; font-size: 12px; font-family: Arial; font-weight: normal; margin-top: 5px;}
+        .btn-lucid label.name {bottom: 0px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%; z-index: 1;}
+    .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
 
-    .btn-lucid .indicator {position: absolute; top: -6px; left: 0px;}
-    .btn-lucid.active .indicator {display: block;}
     
 nav#header {}
     nav#header > .masthead {position: relative; background-color: #224499;}
@@ -127,7 +133,7 @@ nav#header {}
         nav#header > .masthead .main-nav.left {left: 5px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
             nav#header > .masthead .main-nav .btn {color: #f90; font-size: 30px; padding: 0; text-shadow: 1px 1px 0px #fff;}
-        nav#header > .masthead .monarch {height: 35px; margin: 0 -5px 0 0; width: 50px;}
+        nav#header > .masthead .monarch {height: 50px; margin: 0 -5px 0 0; width: 50px;}
         nav#header > .masthead .logo {height: 42px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
         

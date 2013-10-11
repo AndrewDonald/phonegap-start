@@ -76,36 +76,51 @@
                     <!-- STREAM INFO PANEL (END) -->
 
                     <!-- Panel Menu (Start) -->
-                    <div class="panel-menu btn-group pull-left" data-toggle="buttons">
-                        <label class="btn-alerts btn btn-lucid glyphicon glyphicon-eye-open">
-                            <span>alerts</span>
+                    <div class="panel-menu pull-left" data-toggle="buttons">
+                        <button class="btn btn-lucid glyphicon glyphicon-asterisk">
+                            <input type="radio" name="stream-types" id="show-all">
+                            <label>all</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-user active">
+                        </button>
+                        <button class="btn btn-lucid glyphicon glyphicon-user active">
                             <input type="radio" name="stream-types" id="show-people">
-                            <span>people</span>
+                            <label>people</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-comment">
+                        </button>
+                        <button class="btn btn-lucid glyphicon glyphicon-comment">
                             <input type="radio" name="stream-types" id="show-chat">
-                            <span>chat</span>
+                            <label>chat</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-picture">
+                        </button>
+                        <button class="btn btn-lucid glyphicon glyphicon-picture">
                             <input type="radio" name="stream-types" id="show-photos">
-                            <span>photos</span>
+                            <label>photos</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-film">
+                        </button>
+                        <button class="btn btn-lucid glyphicon glyphicon-film">
                             <input type="radio" name="stream-types" id="show-videos">
-                            <span>videos</span>
+                            <label>videos</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
-                        <label class="btn btn-lucid status-icon glyphicon glyphicon-headphones">
+                        </button>
+                        <button class="btn btn-lucid glyphicon glyphicon-headphones">
                             <input type="radio" name="stream-types" id="show-audio">
-                            <span>audio</span>
+                            <label>audio</label>
                             <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                        </label>
+                        </button>
+                        <div class="divider"></div>
+                        <button id="apps-stream-panel" class="btn btn-lucid tilde" data-panel="apps" data-panel-type="stream">
+                            <input type="checkbox" name="stream-types" id="show-stream">
+                            ~<label>stream</label>
+                        </button>
+                        <button id="apps-filter-panel" class="btn btn-lucid glyphicon glyphicon-filter" data-panel="apps" data-panel-type="filter">
+                            <input type="checkbox" name="stream-types" id="show-filter">
+                            <label>filter</label>
+                        </button>
+                        <div class="divider"></div>
+                        <button id="apps-connections-pane" class="btn btn-lucid glyphicon glyphicon-user" data-panel="apps" data-panel-type="profile">
+                            <input type="checkbox" name="stream-types" id="show-profile">
+                            <label>profile</label>
+                        </button>
                     </div>
                     <!-- Panel Menu (End) -->
                 </div>
@@ -145,58 +160,68 @@
                     <span class="panel-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
                     <!-- Panel Menu -->
                     <div class="panel-menu">
-                        <button id="apps-stream-panel" class="btn btn-lucid status-icon tilde" data-panel="apps" data-panel-type="stream">
-                            ~<span>stream</span>
-                            <sup class="indicator"><span class="label label-primary">3</span></sup>
+                        <button id="apps-polls-panel" class="btn btn-lucid" data-user="1">
+                            <img src="img/profile/profile-1.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <span class="quantity">3</span>
+                                </div>
+                            </sup>
+                            <label class="name">Mary</label>
                         </button>
-                        <button id="apps-filter-panel" class="btn btn-lucid status-icon glyphicon glyphicon-filter" data-panel="apps" data-panel-type="filter">
-                            <span>filter</span>
-                            <sup class="indicator"><span class="label label-primary">7</span></sup>
+                        <button id="apps-surveys-panel" class="btn btn-lucid" data-user="2">
+                            <img src="img/profile/profile-2.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="quantity"></span>
+                                </div>
+                            </sup>
+                            <label class="name">Rachael</label>
                         </button>
-                        <button id="apps-connections-pane" class="btn btn-lucid status-icon glyphicon glyphicon-book" data-panel="apps" data-panel-type="people">
-                            <span>people</span>
-                            <sup class="indicator"><span class="label label-primary">213</span></sup>
+                        <button id="apps-promos-panel" class="btn btn-lucid" data-user="5">
+                            <img src="img/profile/profile-5.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-file"></span>
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <span class="quantity">3</span>
+                                </div>
+                            </sup>
+                            <label class="name">Ted</label>
                         </button>
-                        <button id="apps-chat-panel" class="btn btn-lucid status-icon glyphicon glyphicon-comment" data-panel="apps" data-panel-type="chat">
-                            <span>chat</span>
-                            <sup class="indicator"><span class="label label-primary">105</span></sup>
+                        <button id="apps-promos-panel" class="btn btn-lucid" data-user="3">
+                            <img src="img/profile/profile-3.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                    <span class="quantity"></span>
+                                </div>
+                            </sup>
+                            <label class="name">Susanna</label>
                         </button>
-                        <button id="apps-polls-panel" class="btn btn-lucid status-icon glyphicon glyphicon-question-sign" data-panel="apps" data-panel-type="polls">
-                            <span>polls</span>
-                            <sup class="indicator"><span class="label label-primary">3</span></sup>
+                        <button id="apps-promos-panel" class="btn btn-lucid" data-user="4">
+                            <img src="img/profile/profile-4.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="quantity"></span>
+                                </div>
+                            </sup>
+                            <label class="name">Elizabeth</label>
                         </button>
-                        <button id="apps-surveys-panel" class="btn btn-lucid status-icon glyphicon glyphicon-list-alt" data-panel="apps" data-panel-type="surverys">
-                            <span>surveys</span>
-                            <sup class="indicator"><span class="label label-primary">1</span></sup>
+                        <button id="apps-promos-panel" class="btn btn-lucid" data-user="6">
+                            <img src="img/profile/profile-6.jpg">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-tower"></span>
+                                    <span class="quantity"></span>
+                                </div>
+                            </sup>
+                            <label class="name">Jeremy</label>
                         </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-gift" data-panel="apps" data-panel-type="promos">
-                            <span>promos</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-tower" data-panel="apps" data-panel-type="games">
-                            <span>games</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-heart" data-panel="apps" data-panel-type="favorites">
-                            <span>favs</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-phone-alt" data-panel="apps" data-panel-type="app1">
-                            <span>app1</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-plane" data-panel="apps" data-panel-type="app2">
-                            <span>app2</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-music" data-panel="apps" data-panel-type="app3">
-                            <span>app3</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
-                        <button id="apps-promos-panel" class="btn btn-lucid status-icon glyphicon glyphicon-briefcase" data-panel="apps" data-panel-type="app4">
-                            <span>app4</span>
-                            <sup class="indicator"><span class="label label-primary">5</span></sup>
-                        </button>
+                        
                     </div> 
                 </div>
                 <!-- APPS PANEL-BODY (START) -->
