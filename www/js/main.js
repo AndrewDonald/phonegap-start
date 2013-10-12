@@ -86,6 +86,12 @@ $(".stream-pane-menu-con").animate({
 
 //* EVENT HANDLERS *//////////////////////////////////////////////////////////////
 
+// Search Toggle
+$('#search-toggle').on('click',function(){
+    $('.bottom-panel').slideToggle();
+});
+$('#search-toggle').click();
+
 // Main Menu Toggle
 $('#main-menu-toggle').on('click',function(){
     $('#main-menu-con').toggleClass('active');
