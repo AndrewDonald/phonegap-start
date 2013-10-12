@@ -8,9 +8,8 @@ function startApp(){
 var _lucid                      = {};
 _lucid.panel                    = {};
 _lucid.panel.stream             = {};
-_lucid.panel.stream.view        = ["all","people","chat","photos","videos","audio","stream","filter","profile"];
-_lucid.panel.stream.view.active = 0;
-_lucid.panel.pages              = ["stream","filter","profile"];
+_lucid.panel.stream.show        = ["all","people","chat","photos","videos","audio","stream","filter","profile"];
+_lucid.panel.stream.show.active = 0;
 _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
 _lucid.panel.apps.active        = 0;
 
@@ -49,18 +48,18 @@ $(function() {
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
 
-    $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.view.active + ')').addClass('active');
+    $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.show.active + ')').addClass('active');
 
     // STREAM PANES CONTROLLER: Slide through the various Stream Panes
     $('.stream-content #home').on('click',function(){
         // STREAM PANES
-        _lucid.panel.stream.view.active = (_lucid.panel.stream.view.active++ < _lucid.panel.stream.show.length - 1) ? _lucid.panel.stream.view.active : 0;
+        _lucid.panel.stream.show.active = (_lucid.panel.stream.show.active++ < _lucid.panel.stream.show.length - 1) ? _lucid.panel.stream.show.active : 0;
         $('body')
             .alterClass('stream-pane-active-*','')
-            .addClass('stream-pane-active-' + _lucid.panel.stream.view.active);
+            .addClass('stream-pane-active-' + _lucid.panel.stream.show.active);
 
         $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn').removeClass('active')
-        $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.view.active + ')').addClass('active');
+        $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.show.active + ')').addClass('active');
 /*
         var offset = $('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane').offset();
 $(".stream-pane-menu-con").animate({
@@ -85,29 +84,6 @@ $(".stream-pane-menu-con").animate({
 
 
 //* EVENT HANDLERS *//////////////////////////////////////////////////////////////
-
-// Main Menu Toggle
-$('#main-menu-toggle').on('click',function(){
-    $('#main-menu-con').toggleClass('active');
-});
-
-// Main Menu Items
-$('#main-menu > nav > button').on('click',function(){
-    if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
-        $('#main-menu-con').removeClass('active');
-    }else{
-        var pageTarget = $(this).data('page-target');
-        var classTarget = $(this).data('class-target');
-        if(typeof classTarget == "undefined"){
-            classTarget = "";
-        }
-        console.log(classTarget);
-        
-        $('#pages > :not("#page-' + pageTarget + '")').removeClass('active');
-        $('#pages > #page-' + pageTarget).toggleClass('active view-' + classTarget);
-    }
-});
-
 // TOGGLE ON/OFF SELETOR BUTTONS
 $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
@@ -120,7 +96,6 @@ $('.btn-alerts').on('click',function(){
 $('.alerts-panel .alert-link').on('click',function(){
     $(this).remove();
 });
-
 
 
 

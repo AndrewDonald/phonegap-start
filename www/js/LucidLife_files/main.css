@@ -31,7 +31,6 @@
 .blue {color: #006DCC;}
 .dark-blue {color: #002A80;}
 .light-blue {color: #4A86E8;}
-.new-blue {color: #428bc7;}
 .orange {color: #f90;}
 
 /* GLOBAL */
@@ -42,14 +41,13 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
-#pages {position: absolute; top: 0; left: 0; width: 100%; padding: 60px 10px 110px; background-color: rgba(255,255,255,0.25);}
+.stream-content {position: absolute; top: 0; left: 0; width: 100%; padding: 90px 10px 100px; background-color: rgba(255,255,255,0.25);}
+body.public-panel-peek .stream-content {padding-top: 145px;}
+body.public-panel-active .stream-content {padding-top: 345px;}
 
-.label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
+.label-lucid {color: #fff; padding: 2px 2px 0; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
-
-#stream-and-filter-status {padding: 3px 5px 2px; background-color: #5aa; box-shadow: 0 0 3px #000, 0 2px 6px #000 inset;}
-/*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
 
 .alert{}
     .alert .alert-message {padding-right: 25px;}
@@ -60,8 +58,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 /* PANEL */
 .panel > .panel-body > .carousel {padding: 0px;} 
 .panel.panel-lucid {position: relative;}
-    .panel.panel-lucid > .panel-heading {background-color: #5aa;}
-        
+    .panel.panel-lucid > .panel-heading {background-color: rgba(200, 240, 250, 0.8);}
+        .panel.panel-lucid > .panel-heading > .info {padding: 3px 5px 2px; background-color: rgba(00,140,140,0.5); box-shadow: 0 0 3px #000, 0 2px 6px #000 inset;}
     .stream-pane-menu-con .panel-nav.left, .stream-pane-menu-con .panel-nav.right {display: none;}
     .panel-nav.left, .panel-nav.right {position: absolute; top: 20px; z-index: 100; color: #277; opacity: 0.6; text-shadow: 0 0 3px #fff;}
     .panel-nav.left {left: 0;}
@@ -70,10 +68,11 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .panel.panel-lucid .panel-nav.left.scroll-menu, .panel.panel-lucid .panel-nav.right.scroll-menu {display: block;}
     .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
          .panel .panel-heading.panel-nav {position: relative; white-space: nowrap; text-align: center;}
-        .panel .panel-heading.panel-nav .panel-menu {position: relative; padding: 0 8px; box-shadow: 0 1px 5px #000, 0 -1px 4px #000 inset;}
+        .panel .panel-heading.panel-nav .panel-menu {position: relative; width: 100%; overflow: auto; padding: 0 8px; box-shadow: 0 1px 5px #000, 0 -1px 4px #000 inset;}
             /*.panel .panel-heading.panel-nav .panel-menu > button:first-child {margin-left: 20px;}
             .panel .panel-heading.panel-nav .panel-menu > button:last-child {margin-right: 20px;}*/
         .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;}
+        .panel .panel-heading.panel-nav .panel-menu .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}
         /*
             .panel .panel-heading.panel-nav .panel-menu > label {margin-bottom: 1px; margin-top: 0; min-height: 0; width: 16.75%; border: none; border-radius: 5px;}
             /*.panel .panel-heading.panel-nav .panel-menu > label:first-child {color: #999};*/
@@ -119,9 +118,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-    position: relative; margin: 6px 3px 1px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #ddd; box-shadow: 0 0 8px #002277 inset, 1px 1px 5px #000000; background-color: rgba(70,105,185,0.9); border: 2px solid #ddd; border-radius: 5px;}
+    position: relative; margin: 6px 3px 1px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #277; background-color: transparent; border: 1px solid #277; border-radius: 5px;}
 .bg-3dstage .btn-lucid {margin: 8px 2px 16px; border: 1px solid #ccc; box-shadow: 1px 2px 5px #000, 0 0 8px #fff inset;}
-.btn-lucid:hover {color: #fff; border-color: #fff;}
 .btn-lucid.active {/*background-color: rgba(255,180,0,0.7);*/}
 .bg-3dstage .btn-lucid.active {border: 2px solid #fff;}
     .btn-lucid.tilde {margin-bottom: -1px; font-size: 44px; line-height: 0.57;}
@@ -131,22 +129,30 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .btn-lucid img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 4px;}
     .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-        color: #fff; background-color: rgba(255, 180, 0, 0.9); border-color: #fff; border-width: 2px; box-shadow: 0 0 8px #a40 inset, 1px 1px 5px #000;}
+        color: #fff; background-color: rgba(255,180,0,0.6); border-color: #fff; border-width: 2px;}
         .btn-lucid label {display: block; font-size: 12px; font-family: Arial; font-weight: normal; margin-top: 5px;}
         .bg-3dstage .btn-lucid label {bottom: -16px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%; border-radius: 5px; background-color: rgba(255,255,255,0.1); transform: skewX(15deg);}
         .bg-3dstage .btn-lucid.active label {font-weight: bold; background-color: rgba(255, 255, 255, 0.4);}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
-    .bg-3dstage .btn-lucid .indicator .label.label-lucid {background-color: #428bc7;}
+    .bg-3dstage .btn-lucid .indicator .label.label-lucid {
+    background: rgba(85,170,170,0.7);
+    background: -moz-linear-gradient(top, rgba(85,170,170,0.7) 0%, rgba(68,153,153,0.91) 70%, rgba(68,153,153,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(85,170,170,0.7)), color-stop(70%, rgba(68,153,153,0.91)), color-stop(100%, rgba(68,153,153,1)));
+    background: -webkit-linear-gradient(top, rgba(85,170,170,0.7) 0%, rgba(68,153,153,0.91) 70%, rgba(68,153,153,1) 100%);
+    background: -o-linear-gradient(top, rgba(85,170,170,0.7) 0%, rgba(68,153,153,0.91) 70%, rgba(68,153,153,1) 100%);
+    background: -ms-linear-gradient(top, rgba(85,170,170,0.7) 0%, rgba(68,153,153,0.91) 70%, rgba(68,153,153,1) 100%);
+    background: linear-gradient(to bottom, rgba(85,170,170,0.7) 0%, rgba(68,153,153,0.91) 70%, rgba(68,153,153,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55aaaa', endColorstr='#449999', GradientType=0 );
+    }
     .bg-3dstage .btn-lucid.active .indicator .label.label-lucid {border-width: 2px;}
- 
-/* HEADER */   
+    
 nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
     nav#header > .masthead {position: relative; background-color: #224499; box-shadow: 0 -3px 30px #000000 inset;}
         nav#header > .masthead .main-nav {position: absolute; top: 0;}
         nav#header > .masthead .main-nav.left {left: 5px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
             nav#header > .masthead .main-nav .btn {font-size: 24px; padding: 5px;}
-        nav#header > .masthead .monarch {height: 30px; margin-right: -5px;}
+        nav#header > .masthead .monarch {height: 30px;}
         nav#header > .masthead .logo {height: 42px; margin-right: 10px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
         
@@ -154,22 +160,23 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #stream-header {cursor: pointer; padding: 5px;}
             .stream-controls-toggle #stream-name  {display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
             .stream-controls-toggle #stream-name:before {content: "~";}
-            .filter-controls-toggle .filter-sign {font-size: 11px;}
             .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px;}
 
-/* MAIN MENU */
-#main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; position: fixed; top: -20px; left: 0; z-index: 100; overflow-x: auto; padding: 2px 10px 8px; width: 100%; white-space: nowrap;}
-#main-menu-con.active {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
-    #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
-    #main-menu-con .menu-nav.left {left: 0;}
-    #main-menu-con .menu-nav.right {right: 3px;}
-    #main-menu {position: relative;}
-    #main-menu > nav {display: inline;}
+        /* PUBLIC PANEL */
+        .public-panel {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
+        body.public-panel-active .panel-item {display: block;}
+            .public-panel .panel-item {display: none;}
+            body.public-panel-active .public-panel .panel-item.active {display: block;}
 
-#pages > .page {display: none;}
-    #pages > .page.active {display: block;}
-        #page-stream .view-all, #page-stream .view-people, #page-stream .view-chat, #page-stream .view-photos, #page-stream .view-videos, #page-stream .view-audio  {display: none;}
-        #page-stream.view-all .view-all, #page-stream.view-people .view-people, #page-stream.view-chat .view-chat, #page-stream.view-photos .view-photos, #page-stream.view-videos .view-videos, #page-stream.view-audio .view-audio {display: block;}
+            /* PUBLIC PANEL - COMPONENTS */
+            ._promo {}
+                ._promo .header {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
+                    ._promo .header .pic {width: 100px; margin: 0 10px 5px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
+                ._promo .body {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+            ._poll {}       
+            ._survey {}
+            ._game {}
+            ._app {}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
@@ -184,28 +191,9 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
         ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
     /* GOBAL USER INPUT */
-    .global-user-input {padding: 5px 0; box-shadow: 0 0 3px #999; background-color: #249; border: 2px; color: #fff; border: 1px solid 2px;}
+    .global-user-input {padding: 5px 0; box-shadow: 0 0 3px #999; background-color: #224499;}
         .global-user-input #send-message-con form.send-message-form {margin: 0; position: relative; width: 100%; padding-left: 5px;}
             .global-user-input #send-message-con form.send-message-form .send-message-entry {width: 100%; padding-right: 84px;}
                 .global-user-input #send-message-con form.send-message-form .send-message-entry input#send-message {border-top-right-radius: 0; border-bottom-right-radius: 0;}
             .global-user-input #send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
                 .global-user-input #send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
-
-
-/* PUBLIC PANEL */
-/*
-.public-panel {display: none; position: relative; max-height: 200px; overflow: auto; background-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 3px #000 inset;} 
-body.public-panel-active .panel-item {display: block;}
-    .public-panel .panel-item {display: none;}
-    body.public-panel-active .public-panel .panel-item.active {display: block;}
-
-    /* PUBLIC PANEL - COMPONENTS 
-    ._promo {}
-        ._promo .header {font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-            ._promo .header .pic {width: 100px; margin: 0 10px 5px 0; box-shadow: 2px 2px 5px #666; height: 100px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 6px double #999;}
-        ._promo .body {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
-    ._poll {}       
-    ._survey {}
-    ._game {}
-    ._app {}
-*/
