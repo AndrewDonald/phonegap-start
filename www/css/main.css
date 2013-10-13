@@ -209,7 +209,7 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* RESPONSIVE */
 /* Portrait */
 /* Main Menu Toggle */
-#main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px; left: 0; z-index: 100; overflow-x: auto; padding: 2px 10px 8px; width: 100%; white-space: nowrap; background-color: rgba(255, 255, 255, 0.5);}
+#main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px; left: 0; z-index: 100; height: 60px; overflow-x: auto; padding: 2px 10px 8px; width: 100%; white-space: nowrap; background-color: rgba(255, 255, 255, 0.5);}
 body.main-menu-active #main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
 
 /* Notifications Menu Toggle */
