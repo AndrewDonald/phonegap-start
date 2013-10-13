@@ -45,6 +45,7 @@
             <!-- MASTHEAD (START) -->
             <div class="masthead">
                 <div class="main-nav left">
+                    <button id="main-menu-toggle" type="button" class="btn btn-link btn-lg glyphicon glyphicon-align-justify"></button>
                     <button id="search-toggle" type="button" class="btn btn-link btn-lg glyphicon glyphicon-search"></button>
                 </div>
                 <center>
@@ -53,7 +54,8 @@
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
                 <div class="main-nav right">
-                    <button id="main-menu-toggle" type="button" class="btn btn-link btn-lg glyphicon glyphicon-align-justify"></button>
+                    <button id="filter-toggle" type="button" class="btn btn-link btn-lg glyphicon glyphicon-filter"></button>
+                    <button id="notifications-toggle" type="button" class="btn btn-link btn-lg glyphicon glyphicon-eye-open"></button>
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
@@ -69,8 +71,6 @@
                 </div>
             </div>
             <!-- STREAM INFO PANEL (END) -->
-           
-            
         </nav>
         <!-- HEADER (END) -->
 
@@ -131,133 +131,302 @@
         </div>
         <!-- MAIN MENU (END) -->
 
+        <!-- BOTTOM PANEL -->
+        <div id="bottom-panel" class="panel panel-lucid">
+            <!-- Panel Nav -->
+            <div class="panel-heading panel-nav bg-3dstage">
+                <!-- Panel Left/Right -->
+                <span class="panel-nav left glyphicon glyphicon-chevron-left scroll-menu"></span>
+                <span class="panel-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
+                <!-- Panel Menu -->
+                <div class="panel-menu">
+                    <button class="btn btn-lucid" data-user="1" style="background-image: url(img/profile/profile-1.jpg);">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                <span class="quantity">3</span>
+                            </div>
+                        </sup>
+                        <label class="name">Mary</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-2.jpg);" data-user="2">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Rachael</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-5.jpg);" data-user="5">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-file"></span>
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                <span class="quantity">3</span>
+                            </div>
+                        </sup>
+                        <label class="name">Ted</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-3.jpg);" data-user="3">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-gift"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Susanna</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-4.jpg);" data-user="4">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Elizabeth</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-6.jpg);" data-user="6">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-tower"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Jeremy</label>
+                    </button>
+                    <button class="btn btn-lucid" data-user="1" style="background-image: url(img/profile/profile-1.jpg);">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                <span class="quantity">3</span>
+                            </div>
+                        </sup>
+                        <label class="name">Mary</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-2.jpg);" data-user="2">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Rachael</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-5.jpg);" data-user="5">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-file"></span>
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                <span class="quantity">3</span>
+                            </div>
+                        </sup>
+                        <label class="name">Ted</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-3.jpg);" data-user="3">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-gift"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Susanna</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-4.jpg);" data-user="4">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Elizabeth</label>
+                    </button>
+                    <button class="btn btn-lucid" style="background-image: url(img/profile/profile-6.jpg);" data-user="6">
+                        <sup class="indicator">
+                            <div class="label label-lucid">
+                                <span class="glyphicon glyphicon-tower"></span>
+                                <span class="quantity"></span>
+                            </div>
+                        </sup>
+                        <label class="name">Jeremy</label>
+                    </button>
+                </div>
+                <!-- APPS PANEL-BODY (END) -->
+            </div>
+            <!-- APPS PANEL (END) -->
+        </div>
+        <!-- BOTTOM PANEL (END) -->
+
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <!-- APPS PANEL -->
-            <div class="panel panel-lucid bottom-panel">
-                <!-- Panel Nav -->
-                <div class="panel-heading panel-nav bg-3dstage">
-                    <!-- Panel Left/Right -->
-                    <span class="panel-nav left glyphicon glyphicon-chevron-left scroll-menu"></span>
-                    <span class="panel-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
-                    <!-- Panel Menu -->
-                    <div class="panel-menu">
-                        <button class="btn btn-lucid" data-user="1" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label class="name">Mary</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-2.jpg);" data-user="2">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Rachael</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-5.jpg);" data-user="5">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-file"></span>
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label class="name">Ted</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-3.jpg);" data-user="3">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Susanna</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-4.jpg);" data-user="4">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Elizabeth</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-6.jpg);" data-user="6">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-tower"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Jeremy</label>
-                        </button>
-                        <button class="btn btn-lucid" data-user="1" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label class="name">Mary</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-2.jpg);" data-user="2">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Rachael</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-5.jpg);" data-user="5">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-file"></span>
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label class="name">Ted</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-3.jpg);" data-user="3">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Susanna</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-4.jpg);" data-user="4">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Elizabeth</label>
-                        </button>
-                        <button class="btn btn-lucid" style="background-image: url(img/profile/profile-6.jpg);" data-user="6">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-tower"></span>
-                                    <span class="quantity"></span>
-                                </div>
-                            </sup>
-                            <label class="name">Jeremy</label>
-                        </button>
+            <!-- GLOBAL USER INPUT (START) -->
+            <div class="global-user-input">
+                <div id="send-message-con">
+                    <form class="send-message-form navbar-form clearfix">
+                        <div class="send-message-entry form-group pull-left">
+                            <input id="send-message" type="text" class="form-control" placeholder="enter message">
+                        </div>
+                        <div class="send-message-controls btn-group pull-right">
+                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
+                            <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- GLOBAL USER INPUT (END) -->
+        </nav>
+        <!-- FOOTER (END) -->
+       
+        <!-- BODY (CONTENT) -->
+        <div id="pages">
+            <div id="page-stream" class="page view-people">
+                <p>&nbsp;</p><p>&nbsp;</p>
+                <h2 class="view-all">STREAM - View All</h2>
+                <h2 class="view-people">STREAM - View People</h2>
+                <h2 class="view-chat">STREAM - View Chat</h2>
+                <h2 class="view-photos">STREAM - View Photos</h2>
+                <h2 class="view-videos">STREAM - View Videos</h2>
+                <h2 class="view-audio">STREAM - View Audio</h2>
+            </div>
+            <div id="page-stream-controls" class="page"><h2>STREAM CONTROLS</h2></div>
+            <div id="page-stream-filter" class="page"><h2>STREAM FILTERS</h2></div>
+            <div id="page-profile" class="page">
+                <h2>PROFILE</h2>
+                <div class="_promo">
+                    <div class="header">
+                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
+                    </div>
+                    <div class="body">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
+                        <button class="btn btn-warning">ok</button>
                     </div>
                 </div>
-                <!-- APPS PANEL-BODY (START) -->
-                <div class="panel-body">
-                    
-                    <!-- PEOPLE PANEL (START)-->
+
+                <div class="_promo">
+                    <div class="header">
+                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
+                    </div>
+                    <div class="body">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
+
+                        Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
+
+                        Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
+
+                        Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
+
+                        <button class="btn btn-warning">ok</button>
+                    </div>
+                </div>
+
+                <div class="_promo">
+                    <div class="header">
+                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
+                    </div>
+                    <div class="body">
+                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                        <button class="btn btn-warning">ok</button>
+                    </div>
+                </div>
+
+                
+                <p><b>START</b></p>
+                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
+                <p><b>END</b></p>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/touchswipe.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
+
+
+<!--
+                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
+                    <div class="wrapper main-area clearfix pull-left">
+                        <div class="badge-main pull-left">
+                            <div class="id-wrapper">
+                                <div data-userid="2" title="Andrew Donald, M, 34, 0km, 5d, ~All" class="photo"><img src="/img/fetch.php?k=profile_2-b.jpg" class="user-photo"></div>
+                                <div data-userid="2" title="connect" class="info">
+                                    <div class="name">Andrew Donald</div>
+                                    <div data-time-created="1380315132000" class="time">6d</div>
+                                    <div class="profile-info">
+                                        <div class="account-info">
+                                            <span class="last-login-date">[last login date]<sup>(login)</sup></span>
+                                            <span class="join-date">[join date]<sup>(joined)</sup></span>
+                                        </div>
+                                        <div class="personal-info">
+                                            <span class="gender">M </span>
+                                            <span class="age">34 </span>
+                                            <span class="distance">0km</span>
+                                        </div>
+                                        <div class="location-info">
+                                            <span class="city">[city], </span>
+                                            <span class="country">[country].</span>
+                                        </div>
+                                        <div class="contact-info">
+                                            <span class="email">[email]</span>
+                                            <span class="phone">[phone]</span>
+                                        </div>
+                                        <div class="connections-info">
+                                        <span class="stream-info">
+                                            <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
+                                        </span>
+                                        <span class="buddy-info">
+                                            <span class="buddies">[buddies]</span> <span class="buddies-common">/ [buddies common]</span>
+                                        </span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <a data-page="#STREAM~All" data-stream="All" class="stream">All</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+-->
+
+<!-- PUBLIC PANEL -->
+<!--
+<div class="alerts-panel alert alert-warning">
+    <a href="#" class="alert-link">
+        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
+        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+        <span class="alert-message">You just recieved a message from LucidLife!</span>
+    </a>
+    <a href="#" class="alert-link">
+        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
+        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+        <span class="alert-message">Jon Jones is requesting to connect with you!</span>
+    </a>
+    <a href="#" class="alert-link">
+        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
+        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+        <span class="alert-message">Your friend Peter Raymond has just signed in.</span>
+    </a>
+</div>
+-->
+
+<div style="display: none;">
+<!-- PEOPLE PANEL (START)-->
                     <div class="panel people-panel">
                         <!-- Panel Nav -->
                         <div class="panel-heading panel-nav">
@@ -487,173 +656,4 @@
                         <!-- Panel-Body (End) -->
                     </div>
                     <!-- STREAM PANEL (END) -->
-                </div>
-                <!-- APPS PANEL-BODY (END) -->
-            </div>
-            <!-- APPS PANEL (END) -->
-
-            <!-- GLOBAL USER INPUT (START) -->
-            <div class="global-user-input">
-                <div id="send-message-con">
-                    <form class="send-message-form navbar-form clearfix">
-                        <div class="send-message-entry form-group pull-left">
-                            <input id="send-message" type="text" class="form-control" placeholder="enter message">
-                        </div>
-                        <div class="send-message-controls btn-group pull-right">
-                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-file"></span></button>
-                            <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-play"></span></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- GLOBAL USER INPUT (END) -->
-        </nav>
-        <!-- FOOTER (END) -->
-       
-        <!-- BODY (CONTENT) -->
-        <div id="pages">
-            <div id="page-stream" class="page view-people">
-                <p>&nbsp;</p><p>&nbsp;</p>
-                <h2 class="view-all">STREAM - View All</h2>
-                <h2 class="view-people">STREAM - View People</h2>
-                <h2 class="view-chat">STREAM - View Chat</h2>
-                <h2 class="view-photos">STREAM - View Photos</h2>
-                <h2 class="view-videos">STREAM - View Videos</h2>
-                <h2 class="view-audio">STREAM - View Audio</h2>
-            </div>
-            <div id="page-stream-controls" class="page"><h2>STREAM CONTROLS</h2></div>
-            <div id="page-stream-filter" class="page"><h2>STREAM FILTERS</h2></div>
-            <div id="page-profile" class="page">
-                <h2>PROFILE</h2>
-                <div class="_promo">
-                    <div class="header">
-                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
-                    </div>
-                    <div class="body">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-                        <button class="btn btn-warning">ok</button>
-                    </div>
-                </div>
-
-                <div class="_promo">
-                    <div class="header">
-                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
-                    </div>
-                    <div class="body">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                        Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-
-                        Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
-
-                        Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
-
-                        Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
-
-                        <button class="btn btn-warning">ok</button>
-                    </div>
-                </div>
-
-                <div class="_promo">
-                    <div class="header">
-                        <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                        LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
-                    </div>
-                    <div class="body">
-                        Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                        <button class="btn btn-warning">ok</button>
-                    </div>
-                </div>
-
-                
-                <p><b>START</b></p>
-                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
-                <p><b>END</b></p>
-            </div>
-        </div>
-
-        <!-- SCRIPTS -->
-        <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/touchswipe.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-    </body>
-</html>
-
-
-<!--
-                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
-                    <div class="wrapper main-area clearfix pull-left">
-                        <div class="badge-main pull-left">
-                            <div class="id-wrapper">
-                                <div data-userid="2" title="Andrew Donald, M, 34, 0km, 5d, ~All" class="photo"><img src="/img/fetch.php?k=profile_2-b.jpg" class="user-photo"></div>
-                                <div data-userid="2" title="connect" class="info">
-                                    <div class="name">Andrew Donald</div>
-                                    <div data-time-created="1380315132000" class="time">6d</div>
-                                    <div class="profile-info">
-                                        <div class="account-info">
-                                            <span class="last-login-date">[last login date]<sup>(login)</sup></span>
-                                            <span class="join-date">[join date]<sup>(joined)</sup></span>
-                                        </div>
-                                        <div class="personal-info">
-                                            <span class="gender">M </span>
-                                            <span class="age">34 </span>
-                                            <span class="distance">0km</span>
-                                        </div>
-                                        <div class="location-info">
-                                            <span class="city">[city], </span>
-                                            <span class="country">[country].</span>
-                                        </div>
-                                        <div class="contact-info">
-                                            <span class="email">[email]</span>
-                                            <span class="phone">[phone]</span>
-                                        </div>
-                                        <div class="connections-info">
-                                        <span class="stream-info">
-                                            <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
-                                        </span>
-                                        <span class="buddy-info">
-                                            <span class="buddies">[buddies]</span> <span class="buddies-common">/ [buddies common]</span>
-                                        </span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <a data-page="#STREAM~All" data-stream="All" class="stream">All</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
--->
-
-<!-- PUBLIC PANEL -->
-<!--
-<div class="alerts-panel alert alert-warning">
-    <a href="#" class="alert-link">
-        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
-        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-        <span class="alert-message">You just recieved a message from LucidLife!</span>
-    </a>
-    <a href="#" class="alert-link">
-        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
-        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-        <span class="alert-message">Jon Jones is requesting to connect with you!</span>
-    </a>
-    <a href="#" class="alert-link">
-        <span class="view-indicator glyphicon glyphicon-eye-open pull-right"></span>
-        <img class="user-pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-        <span class="alert-message">Your friend Peter Raymond has just signed in.</span>
-    </a>
 </div>
--->
