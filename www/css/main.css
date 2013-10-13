@@ -58,7 +58,7 @@
 /* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0;
-    background: #468 url("../img/bg-repeat.png") 0 0 no-repeat fixed; background-size: 100% 100%;; line-height: 1.4;}
+    background: #468 url("../img/bg-repeat.png") 0 0 repeat fixed; background-size: 100% 100%;; line-height: 1.4;}
 
 .stream-name:before {content: "~";}
 .hide {display: none;}
@@ -256,7 +256,7 @@ body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-t
             background: -ms-linear-gradient(left, rgba(136,238,238,0.95) 0%, rgba(68,153,153,0.98) 54%, rgba(34,119,119,0.98) 55%, rgba(68,153,153,1) 100%);
             background: linear-gradient(to right, rgba(136,238,238,0.95) 0%, rgba(68,153,153,0.98) 54%, rgba(34,119,119,0.98) 55%, rgba(68,153,153,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88eeee', endColorstr='#449999', GradientType=1 );*/}
-
+                 #bottom-panel .bg-3dstage .panel-menu .btn-lucid label {transform: none;}
 
 /******** FOR TESTING ONLY!! ********/
 #main-menu-con, #bottom-panel {overflow: hidden;}
