@@ -159,7 +159,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         nav#header > .masthead .main-nav.left {left: 5px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
             nav#header > .masthead .main-nav .btn {font-size: 24px; padding: 5px;}
-        nav#header > .masthead .monarch {height: 20px; margin: 1px -10px 0 0;}
+        nav#header > .masthead .monarch {height: 20px; margin-right: -10px;}
         nav#header > .masthead .logo {width: 100px; margin: 5px -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
         
@@ -259,7 +259,7 @@ body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-t
                  #bottom-panel .bg-3dstage .panel-menu .btn-lucid label {transform: none;}
 
 /******** FOR TESTING ONLY!! ********/
-#main-menu-con, #bottom-panel {overflow: hidden;}
+/*#main-menu-con, #bottom-panel {overflow: hidden;}*/
 }
 
 /* PUBLIC PANEL */
