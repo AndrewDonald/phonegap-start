@@ -56,8 +56,8 @@
 .color-1-lt {color: #fc0;} 
 .color-1-dk {color: #940;}
 .bg-1 {background-color: #f90 !important;}  
-.bg-1-70 {background-color: rgba(255,180,0,0.7) !important;}
-.bg-1-30 {background-color: rgba(255,185,0,0.3) !important;}
+.bg-1-70 {background-color: rgba(255,180,0,0.7);}
+.bg-1-30 {background-color: rgba(255,185,0,0.3);}
 .bg-1-lt {background-color: #fc0 !important;}
 .bg-1-dk {background-color: #940 !important;}
 .btn-link-lucid.color-1-lt:hover, .btn-link-lucid.color-1-lt:focus {color: #fc0;}
@@ -66,8 +66,8 @@
 .color-2-lt {color: #029;} 
 .color-2-dk {color: #68f;}
 .bg-2 {background-color: #24b !important;}
-.bg-2-70 {background-color: rgba(35,70,185,0.7) !important;}
-.bg-2-30 {background-color: rgba(35,70,185,0.3) !important;}
+.bg-2-70 {background-color: rgba(35,70,185,0.7);}
+.bg-2-30 {background-color: rgba(35,70,185,0.3);}
 .bg-2-dk {background-color: #029 !important;}
 .bg-2-lt {background-color: #68f !important;}
 .btn-link-lucid.color-2-lt:hover, .btn-link-lucid.color-2-lt:focus {color: #029;}
@@ -76,8 +76,8 @@
 .color-3-lt {color: #6cf;} 
 .color-3-dk {color: #069;}
 .bg-3 {background-color: #4ad !important;}
-.bg-3-70 {background-color: rgba(0,170,255,0.7) !important;}
-.bg-3-30 {background-color: rgba(0,170,255,0.3) !important;}
+.bg-3-70 {background-color: rgba(0,170,255,0.7);}
+.bg-3-30 {background-color: rgba(0,170,255,0.3);}
 .bg-3-lt {background-color: #6cf !important;} 
 .bg-3-dk {background-color: #069 !important;}
 .btn-link-lucid.color-3-lt:hover, .btn-link-lucid.color-3-lt:focus {color: #6cf;}
@@ -86,8 +86,8 @@
 .color-4-lt {color: #599;} 
 .color-4-dk {color: #044;}
 .bg-4 {background-color: #266 !important;}
-.bg-4-70 {background-color: rgba(30,100,100,0.7) !important;}
-.bg-4-30 {background-color: rgba(30,100,100,0.3) !important;}
+.bg-4-70 {background-color: rgba(30,100,100,0.7);}
+.bg-4-30 {background-color: rgba(30,100,100,0.3);}
 .bg-4-lt {background-color: #599 !important;}
 .bg-4-dk {background-color: #044 !important;}
 .btn-link-lucid.color-4-lt:hover, .btn-link-lucid.color-4-lt:focus {color: #599;}
@@ -190,12 +190,15 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     
 .btn-lucid.user {}
-@media screen and (orientation:landscape) {.btn-lucid.user {margin-bottom: 15px;}}
     .btn-lucid.user.active {border: 2px solid #fff;}
-        .btn-lucid.user label {bottom: 0; margin: 0; color: #FFFFFF; font-size: 9px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
+        .btn-lucid.user label {bottom: -15px; margin: 0; color: #FFFFFF; font-size: 9px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
         .btn-lucid.user.active label {font-weight: bold; background-color: rgba(255, 255, 255, 0.4);}
         .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
         .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px;}
+@media screen and (orientation:landscape) {
+    .btn-lucid.user {margin-bottom: 15px;}
+    .btn-lucid.user label {bottom: 0;}
+}
 
 /* HEADER */   
 nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
@@ -222,7 +225,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #page-stream.view-all .view-all, #page-stream.view-people .view-people, #page-stream.view-chat .view-chat, #page-stream.view-photos .view-photos, #page-stream.view-videos .view-videos, #page-stream.view-audio .view-audio {display: block;}
 
 /* BOTTOM PANEL */
-#bottom-panel {bottom: 45px; display: block; position: fixed; width: 90%; border-left: none; border-top: 1px solid #555; box-shadow: 0 0 5px #000;}
+#bottom-panel {bottom: 45px; display: block; position: fixed; width: 100%; height: 70px; border-left: none; border-top: 1px solid #555; box-shadow: 0 0 5px #000;}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
@@ -250,7 +253,7 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* MAIN MENU */
 #main-menu-con {
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
-    position: fixed; left: 0; width: 100%; height: 66px; padding: 0 10px 0;
+    position: fixed; left: 0; width: 100%; height: 70px; padding: 0 10px 0;
     z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
     background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;  box-shadow: 0 0 5px #000;}
     #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
