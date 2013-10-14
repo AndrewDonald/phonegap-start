@@ -222,7 +222,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #page-stream.view-all .view-all, #page-stream.view-people .view-people, #page-stream.view-chat .view-chat, #page-stream.view-photos .view-photos, #page-stream.view-videos .view-videos, #page-stream.view-audio .view-audio {display: block;}
 
 /* BOTTOM PANEL */
-#bottom-panel {bottom: 45px; display: block; position: fixed; width: 90%; border-left: none; border-top: 1px solid #555;}
+#bottom-panel {bottom: 45px; display: block; position: fixed; width: 90%; border-left: none; border-top: 1px solid #555; box-shadow: 0 0 5px #000;}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
@@ -252,7 +252,7 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
     position: fixed; left: 0; width: 100%; height: 66px; padding: 0 10px 0;
     z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
-    background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;}
+    background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;  box-shadow: 0 0 5px #000;}
     #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
     #main-menu-con .menu-nav.left {left: 0;}
     #main-menu-con .menu-nav.right {right: 3px;}
@@ -269,11 +269,11 @@ body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-t
     /* Center Header, Footer & Page */ 
     nav#header, nav#footer, #page {transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-left: 0; margin-right 0;}
     body:not(.notifications-menu-active).main-menu-active nav#header, body:not(.notifications-menu-active).main-menu-active nav#footer, body:not(.notifications-menu-active).main-menu-active #pages {
-        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 0; margin-left: 59px;}
+        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 0; margin-left: 65px;}
     body:not(.menu-menu-active).notifications-menu-active nav#header, body:not(.menu-menu-active).notifications-menu-active nav#footer, body:not(.menu-menu-active).notifications-menu-active #pages {
-        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 59px; margin-left: 0;}
+        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 65px; margin-left: 0;}
     body.main-menu-active.notifications-menu-active nav#header, body.main-menu-active.notifications-menu-active nav#footer, body.main-menu-active.notifications-menu-active #pages {
-        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 59px; margin-left: 59px;}
+        transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 65px; margin-left: 65px;}
 
     /* Move Main Menu & Connections Notifications Menus to left and right sides */
     #main-menu-con, #bottom-panel {width: 65px; height: 100%; padding: 0; z-index: 2000; overflow-x: hidden; overflow-y: auto; white-space: normal;}
@@ -290,7 +290,7 @@ body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-t
     
     #bottom-panel {transition: right 0.5s; -webkit-transition: right 0.5s; top: 0; right: -65px;}
     body.notifications-menu-active #bottom-panel {transition: right 0.5s; -webkit-transition: right 0.5s; right: 0; top: 0;}
-    body.notifications-menu-active .panel.panel-lucid > .panel-heading.bg-3dstage, body.main-menu-active #main-menu-con {box-shadow: none; background: rgba(0,0,0,0.2);}
+    body.notifications-menu-active .panel.panel-lucid > .panel-heading.bg-3dstage, body.main-menu-active #main-menu-con {background: rgba(0,0,0,0.2);}
 }
 /******** FOR TESTING ONLY!! ********/
- #main-menu-con, #bottom-panel {overflow-x: hidden !important; overflow-y: hidden !important;}*/
+/*#main-menu-con, #bottom-panel {overflow-x: hidden !important; overflow-y: hidden !important;}*/
