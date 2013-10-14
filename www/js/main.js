@@ -92,8 +92,8 @@ $('#main-menu-toggle').on('click',function(){
     $('body').toggleClass('main-menu-active');
 });
 
-// Notifications Menu Toggle
-$('#notifications-toggle').on('click',function(){
+// Lucid Menu Toggle
+$('#lucid-menu-toggle').on('click',function(){
     $(this).toggleClass('active');
     $('body').toggleClass('notifications-menu-active');
 });
