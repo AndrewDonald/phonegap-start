@@ -175,7 +175,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
     position: relative; margin: 5px 3px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #fff; text-shadow: 1px 1px 3px #000000; box-shadow: 0 0 8px #222 inset, 0 0 3px #fff; border: 2px solid #ddd; border-radius: 5px;}
-.bg-3dstage .btn-lucid {margin: 8px 3px 25px; border: 1px solid #ccc; box-shadow: 1px 2px 5px #000, 0 0 8px #fff inset; background-repeat: no-repeat; background-size: 100% 100%;}
+.bg-3dstage .btn-lucid {margin: 10px 3px 25px; border: 1px solid #ccc; box-shadow: 1px 2px 5px #000, 0 0 8px #fff inset; background-repeat: no-repeat; background-size: 100% 100%;}
 .btn-lucid:hover {color: #fff; border-color: #fff;}
 .btn-lucid.active {/*background-color: rgba(255,180,0,0.7);*/}
 .bg-3dstage .btn-lucid.active {border: 2px solid #fff;}
@@ -188,7 +188,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
         color: #fff; background-color: rgba(255, 180, 0, 0.9); border-color: #fff; border-width: 2px; box-shadow: 0 0 8px #a40 inset, 0 0 10px #f90;}
         .btn-lucid label {display: block; font-size: 12px; font-family: Arial; font-weight: normal; margin-top: 5px;}
-        .bg-3dstage .btn-lucid label {bottom: -16px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
+        .bg-3dstage .btn-lucid label {bottom: -15px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
         .bg-3dstage .btn-lucid.active label {font-weight: bold; background-color: rgba(255, 255, 255, 0.4);}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     .bg-3dstage .btn-lucid .indicator .label.label-lucid {background-color: #428bc7;}
@@ -221,7 +221,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #page-stream.view-all .view-all, #page-stream.view-people .view-people, #page-stream.view-chat .view-chat, #page-stream.view-photos .view-photos, #page-stream.view-videos .view-videos, #page-stream.view-audio .view-audio {display: block;}
 
 /* BOTTOM PANEL */
-#bottom-panel {bottom: 45px; display: block; position: fixed; width: 90%; border-left: none; border-top: 1px solid #246;}
+#bottom-panel {bottom: 45px; display: block; position: fixed; width: 90%; border-left: none; border-top: 1px solid #555;}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
@@ -249,9 +249,9 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* MAIN MENU */
 #main-menu-con {
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
-    position: fixed; left: 0; width: 100%; height: 61px; padding: 0 10px 8px;
+    position: fixed; left: 0; width: 100%; height: 65px; padding: 0 10px 8px;
     z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
-    background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #246;}
+    background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;}
     #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
     #main-menu-con .menu-nav.left {left: 0;}
     #main-menu-con .menu-nav.right {right: 3px;}
