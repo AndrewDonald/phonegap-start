@@ -5,9 +5,11 @@
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
 .btn-lg {padding: 9px 16px;}
-.btn-link:hover, .btn-link:focus {text-decoration: none;}
-.btn-link {transition: color 0.5s; -webkit-transition: color 0.5; color: #428BCA;}
-.btn-link.active {transition: color 0.5s; -webkit-transition: color 0.5; color: #fff;}
+.btn-link-lucid {transition: color 0.5s; -webkit-transition: color 0.5; color: #599; padding: 5px; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none;}
+.btn-link-lucid:hover, .btn-link-lucid:focus {text-decoration: none; color: #bff;}
+.btn-link-lucid.active {transition: color 0.5s; -webkit-transition: color 0.5; color: #bff;}
+.btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
+.btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
 .btn .badge {right: 0px;}
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
@@ -49,6 +51,25 @@
 .panel .panel-body {padding: 5px;}
 
 /* GLOBAL: Vars */
+/* Orange */
+.color-1 {color: #f90;}
+.bg-1 {background-color: #f90;}
+.bg-1-md {background-color: #940;}  
+.bg-1-70 {background-color: rgba(255,180,0,0.7);}
+.bg-1-30 {background-color: rgba(255,185,0,0.3);}
+/* Blue */
+.color-2 {color: #4ad;}
+.bg-2 {background-color: #4ad;}
+.bg-2-md {background-color: #4ad;}  
+.bg-2-70 {background-color: rgba(0,170,255,0.7);}
+.bg-2-30 {background-color: rgba(0,170,255,0.3);}
+/* Teal */
+.color-3 {color: #266;}
+.bg-3 {background-color: #266;}
+.bg-3-md {background-color: #599;}  
+.bg-3-70 {background-color: rgba(30,100,100,0.7);}
+.bg-3-30 {background-color: rgba(30,100,100,0.3);}
+
 .blue {color: #006DCC;}
 .dark-blue {color: #002A80;}
 .light-blue {color: #4A86E8;}
@@ -57,7 +78,7 @@
 
 /* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-body {font-family: arial; font-weight: normal; font-size: 14px; color: #246; padding: 0; margin: 0;
+body {font-family: arial; font-weight: normal; font-size: 14px; color: #155; padding: 0; margin: 0;
     background: #468 url("../img/bg-repeat.png") 0 0 repeat fixed; background-size: 100% 100%;; line-height: 1.4;}
 
 .stream-name:before {content: "~";}
@@ -70,7 +91,7 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #246; pad
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-#stream-and-filter-status {padding: 3px 5px 2px; background-color: #428BCA; box-shadow: 0 2px 5px #000, 0 2px 6px #000 inset;}
+#stream-and-filter-status {padding: 3px 5px 2px; box-shadow: 0 2px 5px #000, 0 2px 6px #000 inset;}
 /*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
 
 .alert{}
@@ -131,7 +152,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-    position: relative; margin: 6px 3px 1px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #fff; box-shadow: 0 0 8px #002277 inset, 0 0 3px #579; background-color: rgba(70,105,185,0.9); border: 2px solid #ddd; border-radius: 5px;}
+    position: relative; margin: 6px 3px 1px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #fff; text-shadow: 1px 1px 3px #000000; box-shadow: 0 0 8px #222 inset, 0 0 3px #fff; border: 2px solid #ddd; border-radius: 5px;}
 .bg-3dstage .btn-lucid {margin: 8px 3px 25px; border: 1px solid #ccc; box-shadow: 1px 2px 5px #000, 0 0 8px #fff inset; background-repeat: no-repeat; background-size: 100% 100%;}
 .btn-lucid:hover {color: #fff; border-color: #fff;}
 .btn-lucid.active {/*background-color: rgba(255,180,0,0.7);*/}
@@ -145,7 +166,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
         color: #fff; background-color: rgba(255, 180, 0, 0.9); border-color: #fff; border-width: 2px; box-shadow: 0 0 8px #a40 inset, 0 0 10px #f90;}
         .btn-lucid label {display: block; font-size: 12px; font-family: Arial; font-weight: normal; margin-top: 5px;}
-        .bg-3dstage .btn-lucid label {bottom: -16px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%; border-radius: 5px; background-color: rgba(255,255,255,0.1); transform: skewX(15deg);}
+        .bg-3dstage .btn-lucid label {bottom: -16px; margin: 0; color: #FFFFFF; font-size: 10px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
         .bg-3dstage .btn-lucid.active label {font-weight: bold; background-color: rgba(255, 255, 255, 0.4);}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     .bg-3dstage .btn-lucid .indicator .label.label-lucid {background-color: #428bc7;}
@@ -153,11 +174,10 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
  
 /* HEADER */   
 nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
-    nav#header > .masthead {position: relative; height: 40px; background-color: #224499; box-shadow: 0 -3px 30px #000000 inset;}
-        nav#header > .masthead .main-nav {position: absolute; top: 0;}
+    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 -3px 30px #000000 inset;}
+        nav#header > .masthead .main-nav {position: absolute; top: 4px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
-            nav#header > .masthead .main-nav .btn {font-size: 24px; padding: 5px;}
         nav#header > .masthead .monarch {height: 20px; margin-right: -10px;}
         nav#header > .masthead .logo {width: 100px; margin: 5px -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
@@ -205,7 +225,7 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* MAIN MENU */
 #main-menu-con {
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
-    position: fixed; left: 0; width: 100%; height: 65px; padding: 2px 10px 8px;
+    position: fixed; left: 0; width: 100%; height: 60px; padding: 0 10px 8px;
     z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
     background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #246;}
     #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
@@ -216,7 +236,7 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 body.main-menu-active #main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
 
 /* Notifications Menu Toggle */
-#bottom-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -50px; right: 0; z-index: 100; overflow-x: auto; width: 100%; white-space: nowrap;}
+#bottom-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -60px; right: 0; z-index: 100; overflow-x: auto; width: 100%; height: 75px; white-space: nowrap;}
 body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px;}
 /*
 .panel.panel-lucid > .panel-heading.bg-3dstage {
@@ -261,11 +281,12 @@ body.notifications-menu-active #bottom-panel {transition: bottom 0.5s; -webkit-t
         box-shadow: 0 0 3px #000000, 0 0 5px #000000 inset; background: rgba(50,200,200,0.95);}*/
     body.notifications-menu-active .panel.panel-lucid > .panel-heading.bg-3dstage, body.main-menu-active #main-menu-con {
         box-shadow: none; background: rgba(0,0,0,0.2);}
-    #bottom-panel .bg-3dstage .panel-menu .btn-lucid label {transform: none;}
 
-/******** FOR TESTING ONLY!! ********/
-/* #main-menu-con, #bottom-panel {overflow: none;}*/
+
+
 }
+/******** FOR TESTING ONLY!! ********/
+ /*#main-menu-con, #bottom-panel {overflow-x: hidden !important; overflow-y: hidden !important;}*/
 
 /* PUBLIC PANEL */
 /*
