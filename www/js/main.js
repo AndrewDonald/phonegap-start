@@ -98,22 +98,22 @@ $('#lucid-menu-toggle').on('click',function(){
     $('body').toggleClass('notifications-menu-active');
 });
 
-
 // Main Menu Items
-$('#main-menu > nav > button').on('click',function(){
+$('#top-menu > button').on('click',function(){
+    $(this).toggleClass('active');
     if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
-        $('#main-menu-con').click();
-    }else{
+        $($(this).data('target')).collapse('hide');
+    }
+    /*else{
         var pageTarget = $(this).data('page-target');
         var classTarget = $(this).data('class-target');
         if(typeof classTarget == "undefined"){
             classTarget = "";
         }
-        console.log(classTarget);
         
         $('#pages > :not("#page-' + pageTarget + '")').removeClass('active');
         $('#pages > #page-' + pageTarget).toggleClass('active view-' + classTarget);
-    }
+    }*/
 });
 
 // TOGGLE ON/OFF SELETOR BUTTONS
@@ -128,9 +128,6 @@ $('.btn-alerts').on('click',function(){
 $('.alerts-panel .alert-link').on('click',function(){
     $(this).remove();
 });
-
-
-
 
 // PANEL MENU
 $('.panel > .panel-nav > .panel-menu:not(".btn-group")').on('click', '.btn', function(){

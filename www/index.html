@@ -46,7 +46,7 @@
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
-            
+
             <!-- STREAM INFO PANEL (START) -->
             <div id="stream-and-filter-status" class="bg-3-lt clearfix">
                 <div class="stream-controls-toggle pull-left">
@@ -58,15 +58,10 @@
                 </div>
             </div>
             <!-- STREAM INFO PANEL (END) -->
-        </nav>
-        <!-- HEADER (END) -->
 
-        <!-- MAIN MENU (START) -->
-        <div id="main-menu-con">
-            <span class="menu-nav left glyphicon glyphicon-chevron-left scroll-menu"></span>
-            <span class="menu-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
-            <div id="main-menu">
-                <nav id="stream-views-menu" data-toggle="buttons">
+            <!-- MAIN-MENUS (START) -->
+            <div id="main-menus">
+                <nav id="stream-views-menu" class="collapse in" data-toggle="buttons">
                     <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-asterisk" data-page-target="stream" data-class-target="all">
                         <input type="checkbox" name="stream-types" id="show-all">
                         <label>all</label>
@@ -103,23 +98,61 @@
                         <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
                     </button>
                 </nav>
-                <nav id="stream-controls-menu" data-toggle="buttons">
+
+                <nav id="stream-controls-menu" class="collapse in" data-toggle="buttons">
                     <button id="apps-stream-panel" class="btn btn-lucid bg-2-70 tilde" data-panel="apps" data-page-target="stream-controls">
                         <input type="radio" name="stream-types" id="show-stream">
                         ~<label>stream</label>
                     </button>
-                    <button id="apps-filter-panel" class="btn btn-lucid bg-2-70 glyphicon glyphicon-filter" data-page-target="stream-filters">
+                    <button id="apps-filter-panel" class="btn btn-lucid bg-2-70 glyphicon glyphicon-filter" data-page-target="stream-filter-controls">
                         <input type="radio" name="stream-types" id="show-filter">
                         <label>filter</label>
                     </button>
                 </nav>
-                <nav id="user-menu" data-toggle="buttons">
+
+                <nav id="user-menu" class="collapse in" data-toggle="buttons">
                     <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-user" data-page-target="profile">
-                        <input type="radio" name="stream-types" id="show-profile">
+                        <input type="radio" name="stream-types" id="show-user">
                         <label>profile</label>
                     </button>
                 </nav>
+
+                <nav id="settings-menu" class="collapse in" data-toggle="buttons">
+                    <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-cog" data-page-target="settings">
+                        <input type="radio" name="stream-types" id="show-settings">
+                        <label>settings</label>
+                    </button>
+                </nav>
             </div>
+            <!-- MAIN-MENUS (END) -->
+        </nav>
+        <!-- HEADER (END) -->
+
+        <!-- MAIN MENU (START) -->
+        <div id="main-menu">
+            <nav id="top-menu" data-toggle="buttons">
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-eye-open" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-views-menu">
+                    <input type="radio" name="stream-types" id="show-Stream-views">
+                    <label>stream<br>views</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 tilde active" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-controls-menu">
+                    <span class="tilde">~</span>
+                    <sup class="indicator">
+                        <div class="label label-lucid">
+                            <span class="quantity">3985</span>
+                        </div>
+                    </sup>
+                    <input type="radio" name="stream-types" id="show-stream-controls">
+                    <label>stream<br>controls</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-filter" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-filter-controls">
+                    <input type="radio" name="stream-types" id="show-filter-controls">
+                    <label>filter<br>controls</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+            </nav>
         </div>
         <!-- MAIN MENU (END) -->
 
@@ -127,9 +160,6 @@
         <div id="lucid-menu" class="panel panel-lucid">
             <!-- Panel Nav -->
             <div class="panel-heading panel-nav">
-                <!-- Panel Left/Right -->
-                <span class="panel-nav left glyphicon glyphicon-chevron-left scroll-menu"></span>
-                <span class="panel-nav right glyphicon glyphicon-chevron-right scroll-menu"></span>
                 <!-- Panel Menu -->
                 <div class="panel-menu">
                     <button class="btn btn-lucid user" data-user="1" style="background-image: url(img/profile/profile-1.jpg);">
@@ -261,7 +291,7 @@
                             <input id="send-message" type="text" class="form-control">
                         </div>
                         <div class="send-message-controls btn-group pull-right">
-                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-paperclip"></span></button>
+                            <button type="submit" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-share"></span></button>
                             <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-share-alt"></span></button>
                         </div>
                     </form>

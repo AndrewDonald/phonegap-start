@@ -174,30 +174,32 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
-    position: relative; margin: 10px 5px 5px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 22px; color: #fff;
+    position: relative; margin: 10px 5px 5px; width: 50px; height: 50px; padding: 4px 6px; cursor: pointer; font-size: 16px; color: #fff;
     text-shadow: 1px 1px 3px #000000; box-shadow: 0 0 8px #222 inset, 0 0 3px #fff; border: 2px solid #ddd; border-radius: 5px; background-size: 100% 100%; background-repeat: no-repeat;}
 .btn-lucid:hover {color: #fff; border-color: #fff;}
 .btn-lucid.active {/*background-color: rgba(255,180,0,0.7);*/}
-    .btn-lucid.tilde {font-size: 44px; line-height: 0.57;}
-        .btn-lucid.tilde .indicator {top: 0; left: 20px;}
+    .btn-lucid.tilde {font-size: 40px; line-height: 0.55;}
+        /*.btn-lucid.tilde .indicator {top: 0; left: 20px;}*/
     .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
     .stream-controls-panel > .panel-heading .btn-lucid .glyphicon {font-size: 14px; margin-right: 2px;}  
     .btn-lucid img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 4px;}
     .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
     .btn-lucid.active {/*transition: color 1s, background-color 1s, border-color 1s; -webkit-transition: color 1s, background-color 1s, border-color 1s;*/
         color: #fff; background-color: rgba(255, 180, 0, 0.9); border-color: #fff; border-width: 2px; box-shadow: 0 0 8px #a40 inset, 0 0 10px #f90;}
-        .btn-lucid label {display: block; font-size: 12px; font-family: Arial; font-weight: normal; margin-top: 5px;}
+        .btn-lucid label {display: block; margin-top: 4px; font-size: 10px; font-family: Arial; font-weight: normal; line-height: 1;}
+        .btn-lucid.tilde label {margin-top: -4px;}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     
-.btn-lucid.user {}
+.btn-lucid.user {margin-bottom: 18px;}
     .btn-lucid.user.active {border: 2px solid #fff;}
-        .btn-lucid.user label {bottom: -18px; margin: 0; color: #FFFFFF; font-size: 9px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%; border-radius: 5px;}
-        .btn-lucid.user.active label {font-weight: bold; background-color: rgba(255, 255, 255, 0.4);}
+        .btn-lucid.user label {margin: 0; color: #FFFFFF; font-size: 9px; top: 37px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
+        .btn-lucid.user.active label {background-color: rgba(255, 180, 0, 0.7);}
         .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
         .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px;}
 @media screen and (orientation:landscape) {
     .btn-lucid.user {margin-bottom: 15px;}
-    .btn-lucid.user label {bottom: 0;}
+    .btn-lucid.user label {}
+    .btn-lucid.user.active label {border: none; border-radius: 0;}
 }
 
 /* HEADER */   
@@ -208,7 +210,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         nav#header > .masthead .main-nav.right {right: 5px;}
         nav#header > .masthead .monarch {height: 20px; margin: 1px -10px 0 0;}
         nav#header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-blue.png"); background-repeat: no-repeat; background-size: 100% auto;}
-                nav#header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
+            nav#header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
         nav#header > .masthead .logo {width: 100px; margin: 5px -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
         
@@ -251,20 +253,15 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* Portrait */
 /* Main Menu Toggle */
 /* MAIN MENU */
-#main-menu-con {
+#main-menu {
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
-    position: fixed; left: 0; width: 100%; height: 70px; padding: 0 10px 0;
+    position: fixed; left: 0; width: 100%; height: auto; padding: 0 10px 0;
     z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
     background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;  box-shadow: 0 0 5px #000;}
-    #main-menu-con > .menu-nav.left, #main-menu-con > .menu-nav.right {position: absolute; top: 50%; font-size: 10px; font-weight: bold; line-height: 0.5; color: #055; opacity: 0.4; text-shadow: 0 0 3px #fff; }
-    #main-menu-con .menu-nav.left {left: 0;}
-    #main-menu-con .menu-nav.right {right: 3px;}
-    #main-menu {position: relative;}
-    #main-menu > nav {display: inline;}
-body.main-menu-active #main-menu-con {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
+body.main-menu-active #main-menu {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
 
 /* Notifications Menu Toggle */
-#lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -60px; right: 0; z-index: 100; overflow-x: auto; overflow-y: hidden; width: 100%; height: 88px; white-space: nowrap;}
+#lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -60px; right: 0; z-index: 100; overflow-x: auto; overflow-y: hidden; width: 100%; height: 65px; white-space: nowrap;}
 body.notifications-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px;}
 
 /* Landscape */
@@ -279,21 +276,19 @@ body.notifications-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-tra
         transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 65px; margin-left: 65px;}
 
     /* Move Main Menu & Connections Notifications Menus to left and right sides */
-    #main-menu-con, #lucid-menu {width: 65px; height: 100%; padding: 0; z-index: 2000; overflow-x: hidden; overflow-y: auto; white-space: normal;}
-    #main-menu-con {border-bottom: none; border-right: 1px solid #246;}
+    #main-menu, #lucid-menu {width: 65px; height: 100%; padding: 0; z-index: 2000; overflow-x: hidden; overflow-y: auto; white-space: normal;}
+    #main-menu {border-bottom: none; border-right: 1px solid #246;}
     #lucid-menu {border-top: none; border-left: 1px solid #246;}
-    #main-menu-con .menu-nav left, #main-menu-con .menu-nav right, #main-menu-con .panel-nav left, #main-menu-con .panel-nav right {display: none;}
-    
     #lucid-menu button {display: block;}
         #lucid-menu .panel-menu {padding: 0 3px;}
     
     /* Main Menu Toggle */
-    #main-menu-con {transition: left 0.5; -webkit-transition: left 0.5; top: 0; left: -65px; }
-    body.main-menu-active #main-menu-con {transition: left 0.5s; -webkit-transition: left 0.5; left: 0; top: 0;}
+    #main-menu {transition: left 0.5; -webkit-transition: left 0.5; top: 0; left: -65px;}
+    body.main-menu-active #main-menu {transition: left 0.5s; -webkit-transition: left 0.5; left: 0; top: 0;}
     
     #lucid-menu {transition: right 0.5s; -webkit-transition: right 0.5s; top: 0; right: -65px;}
     body.notifications-menu-active #lucid-menu {transition: right 0.5s; -webkit-transition: right 0.5s; right: 0; top: 0;}
-    body.notifications-menu-active .panel.panel-lucid > .panel-heading.bg-3dstage, body.main-menu-active #main-menu-con {background: rgba(0,0,0,0.2);}
+    body.notifications-menu-active .panel.panel-lucid > .panel-heading.bg-3dstage, body.main-menu-active #main-menu {background: rgba(0,0,0,0.2);}
 }
 /******** FOR TESTING ONLY!! ********/
-/*#main-menu-con, #lucid-menu {overflow-x: hidden !important; overflow-y: hidden !important;}
+/*#main-menu, #lucid-menu {overflow-x: hidden !important; overflow-y: hidden !important;}
