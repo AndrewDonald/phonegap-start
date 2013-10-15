@@ -88,19 +88,19 @@ $(".stream-pane-menu-con").animate({
 
 // Main Menu Toggle
 $('#main-menu-toggle').on('click',function(){
-    $(this).toggleClass('active');
+    //$(this).toggleClass('active');
     $('body').toggleClass('main-menu-active');
 });
 
 // Lucid Menu Toggle
 $('#lucid-menu-toggle').on('click',function(){
-    $(this).toggleClass('active');
+    //$(this).toggleClass('active');
     $('body').toggleClass('notifications-menu-active');
 });
 
 // Main Menu Items
 $('#top-menu > button').on('click',function(){
-    $(this).toggleClass('active');
+    //$(this).toggleClass('active');
     if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
         $($(this).data('target')).collapse('hide');
     }

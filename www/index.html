@@ -22,7 +22,7 @@
         -->
 
         <!-- HEADER (START) -->
-        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav id="header" class="main-body navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- MASTHEAD (START) -->
             <div class="masthead bg-3">
                 <div class="main-nav left">
@@ -58,73 +58,6 @@
                 </div>
             </div>
             <!-- STREAM INFO PANEL (END) -->
-
-            <!-- MAIN-MENUS (START) -->
-            <div id="main-menus">
-                <nav id="stream-views-menu" class="collapse in" data-toggle="buttons">
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-asterisk" data-page-target="stream" data-class-target="all">
-                        <input type="checkbox" name="stream-types" id="show-all">
-                        <label>all</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-user active" data-page-target="stream" data-class-target="people">
-                        <sup class="indicator">
-                            <div class="label label-lucid">
-                                <span class="quantity">3985</span>
-                            </div>
-                        </sup>
-                        <input type="checkbox" name="stream-types" id="show-people">
-                        <label>people</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-comment" data-page-target="stream" data-class-target="chat">
-                        <input type="checkbox" name="stream-types" id="show-chat">
-                        <label>chat</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-picture" data-page-target="stream" data-class-target="photos">
-                        <input type="checkbox" name="stream-types" id="show-photos">
-                        <label>photos</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-film">
-                        <input type="checkbox" name="stream-types" id="show-videos" data-page-target="stream" data-class-target="videos">
-                        <label>videos</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                    <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-headphones" data-page-target="stream" data-class-target="audio">
-                        <input type="checkbox" name="stream-types" id="show-audio">
-                        <label>audio</label>
-                        <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
-                    </button>
-                </nav>
-
-                <nav id="stream-controls-menu" class="collapse in" data-toggle="buttons">
-                    <button id="apps-stream-panel" class="btn btn-lucid bg-2-70 tilde" data-panel="apps" data-page-target="stream-controls">
-                        <input type="radio" name="stream-types" id="show-stream">
-                        ~<label>stream</label>
-                    </button>
-                    <button id="apps-filter-panel" class="btn btn-lucid bg-2-70 glyphicon glyphicon-filter" data-page-target="stream-filter-controls">
-                        <input type="radio" name="stream-types" id="show-filter">
-                        <label>filter</label>
-                    </button>
-                </nav>
-
-                <nav id="user-menu" class="collapse in" data-toggle="buttons">
-                    <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-user" data-page-target="profile">
-                        <input type="radio" name="stream-types" id="show-user">
-                        <label>profile</label>
-                    </button>
-                </nav>
-
-                <nav id="settings-menu" class="collapse in" data-toggle="buttons">
-                    <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-cog" data-page-target="settings">
-                        <input type="radio" name="stream-types" id="show-settings">
-                        <label>settings</label>
-                    </button>
-                </nav>
-            </div>
-            <!-- MAIN-MENUS (END) -->
         </nav>
         <!-- HEADER (END) -->
 
@@ -136,7 +69,7 @@
                     <label>stream<br>views</label>
                     <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
                 </button>
-                <button class="btn btn-lucid bg-3-70 tilde active" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-controls-menu">
+                <button class="btn btn-lucid bg-3-70 tilde" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-controls-menu">
                     <span class="tilde">~</span>
                     <sup class="indicator">
                         <div class="label label-lucid">
@@ -155,6 +88,73 @@
             </nav>
         </div>
         <!-- MAIN MENU (END) -->
+
+        <!-- MAIN-MENUS (START) -->
+        <div id="main-menus" class="main-body">
+            <nav id="stream-views-menu" class="collapse" data-toggle="buttons">
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-asterisk" data-page-target="stream" data-class-target="all">
+                    <input type="checkbox" name="stream-types" id="show-all">
+                    <label>all</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-user" data-page-target="stream" data-class-target="people">
+                    <sup class="indicator">
+                        <div class="label label-lucid">
+                            <span class="quantity">3985</span>
+                        </div>
+                    </sup>
+                    <input type="checkbox" name="stream-types" id="show-people">
+                    <label>people</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-comment" data-page-target="stream" data-class-target="chat">
+                    <input type="checkbox" name="stream-types" id="show-chat">
+                    <label>chat</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-picture" data-page-target="stream" data-class-target="photos">
+                    <input type="checkbox" name="stream-types" id="show-photos">
+                    <label>photos</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-film">
+                    <input type="checkbox" name="stream-types" id="show-videos" data-page-target="stream" data-class-target="videos">
+                    <label>videos</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-headphones" data-page-target="stream" data-class-target="audio">
+                    <input type="checkbox" name="stream-types" id="show-audio">
+                    <label>audio</label>
+                    <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
+                </button>
+            </nav>
+
+            <nav id="stream-controls-menu" class="collapse" data-toggle="buttons">
+                <button id="apps-stream-panel" class="btn btn-lucid bg-2-70 tilde" data-panel="apps" data-page-target="stream-controls">
+                    <input type="radio" name="stream-types" id="show-stream">
+                    ~<label>stream</label>
+                </button>
+                <button id="apps-filter-panel" class="btn btn-lucid bg-2-70 glyphicon glyphicon-filter" data-page-target="stream-filter-controls">
+                    <input type="radio" name="stream-types" id="show-filter">
+                    <label>filter</label>
+                </button>
+            </nav>
+
+            <nav id="user-menu" class="collapse" data-toggle="buttons">
+                <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-user" data-page-target="profile">
+                    <input type="radio" name="stream-types" id="show-user">
+                    <label>profile</label>
+                </button>
+            </nav>
+
+            <nav id="settings-menu" class="collapse" data-toggle="buttons">
+                <button id="apps-connections-pane" class="btn btn-lucid bg-2-70 glyphicon glyphicon-cog" data-page-target="settings">
+                    <input type="radio" name="stream-types" id="show-settings">
+                    <label>settings</label>
+                </button>
+            </nav>
+        </div>
+        <!-- MAIN-MENUS (END) -->
 
         <!-- BOTTOM PANEL -->
         <div id="lucid-menu" class="panel panel-lucid">
@@ -282,7 +282,7 @@
         <!-- LUCID PANEL (END) -->
 
         <!-- FOOTER (START) -->
-        <nav id="footer" class="navbar navbar-default navbar-fixed-bottom bg-3" role="navigation">
+        <nav id="footer" class="main-body navbar navbar-default navbar-fixed-bottom bg-3" role="navigation">
             <!-- GLOBAL USER INPUT (START) -->
             <div class="global-user-input">
                 <div id="send-message-con">
@@ -302,7 +302,7 @@
         <!-- FOOTER (END) -->
        
         <!-- BODY (CONTENT) -->
-        <div id="pages">
+        <div id="pages" class="main-body">
             <div id="page-stream" class="page view-people">
                 <p>&nbsp;</p><p>&nbsp;</p>
                 <h2 class="view-all">STREAM - View All</h2>

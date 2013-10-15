@@ -1,5 +1,6 @@
 /* BOTSTRAP OVERRIDES */
 .navbar {background: none; min-height: 0;}
+    .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom {z-index: 2000;} 
 .navbar-form {padding: 0; margin-left: 0 !important; margin-right: 0 !important; border: none !important;}
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
@@ -134,7 +135,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .panel.panel-lucid .panel-nav.left.scroll-menu, .panel.panel-lucid .panel-nav.right.scroll-menu {display: block;}
     .panel .panel-heading h1, .panel .panel-heading h2, .panel .panel-heading h3, .panel .panel-heading h4, .panel .panel-heading h5, .panel .panel-heading h6 {margin: 0;}
          .panel .panel-heading.panel-nav {position: relative; white-space: nowrap; text-align: center;}
-        .panel .panel-heading.panel-nav .panel-menu {position: relative; padding: 0 8px; box-shadow: 0 1px 5px #000, 0 -1px 4px #000 inset;}
+        .panel .panel-heading.panel-nav .panel-menu {position: relative; box-shadow: 0 1px 5px #000, 0 -1px 4px #000 inset;}
             /*.panel .panel-heading.panel-nav .panel-menu > button:first-child {margin-left: 20px;}
             .panel .panel-heading.panel-nav .panel-menu > button:last-child {margin-right: 20px;}*/
         .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;}
@@ -190,7 +191,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
         .btn-lucid.tilde label {margin-top: -4px;}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     
-.btn-lucid.user {margin-bottom: 18px;}
+.btn-lucid.user {}
     .btn-lucid.user.active {border: 2px solid #fff;}
         .btn-lucid.user label {margin: 0; color: #FFFFFF; font-size: 9px; top: 37px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
         .btn-lucid.user.active label {background-color: rgba(255, 180, 0, 0.7);}
@@ -227,7 +228,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #page-stream.view-all .view-all, #page-stream.view-people .view-people, #page-stream.view-chat .view-chat, #page-stream.view-photos .view-photos, #page-stream.view-videos .view-videos, #page-stream.view-audio .view-audio {display: block;}
 
 /* BOTTOM PANEL */
-#lucid-menu {bottom: 45px; display: block; position: fixed; width: 100%; height: 70px; border-left: none; border-top: 1px solid #555; box-shadow: 0 0 5px #000;}
+#lucid-menu {bottom: 45px; display: block; position: fixed; z-index: 2000; width: 100%; height: 70px; border-left: none; border-top: 1px solid #555; box-shadow: 0 0 5px #000;}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
@@ -255,28 +256,32 @@ nav#footer {box-shadow: 0 -1px 5px #000000, 0 -3px 30px #000000 inset;}
 /* MAIN MENU */
 #main-menu {
     transition: top 0.5s; -webkit-transition: top 0.5s; top: -20px;
-    position: fixed; left: 0; width: 100%; height: auto; padding: 0 10px 0;
-    z-index: 100; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
+    position: fixed; left: 0; width: 100%; height: auto; z-index: 1900;
+    overflow-x: auto; overflow-y: hidden; white-space: nowrap;
     background-color: rgba(0,0,0,0.2); border-right: none; border-bottom: 1px solid #555;  box-shadow: 0 0 5px #000;}
 body.main-menu-active #main-menu {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
+#main-menus {transition: top 0.5s; -webkit-transition: top 0.5s; position: relative; top: 65px; z-index: 1600;}
+body.main-menu-active #main-menus {transition: top 0.5s; -webkit-transition: top 0.5s; top: 131px;}
+    #main-menus nav {white-space: nowrap;}
+}
 
 /* Notifications Menu Toggle */
-#lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -60px; right: 0; z-index: 100; overflow-x: auto; overflow-y: hidden; width: 100%; height: 65px; white-space: nowrap;}
+#lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -60px; right: 0; z-index: 1500; overflow-x: auto; overflow-y: hidden; width: 100%; height: auto; white-space: nowrap;}
 body.notifications-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px;}
 
 /* Landscape */
 @media screen and (orientation:landscape) {
     /* Center Header, Footer & Page */ 
-    nav#header, nav#footer, #page {transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-left: 0; margin-right 0;}
-    body:not(.notifications-menu-active).main-menu-active nav#header, body:not(.notifications-menu-active).main-menu-active nav#footer, body:not(.notifications-menu-active).main-menu-active #pages {
+    .main-body {transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-left: 0; margin-right 0;}
+    body:not(.notifications-menu-active).main-menu-active .main-body {
         transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 0; margin-left: 65px;}
-    body:not(.menu-menu-active).notifications-menu-active nav#header, body:not(.menu-menu-active).notifications-menu-active nav#footer, body:not(.menu-menu-active).notifications-menu-active #pages {
+    body:not(.menu-menu-active).notifications-menu-active .main-body {
         transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 65px; margin-left: 0;}
-    body.main-menu-active.notifications-menu-active nav#header, body.main-menu-active.notifications-menu-active nav#footer, body.main-menu-active.notifications-menu-active #pages {
+    body.main-menu-active.notifications-menu-active .main-body {
         transition: margin-left 0.5s, margin-right 0.5s; -webkit-transition: margin-left 0.5s, margin-right 0.5s; margin-right: 65px; margin-left: 65px;}
 
     /* Move Main Menu & Connections Notifications Menus to left and right sides */
-    #main-menu, #lucid-menu {width: 65px; height: 100%; padding: 0; z-index: 2000; overflow-x: hidden; overflow-y: auto; white-space: normal;}
+    #main-menu, #lucid-menu {width: 65px; height: 100%; overflow-x: hidden; overflow-y: auto; white-space: normal;}
     #main-menu {border-bottom: none; border-right: 1px solid #246;}
     #lucid-menu {border-top: none; border-left: 1px solid #246;}
     #lucid-menu button {display: block;}
@@ -285,6 +290,7 @@ body.notifications-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-tra
     /* Main Menu Toggle */
     #main-menu {transition: left 0.5; -webkit-transition: left 0.5; top: 0; left: -65px;}
     body.main-menu-active #main-menu {transition: left 0.5s; -webkit-transition: left 0.5; left: 0; top: 0;}
+    #main-menus {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
     
     #lucid-menu {transition: right 0.5s; -webkit-transition: right 0.5s; top: 0; right: -65px;}
     body.notifications-menu-active #lucid-menu {transition: right 0.5s; -webkit-transition: right 0.5s; right: 0; top: 0;}
