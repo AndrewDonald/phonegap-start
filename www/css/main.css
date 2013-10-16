@@ -240,13 +240,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         body.photos #page-stream .show-photos,
         body.videos #page-stream .show-videos,
         body.audio #page-stream .show-audio {display: block;}
-#stream-view-menu {
-  left: 50%;
-  margin-left: -128px;
-  position: fixed;
-  top: 65px;
-  width: 256px;
-}
+#stream-view-menu {left: 50%; margin-left: -130px; position: fixed; top: 65px; width: 300px;}
 
 /* FOOTER */
 nav#footer {box-shadow: 0 -1px 5px #000000, 0 0 8px #000000 inset;}
@@ -286,15 +280,13 @@ body.main-menu-active #main-menus {transition: top 0.5s; -webkit-transition: top
 #lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -40px; right: 0; border-left: none; border-top: 1px solid #555;}
     #lucid-menu .panel-menu {margin: 0;}
 /* Notifications Menu Toggle */
-body.connections-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 35px; right: 0;}
+body.connections-menu-active #lucid-menu {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px; right: 0;}
 
 /* Landscape */
 @media screen and (orientation: landscape) {
     /* Center Page */ 
-    body:not(.menu-menu-active):not(.connections-menu-active) #pages {transition: padding 0.5s; -webkit-transition: padding 0.5s; padding: 65px 0 45px;}
-    body:not(.connections-menu-active).main-menu-active #pages {transition: padding 0.5s; -webkit-transition: padding 0.5s; padding: 65px 0 45px 65px;}
-    body:not(.menu-menu-active).connections-menu-active #pages {transition: padding 0.5s; -webkit-transition: padding 0.5s; padding: 65px 65px 45px 0;}
-    body.main-menu-active.connections-menu-active #pages {transition: padding 0.5s; -webkit-transition: padding 0.5s; padding: 65px 65px 45px;}
+    body.main-menu-active #pages {transition: padding-left 0.5s; -webkit-transition: padding-left 0.5s; padding-left: 65px;}
+    body.connections-menu-active #pages {transition: padding-right 0.5s; -webkit-transition: padding-right 0.5s; padding-right: 65px;}
     
     /* Move Main Menu & Connections Notifications Menus to left and right sides */
     #main-menu, #lucid-menu {width: 65px; height: 100%; overflow-x: hidden; overflow-y: auto; white-space: normal;}
