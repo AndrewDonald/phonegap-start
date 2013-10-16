@@ -88,14 +88,14 @@ $(".stream-pane-menu-con").animate({
 
 // Main Menu Toggle
 $('#main-menu-toggle').on('click',function(){
-    //$(this).toggleClass('active');
+    $(this).toggleClass('active');
     $('body').toggleClass('main-menu-active');
 });
 
 // Lucid Menu Toggle
 $('#lucid-menu-toggle').on('click',function(){
-    //$(this).toggleClass('active');
-    $('body').toggleClass('notifications-menu-active');
+    $(this).toggleClass('active');
+    $('body').toggleClass('connections-menu-active');
 });
 
 // Main Menu Items
@@ -114,6 +114,13 @@ $('#top-menu > button').on('click',function(){
         $('#pages > :not("#page-' + pageTarget + '")').removeClass('active');
         $('#pages > #page-' + pageTarget).toggleClass('active view-' + classTarget);
     }*/
+});
+
+
+// TOGGLE STREAM VIEWS SELETOR BUTTONS
+$('#stream-view-menu > li > a').on('click',function(){
+    $(this).parent().toggleClass('active');
+    $('body').toggleClass($(this).data('stream-view'));
 });
 
 // TOGGLE ON/OFF SELETOR BUTTONS

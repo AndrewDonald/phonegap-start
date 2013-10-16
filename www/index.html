@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home">
+    <body class="home people">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -22,7 +22,7 @@
         -->
 
         <!-- HEADER (START) -->
-        <nav id="header" class="main-body navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- MASTHEAD (START) -->
             <div class="masthead bg-3">
                 <div class="main-nav left">
@@ -30,8 +30,10 @@
                     <!--<button id="search-toggle" type="button" class="btn btn-link-lucid btn-lg tilde color-3-lt">~</button>-->
                 </div>
                 <center>
-                    <img src="img/lucid-butterfly.png" class="monarch">
-                    <img src="img/lucidlife.png" class="logo">
+                    <div class="logo-con">
+                        <img src="img/lucid-butterfly.png" class="monarch">
+                        <img src="img/lucidlife.png" class="logo">
+                    </div>
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
                 <div class="main-nav right">
@@ -62,14 +64,14 @@
         <!-- HEADER (END) -->
 
         <!-- MAIN MENU (START) -->
-        <div id="main-menu">
+        <div id="main-menu" class="bg-3-30">
             <nav id="top-menu" data-toggle="buttons">
-                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-eye-open" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-views-menu">
+                <button class="btn btn-lucid bg-2-70 glyphicon glyphicon-eye-open" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-views-menu">
                     <input type="radio" name="stream-types" id="show-Stream-views">
                     <label>stream<br>views</label>
                     <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
                 </button>
-                <button class="btn btn-lucid bg-3-70 tilde" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-controls-menu">
+                <button class="btn btn-lucid bg-2-70 tilde" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-controls-menu">
                     <span class="tilde">~</span>
                     <sup class="indicator">
                         <div class="label label-lucid">
@@ -80,7 +82,7 @@
                     <label>stream<br>controls</label>
                     <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
                 </button>
-                <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-filter" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-filter-controls">
+                <button class="btn btn-lucid bg-2-70 glyphicon glyphicon-filter" data-toggle="collapse" data-parent="#main-menus" data-target="#stream-filter-controls">
                     <input type="radio" name="stream-types" id="show-filter-controls">
                     <label>filter<br>controls</label>
                     <!--<sup class="indicator"><span class="label label-primary">305</span></sup>-->
@@ -90,7 +92,7 @@
         <!-- MAIN MENU (END) -->
 
         <!-- MAIN-MENUS (START) -->
-        <div id="main-menus" class="main-body">
+        <div id="main-menus">
             <nav id="stream-views-menu" class="collapse" data-toggle="buttons">
                 <button class="btn btn-lucid bg-3-70 glyphicon glyphicon-asterisk" data-page-target="stream" data-class-target="all">
                     <input type="checkbox" name="stream-types" id="show-all">
@@ -156,8 +158,8 @@
         </div>
         <!-- MAIN-MENUS (END) -->
 
-        <!-- BOTTOM PANEL -->
-        <div id="lucid-menu" class="panel panel-lucid">
+        <!-- LUCID MENU -->
+        <div id="lucid-menu" class="bg-3-30 panel panel-lucid">
             <!-- Panel Nav -->
             <div class="panel-heading panel-nav">
                 <!-- Panel Menu -->
@@ -279,10 +281,10 @@
             <div class="panel-body"></div>
             <!-- LUCID PANEL-BODY (END) -->
         </div>
-        <!-- LUCID PANEL (END) -->
+        <!-- LUCID MENU (END) -->
 
         <!-- FOOTER (START) -->
-        <nav id="footer" class="main-body navbar navbar-default navbar-fixed-bottom bg-3" role="navigation">
+        <nav id="footer" class="navbar navbar-default navbar-fixed-bottom bg-3" role="navigation">
             <!-- GLOBAL USER INPUT (START) -->
             <div class="global-user-input">
                 <div id="send-message-con">
@@ -302,15 +304,46 @@
         <!-- FOOTER (END) -->
        
         <!-- BODY (CONTENT) -->
-        <div id="pages" class="main-body">
-            <div id="page-stream" class="page view-people">
-                <p>&nbsp;</p><p>&nbsp;</p>
-                <h2 class="view-all">STREAM - View All</h2>
-                <h2 class="view-people">STREAM - View People</h2>
-                <h2 class="view-chat">STREAM - View Chat</h2>
-                <h2 class="view-photos">STREAM - View Photos</h2>
-                <h2 class="view-videos">STREAM - View Videos</h2>
-                <h2 class="view-audio">STREAM - View Audio</h2>
+        <div id="pages">
+            <div id="page-stream" class="page active">
+                <center>
+                    <ul id="stream-view-menu" class="nav nav-pills">
+                        <li class="active">
+                            <a href="#" data-stream-view="people"><span class="glyphicon glyphicon-user"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" data-stream-view="chat"><span class="glyphicon glyphicon-comment"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" data-stream-view="photos"><span class="glyphicon glyphicon-picture"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" data-stream-view="videos"><span class="glyphicon glyphicon-film"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" data-stream-view="audio"><span class="glyphicon glyphicon-headphones"></span></a>
+                        </li>
+                    </ul>
+                </center>
+                <p>&nbsp;</p>
+                <h2 class="show-people">Show People</h2>
+                <h2 class="show-chat">Show Chat</h2>
+                <h2 class="show-photos">Show Photos</h2>
+                <h2 class="show-videos">Show Videos</h2>
+                <h2 class="show-audio">Show Audio</h2>
+
+
+                <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
+                LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
+
+                Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
+
+                Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
+                <button class="btn btn-warning">ok</button>
+
+                <p><b>START</b></p>
+                <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
+                <p><b>END</b></p>
             </div>
             <div id="page-stream-controls" class="page"><h2>STREAM CONTROLS</h2></div>
             <div id="page-stream-filter" class="page"><h2>STREAM FILTERS</h2></div>
