@@ -248,11 +248,11 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px;}
         
         #stream-associates {display: none; margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; border-top: 1px solid #00AABB; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
-        #stream-associates.active {display: block; overflow-x: hidden; overflow-y: auto;}
+        #stream-associates.active {display: block;}
             #stream-associates .stream-associates-list {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 28px; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 200px;}
+                height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
                 #stream-associates.active .stream-associates-list.active > li {padding: 5px;}
                 #stream-associates.active .stream-associates-list button.remove {border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
                 #stream-associates.active .stream-associates-list a.btn {color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}

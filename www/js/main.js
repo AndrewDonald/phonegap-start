@@ -122,7 +122,7 @@ $('#stream-filters-menu > .btn').on('click',function(){
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
-        $('#stream-associates .stream-associates-list').toggleClass('active').toggleClass('list-inline');
+        $('#stream-associates .stream-associates-list').toggleClass('active'); //.toggleClass('list-inline');
     }
 });
 
