@@ -11,6 +11,7 @@
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
+.list-inline > li {padding: 5px;}
 .btn-lg {padding: 9px 16px;}
 .btn-link-lucid {font-size: 12px; font-weight: bold; transition: color 0.5s; -webkit-transition: color 0.5; color: #067; padding: 3px 5px; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none;}
 
@@ -246,16 +247,18 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
         #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px;}
         
-        #stream-associates {display: none; margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; border-top: 1px solid #00AABB; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; padding: 0 5px; overflow-x: auto; overflow-y: hidden;}
+        #stream-associates {display: none; margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; border-top: 1px solid #00AABB; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
         #stream-associates.active {display: block; overflow-x: hidden; overflow-y: auto;}
             #stream-associates .stream-associates-list {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 25px; white-space: nowrap;}
+                height: 28px; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 150px;}
-                #stream-associates.active .stream-associates-list.active > .btn {display: block; padding: 5px 5px;}
-                #stream-associates.active .stream-associates-list > .btn.active {}    
-                    #stream-associates .stream-associates-list > .btn .badge {margin-left: 5px;}
-                    #stream-associates .stream-associates-list > .btn.active .badge {font-weight: bold;}
+                height: 200px;}
+                #stream-associates.active .stream-associates-list.active > li {padding: 5px;}
+                #stream-associates.active .stream-associates-list button.remove {border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
+                #stream-associates.active .stream-associates-list a.btn {color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
+                #stream-associates.active .stream-associates-list a.btn.active {background-color: #056; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}    
+                    #stream-associates .stream-associates-list a.btn .badge {margin-left: 5px;}
+                    #stream-associates .stream-associates-list a.btn.active .badge {font-weight: bold;}
                 /*#stream-associates.active .stream-associates-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
 
     #stream-filters-menu {border-bottom: 1px solid #056; background-color: rgba(0,50,50,0.95); box-shadow: 0 0 5px #000;}

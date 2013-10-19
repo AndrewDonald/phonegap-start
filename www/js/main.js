@@ -122,8 +122,13 @@ $('#stream-filters-menu > .btn').on('click',function(){
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
-        $('#stream-associates .stream-associates-list').toggleClass('active');
+        $('#stream-associates .stream-associates-list').toggleClass('active').toggleClass('list-inline');
     }
+});
+
+// REMOVE ASSOCIATED STREAM BUTTON
+$('#stream-associates button.remove').on('click',function(){
+    $(this).parent().remove();
 });
 
 // TOGGLE ON/OFF SELETOR BUTTONS
