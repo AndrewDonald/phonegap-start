@@ -120,7 +120,7 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #eee; pad
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
-#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; z-index: -1; padding: 140px 0px 110px; /*background-color: rgba(255,255,255,0.25);*/}
+#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 140px 0px 110px; /*background-color: rgba(255,255,255,0.25);*/}
 
 .label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
 form {padding: 0;}
@@ -250,11 +250,34 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         #stream-associates {display: none; margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; border-top: 1px solid #00AABB; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
         #stream-associates.active {display: block;}
             #stream-associates .stream-associates-list {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 28px; white-space: nowrap;}
+                height: 28px; margin: 0; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
                 #stream-associates.active .stream-associates-list.active > li {padding: 5px;}
-                #stream-associates.active .stream-associates-list button.remove {border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
+                /*
+                @media (min-width: @screen-sm) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 45%;}
+                }
+                @media (min-width: @screen-md) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 30%;}
+                }
+                @media (min-width: @screen-lg) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 23%;}
+                }
+                */
+                @media all and (min-width: 481px) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 45%;}
+                }
+                @media all and (min-width: 768px) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 30%;}
+                }
+                @media all and (min-width: 992px) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 23%;}
+                }
+                @media all and (min-width: 1200px) {
+                    #stream-associates.active .stream-associates-list.active > li {width: 18%;}
+                }
+                #stream-associates.active .stream-associates-list button.remove {margin: -2px 0 0 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
                 #stream-associates.active .stream-associates-list a.btn {color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
                 #stream-associates.active .stream-associates-list a.btn.active {background-color: #056; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}    
                     #stream-associates .stream-associates-list a.btn .badge {margin-left: 5px;}
