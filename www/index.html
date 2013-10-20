@@ -120,28 +120,42 @@
             <!-- STREAM INFO PANEL (END) -->
 
             <!-- STREAM FILTERS PANEL (START) -->
-            <nav id="stream-filters-menu" class="btn-group btn-group-justified">
-                <a id="associated-streams-toggle" class="btn btn-lucid tilde" data-stream-filter="stream">
-                    <span class="badge">3</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-filter" data-stream-filter="filter">
-                    <span class="badge">off</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-user active" data-stream-filter="people">
-                    <span class="badge">180</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-comment" data-stream-filter="chat">
-                    <span class="badge">237</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-picture" data-stream-filter="photos">
-                    <span class="badge">45</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-film" data-stream-filter="videos">
-                    <span class="badge">12</span>
-                </a>
-                <a class="btn btn-lucid glyphicon glyphicon-headphones" data-stream-filter="audio">
-                    <span class="badge">2</span>
-                </a>
+            <nav id="stream-filters-menu">
+                <div class="stream-filters-menu-list">
+                    <a class="btn btn-lucid menu glyphicon glyphicon-user active" data-stream-filter="people">
+                        <span class="badge">180</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-comment" data-stream-filter="chat">
+                        <span class="badge">237</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-picture" data-stream-filter="photos">
+                        <span class="badge">45</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-film" data-stream-filter="videos">
+                        <span class="badge">12</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-headphones" data-stream-filter="audio">
+                        <span class="badge">2</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-filter divider" data-stream-filter="filter">
+                        <span class="badge">off</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-filter" data-stream-filter="filter-controls">
+                        <span class="badge">open</span>
+                    </a>
+                    <a id="associated-streams-toggle" class="btn btn-lucid menu tilde divider" data-stream-filter="stream-preview">
+                        <span class="badge">3</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-list divider" data-stream-filter="filter-toggle">
+                        <span class="badge">more</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-th-large" data-stream-filter="filter-controls">
+                        <span class="badge">more</span>
+                    </a>
+                    <a class="btn btn-lucid menu glyphicon glyphicon-user divider" data-stream-filter="people-preview">
+                        <span class="badge">on</span>
+                    </a>
+                </div>
             </nav>
             <!-- STREAM FILTERS PANEL (END) -->
         </nav>

@@ -118,7 +118,7 @@ $('#top-menu > button').on('click',function(){
 
 
 // TOGGLE STREAM VIEWS SELETOR BUTTONS
-$('#stream-filters-menu > .btn').on('click',function(){
+$('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click',function(){
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
