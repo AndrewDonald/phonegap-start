@@ -22,7 +22,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 button.btn-link-lucid.active {text-shadow: 0 0 3px #000;}
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    .btn-link-lucid .badge, .btn-lucid .badge {background-color: #056; color: #067;}
+    .btn-link-lucid .badge, .btn-lucid .badge {background-color: #056; color: #0ab;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {background-color: #0ab; color: #fff;}
 .btn .badge {right: 0px;}
 .btn-group-justified  > a {border-radius: 0;}
@@ -223,7 +223,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     .btn-lucid.menu.active > .badge {color: #fff; text-shadow: none;}
 .btn-lucid.menu.divider {border-left: 1px solid #056;}
 @media screen and (orientation: landscape) {
-    .btn-lucid.menu {padding: 4px 6px;}
+    .btn-lucid.menu {padding: 0 6px;}
     .btn-lucid.menu > .badge {display: inline-block; left: 0; margin: 0 -12px;}
 }
 
@@ -254,7 +254,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 height: 35px; margin: 0; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
-                #stream-associates.active .stream-associates-list.active > li {padding: 5px;}
+                #stream-associates.active .stream-associates-list.active > li {width: 100%; padding: 5px;}
                 /*
                 @media (min-width: @screen-sm) {
                     #stream-associates.active .stream-associates-list.active > li {width: 45%;}
@@ -267,27 +267,29 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 }
                 */
                 @media all and (min-width: 481px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 45%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 49.5%;}
                 }
                 @media all and (min-width: 768px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 30%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 32.9%;}
                 }
                 @media all and (min-width: 992px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 23%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 24.4%;}
                 }
                 @media all and (min-width: 1200px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 18%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
                 }
                 #stream-associates.active .stream-associates-list button.remove {margin: -2px 0 0 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 4px 5px 6px;}
-                #stream-associates.active .stream-associates-list a.btn {color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
+                #stream-associates.active .stream-associates-list a.btn {clear: both; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
                 #stream-associates.active .stream-associates-list a.btn.active {background-color: #056; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}    
-                    #stream-associates .stream-associates-list a.btn .badge {margin-left: 5px;}
+                    #stream-associates .stream-associates-list a.btn .stream-name {float: left;}
+                    #stream-associates .stream-associates-list a.btn .badge {margin-left: 5px; float: none;}
                     #stream-associates .stream-associates-list a.btn.active .badge {font-weight: bold;}
+                    #stream-associates .stream-associates-list.active a.btn .badge {float: right;}
                 /*#stream-associates.active .stream-associates-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
 
     #stream-filters-menu {border-bottom: 1px solid #056; background-color: rgba(0,50,50,0.95); box-shadow: 0 0 5px #000; overflow-x: auto; overflow-y: hidden;}
         #stream-filters-menu .stream-filters-menu-list {white-space: nowrap;}
-
+            #stream-filters-menu .stream-filters-menu-list a:last-child {margin-right: 20px;}
 #pages > .page {display: none; padding: 10px;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
