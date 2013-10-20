@@ -267,18 +267,18 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 }
                 */
                 @media all and (min-width: 481px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 49%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 49.5%;}
                 }
                 @media all and (min-width: 768px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 32.33%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 32.9%;}
                 }
                 @media all and (min-width: 992px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 24%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 24.7%;}
                 }
                 @media all and (min-width: 1200px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 19%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
                 }
-                #stream-associates.active .stream-associates-list button.remove {float: left; margin: 1px 7px 0 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 3px;}
+                #stream-associates.active .stream-associates-list button.remove {position: relative; top: 0; left: 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
                 #stream-associates.active .stream-associates-list a.btn {clear: both; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
                 #stream-associates.active .stream-associates-list a.btn.active {background-color: #056; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}    
                     #stream-associates .stream-associates-list a.btn .stream-name {float: left;}
