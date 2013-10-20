@@ -254,7 +254,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 height: 35px; margin: 0; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
-                #stream-associates.active .stream-associates-list.active > li {width: 100%; padding: 5px;}
+                #stream-associates.active .stream-associates-list.active > li {width: 99%; padding: 5px;}
                 /*
                 @media (min-width: @screen-sm) {
                     #stream-associates.active .stream-associates-list.active > li {width: 45%;}
@@ -267,16 +267,16 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 }
                 */
                 @media all and (min-width: 481px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 49.5%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 49%;}
                 }
                 @media all and (min-width: 768px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 32.9%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 32.33%;}
                 }
                 @media all and (min-width: 992px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 24.4%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 24%;}
                 }
                 @media all and (min-width: 1200px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
+                    #stream-associates.active .stream-associates-list.active > li {width: 19%;}
                 }
                 #stream-associates.active .stream-associates-list button.remove {margin: -2px 0 0 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 4px 5px 6px;}
                 #stream-associates.active .stream-associates-list a.btn {clear: both; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
