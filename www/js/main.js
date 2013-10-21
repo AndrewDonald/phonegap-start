@@ -117,6 +117,25 @@ $('#top-menu > button').on('click',function(){
 });
 
 
+ 
+// Select User
+$('.btn-lucid.user').on('click',function(){
+    $(this).toggleClass('active').siblings().removeClass('active');
+});
+
+// Toggle Stream Associate
+$('.stream-associates-list > li > a').on('click',function(){
+    $(this).toggleClass('active');
+});
+
+// Toggle Stream Associate Remove
+$('.stream-associates-list > li > button').on('click',function(){
+    $(this).parent('li').remove();
+    if($('.stream-associates-list > li').size() == 0){
+        $('#stream-associates').removeClass('active');
+    }
+});
+
 // TOGGLE STREAM VIEWS SELETOR BUTTONS
 $('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click',function(){
     $(this).toggleClass('active');

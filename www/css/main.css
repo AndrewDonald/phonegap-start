@@ -208,7 +208,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     
 .btn-lucid.user {margin-top: 8px; height: 50px; width: 50px;}
     .btn-lucid.user.active {}
-        .btn-lucid.user label {margin: 1px 0; color: #FFFFFF; font-size: 9px; top: 37px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
+        .btn-lucid.user label {color: #FFFFFF; font-size: 9px; top: 34px; left: 0; position: absolute; text-align: center; text-shadow: 0 0 1px #000; width: 100%;}
         .btn-lucid.user.active label {background-color: rgba(255, 255, 0, 0.7);}
         .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
         .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px; border-color: #ff6;}
@@ -242,20 +242,23 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         nav#header > .masthead .logo {width: 100px; margin: 0 -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
+
     #stream-and-filter-status {}
         #stream-and-filter-status .stream-controls-toggle #stream-name  {display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
         #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
         #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
-        #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px;}
-        
-        #stream-associates {display: none; margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; border-top: 1px solid #00AABB; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
-        #stream-associates.active {display: block;}
+        #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px; text-decoration: line-through; color: #0cd;}
+        body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #089;}
+
+        #stream-associates {transition: height 0.5s; -webkit-transition: height 0.5s; height: 0;
+            margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
+        body.stream-preview #stream-associates {transition: height 0.5s; -webkit-transition: height 0.5s; height: 35px; min-height: 35px;}
             #stream-associates .stream-associates-list {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 35px; margin: 0; white-space: nowrap;}
-            #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
-                #stream-associates.active .stream-associates-list > li {position: relative;}
-                #stream-associates.active .stream-associates-list.active > li {width: 100%; padding: 5px;}
+            body.stream-preview-full #stream-associates .stream-associates-list {transition: height 0.5s; -webkit-transition: height 0.5s;
+                height: 110px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
+                #stream-associates .stream-associates-list > li {position: relative;}
+                body.stream-preview-full #stream-associates .stream-associates-list > li {width: 100%; padding: 5px;}
                 /*
                 @media (min-width: @screen-sm) {
                     #stream-associates.active .stream-associates-list.active > li {width: 45%;}
@@ -268,16 +271,16 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 }
                 */
                 @media all and (min-width: 481px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 49.5%;}
+                    body.stream-preview-full #stream-associates .stream-associates-list.active > li {width: 49.5%;}
                 }
                 @media all and (min-width: 768px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 32.9%;}
+                    body.stream-preview-full #stream-associates.active .stream-associates-list.active > li {width: 32.9%;}
                 }
                 @media all and (min-width: 992px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 24.7%;}
+                    body.stream-preview-full #stream-associates.active .stream-associates-list.active > li {width: 24.7%;}
                 }
                 @media all and (min-width: 1200px) {
-                    #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
+                    body.stream-preview-full #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
                 }
                 #stream-associates.active .stream-associates-list button.remove {position: absolute; top: 5px; left: 5px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
                 #stream-associates.active .stream-associates-list a.btn {width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
@@ -291,8 +294,14 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
     #stream-filters-menu {border-bottom: 1px solid #056; background-color: rgba(0,50,50,0.95); box-shadow: 0 0 5px #000; overflow-x: auto; overflow-y: hidden;}
         #stream-filters-menu .stream-filters-menu-list {white-space: nowrap;}
             #stream-filters-menu .stream-filters-menu-list a:last-child {margin-right: 20px;}
+                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
+                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
+                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=stream-preview] .badge:before{content:"off";}
+                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=stream-preview].active .badge:before{content:"on";}
+
+
 #pages > .page {display: none; padding: 10px;}
-    #pages > .page.active {display: block;}
+    #pages > .page.active {display: inline;}
         #page-stream .show-stream,
         #page-stream .show-filter,
         #page-stream .show-people,

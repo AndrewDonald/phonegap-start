@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home filter people lucid-menu-active">
+    <body class="home filter people lucid-menu-active stream-preview">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -64,7 +64,7 @@
                         <span class="filter-sign glyphicon glyphicon-filter"></span><span class="filter-info">m&f 25-40 &lt;10km</span>
                     </div>
                 </div>
-                <div id="stream-associates" class="active">
+                <div id="stream-associates">
                     <ul class="stream-associates-list list-unstyled list-inline">
                         <li>
                             <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
@@ -138,10 +138,10 @@
                         <span class="badge">2</span>
                     </a>
                     <a class="btn btn-lucid menu glyphicon glyphicon-filter divider active" data-stream-filter="filter">
-                        <span class="badge">off</span>
+                        <span class="badge"></span>
                     </a>
-                    <a id="associated-streams-toggle" class="btn btn-lucid menu tilde divider" data-stream-filter="stream-preview">
-                        <span class="badge">3</span>
+                    <a id="associated-streams-toggle" class="btn btn-lucid menu tilde divider active" data-stream-filter="stream-preview">
+                        <span class="badge">8</span>
                     </a>
                     <a class="btn btn-lucid menu glyphicon glyphicon-list divider" data-stream-filter="filter-toggle">
                         <span class="badge">more</span>
@@ -340,12 +340,12 @@
         <div id="pages">
             <div id="page-stream" class="page active">
                 <span class="show-stream tilde">~</span>
-                <span class="show-filter glyphicon glyphicon-filter"></span>
                 <span class="show-people glyphicon glyphicon-people"></span>
                 <span class="show-chat glyphicon glyphicon-comment"></span>
                 <span class="show-photos glyphicon glyphicon-picture"></span>
                 <span class="show-videos glyphicon glyphicon-film"></span>
                 <span class="show-audio glyphicon glyphicon-headphones"></span>
+                <span class="show-filter glyphicon glyphicon-filter"></span>
 
 
                 <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
