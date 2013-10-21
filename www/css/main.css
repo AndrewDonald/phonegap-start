@@ -254,7 +254,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 height: 35px; margin: 0; white-space: nowrap;}
             #stream-associates.active .stream-associates-list.active {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 150px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
-                #stream-associates.active .stream-associates-list.active > li {width: 99%; padding: 5px;}
+                #stream-associates.active .stream-associates-list.active > li {width: 100%; padding: 5px;}
                 /*
                 @media (min-width: @screen-sm) {
                     #stream-associates.active .stream-associates-list.active > li {width: 45%;}
@@ -279,8 +279,8 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                     #stream-associates.active .stream-associates-list.active > li {width: 19.7%;}
                 }
                 #stream-associates.active .stream-associates-list button.remove {position: relative; top: 0; left: 0; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
-                #stream-associates.active .stream-associates-list a.btn {clear: both; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
-                #stream-associates.active .stream-associates-list a.btn.active {background-color: #056; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}    
+                #stream-associates.active .stream-associates-list a.btn {width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; margin-left: -30px; padding: 4px 4px 2px 30px;}
+                #stream-associates.active .stream-associates-list a.btn.active {background-color: #056;}    
                     #stream-associates .stream-associates-list a.btn .stream-name {float: left;}
                     #stream-associates .stream-associates-list a.btn .badge {margin-left: 5px; float: none;}
                     #stream-associates .stream-associates-list a.btn.active .badge {font-weight: bold;}
