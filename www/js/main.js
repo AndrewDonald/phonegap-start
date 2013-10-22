@@ -119,11 +119,12 @@ $('#main-menu-items > li > button').on('click',function(){
 });
 
 
- 
+/*
 // Select User
 $('.btn-lucid.user').on('click',function(){
     $(this).toggleClass('active').siblings().removeClass('active');
 });
+*/
 
 // Toggle Stream Associate
 $('.stream-associations-list > li > a').on('click',function(){
@@ -165,13 +166,19 @@ $('.toggle-on-off').on('click',function(){
 });
 
 $('#connection-alerts button').on('click',function(){
-    $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideToggle('fast').siblings().hide('fast');
+    $(this).toggleClass('active').siblings().removeClass('active');
+    if($(this).hasClass('active')){
+        $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideToggle('fast').siblings().hide('fast');
+    }else{
+        $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+    }
 });
 
 $('.alerts-panel .alert-link').on('click',function(){
     $(this).remove();
 });
 
+/*
 // PANEL MENU
 $('.panel > .panel-nav > .panel-menu:not(".btn-group")').on('click', '.btn', function(){
     var panel = $(this).data('panel');
@@ -184,6 +191,7 @@ $('.panel > .panel-nav > .panel-menu:not(".btn-group")').on('click', '.btn', fun
     $(this).toggleClass('active');
     $('.panel .' + panelType + '-panel').toggleClass('active');
 });
+*/
 
 // STREAM PANE Swipe handler
 function swipeStreamPanel(direction){
