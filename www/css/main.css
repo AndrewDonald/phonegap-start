@@ -202,7 +202,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     position: relative; margin: 5px 5px; padding: 4px 6px; cursor: pointer; font-size: 16px; color: #fff;
     border-width: 2px;  border-radius: 5px; background-size: 100% 100%; background-repeat: no-repeat;}
 .btn-lucid:hover {color: #fff; border-color: #fff;}
-.btn-lucid.active {
+.btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
         border-width: 2px; border-color: #ddd;
         color: #fff; background-color: rgba(0, 130, 255, 0.95); border: 2px solid #ff6;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.42;}
@@ -230,8 +230,9 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .btn-lucid.menu {padding: 0 5px 0 19px; color: #089; background-color: rgba(0,0,0,0); border-radius: 0; border: none; white-space: nowrap;}
 .btn-lucid.menu.active {color: #ff6; box-shadow: none;}
-    .btn-lucid.menu > .badge {display: block; font-family: arial; left: 50%; margin: 8px -18px 0; width: 36px; padding: 2px 0; color: #089; text-shadow: none;}
+    .btn-lucid.menu > .badge {display: block; font-family: arial; left: 50%; margin: 7px -18px 0; width: 36px; padding: 2px 0; color: #089; text-shadow: none;}
     .btn-lucid.menu.active > .badge {color: #fff; text-shadow: none;}
+    .btn-lucid.menu.tilde > .badge {top: -2px;}
 .btn-lucid.menu.divider {border-left: 1px solid #056;}
 @media screen and (orientation: landscape) {
     .btn-lucid.menu {padding: 0 6px;}
@@ -255,7 +256,10 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
 
 
     #stream-and-filter-status {}
-        #stream-and-filter-status .stream-controls-toggle #stream-name  {display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; max-width: 135px; word-wrap: break-word;}
+        #stream-and-filter-status .stream-controls-toggle #stream-name  {display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; max-width: 210px; word-wrap: break-word;}
+        @media screen and (orientation:landscape) {
+             #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 430px;}
+        }
         #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
         #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
         #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px; text-decoration: line-through; color: #0cd;}
@@ -286,12 +290,13 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                     body.stream-preview-full #stream-associations.active .stream-associations-list.active > li {width: 19.7%;}
                 }
                 */
-                #stream-associations .stream-associations-list button.remove {position: absolute; top: 5px; left: 5px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
-                #stream-associations .stream-associations-list a.btn {width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
-                #stream-associations .stream-associations-list a.btn.active {background-color: #ff6; color: #0ab;}    
+                #stream-associations .stream-associations-list button.remove {position: absolute; top: 6px; left: 6px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 4px;}
+                #stream-associations .stream-associations-list a.btn {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
+                #stream-associations .stream-associations-list a.btn.active {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; background-color: #ff6; color: #0ab;}    
                     #stream-associations .stream-associations-list a.btn .stream-name {float: left;}
-                    #stream-associations .stream-associations-list a.btn .badge {margin-left: 5px; float: none;}
-                    #stream-associations .stream-associations-list a.btn.active .badge {font-weight: bold;}
+                    #stream-associations .stream-associations-list a.btn.active .stream-name {color: #078;}
+                    #stream-associations .stream-associations-list a.btn .badge {margin-left: 5px; float: none; background-color: #0ab; color: #078;}
+                    #stream-associations .stream-associations-list a.btn.active .badge {font-weight: bold; color: #fff;}
                     #stream-associations .stream-associations-list.active a.btn .badge {float: right;}
                 /*#stream-associations.active .stream-associations-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
 
@@ -371,4 +376,4 @@ body.main-menu-active #main-menus {transition: top 0.5s; -webkit-transition: top
 body.connections-panel #connections-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px; right: 0;}
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-associations, #stream-filters-menu, #connection-alerts {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+#stream-associations, #stream-filters-menu, #connection-alerts {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
