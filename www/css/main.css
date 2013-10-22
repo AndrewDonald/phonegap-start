@@ -134,7 +134,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 #stream-and-filter-status {padding: 3px 5px 2px; color: #089; box-shadow: 0 2px 5px #000, 0 1px 3px #000 inset;}
 /*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
 
-#connections-panel .alerts-panel {display: none; max-height: 100px; background: #ffb;}
+#connections-panel .alerts-panel {display: none; max-height: 100px;}
     #connections-panel .alert > a img {display: none;}
 
 .alert{}
@@ -173,7 +173,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
         */
     .panel.panel-lucid {margin: 0; color: #227777; background: rgba(0,0,0,0.2); border-radius: 0;} 
         .panel.panel-lucid > .panel-heading {padding: 0; border: none; border-radius: 0; overflow: auto;}
-        .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background: rgba(255, 255, 255, 0.95); overflow: auto;}
+        .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background-color: #ffb; overflow: auto;}
             .panel.panel-lucid > .panel-body > .carousel {display: none;}
             .panel.connections-panel > .panel-body .panel .panel-body {padding: 0;}
     .panel.connections-panel > .panel-body > .panel {display: none; background: none;}
@@ -288,7 +288,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 */
                 #stream-associations .stream-associations-list button.remove {position: absolute; top: 5px; left: 5px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 5px;}
                 #stream-associations .stream-associations-list a.btn {width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
-                #stream-associations .stream-associations-list a.btn.active {background-color: #056;}    
+                #stream-associations .stream-associations-list a.btn.active {background-color: #ff6; color: #0ab;}    
                     #stream-associations .stream-associations-list a.btn .stream-name {float: left;}
                     #stream-associations .stream-associations-list a.btn .badge {margin-left: 5px; float: none;}
                     #stream-associations .stream-associations-list a.btn.active .badge {font-weight: bold;}
