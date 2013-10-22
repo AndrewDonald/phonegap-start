@@ -92,14 +92,16 @@ $('#main-menu-toggle').on('click',function(){
     $('body').toggleClass('main-menu-active');
 });
 
+/*
 // Lucid Menu Toggle
-$('#lucid-menu-toggle').on('click',function(){
+$('#connections-panel-toggle').on('click',function(){
     $(this).toggleClass('active');
-    $('body').toggleClass('lucid-menu-active');
+    $('body').toggleClass('connections');
 });
+*/
 
 // Main Menu Items
-$('#top-menu > button').on('click',function(){
+$('#main-menu-items > li > button').on('click',function(){
     //$(this).toggleClass('active');
     if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
         $($(this).data('target')).collapse('hide');
@@ -124,15 +126,15 @@ $('.btn-lucid.user').on('click',function(){
 });
 
 // Toggle Stream Associate
-$('.stream-associates-list > li > a').on('click',function(){
+$('.stream-associations-list > li > a').on('click',function(){
     $(this).toggleClass('active');
 });
 
 // Toggle Stream Associate Remove
-$('.stream-associates-list > li > button').on('click',function(){
+$('.stream-associations-list > li > button').on('click',function(){
     $(this).parent('li').remove();
-    if($('.stream-associates-list > li').size() == 0){
-        $('#stream-associates').removeClass('active');
+    if($('.stream-associations-list > li').size() == 0){
+        $('#stream-associations').removeClass('active');
     }
 });
 
@@ -141,13 +143,20 @@ $('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click',function
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
-        $('#stream-associates .stream-associates-list').toggleClass('active'); //.toggleClass('list-inline');
+        $('#stream-associations .stream-associations-list').toggleClass('active'); //.toggleClass('list-inline');
     }
 });
 
 // REMOVE ASSOCIATED STREAM BUTTON
-$('#stream-associates button.remove').on('click',function(){
+$('#stream-associations button.remove').on('click',function(){
     $(this).parent().remove();
+});
+
+
+// TOGGLE ON/OFF SELETOR BUTTONS
+$('#connections-panel-items > li > a').on('click',function(){
+    $(this).children('.menu-icon').toggleClass('glyphicon-eye-open glyphicon-eye-close');
+    $('body').toggleClass($(this).data('toggle-item'));
 });
 
 // TOGGLE ON/OFF SELETOR BUTTONS
@@ -155,8 +164,8 @@ $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
 });
 
-$('.btn-alerts').on('click',function(){
-    $('.alerts-panel').slideToggle('fast');
+$('#connection-alerts button').on('click',function(){
+    $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideToggle('fast').siblings().hide('fast');
 });
 
 $('.alerts-panel .alert-link').on('click',function(){
