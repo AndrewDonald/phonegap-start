@@ -52,7 +52,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .panel .panel-heading {padding: 5px; color: #333;}
 .panel .panel-body {padding: 5px;}
 
-.dropdown-menu {top: 33px; background-color: rgba(255, 255, 100, 0.95); border: 2px solid #fff; box-shadow: 5px 5px 10px #000000;}
+.dropdown-menu {top: 33px; background-color: rgba(255, 255, 180, 0.95); border: 2px solid #fff; box-shadow: 5px 5px 10px #000000;}
     .dropdown-menu > li > a { padding: 3px 10px; color: #f80; cursor: pointer;}
     .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #f90; background-image: linear-gradient(to bottom, #fa0 0px, #f90 100%);}
         .dropdown-menu > li > a > .menu-icon {top: 3px; margin-right: 5px;}
