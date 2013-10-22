@@ -22,6 +22,7 @@ $(function() {
     });
     */
 
+/*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});
 
@@ -37,6 +38,7 @@ $(function() {
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
 
+
     // ENABLE BOOTSTRAP CAROUSEL SWIPING GESTURES
     $(".stream-content").swipe({
         //Generic swipe handler for all directions
@@ -48,7 +50,8 @@ $(function() {
         },
         threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
     });
-
+*/
+    
     $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.view.active + ')').addClass('active');
 
     // STREAM PANES CONTROLLER: Slide through the various Stream Panes
@@ -85,6 +88,10 @@ $(".stream-pane-menu-con").animate({
 
 
 //* EVENT HANDLERS *//////////////////////////////////////////////////////////////
+// Lucid Menu Hold Open until clicked/tapped outside of menu
+$('#connections-panel-items.dropdown-menu').click(function(e) {
+    e.stopPropagation();
+});
 
 // Main Menu Toggle
 $('#main-menu-toggle').on('click',function(){
@@ -125,6 +132,27 @@ $('.btn-lucid.user').on('click',function(){
     $(this).toggleClass('active').siblings().removeClass('active');
 });
 */
+
+// Stream & Filter Controls Toggles (*only one allowed open at a time)
+$('#stream-and-filter-status .status-area a').on('click',function(){
+            // If Stream COntrols
+    if($(this).is('.stream-controls-toggle')){
+        if($('body').hasClass('filter-controls')){
+            $('.filter-controls-con').slideToggle('fast');
+        }
+        $('body').removeClass('filter-controls');
+        $('body').toggleClass('stream-controls');
+        $('.stream-controls-con').slideToggle('fast');
+    }else{ // If Filter Controls
+        if($('body').hasClass('stream-controls')){
+            $('.stream-controls-con').slideToggle('fast');
+        }
+        $('body').removeClass('stream-controls');
+        $('body').toggleClass('filter-controls');
+        $('.filter-controls-con').slideToggle('fast');
+    }
+    $(this).children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
+});
 
 // Toggle Stream Associate
 $('.stream-associations-list > li > a').on('click',function(){

@@ -12,6 +12,7 @@
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
 .list-inline > li {padding: 5px;}
+.dropdown-menu .divider {background-color: #f90;}
 .btn-lg {padding: 9px 16px;}
 .btn-link-lucid {font-size: 12px; transition: color 0.5s; -webkit-transition: color 0.5; color: #067; padding: 3px 5px; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none;}
 .btn-link-lucid:hover, .btn-link-lucid:focus {color: #f90; text-decoration: none; box-shadow: none;}
@@ -30,7 +31,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #FFFFFF; display: block; font-size: 14px; font-weight: bold; height: 34px;
-    line-height: 1.42857; padding: 6px 5px; text-shadow: 1px 1px 2px #002244; vertical-align: middle; width: 97%;}
+    line-height: 1.42857; padding: 6px 5px; vertical-align: middle; width: 97%;}
 .navbar {border: none;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
     .alert a.alert-link {text-decoration: none;}
@@ -52,7 +53,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .panel .panel-heading {padding: 5px; color: #333;}
 .panel .panel-body {padding: 5px;}
 
-.dropdown-menu {top: 33px; background-color: rgba(255, 255, 180, 0.95); border: 2px solid #fff; box-shadow: 5px 5px 10px #000000;}
+.dropdown-menu {top: 33px; background-color: rgba(255, 255, 180, 0.95); border: 2px solid #f90; box-shadow: 5px 5px 10px #000000;}
     .dropdown-menu > li > a { padding: 3px 10px; color: #f80; cursor: pointer;}
     .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #f90; background-image: linear-gradient(to bottom, #fa0 0px, #f90 100%);}
         .dropdown-menu > li > a > .menu-icon {top: 3px; margin-right: 5px;}
@@ -125,13 +126,27 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #eee; pad
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
-#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 155px 0px 110px; /*background-color: rgba(255,255,255,0.25);*/}
-
+#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 155px 10px 0; /*background-color: rgba(255,255,255,0.25);*/}
+.badge-lucid {background-color: #0ab;}
 .label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-#stream-and-filter-status {padding: 3px 5px 2px; color: #089; box-shadow: 0 2px 5px #000, 0 1px 3px #000 inset;}
+#stream-and-filter-status {padding: 3px 5px 2px;  box-shadow: 0 2px 5px #000, 0 1px 3px #000 inset;}
+    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #089; text-decoration: none;}
+    #stream-and-filter-status .status-area a:hover {color: #089; text-decoration: none;}
+    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle {background-color: #ff6; border-radius: 10px; border: 2px solid #0ab;}
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {background-color: #ff6; border-radius: 10px; border: 2px solid #0ab;}
+    
+    /*
+    @media screen and (orientation:landscape) {
+       #stream-and-filter-status .status-area a {height: 30px;}
+    }
+    */
+
+    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 5px; color: #0ab; border: 1px solid #0ab; border-radius: 5px;}
+        #stream-and-filter-status > .controls .list-group-item {padding: 5px;}
+        #stream-and-filter-status > .controls .list-group-item.selected {background-color: #ff6;}
 /*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
 
 #connections-panel .alerts-panel {display: none; max-height: 100px;}
@@ -195,6 +210,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #000; opacity: 0.3;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
+.chevron-toggle {top: 5px; color: #0ab; font-size: 10px;}
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
@@ -256,13 +272,13 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
 
 
     #stream-and-filter-status {}
-        #stream-and-filter-status .stream-controls-toggle #stream-name  {display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; max-width: 210px; word-wrap: break-word;}
+        #stream-and-filter-status .stream-controls-toggle #stream-name {display: inline-block; margin: 0; padding: 0 0 0 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
         @media screen and (orientation:landscape) {
-             #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 430px;}
+             #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 630px;}
         }
         #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
         #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
-        #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; font-size: 12px; text-decoration: line-through; color: #0cd;}
+        #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; padding: 0 5px 0 0; font-size: 12px; text-decoration: line-through; color: #0cd;}
         body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #089;}
 
         #stream-associations {transition: height 0.5s; -webkit-transition: height 0.5s; height: 0;
@@ -376,4 +392,4 @@ body.main-menu-active #main-menus {transition: top 0.5s; -webkit-transition: top
 body.connections-panel #connections-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px; right: 0;}
 
 /******** FOR TESTING ONLY!! ********/
-#stream-associations, #stream-filters-menu, #connection-alerts {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*#stream-associations, #stream-filters-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

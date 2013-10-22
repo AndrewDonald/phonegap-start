@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home filter people connections-panel-active filters-panel connections-panel associations-panel">
+    <body class="home filter people _filters-panel _connections-panel _associations-panel">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -69,9 +69,10 @@
                         </li>
                         <li>
                             <a class="menu-toggle-stream-associations" data-toggle-item="hot-page">
-                                <span class="menu-icon glyphicon glyphicon-flag"></span> ~hot
+                                <span class="menu-icon glyphicon glyphicon-magnet"></span> ~popular
                             </a>
                         </li>
+                        <li class="divider"></li>
                         <li>
                             <a class="menu-toggle-stream-associations" data-toggle-item="profile-page">
                                 <span class="menu-icon glyphicon glyphicon-user"></span> profile
@@ -93,15 +94,11 @@
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle-item="account-page">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> account
-                            </a>
-                        </li>
-                        <li>
                             <a class="menu-toggle-stream-filters" data-toggle-item="alerts-page">
                                 <span class="menu-icon glyphicon glyphicon-flag"></span> alerts
                             </a>
                         </li>
+                        <li class="divider"></li>
                         <li>
                             <a class="menu-toggle-connections" data-toggle-item="settings-page">
                                 <span class="menu-icon glyphicon glyphicon-cog"></span> settings
@@ -127,19 +124,95 @@
             </div>
             <!-- MASTHEAD (END) -->
 
-            
-
             <!-- STREAM INFO PANEL (START) -->
             <div id="stream-and-filter-status" class="bg-3-lt">
-                <div class="clearfix">
-                    <div class="stream-controls-toggle pull-left">
-                        <h1 id="stream-name">wwwwwwwww0wwwwwwwww0wwwwwwwww0wwwwwwwww0wwwwwwwww0</h1>
+                <!-- Stream & Filter Status -->
+                <div class="status-area clearfix">
+                    <a class="stream-controls-toggle pull-left">
+                        <span class="chevron-toggle glyphicon glyphicon-chevron-down pull-left"></span>
+                        <h1 id="stream-name">LucidLife</h1>
                         <sup class="indicator"><span class="label label-primary">1693</span></sup>
-                    </div>
-                    <div class="filter-controls-toggle pull-right">
+                    </a>
+                    <a class="filter-controls-toggle pull-right">
                         <span class="filter-sign glyphicon glyphicon-filter"></span><span class="filter-info">m&f 25-40 &lt;250km</span>
+                        <span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span>
+                    </a>
+                </div>
+                <!-- Stream Controls -->
+                <div class="stream-controls-con controls">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="enter new thought to add/start to stream">
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
+                            <button class="btn btn-warning glyphicon glyphicon-play" type="button"></button>
+                        </span>
+                    </div>
+                    <center style="margin-top: 5px; font-weight: bold;">...or select from past thoughts</center>
+                    <ul class="stream-history-list list-group" style="margin: 0; height: 220px; overflow: auto; border: 2px solid #0ab;">
+                        <li class="list-group-item selected"><span class="badge badge-lucid">142</span>~OldStream1</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">113</span>~OldStream2</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">98</span>~OldStream3</li>
+                        <li class="list-group-item selected"><span class="badge badge-lucid">76</span>~OldStream4</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">55</span>~OldStream5</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">51</span>~OldStream6</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">43</span>~OldStream7</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">39</span>~OldStream8</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">24</span>~OldStream9</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">17</span>~OldStream10</li>
+                    </ul>
+                    <div class="input-group-btn" style="text-align: right; padding-top: 3px;">
+                        <span class="pull-left">&nbsp;selected: 2</span>
+                        <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
+                        <button class="btn btn-warning glyphicon glyphicon-play" type="button"></button>
                     </div>
                 </div>
+                <!-- Filter Controls -->
+                <div class="filter-controls-con controls">
+                    <div class="clearfix">
+                        <label class="pull-left" style="font-weight: normal;width: 100px;">filter name</label>
+                        <span style="color: #77f; margin-right: 10px;">Baby Boomers</span>
+                        <span class="badge badge-lucid">173</span>
+                    </div>
+                    <div class="clearfix" style="margin-bottom: 10px;">
+                        <label class="pull-left" style="font-weight: normal;width: 100px;">gender</label>
+                        <button type="button" class="btn btn-warning btn-sm glyphicon glyphicon-user pull-left" style="color: #77f; margin-right: 10px;"></button>
+                        <button type="button" class="btn btn-warning btn-sm glyphicon glyphicon-user pull-left" style="color: pink;"></button>
+                    </div>
+                    <div class="clearfix" style="margin-bottom: 10px;">
+                        <label class="pull-left" style="font-weight: normal;width: 100px;">age range</label>
+                        <button type="button" class="btn btn-warning btn-sm pull-left" style="border-radius: 50% 50%; margin-right: 80px;">18</button>
+                        <button type="button" class="btn btn-warning btn-sm pull-left" style="border-radius: 50% 50%;">45</button>
+                    </div>
+                    <div class="clearfix" style="margin-bottom: 10px;">
+                        <label class="pull-left" style="font-weight: normal;width: 100px;">distance (km)</label>
+                        <button type="button" class="btn btn-warning btn-sm" style="border-radius: 50% 50%; margin-left: 20px;">10</button>
+                    </div>
+                    <div class="input-group input-group-sm" style="margin-bottom: 5px;">
+                        <input type="text" class="form-control" placeholder="enter a name to save this filter">
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning glyphicon glyphicon-play" type="button"></button>
+                        </span>
+                    </div>
+                    <!--
+                    <div>
+                        <button class="btn btn-warning" type="button"> <span class="glyphicon glyphicon-floppy-disk"></span> select from saved filters</button>
+                    </div>
+                    -->
+                    <center style="margin-top: 5px; font-weight: bold;">...or select from saved filters</center>
+                    <ul class="stream-history-list list-group" style="margin: 0; height: 153px; overflow: auto; border: 2px solid #0ab;">
+                        <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="glyphicon glyphicon-filter"></span>Old Foggies</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="glyphicon glyphicon-filter"></span>New University/College Students</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Men</li>
+                        <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Women</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="glyphicon glyphicon-filter"></span>Young Adults</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="glyphicon glyphicon-filter"></span>People Close to Me</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="glyphicon glyphicon-filter"></span>Senior Citizens</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="glyphicon glyphicon-filter"></span>Young Women</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="glyphicon glyphicon-filter"></span>Old Men</li>
+                        <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="glyphicon glyphicon-filter"></span>Due-to-Retire</li>
+                    </ul>
+                </div>
+                <!-- Stream Associations -->
                 <div id="stream-associations">
                     <ul class="stream-associations-list list-unstyled list-inline">
                         <li>
