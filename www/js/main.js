@@ -88,10 +88,12 @@ $(".stream-pane-menu-con").animate({
 
 
 //* EVENT HANDLERS *//////////////////////////////////////////////////////////////
+/*
 // Lucid Menu Hold Open until clicked/tapped outside of menu
 $('#connections-panel-items.dropdown-menu').click(function(e) {
     e.stopPropagation();
 });
+*/
 
 // Main Menu Toggle
 $('#main-menu-toggle').on('click',function(){
@@ -187,12 +189,13 @@ $('#stream-associations button.remove').on('click',function(){
     $(this).parent().remove();
 });
 
-
+/*
 // TOGGLE ON/OFF SELETOR BUTTONS
 $('#connections-panel-items > li > a').on('click',function(){
     $(this).children('.menu-icon').toggleClass('glyphicon-eye-open glyphicon-eye-close');
     $('body').toggleClass($(this).data('toggle-item'));
 });
+*/
 
 // TOGGLE ON/OFF SELETOR BUTTONS
 $('.toggle-on-off').on('click',function(){

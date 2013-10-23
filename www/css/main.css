@@ -12,7 +12,7 @@
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
 .list-inline > li {padding: 5px;}
-.dropdown-menu .divider {background-color: #f90;}
+.dropdown-menu .divider {background-color: #056;}
 .btn-lg {padding: 9px 16px;}
 .btn-link-lucid {font-size: 12px; transition: color 0.5s; -webkit-transition: color 0.5; color: #067; padding: 3px 5px; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none;}
 .btn-link-lucid:hover, .btn-link-lucid:focus {color: #f90; text-decoration: none; box-shadow: none;}
@@ -53,19 +53,12 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .panel .panel-heading {padding: 5px; color: #333;}
 .panel .panel-body {padding: 5px;}
 
-.dropdown-menu {top: 33px; background-color: rgba(255, 255, 180, 0.95); border: 2px solid #f90; box-shadow: 5px 5px 10px #000000;}
-    .dropdown-menu > li > a { padding: 3px 10px; color: #f80; cursor: pointer;}
-    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #f90; background-image: linear-gradient(to bottom, #fa0 0px, #f90 100%);}
+.dropdown-menu {top: 33px; background-color: rgba(0, 180, 195, 0.95); border: 2px solid #056; box-shadow: 5px 5px 10px #000000;}
+    .dropdown-menu > li > a {padding: 3px 10px; color: #056; cursor: pointer;}
+    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #056; background-image: linear-gradient(to bottom, #fa0 0px, #f90 100%);}
         .dropdown-menu > li > a > .menu-icon {top: 3px; margin-right: 5px;}
+.well {min-height: 0px;}
 
-.well-lucid {
-  background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
-  background-repeat: repeat-x;
-  border-color: #0ab;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
-  margin: 0;
-  padding: 1px;
-}
 
 /* GLOBAL: Vars */
 /* Orange */
@@ -140,35 +133,45 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
+.menu-transparent {
+    position: fixed; left: 0; width: 100%; margin: 0; z-index: 1900;
+    overflow-x: auto; overflow-y: hidden;
+    background-color: rgba(0,40,50,0.9); box-shadow: 0 0 5px #000;
+    border-bottom: 1px solid #0ab;}
+
 #stream-and-filter-status {padding: 3px 5px 2px;  box-shadow: 0 2px 5px #000, 0 1px 3px #000 inset;}
-    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none;}
+    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none; border: 2px solid transparent;}
     #stream-and-filter-status .status-area a:hover {color: #fff; text-decoration: none;}
     #stream-and-filter-status .status-area .stream-controls-toggle {color: #f80;}
     body.stream-controls #stream-and-filter-status .status-area a #stream-name,
     body.stream-controls #stream-and-filter-status .status-area a .chevron-toggle {color: #ff6;}
     #stream-and-filter-status .status-area a.stream-controls-toggle {color: #fff;}
-    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle {border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
+    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle,
     body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .filter-info {color: #ff6;}
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .filter-info,
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .chevron-toggle {color: #ff6;}
 
-    /*
-    @media screen and (orientation:landscape) {
-       #stream-and-filter-status .status-area a {height: 30px;}
-    }
-    */
-
-    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px; color: #0ab; border: 1px solid #0ab; border-radius: 5px;}
+    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px;}
         #stream-and-filter-status > .controls .list-group-item {padding: 5px;}
         #stream-and-filter-status > .controls .list-group-item.selected {background-color: #ff6;}
-/*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
 
 #connections-panel .alerts-panel {display: none; max-height: 100px;}
     #connections-panel .alert > a img {display: none;}
 
+.well-lucid {
+  background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
+  background-repeat: repeat-x;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 1px;
+  overflow: auto;
+}
+
 .alert{}
-    .alert a.alert-link {position: relative; display: block; padding: 5px 35px 5px 25px; color: #f80; font-weight: normal; line-height: 1.15; border-bottom: 1px dotted #f80;}
-        .alert .view-indicator {position: absolute; top: 0; right: 5px;}
-        .alert .alert-timestamp {position: absolute; top: 15px; right: 5px; font-size: 10px;}
+    .alert a.alert-link {position: relative; display: block; padding: 5px 35px 5px 25px; color: #fff; font-weight: normal; line-height: 1.15; border-bottom: 1px dotted #0ab;}
+        .alert .view-indicator {position: absolute; top: 0; right: 5px; color: #ff6;}
+        .alert .alert-timestamp {position: absolute; top: 15px; right: 5px; font-size: 10px; color: #ff6;}
         .alert .alert-icon {position: absolute; top: 5px; left: 5px;}
         .alert .alert-message {}
         .alert > a img {width: 25px; height: auto; margin: 0 5px 5px 0; border: 1px solid #A47E3C; border-radius: 5px; padding: 2px;}
@@ -190,15 +193,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
             /*.panel .panel-heading.panel-nav .panel-menu > button:first-child {margin-left: 20px;}
             .panel .panel-heading.panel-nav .panel-menu > button:last-child {margin-right: 20px;}*/
         .panel .panel-heading.panel-nav .panel-menu.btn-group {width: 100%;}
-        /*
-            .panel .panel-heading.panel-nav .panel-menu > label {margin-bottom: 1px; margin-top: 0; min-height: 0; width: 16.75%; border: none; border-radius: 5px;}
-            /*.panel .panel-heading.panel-nav .panel-menu > label:first-child {color: #999};*/
-        /*
-            .panel .panel-heading.panel-nav .panel-menu > label.active:hover,
-            .panel .panel-heading.panel-nav .panel-menu > label.active:focus {background-color: rgba(255,180,0,0.7);}
-            .panel .panel-heading.panel-nav .panel-menu > label.active {background-color: rgba(255,180,0,0.6); color: #fff; border: 2px solid #fff;}
-                
-        */
+
     .panel.panel-lucid {margin: 0; color: #227777; background: rgba(0,0,0,0.2); border-radius: 0;} 
         .panel.panel-lucid > .panel-heading {padding: 0; border: none; border-radius: 0; overflow: auto;}
         .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background-color: #ffb; overflow: auto;}
@@ -223,18 +218,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #000; opacity: 0.3;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
-a.chevron {
-    display: inline-block;
-    color: #fff;
-    cursor: pointer;
-    height: 25px;
-    margin: 2px 0 3px;
-    padding: 2px 5px;
-    text-decoration: none;
-    font-size: 14px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-}
+a.chevron {display: inline-block; color: #fff; cursor: pointer; height: 25px; margin: 2px 0 3px; padding: 2px 5px; text-decoration: none; font-size: 14px; border: 2px solid transparent; border-radius: 10px;}
     .chevron-toggle {margin-top: 3px; color: #fff; font-size: 10px;}
     .chevron-toggle.left {float: left; padding-right: 5px;}
     .chevron-toggle.right {float: right; padding-left: 5px;}
@@ -299,7 +283,6 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         nav#header > .masthead .logo {width: 100px; margin: 0 -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
-
     #stream-and-filter-status {}
         #stream-and-filter-status .stream-controls-toggle #stream-name {display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
         @media screen and (orientation:landscape) {
@@ -323,9 +306,9 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 .filter-controls button {font-weight: bold;}
                 .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
 
-        #stream-associations {transition: height 0.5s; -webkit-transition: height 0.5s; height: 0;
-            margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
-        body.associations-panel #stream-associations {transition: height 0.5s; -webkit-transition: height 0.5s; height: 35px;}
+        #stream-associations {max-height: 37px;
+            margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
+        
             #stream-associations .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 35px; margin: 0; white-space: nowrap;}
                 #stream-associations .stream-associations-list > li {position: relative;}
@@ -358,11 +341,9 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                     #stream-associations .stream-associations-list.active a.btn .badge {float: right;}
                 /*#stream-associations.active .stream-associations-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
 
-    #stream-filters-menu {transition: height 0.5s; -webkit-transition: height 0.5s; height: 0;
-        border-bottom: 1px solid #056; background-color: rgba(0,50,50,0.95); box-shadow: 0 0 5px #000; overflow-x: auto; overflow-y: hidden;}
-    body.filters-panel #stream-filters-menu {transition: height 0.5s; -webkit-transition: height 0.5s; height: 50px;}
+    #stream-filters-menu {max-height: 50px;}
     @media (orientation:landscape) {
-        body.filters-panel #stream-filters-menu {transition: height 0.5s; -webkit-transition: height 0.5s; height: 40px;}
+        nav#stream-filters-menu {max-height: 40px;}
     }
 
         #stream-filters-menu .stream-filters-menu-list {white-space: nowrap;}
@@ -372,7 +353,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
                 #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
                 #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
 
-
+/* PAGES */
 #pages > .page {display: none; padding: 10px;}
     #pages > .page.active {display: inline;}
         #page-stream .show-stream,
@@ -410,28 +391,15 @@ nav#footer {background: #056; box-shadow: 0 -1px 5px #000000;}
             .global-user-input #send-message-con form.send-message-form .send-message-controls {position: absolute; right: 6px;}
                 .global-user-input #send-message-con form.send-message-form .send-message-controls .attach-media-button {border-top-left-radius: 0; border-bottom-left-radius: 0;}
 
-
 #main-menu-items {left: -130px;}
 
-/* RESPONSIVE ============== */
-/* Portrait */
-#main-menu, #connections-panel {
-    position: fixed; width: 100%; height: auto; margin: 0; z-index: 1900;
-    overflow-x: auto; overflow-y: hidden;
-    background-color: rgba(0,50,50,0.95); box-shadow: 0 0 5px #000;}
-/* Main Menu Toggle */
-/* MAIN MENU */
-#main-menu {transition: top 0.5s; -webkit-transition: top 0.5s; top: -5px; left: 0; border-right: none; border-bottom: 1px solid #555;}
-body.main-menu-active #main-menu {transition: top 0.5s; -webkit-transition: top 0.5s; top: 65px;}
-#main-menus {transition: top 0.5s; -webkit-transition: top 0.5s; position: relative; top: 65px; z-index: 1600;}
-body.main-menu-active #main-menus {transition: top 0.5s; -webkit-transition: top 0.5s; top: 131px;}
-    #main-menus nav {white-space: nowrap;}
-
 /* LUCID MENU */
-#connections-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: -40px; right: 0; border-left: none; border-top: 1px solid #056;}
-    #connections-panel .panel-menu {margin: 0;}
-/* Notifications Menu Toggle */
-body.connections-panel #connections-panel {transition: bottom 0.5s; -webkit-transition: bottom 0.5s; bottom: 45px; right: 0;}
+#connections-panel {bottom: 44px; border-top: 1px solid #0ab; max-height: 171px; padding: 0 2px 5px;}
+    #connections-panel .panel-menu {margin: 0; white-space: nowrap;}
+    #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
+
+
+/* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
 /*#stream-associations, #stream-filters-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

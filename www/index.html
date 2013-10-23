@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home filter people _filters-panel _connections-panel _associations-panel">
+    <body class="home filter people">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -31,29 +31,29 @@
                     </button>
                     <ul id="connections-panel-items" class="dropdown-menu" role="menu">
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="associations-panel">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> ~associations
+                            <a class="menu-toggle-stream-associations" data-toggle="collapse" href="#stream-associations">
+                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> associations
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-stream-filters" data-toggle-item="filters-panel">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> ~filters
+                            <a class="menu-toggle-stream-filters" data-toggle="collapse" href="#stream-filters-menu">
+                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> filters
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle-item="connections-panel">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> ~connections
+                            <a class="menu-toggle-connections" data-toggle="collapse" href="#connections-panel">
+                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> connections
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="search-page">
-                                <span class="menu-icon tilde" style="font-size: 30px">~</span> ~thought controls
+                            <a class="menu-toggle-stream-associations" onclick="$('.stream-controls-toggle').click();">
+                                <span class="menu-icon" style="font-size: 30px; line-height: 0.3;">~</span> thought controls
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="hot-page">
-                                <span class="menu-icon glyphicon glyphicon-filter"></span> ~filter controls
+                            <a class="menu-toggle-stream-associations" onclick="$('.filter-controls-toggle').click();">
+                                <span class="menu-icon glyphicon glyphicon-filter"></span> filter controls
                             </a>
                         </li>
                         <!--
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <!-- Filter Controls -->
-                <div class="filter-controls-con controls well well-lucid">
+                <div class="filter-controls-con controls well well-lucid collapse">
                     <div class="filter-controls">
                         <div class="clearfix">
                             <label class="pull-left" style="font-weight: normal;width: 100px;">filter name</label>
@@ -231,7 +231,7 @@
                     </div>
                 </div>
                 <!-- Stream Associations -->
-                <div id="stream-associations">
+                <div id="stream-associations" class="well well-lucid collapse">
                     <ul class="stream-associations-list list-unstyled list-inline">
                         <li>
                             <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
@@ -287,7 +287,7 @@
             <!-- STREAM INFO PANEL (END) -->
 
             <!-- STREAM FILTERS PANEL (START) -->
-            <nav id="stream-filters-menu">
+            <nav id="stream-filters-menu" class="menu-transparent collapse">
                 <div class="stream-filters-menu-list">
                     <a class="btn btn-lucid menu glyphicon glyphicon-user active" data-stream-filter="people">
                         <span class="badge">180</span>
@@ -324,7 +324,7 @@
         <!-- HEADER (END) -->
 
         <!-- CONNECTIONS PANEL -->
-        <div id="connections-panel" class="bg-3-30 panel panel-lucid">
+        <div id="connections-panel" class="menu-transparent collapse">
             <!-- Panel Nav -->
             <div id="connection-alerts" class="panel-heading panel-nav">
                 <!-- Panel Menu -->
@@ -444,7 +444,7 @@
             </div>
             <!-- LUCID PANEL-NAV (END) -->
             <!-- LUCID PANEL-BODY (START) -->
-            <div class="panel-body">
+            <div class="panel-body well well-lucid">
                 <div class="alerts-panel alert " data-user="1">
                     <a href="#" class="alert-link">
                         <span class="view-indicator glyphicon glyphicon-eye-open"></span>
