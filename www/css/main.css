@@ -58,6 +58,14 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
     .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: #f90; background-image: linear-gradient(to bottom, #fa0 0px, #f90 100%);}
         .dropdown-menu > li > a > .menu-icon {top: 3px; margin-right: 5px;}
 
+.well-lucid {
+  background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
+  background-repeat: repeat-x;
+  border-color: #0ab;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 1px;
+}
 
 /* GLOBAL: Vars */
 /* Orange */
@@ -84,9 +92,9 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .color-3 {color: #0ab;}
 .color-3-lt {color: #0ef;} 
 .color-3-dk {color: #056;}
-.bg-3 {background-color: #0ab !important;}
 .bg-3-70 {background-color: rgba(0,170,185,0.7);}
 .bg-3-30 {background-color: rgba(0,170,185,0.3);}
+.bg-3 {background-color: #0ab !important;}
 .bg-3-lt {background-color: #0ef !important;} 
 .bg-3-dk {background-color: #056 !important;}
 .btn-link-lucid.color-3-lt:hover, .btn-link-lucid.color-3-lt:focus {color: #0ef;}
@@ -119,8 +127,8 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 
 /* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-body {font-family: arial; font-weight: normal; font-size: 14px; color: #eee; padding: 0; margin: 0;
-    background: #468 url("../img/bg-repeat.png") 0 0 repeat fixed; background-size: 100% 100%;; line-height: 1.4;}
+body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0;
+    background: #f6fff6; line-height: 1.4;}
 
 .stream-name:before {content: "~";}
 .hide {display: none;}
@@ -133,18 +141,23 @@ form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 #stream-and-filter-status {padding: 3px 5px 2px;  box-shadow: 0 2px 5px #000, 0 1px 3px #000 inset;}
-    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #089; text-decoration: none;}
-    #stream-and-filter-status .status-area a:hover {color: #089; text-decoration: none;}
-    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle {background-color: #ff6; border-radius: 10px; border: 2px solid #0ab;}
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {background-color: #ff6; border-radius: 10px; border: 2px solid #0ab;}
-    
+    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none;}
+    #stream-and-filter-status .status-area a:hover {color: #fff; text-decoration: none;}
+    #stream-and-filter-status .status-area .stream-controls-toggle {color: #f80;}
+    body.stream-controls #stream-and-filter-status .status-area a #stream-name,
+    body.stream-controls #stream-and-filter-status .status-area a .chevron-toggle {color: #ff6;}
+    #stream-and-filter-status .status-area a.stream-controls-toggle {color: #fff;}
+    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle {border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .filter-info {color: #ff6;}
+
     /*
     @media screen and (orientation:landscape) {
        #stream-and-filter-status .status-area a {height: 30px;}
     }
     */
 
-    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 5px; color: #0ab; border: 1px solid #0ab; border-radius: 5px;}
+    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px; color: #0ab; border: 1px solid #0ab; border-radius: 5px;}
         #stream-and-filter-status > .controls .list-group-item {padding: 5px;}
         #stream-and-filter-status > .controls .list-group-item.selected {background-color: #ff6;}
 /*nav .divider {display: inline-block; height: 46px; margin-bottom: -23px; border-right: 2px solid #277;}*/
@@ -210,7 +223,23 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #000; opacity: 0.3;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
-.chevron-toggle {top: 5px; color: #0ab; font-size: 10px;}
+a.chevron {
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+    height: 25px;
+    margin: 2px 0 3px;
+    padding: 2px 5px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+    .chevron-toggle {margin-top: 3px; color: #fff; font-size: 10px;}
+    .chevron-toggle.left {float: left; padding-right: 5px;}
+    .chevron-toggle.right {float: right; padding-left: 5px;}
+a.chevron.active {border: 2px solid #fff;}
+
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
@@ -257,7 +286,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 /* HEADER */   
 nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
-    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background: #ff6;}
+    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background: #056;}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
         #connections-panel-toggle {width: 40px;}
@@ -272,14 +301,27 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
 
 
     #stream-and-filter-status {}
-        #stream-and-filter-status .stream-controls-toggle #stream-name {display: inline-block; margin: 0; padding: 0 0 0 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
+        #stream-and-filter-status .stream-controls-toggle #stream-name {display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
         @media screen and (orientation:landscape) {
              #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 630px;}
         }
         #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
         #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
         #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; padding: 0 5px 0 0; font-size: 12px; text-decoration: line-through; color: #0cd;}
-        body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #089;}
+        body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #fff;}
+
+        .stream-controls-con {}
+            .stream-controls-con .stream-controls {margin-bottom: 5px;}
+            .stream-controls-con .stream-history-list {max-height: 240px; overflow: auto;}
+            .stream-controls-con .stream-history-selection-count {color: #ff6;}
+
+        .filter-controls-con {}
+            .filter-controls > div {margin-bottom: 10px;}
+            .filter-controls > div:first-child {margin-bottom: 0;}
+                .filter-controls .filter-name {color: #f90;}
+                .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 3px; color: #fff; font-family: arial; font-weight: bold;}
+                .filter-controls button {font-weight: bold;}
+                .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
 
         #stream-associations {transition: height 0.5s; -webkit-transition: height 0.5s; height: 0;
             margin-bottom: 3px; background-color: #0AB; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px #000000 inset; color: #FFFFFF; overflow-x: auto; overflow-y: hidden;}
@@ -349,7 +391,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         body.audio #page-stream .show-audio {display: block;}
 
 /* FOOTER */
-nav#footer {background: #ff6; box-shadow: 0 -1px 5px #000000;}
+nav#footer {background: #056; box-shadow: 0 -1px 5px #000000;}
 
     /* APP COMPONENTS */
     ._connections-book {}   /* See a list of people from your connections book who are online now */

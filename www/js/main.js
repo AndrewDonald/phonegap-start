@@ -99,6 +99,12 @@ $('#main-menu-toggle').on('click',function(){
     $('body').toggleClass('main-menu-active');
 });
 
+// Chevron Toggle
+$('a.chevron').on('click',function(){
+    $(this).toggleClass('active')
+        .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+});
+
 /*
 // Lucid Menu Toggle
 $('#connections-panel-toggle').on('click',function(){
