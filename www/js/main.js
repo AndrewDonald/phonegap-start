@@ -205,8 +205,10 @@ $('.toggle-on-off').on('click',function(){
 $('#connection-alerts button').on('click',function(){
     $(this).toggleClass('active').siblings().removeClass('active');
     if($(this).hasClass('active')){
+        $('#connection-alerts > .panel-body').show();
         $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideToggle('fast').siblings().hide('fast');
     }else{
+        $('#connection-alerts > .panel-body').hide();
         $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideUp('fast');
     }
 });
