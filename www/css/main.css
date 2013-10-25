@@ -159,8 +159,8 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     #connections-panel .alert > a img {display: none;}
 
 .well-lucid {background-color: #078;
-  background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
-  background-repeat: repeat-x;
+  /*background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
+  background-repeat: repeat-x;*/
   border-color: #0ab;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
   margin: 0;
@@ -370,7 +370,7 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         body.audio #page-stream .show-audio {display: block;}
 
 /* FOOTER */
-nav#footer {background-image: linear-gradient(to bottom, #0ab 0px, #078 100%); box-shadow: 0 -1px 5px #000000;}
+nav#footer {background-color: #078; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%); box-shadow: 0 -1px 5px #000000;}
 
     /* APP COMPONENTS */
     ._connections-book {}   /* See a list of people from your connections book who are online now */
