@@ -143,7 +143,9 @@ $('.btn-lucid.user').on('click',function(){
 
 // Stream & Filter Controls Toggles (*only one allowed open at a time)
 $('#stream-and-filter-status .status-area a').on('click',function(){
-            // If Stream COntrols
+    // Close Connections Panel
+    $('#connection-alerts button.user.active').click();
+    // If Stream Controls
     if($(this).is('.stream-controls-toggle')){
         if($('body').hasClass('filter-controls')){
             $('.filter-controls-con').slideToggle('fast');
@@ -206,14 +208,13 @@ $('#connection-alerts button').on('click',function(){
     $(this).toggleClass('active').siblings().removeClass('active');
     if($(this).hasClass('active')){
         if($('body').hasClass('stream-controls')){
-            $('.stream-controls-con').slideToggle('fast');
+            $('.stream-controls-toggle').click();
         }
         if($('body').hasClass('filter-controls')){
-            $('.filter-controls-con').slideToggle('fast');
+            $('.filter-controls-toggle').click();
         }
         $('#connection-alerts > .panel-body').show();
-        $('.alerts-list').slideUp('fast');
-        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown('fast')
+        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown('fast').siblings().slideUp('fast');
     }else{
         $('#connection-alerts > .panel-body').hide();
         $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp('fast');
