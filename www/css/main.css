@@ -59,6 +59,9 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
         .dropdown-menu > li > a > .menu-icon {top: 3px; margin-right: 5px;}
 .well {min-height: 0px;}
 
+.list-group-item {padding: 10px 5px; background-color: #cff;}
+.list-group-item.selected {background-color: #ff6;}
+
 
 /* GLOBAL: Vars */
 /* Orange */
@@ -144,7 +147,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     #stream-and-filter-status .status-area a:hover {color: #fff; text-decoration: none;}
     #stream-and-filter-status .status-area .stream-controls-toggle {color: #f80;}
     body.stream-controls #stream-and-filter-status .status-area a #stream-name,
-    body.stream-controls #stream-and-filter-status .status-area a .chevron-toggle {color: #ff6;}
+    body.stream-controls #stream-and-filter-status .status-area a .chevron-toggle {color: #f90;}
     #stream-and-filter-status .status-area a.stream-controls-toggle {color: #fff;}
     body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle,
     body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {position: relative; border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
@@ -152,13 +155,11 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .chevron-toggle {color: #ff6;}
 
     #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px;}
-        #stream-and-filter-status > .controls .list-group-item {padding: 5px;}
-        #stream-and-filter-status > .controls .list-group-item.selected {background-color: #ff6;}
 
-#connections-panel .alerts-panel {display: none; max-height: 100px;}
-    #connections-panel .alert > a img {display: none;}
+#connections-panel .alerts-list {display: none; max-height: 146px; margin-bottom: 3px;}
 
 .well-lucid {background-color: #078;
+    background-image: none;
   /*background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
   background-repeat: repeat-x;*/
   border-color: #0ab;
@@ -168,6 +169,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
   overflow: auto;
 }
 
+/*
 .alert{}
     .alert a.alert-link {position: relative; display: block; padding: 5px 35px 5px 25px; color: #fff; font-weight: normal; line-height: 1.15; border-bottom: 1px dotted #0ab;}
         .alert .view-indicator {position: absolute; top: 0; right: 5px; color: #ff6;}
@@ -175,7 +177,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
         .alert .alert-icon {position: absolute; top: 5px; left: 5px;}
         .alert .alert-message {}
         .alert > a img {width: 25px; height: auto; margin: 0 5px 5px 0; border: 1px solid #A47E3C; border-radius: 5px; padding: 2px;}
-
+*/
 
 /* PANEL */
 .panel > .panel-body > .carousel {padding: 0px;} 
@@ -219,7 +221,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
 a.chevron {display: inline-block; color: #fff; cursor: pointer; height: 25px; margin: 2px 0 3px; padding: 2px 5px; text-decoration: none; font-size: 14px; border: 2px solid transparent; border-radius: 10px;}
-    .chevron-toggle {margin-top: 3px; color: #fff; font-size: 10px;}
+    .chevron-toggle {margin-top: 3px; color: #f90; font-size: 10px;}
     .chevron-toggle.left {float: left; padding-right: 5px;}
     .chevron-toggle.right {float: right; padding-left: 5px;}
 a.chevron.active {border: 2px solid #fff;}
@@ -392,7 +394,7 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 #main-menu-items {left: -130px;}
 
 /* LUCID MENU */
-#connections-panel {bottom: 44px; max-height: 178px; padding: 0 5px 3px; border-top: 1px solid #0ab; box-shadow: 0 -2px 3px rgba(0,0,0,0.8); }
+#connections-panel {bottom: 44px; max-height: 250px; padding: 0 5px 3px; border-top: 1px solid #0ab; box-shadow: 0 -2px 3px rgba(0,0,0,0.8); }
     #connections-panel .panel-menu {margin: 0; white-space: nowrap;}
     #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
 
@@ -400,4 +402,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-#stream-associations, #stream-filters-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*#stream-associations, #stream-filters-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

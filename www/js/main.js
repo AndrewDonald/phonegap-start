@@ -205,15 +205,22 @@ $('.toggle-on-off').on('click',function(){
 $('#connection-alerts button').on('click',function(){
     $(this).toggleClass('active').siblings().removeClass('active');
     if($(this).hasClass('active')){
+        if($('body').hasClass('stream-controls')){
+            $('.stream-controls-con').slideToggle('fast');
+        }
+        if($('body').hasClass('filter-controls')){
+            $('.filter-controls-con').slideToggle('fast');
+        }
         $('#connection-alerts > .panel-body').show();
-        $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideToggle('fast').siblings().hide('fast');
+        $('.alerts-list').slideUp('fast');
+        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown('fast')
     }else{
         $('#connection-alerts > .panel-body').hide();
-        $('.alerts-panel[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp('fast');
     }
 });
 
-$('.alerts-panel .alert-link').on('click',function(){
+$('#connection-alerts .alert-link').on('click',function(){
     $(this).remove();
 });
 
