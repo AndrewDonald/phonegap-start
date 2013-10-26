@@ -164,32 +164,53 @@ $('#stream-and-filter-status .status-area a').on('click',function(){
     $(this).children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
 });
 
+
+
+
+// Open Stream Controls
+$('#stream-associations .stream-associates-off > button.associates-on').on('click', function(){
+    $('#associated-streams-toggle').click();
+});
+
+// Open Stream Controls
+$('#stream-associations .no-stream-associates > button.associates-on').on('click', function(){
+    $('.stream-controls-toggle').click();
+});
+
+// Remove Stream Associate
+$('.stream-associations-list > li > button').on('click', function(){
+    $(this).parent().hide('fast', function(){
+        $(this).remove();
+        if($('.stream-associations-list > li').size() == 0){
+            $('#stream-associations').addClass('empty');
+        }
+    });
+});
+
 // Toggle Stream Associate
-$('.stream-associations-list > li > a').on('click',function(){
+$('.stream-associations-list > li > a').on('click', function(){
+    if($('.stream-associations-list > li').size() > 0){
+        $('#stream-associations').removeClass('empty');
+    }
     $(this).toggleClass('active');
 });
 
-// Toggle Stream Associate Remove
-$('.stream-associations-list > li > button').on('click',function(){
-    $(this).parent('li').remove();
-    if($('.stream-associations-list > li').size() == 0){
-        $('#stream-associations').removeClass('active');
-    }
-});
+
 
 // TOGGLE STREAM VIEWS SELETOR BUTTONS
-$('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click',function(){
+$('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click', function(){
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
-        $('#stream-associations .stream-associations-list').toggleClass('active'); //.toggleClass('list-inline');
+        if($(this).hasClass('active')){
+            $('#stream-associations').removeClass('off');
+        }else{
+            $('#stream-associations').addClass('off');
+        }
+        //$('#stream-associations .stream-associations-list >').toggleClass('active'); //.toggleClass('list-inline');
     }
 });
 
-// REMOVE ASSOCIATED STREAM BUTTON
-$('#stream-associations button.remove').on('click',function(){
-    $(this).parent().remove();
-});
 
 /*
 // TOGGLE ON/OFF SELETOR BUTTONS
@@ -204,24 +225,7 @@ $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
 });
 
-/*
-$('#connection-alerts button').on('click',function(){
-    $(this).toggleClass('active').siblings().removeClass('active');
-    if($(this).hasClass('active')){
-        if($('body').hasClass('stream-controls')){
-            $('.stream-controls-toggle').click();
-        }
-        if($('body').hasClass('filter-controls')){
-            $('.filter-controls-toggle').click();
-        }
-        $('#connection-alerts > .panel-body').show();
-        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown('fast').siblings().slideUp('fast');
-    }else{
-        $('#connection-alerts > .panel-body').hide();
-        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp('fast');
-    }
-});
-*/
+// TOGGLE CONNECTION PANEL USERS 
 $('#connection-alerts button').on('click',function(){
     if($(this).hasClass('active')){
         $(this).removeClass('active');
@@ -236,7 +240,8 @@ $('#connection-alerts button').on('click',function(){
 });
 
 $('#connection-alerts .alert-link').on('click',function(){
-    $(this).remove();
+    //$(this).remove();
+    alert('selected a user item');
 });
 
 /*

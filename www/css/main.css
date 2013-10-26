@@ -30,7 +30,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    color: #FFFFFF; display: block; font-size: 14px; font-weight: bold; height: 34px;
+    color: #333; display: block; font-size: 14px; font-weight: bold; height: 34px;
     line-height: 1.42857; padding: 6px 5px; vertical-align: middle; width: 97%;}
 .navbar {border: none;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
@@ -296,14 +296,16 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
 
         .filter-controls-con {}
             .filter-controls .filter-name {color: #f90;}
-            .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 3px; color: #fff; font-family: arial; font-weight: bold;}
+            .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 5px; color: #fff; font-family: arial; font-weight: bold;}
             .filter-controls button {font-weight: bold; margin-bottom: 10px;}
             /*.filter-controls button:first-child {margin-bottom: 0;}*/
             .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
 
-        #stream-associations {max-height: 37px;
-            margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
-        
+        #stream-associations {max-height: 37px; margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
+            #stream-associations .no-stream-associates, #stream-associations .stream-associates-off {display: none; color: #ff6; white-space: nowrap; font-size: 12px; padding: 3px 0 0 7px;}
+            #stream-associations.empty .no-stream-associates, #stream-associations.off .stream-associates-off {display: inline-block;}
+                #stream-associations .no-stream-associates .warning-icon, #stream-associations .stream-associates-off .warning-icon {font-size: 16px; padding-right: 5px;}
+                #stream-associations.empty .no-stream-associates > button, #stream-associations.off .stream-associates-off > button {margin-bottom: 4px;}
             #stream-associations .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 35px; margin: 0; white-space: nowrap;}
                 #stream-associations .stream-associations-list > li {position: relative;}
