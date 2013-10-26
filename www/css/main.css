@@ -143,21 +143,17 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
     border-bottom: 1px solid #0ab;}
 
 #stream-and-filter-status {padding: 3px 5px 2px;  box-shadow: 0 2px 3px rgba(0,0,0,0.8), 0 1px 3px #000 inset;}
-    #stream-and-filter-status .status-area a {margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none; border: 2px solid transparent;}
+    #stream-and-filter-status .status-area a {position: relative; margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none; border: 2px solid transparent;}
     #stream-and-filter-status .status-area a:hover {color: #fff; text-decoration: none;}
     #stream-and-filter-status .status-area .stream-controls-toggle {color: #f80;}
-    body.stream-controls #stream-and-filter-status .status-area a #stream-name,
-    body.stream-controls #stream-and-filter-status .status-area a .chevron-toggle {color: #f90;}
     #stream-and-filter-status .status-area a.stream-controls-toggle {color: #fff;}
     body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle,
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {position: relative; border-radius: 10px; border: 2px solid #ff6; color: #ff6;}
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .filter-info,
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle .chevron-toggle {color: #ff6;}
+    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {position: relative; border-radius: 5px; border: 2px solid #ff6; color: #ff6;}
 
     #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px;}
 
 #connections-panel .alerts-list {display: none; max-height: 146px; margin-bottom: 3px;}
-
+    #connections-panel .alerts-list .badge {font-weight: normal; font-size: 10px;}
 .well-lucid {background-color: #078;
     background-image: none;
   /*background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
@@ -284,12 +280,12 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     #stream-and-filter-status {}
-        #stream-and-filter-status .stream-controls-toggle #stream-name {display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
+        #stream-and-filter-status .stream-controls-toggle #stream-name {color: #fff; display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
         @media screen and (orientation:landscape) {
              #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 630px;}
         }
         #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
-        #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px;}
+        #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px; color: #fff;}
         #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; padding: 0 5px 0 0; font-size: 12px; text-decoration: line-through; color: #0cd;}
         body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #fff;}
 
@@ -299,12 +295,11 @@ nav#header {background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px
             .stream-controls-con .stream-history-selection-count {color: #ff6;}
 
         .filter-controls-con {}
-            .filter-controls > div {margin-bottom: 10px;}
-            .filter-controls > div:first-child {margin-bottom: 0;}
-                .filter-controls .filter-name {color: #f90;}
-                .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 3px; color: #fff; font-family: arial; font-weight: bold;}
-                .filter-controls button {font-weight: bold;}
-                .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
+            .filter-controls .filter-name {color: #f90;}
+            .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 3px; color: #fff; font-family: arial; font-weight: bold;}
+            .filter-controls button {font-weight: bold; margin-bottom: 10px;}
+            /*.filter-controls button:first-child {margin-bottom: 0;}*/
+            .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
 
         #stream-associations {max-height: 37px;
             margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
@@ -396,6 +391,7 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* LUCID MENU */
 #connections-panel {bottom: 44px; max-height: 250px; padding: 0 5px 3px; border-top: 1px solid #0ab; box-shadow: 0 -2px 3px rgba(0,0,0,0.8); }
     #connections-panel .panel-menu {margin: 0; white-space: nowrap;}
+    #connections-panel > .panel-heading {width: 100%; overflow: auto;}
     #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
 
 
