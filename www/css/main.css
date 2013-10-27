@@ -16,7 +16,7 @@
 .btn-lg {padding: 9px 16px;}
 .btn-link-lucid {font-size: 12px; transition: color 0.5s; -webkit-transition: color 0.5; color: #067; padding: 3px 5px; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none;}
 .btn-link-lucid:hover, .btn-link-lucid:focus {color: #f90; text-decoration: none; box-shadow: none;}
-.btn-link-lucid.active {transition: color 0.5s; -webkit-transition: color 0.5; box-shadow: none;}
+.btn-link-lucid.active {transition: color 0.5s; -webkit-transition: color 0.5; color: #ff6; box-shadow: none;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
 button.btn-link-lucid {font-size: 18px; padding: 5px;}
 
@@ -138,28 +138,11 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .menu-transparent {position: absolute; width: 100%; margin: 0; padding: 0; z-index: 1900; overflow-x: auto; overflow-y: hidden; background-color: rgba(0,40,50,0.9); box-shadow: 0 0 5px #000; border-bottom: 1px solid #0ab;}
 
-#stream-and-filter-status {padding: 3px 5px 2px;  box-shadow: 0 2px 3px rgba(0,0,0,0.8), 0 1px 3px #000 inset;}
-    #stream-and-filter-status .status-area a {position: relative; margin: 2px 0 3px; height: 25px; padding: 2px 5px; cursor: pointer; color: #fff; text-decoration: none; border: 2px solid transparent;}
-    #stream-and-filter-status .status-area a:hover {color: #fff; text-decoration: none;}
-    #stream-and-filter-status .status-area .stream-controls-toggle {color: #f80;}
-    #stream-and-filter-status .status-area a.stream-controls-toggle {color: #fff;}
-    body.stream-controls #stream-and-filter-status .status-area a.stream-controls-toggle,
-    body.filter-controls #stream-and-filter-status .status-area a.filter-controls-toggle {position: relative; border-radius: 5px; border: 2px solid #ff6; color: #ff6;}
-
-    #stream-and-filter-status > .controls {display: none; margin-bottom: 5px; padding: 10px 5px 5px;}
+.well-lucid {background-color: #078; background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5); margin: 0; padding: 1px; overflow: auto;}
+    .menu-transparent .well-lucid {border-color: #078;}
 
 #connections-panel .alerts-list {display: none; max-height: 146px; margin-bottom: 3px;}
     #connections-panel .alerts-list .badge {font-weight: normal; font-size: 10px;}
-.well-lucid {background-color: #078;
-    background-image: none;
-  /*background-image: linear-gradient(to bottom, #078 0px, #09a 100%);
-  background-repeat: repeat-x;*/
-  border-color: #0ab;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
-  margin: 0;
-  padding: 1px;
-  overflow: auto;
-}
 
 /*
 .alert{}
@@ -212,12 +195,6 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .toggle-on-off .toggle-target .badge {top: 0; background-color: #ccc; color: #000; opacity: 0.3;}
 .toggle-on-off.on .toggle-target .badge {opacity: 1; color: #fff;}
 
-a.chevron {display: inline-block; color: #fff; cursor: pointer; height: 25px; margin: 2px 0 3px; padding: 2px 5px; text-decoration: none; font-size: 14px; border: 2px solid transparent; border-radius: 10px;}
-    .chevron-toggle {margin-top: 3px; color: #f90; font-size: 10px;}
-    .chevron-toggle.left {float: left; padding-right: 5px;}
-    .chevron-toggle.right {float: right; padding-left: 5px;}
-a.chevron.active {border: 2px solid #fff;}
-
 .indicator {display: none; font-family: Arial}
 
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
@@ -260,6 +237,16 @@ a.chevron.active {border: 2px solid #fff;}
     .btn-lucid.menu > .badge {display: inline-block; left: 0; margin: 0 -12px;}
 }
 
+/* btn-lucid-transparent */
+.btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {color: #fff; cursor: pointer; padding: 7px 10px 5px; border: 2px solid rgba(255,255,255, 0.1); border-radius: 5px;} 
+.btn-lucid-transparent.active {border-color: #ff6; background-color: rgba(255,255,255,0.3);} 
+.btn-lucid-transparent.power, .btn-lucid-transparent.power:hover, .btn-lucid-transparent.power:focus {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg); padding: 2px 10px 4px; font-size: 14px !important;} 
+.btn-lucid-transparent.power.active {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(0deg); color: #ff6; padding: 4px 10px 2px;}
+
+.chevron-toggle {margin-top: 3px; color: #f90; font-size: 10px;}
+.chevron-toggle.left {float: left; padding-right: 5px;}
+.chevron-toggle.right {float: right; padding-left: 5px;}
+
 /* HEADER */   
 nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
     nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #078; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
@@ -275,16 +262,19 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         nav#header > .masthead .logo {width: 100px; margin: 0 -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
-    #stream-and-filter-status {}
-        #stream-and-filter-status .stream-controls-toggle #stream-name {color: #fff; display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
-        @media screen and (orientation:landscape) {
-             #stream-and-filter-status .stream-controls-toggle #stream-name {max-width: 630px;}
-        }
-        #stream-and-filter-status .stream-controls-toggle #stream-name:before {content: "~";}
-        #stream-and-filter-status .filter-controls-toggle .filter-sign {font-size: 11px; color: #fff;}
-        #stream-and-filter-status .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; padding: 0 5px 0 0; font-size: 12px; text-decoration: line-through; color: #0cd;}
-        body.filter #stream-and-filter-status .filter-controls-toggle .filter-info {text-decoration: none; color: #fff;}
+    #stream-controls-panel {padding: 5px;  box-shadow: 0 2px 3px rgba(0,0,0,0.8), 0 1px 3px #000 inset;}
+        #stream-controls-panel .stream-status-con .stream-controls-toggle {padding: 4px 10px 2px;}
+        #stream-controls-panel > .controls {display: none; margin: 3px 0; padding: 10px 5px 5px;}
 
+
+        #stream-controls-panel .stream-controls-toggle #stream-name {color: #fff; display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
+        @media screen and (orientation:landscape) {
+             #stream-controls-panel .stream-controls-toggle #stream-name {max-width: 630px;}
+        }
+        #stream-controls-panel .stream-controls-toggle #stream-name:before {content: "~";}
+        #stream-controls-panel .filter-controls-toggle .filter-sign {font-size: 11px; color: #fff;}
+        #stream-controls-panel .filter-controls-toggle .filter-info {font-weight: bold; margin-left: -1px; padding: 0 5px 0 0; font-size: 12px; text-decoration: line-through; color: #0cd;}
+        body.filter #stream-controls-panel .filter-controls-toggle .filter-info {text-decoration: none; color: #fff;}
         .stream-controls-con {}
             .stream-controls-con .stream-controls {margin-bottom: 5px;}
             .stream-controls-con .stream-history-list {max-height: 240px; overflow: auto;}
@@ -295,7 +285,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
             .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 5px; color: #fff; font-family: arial; font-weight: bold;}
             .filter-controls button {font-weight: bold; margin-bottom: 10px;}
             /*.filter-controls button:first-child {margin-bottom: 0;}*/
-            .filter-controls .filter-history-list {max-height: 125px; overflow: auto;}
+            .filter-controls .saved-filters-list {max-height: 125px; overflow: auto;}
 
         #stream-associations {max-height: 37px; margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
             #stream-associations .no-stream-associates, #stream-associations .stream-associates-off {display: none; color: #ff6; white-space: nowrap; font-size: 12px; padding: 3px 0 0 7px;}
@@ -334,17 +324,26 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
                     #stream-associations .stream-associations-list.active a.btn .badge {float: right;}
                 /*#stream-associations.active .stream-associations-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
 
-    #stream-filters-menu {max-height: 50px;}
-    @media (orientation:landscape) {
-        nav#stream-filters-menu {max-height: 40px;}
-    }
+    #filter-controls-panel {padding: 5px;}
+        #filter-controls-panel .filter-status-con {font-size: 12px;}
+            #filter-controls-panel .filter-status-con a {font-size: 10px;}
+            #filter-controls-panel .filter-status-con .filter-controls-toggle .filter-sign {padding: 0 3px;}
+            #filter-controls-panel .filter-status-con .filter-controls-toggle .chevron-toggle {margin: 0;}
+            #filter-controls-panel .filter-status-con .filter-name:after {content: ":";}
+        
+        #filter-controls-panel .filter-controls-con .filter-controls {margin: 5px 0;}   
+        
+        #filter-toggle-menu {max-height: 50px;}
+        @media (orientation:landscape) {
+            nav#filter-toggle-menu {max-height: 40px;}
+        }
 
-        #stream-filters-menu .stream-filters-menu-list {white-space: nowrap;}
-            #stream-filters-menu .stream-filters-menu-list a:last-child {margin-right: 20px;}
-                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
-                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
-                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
-                #stream-filters-menu .stream-filters-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+            #filter-toggle-menu .filter-toggle-menu-list {white-space: nowrap;}
+                #filter-toggle-menu .filter-toggle-menu-list a:last-child {margin-right: 20px;}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
 
 /* PAGES */
 #pages > .page {display: none; padding: 10px;}
@@ -404,4 +403,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-associations, #stream-filters-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*#stream-associations, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

@@ -101,11 +101,7 @@ $('#main-menu-toggle').on('click',function(){
     $('body').toggleClass('main-menu-active');
 });
 
-// Chevron Toggle
-$('a.chevron').on('click',function(){
-    $(this).toggleClass('active')
-        .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-});
+
 
 /*
 // Lucid Menu Toggle
@@ -142,30 +138,13 @@ $('.btn-lucid.user').on('click',function(){
 */
 
 // Stream & Filter Controls Toggles (*only one allowed open at a time)
-$('#stream-and-filter-status .status-area a').on('click',function(){
+$('.stream-controls-toggle').on('click',function(){
     // Close Connections Panel
     $('#connection-alerts button.user.active').click();
-    // If Stream Controls
-    if($(this).is('.stream-controls-toggle')){
-        if($('body').hasClass('filter-controls')){
-            $('.filter-controls-con').slideToggle('fast');
-        }
-        $('body').removeClass('filter-controls');
-        $('body').toggleClass('stream-controls');
-        $('.stream-controls-con').slideToggle('fast');
-    }else{ // If Filter Controls
-        if($('body').hasClass('stream-controls')){
-            $('.stream-controls-con').slideToggle('fast');
-        }
-        $('body').removeClass('stream-controls');
-        $('body').toggleClass('filter-controls');
-        $('.filter-controls-con').slideToggle('fast');
-    }
-    $(this).children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up')
+    $('.filter-controls-toggle.active').click();
+    $('body').toggleClass('stream-controls');
+    $('.stream-controls-con').slideToggle();
 });
-
-
-
 
 // Open Stream Controls
 $('#stream-associations .stream-associates-off > button.associates-on').on('click', function(){
@@ -179,7 +158,7 @@ $('#stream-associations .no-stream-associates > button.associates-on').on('click
 
 // Remove Stream Associate
 $('.stream-associations-list > li > button').on('click', function(){
-    $(this).parent().hide('fast', function(){
+    $(this).parent().hide(function(){
         $(this).remove();
         if($('.stream-associations-list > li').size() == 0){
             $('#stream-associations').addClass('empty');
@@ -195,10 +174,17 @@ $('.stream-associations-list > li > a').on('click', function(){
     $(this).toggleClass('active');
 });
 
-
+// Filter Controls Toggles (*only one allowed open at a time)
+$('.filter-controls-toggle').on('click',function(){
+    // Close Connections Panel
+    $('#connection-alerts button.user.active').click();
+    $('.stream-controls-toggle.active').click();
+    $('body').toggleClass('filter-controls');
+    $('.filter-controls-con').slideToggle();
+});
 
 // TOGGLE STREAM VIEWS SELETOR BUTTONS
-$('#stream-filters-menu > .stream-filters-menu-list > .btn').on('click', function(){
+$('#filter-toggle-menu > .filter-toggle-menu-list > .btn').on('click', function(){
     $(this).toggleClass('active');
     $('body').toggleClass($(this).data('stream-filter'));
     if($(this).is('#associated-streams-toggle')){
@@ -229,19 +215,25 @@ $('.toggle-on-off').on('click',function(){
 $('#connection-alerts button').on('click',function(){
     if($(this).hasClass('active')){
         $(this).removeClass('active');
-        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp('fast');
-        $('#connection-alerts > .panel-body').slideUp('fast');
+        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp();
+        $('#connection-alerts > .panel-body').slideUp();
     }else{
         $('body.stream-controls .stream-controls-toggle, body.filter-controls .filter-controls-toggle').click();
         $(this).addClass('active').siblings('.active').removeClass('active');
         $('#connection-alerts > .panel-body:hidden').slideDown();
-        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown('fast').siblings(':visible').slideUp('fast');
+        $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideDown().siblings(':visible').slideUp();
     }
 });
 
 $('#connection-alerts .alert-link').on('click',function(){
     //$(this).remove();
     alert('selected a user item');
+});
+
+// Chevron Toggle
+$('.chevron-toggle').parent().on('click',function(){
+    $(this).toggleClass('active')
+        .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 });
 
 /*
