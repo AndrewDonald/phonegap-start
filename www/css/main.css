@@ -425,4 +425,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-.stream-associations, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.stream-associations, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
