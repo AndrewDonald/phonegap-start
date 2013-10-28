@@ -136,9 +136,9 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
-.menu-transparent {position: absolute; width: 100%; margin: 0; padding: 0; z-index: 1900; overflow-x: auto; overflow-y: hidden; background-color: rgba(0,40,50,0.9); box-shadow: 0 0 5px #000; border-bottom: 1px solid #0ab;}
+.menu-transparent {position: absolute; width: 100%; margin: 0; overflow: auto; padding: 0; z-index: 1900; background-color: rgba(0,40,50,0.9); box-shadow: 0 0 5px #000; border-bottom: 1px solid #0ab;}
 
-.well-lucid {background-color: #078; background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 0 1px 0 rgba(255, 255, 255, 0.5); margin: 0; padding: 1px; overflow: auto;}
+.well-lucid {background-color: rgba(0,200,225,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
     .menu-transparent .well-lucid {border-color: #078;}
 
 #connections-panel .alerts-list {display: none; max-height: 146px; margin-bottom: 3px;}
@@ -205,7 +205,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
         border-width: 2px; border-color: #ddd;
         color: #fff; background-color: rgba(0, 130, 255, 0.95); border: 2px solid #ff6;}
-    .btn-lucid.tilde {font-size: 40px; line-height: 0.42;}
+    .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
         /*.btn-lucid.tilde .indicator {top: 0; left: 20px;}*/
     .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
@@ -238,14 +238,21 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 }
 
 /* btn-lucid-transparent */
-.btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {color: #fff; cursor: pointer; padding: 7px 10px 5px; border: 2px solid rgba(255,255,255, 0.1); border-radius: 5px;} 
-.btn-lucid-transparent.active {border-color: #ff6; background-color: rgba(255,255,255,0.3);} 
-.btn-lucid-transparent.power, .btn-lucid-transparent.power:hover, .btn-lucid-transparent.power:focus {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg); padding: 2px 10px 4px; font-size: 14px !important;} 
-.btn-lucid-transparent.power.active {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(0deg); color: #ff6; padding: 4px 10px 2px;}
+.btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {color: #fff; cursor: pointer; padding: 7px 10px 5px; border: 2px solid rgba(255,255,255, 0.1); border-radius: 5px; box-shadow: 0 0 1px #000 inset;}
+.btn-lucid-transparent.active {border: 1px solid #FF6;} 
+.btn-lucid-transparent.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
+.btn-lucid-transparent.power, .btn-lucid-transparent.power:hover, .btn-lucid-transparent.power:focus {padding: 4px 10px 2px;} 
+    .btn-lucid-transparent.power > .glyphicon-off {font-size: 16px !important;}
+.btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #FF6;}
+    .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
 .chevron-toggle {margin-top: 3px; color: #f90; font-size: 10px;}
 .chevron-toggle.left {float: left; padding-right: 5px;}
 .chevron-toggle.right {float: right; padding-left: 5px;}
+
+.color-male {color: #09f;}
+.color-female {color: #FFC0CB;}
+
 
 /* HEADER */   
 nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
@@ -263,9 +270,9 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     #stream-controls-panel {padding: 5px;  box-shadow: 0 2px 3px rgba(0,0,0,0.8), 0 1px 3px #000 inset;}
-        #stream-controls-panel .stream-status-con .stream-controls-toggle {padding: 4px 10px 2px;}
-        #stream-controls-panel > .controls {display: none; margin: 3px 0; padding: 10px 5px 5px;}
-
+        #stream-controls-panel .stream-status-con {}
+            #stream-controls-panel .stream-status-con .stream-controls-toggle {text-align: left; padding: 4px 10px 2px;}
+            #stream-controls-panel > .controls {display: none; margin: 3px 0; padding: 10px 5px 5px;}
 
         #stream-controls-panel .stream-controls-toggle #stream-name {color: #fff; display: inline-block; margin: 0; padding-left: 5px; text-align: left; font-size: 12px; max-width: 290px; word-wrap: break-word;}
         @media screen and (orientation:landscape) {
@@ -277,73 +284,88 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         body.filter #stream-controls-panel .filter-controls-toggle .filter-info {text-decoration: none; color: #fff;}
         .stream-controls-con {}
             .stream-controls-con .stream-controls {margin-bottom: 5px;}
-            .stream-controls-con .stream-history-list {max-height: 240px; overflow: auto;}
+            .stream-controls-con .stream-history-list {max-height: 240px; overflow: auto; margin: 5px 0 0;}
             .stream-controls-con .stream-history-selection-count {color: #ff6;}
 
-        .filter-controls-con {}
-            .filter-controls .filter-name {color: #f90;}
-            .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 5px; color: #fff; font-family: arial; font-weight: bold;}
-            .filter-controls button {font-weight: bold; margin-bottom: 10px;}
-            /*.filter-controls button:first-child {margin-bottom: 0;}*/
-            .filter-controls .saved-filters-list {max-height: 125px; overflow: auto;}
-
-        #stream-associations {max-height: 37px; margin-bottom: 3px; overflow-x: auto; overflow-y: hidden;}
-            #stream-associations .no-stream-associates, #stream-associations .stream-associates-off {display: none; color: #ff6; white-space: nowrap; font-size: 12px; padding: 3px 0 0 7px;}
-            #stream-associations.empty .no-stream-associates, #stream-associations.off .stream-associates-off {display: inline-block;}
-                #stream-associations .no-stream-associates .warning-icon, #stream-associations .stream-associates-off .warning-icon {font-size: 16px; padding-right: 5px;}
-                #stream-associations.empty .no-stream-associates > button, #stream-associations.off .stream-associates-off > button {margin-bottom: 4px;}
-            #stream-associations .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s;
-                height: 35px; margin: 0; white-space: nowrap;}
-                #stream-associations .stream-associations-list > li {position: relative;}
+        #stream-associations-panel {position: relative; padding: 0 42px 0 35px;}
+            #stream-associations-panel .stream-associations {margin-top: 5px; height: 36px; margin-bottom: 3px; width: 100%; overflow: auto;}
+            #stream-associations-panel .stream-associations.vertical {height: auto; max-height: 110px;}
+            #stream-associations-panel .stream-associations .no-stream-associates, #stream-associations-panel .stream-associates-off {display: none; color: #ff6; white-space: nowrap; font-size: 12px; padding: 3px 0 0 7px;}
+            #stream-associations-panel.empty .stream-associations .no-stream-associates, #stream-associations-panel.off .stream-associates-off {display: inline-block;}
+                #stream-associations-panel .stream-associations .no-stream-associates .warning-icon, #stream-associations-panel .stream-associates-off .warning-icon {font-size: 16px; padding-right: 5px;}
+                #stream-associations-panel.empty .stream-associations .no-stream-associates > button, #stream-associations-panel.off .stream-associates-off > button {margin-bottom: 4px;}
+            #stream-associations-panel.off .stream-associations .stream-associations-list {display: none;}
+            #stream-associations-panel .stream-associations .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s; margin: 0; white-space: nowrap;}
+            #stream-associations-panel .stream-associations.vertical .stream-associations-list {white-space: normal;}
+                #stream-associations-panel .stream-associations .stream-associations-list > li {position: relative;}
             /*
-            body.stream-preview-full #stream-associations .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s;
+            body.stream-preview-full #stream-associations-panel .stream-associations-list {transition: height 0.5s; -webkit-transition: height 0.5s;
                 height: 110px; overflow-x: hidden; overflow-y: auto; white-space: normal;}
                 
-                body.stream-preview-full #stream-associations .stream-associations-list > li {width: 100%; padding: 5px;}
+                body.stream-preview-full #stream-associations-panel .stream-associations-list > li {width: 100%; padding: 5px;}
 
                 @media all and (min-width: 481px) {
-                    body.stream-preview-full #stream-associations .stream-associations-list.active > li {width: 49.5%;}
+                    body.stream-preview-full #stream-associations-panel .stream-associations-list.active > li {width: 49.5%;}
                 }
                 @media all and (min-width: 768px) {
-                    body.stream-preview-full #stream-associations.active .stream-associations-list.active > li {width: 32.9%;}
+                    body.stream-preview-full #stream-associations-panel.active .stream-associations-list.active > li {width: 32.9%;}
                 }
                 @media all and (min-width: 992px) {
-                    body.stream-preview-full #stream-associations.active .stream-associations-list.active > li {width: 24.7%;}
+                    body.stream-preview-full #stream-associations-panel.active .stream-associations-list.active > li {width: 24.7%;}
                 }
                 @media all and (min-width: 1200px) {
-                    body.stream-preview-full #stream-associations.active .stream-associations-list.active > li {width: 19.7%;}
+                    body.stream-preview-full #stream-associations-panel.active .stream-associations-list.active > li {width: 19.7%;}
                 }
                 */
-                #stream-associations .stream-associations-list button.remove {position: absolute; top: 6px; left: 6px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 4px;}
-                #stream-associations .stream-associations-list a.btn {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
-                #stream-associations .stream-associations-list a.btn.active {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; background-color: #ff6; color: #0ab;}    
-                    #stream-associations .stream-associations-list a.btn .stream-name {float: left;}
-                    #stream-associations .stream-associations-list a.btn.active .stream-name {color: #078;}
-                    #stream-associations .stream-associations-list a.btn .badge {margin-left: 5px; float: none; background-color: #0ab; color: #078;}
-                    #stream-associations .stream-associations-list a.btn.active .badge {font-weight: bold; color: #fff;}
-                    #stream-associations .stream-associations-list.active a.btn .badge {float: right;}
-                /*#stream-associations.active .stream-associations-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
+                #stream-associations-panel .stream-associations .stream-associations-list button.remove {position: absolute; top: 6px; left: 6px; border-radius: 50% 50% 50% 50%; color: #fff; padding: 4px;}
+                #stream-associations-panel .stream-associations .stream-associations-list a.btn {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; width: 100%; color: #0ef; background-color: #078; border-radius: 15px 15px 15px 15px; padding: 4px 4px 2px 30px;}
+                #stream-associations-panel .stream-associations .stream-associations-list a.btn.active {transition: background-color 0.5s; -webkit-transition: background-color 0.5s; background-color: #ff6; color: #0ab;}    
+                    #stream-associations-panel .stream-associations .stream-associations-list a.btn .stream-name {float: left;}
+                    #stream-associations-panel .stream-associations .stream-associations-list a.btn.active .stream-name {color: #078;}
+                    #stream-associations-panel .stream-associations .stream-associations-list a.btn .badge {margin-left: 5px; float: none; background-color: #0ab; color: #078;}
+                    #stream-associations-panel .stream-associations .stream-associations-list a.btn.active .badge {font-weight: bold; color: #fff;}
+                    #stream-associations-panel .stream-associations .stream-associations-list.active a.btn .badge {float: right;}
+                /*#stream-associations-panel.active .stream-associations-list.active > .btn.remove {display: block; padding: 5px 5px;}*/
+            #stream-associations-panel .associated-streams-vertical-toggle {position: absolute; top: 1px; left: 0; font-size: 14px;}
+            #stream-associations-panel .associated-streams-toggle {position: absolute; top: 3px; right: 0;}
 
-    #filter-controls-panel {padding: 5px;}
-        #filter-controls-panel .filter-status-con {font-size: 12px;}
+
+    #filter-controls-panel {padding: 5px; color: #00222929;}
+        #filter-controls-panel .filter-status-con {position: relative; padding-right: 42px; font-size: 12px;}
+            #filter-controls-panel .filter-status-con .filter-controls-toggle {text-align: left;}
+            #filter-controls-panel .filter-status-con .filter-controls-toggle.off {opacity: 0.4;}
+            #filter-controls-panel .filter-status-con .filter-toggle {position: absolute; top: 0; right: 0; text-align: left;}
+            #filter-controls-panel .filter-status-con > div {margin-bottom: 7px;}
             #filter-controls-panel .filter-status-con a {font-size: 10px;}
             #filter-controls-panel .filter-status-con .filter-controls-toggle .filter-sign {padding: 0 3px;}
             #filter-controls-panel .filter-status-con .filter-controls-toggle .chevron-toggle {margin: 0;}
             #filter-controls-panel .filter-status-con .filter-name:after {content: ":";}
         
-        #filter-controls-panel .filter-controls-con .filter-controls {margin: 5px 0;}   
+        #filter-controls-panel .filter-controls-con {}
+            #filter-controls-panel .filter-controls-con .filter-controls {margin: 5px 0; padding: 10px 10px 0;} 
+                #filter-controls-panel .filter-controls-con .filter-controls > div {margin-bottom: 10px;}
+                    #filter-controls-panel .filter-controls-con .filter-controls button {font-weight: bold;}
+                    #filter-controls-panel .filter-controls-con .filter-controls .infinite {font-size: 25px; line-height: 0.85;}
+                    #filter-controls-panel .filter-controls-con .filter-controls label {font-weight: normal; width: 85px; padding-top: 6px;}
+                    #filter-controls-panel .filter-controls-con .filter-controls #txtfilter-name {width: 185px;}
+                    #filter-controls-panel .filter-controls-con .filter-controls :not(.gender-filter):not(.apply-filter) button {border-radius: 50% 50% 50% 50%; height: 35px; width: 35px;}
+                    #filter-controls-panel .filter-controls-con .filter-controls .gender-filter button:hover {}
+                        #filter-controls-panel .filter-controls-con .filter-controls .gender-filter button {margin-right: 5px;}
+                    #filter-controls-panel .filter-controls-con .filter-controls .filter-name {color: #f90;}
+                    #filter-controls-panel .filter-controls-con .filter-controls .gender-letter {margin-bottom: 2px; padding-left: 5px; font-family: arial; }
+                    #filter-controls-panel .filter-controls-con .saved-filters .saved-filters-list {max-height: 125px; margin: 5px 0; overflow: auto;}
         
-        #filter-toggle-menu {max-height: 50px;}
+        #filter-toggle-menu {margin-top: 3px; max-height: 50px; overflow: auto; border-top: 1px solid #056;}
         @media (orientation:landscape) {
             nav#filter-toggle-menu {max-height: 40px;}
         }
-
             #filter-toggle-menu .filter-toggle-menu-list {white-space: nowrap;}
                 #filter-toggle-menu .filter-toggle-menu-list a:last-child {margin-right: 20px;}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+            #filter-toggle-menu .filter-toggle-menu-list .associated-plus {background-color: #FFFF66; border-radius: 2px; height: 18px; left: 29px; position: absolute; top: 0; width: 3px;}
 
 /* PAGES */
 #pages > .page {display: none; padding: 10px;}
@@ -403,4 +425,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-associations, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+.stream-associations, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
