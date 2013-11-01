@@ -137,15 +137,32 @@ $('.btn-lucid.user').on('click',function(){
 });
 */
 
-// Stream & Filter Controls Toggles (*only one allowed open at a time)
-$('.stream-controls-toggle').on('click',function(){
+/*
+// Toggle Associated Streams On/Off
+$('.stream-select-toggle').on('click', function(){
+    $(this).toggleClass('active');
+    $('#modal-select-stream').modal('toggle');
+});
+*/
+
+/*
+// Toggle Stream Pause
+$('.stream-pause-toggle').on('click',function(){
+    $('.stream-select-toggle').toggleClass('active');
+    //$('.stream-select-toggle').toggleClass('disabled');
+});
+*/
+
+// Toggle Stream New
+$('.stream-new-toggle').on('click',function(){
     // Close Connections Panel
     $('#connection-alerts button.user.active').click();
     $('.filter-controls-toggle.active').click();
-    $('body').toggleClass('stream-controls');
-    $('.stream-controls-con').slideToggle('fast');
+    // Display Stream options
+    $(this).toggleClass('active');
 });
 
+/*
 // Associated Stream Off message's button to turn back on
 $('#stream-associations-panel .stream-associates-off > button.associates-on').on('click', function(){
     //$('.associated-streams-toggle').click();
@@ -153,8 +170,9 @@ $('#stream-associations-panel .stream-associates-off > button.associates-on').on
 
 // No Associated Streams message's button to add
 $('#stream-associations-panel .no-stream-associates > button.associates-on').on('click', function(){
-    $('.stream-controls-toggle').click();
+    $('.stream-select-toggle').click();
 });
+*/
 
 // Remove Stream Associate
 $('.stream-associations-list > li > button').on('click', function(){
@@ -178,25 +196,30 @@ $('.stream-associations-list > li > a').on('click', function(){
 $('.filter-controls-toggle').on('click', function(){
     // Close Connections Panel
     $('#connection-alerts button.user.active').click();
-    $('.stream-controls-toggle.active').click();
     $('body').toggleClass('filter-controls');
     $('.filter-controls-con').slideToggle('fast');
 });
 
 // Toggle Associated Streams Horizontal/Vertical view
 $('.associated-streams-vertical-toggle').on('click', function(){
+    $('body').toggleClass('associations-vertical');
     $('.stream-associations').toggleClass('vertical');
 });
 
 // Toggle Associated Streams On/Off
 $('.associated-streams-toggle').on('click', function(){
-     $('body').addClass('associations-on');
-    $(this).toggleClass('active');
+    $(this).toggleClass('active').children('.toggle-icon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    $('.associated-streams-status-con').toggleClass('vertical')
+        .children('.associated-streams-list').toggleClass('list-inline');
+    /*
     if($(this).hasClass('active')){
+        $('body').addClass('associations-on');
         $('#stream-associations-panel').removeClass('off');
     }else{
+        $('body').removeClass('associations-on');
         $('#stream-associations-panel').addClass('off');
     }
+    */
 });
 
 // Toggle Filter on/off
@@ -248,7 +271,7 @@ $('#connection-alerts button').on('click',function(){
         $('.alerts-list[data-user="' + $(this).data('user') + '"]').slideUp('fast');
         $('#connection-alerts > .panel-body').slideUp('fast');
     }else{
-        $('body.stream-controls .stream-controls-toggle, body.filter-controls .filter-controls-toggle').click();
+        $('body.filter-controls .filter-controls-toggle').click();
         $(this).addClass('active').siblings('.active').removeClass('active');
         $('#send-message').prop('placeholder', 'message ' + $(this).data('username'));
         $('#connection-alerts > .panel-body:hidden').slideDown();
