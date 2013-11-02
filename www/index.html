@@ -142,9 +142,10 @@
                     <!--<button class="stream-pause-toggle btn btn-lucid-transparent glyphicon glyphicon-off active"></button>-->
                     <button class="stream-select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
                         <!--<span class="chevron-toggle glyphicon glyphicon-chevron-down pull-left"></span>-->
-                        <span id="stream-name">LucidLife</span>
+                        <!--<span class="caret"></span>-->
+                        <span class="glyphicon glyphicon-chevron-down pull-left"></span>
+                        &nbsp;<span id="stream-name">LucidLife</span>
                         <span class="badge">123</span>
-                        <span class="caret"></span>
                     </button>
                     <ul id="modal-select-stream" class="dropdown-menu">
                         <li role="presentation">
@@ -211,7 +212,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="associated-streams-status-con btn-group pull-right">
+                <div class="associated-streams-status-con btn-group pull-left">
                     <ul class="associated-streams-list list-group list-inline">
                         <li class="list-group-item active">
                             <button class="remove btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
@@ -281,230 +282,9 @@
                         </li>
                     </ul>
                     <button class="associated-streams-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown"><span class="toggle-icon glyphicon glyphicon-chevron-down"></button>  
-                </div>
-            </div>
-
-
-
-                
-
-                <!-- Stream Associations -->
-                <!--
-                <div id="stream-associations-panel" class="collapse">
-                    <a class="associated-streams-vertical-toggle btn btn-lucid-transparent">
-                        <span class="chevron-toggle glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                    <div class="stream-associations well well-lucid">
-                        <span class="no-stream-associates"><span class="warning-icon glyphicon glyphicon-warning-sign"></span>No ~associations are present. Add? &raquo; <button class="associates-on btn btn-warning glyphicon glyphicon-plus"></button></span>
-                        <span class="stream-associates-off"><span class="warning-icon glyphicon glyphicon-warning-sign"></span>~associatoins are off. Turn on &raquo;</span>
-                        <ul class="stream-associations-list list-unstyled list-inline">
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid active">
-                                    <span class="stream-name">AssociatedStream1</span><span class="badge">129</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream2</span><span class="badge">117</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid active">
-                                    <span class="stream-name">AssociatedStream3</span><span class="badge">95</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream4</span><span class="badge">88</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream5</span><span class="badge">54</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream6</span><span class="badge">41</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream7</span><span class="badge">16</span>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="remove btn btn-danger glyphicon glyphicon-remove"></button>
-                                <a class="btn btn-link-lucid">
-                                    <span class="stream-name">AssociatedStream8</span><span class="badge">7</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <a class="associated-streams-toggle btn btn-lucid-transparent power active">
-                        <span class="glyphicon glyphicon-off"></span>
-                    </a>
                 </div>
             </div>
             <!-- STREAM CONTROLS PANEL (END) -->
-
-            <!-- STREAM CONTROLS PANEL (START) -->
-            <div id="stream-controls-panel" class="in clearfix">
-                <!-- Stream Status -->
-                <div class="stream-status-con btn-group pull-left">
-                    <!--<button class="stream-pause-toggle btn btn-lucid-transparent glyphicon glyphicon-off active"></button>-->
-
-                    <a class="filter-select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
-                        <span class="filter-sign glyphicon glyphicon-filter"></span><span class="filter-name">Young Adults: </span>    
-                        <span class="filter-info"><span class="color-male glyphicon glyphicon-user"></span>+<span class="color-female glyphicon glyphicon-user"></span> 18-25 &lt;250km</span>
-                        <span class="badge">97</span>
-                        <span class="caret"></span>
-                    </a>
-
-                    <ul id="modal-select-stream" class="dropdown-menu">
-                        <li role="presentation">
-                            <a class="stream-new-toggle" role="menuitem" tabindex="-1" href="#new-thought" data-toggle="modal">
-                                Start a new thought
-                            </a>
-                            <!-- New Thought -->
-                            <div id="new-thought" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title">New Thought</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="stream-controls">
-                                                <div class="input-group input-group-sm">
-                                                    <input type="text" class="form-control" placeholder="enter new thought to add to stream">
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                        </li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation">
-                            <div>&nbsp;Select a past thought:</div>
-                            <ul class="stream-history-list list-group well well-lucid">
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="associated-streams-status-con btn-group pull-right" style="display: none;">
-                    <ul class="associated-streams-list list-group list-inline">
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream1</span><span class="badge">129</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream2</span><span class="badge">117</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream3</span><span class="badge">95</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream4</span><span class="badge">88</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream5</span><span class="badge">54</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream6</span><span class="badge">41</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream7</span><span class="badge">16</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream8</span><span class="badge">7</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream9</span><span class="badge">45</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream10</span><span class="badge">37</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream11</span><span class="badge">18</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="associated-streams-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown"><span class="toggle-icon glyphicon glyphicon-chevron-down"></button>  
-                </div>
-            </div>
 
             <!-- FILTER CONTROLS PANEL (START) -->
             <div id="filter-controls-panel-OLD" class="menu-transparent">

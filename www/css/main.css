@@ -198,9 +198,10 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .indicator {display: none; font-family: Arial}
 
-.btn-link-lucid {font-size: 12px; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 0.5; color: #0ab; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
+.btn-link-lucid {font-size: 12px; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 0.5; color: #0ef; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
 .btn-link-lucid:hover, .btn-link-lucid:focus {color: #fff; text-decoration: none; box-shadow: none;}
 .active > .btn-link-lucid {transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1;}
+.list-group-item.active > .btn-link-lucid {color: #078;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
 button.btn-link-lucid {font-size: 18px; padding: 5px;}
 
@@ -208,7 +209,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 130, 210, 0.7); color: #fff; /*background-color: #056; color: #0ab;*/}
+    .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 200, 220, 0.7); color: #fff; /*background-color: #056; color: #0ab;*/}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none; border-color: #ddd;
@@ -286,39 +287,36 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         nav#header > .masthead .logo {width: 100px; margin: 0 -5px 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
-
     /* STREAM CONTROLS PANEL */
-    #stream-controls-panel {position: relative; padding: 5px 5px 5px 145px; z-index: 2000; max-height: 45px; background-color: rgb(0,140,160); white-space: nowrap;}
+    #stream-controls-panel {position: relative; padding: 5px; z-index: 2000; max-height: 45px; background-color: rgb(0,140,160); white-space: nowrap;}
         /* Stream */
-        .stream-status-con {position: absolute; top: 5px; left: 5px;}
-            .stream-select-toggle {border-radius: 4px 0 0 4px;}
+        .stream-status-con {width: 33.3%;}
+            .stream-select-toggle {width: 100%; text-align: left; border-radius: 4px 0 0 4px; overflow: auto; padding: 5px;}
                 .stream-select-toggle #stream-name {margin: 3px 0 -5px; display: inline-block; max-width: 220px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
                 #stream-name:before {content: "~";}
                 .stream-select-toggle .badge {background-color: rgba(255,255,255,0.3);}
             .stream-history-list {max-height: 240px; overflow: auto; font-size: 10px; white-space: nowrap;}
                 .stream-history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
         /* Associated Streams */
-        .associated-streams-status-con {display: inline-block; padding-right: 34px; width: 100%; margin-right: 5px;}
-            .associated-streams-list {display: inline-block; max-width: 100%; margin: 0; padding: 4px; border-radius: 0; box-shadow: 0 0 3px #000 inset; white-space: nowrap; overflow: auto;}
+        .associated-streams-status-con {width: 66.6%;}
+            .associated-streams-list {max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; white-space: nowrap; overflow: auto;}
                 .associated-streams-list > li {border-radius: 4px; padding: 1px 0 3px 1px;}
-                    /*.associated-streams-list > li > button.remove {display: none;}*/
                     .associated-streams-list > li > a {}
                         .associated-streams-list > li > a > .stream-name {padding-right: 5px;}
                         .associated-streams-list > li > a > .badge {font-weight: normal;}
                 .associated-streams-list > li.active {}
                     .associated-streams-list > li.active > a > .badge {font-weight: bold;}
-            button.btn.associated-streams-toggle {position: absolute;}
+            button.btn.associated-streams-toggle {position: absolute; top: 0; right: 0; width: auto;}
                 button.associated-streams-toggle > .caret {margin-top: -4px;}
         .associated-streams-status-con.vertical .associated-streams-list {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 250px; box-shadow: 1px 3px 5px #000; margin-top: 1px;}
-            .associated-streams-status-con.vertical .associated-streams-list > li {padding: 4px 5px 6px; border-radius: 0;}
+            .associated-streams-status-con.vertical .associated-streams-list > li {border-radius: 0;}
                 .associated-streams-status-con.vertical .associated-streams-list > li > button.remove {display: inline-block;}
                 .associated-streams-status-con.vertical .associated-streams-list > li > a > .stream-name {font-weight: bold;}
     /* Phone Alterations */
     @media (max-width: 480px) {
-        #stream-controls-panel {max-height: 81px; padding: 40px 5px 5px 10px;}
-            .stream-select-toggle {border-radius: 4px;}
-            .associated-streams-list {border-radius: 4px 0 0 4px;}
-                .associated-streams-status-con.vertical .associated-streams-list > li > a > .stream-name {display: inline-block; max-width: 164px; overflow: auto;}
+        .stream-status-con, .associated-streams-status-con {width: 50%;}
+        .associated-streams-status-con.vertical .associated-streams-list {margin: 37px 0 0 0;}
+        .associated-streams-status-con.vertical .associated-streams-toggle {width: 100%; border-radius: 0 4px 0 0;}
     }
 
 
