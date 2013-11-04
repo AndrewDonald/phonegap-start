@@ -115,7 +115,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="menu-toggle-stream-associations" onclick="$('.stream-select-toggle').click();">
+                            <a class="menu-toggle-stream-associations" onclick="$('.select-toggle').click();">
                                 <span class="menu-icon" style="font-size: 30px; line-height: 0.3;">~</span> thought controls
                             </a>
                         </li>
@@ -136,14 +136,14 @@
             <!-- MASTHEAD (END) -->
 
             <!-- STREAM CONTROLS PANEL (START) -->
-            <div id="stream-controls-panel" class="in clearfix">
+            <div id="stream-controls-panel" class="controls-panel in clearfix">
                 <!-- Stream Status -->
-                <div class="stream-status-con btn-group pull-left">
-                    <!--<button class="stream-pause-toggle btn btn-lucid-transparent glyphicon glyphicon-off active"></button>-->
-                    <button class="stream-select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
-                        <!--<span class="chevron-toggle glyphicon glyphicon-chevron-down pull-left"></span>-->
-                        <!--<span class="caret"></span>-->
-                        <span class="glyphicon glyphicon-chevron-down pull-left"></span>
+                <div class="stream-status-con status-con btn-group pull-left">
+                    <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
+                        <span class="toggle-icon pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
                         &nbsp;<span id="stream-name">LucidLife</span>
                         <span class="badge">123</span>
                     </button>
@@ -170,14 +170,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation">
                             <div>&nbsp;Select a past thought:</div>
-                            <ul class="stream-history-list list-group well well-lucid">
+                            <ul id="stream-history-list" class="history-list list-group well well-lucid">
                                 <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</li>
                                 <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
                                 <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
@@ -212,7 +212,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="associated-streams-status-con btn-group pull-left">
+                <div id="associated-streams-status-con" class="slider-status-con btn-group pull-left">
                     <ul class="associated-streams-list list-group list-inline">
                         <li class="list-group-item active">
                             <button class="remove btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
@@ -281,28 +281,159 @@
                             </a>
                         </li>
                     </ul>
-                    <button class="associated-streams-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown"><span class="toggle-icon glyphicon glyphicon-chevron-down"></button>  
+                    <button class="associated-streams-toggle toggle-expand btn btn-lucid-normal">
+                        <span class="toggle-icon pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                    </button>  
                 </div>
             </div>
             <!-- STREAM CONTROLS PANEL (END) -->
 
             <!-- FILTER CONTROLS PANEL (START) -->
-            <div id="filter-controls-panel-OLD" class="menu-transparent">
+            <div id="filter-controls-panel" class="controls-panel in clearfix">
                 <!-- Filter Status -->
-                <div class="filter-status-con">
-                    <a class="filter-controls-toggle btn btn-lucid-transparent">
-                        <span class="chevron-toggle glyphicon glyphicon-chevron-down pull-left"></span>
-                        <span class="filter-sign glyphicon glyphicon-filter"></span><span class="filter-name">Young Adults</span>    
-                        <span class="filter-info"><span class="color-male glyphicon glyphicon-user"></span>+<span class="color-female glyphicon glyphicon-user"></span> 18-25 &lt;250km</span>
+                <div class="filter-status-con status-con btn-group pull-left">
+                    <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
+                        <span class="toggle-icon pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                        <span class="filter-info">
+                            <span class="filter-sign glyphicon glyphicon-filter"></span><span class="color-male glyphicon glyphicon-user"></span>+<span class="color-female glyphicon glyphicon-user"></span> 18-25 &lt;250km<span id="filter-name">Young Adults</span>
+                        </span>
                         <span class="badge">97</span>
-                    </a>
-                    <a class="filter-toggle btn btn-lucid-transparent power">
+                    </button>
+                    <ul id="modal-select-filter" class="dropdown-menu">
+                        <li role="presentation">
+                            <a class="filter-new-toggle" role="menuitem" tabindex="-1" href="#new-filter" data-toggle="modal">
+                                Create a new filter
+                            </a>
+                            <!-- New Filter -->
+                            <div id="new-filter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">New Filter</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Filter Controls (Start) -->
+                                            <div class="filter-controls">
+                                                <div class="clearfix">
+                                                    <label class="pull-left">filter name</label>
+                                                    <input id="txtfilter-name" type="text" class="form-control pull-left" value="Young Adults" placeholder="enter filter name to save...">
+                                                </div>
+                                                <div class="gender-filter clearfix">
+                                                    <label class="pull-left">gender</label>
+                                                    <button type="button" class="color-male btn btn-default glyphicon glyphicon-user pull-left" ><span class="gender-letter">M</span></button>
+                                                    <button type="button" class="color-female btn btn-default glyphicon glyphicon-user pull-left"><span class="gender-letter">F</span></button>
+                                                </div>
+                                                <div class="clearfix">
+                                                    <label class="pull-left">age range</label>
+                                                    <button type="button" class="btn btn-default pull-left">18</button>
+                                                    <button type="button" class="btn btn-default pull-left">25</button>
+                                                </div>
+                                                <div class="clearfix">
+                                                    <label class="pull-left">distance<sup>(km)</sup></label>
+                                                    <button type="button" class="btn btn-default"><span class="infinite">&#8734;</span></button>
+                                                </div>
+                                                <div class="apply-filter clearfix">
+                                                    <label class="pull-left"></label>
+                                                    <button class="btn btn-warning pull-left" type="button">apply filter <span class="glyphicon glyphicon-play"></span></button>
+                                                </div>
+                                            </div>
+                                            <!-- Filter Controls (End) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <div>&nbsp;Select a past filter:</div>
+                            <ul id="filters-history-list" class="history-list list-group well well-lucid">
+                                <li class="list-group-item selected"><span class="badge badge-lucid">55</span><span class="glyphicon glyphicon-filter"></span>Young Adults</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">142</span><span class="glyphicon glyphicon-filter"></span>Old Foggies</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="glyphicon glyphicon-filter"></span>University & College Students</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Men</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">76</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Women</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="glyphicon glyphicon-filter"></span>People Close to Me</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="glyphicon glyphicon-filter"></span>Senior Citizens</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="glyphicon glyphicon-filter"></span>Young Women</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="glyphicon glyphicon-filter"></span>Old Men</li>
+                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="glyphicon glyphicon-filter"></span>Due-to-Retire</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="filter-toggle-menu" class="slider-status-con btn-group pull-left">
+                    <ul class="filter-toggle-menu-list list-group list-inline">
+                        <li class="list-group-item active">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-user active" data-stream-filter="people">
+                                <span class="badge">180</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-comment" data-stream-filter="chat">
+                                <span class="badge">237</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-picture" data-stream-filter="photos">
+                                <span class="badge">45</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-film" data-stream-filter="videos">
+                                <span class="badge">12</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-headphones" data-stream-filter="audio">
+                                <span class="badge">2</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-filter active" data-stream-filter="filter">
+                                <span class="badge"></span>
+                            </a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a class="associated-streams-toggle btn btn-lucid menu active" data-stream-filter="associations">
+                                <span class="associated-tilde">~</span>
+                                <div class="associated-plus"></div>
+                                <span class="badge"></span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-list" data-stream-filter="filter-toggle">
+                                <span class="badge">more</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-lucid menu glyphicon glyphicon-th-large" data-stream-filter="filter-controls">
+                                <span class="badge">less</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="filter-toggle toggle-expand btn btn-lucid-normal">
+                        <span class="toggle-icon pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                    </button>  
+                    <!--
+                    <a class="filter-toggle toggle-expand btn btn-lucid-transparent power">
                         <span class="glyphicon glyphicon-off"></span>
                     </a>
-                </div>
-                <!-- Stream Controls -->
+                    -->
+                 </div>
+            </div>
 
                 <!-- Filter Controls (Start) -->
+                <!--
                 <div class="filter-controls-con controls collapse">
                     <div class="filter-controls well well-lucid">
                         <div class="clearfix">
@@ -332,7 +463,8 @@
                         <span class="chevron-toggle glyphicon glyphicon-chevron-down"></span>
                         or select from past filters
                     </a>
-                    <!-- Saved Filters -->
+                
+                    <!-- Saved Filters>
                     <div class="saved-filters collapse">
                         <ul class="saved-filters-list list-group well well-lucid">
                             <li class="list-group-item selected"><span class="badge badge-lucid">55</span><span class="glyphicon glyphicon-filter"></span>Young Adults</li>
@@ -348,9 +480,11 @@
                         </ul>
                     </div>
                 </div>
+                -->
                 <!-- Filter Controls (End) -->
 
                 <!-- Filter Toggle Menu -->
+                <!--
                 <nav id="filter-toggle-menu" class="collapse">
                     <div class="filter-toggle-menu-list">
                         <a class="btn btn-lucid menu glyphicon glyphicon-user active" data-stream-filter="people">
@@ -384,6 +518,7 @@
                     </div>
                 </nav>
             </div>
+            -->
             <!-- FILTER CONTROLS PANEL (END) -->
         </nav>
         <!-- HEADER (END) -->
