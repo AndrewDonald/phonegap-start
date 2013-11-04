@@ -301,45 +301,41 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
             .select-toggle {width: 100%; text-align: left; border-radius: 4px 0 0 4px; overflow: auto;}
                 .select-toggle .badge {top: 1px; background-color: rgba(255,255,255,0.3);}
             .history-list {max-height: 240px; overflow: auto; font-size: 10px; white-space: nowrap;}
-        .slider-status-con {width: 66.6%;}
+        .slider-status-con {width: 66.6%; height: 38px;}
+            .slider-status-con > .toggle-expand {position: absolute; top: 0; right: 0; width: auto;}
             .slider-status-con > .list-group {white-space: nowrap; max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; overflow: auto;}
                 .slider-status-con > .list-group > .list-group-item {margin: 0; border-radius: 4px; padding: 1px 0 3px 1px;}
+        /*.slider-status-con.vertical {height: auto;}*/
         .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-top: 1px;}
-        .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
-
+            .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
+                .slider-status-con.vertical .list-group > li > a {width: 100%; padding-right: 75px;}
     /* Phone Alterations */
     @media (max-width: 480px) {
         .status-con {margin-right: -39px; padding-right: 39px; width: 100%;}
+            .slider-status-con {width: 39px;}
+            .slider-status-con > .list-group {display: none;}
+            .slider-status-con.vertical, .slider-status-con.vertical .select-toggle {width: 100%;}
+            .slider-status-con.vertical .list-group {display: block; margin: 0;}
+            .slider-status-con.vertical .toggle-expand {display: inline-block; top: -38px; border-radius: 4px 4px 0 0;}
     }
 
     /* STREAM CONTROLS PANEL */
-    #stream-controls-panel {z-index: 2001;}
+    #stream-controls-panel {z-index: 2001; top: 40px;}
         /* Stream */
         #stream-name {margin: 3px 0 -5px 5px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
         #stream-name:before {content: "~";}
         .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
         /* Associated Streams */
-        #associated-streams-status-con {}
-            /*.associated-streams-list {max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; overflow: auto;}*/
-                .associated-streams-list > li {}
-                    .associated-streams-list > li > a {}
-                        .associated-streams-list > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
-                        .associated-streams-list > li > a > .badge {font-weight: normal;}
-                .associated-streams-list > li.active {}
-                    .associated-streams-list > li.active > a > .badge {font-weight: bold;}
-            button.btn.toggle-expand {position: absolute; top: 0; right: 0; width: auto;}
-                button.btn.toggle-expand > .caret {margin-top: -4px;}
-                        .slider-status-con.vertical .associated-streams-list > li > button.remove {display: inline-block;}
-                .slider-status-con.vertical .associated-streams-list > li > a {width: 100%; padding-right: 75px;}
-                .slider-status-con.vertical .associated-streams-list > li > a > .stream-name {display: inline-block; width: 100%; overflow: auto; font-weight: bold;}
+        .slider-status-con .list-group > li > a {}
+            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
+            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
+        .slider-status-con .list-group > li.active {}
+            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
+                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
+                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; width: 100%; overflow: auto; font-weight: bold;}
     /* Phone Alterations */
     @media (max-width: 480px) {
-        .slider-status-con {width: 39px;}
         #stream-name {max-width: 178px;}
-        .slider-status-con .associated-streams-list {display: none;}
-        .slider-status-con.vertical, .slider-status-con.vertical .select-toggle {width: 100%;}
-        .slider-status-con.vertical .associated-streams-list {display: block; margin: 0;}
-        .slider-status-con.vertical .toggle-expand {top: -39px; border-radius: 4px 4px 0 0;}
     }
 
     /* FILTER CONTROLS PANEL */
@@ -350,7 +346,6 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
 
     /* Phone Alterations */
     @media (max-width: 480px) {
-        /*.slider-status-con {width: 39px;}*/
         #filter-name {max-width: 178px;}
     }
 
@@ -380,9 +375,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
                     #filter-controls-panel .filter-controls-con .saved-filters .saved-filters-list {max-height: 125px; margin: 5px 0; overflow: auto;}
 */
 
-        @media (orientation:landscape) {
-            /*#filter-toggle-menu {max-height: 40px;}*/
-        }
+
             /*#filter-toggle-menu .filter-toggle-menu-list {white-space: nowrap;}*/
                 /*#filter-toggle-menu .filter-toggle-menu-list a:last-child {margin-right: 20px;}*/
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
@@ -450,4 +443,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
