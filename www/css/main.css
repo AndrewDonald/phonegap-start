@@ -299,16 +299,16 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     .controls-panel {position: absolute; width: 100%; padding: 5px; max-height: 49px; background-color: rgb(0,140,160); white-space: nowrap;}
-        .status-con {width: 40%;}
+        .status-con {width: 33.3%;}
             .select-toggle {width: 100%; text-align: left; border-radius: 4px 0 0 4px; overflow: auto;}
                 .select-toggle .badge {top: 1px; background-color: rgba(255,255,255,0.3);}
             .history-list {max-height: 240px; overflow: auto; font-size: 10px; white-space: nowrap;}
-        .slider-status-con {width: 60%;}
+        .slider-status-con {width: 66.6%;}
             .slider-status-con > .toggle-expand {position: absolute; top: 0; right: 0; width: auto;}
             .slider-status-con > .list-group {white-space: nowrap; max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; overflow: auto;}
                 .slider-status-con > .list-group > .list-group-item {margin: 0; border-radius: 4px; padding: 1px 0 3px 1px;}
         /*.slider-status-con.vertical {height: auto;}*/
-        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-right: 41px;}
+        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000;}
             .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
                 .slider-status-con.vertical .list-group > li > a {width: 100%; padding-right: 75px;}
     /* Phone Alterations */
