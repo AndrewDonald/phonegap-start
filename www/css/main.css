@@ -6,7 +6,7 @@
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
 .navbar {background: none; min-height: 0;}
-    .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom {z-index: 2000;} 
+    .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
@@ -308,7 +308,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
             .slider-status-con > .list-group {white-space: nowrap; max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; overflow: auto;}
                 .slider-status-con > .list-group > .list-group-item {margin: 0; border-radius: 4px; padding: 1px 0 3px 1px;}
         /*.slider-status-con.vertical {height: auto;}*/
-        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-right: 39px;}
+        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-right: 41px;}
             .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
                 .slider-status-con.vertical .list-group > li > a {width: 100%; padding-right: 75px;}
     /* Phone Alterations */
@@ -342,8 +342,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
 
     /* FILTER CONTROLS PANEL */
     #filter-controls-panel {z-index: 2000; top: 83px;}
-        .filter-info {margin: 3px 0 -5px 5px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
-        #filter-name:before {content: ": ";}
+        .filter-info {margin: -2px 0 -5px 5px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
         /*.filter-toggle-menu-list.list-group > .list-group-item > a {margin: 0; padding: 0 15px 2px 3px; max-height: 23px;}*/
 
     /* Phone Alterations */
@@ -443,4 +442,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
