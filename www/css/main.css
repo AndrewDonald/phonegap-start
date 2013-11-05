@@ -11,13 +11,9 @@
 .form-group {margin-bottom: 0 !important;}
 .form-control {height: 34px;}
 .label {font-size: 10px; padding: 0 3px;}
-.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-  background-image: linear-gradient(to bottom, #ff6 0px, #ff4 100%);
-  background-repeat: repeat-x;
-  border-color: #ff6;
-  text-shadow: 0 -1px 0 #3071A9;
-}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {background: none; background-color: #ff6; text-shadow: 0 -1px 0 #3071A9;}
 .list-inline > li {padding: 0;}
+.btn:active, .btn.active {box-shadow: none;}
 .btn-lg {padding: 9px 16px;}
 .btn .badge {right: 0px;}
 .btn-group-justified  > a {border-radius: 0;}
@@ -198,8 +194,9 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .indicator {display: none; font-family: Arial}
 
-.btn-link-lucid {font-size: 12px; line-height: normal; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 0.5; color: #0ef; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
-.btn-link-lucid:hover, .btn-link-lucid:focus {color: #fff; text-decoration: none; box-shadow: none;}
+.btn-link-lucid {font-size: 13px; line-height: normal; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1; color: #0ab; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
+.btn-link-lucid:hover, .btn-link-lucid:focus {color: #0ab; text-decoration: none; box-shadow: none;}
+.btn-link-lucid.glyphicon {padding-left: 10px;} 
 .active > .btn-link-lucid {transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1;}
 .list-group-item.active > .btn-link-lucid {color: #078;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
@@ -209,7 +206,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 200, 220, 0.7); color: #fff; /*background-color: #056; color: #0ab;*/}
+    .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 200, 220, 0.7); font-family: Arial; color: #fff; margin-right: 5px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none; border-color: #ddd;
@@ -241,18 +238,19 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
         .btn-lucid.user.active > label {background-color: transparent;}
         .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
         .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px; border-color: #ff6;}
-
+/*
 .btn-lucid.menu {padding: 0 5px 0 19px; color: #089; background-color: rgba(0,0,0,0); border-radius: 0; border: none; white-space: nowrap;}
 .btn-lucid.menu.active {box-shadow: none;}
-    .btn-lucid.menu > .badge {display: block; font-family: arial; left: 50%; margin: 7px -18px 0; width: 36px; padding: 2px 0; color: #089; text-shadow: none;}
+    .btn-lucid.menu > .badge {display: inline-block; font-family: arial; margin: 0 -12px 0; width: 36px; padding: 2px 0; color: #0cd; text-shadow: none;}
     .btn-lucid.menu.active > .badge {color: #fff; text-shadow: none;}
+/*
     .btn-lucid.menu.tilde > .badge {top: -2px;}
 .btn-lucid.menu.divider {border-left: 1px solid #056;}
 @media screen and (orientation: landscape) {
     .btn-lucid.menu {padding: 0 6px;}
     .btn-lucid.menu > .badge {display: inline-block; left: 0; margin: 0 -12px;}
 }
-
+*/
 /* btn-lucid-transparent */
 .btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {height: 32px; text-shadow: 0 0 5px #666; color: #fff; box-shadow: 0 0 1px #0ef, 0 0 1px #0ef inset; border-color: #078; background-color: rgba(0,240,255,0.3);}
 .btn-lucid-transparent.active {background-color: rgba(255,255,255,0.5); color: #fff; text-shadow: 0 0 5px #000;} 
@@ -278,8 +276,12 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .chevron-toggle.left {float: left; padding-right: 5px;}
 .chevron-toggle.right {float: right; padding-left: 5px;}
 
-.color-male {color: #09f;}
+.color-male {color: #00f;}
 .color-female {color: #FFC0CB;}
+
+.associated-tilde {font-size: 28px; font-weight: bold; left: 5px; line-height: 6px; margin-right: 10px; position: relative; top: 6px;}
+.associated-plus {background-color: #078; border-radius: 2px; height: 14px; left: 14px; position: absolute; top: 5px; width: 3px;}
+    .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
 nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px #000;}
@@ -297,16 +299,16 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     .controls-panel {position: absolute; width: 100%; padding: 5px; max-height: 49px; background-color: rgb(0,140,160); white-space: nowrap;}
-        .status-con {width: 33.3%;}
+        .status-con {width: 40%;}
             .select-toggle {width: 100%; text-align: left; border-radius: 4px 0 0 4px; overflow: auto;}
                 .select-toggle .badge {top: 1px; background-color: rgba(255,255,255,0.3);}
             .history-list {max-height: 240px; overflow: auto; font-size: 10px; white-space: nowrap;}
-        .slider-status-con {width: 66.6%; height: 38px;}
+        .slider-status-con {width: 60%;}
             .slider-status-con > .toggle-expand {position: absolute; top: 0; right: 0; width: auto;}
             .slider-status-con > .list-group {white-space: nowrap; max-width: 100%; margin: 0 39px 0 0; padding: 4px; height: auto; border-radius: 0; box-shadow: 0 0 3px #000 inset; overflow: auto;}
                 .slider-status-con > .list-group > .list-group-item {margin: 0; border-radius: 4px; padding: 1px 0 3px 1px;}
         /*.slider-status-con.vertical {height: auto;}*/
-        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-top: 1px;}
+        .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000; margin-right: 39px;}
             .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
                 .slider-status-con.vertical .list-group > li > a {width: 100%; padding-right: 75px;}
     /* Phone Alterations */
@@ -342,7 +344,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
     #filter-controls-panel {z-index: 2000; top: 83px;}
         .filter-info {margin: 3px 0 -5px 5px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
         #filter-name:before {content: ": ";}
-        .filter-toggle-menu-list.list-group > .list-group-item > a {margin: 0; padding: 0 15px 2px 3px; max-height: 23px;}
+        /*.filter-toggle-menu-list.list-group > .list-group-item > a {margin: 0; padding: 0 15px 2px 3px; max-height: 23px;}*/
 
     /* Phone Alterations */
     @media (max-width: 480px) {
@@ -382,9 +384,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
-            #filter-toggle-menu .filter-toggle-menu-list .associated-tilde {font-size: 38px; left: 0; line-height: 6px; margin-right: 10px; position: relative; top: 8px;}
-            #filter-toggle-menu .filter-toggle-menu-list .associated-plus {background-color: #089; border-radius: 2px; height: 18px; left: 13px; position: absolute; top: 2px; width: 3px;}
-
+            
 /* PAGES */
 #pages > .page {display: none; padding: 10px;}
     #pages > .page.active {display: inline;}
@@ -443,4 +443,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 /* RESPONSIVE ============== */
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
