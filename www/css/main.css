@@ -280,7 +280,9 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .color-female {color: #FFC0CB;}
 
 .associated-tilde {font-size: 28px; font-weight: bold; left: 5px; line-height: 6px; margin-right: 10px; position: relative; top: 6px;}
+.slider-status-con.vertical .associated-tilde {margin-left: 5px; top: 2px;}
 .associated-plus {background-color: #078; border-radius: 2px; height: 14px; left: 14px; position: absolute; top: 5px; width: 3px;}
+.slider-status-con.vertical .associated-plus {left: 22px;}
     .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
@@ -310,7 +312,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
         /*.slider-status-con.vertical {height: auto;}*/
         .slider-status-con.vertical .list-group {margin-top: 1px; padding: 0; background-color: rgba(0, 150, 170, 0.95); border: 1px solid #0ef; border-radius: 0 0 5px 5px; max-height: 225px; box-shadow: 1px 3px 5px #000;}
             .slider-status-con.vertical .list-group > li {padding: 5px 0 6px 5px; border-radius: 0;}
-                .slider-status-con.vertical .list-group > li > a {width: 100%; padding-right: 75px;}
+                .slider-status-con.vertical .list-group > li > a {}
     /* Phone Alterations */
     @media (max-width: 480px) {
         .status-con {margin-right: -39px; padding-right: 39px; width: 100%;}
@@ -383,6 +385,8 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
                     #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
+                    #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
             
 /* PAGES */
 #pages > .page {display: none; padding: 10px;}

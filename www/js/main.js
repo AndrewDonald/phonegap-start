@@ -258,6 +258,7 @@ $('.filter-toggle-menu-list > li').on('click', function(){
     }
 });
 
+
 // Toggle Filter Views
 $('#filter-toggle-menu > .filter-toggle-menu-list > li > a').on('click', function(){
     $('body').toggleClass($(this).data('stream-filter'));
@@ -269,6 +270,10 @@ $('#filter-toggle-menu > .filter-toggle-menu-list > li > a').on('click', functio
         }else{
             $('#stream-associations-panel').addClass('off');
         }
+    }
+
+    if($(this).is('.glyphicon-list') || $(this).is('.glyphicon-th-large')){
+        $(this).toggleClass('glyphicon-list glyphicon-th-large');
     }
 });
 
