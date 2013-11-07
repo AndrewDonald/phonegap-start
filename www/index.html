@@ -99,35 +99,15 @@
                     </button>
                     <ul id="connections-panel-items" class="dropdown-menu" role="menu">
                         <li>
-                            <a class="menu-toggle-stream-controls-panel" data-toggle="collapse" href="#stream-controls-panel">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> show streams
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-toggle-stream-filters" data-toggle="collapse" href="#filter-toggle-menu">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> show filters
+                            <a class="menu-toggle-controls-panel">
+                                <span class="menu-icon glyphicon glyphicon-off"></span> controls
                             </a>
                         </li>
                         <li>
                             <a class="menu-toggle-connections" data-toggle="collapse" href="#connections-panel">
-                                <span class="menu-icon glyphicon glyphicon-eye-open"></span> show notifications
+                                <span class="menu-icon glyphicon glyphicon-off"></span> connections
                             </a>
                         </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="menu-toggle-stream-associations" onclick="$('.select-toggle').click();">
-                                <span class="menu-icon" style="font-size: 30px; line-height: 0.3;">~</span> thought controls
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-toggle-stream-associations" onclick="$('.filter-controls-toggle').click();">
-                                <span class="menu-icon glyphicon glyphicon-filter"></span> filter controls
-                            </a>
-                        </li>
-                        <!--
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        -->
                     </ul>
                     
                     <!--<button id="search-toggle" type="button" class="btn btn-link-lucid btn-lg tilde color-3-lt">~</button>-->
@@ -135,297 +115,298 @@
             </div>
             <!-- MASTHEAD (END) -->
 
-            <!-- STREAM CONTROLS PANEL (START) -->
-            <div id="stream-controls-panel" class="controls-panel in clearfix">
-                <!-- Stream Status -->
-                <div class="stream-status-con status-con btn-group pull-left">
-                    <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
-                        <span class="toggle-icon pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                        &nbsp;<span id="stream-name">LucidLife</span>
-                        <span class="badge">123</span>
-                    </button>
-                    <ul id="modal-select-stream" class="dropdown-menu">
-                        <li role="presentation">
-                            <a class="stream-new-toggle" role="menuitem" tabindex="-1" href="#new-thought" data-toggle="modal">
-                                Start a new thought
-                            </a>
-                            <!-- New Thought -->
-                            <div id="new-thought" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title">New Thought</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="stream-controls">
-                                                <div class="input-group input-group-sm">
-                                                    <input type="text" class="form-control" placeholder="enter new thought to add to stream">
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
-                                                    </span>
+            <div id="controls-panel">
+                <!-- STREAM CONTROLS PANEL (START) -->
+                <div id="stream-controls-panel" class="controls-panel clearfix">
+                    <!-- Stream Status -->
+                    <div class="stream-status-con status-con btn-group pull-left">
+                        <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
+                            <span class="toggle-icon pull-left">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                            &nbsp;<span id="stream-name">LucidLife</span>
+                            <span class="badge">123</span>
+                        </button>
+                        <ul id="modal-select-stream" class="dropdown-menu">
+                            <li role="presentation">
+                                <a class="stream-new-toggle" role="menuitem" tabindex="-1" href="#new-thought" data-toggle="modal">
+                                    Start a new thought
+                                </a>
+                                <!-- New Thought -->
+                                <div id="new-thought" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">New Thought</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="stream-controls">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text" class="form-control" placeholder="enter new thought to add to stream">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation">
-                            <div>&nbsp;Select a past thought:</div>
-                            <ul id="stream-history-list" class="history-list list-group well well-lucid">
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <div>&nbsp;Select a past thought:</div>
+                                <ul id="stream-history-list" class="history-list list-group well well-lucid">
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">142</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">76</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">55</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="stream-name">StreamName</span></li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="stream-name">StreamName</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="associated-streams-status-con" class="slider-status-con btn-group">
+                        <ul class="associated-streams-list list-group list-inline">
+                            <li class="list-group-item active">
+                                <button class="remove btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream1</span><span class="badge">129</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream2</span><span class="badge">117</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream3</span><span class="badge">95</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream4</span><span class="badge">88</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream5</span><span class="badge">54</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream6</span><span class="badge">41</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream7</span><span class="badge">16</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream8</span><span class="badge">7</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream9</span><span class="badge">45</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream10</span><span class="badge">37</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
+                                <a class="btn btn-link-lucid">
+                                    <span class="stream-name">AssociatedStream11</span><span class="badge">18</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="associated-streams-toggle toggle-expand btn btn-lucid-normal">
+                            <span class="toggle-icon pull-left">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
-                <div id="associated-streams-status-con" class="slider-status-con btn-group pull-left">
-                    <ul class="associated-streams-list list-group list-inline">
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream1</span><span class="badge">129</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream2</span><span class="badge">117</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream3</span><span class="badge">95</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream4</span><span class="badge">88</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream5</span><span class="badge">54</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream6</span><span class="badge">41</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream7</span><span class="badge">16</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream8</span><span class="badge">7</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream9</span><span class="badge">45</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream10</span><span class="badge">37</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <button class="remove btn btn-sm  btn-danger glyphicon glyphicon-remove"></button>
-                            <a class="btn btn-link-lucid">
-                                <span class="stream-name">AssociatedStream11</span><span class="badge">18</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="associated-streams-toggle toggle-expand btn btn-lucid-normal">
-                        <span class="toggle-icon pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                    </button>  
-                </div>
-            </div>
-            <!-- STREAM CONTROLS PANEL (END) -->
+                <!-- STREAM CONTROLS PANEL (END) -->
 
-            <!-- FILTER CONTROLS PANEL (START) -->
-            <div id="filter-controls-panel" class="controls-panel in clearfix">
-                <!-- Filter Status -->
-                <div class="filter-status-con status-con btn-group pull-left">
-                    <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
-                        <span class="toggle-icon pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                        <span class="filter-info">
-                            <div id="filter-name">Young Adults</div>
-                            <span class="filter-sign glyphicon glyphicon-filter"></span><span class="color-male glyphicon glyphicon-user"></span>+<span class="color-female glyphicon glyphicon-user"></span> 18-25 &lt;250km
-                        </span>
-                        <span class="badge">97</span>
-                    </button>
-                    <ul id="modal-select-filter" class="dropdown-menu">
-                        <li role="presentation">
-                            <a class="filter-new-toggle" role="menuitem" tabindex="-1" href="#new-filter" data-toggle="modal">
-                                Create a new filter
-                            </a>
-                            <!-- New Filter -->
-                            <div id="new-filter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title">New Filter</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Filter Controls (Start) -->
-                                            <div class="filter-controls">
-                                                <div class="clearfix">
-                                                    <label class="pull-left">filter name</label>
-                                                    <input id="txtfilter-name" type="text" class="form-control pull-left" value="Young Adults" placeholder="enter filter name to save...">
-                                                </div>
-                                                <div class="gender-filter clearfix">
-                                                    <label class="pull-left">gender</label>
-                                                    <button type="button" class="color-male btn btn-default glyphicon glyphicon-user pull-left" ><span class="gender-letter">M</span></button>
-                                                    <button type="button" class="color-female btn btn-default glyphicon glyphicon-user pull-left"><span class="gender-letter">F</span></button>
-                                                </div>
-                                                <div class="clearfix">
-                                                    <label class="pull-left">age range</label>
-                                                    <button type="button" class="btn btn-default pull-left">18</button>
-                                                    <button type="button" class="btn btn-default pull-left">25</button>
-                                                </div>
-                                                <div class="clearfix">
-                                                    <label class="pull-left">distance<sup>(km)</sup></label>
-                                                    <button type="button" class="btn btn-default"><span class="infinite">&#8734;</span></button>
-                                                </div>
-                                                <div class="apply-filter clearfix">
-                                                    <label class="pull-left"></label>
-                                                    <button class="btn btn-warning pull-left" type="button">apply filter <span class="glyphicon glyphicon-play"></span></button>
-                                                </div>
+                <!-- FILTER CONTROLS PANEL (START) -->
+                <div id="filter-controls-panel" class="controls-panel clearfix">
+                    <!-- Filter Status -->
+                    <div class="filter-status-con status-con btn-group pull-left">
+                        <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">
+                            <span class="toggle-icon pull-left">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                            <div class="filter-info">
+                                <div id="filter-name">Young Adults</div>
+                                <span class="filter-sign glyphicon glyphicon-filter"></span><span class="color-male glyphicon glyphicon-user"></span>+<span class="color-female glyphicon glyphicon-user"></span> 18-25 &lt;250km<span class="badge">97</span>
+                            </div>
+                        </button>
+                        <ul id="modal-select-filter" class="dropdown-menu">
+                            <li role="presentation">
+                                <a class="filter-new-toggle" role="menuitem" tabindex="-1" href="#new-filter" data-toggle="modal">
+                                    Create a new filter
+                                </a>
+                                <!-- New Filter -->
+                                <div id="new-filter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">New Filter</h4>
                                             </div>
-                                            <!-- Filter Controls (End) -->
+                                            <div class="modal-body">
+                                                <!-- Filter Controls (Start) -->
+                                                <div class="filter-controls">
+                                                    <div class="clearfix">
+                                                        <label class="pull-left">filter name</label>
+                                                        <input id="txtfilter-name" type="text" class="form-control pull-left" value="Young Adults" placeholder="enter filter name to save...">
+                                                    </div>
+                                                    <div class="gender-filter clearfix">
+                                                        <label class="pull-left">gender</label>
+                                                        <button type="button" class="color-male btn btn-default glyphicon glyphicon-user pull-left" ><span class="gender-letter">M</span></button>
+                                                        <button type="button" class="color-female btn btn-default glyphicon glyphicon-user pull-left"><span class="gender-letter">F</span></button>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="pull-left">age range</label>
+                                                        <button type="button" class="btn btn-default pull-left">18</button>
+                                                        <button type="button" class="btn btn-default pull-left">25</button>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                        <label class="pull-left">distance<sup>(km)</sup></label>
+                                                        <button type="button" class="btn btn-default"><span class="infinite">&#8734;</span></button>
+                                                    </div>
+                                                    <div class="apply-filter clearfix">
+                                                        <label class="pull-left"></label>
+                                                        <button class="btn btn-warning pull-left" type="button">apply filter <span class="glyphicon glyphicon-play"></span></button>
+                                                    </div>
+                                                </div>
+                                                <!-- Filter Controls (End) -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation">
-                            <div>&nbsp;Select a past filter:</div>
-                            <ul id="filters-history-list" class="history-list list-group well well-lucid">
-                                <li class="list-group-item selected"><span class="badge badge-lucid">55</span><span class="glyphicon glyphicon-filter"></span>Young Adults</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">142</span><span class="glyphicon glyphicon-filter"></span>Old Foggies</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="glyphicon glyphicon-filter"></span>University & College Students</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Men</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">76</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Women</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="glyphicon glyphicon-filter"></span>People Close to Me</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="glyphicon glyphicon-filter"></span>Senior Citizens</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="glyphicon glyphicon-filter"></span>Young Women</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="glyphicon glyphicon-filter"></span>Old Men</li>
-                                <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="glyphicon glyphicon-filter"></span>Due-to-Retire</li>
-                            </ul>
-                        </li>
-                    </ul>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <div>&nbsp;Select a past filter:</div>
+                                <ul id="filters-history-list" class="history-list list-group well well-lucid">
+                                    <li class="list-group-item selected"><span class="badge badge-lucid">55</span><span class="glyphicon glyphicon-filter"></span>Young Adults</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">142</span><span class="glyphicon glyphicon-filter"></span>Old Foggies</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">113</span><span class="glyphicon glyphicon-filter"></span>University & College Students</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">98</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Men</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">76</span><span class="glyphicon glyphicon-filter"></span>Middle-aged Women</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">51</span><span class="glyphicon glyphicon-filter"></span>People Close to Me</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">43</span><span class="glyphicon glyphicon-filter"></span>Senior Citizens</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">39</span><span class="glyphicon glyphicon-filter"></span>Young Women</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">24</span><span class="glyphicon glyphicon-filter"></span>Old Men</li>
+                                    <li class="list-group-item"><span class="badge badge-lucid">17</span><span class="glyphicon glyphicon-filter"></span>Due-to-Retire</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="filter-toggle-menu" class="slider-status-con btn-group">
+                        <ul class="filter-toggle-menu-list list-group list-inline">
+                            <li class="list-group-item active">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-user active" data-stream-filter="people">
+                                    <span class="badge">180</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-comment" data-stream-filter="chat">
+                                    <span class="badge">237</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-picture" data-stream-filter="photos">
+                                    <span class="badge">45</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-film" data-stream-filter="videos">
+                                    <span class="badge">12</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-headphones" data-stream-filter="audio">
+                                    <span class="badge">2</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-filter active" data-stream-filter="filter">
+                                    <span class="badge">&nbsp;</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <a class="associated-streams-toggle btn btn-link-lucid active" data-stream-filter="associations">
+                                    <span class="associated-tilde">~</span>
+                                    <div class="associated-plus"></div>
+                                    <span class="badge">&nbsp;</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-link-lucid glyphicon glyphicon-th-large" data-stream-filter="details">
+                                    <span class="badge">&nbsp;</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="filter-toggle toggle-expand btn btn-lucid-normal">
+                            <span class="toggle-icon pull-left">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                        </button>
+                        <!--
+                        <a class="filter-toggle toggle-expand btn btn-lucid-transparent power">
+                            <span class="glyphicon glyphicon-off"></span>
+                        </a>
+                        -->
+                     </div>
                 </div>
-                <div id="filter-toggle-menu" class="slider-status-con btn-group pull-left">
-                    <ul class="filter-toggle-menu-list list-group list-inline">
-                        <li class="list-group-item active">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-user active" data-stream-filter="people">
-                                <span class="badge">180</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-comment" data-stream-filter="chat">
-                                <span class="badge">237</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-picture" data-stream-filter="photos">
-                                <span class="badge">45</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-film" data-stream-filter="videos">
-                                <span class="badge">12</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-headphones" data-stream-filter="audio">
-                                <span class="badge">2</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-filter active" data-stream-filter="filter">
-                                <span class="badge">&nbsp;</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <a class="associated-streams-toggle btn btn-link-lucid active" data-stream-filter="associations">
-                                <span class="associated-tilde">~</span>
-                                <div class="associated-plus"></div>
-                                <span class="badge">&nbsp;</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a class="btn btn-link-lucid glyphicon glyphicon-th-large" data-stream-filter="details">
-                                <span class="badge">&nbsp;</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <button class="filter-toggle toggle-expand btn btn-lucid-normal">
-                        <span class="toggle-icon pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                    </button>  
-                    <!--
-                    <a class="filter-toggle toggle-expand btn btn-lucid-transparent power">
-                        <span class="glyphicon glyphicon-off"></span>
-                    </a>
-                    -->
-                 </div>
             </div>
         </nav>
         <!-- HEADER (END) -->
@@ -590,160 +571,233 @@
                 <!-- LUCID PANEL-NAV (END) -->
                 <!-- LUCID PANEL-BODY (START) -->
                 <div class="panel-body">
-                    <ul class="list-group well well-lucid alerts-list" data-user="1">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">3m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">15m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?!</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">56m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1h</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1d</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?!</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1w</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1mo</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="2">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-heart"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="5">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-file"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-envelope"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="3">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="4">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?!</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="6">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                    </ul>
-                    <ul class="list-group well well-lucid alerts-list" data-user="7">
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge badge-lucid">1m</span>
-                            <span class="alert-icon glyphicon glyphicon-comment"></span>
-                            <span class="alert-message">Don't forget to sign up for volleyball today.</span>
-                        </li>
-                    </ul>
+                    <div class="connection-items-con" data-user="1">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <div class="connection-item-header">
+                                        <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                        <span class="alert-icon glyphicon glyphicon-eye-open">2d</span>
+                                        <span class="badge">1m</span>
+                                    </div>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">3m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">15m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?!</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">56m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1h</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1d</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?!</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1w</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1mo</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="2">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-heart"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="5">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-file"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-envelope"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="3">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="4">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?!</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today. Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="6">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="7">
+                        <div class="connection-items-header btn-group btn-group-justified">
+                            <button class="btn btn-warning glyphicon glyphicon-comment"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-picture"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-film"><span>123</span></button>
+                            <button class="btn btn-warning glyphicon glyphicon-headphones"><span>123</span></button>
+                        </div>
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Ugh, it's going to be a looong day. :(</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">1m</span>
+                                    <span class="alert-icon glyphicon glyphicon-comment"></span>
+                                    <span class="alert-message">Don't forget to sign up for volleyball today.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <!-- LUCID PANEL-BODY (END) -->
             </div>
