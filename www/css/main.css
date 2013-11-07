@@ -18,7 +18,7 @@
 .btn-lg {padding: 9px 16px;}
 .btn .badge {right: 0px;}
 .btn-group-justified  > a {border-radius: 0;}
-.badge {background-color: rgba(255, 255, 255, 0.3);}
+.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.3);}
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
@@ -57,6 +57,8 @@
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
+blockquote {margin: 0; padding: 0px 10px;}
+.well blockquote {border-color: #0ef;}
 .modal {z-index: 4000; padding-top: 100px;}
 
 .list-group-item {color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab;}
@@ -137,7 +139,7 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
 .menu-transparent {position: absolute; width: 100%; margin: 0; overflow: auto; padding: 0; z-index: 1900; background-color: #056; box-shadow: 0px 3px 5px #333; border-bottom: 1px solid #0ab;}
 
-.well-lucid {background-color: rgba(0,200,225,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
+.well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
     .menu-transparent .well-lucid {border-color: #078;}
 
 
@@ -387,17 +389,29 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
         .connection-items-con {display: none; margin-bottom: 4px;}
             .connection-items-header{}
+                .connection-items-header .btn {box-shadow: 0 0 3px #0ab inset; padding-top: 5px; padding-bottom: 7px;}
                 .connection-items-header .btn:first-child {border-top-left-radius: 4px;}
                 .connection-items-header .btn:last-child {border-top-right-radius: 4px;}
                     .connection-items-header .btn span {font-family: arial; font-size: 10px;}
             .connection-items-con > .well {border-radius: 0 0 4px 4px;}
-            .connection-items-list {max-height: 227px; overflow: auto;}
+            .connection-items-list {max-height: 227px; margin: 2px 0; overflow: auto; padding: 0 3px;}
             @media all and (max-height: 360px) {
                 .connection-items-list {max-height: 135px;}
             }
+                .connection-items-list > li {border: none; background-color: transparent; padding: 0; margin: 10px 1px;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
- 
+                .connection-item-panel {border: 2px solid #0ab; border-radius: 6px; background-color: #0ab;}
+                    .connection-item-panel .panel-header {padding: 2px 3px 0;}
+                        .connection-item-panel .panel-header img {border-radius: 4px; height: 25px; width: 25px;}
+                        .connection-item-panel .panel-header .username {}
+                        .connection-item-panel .panel-header .status {margin-top: 2px;}
+                            .connection-item-panel .panel-header .status .viewed-icon {}
+                            .connection-item-panel .panel-header .status .badge {}
+                    .connection-item-panel .panel-body {margin: 3px; background-color: #045; border-radius: 2px;}
+                        .connection-item-panel .panel-body .connection-content {border-radius: 2px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
 
     /* APP COMPONENTS */
     ._connections-book {}   /* See a list of people from your connections book who are online now */
