@@ -387,31 +387,52 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
         #connections-panel > .panel-heading {width: 100%; overflow: auto;}
         #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
 
+        #connection-items-header {width: 100%; height: 34px; display: none;}
+            #connection-items-header .btn {padding-top: 2px; margin: 0; height: 34px; text-align: center; width: 14.285%;}
+            #connection-items-header .btn.active {background-color: #ee0; text-shadow: 0 0 3px #000;}
+            #connection-items-header .btn:first-child {border-bottom-left-radius: 0;}
+            #connection-items-header .btn:last-child {border-bottom-right-radius: 0;}
+                #connection-items-header .btn .total {position: absolute; bottom: 3px; left: 0; width: 100%; display: block; text-align: center; font-family: arial; font-size: 10px;}
+                #connection-items-header .btn.active .total {text-shadow: 0 0 3px #000;}
+        
         .connection-items-con {display: none; margin-bottom: 4px;}
-            .connection-items-header{}
-                .connection-items-header .btn {box-shadow: 0 0 3px #0ab inset; padding-top: 5px; padding-bottom: 7px;}
-                .connection-items-header .btn:first-child {border-top-left-radius: 4px;}
-                .connection-items-header .btn:last-child {border-top-right-radius: 4px;}
-                    .connection-items-header .btn span {font-family: arial; font-size: 10px;}
             .connection-items-con > .well {border-radius: 0 0 4px 4px;}
-            .connection-items-list {max-height: 227px; margin: 2px 0; overflow: auto; padding: 0 3px;}
+            .connection-items-list {max-height: 216px; margin: 2px 0; overflow: auto; padding: 5px 3px 0;}
             @media all and (max-height: 360px) {
-                .connection-items-list {max-height: 135px;}
+                .connection-items-list {max-height: 124px;}
             }
-                .connection-items-list > li {border: none; background-color: transparent; padding: 0; margin: 10px 1px;}
+                .connection-items-list > li {border: 1px solid #0ef; border-radius: 5px; padding: 0; margin: 0 1px 10px}
+                .connection-items-list > li.viewed {display: none;}
+                .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
-                .connection-item-panel {border: 2px solid #0ab; border-radius: 6px; background-color: #0ab;}
-                    .connection-item-panel .panel-header {padding: 2px 3px 0;}
-                        .connection-item-panel .panel-header img {border-radius: 4px; height: 25px; width: 25px;}
-                        .connection-item-panel .panel-header .username {}
-                        .connection-item-panel .panel-header .status {margin-top: 2px;}
-                            .connection-item-panel .panel-header .status .viewed-icon {}
-                            .connection-item-panel .panel-header .status .badge {}
-                    .connection-item-panel .panel-body {margin: 3px; background-color: #045; border-radius: 2px;}
+                .connection-item-panel {background-color: #078;}
+                    .connection-item-panel .panel-header {position:relative; padding: 2px 20px 2px 42px; height: 18px;}
+                        .connection-item-panel .panel-header img {display: none; position: absolute; top: 2px; left: 2px; border: 1px solid #0ab; border-radius: 4px; height: 35px; width: 35px;}
+                        .connection-item-panel .panel-header .username {display: none;}
+                        .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 4px; color: #0cd; font-size: 10px;}
+                    .panel-body.show-all-connections .connection-item-panel .panel-header {height: 38px;}
+                        .panel-body.show-all-connections .connection-item-panel .panel-header img {display: block;}
+                        .panel-body.show-all-connections .connection-item-panel .panel-header .username {display: inline-block;}
+                        .panel-body.show-all-connections .connection-item-panel .panel-header .status {left: 42px;}
+                        
+                            .connection-item-panel .panel-header .status .sent {display: inline-block; margin-left: -3px; padding-right: 5px;}
+                            .connection-item-panel .panel-header .status .viewed-icon {display: none;}
+                            .connection-item-panel .panel-header .status .not-viewed-icon {display: inline-block; color: #ff6;}
+                                .connection-item-panel .panel-header .status .not-viewed-icon span {font-family: arial; padding-left: 3px;}
+                            .connection-item-panel .panel-header .status .viewed {display: none; margin-left: -3px;}
+                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 2px; right: 4px; color: #ff6;}
+                    .connection-item-panel .panel-body {margin: 3px; background-color: #045; border-radius: 3px;}
                         .connection-item-panel .panel-body .connection-content {border-radius: 2px;}
                         .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
                         .connection-item-panel .panel-body blockquote.connection-content:after {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
+                .connection-items-list > li.viewed {border-color: #0ab;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: inline-block;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed {display: inline-block;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-header .connection-type-icon {color: #0ab;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-body .connection-content {color: #0ef;}
+        .connection-items-con.specific-user {}
 
     /* APP COMPONENTS */
     ._connections-book {}   /* See a list of people from your connections book who are online now */

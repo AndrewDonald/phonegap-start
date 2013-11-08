@@ -297,18 +297,35 @@ $('.toggle-on-off').on('click',function(){
 });
 
 // TOGGLE CONNECTION PANEL USERS 
-$('#connection-alerts button').on('click',function(){
-    if($(this).hasClass('active')){
-        $(this).removeClass('active');
-        $('#send-message').prop('placeholder', 'message everyone');
-        $('.connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
-        $('#connection-alerts > .panel-body').slideUp('fast');
+$('#connection-alerts .btn.user').on('click',function(){
+    if($(this).data('user') == ""){
+        if($(this).hasClass('active')){
+            $('#connections-panel > .panel-body').removeClass('show-all-connections');
+            $(this).removeClass('active');
+            $('#send-message').prop('placeholder', 'message everyone');
+            $('#connection-items-header, .connection-items-con.active').removeClass('active').slideUp('fast');
+        }else{
+            $('#connections-panel > .panel-body').addClass('show-all-connections');
+            $('body.filter-controls .filter-controls-toggle').click();
+            $(this).addClass('active').siblings('.active').removeClass('active');
+            $('#send-message').prop('placeholder', 'message ' + $(this).data('username'));
+            $('#connection-items-header').slideDown('fast');
+            $('.connection-items-con').addClass('active').slideDown('fast');
+        }
     }else{
-        $('body.filter-controls .filter-controls-toggle').click();
-        $(this).addClass('active').siblings('.active').removeClass('active');
-        $('#send-message').prop('placeholder', 'message ' + $(this).data('username'));
-        $('#connection-alerts > .panel-body:hidden').slideDown();
-        $('.connection-items-con[data-user="' + $(this).data('user') + '"]').slideDown().siblings(':visible').slideUp();
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('#send-message').prop('placeholder', 'message everyone');
+            $('.connection-items-con.active').removeClass('active');
+            $('#connection-items-header, .connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+        }else{
+            $('body.filter-controls .filter-controls-toggle').click();
+            $(this).addClass('active').siblings('.active').removeClass('active');
+            $('#send-message').prop('placeholder', 'message ' + $(this).data('username'));
+            $('#connection-items-header').slideDown('fast');
+            $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
+                .siblings('.active').removeClass('active').slideUp('fast');  
+        }
     }
 });
 
@@ -317,11 +334,37 @@ $('#connection-alerts .alert-link').on('click',function(){
     alert('selected a user item');
 });
 
+// Close Connection List Panel
+$('#connection-items-header > .btn').on('click',function(){
+    // Toggle on/off buttons
+    $(this).toggleClass('active');
+
+    // Turn off show "All" button if other buttons excluding "history" & "close" are clicked
+    if(!$(this).is('[data-connection-type=viewed]') && !$(this).is('[data-connection-type=close]')){
+        $(this).siblings('[data-connection-type=all]').removeClass('active');
+    }
+    switch ($(this).data('connection-type')){
+        case 'all': 
+            $(this).addClass('active');
+            $(this).siblings(':not([data-connection-type=viewed])').removeClass('active');
+            break;
+        case 'viewed':
+            $('#connections-panel > .panel-body').toggleClass('show-viewed');
+            break;
+        case 'close': 
+            $(this).removeClass('active');
+            $('#connection-alerts .btn.user.active').click();
+            break;
+    }
+});
+
+/*
 // Chevron Toggle
 $('.chevron-toggle').parent().on('click',function(){
-    $(this).toggleClass('active')
+    $(this).toggleClass('active .btn.active').click();
         .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 });
+*/
 
 /*
 // PANEL MENU
