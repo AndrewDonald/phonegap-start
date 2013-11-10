@@ -419,23 +419,23 @@
                 <div id="connection-alerts" class="panel-heading panel-nav">
                     <!-- Panel Menu -->
                     <div class="panel-menu">
-                        <button class="btn btn-lucid user glyphicon glyphicon-eye-close" data-user="" data-username="All Connections" style="background-image: url(img/profile/all.jpg); text-shadow: 0 0 5px #000; margin-top: 5px;">
+                        <button class="btn btn-lucid user glyphicon glyphicon-eye-close" data-user="new" data-username="" style="background-image: url(img/profile/all.jpg); text-shadow: 0 0 5px #000; margin-top: 5px;">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="glyphicon glyphicon-asterisk"></span>
                                     <span class="quantity">42</span>
                                 </div>
                             </sup>
                             <label class="name">
-                                <span class="fname">All New</span>
-                                <span class="lname">Connections</span>
+                                <span class="fname">NEW!</span>
+                                <span class="lname">(unviewed)</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="indicator">
                                 <div class="label label-lucid">
                                     <span class="glyphicon glyphicon-comment"></span>
-                                    <span class="quantity">3</span>
+                                    <span class="quantity">2</span>
                                 </div>
                             </sup>
                             <label class="name">
@@ -443,11 +443,21 @@
                                 <span class="lname">Seager-Wilson</span>
                             </label>
                         </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                </div>
+                            </sup>
+                            <label class="name">
+                                <span class="fname">Elizabeth</span>
+                                <span class="lname">Jasmine-Foster</span>
+                            </label>
+                        </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
                             <sup class="indicator">
                                 <div class="label label-lucid">
                                     <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
                                 </div>
                             </sup>
                             <label class="name">
@@ -458,9 +468,9 @@
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-file"></span>
-                                    <span class="glyphicon glyphicon-envelope"></span>
                                     <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="glyphicon glyphicon-picture"></span>
+                                    <span class="glyphicon glyphicon-film"></span>
                                     <span class="quantity">10</span>
                                 </div>
                             </sup>
@@ -481,18 +491,6 @@
                                 <span class="lname">Jameson</span>
                             </label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label class="name">
-                                <span class="fname">Elizabeth</span>
-                                <span class="lname">Jasmine-Foster</span>
-                            </label>
-                        </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
                             <sup class="indicator">
                                 <div class="label label-lucid">
@@ -501,15 +499,15 @@
                                 </div>
                             </sup>
                             <label class="name">
-                                <span class="fname">Alyona</span>
-                                <span class="lname">Stephenson</span>
+                                <span class="fname">Ted</span>
+                                <span class="lname">Vorsoulis</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-envelope"></span>
-                                    <span class="quantity">2</span>
+                                    <span class="glyphicon glyphicon-asterisk"></span>
+                                    <span class="quantity">999</span>
                                 </div>
                             </sup>
                             <label class="name">
@@ -584,14 +582,104 @@
 
                 <!-- LUCID PANEL-BODY (START) -->
                 <div class="panel-body">
-                    <div id="connection-items-header" class="btn-group">
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-eye-open" data-connection-type="viewed"><span class="total">viewed</span></a>
-                        <a class="btn btn-lucid-normal glyphicon glyphicon-asterisk active" data-connection-type="all"><span class="total">1234</span></a>
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-comment" data-connection-type="chat"><span class="total">1234</span></a>
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-picture" data-connection-type="photos"><span class="total">1234</span></a>
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-film" data-connection-type="videos"><span class="total">1234</span></a>
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-headphones" data-connection-type="audio"><span class="total">1234</span></a>
-                        <a class="btn btn-lucid-normal  glyphicon glyphicon-remove" data-connection-type="close"><span class="total">close</span></a>
+                    <div id="connection-items-header" class="btn-toolbar">
+                        <div class="btn-group btn-group-justified">
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-eye-open" data-connection-type="viewed"><span class="total">viewed</span></a>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                            <a class="btn btn-lucid-normal glyphicon glyphicon-asterisk active" data-connection-type="all"><span class="total">9999999</span></a>
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-comment" data-connection-type="chat"><span class="total">1234</span></a>
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-picture" data-connection-type="photos"><span class="total">234</span></a>
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-film" data-connection-type="videos"><span class="total">34</span></a>
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-headphones" data-connection-type="audio"><span class="total">4</span></a>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                            <a class="btn btn-lucid-normal  glyphicon glyphicon-remove" data-connection-type="close"><span class="total">close</span></a>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="new">
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-4.jpg"/>
+                                            <span class="username">Elizabeth Jasmine-Foster</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p class="connection-content">Congratulations, Elizabeth Jasmine-Foster likes you!</p>
+                                            <button class="btn btn-lucid-normal">Click here to like Elizabeth back</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-2.jpg"/>
+                                            <span class="username">Rachael Davenport</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p class="connection-content">Congratulations, you and Rachael Davenport mutually like each other, romantically!</p>
+                                            <button class="btn btn-lucid-normal">Click here to add Rachael to Favorites</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">I hope we can finish this app soon!</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="connection-items-con" data-user="1">
                         <div class="well well-lucid">
@@ -603,10 +691,31 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <span class="sent"></span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -622,10 +731,29 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">LucidLife chatting is awesome!</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -641,10 +769,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -660,10 +788,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -679,10 +807,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -698,10 +826,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -717,579 +845,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="connection-items-con" data-user="2">
-                        <div class="well well-lucid">
-                            <ul class="list-group connection-items-list">
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-2.jpg"/>
-                                            <span class="username">Rachael Davenport</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="connection-items-con" data-user="5">
-                        <div class="well well-lucid">
-                            <ul class="list-group connection-items-list">
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-5.jpg"/>
-                                            <span class="username">Ted Mariopolis</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="connection-items-con" data-user="3">
-                        <div class="well well-lucid">
-                            <ul class="list-group connection-items-list">
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-3.jpg"/>
-                                            <span class="username">Susanna Jameson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1311,10 +870,62 @@
                                             <span class="username">Elizabeth Jasmine-Foster</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p class="connection-content">Congratulations, Elizabeth Jasmine-Foster likes you!</p>
+                                            <button class="btn btn-lucid-normal">Click here to like Elizabeth back</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="2">
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-2.jpg"/>
+                                            <span class="username">Rachael Davenport</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p class="connection-content">Congratulations, you and Rachael Davenport mutually like each other!</p>
+                                            <button class="btn btn-lucid-normal">Click here to [dating action]</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="5">
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-5.jpg"/>
+                                            <span class="username">Ted Mariopolis</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1330,10 +941,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1349,10 +960,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1368,10 +979,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1387,10 +998,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1406,10 +1017,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1425,10 +1036,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1444,10 +1055,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1463,10 +1074,187 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="connection-items-con" data-user="3">
+                        <div class="well well-lucid">
+                            <ul class="list-group connection-items-list">
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-3.jpg"/>
+                                            <span class="username">Susanna Jameson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1488,10 +1276,10 @@
                                             <span class="username">Max Stephenson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1507,10 +1295,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1526,10 +1314,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1545,10 +1333,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1564,10 +1352,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1583,10 +1371,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1602,10 +1390,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1621,10 +1409,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1640,10 +1428,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1665,10 +1453,10 @@
                                             <span class="username">Theresa Porter</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1684,10 +1472,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1703,10 +1491,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1722,10 +1510,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1741,10 +1529,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1760,10 +1548,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1779,10 +1567,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1798,10 +1586,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -1817,10 +1605,10 @@
                                             <span class="username">Mary Seager-Wilson</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10/09/2013 10:55pm</span>
+                                                <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10/09/2013 10:58pm</span>
+                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>

@@ -288,6 +288,7 @@ $('#connections-panel-items > li > a').on('click',function(){
 
 // TOGGLE ON/OFF SELETOR BUTTONS
 $('.menu-toggle-controls-panel').on('click',function(){
+    $(this).toggleClass('active');
     $('#controls-panel').toggleClass('active');
 });
 
@@ -296,24 +297,30 @@ $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
 });
 
-// TOGGLE CONNECTION PANEL USERS 
+// TOGGLE CONNECTION PANEL USERS
 $('#connection-alerts .btn.user').on('click',function(){
-    if($(this).data('user') == ""){
-        if($(this).hasClass('active')){
-            $('#connections-panel > .panel-body').removeClass('show-all-connections');
+     $('.menu-toggle-controls-panel.active').click();
+    if($(this).data('user') == "new"){
+        if($(this).is('.active')){
             $(this).removeClass('active');
+            $('#connection-items-header .btn[data-connection-type=viewed]').removeClass('disabled');
+            $('#connections-panel > .panel-body').removeClass('show-multiple-users');
             $('#send-message').removeClass('active').prop('placeholder', 'message everyone');
             $('#connection-items-header, .connection-items-con.active').removeClass('active').slideUp('fast');
         }else{
-            $('#connections-panel > .panel-body').addClass('show-all-connections');
+            $('#connection-items-header .btn[data-connection-type=viewed]').addClass('disabled');
+            $('#connections-panel > .panel-body').addClass('show-multiple-users');
             $('body.filter-controls .filter-controls-toggle').click();
             $(this).addClass('active').siblings('.active').removeClass('active');
-            $('#send-message').prop('placeholder', 'message ' + $(this).data('username'));
+            $('#send-message').prop('placeholder', 'message someone');
             $('#connection-items-header').slideDown('fast');
-            $('.connection-items-con').addClass('active').slideDown('fast');
+            $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
+                .siblings('.active').removeClass('active').slideUp('fast'); 
         }
     }else{
-        if($(this).hasClass('active')){
+        $('#connection-items-header .btn[data-connection-type=viewed]').removeClass('disabled');
+        $('#connections-panel > .panel-body').removeClass('show-multiple-users');
+        if($(this).is('.active')){
             $(this).removeClass('active');
             $('#send-message').prop('placeholder', 'message everyone');
             $('.connection-items-con.active').removeClass('active');
@@ -335,32 +342,21 @@ $('#connection-alerts .alert-link').on('click',function(){
 });
 
 // Connection Items Header Controls
-$('#connection-items-header > .btn').on('click',function(){
+$('#connection-items-header .btn').on('click',function(){
     // Toggle on/off buttons
     $(this).toggleClass('active');
 
-    // Turn on show "All" button if all other buttons excluding "viewed" & "close" are clicked
-    if($('#connection-items-header > .btn[data-connection-type=chat].active, #connection-items-header > .btn[data-connection-type=photos].active, #connection-items-header > .btn[data-connection-type=videos].active, #connection-items-header > .btn[data-connection-type=audio].active').size() == 4){
-        $('#connection-items-header > .btn[data-connection-type=chat], #connection-items-header > .btn[data-connection-type=photos], #connection-items-header > .btn[data-connection-type=videos], #connection-items-header > .btn[data-connection-type=audio]').removeClass('active');
-        $('#connection-items-header > .btn[data-connection-type=all]').addClass('active');
-    }else{
-        // Turn off show "All" button if other buttons excluding "viewed" & "close" are clicked
-        if(!$(this).is('[data-connection-type=viewed]') && !$(this).is('[data-connection-type=close]')){
-            $(this).siblings('[data-connection-type=all]').removeClass('active');
-        }
-        switch ($(this).data('connection-type')){
-            case 'viewed':
-                $('#connections-panel > .panel-body').toggleClass('show-viewed');
-                break;
-            case 'all': 
-                $(this).addClass('active');
-                $(this).siblings(':not([data-connection-type=viewed])').removeClass('active');
-                break;
-            case 'close': 
-                $(this).removeClass('active');
-                $('#connection-alerts .btn.user.active').click();
-                break;
-        }
+    switch ($(this).data('connection-type')){
+        case 'viewed':
+            $('#connections-panel > .panel-body').toggleClass('show-viewed');
+            break;
+        case 'close': 
+            $(this).removeClass('active');
+            $('#connection-alerts .btn.user.active').click();
+            break;
+        default: 
+            $(this).siblings().removeClass('active');
+            break;
     }
 });
 

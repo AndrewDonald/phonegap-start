@@ -213,11 +213,11 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none; border-color: #fff;
     position: relative; margin: 5px 5px; padding: 4px 6px; cursor: pointer; font-size: 16px; color: #fff;
-    border-width: 2px;  border-radius: 5px; background-size: 100% 100%; background-repeat: no-repeat;}
-.btn-lucid:hover {color: #fff; border-color: #fff;}
+    border-width: 2px;  border-radius: 5px; background-color: #0ab; background-size: 100% 100%; background-repeat: no-repeat;}
+.btn-lucid:hover, .btn-lucid:focus {color: #fff; border-color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
         border-width: 2px; border-color: #ddd;
-        color: #fff; background-color: rgba(0, 130, 255, 0.95); border: 2px solid #ff6;}
+        color: #fff; background-color: #cc6; border: 2px solid #ff6;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
         /*.btn-lucid.tilde .indicator {top: 0; left: 20px;}*/
@@ -387,20 +387,26 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
         #connections-panel > .panel-heading {width: 100%; overflow: auto;}
         #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
 
-        #connection-items-header {width: 100%; height: 34px; display: none;}
-            #connection-items-header .btn {padding-top: 2px; margin: 0; height: 34px; text-align: center; width: 14.285%;}
-            #connection-items-header .btn.active {background-color: #0ab;}
-            #connection-items-header .btn:first-child {border-bottom-left-radius: 0;}
-            #connection-items-header .btn:last-child {border-bottom-right-radius: 0;}
-                #connection-items-header .btn .total {position: absolute; bottom: 3px; left: 0; width: 100%; display: block; text-align: center; font-family: arial; font-size: 10px;}
+        #connection-items-header {height: 34px; display: none;}
+            #connection-items-header .btn-group {width: 68.6%}
+            #connection-items-header .btn-group:first-child,
+            #connection-items-header .btn-group:last-child {width: 14%}
+                #connection-items-header .btn-group .btn {display: inline-block; padding-top: 2px; margin: 0 -2px; height: 34px; width: 20%;}
+                #connection-items-header .btn-group:first-child .btn,
+                #connection-items-header .btn-group:last-child .btn {width: 100%;}
+                #connection-items-header .btn-group .btn.active {background-color: #0ab;}
+                #connection-items-header .btn-group .btn:first-child {border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+                #connection-items-header .btn-group .btn:last-child {border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+                    #connection-items-header .btn-group .btn .total {position: absolute; bottom: 3px; left: 0; width: 100%; display: block; text-align: center; font-family: arial; font-size: 10px;}
         
         .connection-items-con {display: none; margin-bottom: 4px;}
+        .connection-items-con .btn-lucid-normal {padding: 2px 5px;}
             .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
             .connection-items-list {max-height: 216px; margin: 2px 0; overflow: auto; padding: 5px 0 0;}
             @media all and (max-height: 360px) {
                 .connection-items-list {max-height: 124px;}
             }
-                .connection-items-list > li {color: #045; background-color: transparent; border: none; padding: 0; margin: 0 5px 10px}
+                .connection-items-list > li.list-group-item {color: #045; background-color: transparent; border: none; border-bottom: 1px solid #0ab; border-radius: 0; padding: 0 0 6px 0; margin: 0 5px 10px}
                 .connection-items-list > li.viewed {display: none;}
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
@@ -411,17 +417,17 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
                         .connection-item-panel .panel-header img {display: none; position: absolute; top: 0; left: 0; border: 1px solid #0ab; border-radius: 4px; height: 35px; width: 35px;}
                         .connection-item-panel .panel-header .username {display: none;}
                         .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 0; color: #0ab; font-size: 10px;}
-                    .panel-body.show-all-connections .connection-item-panel .panel-header {height: 38px;}
-                        .panel-body.show-all-connections .connection-item-panel .panel-header img {display: block;}
-                        .panel-body.show-all-connections .connection-item-panel .panel-header .username {display: inline-block;}
-                        .panel-body.show-all-connections .connection-item-panel .panel-header .status {left: 42px;}
+                    .panel-body.show-multiple-users .connection-item-panel .panel-header {height: 38px;}
+                        .panel-body.show-multiple-users .connection-item-panel .panel-header img {display: block;}
+                        .panel-body.show-multiple-users .connection-item-panel .panel-header .username {display: inline-block;}
+                        .panel-body.show-multiple-users .connection-item-panel .panel-header .status {left: 42px;}
                         
-                            .connection-item-panel .panel-header .status .sent {display: inline-block; margin-left: -3px; padding-right: 5px;}
+                            .connection-item-panel .panel-header .status .sent {display: inline-block; padding-right: 5px;}
                             .connection-item-panel .panel-header .status .viewed-icon {display: none;}
                             .connection-item-panel .panel-header .status .not-viewed-icon {display: inline-block; color: #0ab;}
                                 .connection-item-panel .panel-header .status .not-viewed-icon span {font-family: arial; padding-left: 3px;}
                             .connection-item-panel .panel-header .status .viewed {display: none; margin-left: -3px;}
-                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 0; right: 0; color: #0ef;}
+                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 0; right: 0; color: #ff6; text-shadow: 0 0 1px #0ab;}
                     .connection-item-panel .panel-body {}
                         .connection-item-panel .panel-body .connection-content {}
                         .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ab; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
@@ -430,7 +436,7 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: inline-block;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed {display: inline-block;}
-                    .connection-items-list > li.viewed .connection-item-panel .panel-header .connection-type-icon {color: #0ab;}
+                    .connection-items-list > li.viewed .connection-item-panel .panel-header .connection-type-icon {color: #0ab; text-shadow: none;}
         .connection-items-con.specific-user {}
 
     /* APP COMPONENTS */
