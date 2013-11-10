@@ -58,7 +58,7 @@
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
 blockquote {margin: 0; padding: 0px 10px;}
-.well blockquote {border-color: #0ef;}
+.well blockquote {border-color: #0ab;}
 .modal {z-index: 4000; padding-top: 100px;}
 
 .list-group-item {color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab;}
@@ -211,7 +211,7 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
     .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 200, 220, 0.7); font-family: Arial; color: #fff; margin-right: 5px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
-    box-shadow: none; border-color: #ddd;
+    box-shadow: none; border-color: #fff;
     position: relative; margin: 5px 5px; padding: 4px 6px; cursor: pointer; font-size: 16px; color: #fff;
     border-width: 2px;  border-radius: 5px; background-size: 100% 100%; background-repeat: no-repeat;}
 .btn-lucid:hover {color: #fff; border-color: #fff;}
@@ -389,28 +389,28 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
         #connection-items-header {width: 100%; height: 34px; display: none;}
             #connection-items-header .btn {padding-top: 2px; margin: 0; height: 34px; text-align: center; width: 14.285%;}
-            #connection-items-header .btn.active {background-color: #ee0; text-shadow: 0 0 3px #000;}
+            #connection-items-header .btn.active {background-color: #0ab;}
             #connection-items-header .btn:first-child {border-bottom-left-radius: 0;}
             #connection-items-header .btn:last-child {border-bottom-right-radius: 0;}
                 #connection-items-header .btn .total {position: absolute; bottom: 3px; left: 0; width: 100%; display: block; text-align: center; font-family: arial; font-size: 10px;}
-                #connection-items-header .btn.active .total {text-shadow: 0 0 3px #000;}
         
         .connection-items-con {display: none; margin-bottom: 4px;}
-            .connection-items-con > .well {border-radius: 0 0 4px 4px;}
-            .connection-items-list {max-height: 216px; margin: 2px 0; overflow: auto; padding: 5px 3px 0;}
+            .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
+            .connection-items-list {max-height: 216px; margin: 2px 0; overflow: auto; padding: 5px 0 0;}
             @media all and (max-height: 360px) {
                 .connection-items-list {max-height: 124px;}
             }
-                .connection-items-list > li {border: 1px solid #0ef; border-radius: 5px; padding: 0; margin: 0 1px 10px}
+                .connection-items-list > li {color: #045; background-color: transparent; border: none; padding: 0; margin: 0 5px 10px}
                 .connection-items-list > li.viewed {display: none;}
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
-                .connection-item-panel {background-color: #078;}
-                    .connection-item-panel .panel-header {position:relative; padding: 2px 20px 2px 42px; height: 18px;}
-                        .connection-item-panel .panel-header img {display: none; position: absolute; top: 2px; left: 2px; border: 1px solid #0ab; border-radius: 4px; height: 35px; width: 35px;}
+                .connection-item-panel {background-color: transparent; border: none; margin-left: 5px; box-shadow: none;}
+                .connection-item-panel[data-user="1"] {margin-left: 0px; margin-right: 5px;}
+                    .connection-item-panel .panel-header {position: relative; color: #078; padding: 2px 20px 2px 42px; height: 18px;}
+                        .connection-item-panel .panel-header img {display: none; position: absolute; top: 0; left: 0; border: 1px solid #0ab; border-radius: 4px; height: 35px; width: 35px;}
                         .connection-item-panel .panel-header .username {display: none;}
-                        .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 4px; color: #0cd; font-size: 10px;}
+                        .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 0; color: #0ab; font-size: 10px;}
                     .panel-body.show-all-connections .connection-item-panel .panel-header {height: 38px;}
                         .panel-body.show-all-connections .connection-item-panel .panel-header img {display: block;}
                         .panel-body.show-all-connections .connection-item-panel .panel-header .username {display: inline-block;}
@@ -418,20 +418,19 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
                         
                             .connection-item-panel .panel-header .status .sent {display: inline-block; margin-left: -3px; padding-right: 5px;}
                             .connection-item-panel .panel-header .status .viewed-icon {display: none;}
-                            .connection-item-panel .panel-header .status .not-viewed-icon {display: inline-block; color: #ff6;}
+                            .connection-item-panel .panel-header .status .not-viewed-icon {display: inline-block; color: #0ab;}
                                 .connection-item-panel .panel-header .status .not-viewed-icon span {font-family: arial; padding-left: 3px;}
                             .connection-item-panel .panel-header .status .viewed {display: none; margin-left: -3px;}
-                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 2px; right: 4px; color: #ff6;}
-                    .connection-item-panel .panel-body {margin: 3px; background-color: #045; border-radius: 3px;}
-                        .connection-item-panel .panel-body .connection-content {border-radius: 2px;}
-                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
-                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '"'; color: #0ef; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
+                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 0; right: 0; color: #0ef;}
+                    .connection-item-panel .panel-body {}
+                        .connection-item-panel .panel-body .connection-content {}
+                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ab; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '"'; color: #0ab; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
                 .connection-items-list > li.viewed {border-color: #0ab;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: inline-block;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed {display: inline-block;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .connection-type-icon {color: #0ab;}
-                    .connection-items-list > li.viewed .connection-item-panel .panel-body .connection-content {color: #0ef;}
         .connection-items-con.specific-user {}
 
     /* APP COMPONENTS */
@@ -445,6 +444,8 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
     /* GOBAL USER INPUT */
     .global-user-input {padding: 5px; color: #fff;}
+        #send-message.private {background-color: #cff;}
+
     /*
         .global-user-input #send-message-con form.send-message-form {margin: 0; position: relative; width: 100%; padding-left: 5px;}
             .global-user-input #send-message-con form.send-message-form .send-message-entry {width: 96%; padding-right: 20px; background-color: #fff; border-radius: 5px;}
