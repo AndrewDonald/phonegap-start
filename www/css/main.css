@@ -16,9 +16,9 @@
 .list-inline > li {padding: 0;}
 .btn:active, .btn.active {box-shadow: none;}
 .btn-lg {padding: 9px 16px;}
-.btn .badge {right: 0px;}
+.btn .badge {right: 0px; padding: 2px 4px;}
 .btn-group-justified  > a {border-radius: 0;}
-.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.3);}
+.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
@@ -57,8 +57,7 @@
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote {margin: 0; padding: 0px 10px;}
-.well blockquote {border-color: #0ab;}
+blockquote, .well blockquote {margin: 0; padding: 0px 10px; border-color: #f90;}
 .modal {z-index: 4000; padding-top: 100px;}
 
 .list-group-item {color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab;}
@@ -131,7 +130,7 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
-#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 155px 10px 0; /*background-color: rgba(255,255,255,0.25);*/}
+#pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 30px 10px 60px; /*background-color: rgba(255,255,255,0.25);*/}
 
 .label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
 form {padding: 0;}
@@ -174,9 +173,9 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
         .panel.panel-lucid > .panel-heading {padding: 0; border: none; border-radius: 0; overflow: auto;}
         .panel.panel-lucid > .panel-body {max-height: 250px; padding: 0; box-shadow: 0 1px 3px #333 inset; background-color: #ffb; overflow: auto;}
             .panel.panel-lucid > .panel-body > .carousel {display: none;}
-            .panel.connections-panel > .panel-body .panel .panel-body {padding: 0;}
-    .panel.connections-panel > .panel-body > .panel {display: none; background: none;}
-    .panel.connections-panel > .panel-body > .panel.active {display: block;}
+            .panel.people-panel > .panel-body .panel .panel-body {padding: 0;}
+    .panel.people-panel > .panel-body > .panel {display: none; background: none;}
+    .panel.people-panel > .panel-body > .panel.active {display: block;}
         
 /* CAROUSEL */
 .carousel .carousel-inner .item {color: #333;}
@@ -202,9 +201,9 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .active > .btn-link-lucid {transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1;}
 .list-group-item.active > .btn-link-lucid {color: #078;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
-button.btn-link-lucid {font-size: 18px; padding: 5px;}
+button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-weight: bold;}
 
-#main-menu-toggle.btn-link-lucid, #connections-panel-toggle.btn-link-lucid {opacity: 1; color: #f90;}
+#main-menu-toggle.btn-link-lucid, #people-panel-toggle.btn-link-lucid {opacity: 1; color: #f90;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
@@ -232,11 +231,11 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
         .btn-lucid.tilde label {margin-top: -4px;}
     .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
     
-.btn-lucid.user {margin: 8px 5px 21px; height: 50px; width: 50px;}
+.btn-lucid.user {margin: 8px 3px 12px; height: 50px; width: 50px;}
     .btn-lucid.user.active {}
-        .btn-lucid.user > label {margin: 0 -12.5px; color: #0cd; font-size: 9px; top: 50px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
+        .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 50px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
-            .btn-lucid.user > label > .fname, .btn-lucid.user > label > .lname {display: block;}
+            .btn-lucid.user > label > .name {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
         .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
         .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px; border-color: #ff6;}
@@ -264,13 +263,13 @@ button.btn-link-lucid {font-size: 18px; padding: 5px;}
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 5px #666; padding: 5px 12px; color: #fff; box-shadow: 0 0 1px #0ef inset; border-color: #078; background-color: rgba(0,200,210,0.5);}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 5px 12px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: #078; background-color: #09a;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; box-shadow: 0 0 3px #0ef inset;}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0cd;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
@@ -296,7 +295,7 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
     nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #078; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
-        #connections-panel-toggle {width: 40px;}
+        #people-panel-toggle {width: 40px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
         nav#header > .masthead center {padding-top: 5px;}
         nav#header > .masthead .logo-con {padding-right: 2px; width: 140px;}
@@ -381,57 +380,57 @@ nav#header {z-index: 2001; background-color: 0 1px 0 rgba(255, 255, 255, 0.15) i
 /* FOOTER */
 nav#footer {background-color: #078; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%); box-shadow: 0 -1px 5px #000000;}
     /* CONNECTIONS PANEL */
-    #connections-panel-items {left: -120px;}
-    #connections-panel {bottom: 44px; padding: 0 5px 3px; border-top: 1px solid #0ab; box-shadow: 0 -2px 3px rgba(0,0,0,0.8); }
-        #connections-panel .panel-menu {margin: 0; white-space: nowrap;}
-        #connections-panel > .panel-heading {width: 100%; overflow: auto;}
-        #connections-panel > .panel-heading, #connections-panel > .panel-body {padding: 0;}
 
-        #connection-items-header {height: 34px; display: none;}
-            #connection-items-header .btn-group {width: 68.6%}
-            #connection-items-header .btn-group:first-child,
-            #connection-items-header .btn-group:last-child {width: 14%}
-                #connection-items-header .btn-group .btn {display: inline-block; padding-top: 2px; margin: 0 -2px; height: 34px; width: 20%;}
-                #connection-items-header .btn-group:first-child .btn,
-                #connection-items-header .btn-group:last-child .btn {width: 100%;}
-                #connection-items-header .btn-group .btn.active {background-color: #0ab;}
-                #connection-items-header .btn-group .btn:first-child {border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
-                #connection-items-header .btn-group .btn:last-child {border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
-                    #connection-items-header .btn-group .btn .total {position: absolute; bottom: 3px; left: 0; width: 100%; display: block; text-align: center; font-family: arial; font-size: 10px;}
-        
+    #people-panel-items {left: -120px;}
+    
+    #people-panel {bottom: 44px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666;}
+        .btn.people-nav-toggle > sup {top: -4px; right: -4px; font-weight: bold; font-size: 16px;}
+            
+        #people-panel #people-nav {white-space: nowrap; width: 100%; overflow: auto; padding: 3px 5px 5px; box-shadow: 0 0 3px #000 inset; border-radius: 0;}
+        #people-panel.vertical #people-nav {padding: 3px 3px 5px; white-space: normal;}
+            #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
+        #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
+
+        #connection-items-header {display: none; text-align: center; padding-bottom: 2px;}
+            #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
+            #connection-items-header .btn {background-color: transparent; box-shadow: none;}
+            #connection-items-header .btn.active {color: #ff6;}
+
         .connection-items-con {display: none; margin-bottom: 4px;}
-        .connection-items-con .btn-lucid-normal {padding: 2px 5px;}
+        .connection-items-con .btn-lucid-normal,
+        .connection-items-con .btn-lucid-normal,
+        .connection-items-con .btn-lucid-normal:hover,
+        .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
             .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
             .connection-items-list {max-height: 216px; margin: 2px 0; overflow: auto; padding: 5px 0 0;}
-            @media all and (max-height: 360px) {
+            /*@media all and (max-height: 360px) {
                 .connection-items-list {max-height: 124px;}
-            }
+            }*/
                 .connection-items-list > li.list-group-item {color: #045; background-color: transparent; border: none; border-bottom: 1px solid #0ab; border-radius: 0; padding: 0 0 6px 0; margin: 0 5px 10px}
                 .connection-items-list > li.viewed {display: none;}
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
+                .connection-items-list > li.day-header {text-align: center; width: 100%; color: #0ab;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
                 .connection-item-panel {background-color: transparent; border: none; margin-left: 5px; box-shadow: none;}
-                .connection-item-panel[data-user="1"] {margin-left: 0px; margin-right: 5px;}
                     .connection-item-panel .panel-header {position: relative; color: #078; padding: 2px 20px 2px 42px; height: 18px;}
                         .connection-item-panel .panel-header img {display: none; position: absolute; top: 0; left: 0; border: 1px solid #0ab; border-radius: 4px; height: 35px; width: 35px;}
                         .connection-item-panel .panel-header .username {display: none;}
-                        .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 0; color: #0ab; font-size: 10px;}
-                    .panel-body.show-multiple-users .connection-item-panel .panel-header {height: 38px;}
-                        .panel-body.show-multiple-users .connection-item-panel .panel-header img {display: block;}
-                        .panel-body.show-multiple-users .connection-item-panel .panel-header .username {display: inline-block;}
-                        .panel-body.show-multiple-users .connection-item-panel .panel-header .status {left: 42px;}
+                        .connection-item-panel .panel-header .status {position: absolute; bottom: 0; left: 0; color: #0ab; font-size: 12px;}
                         
                             .connection-item-panel .panel-header .status .sent {display: inline-block; padding-right: 5px;}
                             .connection-item-panel .panel-header .status .viewed-icon {display: none;}
                             .connection-item-panel .panel-header .status .not-viewed-icon {display: inline-block; color: #0ab;}
                                 .connection-item-panel .panel-header .status .not-viewed-icon span {font-family: arial; padding-left: 3px;}
                             .connection-item-panel .panel-header .status .viewed {display: none; margin-left: -3px;}
-                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 0; right: 0; color: #ff6; text-shadow: 0 0 1px #0ab;}
+                            .connection-item-panel .panel-header .status .like-icon {display: none;}
+                            .connection-item-panel .panel-header .status .btn.like {margin-top: -5px; font-size: 10px;}
+                            .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
+                        .connection-item-panel .panel-header .connection-type-icon {position: absolute; top: 0; right: 0; color: #0ab; text-shadow: 0 0 1px #0ab;}
                     .connection-item-panel .panel-body {}
                         .connection-item-panel .panel-body .connection-content {}
-                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '"'; color: #0ab; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
-                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '"'; color: #0ab; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; color: #f90; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; color: #f90; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
                 .connection-items-list > li.viewed {border-color: #0ab;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: inline-block;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
@@ -461,4 +460,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 */
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #connection-alerts, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

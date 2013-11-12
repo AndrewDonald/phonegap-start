@@ -14,7 +14,12 @@ _lucid.panel.pages              = ["stream","filter","profile"];
 _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
 _lucid.panel.apps.active        = 0;
 
+
 $(function() {
+
+   
+    $(this).css('max-height', $(window).height() - 116);
+
     /*
     // Trigger Info to be peeked at
     $('#header .main-nav-controls .info').click().animate({delay: 0}, 2000, function(){
@@ -87,14 +92,14 @@ $(".stream-pane-menu-con").animate({
 
 
     //Open Panels
-    $('.menu-toggle-controls-panel, .menu-toggle-connections').click();
+    //$('.menu-toggle-controls-panel, .menu-toggle-connections').click();
 });
 
 
 //* EVENT HANDLERS *//////////////////////////////////////////////////////////////
 /*
 // Lucid Menu Hold Open until clicked/tapped outside of menu
-$('#connections-panel-items.dropdown-menu').click(function(e) {
+$('#people-panel-items.dropdown-menu').click(function(e) {
     e.stopPropagation();
 });
 */
@@ -109,7 +114,7 @@ $('#main-menu-toggle').on('click',function(){
 
 /*
 // Lucid Menu Toggle
-$('#connections-panel-toggle').on('click',function(){
+$('#people-panel-toggle').on('click',function(){
     $(this).toggleClass('active');
     $('body').toggleClass('connections');
 });
@@ -173,7 +178,7 @@ $('.stream-pause-toggle').on('click',function(){
 // Toggle Stream New
 $('.stream-new-toggle').on('click',function(){
     // Close Connections Panel
-    $('#connection-alerts button.user.active').click();
+    $('#people-nav button.user.active').click();
     $('.filter-controls-toggle.active').click();
     // Display Stream options
     $(this).toggleClass('active');
@@ -213,7 +218,7 @@ $('.stream-associations-list > li > a').on('click', function(){
 // Filter Controls Toggles (*only one allowed open at a time)
 $('.filter-controls-toggle').on('click', function(){
     // Close Connections Panel
-    $('#connection-alerts button.user.active').click();
+    $('#people-nav button.user.active').click();
     $('body').toggleClass('filter-controls');
     $('.filter-controls-con').slideToggle('fast');
 });
@@ -280,7 +285,7 @@ $('.filter-toggle-menu-list > li').on('click', function(){
 
 /*
 // TOGGLE ON/OFF SELETOR BUTTONS
-$('#connections-panel-items > li > a').on('click',function(){
+$('#people-panel-items > li > a').on('click',function(){
     $(this).children('.menu-icon').toggleClass('glyphicon-eye-open glyphicon-eye-close');
     $('body').toggleClass($(this).data('toggle-item'));
 });
@@ -297,46 +302,47 @@ $('.toggle-on-off').on('click',function(){
     $(this).toggleClass('on');
 });
 
-// TOGGLE CONNECTION PANEL USERS
-$('#connection-alerts .btn.user').on('click',function(){
-     $('.menu-toggle-controls-panel.active').click();
-    if($(this).data('user') == "new"){
-        if($(this).is('.active')){
-            $(this).removeClass('active');
-            $('#connection-items-header .btn[data-connection-type=viewed]').removeClass('disabled');
-            $('#connections-panel > .panel-body').removeClass('show-multiple-users');
-            $('#send-message').removeClass('active').prop('placeholder', 'message everyone');
-            $('#connection-items-header, .connection-items-con.active').removeClass('active').slideUp('fast');
-        }else{
-            $('#connection-items-header .btn[data-connection-type=viewed]').addClass('disabled');
-            $('#connections-panel > .panel-body').addClass('show-multiple-users');
-            $('body.filter-controls .filter-controls-toggle').click();
-            $(this).addClass('active').siblings('.active').removeClass('active');
-            $('#send-message').prop('placeholder', 'message someone');
-            $('#connection-items-header').slideDown('fast');
-            $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
-                .siblings('.active').removeClass('active').slideUp('fast'); 
-        }
+
+
+// TOGGLE OPEN/CLOSE CONNECTIONS PANEL
+$('#people-controls .btn').on('click',function(){
+    $(this).toggleClass('active');
+    if($(this).is('.grid-toggle')){
+        $('.menu-toggle-controls-panel.active').click();
+        $('#people-panel').toggleClass('vertical');
     }else{
-        $('#connection-items-header .btn[data-connection-type=viewed]').removeClass('disabled');
-        $('#connections-panel > .panel-body').removeClass('show-multiple-users');
         if($(this).is('.active')){
-            $(this).removeClass('active');
-            $('#send-message').prop('placeholder', 'message everyone');
-            $('.connection-items-con.active').removeClass('active');
-            $('#connection-items-header, .connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+            $('#people-nav .btn.user.active')
+            if($(this).is('#people-stream-toggle')){
+                $('#people-nav .btn.user.active').click();
+            }else if($(this).is('#people-connections-toggle')){
+                alert('show connections');
+            }
         }else{
-            $('body.filter-controls .filter-controls-toggle').click();
-            $(this).addClass('active').siblings('.active').removeClass('active');
-            $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
-            $('#connection-items-header').slideDown('fast');
-            $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
-                .siblings('.active').removeClass('active').slideUp('fast');  
+
         }
     }
 });
 
-$('#connection-alerts .alert-link').on('click',function(){
+// TOGGLE CONNECTION PANEL USERS
+$('#people-nav .btn.user').on('click',function(){
+    $('.menu-toggle-controls-panel.active').click();
+    if($(this).is('.active')){
+        $(this).removeClass('active');
+        $('#send-message').prop('placeholder', 'message everyone');
+        $('.connection-items-con.active').removeClass('active');
+        $('#connection-items-header, .connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+    }else{
+        $('body.filter-controls .filter-controls-toggle').click();
+        $(this).addClass('active').siblings('.active').removeClass('active');
+        $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
+        $('#connection-items-header').slideDown('fast');
+        $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
+            .siblings('.active').removeClass('active').slideUp('fast');  
+    }
+});
+
+$('#people-nav .alert-link').on('click',function(){
     //$(this).remove();
     alert('selected a user item');
 });
@@ -348,11 +354,10 @@ $('#connection-items-header .btn').on('click',function(){
 
     switch ($(this).data('connection-type')){
         case 'viewed':
-            $('#connections-panel > .panel-body').toggleClass('show-viewed');
+            $('#people-panel > .panel-body').toggleClass('show-viewed');
             break;
         case 'close': 
-            $(this).removeClass('active');
-            $('#connection-alerts .btn.user.active').click();
+            
             break;
         default: 
             $(this).siblings().removeClass('active');

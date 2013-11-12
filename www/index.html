@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -26,7 +26,7 @@
             <!-- MASTHEAD (START) -->
             <div class="masthead">
                 <div class="main-nav left">
-                     <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 glyphicon glyphicon-align-justify dropdown-toggle" data-toggle="dropdown"></button>
+                     <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 dropdown-toggle" data-toggle="dropdown">&equiv;</button>
                     <ul id="main-menu-items" class="dropdown-menu" role="menu">
                         <li>
                             <a class="menu-toggle-stream-associations" data-toggle-item="search-page">
@@ -94,17 +94,17 @@
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
                 <div class="main-nav right">
-                    <button id="connections-panel-toggle" type="button" class="btn btn-link-lucid btn-lg dropdown-toggle" data-toggle="dropdown">
+                    <button id="people-panel-toggle" type="button" class="btn btn-link-lucid btn-lg dropdown-toggle" data-toggle="dropdown">
                         <img src="img/lucid-butterfly.png" class="monarch">
                     </button>
-                    <ul id="connections-panel-items" class="dropdown-menu" role="menu">
+                    <ul id="people-panel-items" class="dropdown-menu" role="menu">
                         <li>
                             <a class="menu-toggle-controls-panel">
                                 <span class="menu-icon glyphicon glyphicon-off"></span> controls
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle="collapse" href="#connections-panel">
+                            <a class="menu-toggle-connections" data-toggle="collapse" href="#people-nav">
                                 <span class="menu-icon glyphicon glyphicon-off"></span> connections
                             </a>
                         </li>
@@ -413,193 +413,526 @@
 
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <!-- CONNECTIONS PANEL -->
-            <div id="connections-panel" class="menu-transparent collapse">
-                <!-- Panel Nav -->
-                <div id="connection-alerts" class="panel-heading panel-nav">
+            <!-- PEOPLE PANEL -->
+            <div id="people-panel" class="menu-transparent">
+                <div id="people-controls" class="btn-group btn-group-justified">
+                    <a id="people-stream-toggle" class="people-nav-toggle btn btn-lucid-normal" data-toggle="collapse" href="#people-nav">
+                        <sup>~</sup>
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="badge">123</span>
+                    </a>
+                    <a class="grid-toggle btn btn-lucid-normal glyphicon glyphicon-th"></a>
+                    <a id="people-connections-toggle" class="people-nav-toggle btn btn-lucid-normal">
+                        <sup>+</sup>
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="badge">123</span>
+                    </a>
+                </div>
+                <!-- PEOPLE NAV (START) -->
+                <div id="people-nav" class="panel-heading panel-nav collapse max-height">
                     <!-- Panel Menu -->
                     <div class="panel-menu">
-                        <button class="btn btn-lucid user glyphicon glyphicon-eye-close" data-user="new" data-username="" style="background-image: url(img/profile/all.jpg); text-shadow: 0 0 5px #000; margin-top: 5px;">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-asterisk"></span>
-                                    <span class="quantity">42</span>
-                                </div>
-                            </sup>
-                            <label class="name">
-                                <span class="fname">NEW!</span>
-                                <span class="lname">(unviewed)</span>
-                            </label>
-                        </button>
                         <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                    <span class="quantity">2</span>
+                                    <span class="quantity">3</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Mary</span>
-                                <span class="lname">Seager-Wilson</span>
+                            <label>
+                                <span class="name">Mary</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                    <span class="quantity">1</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Elizabeth</span>
-                                <span class="lname">Jasmine-Foster</span>
+                            <label>
+                                <span class="name">Elizabeth</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="quantity">2</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Racheal</span>
-                                <span class="lname">Davenport</span>
+                            <label>
+                                <span class="name">Racheal</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                    <span class="glyphicon glyphicon-picture"></span>
-                                    <span class="glyphicon glyphicon-film"></span>
                                     <span class="quantity">10</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Ted</span>
-                                <span class="lname">Mariopolis</span>
+                            <label>
+                                <span class="name">Ted</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
                             <sup class="indicator">
                                 <div class="label label-lucid">
                                     <span class="glyphicon glyphicon-gift"></span>
-                                    <span class="quantity"></span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Susanna</span>
-                                <span class="lname">Jameson</span>
+                            <label>
+                                <span class="name">Susanna</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-tower"></span>
-                                    <span class="quantity"></span>
+                                    <span class="quantity">7</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Ted</span>
-                                <span class="lname">Vorsoulis</span>
+                            <label>
+                                <span class="name">Ted</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-asterisk"></span>
                                     <span class="quantity">999</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Theresa</span>
-                                <span class="lname">Porter</span>
+                            <label>
+                                <span class="name">Theresa</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-file"></span>
                                     <span class="quantity">1</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Stephanie</span>
-                                <span class="lname">Wilcox</span>
+                            <label>
+                                <span class="name">Stephanie</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-file"></span>
-                                    <span class="glyphicon glyphicon-envelope"></span>
                                     <span class="quantity">5</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Jeremiah</span>
-                                <span class="lname">Dillenger</span>
+                            <label>
+                                <span class="name">Jeremiah</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
                             <sup class="indicator">
                                 <div class="label label-lucid">
                                     <span class="glyphicon glyphicon-gift"></span>
-                                    <span class="quantity"></span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Annette</span>
-                                <span class="lname">Morgensen</span>
+                            <label>
+                                <span class="name">Annette</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-heart"></span>
-                                    <span class="quantity"></span>
+                                    <span class="quantity">2</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Joanna</span>
-                                <span class="lname">Hazelton</span>
+                            <label>
+                                <span class="name">Joanna</span>
                             </label>
                         </button>
                         <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
                             <sup class="indicator">
                                 <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-tower"></span>
-                                    <span class="quantity"></span>
+                                    <span class="quantity">5</span>
                                 </div>
                             </sup>
-                            <label class="name">
-                                <span class="fname">Jeremy</span>
-                                <span class="lname">Reynolds</span>
+                            <label>
+                                <span class="name">Jeremy</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">3</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Mary</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Elizabeth</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Racheal</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">10</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Susanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">7</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">999</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Theresa</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Stephanie</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremiah</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Annette</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Joanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremy</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">3</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Mary</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Elizabeth</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Racheal</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">10</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Susanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">7</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">999</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Theresa</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Stephanie</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremiah</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Annette</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Joanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremy</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">3</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Mary</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Elizabeth</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Racheal</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">10</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Susanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">7</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Ted</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">999</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Theresa</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">1</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Stephanie</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremiah</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="glyphicon glyphicon-gift"></span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Annette</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">2</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Joanna</span>
+                            </label>
+                        </button>
+                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
+                            <sup class="indicator">
+                                <div class="label label-lucid">
+                                    <span class="quantity">5</span>
+                                </div>
+                            </sup>
+                            <label>
+                                <span class="name">Jeremy</span>
                             </label>
                         </button>
                     </div>
                 </div>
-                <!-- LUCID PANEL-NAV (END) -->
+                <!-- PEOPLE NAV (END) -->
 
                 <!-- LUCID PANEL-BODY (START) -->
                 <div class="panel-body">
-                    <div id="connection-items-header" class="btn-toolbar">
-                        <div class="btn-group btn-group-justified">
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-eye-open" data-connection-type="viewed"><span class="total">viewed</span></a>
+                    <div id="connection-items-header" class="clearfix">
+                        <a class="btn-direction btn btn-lucid-normal pull-left" data-direction="left">&lsaquo;</a>
+                        <div class="btn-group">
+                            <a class="btn btn-lucid-normal glyphicon glyphicon-user" data-connection-type="profile"></a>
+                            <a class="btn btn-lucid-normal glyphicon glyphicon-comment active" data-connection-type="chat"></a>
+                            <a class="btn btn-lucid-normal glyphicon glyphicon-picture" data-connection-type="photos"></a>
                         </div>
-                        <div class="btn-group btn-group-justified">
-                            <a class="btn btn-lucid-normal glyphicon glyphicon-asterisk active" data-connection-type="all"><span class="total">9999999</span></a>
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-comment" data-connection-type="chat"><span class="total">1234</span></a>
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-picture" data-connection-type="photos"><span class="total">234</span></a>
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-film" data-connection-type="videos"><span class="total">34</span></a>
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-headphones" data-connection-type="audio"><span class="total">4</span></a>
-                        </div>
-                        <div class="btn-group btn-group-justified">
-                            <a class="btn btn-lucid-normal  glyphicon glyphicon-remove" data-connection-type="close"><span class="total">close</span></a>
-                        </div>
+                        <a class="btn-direction direction-right btn btn-lucid-normal pull-right" data-direction="right">&rsaquo;</a>
                     </div>
                     <div class="connection-items-con" data-user="new">
                         <div class="well well-lucid">
-                            <ul class="list-group connection-items-list">
+                            <ul class="list-group connection-items-list max-height">
+                                <li class="list-group-item day-header">
+                                    <label class="day">Today</label>
+                                </li>
                                 <li class="list-group-item chat">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
@@ -608,11 +941,11 @@
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
                                                 <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
                                             </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                            <span class="connection-type-icon glyphicon glyphicon-thumbs-up"></span>
                                         </div>
                                         <div class="panel-body">
                                             <p class="connection-content">Congratulations, Elizabeth Jasmine-Foster likes you!</p>
@@ -628,15 +961,15 @@
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
                                                 <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
                                             </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                            <span class="connection-type-icon glyphicon glyphicon-heart"></span>
                                         </div>
                                         <div class="panel-body">
                                             <p class="connection-content">Congratulations, you and Rachael Davenport mutually like each other, romantically!</p>
-                                            <button class="btn btn-lucid-normal">Click here to add Rachael to Favorites</button>
+                                            <button class="btn btn-lucid-normal">Click here to view your Connections</button>
                                         </div>
                                     </div>
                                 </li>
@@ -650,7 +983,8 @@
                                                 <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -667,9 +1001,8 @@
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
                                                 <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -683,7 +1016,10 @@
                     </div>
                     <div class="connection-items-con" data-user="1">
                         <div class="well well-lucid">
-                            <ul class="list-group connection-items-list">
+                            <ul class="list-group connection-items-list max-height>
+                                <li class="list-group-item day-header">
+                                    <label class="day">Today</label>
+                                </li>
                                 <li class="list-group-item chat">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
@@ -694,9 +1030,8 @@
                                                 <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
                                                 <span class="like-icon glyphicon glyphicon-hand-right"></span>
-                                                <span class="sent"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -715,7 +1050,8 @@
                                                 <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -734,7 +1070,8 @@
                                                 <span class="sent">10:55pm</span>
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -743,6 +1080,9 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li class="list-group-item day-header viewed">
+                                    <label class="day">Sunday, November 3, 2013</label>
+                                </li>
                                 <li class="list-group-item chat viewed">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
@@ -751,9 +1091,30 @@
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
                                                 <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open">
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -773,6 +1134,32 @@
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
+                                            </div>
+                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item day-header viewed">
+                                    <label class="day">Saturday, November 2, 2013</label>
+                                </li>
+                                <li class="list-group-item chat viewed">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <img src="img/profile/profile-1.jpg"/>
+                                            <span class="username">Mary Seager-Wilson</span>
+                                            <div class="status">
+                                                <span class="sent-icon glyphicon glyphicon-send"></span>
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -792,6 +1179,8 @@
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -811,44 +1200,8 @@
                                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
-                                            </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item chat viewed">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <img src="img/profile/profile-1.jpg"/>
-                                            <span class="username">Mary Seager-Wilson</span>
-                                            <div class="status">
-                                                <span class="sent-icon glyphicon glyphicon-send"></span>
-                                                <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"><span>unviewed</span></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                                <span class="viewed">10:58pm</span>
+                                                <span class="like-icon glyphicon glyphicon-hand-right"></span>
+                                                <button class="like btn btn-lucid-normal glyphicon glyphicon-hand-right"><span>Like</span></button>
                                             </div>
                                             <span class="connection-type-icon glyphicon glyphicon-comment"></span>
                                         </div>
@@ -875,7 +1228,7 @@
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
                                             </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                            <span class="connection-type-icon glyphicon glyphicon-thumbs-up"></span>
                                         </div>
                                         <div class="panel-body">
                                             <p class="connection-content">Congratulations, Elizabeth Jasmine-Foster likes you!</p>
@@ -901,11 +1254,11 @@
                                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="viewed">10:58pm</span>
                                             </div>
-                                            <span class="connection-type-icon glyphicon glyphicon-comment"></span>
+                                            <span class="connection-type-icon glyphicon glyphicon-heart"></span>
                                         </div>
                                         <div class="panel-body">
-                                            <p class="connection-content">Congratulations, you and Rachael Davenport mutually like each other!</p>
-                                            <button class="btn btn-lucid-normal">Click here to [dating action]</button>
+                                            <p class="connection-content">Congratulations, you and Rachael Davenport mutually like each other, romantically!</p>
+                                            <button class="btn btn-lucid-normal">Click here to view your Connections</button>
                                         </div>
                                     </div>
                                 </li>
@@ -1623,7 +1976,7 @@
                 </div>
                 <!-- LUCID PANEL-BODY (END) -->
             </div>
-            <!-- CONNECTIONS PANEL (END) -->
+            <!-- PEOPLE PANEL (END) -->
             <!-- GLOBAL USER INPUT (START) -->
             <div class="global-user-input">
                 <div id="send-message-con">
