@@ -351,7 +351,7 @@ $('#people-nav .btn.user').on('click',function(){
         $('.connection-items-con.active').removeClass('active');
         $('#connection-items-header, .connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
     }else{
-        $('#people-nav').scrollTo($(this), 1000);
+        $('#people-panel.vertical > #people-nav').scrollTo($(this), 1000);
         $('body.filter-controls .filter-controls-toggle, #people-controls .btn.grid-toggle.active').click();
         $(this).addClass('active').siblings('.active').removeClass('active');
         $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));

@@ -440,6 +440,7 @@
                 </div>
                 <!-- PEOPLE NAV (START) -->
                 <div id="people-nav" class="panel-heading panel-nav max-height">
+                    <!--
                     <div class="legend">
                         <span class="legend-item">
                             <span>&sim;</span> in your stream
@@ -451,9 +452,14 @@
                             <span class="glyphicon glyphicon-link"></span> connected
                         </span>
                     </div>
+                    -->
                     <!-- Panel Menu -->
                     <div class="panel-menu">
-                        <button class="btn btn-lucid user added-stream connecting connected" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                        <pre class="connection-alerts active" data-qty="3"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><span class="header-icon glyphicon glyphicon-bell"></span><span class="badge">3</span></pre>
+                        <button class="btn btn-lucid user added-stream connecting" data-stream="2" data-streamname="Lucid" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="badge label-lucid">3</sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -477,7 +483,11 @@
                             </sub>
                             <label><span class="name">Racheal</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Ted Mariopolis">
+                        <pre class="new-arrivals active" data-qty="5"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><span class="header-icon glyphicon glyphicon-plane"></span><span class="badge">5</span></pre>
+                        <button class="btn btn-lucid user in-stream new-arrival connected" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Ted Mariopolis">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -485,7 +495,7 @@
                             </sub>
                             <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Susanna Jameson">
+                        <button class="btn btn-lucid user added-stream new-arrival connected" style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Susanna Jameson">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -493,7 +503,7 @@
                             </sub>
                             <label><span class="name">Susanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Alyona Stephenson">
+                        <button class="btn btn-lucid user in-stream new-arrival" style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Alyona Stephenson">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -501,7 +511,7 @@
                             </sub>
                             <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connected" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                        <button class="btn btn-lucid user added-stream new-arrival" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -509,7 +519,7 @@
                             </sub>
                             <label><span class="name">Theresa</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Stephanie Wilcox">
+                        <button class="btn btn-lucid user added-stream new-arrival" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Stephanie Wilcox">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -517,6 +527,10 @@
                             </sub>
                             <label><span class="name">Stephanie</span></label>
                         </button>
+                        <pre class="connection-alerts in-stream active" data-qty="15" data-stream="1" data-streamName="LucidLife"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><label>LucidLife</label><span class="badge">3</span></pre>
                         <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Jeremiah Dillenger">
                             <sup class="badge label-lucid"></sup>
                             <sub>
@@ -549,8 +563,7 @@
                             </sub>
                             <label><span class="name">Jeremy</span></label>
                         </button>
-                        
-                        <button class="btn btn-lucid user added-stream" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                        <button class="btn btn-lucid user added-stream" data-stream="7" data-streamname="LucidLife" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -558,7 +571,7 @@
                             </sub>
                             <label><span class="name">Mary</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="8" data-username="Elizabeth Jasmin-Foster">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -566,7 +579,7 @@
                             </sub>
                             <label><span class="name">Elizabeth</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Rachael Davenport">
+                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="9" data-username="Rachael Davenport">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -574,7 +587,7 @@
                             </sub>
                             <label><span class="name">Racheal</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Ted Mariopolis">
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="10" data-username="Ted Mariopolis">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -582,7 +595,7 @@
                             </sub>
                             <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Susanna Jameson">
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="11" data-username="Susanna Jameson">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -590,7 +603,7 @@
                             </sub>
                             <label><span class="name">Susanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Alyona Stephenson">
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="12" data-username="Alyona Stephenson">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -598,7 +611,7 @@
                             </sub>
                             <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                        <button class="btn btn-lucid user in-stream " data-stream="1" data-streamname="LucidLife" data-user="13" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -606,7 +619,7 @@
                             </sub>
                             <label><span class="name">Theresa</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Stephanie Wilcox">
+                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="14" data-username="Stephanie Wilcox">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -614,7 +627,11 @@
                             </sub>
                             <label><span class="name">Stephanie</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Jeremiah Dillenger">
+                        <pre class="added-stream" data-stream="2" data-streamname="LucidEngineering" data-qty="3"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><label>LucidEngineeing</label><span class="badge">2</span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></span></a></pre>
+                        <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="Lucid" data-user="15" data-username="Jeremiah Dillenger">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -622,7 +639,7 @@
                             </sub>
                             <label><span class="name">Jeremiah</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Annette Morgensen">
+                        <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-3.jpg);" data-stream="2" data-streamname="Lucid" data-user="16" data-username="Annette Morgensen">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -630,7 +647,11 @@
                             </sub>
                             <label><span class="name">Annette</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Joanna Hazelton">
+                        <pre class="added-stream" data-stream="3" data-streamname="LifeGoesOn" data-qty="1"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><label>LifeGoesOn</label><span class="badge">1</span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></span></a></pre>
+                        <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-4.jpg);" data-stream="3" data-streamname="Life" data-user="17" data-username="Joanna Hazelton">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -638,7 +659,11 @@
                             </sub>
                             <label><span class="name">Joanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Jeremy Reynolds">
+                        <pre class="added-stream" data-stream="4" data-streamname="LivingItUpInTheCity" data-qty="1"><span class="chevron-toggle">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span><label>LivingItUpInTheCity</label><span class="badge">1</span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></span></a></pre>
+                        <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-6.jpg);" data-stream="4" data-streamname="LucidLiving" data-user="18" data-username="Jeremy Reynolds">
                             <sup class="badge label-lucid"></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -646,7 +671,6 @@
                             </sub>
                             <label><span class="name">Jeremy</span></label>
                         </button>
-                        
                     </div>
                 </div>
                 <!-- PEOPLE NAV (END) -->
