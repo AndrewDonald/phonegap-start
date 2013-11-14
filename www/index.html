@@ -104,7 +104,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle="collapse" href="#people-nav">
+                            <a class="menu-toggle-connections">
                                 <span class="menu-icon glyphicon glyphicon-off"></span> connections
                             </a>
                         </li>
@@ -416,502 +416,237 @@
             <!-- PEOPLE PANEL -->
             <div id="people-panel" class="menu-transparent">
                 <div id="people-controls" class="btn-group btn-group-justified">
-                    <a id="people-stream-toggle" class="people-nav-toggle btn btn-lucid-normal" data-toggle="collapse" href="#people-nav">
-                        <sup>~</sup>
+                    <a class="people-stream-toggle people-nav-toggle btn btn-lucid-normal">
+                        <span class="chevron-toggle left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                        <sup class="people-new badge label-lucid">12</sup>
                         <span class="glyphicon glyphicon-user"></span>
-                        <span class="badge">123</span>
+                        <sup>&sim;</sup>
+                        <span class="people-in-stream badge">103</span>
                     </a>
-                    <a class="grid-toggle btn btn-lucid-normal glyphicon glyphicon-th"></a>
-                    <a id="people-connections-toggle" class="people-nav-toggle btn btn-lucid-normal">
-                        <sup>+</sup>
+                    <a class="grid-toggle btn btn-lucid-normal"><span class="glyphicon glyphicon-th"></span></a>
+                    <a class="people-connections-toggle people-nav-toggle btn btn-lucid-normal">
+                        <sup class="people-connecting badge label-lucid">3</sup>
                         <span class="glyphicon glyphicon-user"></span>
-                        <span class="badge">123</span>
+                        <sup><span class="glyphicon glyphicon-link"></span></sup>
+                        <span class="people-connected badge">27</span>
+                        <span class="chevron-toggle right">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
                     </a>
                 </div>
                 <!-- PEOPLE NAV (START) -->
-                <div id="people-nav" class="panel-heading panel-nav collapse max-height">
+                <div id="people-nav" class="panel-heading panel-nav max-height">
+                    <div class="legend">
+                        <span class="legend-item">
+                            <span>&sim;</span> in your stream
+                        </span>
+                        <span class="legend-item">
+                            <span>&cong;</span> in added stream
+                        </span>
+                        <span class="legend-item">
+                            <span class="glyphicon glyphicon-link"></span> connected
+                        </span>
+                    </div>
                     <!-- Panel Menu -->
                     <div class="panel-menu">
-                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Mary</span>
-                            </label>
+                        <button class="btn btn-lucid user added-stream connecting connected" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="badge label-lucid">3</sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Mary</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Elizabeth</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="badge label-lucid">1<span class="glyphicon glyphicon-thumbs-up"></span></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Elizabeth</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Racheal</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connecting" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Rachael Davenport">
+                            <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Racheal</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">10</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Ted Mariopolis">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Susanna</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Susanna Jameson">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Susanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">7</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Alyona Stephenson">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">999</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Theresa</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Theresa</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Stephanie</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Stephanie Wilcox">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Stephanie</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremiah</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Jeremiah Dillenger">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Jeremiah</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Annette</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Annette Morgensen">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Annette</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Joanna</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Joanna Hazelton">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Joanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremy</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Jeremy Reynolds">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Jeremy</span></label>
                         </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Mary</span>
-                            </label>
+                        
+                        <button class="btn btn-lucid user added-stream" data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Mary</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Elizabeth</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Elizabeth</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Racheal</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Rachael Davenport">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Racheal</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">10</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Ted Mariopolis">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Susanna</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Susanna Jameson">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Susanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">7</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Alyona Stephenson">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Ted</span></label>
                         </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">999</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Theresa</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " data-stream="1" data-streamname="LucidLife" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Theresa</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Stephanie</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-2.jpg);" data-stream="1" data-streamname="LucidLife" data-user="2" data-username="Stephanie Wilcox">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Stephanie</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremiah</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-stream="1" data-streamname="LucidLife" data-user="5" data-username="Jeremiah Dillenger">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Jeremiah</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Annette</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-stream="1" data-streamname="LucidLife" data-user="3" data-username="Annette Morgensen">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Annette</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Joanna</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-4.jpg);" data-stream="1" data-streamname="LucidLife" data-user="4" data-username="Joanna Hazelton">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Joanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremy</span>
-                            </label>
+                        <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-stream="1" data-streamname="LucidLife" data-user="6" data-username="Jeremy Reynolds">
+                            <sup class="badge label-lucid"></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Jeremy</span></label>
                         </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Mary</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Elizabeth</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Racheal</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">10</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Susanna</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">7</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">999</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Theresa</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Stephanie</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremiah</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Annette</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Joanna</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremy</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">3</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Mary</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Elizabeth Jasmin-Foster">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Elizabeth</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Rachael Davenport">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Racheal</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Ted Mariopolis">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">10</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Susanna Jameson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Susanna</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Alyona Stephenson">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">7</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Ted</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" data-user="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">999</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Theresa</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-2.jpg);" data-user="2" data-username="Stephanie Wilcox">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">1</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Stephanie</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-5.jpg);" data-user="5" data-username="Jeremiah Dillenger">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremiah</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-3.jpg);" data-user="3" data-username="Annette Morgensen">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="glyphicon glyphicon-gift"></span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Annette</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-4.jpg);" data-user="4" data-username="Joanna Hazelton">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">2</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Joanna</span>
-                            </label>
-                        </button>
-                        <button class="btn btn-lucid user" style="background-image: url(img/profile/profile-6.jpg);" data-user="6" data-username="Jeremy Reynolds">
-                            <sup class="indicator">
-                                <div class="label label-lucid">
-                                    <span class="quantity">5</span>
-                                </div>
-                            </sup>
-                            <label>
-                                <span class="name">Jeremy</span>
-                            </label>
-                        </button>
+                        
                     </div>
                 </div>
                 <!-- PEOPLE NAV (END) -->
@@ -927,7 +662,7 @@
                         </div>
                         <a class="btn-direction direction-right btn btn-lucid-normal pull-right" data-direction="right">&rsaquo;</a>
                     </div>
-                    <div class="connection-items-con" data-user="new">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="new">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list max-height">
                                 <li class="list-group-item day-header">
@@ -1014,7 +749,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="1">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="1">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list max-height>
                                 <li class="list-group-item day-header">
@@ -1213,7 +948,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="4">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="4">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">
@@ -1239,7 +974,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="2">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="2">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">
@@ -1265,7 +1000,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="5">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="5">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">
@@ -1442,7 +1177,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="3">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="3">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">
@@ -1619,7 +1354,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="6">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="6">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">
@@ -1796,7 +1531,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="connection-items-con" data-user="7">
+                    <div class="connection-items-con" data-stream="1" data-streamname="LucidLife" data-user="7">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
                                 <li class="list-group-item chat">

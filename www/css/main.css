@@ -1,3 +1,9 @@
+/*
+&cong;  ≅   &#8773;     approximately equal to  u+2245 ISOtech  alert("\u2245");
+&asymp;     ≈   &#8776;     almost equal to, a.k.a. asymptotic to   u+2248 ISOamsr  alert("\u2248");
+*/
+
+
 /* BOTSTRAP OVERRIDES */
 .nav-pills > li > a {background-color: rgba(0, 100, 115, 0.95); border: 1px solid #056; border-radius: 0 0 5px 5px; box-shadow: 1px 1px 3px #000; padding: 10px 17px; color: #0ef;}
 .nav > li > a:hover,
@@ -132,7 +138,7 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 30px 10px 60px; /*background-color: rgba(255,255,255,0.25);*/}
 
-.label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #6bb;}
+.label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #0ab;}
 form {padding: 0;}
 h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 
@@ -207,12 +213,12 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    .btn-link-lucid .badge, .btn-lucid .badge {background-color: rgba(0, 200, 220, 0.7); font-family: Arial; color: #fff; margin-right: 5px;}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 200, 220, 0.7); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none; border-color: #fff;
     position: relative; margin: 5px 5px; padding: 4px 6px; cursor: pointer; font-size: 16px; color: #fff;
-    border-width: 2px;  border-radius: 5px; background-color: #0ab; background-size: 100% 100%; background-repeat: no-repeat;}
+    border-width: 1px;  border-radius: 5px; background-color: #0ab; background-size: 100% 100%; background-repeat: no-repeat;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff; border-color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
         border-width: 2px; border-color: #ddd;
@@ -229,29 +235,21 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     
         .btn-lucid label {display: block; margin-top: 4px; font-size: 10px; font-family: Arial; font-weight: normal; line-height: 1;}
         .btn-lucid.tilde label {margin-top: -4px;}
-    .btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}
+    /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {margin: 8px 3px 12px; height: 50px; width: 50px;}
+.btn-lucid.user {display: none; margin: 8px 3px 12px; height: 50px; width: 50px;}
     .btn-lucid.user.active {}
         .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 50px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .name {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
-        .btn-lucid.user .indicator .label.label-lucid {background-color: #428bc7;}
-        .btn-lucid.user.active .indicator .label.label-lucid {border-width: 2px; border-color: #ff6;}
-/*
-.btn-lucid.menu {padding: 0 5px 0 19px; color: #089; background-color: rgba(0,0,0,0); border-radius: 0; border: none; white-space: nowrap;}
-.btn-lucid.menu.active {box-shadow: none;}
-    .btn-lucid.menu > .badge {display: inline-block; font-family: arial; margin: 0 -12px 0; width: 36px; padding: 2px 0; color: #0cd; text-shadow: none;}
-    .btn-lucid.menu.active > .badge {color: #fff; text-shadow: none;}
-/*
-    .btn-lucid.menu.tilde > .badge {top: -2px;}
-.btn-lucid.menu.divider {border-left: 1px solid #056;}
-@media screen and (orientation: landscape) {
-    .btn-lucid.menu {padding: 0 6px;}
-    .btn-lucid.menu > .badge {display: inline-block; left: 0; margin: 0 -12px;}
-}
-*/
+
+        .btn-lucid.user > sub {width: 100%; left: 0; line-height: 1; text-shadow: 0 0 1px #000; position: absolute; bottom: -2px; font-size: 10px;}
+            .btn-lucid.user > sub > .stream-indicator-icon {float: left; font-size: 20px;}
+            .btn-lucid.user.in-stream > sub > .stream-indicator-icon:after {content: '∼'; padding-left: 1px; padding-top: 3px;}
+            .btn-lucid.user.added-stream > sub > .stream-indicator-icon:after {content: '≅';}
+            .btn-lucid.user > sub > .connected-indicator-icon {display: none; float: right; line-height: 1.8; padding-right: 1px;}
+            .btn-lucid.user.connected > sub > .connected-indicator-icon {display: inline-block;}
 /* btn-lucid-transparent */
 .btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {height: 32px; text-shadow: 0 0 5px #666; color: #fff; box-shadow: 0 0 1px #0ef, 0 0 1px #0ef inset; border-color: #078; background-color: rgba(0,240,255,0.3);}
 .btn-lucid-transparent.active {background-color: rgba(255,255,255,0.5); color: #fff; text-shadow: 0 0 5px #000;} 
@@ -264,6 +262,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
 .btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 5px 12px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: #078; background-color: #09a;}
+    .btn.btn-lucid-normal > sup.badge {left: 5px; font-size: 14px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
@@ -274,9 +273,13 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
-.chevron-toggle {margin-top: 3px; color: #f90; font-size: 10px;}
-.chevron-toggle.left {float: left; padding-right: 5px;}
-.chevron-toggle.right {float: right; padding-left: 5px;}
+.chevron-toggle {font-size: 10px; color: rgba(255,255,255,0.8);}
+.chevron-toggle.left {position: absolute; top: 9px; left: 5px;}
+.chevron-toggle.right {position: absolute; top: 9px; right: 5px;}
+    .chevron-toggle > span:first-child {display: none;}
+.active > .chevron-toggle {}
+    .active > .chevron-toggle > span:first-child {display: inline;}
+    .active > .chevron-toggle > span:last-child {display: none;}
 
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
@@ -383,12 +386,29 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
     #people-panel-items {left: -120px;}
     
-    #people-panel {bottom: 44px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666;}
-        .btn.people-nav-toggle > sup {top: -4px; right: -4px; font-weight: bold; font-size: 16px;}
-            
+    #people-panel {bottom: 44px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666;}  
+        #people-panel .legend {color: #045; font-size: 12px;}
+            #people-panel .legend > .legend-item  {line-height: 0.5;}
+            #people-panel .legend > .legend-item:before {content: '/'; padding: 0 1px 0 3px;}
+             #people-panel .legend > .legend-item:first-child:before {content: ''; padding: 0;}
+                #people-panel .legend > .legend-item > span {font-size: 22px; color: #034;}
+                #people-panel .legend > span > span.glyphicon {font-size: 12px; color: #034;}
         #people-panel #people-nav {white-space: nowrap; width: 100%; overflow: auto; padding: 3px 5px 5px; box-shadow: 0 0 3px #000 inset; border-radius: 0;}
         #people-panel.vertical #people-nav {padding: 3px 3px 5px; white-space: normal;}
             #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
+                #people-controls {}
+                    .people-nav-toggle {width: 50%;}
+                        /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                        .btn.people-nav-toggle > .badge {margin-left: -8px;}
+                        .btn.people-nav-toggle > sup {top: -6px; left: -5px; font-weight: bold; font-size: 16px;}
+                            .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
+                    .btn.grid-toggle {display: none; width: 0%;}
+                #people-controls.active {}
+                    #people-controls.active .people-nav-toggle {width: 42%;}
+                    #people-controls.active .btn.grid-toggle {display: table-cell; width: 16%;}
+                #people-nav {display: none;}
+                #people-nav.active {display: block;}
+
         #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
 
         #connection-items-header {display: none; text-align: center; padding-bottom: 2px;}
