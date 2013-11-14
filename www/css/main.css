@@ -270,7 +270,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
-.chevron-toggle {display: inline-flex; padding: 2px 3px 5px 4px; background-color: rgba(255,255,255,0.4); border-radius: 50% 50%; font-size: 10px; color: rgba(255,255,255,0.8); color: #f90; text-shadow: 0 0 2px #005566;}
+.chevron-toggle {display: inline-flex; font-size: 10px; color: rgba(255,255,255,0.8); color: #0cd; text-shadow: 0 0 2px #005566;}
 .chevron-toggle.left {position: absolute; top: 9px; left: 5px;}
 .chevron-toggle.right {position: absolute; top: 9px; right: 5px;}
     .chevron-toggle > span:first-child {display: none;}
