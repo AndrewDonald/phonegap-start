@@ -464,3 +464,15 @@ $.fn.scrollTo = function( targetDom ){
         scrollLeft: offset.left
     });
 }
+
+
+/*
+method:
+auth_user
+email:
+test@flud.com
+password:
+testtest
+
+https://dev.lucidlife.co/api/testbench.html
+*/
