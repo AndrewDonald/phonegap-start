@@ -306,14 +306,9 @@ $('.toggle-on-off').on('click',function(){
 
 // TOGGLE OPEN/CLOSE CONNECTIONS PANEL
 $('#people-controls .btn').on('click',function(){
-    $(this).toggleClass('active');
-    // Hide/Show People Grid Toggle
-    if($('#people-controls .people-nav-toggle.active').size() > 0){
-        $('#people-controls').addClass('active');
-    }else{
-        $('#people-controls').removeClass('active');
-    }
-
+    
+    
+    /*
     // Grid: Show People with Vertical Scrolling
     if($(this).is('.grid-toggle')){
         $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
@@ -321,24 +316,36 @@ $('#people-controls .btn').on('click',function(){
         if($('#people-panel').is('.vertical')){
             $('.menu-toggle-controls-panel.active, #people-nav .btn.user.active').click();
         }
-    // Stream People vs. Connections
-    }else{
-        if($(this).is('.active')){
-            $('#people-nav').addClass('active').slideDown('fast');
-            if($(this).is('.people-stream-toggle')){
-                $('.in-stream, .added-stream').show();
-            }else if($(this).is('.people-connections-toggle')){
-                $('.connecting, .connected').show();
-            }
-        }else{
-            $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
-            if($(this).is('.people-stream-toggle')){
-                $('#people-nav .btn.user.active').click(); // Close Active User Panel
-                $('#people-nav').removeClass('active').slideUp('fast'); // Close People Nav
-            }else if($(this).is('.people-connections-toggle')){
-                alert('hide connections');
-            }
+    */
+
+    $(this).toggleClass('active').siblings().removeClass('active');
+    if($(this).is('.active')){
+        $('#people-nav').addClass('active').slideDown('fast');
+        if($(this).is('.people-stream-toggle')){
+            //$('#people-nav .viewed-profile, #people-nav .in-stream, #people-nav .added-stream').show();
+            $('#people-nav > .panel-menu > .btn').show();
+            $('#people-nav > .panel-menu').sortDom('.btn:visible', 'arrival-time');
+        }else if($(this).is('.people-connections-toggle')){
+            $('#people-nav > .panel-menu > .btn').hide();
+            $('#people-nav > .panel-menu > .btn.connected').show();
+            $('#people-nav > .panel-menu').sortDom('.btn:visible', 'username');
+         }else if($(this).is('.people-viewed-toggle')){
+            $('#people-nav > .panel-menu > .btn').hide();
+            $('#people-nav > .panel-menu > .btn.viewed-profile').show();
+            $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-date');
+        }else{ // Stream-Alerts
+            $('#people-nav > .panel-menu > .btn').hide();
+            $('#people-nav > .panel-menu > .btn.connecting').show();
+            $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
         }
+    }else{
+        $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
+        //if($(this).is('.people-stream-toggle')){
+            $('#people-nav .btn.user.active').click(); // Close Active User Panel
+            $('#people-nav').removeClass('active').slideUp('fast'); // Close People Nav
+        //}else if($(this).is('.people-connections-toggle')){
+        //    alert('hide connections');
+        //}
     }
 });
 
@@ -349,14 +356,14 @@ $('#people-nav .btn.user').on('click',function(){
         $(this).removeClass('active');
         $('#send-message').prop('placeholder', 'message everyone');
         $('.connection-items-con.active').removeClass('active');
-        $('#connection-items-header, .connection-items-con[data-user="' + $(this).data('user') + '"]').slideUp('fast');
+        $('#connection-items-header, .connection-items-con[data-userid="' + $(this).data('userid') + '"]').slideUp('fast');
     }else{
         $('#people-panel.vertical > #people-nav').scrollTo($(this), 1000);
         $('body.filter-controls .filter-controls-toggle, #people-controls .btn.grid-toggle.active').click();
         $(this).addClass('active').siblings('.active').removeClass('active');
         $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
         $('#connection-items-header').slideDown('fast');
-        $('.connection-items-con[data-user="' + $(this).data('user') + '"]').addClass('active').slideDown('fast')
+        $('.connection-items-con[data-userid="' + $(this).data('userid') + '"]').addClass('active').slideDown('fast')
             .siblings('.active').removeClass('active').slideUp('fast');  
     }
 });
@@ -425,45 +432,6 @@ function swipeStreamPanel(direction){
     $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.show.active].toLowerCase() + '-stream-pane');
 }
 
-/* UTILS */////////////////////////////////////////////////////////////////////
-// Alter classes by partial match using "*" wildcard. ie: $('#foo').alterClass('foo-* bar-*', 'foobar')
-//    $('body')
-//        .alterClass('private-pane-active-*','')
-//        .addClass('private-pane-active-' + _lucid.panel.private.active);
-$.fn.alterClass = function ( removals, additions ) {
-    var self = this;
-
-    if ( removals.indexOf( '*' ) === -1 ) {
-        // Use native jQuery methods if there is no wildcard matching
-        self.removeClass( removals );
-        return !additions ? self : self.addClass( additions );
-    }
-     
-    var patt = new RegExp( '\\s' +
-                    removals.
-                        replace( /\*/g, '[A-Za-z0-9-_]+' ).
-                        split( ' ' ).
-                        join( '\\s|\\s' ) +
-                        '\\s', 'g' );
-     
-    self.each( function ( i, it ) {
-        var cn = ' ' + it.className + ' ';
-        while ( patt.test( cn ) ) {
-            cn = cn.replace( patt, ' ' );
-        }
-        it.className = $.trim( cn );
-    });
-     
-    return !additions ? self : self.addClass( additions );
-};
-
-$.fn.scrollTo = function( targetDom ){
-    var offset = $(targetDom).offset();
-    $(this).animate({
-        scrollTop: offset.top,
-        scrollLeft: offset.left
-    });
-}
 
 
 /*
