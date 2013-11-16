@@ -1,11 +1,14 @@
 // Dom Sorter
 jQuery.fn.sortDom = function sortDivs(dom, data, direction) { //direction = "desc" or "asc"
+    // Apply sort direction
     if(typeof direction == "undefined" || direction == ""){
-        direction = "desc";
-    } 
-    $("> " + dom, this[0]).sort(desc_sort).appendTo(this[0]);
-    function desc_sort(a, b){ return ($(b).data(data)) < ($(a).data(data)) ? 1 : -1; }
-    //function asc_sort(b, a){ return ($(b).data(data)) < ($(a).data(data)) ? 1 : -1; }
+        $("> " + dom, this[0]).sort(desc_sort).appendTo(this[0]);
+    }else{
+        $("> " + dom, this[0]).sort(asc_sort).appendTo(this[0]);
+    }
+    // Sorter methods
+    function desc_sort(a, b){return ($(b).data(data)) < ($(a).data(data)) ? 1 : -1;}
+    function asc_sort(a, b){return ($(b).data(data)) > ($(a).data(data)) ? 1 : -1;}
 }
 
 // Alter classes by partial match using "*" wildcard. ie: $('#foo').alterClass('foo-* bar-*', 'foobar')

@@ -18,12 +18,16 @@ label {margin-bottom: 0;}
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {background: none; background-color: rgba(255,255,0,0.9); text-shadow: 0 -1px 0 #3071A9;}
 .list-inline > li {padding: 0;}
 .btn:active, .btn.active {box-shadow: none;}
+.btn.btn-radio {color: #999;}
+    .btn.btn-radio > input[type="radio"] {display: inline-block; margin-right: 5px; background: none;}
+        .btn.btn-radio:active, .btn.btn-radio.active {color: #000;}
 .btn-lg {padding: 9px 16px;}
 .btn .badge {right: 0px; padding: 2px 4px;}
 .btn-group-justified  > a {border-radius: 0;}
+
 pre {background-color: #09a; border-color: #0cd; padding: 1px 5px 4px; font-family: arial; font-size: 12px; color: #fff;}
 pre.active {background-color: #0bc; border-color: #0ef;}
-.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
+.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.3);}
 
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
@@ -224,7 +228,6 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     border-width: 1px;  border-radius: 5px; background-color: #0ab; background-size: 100% 100%; background-repeat: no-repeat;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff; border-color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
-        border-width: 2px; border-color: #ddd;
         color: #fff; background-color: #cc6; border: 2px solid #ff6;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
@@ -240,9 +243,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {display: none; margin: 8px 3px 12px; height: 50px; width: 50px;}
+.btn-lucid.user {display: none; margin: 8px 4px 12px; height: 52px; width: 52px;}
     .btn-lucid.user.active {}
-        .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 50px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
+        .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 52px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .name {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
@@ -391,7 +394,7 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
     #people-panel-items {left: -120px;}
     
-    #people-panel {bottom: 44px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666;} 
+    #people-panel {position: relative; bottom: 0px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666;} 
     /* 
         #people-panel .legend {color: #045; font-size: 12px;}
             #people-panel .legend > .legend-item  {line-height: 0.5;}
@@ -403,18 +406,17 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
         #people-panel #people-nav {white-space: nowrap; width: 100%; overflow: auto; padding: 3px 5px 5px; box-shadow: 0 0 3px #000 inset; border-radius: 0;}
         #people-panel.vertical #people-nav {padding: 3px 3px 5px; white-space: normal;}
             #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
-                #people-controls {}
-                    .people-nav-toggle {width: 50%;}
-                        /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                        .btn.people-nav-toggle > .badge {font-size: 14px;}
-                        .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                        .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
+                #people-controls {overflow: auto; white-space: nowrap; width: 100%; margin-left: 25px;}
+                    #people-controls .people-controls-icon {position: absolute; left: 3px; top: 5px; font-size: 20px; color: #f90;}
+                    #people-controls .btn {width: 25%;}
+                    .people-filters {white-space: nowrap;}
+                        
+                            /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                            .btn.people-nav-toggle > .badge {font-size: 14px;}
+                            .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+                            .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
+                                .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
 
-                            .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
-                    .btn.grid-toggle {display: none; width: 0%;}
-                #people-controls.active {}
-                    #people-controls.active .people-nav-toggle {width: 42%;}
-                    #people-controls.active .btn.grid-toggle {display: table-cell; width: 16%;}
                 #people-nav {display: none;}
                 #people-nav.active {display: block;}
                     #people-nav > .panel-menu > .btn, #people-nav > .panel-menu > pre {display: none;}
@@ -508,4 +510,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 */
 
 /******** FOR TESTING ONLY!! ********/
-/*#stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+#people-panel, #people-controls, .people-filters, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

@@ -415,35 +415,42 @@
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <!-- PEOPLE PANEL -->
             <div id="people-panel" class="menu-transparent">
-                <div id="people-controls" class="btn-group btn-group-justified">
-                    <a class="people-stream-toggle people-nav-toggle btn btn-lucid-normal">
-                        <!--
-                        <span class="chevron-toggle pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                        -->
-                        <span class="stream-icon"></span>
-                        <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
-                        <labe class="badge"l>137</label>
-                    </a>
-
-                    <a class="people-connections-toggle people-nav-toggle btn btn-lucid-normal">
-                        <span class="glyphicon glyphicon-link"></span>
-                        <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                        <label class="badge">9</label>
-                    </a>
-                    <a class="people-viewed-toggle people-nav-toggle btn btn-lucid-normal">
-                        <span class="glyphicon glyphicon-eye-open"></span>
-                        <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                        <label class="badge">22</label>
-                    </a>
-                     <a class="stream-alerts-toggle people-nav-toggle btn btn-lucid-normal">
-                        <span class="glyphicon glyphicon-bell"></span>
-                        <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                        <label class="badge">137</label>
-                    </a>
-                    <!--<a class="grid-toggle btn btn-lucid-normal"><span class="glyphicon glyphicon-th"></span></a>-->
+                <div id="people-controls" class="button-toolbar well-lucid">
+                    <span class="people-controls-icon glyphicon glyphicon-user"></span>
+                    <div class="people-filters" class="btn-group">
+                        <button type="button" class="people-stream-toggle btn btn-lucid-normal">
+                            <!--
+                            <span class="chevron-toggle pull-left">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                            -->
+                            <span class="stream-icon"></span>
+                            <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                            <label class="badge"l>137</label>
+                        </button>
+                        <button type="button" class="stream-alerts-toggle btn btn-lucid-normal">
+                            <span class="glyphicon glyphicon-bell"></span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">137</label>
+                        </button>
+                        <button type="button" class="people-connections-toggle btn btn-lucid-normal">
+                            <span class="glyphicon glyphicon-link"></span>
+                            <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                            <label class="badge">9</label>
+                        </button>
+                        <button type="button" class="people-viewed-toggle btn btn-lucid-normal">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                            <label class="badge">22</label>
+                        </button>
+                        <button type="button" class="stream-like-toggle btn btn-lucid-normal">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">4</label>
+                        </button>
+                        <!--<a class="grid-toggle btn btn-lucid-normal"><span class="glyphicon glyphicon-th"></span></a>-->
+                    </div>
                 </div>
                 <!-- PEOPLE NAV (START) -->
                 <div id="people-nav" class="panel-heading panel-nav max-height">
@@ -1808,7 +1815,7 @@
         <!-- BODY (CONTENT) -->
         <div id="pages">
             <!-- CREATE ACCOUNT (START) -->
-            <div id="page-create-account" class="page active">
+            <div id="page-create-account" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <h1>Create Account</h1>
                     <form id="form-create-account" onsubmit="return createAccount();" method="post">
@@ -1841,16 +1848,17 @@
             <!-- CREATE ACCOUNT (END) -->
 
             <!-- SAVE PROFILE (START) -->
-            <div id="page-save-profile" class="page active">
+            <div id="page-save-profile" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <h1>Profile</h1>
                     <form id="form-profile" onsubmit="return createAccount();" method="post">
                         <div class="form-row gender input-group input-group-md">
+                            <span class="input-group-addon">Gender</span>
                             <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-lucid btn-wide">
-                                    <input type="radio" name="gender" id="gender-male">&nbsp;&nbsp;Male&nbsp;&nbsp;
+                                <label class="btn btn-radio">
+                                    <input type="radio" name="gender" id="gender-male">Male
                                 </label>
-                                <label class="btn btn-lucid btn-wide">
+                                <label class="btn btn-radio">
                                     <input type="radio" name="gender" id="gender-female">Female
                                 </label>
                             </div>
@@ -1892,7 +1900,7 @@
             <!-- SAVE PROFILE (END) -->
 
             <!-- LOGIN (START) -->
-            <div id="page-login" class="page active">
+            <div id="page-login" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <h1>Login</h1>
                     <form id="form-login" action="https://dev.lucidlife.co/api/ajax.php" method="post" class="clearfix">
@@ -1907,7 +1915,7 @@
             <!-- LOGIN (END) -->
             
 
-            <div id="page-stream" class="page">
+            <div id="page-stream" class="page row">
                 <span class="show-stream tilde">~</span>
                 <span class="show-people glyphicon glyphicon-people"></span>
                 <span class="show-chat glyphicon glyphicon-comment"></span>
@@ -1928,9 +1936,9 @@
                 <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
                 <p><b>END</b></p>
             </div>
-            <div id="page-stream-controls" class="page"><h2>STREAM CONTROLS</h2></div>
-            <div id="page-stream-filter" class="page"><h2>STREAM FILTERS</h2></div>
-            <div id="page-profile" class="page">
+            <div id="page-stream-controls" class="page row"><h2>STREAM CONTROLS</h2></div>
+            <div id="page-stream-filter" class="page row"><h2>STREAM FILTERS</h2></div>
+            <div id="page-profile" class="page row">
                 <h2>PROFILE</h2>
                 <div class="_promo">
                     <div class="header">
@@ -1992,7 +2000,10 @@
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/events.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+
     </body>
 </html>
 
