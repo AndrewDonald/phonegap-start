@@ -408,44 +408,121 @@
                      </div>
                 </div>
             </div>
+
+            <!-- STREAM PANEL (START) -->
+            <div id="stream-panel">
+                <div id="stream-controls" class="horizontal-sliding-nav-con">
+                    <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
+                        <div class="stream-icon"></div>
+                    </button>
+                    <div class="stream-filters horizontal-sliding-nav">
+                        <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                            <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">137</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                            <span class="stream-name">LucidLife</span>
+                            <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                            <label class="badge"l>98</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                            <span class="stream-name">LucidEngineering</span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">14</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                            <span class="stream-name">LucidLovers</span>
+                            <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                            <label class="badge">11</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                            <span class="stream-name">LifeIsGood</span>
+                            <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                            <label class="badge">8</label>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- STREAM PANEL (END) -->
+
+            <!-- FILTER PANEL (START) -->
+            <div id="filter-panel">
+                <div id="filter-controls" class="horizontal-sliding-nav-con">
+                    <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
+                        <span class="chevron-toggle pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                        <span class="glyphicon glyphicon-filter"></span>
+                    </button>
+                    <div class="filter-filters horizontal-sliding-nav">
+                        <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                            <span class="filter-name">No Filter</span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">137</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                            <span class="filter-name">People Near Me</span>
+                            <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                            <label class="badge"l>98</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                            <span class="filter-name">Young Adults</span>
+                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <label class="badge">14</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                            <span class="filter-name">College Students</span>
+                            <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                            <label class="badge">11</label>
+                        </button>
+                        <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                            <span class="filter-name">Retirees</span>
+                            <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                            <label class="badge">8</label>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </nav>
+        <!-- FILTER PANEL (END) -->
         <!-- HEADER (END) -->
 
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <!-- PEOPLE PANEL -->
-            <div id="people-panel" class="menu-transparent">
-                <div id="people-controls" class="button-toolbar well-lucid">
-                    <span class="people-controls-icon glyphicon glyphicon-user"></span>
-                    <div class="people-filters" class="btn-group">
-                        <button type="button" class="people-stream-toggle btn btn-lucid-normal">
-                            <!--
-                            <span class="chevron-toggle pull-left">
-                                <span class="glyphicon glyphicon-chevron-down"></span>
-                                <span class="glyphicon glyphicon-chevron-up"></span>
-                            </span>
-                            -->
+            <div id="people-panel">
+                <div id="people-controls" class="horizontal-sliding-nav-con">
+                    <button class="people-controls-toggle controls-toggle btn btn-warning btn-lg glyphicon glyphicon-user">
+                        <span class="chevron-toggle pull-left">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </span>
+                    </button>
+                    <div class="people-filters horizontal-sliding-nav">
+                        <button type="button" class="btn btn-lucid-normal active" data-filter="default">
                             <span class="stream-icon"></span>
                             <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
                             <label class="badge"l>137</label>
                         </button>
-                        <button type="button" class="stream-alerts-toggle btn btn-lucid-normal">
+                        <button type="button" class="btn btn-lucid-normal" data-filter="alerts">
                             <span class="glyphicon glyphicon-bell"></span>
                             <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                            <label class="badge">137</label>
+                            <label class="badge">5</label>
                         </button>
-                        <button type="button" class="people-connections-toggle btn btn-lucid-normal">
+                        <button type="button" class="btn btn-lucid-normal" data-filter="connections">
                             <span class="glyphicon glyphicon-link"></span>
                             <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                            <label class="badge">9</label>
+                            <label class="badge">7</label>
                         </button>
-                        <button type="button" class="people-viewed-toggle btn btn-lucid-normal">
+                        <button type="button" class="btn btn-lucid-normal" data-filter="viewed">
                             <span class="glyphicon glyphicon-eye-open"></span>
                             <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                            <label class="badge">22</label>
+                            <label class="badge">5</label>
                         </button>
-                        <button type="button" class="stream-like-toggle btn btn-lucid-normal">
-                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                        <button type="button" class="btn btn-lucid-normal" data-filter="love-request">
+                            <span class="glyphicon glyphicon-heart-empty"></span>
                             <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                             <label class="badge">4</label>
                         </button>
@@ -467,7 +544,7 @@
                         </span>
                     </div>
                     -->
-                    <!-- Panel Menu -->
+                    <!-- People Panel Menu -->
                     <div class="panel-menu">
                         <pre class="connecting active" data-qty="3"><span class="header-icon glyphicon glyphicon-bell"></span><label>Connecting</label><span class="badge">3</span><span class="chevron-toggle pull-right">
                             <span class="glyphicon glyphicon-chevron-down"></span>
@@ -492,7 +569,7 @@
                             </sub>
                             <label><span class="name">Elizabeth</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connecting" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                        <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
                             <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -524,7 +601,7 @@
                             </sub>
                             <label><span class="name">Susanna</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connecting" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                        <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
                             <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>
@@ -618,7 +695,7 @@
                             </sub>
                             <label><span class="name">Elizabeth</span></label>
                         </button>
-                        <button class="btn btn-lucid user in-stream connecting" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                        <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
                             <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
                             <sub>
                                 <span class="stream-indicator-icon"></span>

@@ -286,22 +286,32 @@ function initEventHandlers(){
         $(this).toggleClass('active').siblings().removeClass('active');
         if($(this).is('.active')){
             $('#people-nav').addClass('active').slideDown('fast');
-            if($(this).is('.people-stream-toggle')){
-                //$('#people-nav .viewed-profile, #people-nav .in-stream, #people-nav .added-stream').show();
-                $('#people-nav > .panel-menu > .btn').show();
-                $('#people-nav > .panel-menu').sortDom('.btn:visible', 'arrival-time');
-            }else if($(this).is('.people-connections-toggle')){
-                $('#people-nav > .panel-menu > .btn').hide();
-                $('#people-nav > .panel-menu > .btn.connected').show();
-                $('#people-nav > .panel-menu').sortDom('.btn:visible', 'username');
-             }else if($(this).is('.people-viewed-toggle')){
-                $('#people-nav > .panel-menu > .btn').hide();
-                $('#people-nav > .panel-menu > .btn.viewed-profile').show();
-                $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-date');
-            }else{ // Stream-Alerts
-                $('#people-nav > .panel-menu > .btn').hide();
-                $('#people-nav > .panel-menu > .btn.connecting').show();
-                $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
+            switch($(this).data('filter')){
+                case 'connections':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.connected').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'username');
+                    break;
+                case 'viewed':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.viewed-profile').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-date');
+                    break;
+                case 'alerts':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.connecting').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
+                    break;
+                case 'love-request':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.connecting').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
+                    break;
+                default: // All people in stream
+                    //$('#people-nav .viewed-profile, #people-nav .in-stream, #people-nav .added-stream').show();
+                    $('#people-nav > .panel-menu > .btn').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'arrival-time');
+                    break;
             }
         }else{
             $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
