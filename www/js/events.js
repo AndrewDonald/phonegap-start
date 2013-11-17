@@ -264,8 +264,7 @@ function initEventHandlers(){
     //$('.menu-toggle-controls-panel').on('click',function(){
     $('#people-panel-toggle').on('click',function(){
         $(this).toggleClass('active');
-        $('#controls-panel, #people-panel').toggleClass('active');
-        $('#people-panel').slideToggle();
+        $('#controls-panel, #people-panel').toggleClass('active').slideToggle();
     });
 
     // TOGGLE ON/OFF SELETOR BUTTONS

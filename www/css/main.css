@@ -139,7 +139,9 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 
 .stream-name:before {content: '∼';}
 .stream-icon {line-height: 10px;}
-.stream-icon:before {content: '∼'; font-size: 37px; font-weight: bold; vertical-align: text-top;}
+.stream-icon:before {content: '∼'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
+.stream-controls-toggle .stream-icon:before {font-size: 37px; line-height: 0.1;}
+
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
@@ -198,14 +200,14 @@ h1 {font-size: 18px; font-weight: bold; margin-bottom: 10px;}
 .stream-controls-carousel.carousel > .carousel-indicators {}
 
 /* HORIZONTAL SLIDING NAV */
-.horizontal-sliding-nav-con {position: relative; padding: 2px 0 2px 50px; overflow: hidden;}
+.horizontal-sliding-nav-con {position: relative; padding: 4px 0 4px 50px; overflow: hidden;}
     .horizontal-sliding-nav-con .horizontal-sliding-nav {white-space: nowrap; overflow: auto; margin-right: 5px;}
         .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {margin-right: -6px; border-radius: 0; min-width: 70px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn:first-child {border-radius: 0;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn:last-child {border-radius: 0 4px 4px 0;}
-                .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {font-size: 12px; font-weight: bold;}
+                .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {font-size: 14px; font-weight: bold;}
                     .horizontal-sliding-nav-con .horizontal-sliding-nav .btn sup {top: -10px;}
-
+                    .horizontal-sliding-nav-con .horizontal-sliding-nav .btn sup {top: -10px;}
 
 /* TOGGLES */
 .toggle-on-off {margin: 2px;}
@@ -280,7 +282,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 7px 10px 4px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: #078; background-color: #09a;}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 7px 10px 6px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: #078; background-color: #09a;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
@@ -303,7 +305,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
-.controls-toggle {position: absolute; left: 5px; top: 2px; width: 46px; height: 31px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 3px #333;}
+.controls-toggle {position: absolute; left: 5px; top: 5px; width: 46px; height: 33px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
     .controls-toggle > .chevron-toggle {margin-right: -5px;}
         .controls-toggle > sup {top: -30px; right: -15px; font-size: 10px;}
@@ -317,7 +319,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
-nav#header {z-index: 2001; background-color: #007788; background-image: linear-gradient(to bottom, #00AABB 0px, #007788 100%); box-shadow: 0 1px 5px #000000;}
+nav#header {z-index: 2001; background-color: #0ab; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%); box-shadow: 0 1px 5px #000000;}
     nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #078; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
@@ -338,7 +340,7 @@ nav#header {z-index: 2001; background-color: #007788; background-image: linear-g
 
 
 
-    #controls-panel {transition: top 0.5s; -webkit-transition: top 0.5s; position: absolute; top: -70px; width: 100%; min-height: 90px; background-color: #056; border-bottom: 1px solid #0ab; box-shadow: 0px 3px 5px #000;}
+    #controls-panel {display: none; width: 100%; background-color: #0ab; border-bottom: 1px solid #0ef;}
     #controls-panel.active {transition: top 0.5s; -webkit-transition: top 0.5s; top: 40px;}
         .controls-panel {position: absolute; width: 100%; padding: 5px 5px 0; white-space: nowrap;}
             .status-con {width: 33.3%;}
@@ -416,7 +418,7 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 
     #people-panel-items {left: -120px;}
     
-    #people-panel {display: none; position: relative; bottom: 0px; background-color: #078; box-shadow: none; box-shadow: 0 -2px 3px #666; border-top: 1px solid #0ab;}
+    #people-panel {display: none; position: relative; bottom: 0px; background-color: #0ab; box-shadow: none; box-shadow: 0 -2px 3px #666; border-top: 1px solid #0ef;}
     /* 
         #people-panel .legend {color: #045; font-size: 12px;}
             #people-panel .legend > .legend-item  {line-height: 0.5;}
@@ -529,4 +531,4 @@ nav#footer {background-color: #078; background-image: linear-gradient(to bottom,
 */
 
 /******** FOR TESTING ONLY!! ********/
-#people-panel #people-nav, #people-controls, .people-filters, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
