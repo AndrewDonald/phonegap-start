@@ -261,9 +261,11 @@ function initEventHandlers(){
     */
 
     // TOGGLE ON/OFF SELETOR BUTTONS
-    $('.menu-toggle-controls-panel').on('click',function(){
+    //$('.menu-toggle-controls-panel').on('click',function(){
+    $('#people-panel-toggle').on('click',function(){
         $(this).toggleClass('active');
-        $('#controls-panel').toggleClass('active');
+        $('#controls-panel, #people-panel').toggleClass('active');
+        $('#people-panel').slideToggle();
     });
 
     // TOGGLE ON/OFF SELETOR BUTTONS
