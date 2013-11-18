@@ -418,7 +418,7 @@ function initEventHandlers(){
         $('#footer').removeClass('detach'); 
     });
 
-    $('#form-create-user .btn.submit').on('click', function(){
+    $('#submit-form-create-user').on('click', function(){
         alert('trigger creatUser()');
         //createUser();
     });
