@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" /> <!--, target-densitydpi=medium-dpi"-->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
         <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
@@ -133,27 +133,7 @@
                                 <a class="stream-new-toggle" role="menuitem" tabindex="-1" href="#new-thought" data-toggle="modal">
                                     Start a new thought
                                 </a>
-                                <!-- New Thought -->
-                                <div id="new-thought" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">New Thought</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="stream-controls">
-                                                    <div class="input-group input-group-sm">
-                                                        <input type="text" class="form-control" placeholder="enter new thought to add to stream">
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-warning glyphicon glyphicon-plus" type="button"></button>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </li>
                             <li role="presentation" class="divider"></li>
                             <li role="presentation">
@@ -409,94 +389,109 @@
                 </div>
             </div>
 
-
- <div id="controls-panel">
-            <!-- STREAM PANEL (START) -->
-            <div id="stream-panel">
-                <div id="stream-controls" class="horizontal-sliding-nav-con">
-                    <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
-                        <div class="stream-icon"></div>
-                    </button>
-                    <div class="stream-filters horizontal-sliding-nav">
-                        <button type="button" class="btn btn-lucid-normal active" data-item="default">
-                            <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
-                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                            <label class="badge">137</label>
+            <!-- CONTROLS PANEL (START) -->
+            <div id="controls-panel" class="menu-transparent">
+                <!-- STREAM PANEL (START) -->
+                <div id="stream-panel">
+                    <div id="stream-controls" class="horizontal-sliding-nav-con">
+                        <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
+                            <div class="stream-icon"></div>
                         </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
-                            <span class="stream-name">LucidLife</span>
-                            <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
-                            <label class="badge"l>98</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
-                            <span class="stream-name">LucidEngineering</span>
-                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                            <label class="badge">14</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
-                            <span class="stream-name">LucidLovers</span>
-                            <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                            <label class="badge">11</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
-                            <span class="stream-name">LifeIsGood</span>
-                            <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                            <label class="badge">8</label>
-                        </button>
+                        <div class="stream-filters horizontal-sliding-nav">
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                                    <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
+                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                    <label class="badge">137</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                </button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                                    <span class="stream-name">LucidLife</span>
+                                    <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                                    <label class="badge"l>98</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                                    <span class="stream-name">LucidEngineering</span>
+                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                    <label class="badge">14</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                                    <span class="stream-name">LucidLovers</span>
+                                    <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                    <label class="badge">11</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                                    <span class="stream-name">LifeIsGood</span>
+                                    <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                                    <label class="badge">8</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- STREAM PANEL (END) -->
+                <!-- STREAM PANEL (END) -->
 
-            <!-- FILTER PANEL (START) -->
-            <div id="filter-panel">
-                <div id="filter-controls" class="horizontal-sliding-nav-con">
-                    <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
-                        <span class="chevron-toggle pull-left">
-                            <span class="glyphicon glyphicon-chevron-down"></span>
-                            <span class="glyphicon glyphicon-chevron-up"></span>
-                        </span>
-                        <span class="glyphicon glyphicon-filter"></span>
-                    </button>
-                    <div class="filter-filters horizontal-sliding-nav">
-                        <button type="button" class="btn btn-lucid-normal active" data-item="default">
-                            <span class="filter-name">No Filter</span>
-                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                            <label class="badge">137</label>
+                <!-- FILTER PANEL (START) -->
+                <div id="filter-panel">
+                    <div id="filter-controls" class="horizontal-sliding-nav-con">
+                        <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
+                            <span class="glyphicon glyphicon-filter"></span>
                         </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
-                            <span class="filter-name">People Near Me</span>
-                            <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
-                            <label class="badge"l>98</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
-                            <span class="filter-name">Young Adults</span>
-                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                            <label class="badge">14</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
-                            <span class="filter-name">College Students</span>
-                            <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                            <label class="badge">11</label>
-                        </button>
-                        <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
-                            <span class="filter-name">Retirees</span>
-                            <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                            <label class="badge">8</label>
-                        </button>
+                        <div class="filter-filters horizontal-sliding-nav">
+                            <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                                <span class="filter-name">No Filter</span>
+                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                <label class="badge">137</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                                <span class="filter-name">People Near Me</span>
+                                <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                                <label class="badge"l>98</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                                <span class="filter-name">Young Adults</span>
+                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                <label class="badge">14</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                                <span class="filter-name">College Students</span>
+                                <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                <label class="badge">11</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                                <span class="filter-name">Retirees</span>
+                                <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                                <label class="badge">8</label>
+                            </button>
+                        </div>
                     </div>
-                    
                 </div>
+                <!-- FILTER PANEL (END) -->
             </div>
+            <!-- CONTROLS PANEL (END) -->
         </nav>
-        <!-- FILTER PANEL (END) -->
-</div>
+        
+
         <!-- HEADER (END) -->
 
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <!-- PEOPLE PANEL -->
-            <div id="people-panel">
+            <div id="people-panel" class="menu-transparent">
                 <div id="people-controls" class="horizontal-sliding-nav-con">
                     <button class="people-controls-toggle controls-toggle btn btn-warning btn-lg glyphicon glyphicon-user">
                         <span class="chevron-toggle pull-left">
@@ -525,7 +520,7 @@
                         </button>
                         <button type="button" class="btn btn-lucid-normal" data-filter="viewed">
                             <span class="item-icon glyphicon glyphicon-eye-open"></span>
-                            Viewed your Profile
+                            Viewed Your Profile
                             <!--<sup class="people-viewed badge label-lucid">22</sup>-->
                             <label class="badge">5</label>
                         </button>
@@ -1695,7 +1690,7 @@
                                 <li class="list-group-item chat">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
-                                            <img src="img/profile/profile-7.jpg"/>
+                                            <img src="img/profile/profile-6.jpg"/>
                                             <span class="username">Theresa Porter</span>
                                             <div class="status">
                                                 <span class="sent-icon glyphicon glyphicon-send"></span>
@@ -1870,6 +1865,7 @@
                 <!-- LUCID PANEL-BODY (END) -->
             </div>
             <!-- PEOPLE PANEL (END) -->
+
             <!-- GLOBAL USER INPUT (START) -->
             <div class="global-user-input">
                 <div id="send-message-con">
@@ -1900,19 +1896,12 @@
        
         <!-- BODY (CONTENT) -->
         <div id="pages" style="padding-top: 600px;">
-            <!-- CREATE ACCOUNT (START) -->
-            <div id="page-create-account" class="page row">
+
+            <!-- LOGIN (START) -->
+            <div id="page-login" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1>Create Account</h1>
-                    <form id="form-create-account" onsubmit="return createAccount();" method="post">
-                        <div class="form-row fname input-group input-group-md">
-                            <span class="input-group-addon">First Name</span>
-                            <input name="email" type="text" class="form-control" placeholder="first name">
-                        </div>
-                        <div class="form-row lname input-group input-group-md">
-                            <span class="input-group-addon">Last Name</span>
-                            <input name="email" type="text" class="form-control" placeholder="last name">
-                        </div>
+                    <form id="form-login" action="https://dev.lucidlife.co/api/ajax.php" method="post">
+                        <h1>Login</h1>
                         <div class="form-row email input-group input-group-md">
                             <span class="input-group-addon">@</span>
                             <input name="email" type="text" class="form-control" placeholder="email">
@@ -1921,87 +1910,152 @@
                             <span class="input-group-addon glyphicon glyphicon-lock"></span>
                             <input name="password" type="text" class="form-control" placeholder="password">
                         </div>
-                        <div class="form-row verify-password input-group input-group-md">
-                            <span class="input-group-addon glyphicon glyphicon-lock">
-                                <sup><span class="input-group-addon glyphicon glyphicon-ok"></span></sup>
-                            </span>
-                            <input name="verify-password" type="text" class="form-control" placeholder="verify password">
+                        <button type="submit" class="form-row btn btn-md btn-link btn-join pull-left">Join Now!</button>
+                        <button type="submit" class="form-row btn btn-md btn-warning btn-wide pull-right">Login</button>
+                    </form>
+                </div>
+            </div>
+            <!-- LOGIN (END) -->
+
+            <!-- CREATE ACCOUNT (START) -->
+            <div id="page-create-user" class="page row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <form id="form-create-user" onsubmit="createUser(); return false;" >
+                        <div id="create-new-account">
+                            <h1>Create Account</h1>
+                            <div class="form-row email input-group input-group-md">
+                                <span class="input-group-addon">@</span>
+                                <input name="email" type="text" class="form-control" placeholder="email">
+                            </div>
+                            <div class="form-row password input-group input-group-md">
+                                <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                                <input name="password" type="password" class="form-control" placeholder="password">
+                            </div>
+                            <div class="form-row verify-password input-group input-group-md">
+                                <span class="input-group-addon glyphicon glyphicon-lock">
+                                    <sup><span class="input-group-addon glyphicon glyphicon-ok"></span></sup>
+                                </span>
+                                <input name="verify-password" type="password" class="form-control" placeholder="verify password">
+                            </div>
+                            <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right">Next</button>
                         </div>
-                        <button type="submit" class="form-row btn btn-md btn-warning btn-wide pull-right">Join</button>
+                        <div id="create-new-profile">
+                            <h1>Profile</h1>
+                            <div class="form-row first-name input-group input-group-md">
+                                <span class="input-group-addon">First Name</span>
+                                <input name="fname" type="text" class="form-control" placeholder="first name">
+                            </div>
+                            <div class="form-row last-name input-group input-group-md">
+                                <span class="input-group-addon">Last Name</span>
+                                <input name="lname" type="text" class="form-control" placeholder="last name">
+                            </div>
+                            <div class="form-row gender input-group input-group-md">
+                                <span class="input-group-addon">Gender</span>
+                                <div class="form-control btn-group" data-toggle="buttons">
+                                    <label class="btn btn-radio">
+                                        <input type="radio" name="gender" class="gender-male" value="M">Male
+                                    </label>
+                                    <label class="btn btn-radio">
+                                        <input type="radio" name="gender" class="gender-female" value="F">Female
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row birthdate input-group input-group-md">
+                                <span class="input-group-addon">Birthdate</span>
+                                <input type="date" onchange="validateInput(this)" class="form-control" required="" data-mask="9999-99-99" placeholder="yyyy-mm-dd" name="birthdate">
+                            </div>
+                            <div class="form-row profile-photo input-group input-group-md">
+                                <span class="input-group-addon">Photo</span>
+                                <input name="photo" type="text" class="form-control" placeholder="select a profile photo">
+                            </div>
+                            <div class="instructions clearfix"><span class="pull-right">*1000 characters max</span></div>
+                            <div class="form-row biography input-group input-group-md">
+                                <span class="input-group-addon align-top">Bio</span>
+                                <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list things you're interested in"></textarea>
+                            </div>
+                            <button type="submit" class="form-row btn btn-md btn-warning btn-wide pull-right">Done</button>
+                        </div>
                     </form> 
                 </div>
             </div>
             <!-- CREATE ACCOUNT (END) -->
 
-            <!-- SAVE PROFILE (START) -->
-            <div id="page-save-profile" class="page row">
+            <!-- NEW THOUGHT (START) -->
+            <div id="page-new-thought" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1>Profile</h1>
-                    <form id="form-profile" onsubmit="return createAccount();" method="post">
-                        <div class="form-row gender input-group input-group-md">
-                            <span class="input-group-addon">Gender</span>
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-radio">
-                                    <input type="radio" name="gender" id="gender-male">Male
-                                </label>
-                                <label class="btn btn-radio">
-                                    <input type="radio" name="gender" id="gender-female">Female
-                                </label>
-                            </div>
+                    <form id="form-thought" onsubmit="return createAccount();" method="post">
+                        <h1>New Stream of Thought</h1>
+                        <div class="form-row thought input-group input-group-md">
+                            <span class="input-group-addon stream-icon"></span>
+                            <input type="text" class="form-control" placeholder="what's on your mind?">
                         </div>
-                        <div class="form-row birthdate input-group input-group-md">
-                            <span class="input-group-addon">Birthdate</span>
-                            <input type="date" onchange="validateInput(this)" class="form-control" required="" data-mask="9999-99-99" placeholder="yyyy-mm-dd" name="birthdate">
-                        </div>
-                        <div class="form-row country input-group input-group-md">
-                            <span class="input-group-addon">Country</span>
-                            <select onchange="validateInput(this)" class="form-control" required="" name="country">
-                                <option value="">select country</option>
-                                <option value="US">United States</option>
-                                <option value="CA">Canada</option>
-                            </select>
-                        </div>
-                        <div class="form-row postal-code input-group input-group-md">
-                            <span class="input-group-addon">Zip/Postal Code</span>
-                            <input name="postal-code" type="text" class="form-control" placeholder="zip/postal code">
-                        </div>
-                        <div class="form-row phone input-group input-group-md">
-                            <span class="input-group-addon">Phone</span>
-                            <input name="phone" type="tel" class="form-control" onchange="validateInput(this)" placeholder="###-###-####" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
-                        </div>
-                        <div class="form-row about-me input-group input-group-md">
-                            <span class="input-group-addon">About Me</span>
-                            <input name="about-me" type="text" class="form-control" placeholder="1000 characters max" maxlength="1024">
-                        </div>
-                        <button type="submit" class="form-row btn btn-md btn-warning btn-wide pull-right">Save</button>
-                        <!--
-                        <input type="hidden" placeholder="" name="join-twitter" id="join-twitter">
-                        <input type="hidden" placeholder="" name="join-facebook" id="join-facebook">
-                        <input type="hidden" placeholder="" name="join-picextension" id="join-picextension">
-                        <input type="hidden" placeholder="" name="join-pic" id="join-pic">
-                        -->
-                    </form> 
-                </div>
-            </div>
-            <!-- SAVE PROFILE (END) -->
-
-            <!-- LOGIN (START) -->
-            <div id="page-login" class="page row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1>Login</h1>
-                    <form id="form-login" action="https://dev.lucidlife.co/api/ajax.php" method="post" class="clearfix">
-                        <div class="form-row password input-group input-group-md">
-                            <span class="input-group-addon glyphicon glyphicon-lock"></span>
-                            <input name="password" type="text" class="form-control" placeholder="password">
-                        </div>
-                        <button type="submit" class="form-row btn btn-md btn-warning pull-right">Join</button>
+                        <button type="submit" class="form-row btn btn-md btn-warning pull-right">Find People</button>
                     </form>
+                    <div id="join-conversation">
+                        <h2>Join a Conversation</h2>
+                        <ul class="conversation-list form-control list-inline full-width">
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream1</span><span class="badge">129</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream2</span><span class="badge">117</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream3</span><span class="badge">95</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream4</span><span class="badge">88</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream5</span><span class="badge">54</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream6</span><span class="badge">41</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream7</span><span class="badge">16</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream8</span><span class="badge">7</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream9</span><span class="badge">45</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream10</span><span class="badge">37</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item active">
+                                <a class="btn btn-lucid-normal">
+                                    <span class="stream-name">AssociatedStream11</span><span class="badge">18</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!-- LOGIN (END) -->
-            
+            <!-- NEW THOUGHT (END) -->
 
-            <div id="page-stream" class="page row">
+            <div id="page-test" class="page row">
                 <span class="show-stream tilde">~</span>
                 <span class="show-people glyphicon glyphicon-people"></span>
                 <span class="show-chat glyphicon glyphicon-comment"></span>
@@ -2078,7 +2132,7 @@
 
         <!-- SCRIPTS -->
         <!--<script type="text/javascript" src="../phonegap-1.4.1.js"></script>-->
-        <script type="text/javascript" src="phonegap.js"></script>
+        <!--<script type="text/javascript" src="phonegap.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
@@ -2086,7 +2140,7 @@
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
-        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/api.js"></script>
         <script type="text/javascript" src="js/events.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
