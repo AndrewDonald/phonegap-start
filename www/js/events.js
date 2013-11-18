@@ -1,5 +1,9 @@
 //* EVENT HANDLERS *//
 function initEventHandlers(){
+    $('#submit-form-create-user2').on('click', function(){
+        alert('trigger test');
+        //createUser();
+    });
     /*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});
@@ -418,10 +422,7 @@ function initEventHandlers(){
         $('#footer').removeClass('detach'); 
     });
 
-    $('#submit-form-create-user').on('click', function(){
-        alert('trigger creatUser()');
-        //createUser();
-    });
+    
 
 }
 // initEventHandlers (END)
