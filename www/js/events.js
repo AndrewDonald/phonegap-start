@@ -418,8 +418,7 @@ function initEventHandlers(){
         $('#footer').removeClass('detach'); 
     });
 
-    alert('testing that alerts work period.');
-    $('form#form-create-user .submit').on('click', function(){
+    $('#form-create-user .btn.submit').on('click', function(){
         alert('trigger creatUser()');
         //createUser();
     });
