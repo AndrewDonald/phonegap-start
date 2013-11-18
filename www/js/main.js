@@ -73,7 +73,7 @@ $(function() {
 });
 
 function verifyCreateAccount(){
-    $('form#form-create-user > .steps').toggleClass('active');
+    $('#form-create-user > .steps').toggleClass('active');
 }
 
 /*

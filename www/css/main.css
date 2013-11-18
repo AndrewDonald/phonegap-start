@@ -356,9 +356,6 @@ nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
     .stream-controls-toggle > .stream-icon {margin-top: 5px;}
         .stream-filters > .btn .added-stream {font-size: 20px; line-height: 14px;}
 
-
-
-
     #controls-panel {display: none; width: 100%; border-bottom: 1px solid #0ef;}
     #controls-panel.active {transition: top 0.5s; -webkit-transition: top 0.5s; top: 40px;}
         .controls-panel {position: absolute; width: 100%; padding: 5px 5px 0; white-space: nowrap;}
@@ -560,4 +557,4 @@ nav#footer.detach {position: static;}
 */
 
 /******** FOR TESTING ONLY!! ********/
-.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

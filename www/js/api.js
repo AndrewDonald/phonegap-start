@@ -17,11 +17,9 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
-         alert('$ajax succeeded');
         callbackFunction(response.responseJSON);
     })
     .fail(function() {
-         alert('$ajax failed');
         callbackFunction(0);
     });
 }
@@ -49,10 +47,10 @@ function login_Callback(result) {
             $('#Login-Lightbox').modal('hide');
         }else{
             // Server returned an error = failed authorization
-	    if (result.message != undefined) {
-		document.getElementById("login-password").setCustomValidity(result.message);
-		setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
-	    }
+    	    if (result.message != undefined) {
+        		document.getElementById("login-password").setCustomValidity(result.message);
+        		setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
+        	}
         }
     }
 }
