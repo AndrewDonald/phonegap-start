@@ -109,15 +109,18 @@ function createUser(){
 function createUser_Callback(result) {
     if(result==0) {
         // Ajax request failed
+        alert('createUser Failed.');
     }else{
         if(result.status > 0){
             // Successful
             _session.user = result.object;
+            alert('createUser Succeeded! User' + _session.user.userid + ' created.');
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
         }else{
             // Server returned an error = failed authorization
+            alert('createUser Failed with an authentication error.');
             /*
             if (result.details != undefined) {
                 for (var key in result.details) {
