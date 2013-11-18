@@ -7,6 +7,7 @@ function apiRequest(objMessage, callbackFunction, async) {
 	   asyncMethod = false;
     }
     
+    alert('About to use $ajax.');
     $.ajax({
         type: 	  "POST",
         dataType: "json",
@@ -16,9 +17,11 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
+         alert('$ajax succeeded');
         callbackFunction(response.responseJSON);
     })
     .fail(function() {
+         alert('$ajax failed');
         callbackFunction(0);
     });
 }
@@ -82,6 +85,7 @@ function logoutUser_Callback(result) {
 
 // Create User
 function createUser(){
+    alert('createUser called');
     var user = {};
     user.email      = $('form#form-create-user [name=email]').val();
     user.password       = $('form#form-create-user [name=password]').val();
@@ -114,7 +118,7 @@ function createUser_Callback(result) {
         if(result.status > 0){
             // Successful
             _session.user = result.object;
-            alert('createUser Succeeded! User' + _session.user.userid + ' created.');
+            alert('createUser Succeeded! User ' + _session.user.userid + ' created.');
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
