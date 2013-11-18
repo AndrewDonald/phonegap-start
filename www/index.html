@@ -1921,7 +1921,7 @@
             <div id="page-create-user" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <form id="form-create-user">
-                        <div id="create-new-account">
+                        <div class="step-1">
                             <h1>Create Account</h1>
                             <div class="form-row email input-group input-group-md">
                                 <span class="input-group-addon">@</span>
@@ -1939,8 +1939,8 @@
                             </div>
                             <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right">Next</button>
                         </div>
-                        <div id="create-new-profile">
-                            <h1>Profile</h1>
+                        <div id="step-2">
+                            <h1>Create Profile</h1>
                             <div class="form-row first-name input-group input-group-md">
                                 <span class="input-group-addon">First Name</span>
                                 <input name="fname" type="text" class="form-control" placeholder="first name">
@@ -1973,13 +1973,13 @@
                                 <span class="input-group-addon align-top">Bio</span>
                                 <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list things you're interested in"></textarea>
                             </div>
-                            <button id="submit-form-create-user" class="form-row btn btn-md btn-warning btn-wide pull-right" onclick="createUser(); return false;">Done</button>
+                            <button id="form-create-user-submit" class="submit form-row btn btn-md btn-warning btn-wide pull-right">Done</button>
                         </div>
                     </form> 
                 </div>
             </div>
             <!-- CREATE ACCOUNT (END) -->
-<button id="submit-form-create-user2" class="btn btn-md btn-warning btn-wide">test</button>
+
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
