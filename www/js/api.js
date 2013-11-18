@@ -85,25 +85,25 @@ function logoutUser_Callback(result) {
 
 // Create User
 function createUser(){
-    alert('createUser called');
+    alert('createUser starting');
     var user = {};
-    user.email      = $('form#form-create-user [name=email]').val();
+    user.email          = $('form#form-create-user [name=email]').val();
     user.password       = $('form#form-create-user [name=password]').val();
-    user.fname      = $('form#form-create-user [name=fname]').val();
-    user.lname      = $('form#form-create-user [name=lname]').val();
+    user.fname          = $('form#form-create-user [name=fname]').val();
+    user.lname          = $('form#form-create-user [name=lname]').val();
     user.gender         = $('form#form-create-user [name=gender]:checked').val();
     user.birthdate      = $('form#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
-    user.pic        = "";
+    user.pic            = "";
     user.picextension   = "jpg";
     user.biography      = $('form#form-create-user [name=biography]').val();
     
     user.twitter        = ""; //$('input#join-twitter').val();
     
     var objMessage = {};
-        objMessage.method = "create_user";
-    objMessage.user = user;
-    objMessage.latitude        = 100;
-    objMessage.longitude       = 200;
+        objMessage.method       = "create_user";
+        objMessage.user         = user;
+        objMessage.latitude     = 100;
+        objMessage.longitude    = 200;
 
     apiRequest(objMessage, createUser_Callback, false);
     
