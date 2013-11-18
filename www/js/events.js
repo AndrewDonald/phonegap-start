@@ -1,9 +1,5 @@
 //* EVENT HANDLERS *//
 function initEventHandlers(){
-    $('form#form-create-user .btn.submit').on('click', function(){
-        createUser();
-    });
-    
     /*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});

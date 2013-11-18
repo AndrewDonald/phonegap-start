@@ -57,7 +57,6 @@ function login_Callback(result) {
     }
 }
 
-
 // Logout User
 function logoutUser(){
     var objMessage = {};
@@ -85,7 +84,6 @@ function logoutUser_Callback(result) {
 
 // Create User
 function createUser(){
-    alert('createUser starting');
     var user = {};
     user.email          = $('form#form-create-user [name=email]').val();
     user.password       = $('form#form-create-user [name=password]').val();
@@ -94,9 +92,8 @@ function createUser(){
     user.gender         = $('form#form-create-user [name=gender]:checked').val();
     user.birthdate      = $('form#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
     user.pic            = "";
-    user.picextension   = "jpg";
+    user.picextension   = "";
     user.biography      = $('form#form-create-user [name=biography]').val();
-    
     user.twitter        = ""; //$('input#join-twitter').val();
     
     var objMessage = {};
@@ -118,13 +115,13 @@ function createUser_Callback(result) {
         if(result.status > 0){
             // Successful
             _session.user = result.object;
-            alert('createUser Succeeded! User ' + _session.user.userid + ' created.');
+            alert('Created User #' + _session.user.userid);
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
         }else{
             // Server returned an error = failed authorization
-            alert('createUser Failed with an authentication error.');
+            alert('createUser Failed with a response.');
             /*
             if (result.details != undefined) {
                 for (var key in result.details) {
@@ -135,6 +132,9 @@ function createUser_Callback(result) {
             */
         }
     }
+    $('form#form-create-user > .step2').removeClass('active');
+    $('form#form-create-user > .step1').addClass('active');
+    $('#form-thought').scrollTo();
 }
 
 // Login user

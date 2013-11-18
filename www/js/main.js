@@ -72,7 +72,9 @@ $(function() {
     initEventHandlers();
 });
 
-
+function verifyCreateAccount(){
+    $('form#form-create-user > .steps').toggleClass('active');
+}
 
 /*
 method:

@@ -1900,7 +1900,7 @@
             <!-- LOGIN (START) -->
             <div id="page-login" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form id="form-login" action="https://dev.lucidlife.co/api/ajax.php" method="post">
+                    <form id="form-login">
                         <h1>Login</h1>
                         <div class="form-row email input-group input-group-md">
                             <span class="input-group-addon">@</span>
@@ -1910,8 +1910,8 @@
                             <span class="input-group-addon glyphicon glyphicon-lock"></span>
                             <input name="password" type="text" class="form-control" placeholder="password">
                         </div>
-                        <button type="submit" class="form-row btn btn-md btn-link btn-join pull-left">Join Now!</button>
-                        <button type="submit" class="form-row btn btn-md btn-warning btn-wide pull-right">Login</button>
+                        <button type="button" class="form-row btn btn-md btn-link btn-join pull-left" onclick="joinLucidLife();">Join Now!</button>
+                        <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right" onclick="loginUser();">Login</button>
                     </form>
                 </div>
             </div>
@@ -1921,7 +1921,7 @@
             <div id="page-create-user" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <form id="form-create-user">
-                        <div class="step-1">
+                        <div class="steps step-1 active">
                             <h1>Create Account</h1>
                             <div class="form-row email input-group input-group-md">
                                 <span class="input-group-addon">@</span>
@@ -1937,9 +1937,9 @@
                                 </span>
                                 <input name="verify-password" type="password" class="form-control" placeholder="verify password">
                             </div>
-                            <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right">Next</button>
+                            <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right" onclick="verifyCreateAccount();">Next</button>
                         </div>
-                        <div id="step-2">
+                        <div class="steps step-2">
                             <h1>Create Profile</h1>
                             <div class="form-row first-name input-group input-group-md">
                                 <span class="input-group-addon">First Name</span>
@@ -1971,9 +1971,9 @@
                             <div class="instructions clearfix"><span class="pull-right">*1000 characters max</span></div>
                             <div class="form-row biography input-group input-group-md">
                                 <span class="input-group-addon align-top">Bio</span>
-                                <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list things you're interested in"></textarea>
+                                <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list some of your interests"></textarea>
                             </div>
-                            <button id="form-create-user-submit" class="submit form-row btn btn-md btn-warning btn-wide pull-right">Done</button>
+                            <button class="submit form-row btn btn-md btn-warning btn-wide pull-right" onclick="createUser();">Done</button>
                         </div>
                     </form> 
                 </div>

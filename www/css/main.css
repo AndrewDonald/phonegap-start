@@ -542,8 +542,10 @@ nav#footer.detach {position: static;}
     form#form-login .btn-join {font-size: 16px; margin-left: -10px;
     }
     /* PAGE CREATE-USER */
-    form#form-create-user .gender > .form-control {padding: 0 5px;}
-    form#form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
+    form#form-create-user .steps {display: none;}
+    form#form-create-user .steps.active {display: block;}
+        form#form-create-user .gender > .form-control {padding: 0 5px;}
+        form#form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
     
     /* PAGE NEW-THOUGHT */
     #join-conversation {clear: both;}
