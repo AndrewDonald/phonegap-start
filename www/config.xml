@@ -51,6 +51,8 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
+
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

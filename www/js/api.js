@@ -2,6 +2,8 @@
 
 // Ajax request to server api methods (default async=true unless sent as false)
 function apiRequest(objMessage, callbackFunction, async) {
+    $('#modal-loader').modal('show');
+
     var asyncMethod = true;
     if(typeof async != "undefined" && async == false) {
 	   asyncMethod = false;
@@ -17,9 +19,11 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
+        $('#modal-loader').modal('hide');
         callbackFunction(response.responseJSON);
     })
     .fail(function() {
+        $('#modal-loader').modal('hide');
         callbackFunction(0);
     });
 }
