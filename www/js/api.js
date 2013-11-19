@@ -2,8 +2,8 @@
 
 // Ajax request to server api methods (default async=true unless sent as false)
 function apiRequest(objMessage, callbackFunction, async) {
-    //$('#modal-loader').modal('show');
-    alert('start Ajax call *May take up to 20secs!!');
+    $('#modal-loader').modal('show');
+
     var asyncMethod = true;
     if(typeof async != "undefined" && async == false) {
 	   asyncMethod = false;
@@ -18,14 +18,12 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
-        alert('Completed Ajax. Created User: ' + response.responseJSON.object.userid);
-        //$('#modal-loader').modal('hide');
+        $('#modal-loader .modal-body').html('Success! Created User #' + response.responseJSON.object.userid);
         return callbackFunction(response.responseJSON);
     })
     .fail(function() {
-        alert('Ajax Failed');
-        //$('#modal-loader').modal('hide');
-        callbackFunction(0);
+        $('#modal-loader .modal-body').html('Failed.');
+        return callbackFunction(0);
     });
 }
 
@@ -87,7 +85,6 @@ function logoutUser_Callback(result) {
 
 // Create User
 function createUser(){
-    alert('running createUser()');
     var user = {};
     user.email          = $('#form-create-user [name=email]').val();
     user.password       = $('#form-create-user [name=password]').val();
@@ -110,7 +107,7 @@ function createUser(){
 }
 
 function createUser_Callback(result) {
-    alert('createUser CallBack started.');
+    $('#modal-loader').modal('hide');
     if(result == 0) {
         // Ajax request failed
         alert('createUser Failed.');
