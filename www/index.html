@@ -1880,7 +1880,7 @@
             <!-- LOGIN (START) -->
             <div id="page-login" class="page row active">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form id="form-login">
+                    <div id="form-login" class="form">
                         <h1>Login</h1>
                         <div class="form-row email input-group input-group-md">
                             <span class="input-group-addon">@</span>
@@ -1891,8 +1891,8 @@
                             <input name="password" type="text" class="form-control" placeholder="password">
                         </div>
                         <button type="button" class="form-row btn btn-md btn-link btn-join pull-left" onclick="joinLucidLife();">Join Now!</button>
-                        <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right" onclick="loginUser();">Login</button>
-                    </form>
+                        <button type="button" class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right" onclick="loginUser();">Login</button>
+                    </div>
                 </div>
             </div>
             <!-- LOGIN (END) -->
@@ -1900,7 +1900,7 @@
             <!-- CREATE USER (START) -->
             <div id="page-create-user" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form id="form-create-user">
+                    <div id="form-create-user" class="form">
                         <div class="steps step-1 active">
                             <h1>Create Account</h1>
                             <div class="form-row email input-group input-group-md">
@@ -1958,7 +1958,7 @@
                                 <button class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right" onclickx="createUser(); return false;">Done</button>
                             </div>
                         </div>
-                    </form> 
+                    </div> 
                 </div>
             </div>
             <!-- CREATE USER (END) -->
@@ -1966,14 +1966,14 @@
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form id="form-thought" onsubmit="return createAccount();" method="post">
+                    <div id="form-thought" class="form" onsubmit="return createAccount();" method="post">
                         <h1>New Stream of Thought</h1>
                         <div class="form-row thought input-group input-group-md">
                             <span class="input-group-addon stream-icon"></span>
                             <input type="text" class="form-control" placeholder="what's on your mind?">
                         </div>
                         <button type="button" class="form-row btn btn-md btn-warning pull-right" onclick="alert('find people');">Find People</button>
-                    </form>
+                    </div>
                     <div id="join-conversation">
                         <h2>Join a Conversation</h2>
                         <ul class="conversation-list form-control list-inline full-width">

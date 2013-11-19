@@ -150,10 +150,10 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 h1 {font-size: 18px; color: #999; margin-bottom: 10px;}
 h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 
-form {padding: 0; color: #fff; clear: both;}
-    form .form-row {margin-bottom: 10px;}
-        form .btn-wide {padding: 6px 39px;}
-            form .form-row sup > span {background-color: rgba(0, 0, 0, 0); border: medium none; font-size: 7px; left: -1px; padding: 0; position: absolute; width: 9px;}
+.form {padding: 0; color: #fff; clear: both;}
+    .form .form-row {margin-bottom: 10px;}
+        .form .btn-wide {padding: 6px 39px;}
+            .form .form-row sup > span {background-color: rgba(0, 0, 0, 0); border: medium none; font-size: 7px; left: -1px; padding: 0; position: absolute; width: 9px;}
     
     /* PROFILE FORM */
 .stream-name:before {content: '∼';}
@@ -541,13 +541,13 @@ nav#footer.detach {position: static;}
 
 /* PAGES */
     /* PAGE LOGIN */
-    form#form-login .btn-join {font-size: 16px; margin-left: -10px;
-    }
+    #form-login .btn-join {font-size: 16px; margin-left: -10px;}
+
     /* PAGE CREATE-USER */
-    form#form-create-user .steps {display: none;}
-    form#form-create-user .steps.active {display: block;}
-        form#form-create-user .gender > .form-control {padding: 0 5px;}
-        form#form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
+    #form-create-user .steps {display: none;}
+    #form-create-user .steps.active {display: block;}
+        #form-create-user .gender > .form-control {padding: 0 5px;}
+        #form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
     
     /* PAGE NEW-THOUGHT */
     #join-conversation {clear: both;}
