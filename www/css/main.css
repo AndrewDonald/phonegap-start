@@ -413,8 +413,8 @@ nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-#pages {padding: 30px 0 200px;}
-    #pages > .page {display: none; padding: 0 5px; clear: both;}
+#pages {padding: 35px 0 200px;}
+    #pages > .page {display: none; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
         #page-stream .show-filter,
@@ -432,7 +432,8 @@ nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
         body.audio #page-stream .show-audio {display: block;}
 
 /* FOOTER */
-nav#footer {box-shadow: 0 -1px 5px #000000;}
+nav#footer {display: none; box-shadow: 0 -1px 5px #000000;}
+nav#footer.active {display: block;}
 nav#footer.detach {position: static;} 
 
     /* CONNECTIONS PANEL */

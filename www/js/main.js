@@ -71,6 +71,14 @@ $(function() {
     initEventHandlers();
 });
 
+
+function joinLucidLife(){
+    $('#pages > .page').removeClass('active');
+    $('#page-create-user').addClass('active');
+    $('#form-create-user > .steps').removeClass('active');
+    $('#form-create-user > .steps.step-1').addClass('active');
+}
+
 function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
