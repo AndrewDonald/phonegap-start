@@ -85,6 +85,8 @@ function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
 
+
+
 // onSuccess Callback
 //   This method accepts a `Position` object, which contains
 //   the current GPS coordinates
@@ -107,7 +109,8 @@ function geoError(error) {
           'message: ' + error.message + '\n');
 }
 
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError,{enableHighAccuracy:true});
+//navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 
 
 /*
