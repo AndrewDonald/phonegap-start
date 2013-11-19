@@ -50,3 +50,27 @@ $.fn.scrollTo = function( targetDom ){
         scrollLeft: offset.left
     });
 }
+
+// GEO-LOCATION
+// onSuccess Callback
+//   This method accepts a `Position` object, which contains
+//   the current GPS coordinates
+//
+var geoSuccess = function(position) {
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
+    _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
+};
+
+// onError Callback receives a PositionError object
+//
+function geoError(error) {
+    alert('** GEO ERROR (DEV Message Only)**\ncode: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+    alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS.');
+}

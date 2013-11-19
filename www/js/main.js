@@ -55,7 +55,7 @@ var _application                                = {};
     _application.streamMember                   = {};
     _application.messageMember                  = {};
     _application.indicator                      = {unreadMessages:0,buddyrequests:0};
-    _application.geo                           = {};
+    _application.geo                           = {"latitude":null,"longitude":null};
 
 var _lucid                      = {};
 _lucid.panel                    = {};
@@ -66,8 +66,16 @@ _lucid.panel.pages              = ["stream","filter","profile"];
 _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
 _lucid.panel.apps.active        = 0;
 
-
 $(function() {
+    // Aquire GEO Location (Wait for App to load)
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    /*
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+        //navigator.geolocation.getCurrentPosition(geoSuccess, geoError,{enableHighAccuracy:true});
+    }
+    */
     $('.max-height').css('max-height', $(window).height() - 116);
     initEventHandlers();
 });
@@ -85,41 +93,3 @@ function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
 
-
-
-// onSuccess Callback
-//   This method accepts a `Position` object, which contains
-//   the current GPS coordinates
-//
-var geoSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function geoError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-}
-
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError,{enableHighAccuracy:true});
-//navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-
-
-/*
-method:
-auth_user
-email:
-test@flud.com
-password:
-testtest
-
-https://dev.lucidlife.co/api/testbench.html
-*/

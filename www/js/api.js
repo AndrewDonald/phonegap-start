@@ -101,8 +101,8 @@ function createUser(){
     var objMessage = {};
         objMessage.method       = "create_user";
         objMessage.user         = user;
-        objMessage.latitude     = 100;
-        objMessage.longitude    = 200;
+        objMessage.latitude     = _application.geo.latitude;
+        objMessage.longitude    = _application.geo.longitude;
 
     apiRequest(objMessage, createUser_Callback, false);
     
@@ -118,6 +118,8 @@ function createUser_Callback(result) {
             // Successful
             _session.user = result.object;
             alert('Created User #' + _session.user.userid);
+            $('#pages > .page').removeClass('active');
+            $('#page-new-thought').addClass('active');
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
@@ -136,7 +138,7 @@ function createUser_Callback(result) {
     }
     $('form#form-create-user > .step2').removeClass('active');
     $('form#form-create-user > .step1').addClass('active');
-    $('#form-thought').scrollTo();
+    //$('#form-thought').scrollTo();
 }
 
 // Login user
