@@ -18,7 +18,7 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
-        alert('Completed Ajax');
+        alert('Completed Ajax. Created User: ' + result.object.userid);
         //$('#modal-loader').modal('hide');
         callbackFunction(response.responseJSON);
     })
@@ -28,7 +28,7 @@ function apiRequest(objMessage, callbackFunction, async) {
         callbackFunction(0);
     });
 
-    //return false;
+    return false;
 }
 
 
@@ -115,7 +115,7 @@ function createUser(){
 
 function createUser_Callback(result) {
     alert('createUser CallBack started.');
-    if(result==0) {
+    if(result == 0) {
         // Ajax request failed
         alert('createUser Failed.');
     }else{
