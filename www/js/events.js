@@ -4,6 +4,7 @@ function initEventHandlers(){
     $('form#form-create-user .btn-submit').on('click',function(){
         alert('calling createUser()');
         createUser();
+        return false;
     });
 
     /*
