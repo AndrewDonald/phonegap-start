@@ -1,5 +1,12 @@
 //* EVENT HANDLERS *//
 function initEventHandlers(){
+    // Submit Create User Form
+    $('form#form-create-user').on('submit',function(){
+        alert('calling creatUser()');
+        createUser();  
+        return false;
+    });
+
     /*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});

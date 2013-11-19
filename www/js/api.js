@@ -10,7 +10,7 @@ function apiRequest(objMessage, callbackFunction, async) {
     }
     
     $.ajax({
-        type: 	  "GET",
+        type: 	  "POST",
         dataType: "json",
         async: 	  asyncMethod,
         url: 	  _application.url.api,
@@ -85,6 +85,7 @@ function logoutUser_Callback(result) {
 
 // Create User
 function createUser(){
+    alert('running creatUser()');
     var user = {};
     user.email          = $('form#form-create-user [name=email]').val();
     user.password       = $('form#form-create-user [name=password]').val();
@@ -135,8 +136,8 @@ function createUser_Callback(result) {
             */
         }
     }
-    $('form#form-create-user > .step2').removeClass('active');
-    $('form#form-create-user > .step1').addClass('active');
+    //$('form#form-create-user > .step2').removeClass('active');
+    //$('form#form-create-user > .step1').addClass('active');
     //$('#form-thought').scrollTo();
 }
 
