@@ -414,7 +414,7 @@ nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
 #pages {padding: 35px 0 600px;}
-    #pages > .page {display: none; padding: 0 10px; clear: both;}
+    #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
         #page-stream .show-filter,

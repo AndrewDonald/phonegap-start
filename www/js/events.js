@@ -110,7 +110,17 @@ function initEventHandlers(){
             */
             
             $('#pages > .page.active').removeClass('active');
-            $('#pages > .page#' + pageTarget).addClass('active');
+            switch(pageTarget){
+                case 'page-people':
+                    $('nav#footer, #people-nav').toggleClass('active');
+                    $('#people-panel').addClass('vertical');
+                    $('#people-panel').toggleClass('active').show();
+                    $('.people-controls-toggle').click();
+                    break;
+                default:
+                    $('#pages > .page#' + pageTarget).addClass('active');
+                    break;
+            }
         }
     });
 
@@ -270,7 +280,9 @@ function initEventHandlers(){
     // TOGGLE ON/OFF SELETOR BUTTONS
     //$('.menu-toggle-controls-panel').on('click',function(){
     $('#people-panel-toggle').on('click',function(){
+        $('#people-panel').removeClass('vertical');
         $(this).toggleClass('active');
+        $('nav#footer').toggleClass('active');
         $('#controls-panel, #people-panel').toggleClass('active').slideToggle();
     });
 
