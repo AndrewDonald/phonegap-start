@@ -2,7 +2,7 @@
 
 // Ajax request to server api methods (default async=true unless sent as false)
 function apiRequest(objMessage, callbackFunction, async) {
-    $('#modal-loader').modal('show');
+    //$('#modal-loader').modal('show');
 
     var asyncMethod = true;
     if(typeof async != "undefined" && async == false) {
@@ -18,13 +18,17 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
-        $('#modal-loader').modal('hide');
+        alert('Completed Ajax');
+        //$('#modal-loader').modal('hide');
         callbackFunction(response.responseJSON);
     })
     .fail(function() {
-        $('#modal-loader').modal('hide');
+        alert('Ajax Failed');
+        //$('#modal-loader').modal('hide');
         callbackFunction(0);
     });
+
+    return false;
 }
 
 
@@ -139,6 +143,7 @@ function createUser_Callback(result) {
     //$('form#form-create-user > .step2').removeClass('active');
     //$('form#form-create-user > .step1').addClass('active');
     //$('#form-thought').scrollTo();
+    return false;
 }
 
 // Login user
