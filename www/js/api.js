@@ -28,7 +28,7 @@ function apiRequest(objMessage, callbackFunction, async) {
         callbackFunction(0);
     });
 
-    return false;
+    //return false;
 }
 
 
@@ -114,6 +114,7 @@ function createUser(){
 }
 
 function createUser_Callback(result) {
+    alert('createUser CallBack started.');
     if(result==0) {
         // Ajax request failed
         alert('createUser Failed.');
