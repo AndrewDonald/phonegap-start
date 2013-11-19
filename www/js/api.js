@@ -9,7 +9,6 @@ function apiRequest(objMessage, callbackFunction, async) {
 	   asyncMethod = false;
     }
     
-    alert('About to use $ajax.');
     $.ajax({
         type: 	  "POST",
         dataType: "json",
