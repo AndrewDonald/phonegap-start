@@ -20,15 +20,13 @@ function apiRequest(objMessage, callbackFunction, async) {
     .complete(function(response) {
         alert('Completed Ajax. Created User: ' + result.object.userid);
         //$('#modal-loader').modal('hide');
-        callbackFunction(response.responseJSON);
+        return callbackFunction(response.responseJSON);
     })
     .fail(function() {
         alert('Ajax Failed');
         //$('#modal-loader').modal('hide');
         callbackFunction(0);
     });
-
-    return false;
 }
 
 
@@ -109,8 +107,6 @@ function createUser(){
         objMessage.longitude    = _application.geo.longitude;
 
     apiRequest(objMessage, createUser_Callback, false);
-    
-    return false;
 }
 
 function createUser_Callback(result) {
