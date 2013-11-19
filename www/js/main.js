@@ -55,7 +55,7 @@ var _application                                = {};
     _application.streamMember                   = {};
     _application.messageMember                  = {};
     _application.indicator                      = {unreadMessages:0,buddyrequests:0};
-    _application.geo                           = {"latitude":null,"longitude":null};
+    _application.geo                           = {"latitude":0,"longitude":0};
 
 var _lucid                      = {};
 _lucid.panel                    = {};
