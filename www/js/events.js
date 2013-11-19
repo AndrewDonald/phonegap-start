@@ -1,10 +1,9 @@
 //* EVENT HANDLERS *//
 function initEventHandlers(){
     // Submit Create User Form
-    $('form#form-create-user').on('submit',function(){
-        alert('calling creatUser()');
-        createUser();  
-        return false;
+    $('form#form-create-user .btn-submit').on('click',function(){
+        alert('calling creaetUser()');
+        createUser();
     });
 
     /*
