@@ -3,7 +3,7 @@
 // Ajax request to server api methods (default async=true unless sent as false)
 function apiRequest(objMessage, callbackFunction, async) {
     //$('#modal-loader').modal('show');
-
+    alert('start Ajax call');
     var asyncMethod = true;
     if(typeof async != "undefined" && async == false) {
 	   asyncMethod = false;
@@ -89,15 +89,15 @@ function logoutUser_Callback(result) {
 function createUser(){
     alert('running createUser()');
     var user = {};
-    user.email          = $('#form-create-user [name=email]').val();
-    user.password       = $('#form-create-user [name=password]').val();
-    user.fname          = $('#form-create-user [name=fname]').val();
-    user.lname          = $('#form-create-user [name=lname]').val();
-    user.gender         = $('#form-create-user [name=gender]:checked').val();
-    user.birthdate      = $('#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
+    user.email          = $('form#form-create-user [name=email]').val();
+    user.password       = $('form#form-create-user [name=password]').val();
+    user.fname          = $('form#form-create-user [name=fname]').val();
+    user.lname          = $('form#form-create-user [name=lname]').val();
+    user.gender         = $('form#form-create-user [name=gender]:checked').val();
+    user.birthdate      = $('form#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
     user.pic            = "";
     user.picextension   = "";
-    user.biography      = $('#form-create-user [name=biography]').val();
+    user.biography      = $('form#form-create-user [name=biography]').val();
     user.twitter        = ""; //$('input#join-twitter').val();
     
     var objMessage = {};
