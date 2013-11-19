@@ -10,7 +10,7 @@ function apiRequest(objMessage, callbackFunction, async) {
     }
     
     $.ajax({
-        type: 	  "POST",
+        type: 	  "GET",
         dataType: "json",
         async: 	  asyncMethod,
         url: 	  _application.url.api,
