@@ -68,7 +68,6 @@ _lucid.panel.apps.active        = 0;
 
 $(function() {
     $('.max-height').css('max-height', $(window).height() - 116);
-    $('.page').addClass('active')
     initEventHandlers();
 });
 

@@ -90,21 +90,22 @@ function initEventHandlers(){
     */
 
     // Main Menu Items
-    $('#main-menu-items > li > button').on('click',function(){
+    $('#main-menu-items > li > a').on('click',function(){
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
-        }
-        /*else{
-            var pageTarget = $(this).data('page-target');
+        }else{
+            var pageTarget = $(this).data('toggle-item');
+            /*
             var classTarget = $(this).data('class-target');
             if(typeof classTarget == "undefined"){
                 classTarget = "";
             }
+            */
             
-            $('#pages > :not("#page-' + pageTarget + '")').removeClass('active');
-            $('#pages > #page-' + pageTarget).toggleClass('active view-' + classTarget);
-        }*/
+            $('#pages > .page.active').removeClass('active');
+            $('#pages > .page#' + pageTarget).addClass('active');
+        }
     });
 
 

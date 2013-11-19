@@ -26,66 +26,57 @@
             <!-- MASTHEAD (START) -->
             <div class="masthead">
                 <div class="main-nav left">
-                     <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 dropdown-toggle" data-toggle="dropdown">&equiv;</button>
+                    <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 dropdown-toggle" data-toggle="dropdown">&equiv;</button>
                     <ul id="main-menu-items" class="dropdown-menu" role="menu">
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="search-page">
-                                <span class="menu-icon glyphicon glyphicon-search"></span> ~search
+                            <a class="menu-toggle-stream-associations" data-toggle-item="page-new-thought">
+                                <span class="menu-icon glyphicon glyphicon-search"></span> New Thought
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="hot-page">
-                                <span class="menu-icon glyphicon glyphicon-magnet"></span> ~popular
+                            <a class="menu-toggle-stream-associations" data-toggle-item="page-hot-thoughts">
+                                <span class="menu-icon glyphicon glyphicon-fire"></span> Hot Thoughts
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="menu-toggle-stream-associations" data-toggle-item="profile-page">
-                                <span class="menu-icon glyphicon glyphicon-user"></span> profile
+                            <a class="menu-toggle-stream-filters" data-toggle-item="page-connections">
+                                <span class="menu-icon glyphicon glyphicon-link"></span> Connections
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-stream-filters" data-toggle-item="connections-page">
-                                <span class="menu-icon glyphicon glyphicon-book"></span> connections
+                            <a class="menu-toggle-stream-associations" data-toggle-item="page-profile">
+                                <span class="menu-icon glyphicon glyphicon-user"></span> Profile
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle-item="history-page">
-                                <span class="menu-icon glyphicon glyphicon-repeat"></span> history
+                            <a class="menu-toggle-connections" data-toggle-item="page-settings">
+                                <span class="menu-icon glyphicon glyphicon-cog"></span> Settings
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-stream-filters" data-toggle-item="favorites-page">
-                                <span class="menu-icon glyphicon glyphicon-thumbs-up"></span> favorites
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-toggle-stream-filters" data-toggle-item="alerts-page">
-                                <span class="menu-icon glyphicon glyphicon-flag"></span> alerts
+                            <a class="menu-toggle-connections" data-toggle-item="page-account">
+                                <span class="menu-icon glyphicon glyphicon-folder-open"></span> Account
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle-item="settings-page">
-                                <span class="menu-icon glyphicon glyphicon-cog"></span> settings
+                            <a class="menu-toggle-connections" data-toggle-item="page-logout">
+                                <span class="menu-icon glyphicon glyphicon-power-off"></span> Logout
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="menu-toggle-stream-filters" data-toggle-item="page-login">
+                                <span class="menu-icon glyphicon glyphicon-power-off" style="color: #ff6;"></span> Login
                             </a>
                         </li>
                         <li>
-                            <a class="menu-toggle-connections" data-toggle-item="account-page">
-                                <span class="menu-icon glyphicon glyphicon-folder-open"></span> account
+                            <a class="menu-toggle-stream-filters" data-toggle-item="page-create-user">
+                                <span class="menu-icon glyphicon glyphicon-asterisk"></span> Create User
                             </a>
                         </li>
-                        <!--
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        -->
                     </ul>
-                    <!--
-                    <button id="filter-toggle" type="button" class="btn btn-link-lucid btn-lg color-3-lt glyphicon glyphicon-filter"></button>
-                    <button id="lucid-toggle" type="button" class="btn btn-link-lucid btn-lg color-3-lt glyphicon glyphicon-user">
-                        <span class="icon glyphicon glyphicon-bell"></span>
-                    </button>
-                    -->
                 </div>
                 <center>
                     <div class="logo-con">
@@ -94,27 +85,108 @@
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
                 <div class="main-nav right">
-                    <button id="people-panel-toggle" type="button" class="btn btn-link-lucid btn-lg dropdown-togglex" data-toggle="dropdownx">
+                    <button id="people-panel-toggle" type="button" class="btn btn-link-lucid btn-lg">
                         <img src="img/lucid-butterfly.png" class="monarch">
                     </button>
-                    <ul id="people-panel-items" class="dropdown-menu" role="menu">
-                        <li>
-                            <a class="menu-toggle-controls-panel">
-                                <span class="menu-icon glyphicon glyphicon-off"></span> controls
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-toggle-connections">
-                                <span class="menu-icon glyphicon glyphicon-off"></span> connections
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <!--<button id="search-toggle" type="button" class="btn btn-link-lucid btn-lg tilde color-3-lt">~</button>-->
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
 
+            
+            <!-- CONTROLS PANEL (START) -->
+            <div id="controls-panel" class="menu-transparent">
+                <!-- STREAM PANEL (START) -->
+                <div id="stream-panel">
+                    <div id="stream-controls" class="horizontal-sliding-nav-con">
+                        <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
+                            <div class="stream-icon"></div>
+                        </button>
+                        <div class="stream-filters horizontal-sliding-nav">
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                                    <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
+                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                    <label class="badge">137</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                </button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                                    <span class="stream-name">LucidLife</span>
+                                    <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                                    <label class="badge"l>98</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                                    <span class="stream-name">LucidEngineering</span>
+                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                    <label class="badge">14</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                                    <span class="stream-name">LucidLovers</span>
+                                    <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                    <label class="badge">11</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                            <span class="btn-group">
+                                <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                                    <span class="stream-name">LifeIsGood</span>
+                                    <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                                    <label class="badge">8</label>
+                                </button>
+                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- STREAM PANEL (END) -->
+
+                <!-- FILTER PANEL (START) -->
+                <div id="filter-panel">
+                    <div id="filter-controls" class="horizontal-sliding-nav-con">
+                        <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
+                            <span class="glyphicon glyphicon-filter"></span>
+                        </button>
+                        <div class="filter-filters horizontal-sliding-nav">
+                            <button type="button" class="btn btn-lucid-normal active" data-item="default">
+                                <span class="filter-name">No Filter</span>
+                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                <label class="badge">137</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
+                                <span class="filter-name">People Near Me</span>
+                                <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                                <label class="badge"l>98</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
+                                <span class="filter-name">Young Adults</span>
+                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                <label class="badge">14</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
+                                <span class="filter-name">College Students</span>
+                                <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                <label class="badge">11</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
+                                <span class="filter-name">Retirees</span>
+                                <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                                <label class="badge">8</label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- FILTER PANEL (END) -->
+            </div>
+            <!-- Controls Panel (OLD) -->
             <div id="controls-panelx" style="display: none;">
                 <!-- STREAM CONTROLS PANEL (START) -->
                 <div id="stream-controls-panel" class="controls-panel clearfix">
@@ -388,109 +460,13 @@
                      </div>
                 </div>
             </div>
-
-            <!-- CONTROLS PANEL (START) -->
-            <div id="controls-panel" class="menu-transparent">
-                <!-- STREAM PANEL (START) -->
-                <div id="stream-panel">
-                    <div id="stream-controls" class="horizontal-sliding-nav-con">
-                        <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
-                            <div class="stream-icon"></div>
-                        </button>
-                        <div class="stream-filters horizontal-sliding-nav">
-                            <span class="btn-group">
-                                <button type="button" class="btn btn-lucid-normal active" data-item="default">
-                                    <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
-                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                    <label class="badge">137</label>
-                                </button>
-                                <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
-                                </button>
-                            </span>
-                            <span class="btn-group">
-                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
-                                    <span class="stream-name">LucidLife</span>
-                                    <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
-                                    <label class="badge"l>98</label>
-                                </button>
-                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
-                            </span>
-                            <span class="btn-group">
-                                <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
-                                    <span class="stream-name">LucidEngineering</span>
-                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                    <label class="badge">14</label>
-                                </button>
-                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
-                            </span>
-                            <span class="btn-group">
-                                <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
-                                    <span class="stream-name">LucidLovers</span>
-                                    <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                                    <label class="badge">11</label>
-                                </button>
-                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
-                            </span>
-                            <span class="btn-group">
-                                <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
-                                    <span class="stream-name">LifeIsGood</span>
-                                    <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                                    <label class="badge">8</label>
-                                </button>
-                                <button class="vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down"></button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- STREAM PANEL (END) -->
-
-                <!-- FILTER PANEL (START) -->
-                <div id="filter-panel">
-                    <div id="filter-controls" class="horizontal-sliding-nav-con">
-                        <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
-                            <span class="glyphicon glyphicon-filter"></span>
-                        </button>
-                        <div class="filter-filters horizontal-sliding-nav">
-                            <button type="button" class="btn btn-lucid-normal active" data-item="default">
-                                <span class="filter-name">No Filter</span>
-                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                <label class="badge">137</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLife">
-                                <span class="filter-name">People Near Me</span>
-                                <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
-                                <label class="badge"l>98</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-item="LucidEngineering">
-                                <span class="filter-name">Young Adults</span>
-                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                <label class="badge">14</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
-                                <span class="filter-name">College Students</span>
-                                <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                                <label class="badge">11</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
-                                <span class="filter-name">Retirees</span>
-                                <!--<sup class="people-viewed badge label-lucid">22</sup>-->
-                                <label class="badge">8</label>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- FILTER PANEL (END) -->
-            </div>
             <!-- CONTROLS PANEL (END) -->
         </nav>
-        
-
         <!-- HEADER (END) -->
 
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <!-- PEOPLE PANEL -->
+            <!-- PEOPLE PANEL (START) -->
             <div id="people-panel" class="menu-transparent">
                 <div id="people-controls" class="horizontal-sliding-nav-con">
                     <button class="people-controls-toggle controls-toggle btn btn-warning btn-lg glyphicon glyphicon-user">
@@ -1895,8 +1871,7 @@
         <!-- FOOTER (END) -->
        
         <!-- BODY (CONTENT) -->
-        <div id="pages" style="padding-top: 600px;">
-
+        <div id="pages">
             <!-- LOGIN (START) -->
             <div id="page-login" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -1917,7 +1892,7 @@
             </div>
             <!-- LOGIN (END) -->
 
-            <!-- CREATE ACCOUNT (START) -->
+            <!-- CREATE USER (START) -->
             <div id="page-create-user" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <form id="form-create-user">
@@ -1978,7 +1953,7 @@
                     </form> 
                 </div>
             </div>
-            <!-- CREATE ACCOUNT (END) -->
+            <!-- CREATE USER (END) -->
 
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
@@ -2076,8 +2051,8 @@
                 <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
                 <p><b>END</b></p>
             </div>
-            <div id="page-stream-controls" class="page row"><h2>STREAM CONTROLS</h2></div>
-            <div id="page-stream-filter" class="page row"><h2>STREAM FILTERS</h2></div>
+            <div id="page-streams" class="page row"><h2>STREAM CONTROLS</h2></div>
+            <div id="page-filter" class="page row"><h2>STREAM FILTERS</h2></div>
             <div id="page-profile" class="page row">
                 <h2>PROFILE</h2>
                 <div class="_promo">
