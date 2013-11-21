@@ -6,27 +6,29 @@ function initEventHandlers(){
         return false;
     });
 	
-	$('#send-message').on('focus',function(e) { 
-		$('html,body').animate({
-			  scrollTop: 0
-		 });
-		$('nav#footer').addClass('detach');
-		//$('nav#footer').css('position','absolute');
-		//$('nav#footer').css('top','0px');
-	});
-	
-	$('#send-message').on('blur',function(e) {
-		$('nav#footer').removeClass('detach');
-		//$('nav#footer').css('position','fixed');
-		//$('nav#footer').css('top','0px');
-	});
-
+    // Toggle-Nav Custom Component (Shows/Hides content based on index of Nav Item clicked)
     $('.toggle-nav > .btn').on('click', function(){
         var index = $(this).index();
         $(this).addClass('active').siblings().removeClass('active');
         $(this).parent().next().children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
     });
 
+/*
+    $('#send-message').on('focus',function(e) { 
+        $('html,body').animate({
+              scrollTop: 0
+         });
+        $('nav#footer').addClass('detach');
+        //$('nav#footer').css('position','absolute');
+        //$('nav#footer').css('top','0px');
+    });
+    
+    $('#send-message').on('blur',function(e) {
+        $('nav#footer').removeClass('detach');
+        //$('nav#footer').css('position','fixed');
+        //$('nav#footer').css('top','0px');
+    });
+*/
     /*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});
@@ -132,6 +134,11 @@ function initEventHandlers(){
             
             $('#pages > .page.active').removeClass('active');
             switch(pageTarget){
+                case 'page-conversation':
+                    $('body').toggleClass('footer message-panel').attr('data-page', pageTarget);
+                    $('#message-panel').toggleClass('active');
+                    $('#page-test').toggleClass('active');
+                    break;
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
