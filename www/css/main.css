@@ -32,14 +32,14 @@ label {margin-bottom: 0;}
 
 pre {background-color: #09a; border-color: #0cd; padding: 1px 5px 4px; font-family: arial; font-size: 12px; color: #fff;}
 pre.active {background-color: #0bc; border-color: #0ef;}
-.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.3);}
+.badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
 
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #333; display: block; font-size: 12px; font-weight: bold; height: 34px;
-    line-height: 1.42857; padding: 6px 5px; vertical-align: middle; width: 97%;}
+    line-height: 1.42857; padding: 3px 5px; vertical-align: middle; width: 97%;}
 .navbar {border: none;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
     .alert a.alert-link {text-decoration: none;}
@@ -75,7 +75,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 blockquote, .well blockquote {margin: 0; padding: 0px 10px; border-color: #f90;}
 .modal {z-index: 4000; padding-top: 100px;}
 
-.list-group-item {color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab;}
+.list-group-item {margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
 .list-group-item.selected {color: #0ab; background-color: #ff6;}
 .input-group-addon.align-top {vertical-align: top; padding-top: 9px;}
 .list-inline.full-width {width: 100%;}
@@ -160,6 +160,7 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 .stream-icon {line-height: 10px;}
 .stream-icon:before {content: '∼'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
 .stream-controls-toggle .stream-icon:before {font-size: 37px; line-height: 6px;}
+.filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 9px;}
 
 .hide {display: none;}
 .toggle {cursor: pointer; color: #277;}
@@ -219,13 +220,12 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 /* HORIZONTAL SLIDING NAV */
 .horizontal-sliding-nav-con {position: relative; padding: 4px 0 4px 50px; overflow: hidden; border-bottom: 1px solid #078;}
     .horizontal-sliding-nav-con .horizontal-sliding-nav {white-space: nowrap; overflow: auto; padding: 0 5px;}
-        .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {min-width: 70px;}
+        .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.btn-stream {min-width: 70px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {font-size: 14px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn:last-child {margin-right: 5px;}
                 .horizontal-sliding-nav-con .horizontal-sliding-nav .btn sup {top: -10px;}
                 .horizontal-sliding-nav-con .horizontal-sliding-nav .btn sup {top: -10px;}
-        .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.vote-remove {height: 33px;}
-        .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.vote-remove:before {content: 'vote remove'; font-size: 8px;}
+        .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.vote-remove {height: 34px; padding-top: 8px; border-radius: 0 4px 4px 0;}
 
 /* TOGGLES */
 .toggle-on-off {margin: 2px;}
@@ -246,20 +246,20 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
 button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-weight: bold;}
 
-#main-menu-toggle.btn-link-lucid, #people-panel-toggle.btn-link-lucid {opacity: 1; color: #f90;}
+#main-menu-toggle.btn-link-lucid, #control-panels-toggle.btn-link-lucid {opacity: 1; color: #f90;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 200, 220, 0.7); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 220, 235, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
-    box-shadow: none; border-color: #fff;
+    box-shadow: none;
     position: relative; cursor: pointer; font-size: 14px; color: #fff;
-    border-width: 1px;  border-radius: 5px; background-color: #0ab; background-size: 100% 100%; background-repeat: no-repeat;}
-.btn-lucid:hover, .btn-lucid:focus {color: #fff; border-color: #fff;}
+    border-radius: 5px; background-color: #0ab; border: 1px solid #078; box-shadow: 0 0 3px #0cd inset;}
+.btn-lucid:hover, .btn-lucid:focus {color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
-        color: #fff; background-color: #cc6; border: 2px solid #ff6;}
+    background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
         /*.btn-lucid.tilde .indicator {top: 0; left: 20px;}*/
@@ -274,9 +274,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {display: none; margin: 8px 4px 12px; height: 52px; width: 52px;}
+.btn-lucid.user {margin: 8px 3.5px 12px; height: 52px; width: 52px; background-size: 50px 50px; border: 1px solid #00AABB;}
     .btn-lucid.user.active {}
-        .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 52px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
+        .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 54px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .name {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
@@ -300,14 +300,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 7px 10px 6px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #09a;}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; padding: 7px 10px 6px; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #0bf;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0bc; box-shadow: 0 0 3px #fff inset}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0cd; box-shadow: 0 0 3px #fff inset}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
@@ -323,7 +323,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
-.controls-toggle {position: absolute; left: 5px; top: 5px; width: 46px; height: 33px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
+.controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
     .controls-toggle > .chevron-toggle {margin-right: -5px;}
         .controls-toggle > sup {top: -30px; right: -15px; font-size: 10px;}
@@ -337,11 +337,11 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
-nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
+nav#header {z-index: 2002; box-shadow: 0 1px 5px #000000;}
     nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #0ab; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
-        #people-panel-toggle {width: 40px;}
+        #control-panels-toggle {width: 40px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
         nav#header > .masthead center {padding-top: 5px;}
         nav#header > .masthead .logo-con {padding-right: 2px; width: 140px;}
@@ -430,18 +430,44 @@ nav#header {z-index: 2001; box-shadow: 0 1px 5px #000000;}
         body.photos #page-stream .show-photos,
         body.videos #page-stream .show-videos,
         body.audio #page-stream .show-audio {display: block;}
-    #pages > #page-login {padding-top: 50px;}
+    
+
+    /* PAGE LOGIN */
+    #page-login {padding-top: 50px;}
+        #form-login .btn-join {font-size: 16px; margin-left: -10px;}
+
+    /* PAGE CREATE-USER */
+    #page-create-user {}
+        #form-create-user .steps {display: none;}
+        #form-create-user .steps.active {display: block;}
+            #form-create-user .gender > .form-control {padding: 0 5px;}
+            #form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
+    
+    /* PAGE NEW-THOUGHT */
+    #page-new-thought {padding: 0px;}
+        #join-conversation {clear: both;}
+            #join-conversation .btn-group {}
+            
+        #join-conversation .btn-group .btn:first-child {border-top-left-radius: 4px;}
+        #join-conversation .btn-group .btn:last-child {border-top-right-radius: 4px;}
+        #join-conversation .conversation-lists .form-control {display: none; height: 200px; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
+        #join-conversation .conversation-lists .form-control.active {display: block;}
+
 
 /* FOOTER */
-nav#footer {display: none; box-shadow: 0 -1px 5px #000000;}
+nav#footer {z-index: 2003; display: none; box-shadow: 0 -1px 5px #000000; padding-bottom: 5000;}
 nav#footer.active {display: block;}
-nav#footer.detach {position: static;} 
+nav#footer .global-user-input {padding-bottom: 5px;} 
+nav#footer.detach {position: absolute; top: 40px;}
+    nav#footer.detach .global-user-input {padding-bottom: 3000px;} 
 
     /* CONNECTIONS PANEL */
-
-    #people-panel-items {left: -120px;}
-    
-    #people-panel {display: none; position: relative; bottom: 0px; box-shadow: none; border-top: 1px solid #0ef;}
+    .control-panel {position: fixed; width: 100%;}
+    #people-panel {display: none; box-shadow: 0 -1px 5px #000; border-top: 1px solid #0ab;}
+    #people-panel.active {display: block;}
+    body.people-panel-vertical {bottom: 80px;}
+    body.people-panel-horizontal {top: 60px;}
+    }
     /* 
         #people-panel .legend {color: #045; font-size: 12px;}
             #people-panel .legend > .legend-item  {line-height: 0.5;}
@@ -450,21 +476,19 @@ nav#footer.detach {position: static;}
                 #people-panel .legend > .legend-item > span {font-size: 22px; color: #034;}
                 #people-panel .legend > span > span.glyphicon {font-size: 12px; color: #034;}
     */
-        #people-panel #people-nav {white-space: nowrap; width: 100%; overflow: auto; padding: 3px 5px 5px; border-radius: 0;}
-        #people-panel.vertical #people-nav {padding: 3px 3px 5px; white-space: normal;}
+        #people-panel #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
+        #people-panel.horizontal #people-nav {padding: 3px 5px 5px; white-space: nowrap;}
             #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
-                    
                         
-                            /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                            .btn.people-nav-toggle > .badge {font-size: 14px;}
-                            .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                            .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
-                                .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
+                /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                .btn.people-nav-toggle > .badge {font-size: 14px;}
+                .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+                .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
+                    .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
 
-                #people-nav {display: none;}
+                #people-nav {display: none; padding: 2px 5px;}
                 #people-nav.active {display: block;}
-                    #people-nav > .panel-menu > .btn, #people-nav > .panel-menu > pre {display: none;}
-                    #people-nav > .panel-menu > pre {color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
+                    #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
                         #people-nav > .panel-menu > pre > label {padding-right: 5px;}
                         #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
                         #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
@@ -476,7 +500,11 @@ nav#footer.detach {position: static;}
                     #people-panel:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
                     #people-panel:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
         #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
-            
+    
+    
+    body.people-panel-horizontal #people-panel {bottom: 45px;}
+        body.people-panel-horizontal #people-panel #people-nav {height: 80px;}
+            body.people-panel-horizontal #people-nav > .panel-menu > pre {display: none;}     
 
         #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
             #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
@@ -539,20 +567,7 @@ nav#footer.detach {position: static;}
         #send-message.private {background-color: #cff;}
 
 
-/* PAGES */
-    /* PAGE LOGIN */
-    #form-login .btn-join {font-size: 16px; margin-left: -10px;}
 
-    /* PAGE CREATE-USER */
-    #form-create-user .steps {display: none;}
-    #form-create-user .steps.active {display: block;}
-        #form-create-user .gender > .form-control {padding: 0 5px;}
-        #form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
-    
-    /* PAGE NEW-THOUGHT */
-    #join-conversation {clear: both;}
-    #join-conversation .conversation-list {height: 200px; overflow: auto; margin-bottom: 10px;}
-    
     /*
         .global-user-input #send-message-con form.send-message-form {margin: 0; position: relative; width: 100%; padding-left: 5px;}
             .global-user-input #send-message-con form.send-message-form .send-message-entry {width: 96%; padding-right: 20px; background-color: #fff; border-radius: 5px;}

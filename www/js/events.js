@@ -5,6 +5,27 @@ function initEventHandlers(){
         createUser();
         return false;
     });
+	
+	$('#send-message').on('focus',function(e) { 
+		$('html,body').animate({
+			  scrollTop: 0
+		 });
+		$('nav#footer').addClass('detach');
+		//$('nav#footer').css('position','absolute');
+		//$('nav#footer').css('top','0px');
+	});
+	
+	$('#send-message').on('blur',function(e) {
+		$('nav#footer').removeClass('detach');
+		//$('nav#footer').css('position','fixed');
+		//$('nav#footer').css('top','0px');
+	});
+
+    $('.toggle-nav > .btn').on('click', function(){
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).parent().next().children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
+    });
 
     /*
     // ENABLE BOOTSTRAP CAROUSELS
@@ -89,7 +110,7 @@ function initEventHandlers(){
 
     /*
     // Lucid Menu Toggle
-    $('#people-panel-toggle').on('click',function(){
+    $('#control-panels-toggle').on('click',function(){
         $(this).toggleClass('active');
         $('body').toggleClass('connections');
     });
@@ -112,6 +133,7 @@ function initEventHandlers(){
             $('#pages > .page.active').removeClass('active');
             switch(pageTarget){
                 case 'page-people':
+                    $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
                     $('#people-panel').addClass('vertical');
                     $('#people-panel').toggleClass('active').show();
@@ -279,11 +301,18 @@ function initEventHandlers(){
 
     // TOGGLE ON/OFF SELETOR BUTTONS
     //$('.menu-toggle-controls-panel').on('click',function(){
-    $('#people-panel-toggle').on('click',function(){
-        $('#people-panel').removeClass('vertical');
+    $('#control-panels-toggle').on('click',function(){
+        $('#people-panel').removeClass('horizontal');
+        $('nav#footer').addClass('active');
+        
         $(this).toggleClass('active');
-        $('nav#footer').toggleClass('active');
-        $('#controls-panel, #people-panel').toggleClass('active').slideToggle();
+        if($(this).is('.active')){
+            $('body').removeClass('controls-panel').addClass('controls-panel-horizontal');
+            $('#controls-panel').addClass('active').slideDown();
+        }else{
+            $('body').removeClass('controls-panel-horizontal');
+            $('#controls-panel').removeClass('active').slideUp();
+        }
     });
 
     // TOGGLE ON/OFF SELETOR BUTTONS

@@ -76,7 +76,7 @@ $(function() {
         //navigator.geolocation.getCurrentPosition(geoSuccess, geoError,{enableHighAccuracy:true});
     }
     */
-    $('.max-height').css('max-height', $(window).height() - 128);
+   // $('.max-height').css('max-height', $(window).height() - 128);
     initEventHandlers();
 });
 
