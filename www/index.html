@@ -101,7 +101,7 @@
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
-            
+
             <!-- GLOBAL USER INPUT (START) -->
             <div id="message-panel">
                 <div id="send-message-con">
@@ -492,11 +492,25 @@
 
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            
             <!-- CONTROLS PANEL (START) -->
-            <div id="controls-panel" class="control-panel menu-transparent">
+            <div id="controls-panel" class="menu-transparent-light">
+                <button id="tab-stream" class="tab-lucid" data-toggle="collapse" data-parent="#controls-panel" data-target="#stream-panel">
+                    <div class="stream-icon"></div>
+                </button>
+                <button id="tab-filter" class="tab-lucid" data-toggle="collapse" data-parent="#controls-panel" data-target="#filter-panel">
+                    <span class="glyphicon glyphicon-filter"></span>
+                </button>
+                <button id="tab-people" class="tab-lucid" data-toggle="collapse" data-parent="#controls-panel" data-target="#people-panel">
+                    <span class="glyphicon glyphicon-user blink"></span>
+                    <span class="qty">5</span>
+                </button>
+                <button id="tab-alerts" class="tab-lucid" data-toggle="collapse" data-parent="#controls-panel" data-target="#alerts-panel">
+                    <span class="glyphicon glyphicon-bell blink"></span>
+                    <span class="qty">3</span>
+                </button>
+                
                 <!-- STREAM PANEL (START) -->
-                <div id="stream-panel" class="active">
+                <div id="stream-panel" class="control-panel collapse">
                     <div id="stream-controls" class="horizontal-sliding-nav-con">
                         <button class="stream-controls-toggle controls-toggle btn btn-warning btn-lg">
                             <div class="stream-icon"></div>
@@ -508,10 +522,12 @@
                                     <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                                     <label class="badge">137</label>
                                 </button>
+                                <!--
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
+                                -->
                             </span>
                             <span class="btn-group">
                                 <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LucidLife">
@@ -519,10 +535,12 @@
                                     <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
                                     <label class="badge"l>98</label>
                                 </button>
+                                <!--
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
+                                -->
                             </span>
                             <span class="btn-group">
                                 <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LucidEngineering">
@@ -531,7 +549,7 @@
                                     <label class="badge">14</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -542,7 +560,7 @@
                                     <label class="badge">11</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -553,7 +571,7 @@
                                     <label class="badge">8</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -563,7 +581,7 @@
                 <!-- STREAM PANEL (END) -->
 
                 <!-- FILTER PANEL (START) -->
-                <div id="filter-panel" class="active">
+                <div id="filter-panel" class="control-panel collapse">
                     <div id="filter-controls" class="horizontal-sliding-nav-con">
                         <button class="filter-controls-toggle controls-toggle btn btn-warning btn-lg">
                             <span class="glyphicon glyphicon-filter"></span>
@@ -600,7 +618,7 @@
                 <!-- FILTER PANEL (END) -->
 
                 <!-- PEOPLE PANEL (START) -->
-                <div id="people-panel" class="active">
+                <div id="people-panel" class="control-panel collapse">
                     <div id="people-controls" class="horizontal-sliding-nav-con">
                         <button class="people-controls-toggle controls-toggle btn btn-warning btn-lg glyphicon glyphicon-user">
                         <!--
@@ -617,9 +635,9 @@
                                 <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
                                 <label class="badge"l>137</label>
                             </button>
-                            <button type="button" class="btn btn-lucid-normal" data-filter="alerts">
+                            <button type="button" class="btn btn-lucid-normal" data-filter="connecting">
                                 <span class="item-icon glyphicon glyphicon-bell"></span>
-                                Alerts
+                                Connecting
                                 <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                                 <label class="badge">5</label>
                             </button>
@@ -1979,8 +1997,43 @@
                     <!-- PEOPLE PANEL-BODY (END) -->
                 </div>
                 <!-- PEOPLE PANEL (END) -->
+
+                <!-- ALERTS PANEL (START) -->
+                <div id="alerts-panel" class="control-panel collapse">
+                    <div id="alert-items" class="horizontal-sliding-nav-con">
+                        <button class="btn btn-lucid user added-stream connecting" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="2" data-streamname="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <sup class="badge label-lucid">3</sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Mary</span></label>
+                        </button>
+                        <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                            <sup class="badge label-lucid">1<span class="glyphicon glyphicon-thumbs-up"></span></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Elizabeth</span></label>
+                        </button>
+                        <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                            <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
+                            <sub>
+                                <span class="stream-indicator-icon"></span>
+                                <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                            </sub>
+                            <label><span class="name">Racheal</span></label>
+                        </button>
+                    </div>
+                </div>
+                <!-- ALERTS PANEL (END) -->
             </div>
             <!-- Controls Panel (OLD) -->
+
             <div id="controls-panelx" class="control-panel" style="display: none;">
                 <!-- STREAM CONTROLS PANEL (START) -->
                 <div id="stream-controls-panel" class="controls-panel clearfix">
@@ -2119,7 +2172,7 @@
                 <!-- STREAM CONTROLS PANEL (END) -->
 
                 <!-- FILTER CONTROLS PANEL (START) -->
-                <div id="filter-controls-panel" class="controls-panel clearfix">
+                <div id="filter-panel" class="controls-panel clearfix">
                     <!-- Filter Status -->
                     <div class="filter-status-con status-con btn-group pull-left">
                         <button class="select-toggle btn btn-lucid-normal dropdown-toggle" data-toggle="dropdown">

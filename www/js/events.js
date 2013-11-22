@@ -13,6 +13,11 @@ function initEventHandlers(){
         $(this).parent().next().children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
     });
 
+    // Tab-Lucid Custom Component (Shows/Hides content using collapse)
+    $('.tab-lucid').on('click', function(){
+        $(this).toggleClass('active');
+    });
+
 /*
     $('#send-message').on('focus',function(e) { 
         $('html,body').animate({
@@ -137,6 +142,7 @@ function initEventHandlers(){
                 case 'page-conversation':
                     $('body').toggleClass('footer message-panel').attr('data-page', pageTarget);
                     $('#message-panel').toggleClass('active');
+                    $('#alerts-panel').toggleClass('active');
                     $('#page-test').toggleClass('active');
                     break;
                 case 'page-people':
@@ -343,6 +349,11 @@ function initEventHandlers(){
         if($(this).is('.active')){
             $('#people-nav').addClass('active').slideDown('fast');
             switch($(this).data('filter')){
+                case 'connecting':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.connecting').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
+                    break;
                 case 'connections':
                     $('#people-nav > .panel-menu > .btn').hide();
                     $('#people-nav > .panel-menu > .btn.connected').show();
@@ -352,11 +363,6 @@ function initEventHandlers(){
                     $('#people-nav > .panel-menu > .btn').hide();
                     $('#people-nav > .panel-menu > .btn.viewed-profile').show();
                     $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-date');
-                    break;
-                case 'alerts':
-                    $('#people-nav > .panel-menu > .btn').hide();
-                    $('#people-nav > .panel-menu > .btn.connecting').show();
-                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
                     break;
                 case 'love-request':
                     $('#people-nav > .panel-menu > .btn').hide();
