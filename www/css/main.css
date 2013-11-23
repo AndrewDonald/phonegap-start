@@ -160,6 +160,7 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 .stream-icon {line-height: 10px;}
 .stream-icon:before {content: '∼'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
 .btn-stream-controls .stream-icon:before {font-size: 37px; line-height: 6px;}
+.added-stream-name:before {content: '≅';}
 .filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 9px;}
 
 .hide {display: none;}
@@ -235,7 +236,7 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 .stream-controls-carousel.carousel > .carousel-indicators {}
 
 /* HORIZONTAL SLIDING NAV */
-.horizontal-sliding-nav-con {overflow: hidden;}
+.horizontal-sliding-nav-con {overflow: hidden; white-space: nowrap;}
     .horizontal-sliding-nav-con .horizontal-sliding-nav {white-space: nowrap; overflow: auto; padding: 4px 5px; border-top: 1px solid #0ab; border-bottom: 1px solid #0ab;}
         .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.btn-stream {min-width: 70px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {font-size: 14px;}
@@ -271,9 +272,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
-    box-shadow: none;
+    box-shadow: none; line-height: 1;
     position: relative; cursor: pointer; font-size: 14px; color: #fff;
-    border-radius: 5px; background-color: #0ab; border: 1px solid #078; box-shadow: 0 0 3px #0cd inset;}
+    border-radius: 5px; background-color: #0ab; border: 1px solid #078; box-shadow: 0 0 3px #000, 0 0 3px #0cd inset;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
     background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
@@ -500,6 +501,7 @@ body.footer nav#footer {display: block;}
     /* ALERTS PANEL */
     #alerts-panel {background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
         #alerts-panel #alert-items.horizontal-sliding-nav-con {height: 85px; padding: 5px;}
+
     /*
     #alerts-panel {display: none; padding: 5px; box-shadow: 0 -3px 5px #000, 0 0 3px #0ef inset; background-color: #078;}
     #alerts-panel.active {display: block;}
