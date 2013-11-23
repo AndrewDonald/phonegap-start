@@ -166,11 +166,11 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 .toggle {cursor: pointer; color: #277;}
 /*.divider {color: #999; font-weight: bold; margin-right: -2px;}*/
 
-.label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #fff; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #0ab;}
+.label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #0ef; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #0ab;}
 
 
-.menu-transparent {background-color: rgba(0, 25, 30, 0.8); /*box-shadow: 0 0 5px #000 inset;*/}
-.menu-transparent-light {background-color: rgba(0, 100, 120, 0.9);}
+.menu-transparent {background-color: rgba(0, 50, 60, 0.8); /*box-shadow: 0 0 5px #000 inset;*/}
+.menu-transparent-light {background-color: rgba(0,170,190,0.9);}
 
 .well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
     .menu-transparent .well-lucid {border-color: #078;}
@@ -235,8 +235,8 @@ h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
 .stream-controls-carousel.carousel > .carousel-indicators {}
 
 /* HORIZONTAL SLIDING NAV */
-.horizontal-sliding-nav-con {position: relative; padding: 4px 0 4px 50px; overflow: hidden; border-bottom: 1px solid #0ef;}
-    .horizontal-sliding-nav-con .horizontal-sliding-nav {white-space: nowrap; overflow: auto; padding: 0 5px;}
+.horizontal-sliding-nav-con {overflow: hidden;}
+    .horizontal-sliding-nav-con .horizontal-sliding-nav {white-space: nowrap; overflow: auto; padding: 4px 5px; border-top: 1px solid #0ab; border-bottom: 1px solid #0ab;}
         .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.btn-stream {min-width: 70px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn {font-size: 14px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn:last-child {margin-right: 5px;}
@@ -267,9 +267,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 220, 235, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 200, 220, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
     sup.badge .glyphicon {font-size: 10px;}
-    .btn-link-lucid.active .badge, .btn-lucid.active .badge {/*background-color: rgba(255,255,255,0.7); color: #fff;*/}
+    .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none;
     position: relative; cursor: pointer; font-size: 14px; color: #fff;
@@ -291,12 +291,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {margin: 8px 3.5px 12px; height: 52px; width: 52px; background-size: 50px 50px; border: 1px solid #00AABB;}
-    .btn-lucid.user.active {border-color: #ff6; box-shadow: 0 0 5px #ff6 inset;}
+.btn-lucid.user {margin: 8px 3.5px 12px; height: 52px; width: 52px; background-size: 50px 50px; border: 1px solid #0ef; box-shadow: 0 0 5px #000;}
+    .btn-lucid.user.active {border-color: #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #ff6 inset;}
         .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 54px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .name {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
+
+        .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
 
         .btn-lucid.user > sub {width: 100%; left: 0; text-align: left; line-height: 1; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 8px;}
             .btn-lucid.user > sub > .stream-indicator-icon {font-size: 16px;}
@@ -330,8 +332,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
-.tab-lucid {color: #0ab; background-color: rgba(0, 25, 30, 0.8); height: 30px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: 1px solid #0ab; border-bottom: none; box-shadow: 0 -3px 3px #000; z-index: 1;}
-    .tab-lucid.active {border-color: #0ef; color: #fff; background-color: rgba(0,100,120,0.9);}
+.tab-lucid {color: #fff; background-color: #0ab; height: 30px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: 1;}
+    .tab-lucid.active {border-color: #0ef; background-color: rgba(0,220,240,0.9);}
 
 .chevron-toggle {position: relative; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: rgba(255,255,255,0.8); color: #0bc; text-shadow: 0 0 2px #005566;}
     .chevron-toggle > span {position: absolute; top: 0; left: 0;}
@@ -344,10 +346,12 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
+/*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
     .controls-toggle > .chevron-toggle {margin-right: -5px;}
         .controls-toggle > sup {top: -30px; right: -15px; font-size: 10px;}
+*/
 .color-male {color: #00f;}
 .color-female {color: #FFC0CB;}
 
@@ -413,7 +417,7 @@ nav#header {z-index: 2002; box-shadow: 0 1px 5px #000000;}
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
 #pages {padding: 40px 0 600px;}
-body.message-panel #pages {padding-top: 75px;}
+body.message-panel #pages {padding-top: 95px;}
     #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
@@ -494,8 +498,8 @@ body.footer nav#footer {display: block;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* ALERTS PANEL */
-    #alerts-panel {}
-        #alerts-panel #alert-items.horizontal-sliding-nav-con {padding-left: 2px;}
+    #alerts-panel {background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
+        #alerts-panel #alert-items.horizontal-sliding-nav-con {height: 85px; padding: 5px;}
     /*
     #alerts-panel {display: none; padding: 5px; box-shadow: 0 -3px 5px #000, 0 0 3px #0ef inset; background-color: #078;}
     #alerts-panel.active {display: block;}
@@ -535,7 +539,7 @@ body.footer nav#footer {display: block;}
         #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
     
     body[data-page=page-conversation] #people-panel {}
-        body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 5px; white-space: nowrap; overflow: auto; border-bottom: 1px solid #0ef;}
+        body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 5px; white-space: nowrap; overflow: auto;}
             body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
 
         #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
