@@ -572,7 +572,7 @@ body.footer nav#footer {display: block;}
                 .connection-items-list > li.list-group-item:not(.day-header) {min-height: 80px;}
                 /*.connection-items-list > li.viewed {display: none;}*/
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
-                .connection-items-list > li.day-header {text-align: center; width: 100%; color: #0ab;}
+                .connection-items-list > li.day-header {text-align: center; color: #0ab;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
                 .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
