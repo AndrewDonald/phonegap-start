@@ -72,7 +72,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 0 0 0 10px; border-color: #f90;}
+blockquote, .well blockquote {margin: 0; padding: 2px 5px; border: 1px solid #0ef; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
 .modal {z-index: 4000; padding-top: 100px;}
 
 .list-group-item {margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
@@ -299,7 +299,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
 .btn-lucid.user {margin: 8px 3.5px 12px; height: 52px; width: 52px; background-size: 50px 50px; border: 1px solid #0ef; box-shadow: 0 0 5px #000;}
-    .btn-lucid.user.active {border: 2px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #ff6 inset;}
+    .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}
         .btn-lucid.user > label {margin: 0 -12.5px; color: #fff; font-size: 12px; top: 54px; left: 0; position: absolute; text-align: center; width: 70px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .name {display: block;}
@@ -568,11 +568,11 @@ body.footer nav#footer {display: block;}
                 .connection-items-list {max-height: 124px;}
             }*/
 
-                .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0 0 10px 55px; padding: 0;}
-                .connection-items-list > li.list-group-item:not(.day-header) {min-height: 80px;}
+                .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0; padding: 0;}
+                .connection-items-list > li.list-group-item:not(.day-header) {min-height: 80px; margin: 0 0 10px 55px;}
                 /*.connection-items-list > li.viewed {display: none;}*/
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
-                .connection-items-list > li.day-header {text-align: center; color: #0ab;}
+                .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
                 .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
@@ -589,15 +589,15 @@ body.footer nav#footer {display: block;}
                             .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
                     .connection-item-panel .panel-body {padding: 0;}
                         .connection-item-panel .panel-body .connection-content {}
-                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; color: #f90; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
-                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; color: #f90; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
+                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
                 .connection-items-list > li.viewed {border-color: #0ab;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: none;}
                     .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
                 /* If is User switch profile pic to right side */
                 .connection-items-list > li.list-group-item[data-you] {margin: 0 55px 10px 0;}
                     .connection-items-list > li.list-group-item[data-you] .connection-item-panel .panel-header {right: -50px;}
-                    .connection-items-list > li.list-group-item[data-you] blockquote {border-left: none; border-right: 5px solid #f90;}
+                    .connection-items-list > li.list-group-item[data-you] blockquote {}
         .connection-items-con.specific-user {}
 
     /* APP COMPONENTS */
