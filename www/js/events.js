@@ -143,7 +143,7 @@ function initEventHandlers(){
                     $('body').toggleClass('footer message-panel').attr('data-page', pageTarget);
                     $('#message-panel').toggleClass('active');
                     $('#alerts-panel').toggleClass('active');
-                    $('#page-test').toggleClass('active');
+                    $('#page-conversation').toggleClass('active');
                     break;
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');

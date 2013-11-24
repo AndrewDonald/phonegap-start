@@ -58,8 +58,9 @@ pre.active {background-color: #0bc; border-color: #0ef;}
         .carousel .carousel-indicators .btn-lucid.active {height: 50px; min-width: 50px; margin: 0 2px;}
 
 .panel {margin-bottom: 0;}
-.panel .panel-heading {padding: 5px; color: #333;}
-.panel .panel-body {padding: 5px;}
+.panel .panel-heading {padding: 5px; color: #333; background-color: transparent;}
+.panel .panel-body {padding: 5px; background-color: transparent;}
+.panel .panel-footer {background-color: transparent; padding: 0; border: none;}
 
 .dropdown-menu {margin: 0; color: #fff; padding: 0; z-index: 3000; box-shadow: 2px 2px 5px #000; background-color: rgba(0, 180, 195, 0.85); border: 2px solid #0ef;}
     .dropdown-menu > li > a {padding: 3px 10px; color: #fff; cursor: pointer;}
@@ -72,7 +73,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 2px 5px; border: 1px solid #0ef; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
+blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px; border: 1px solid #0ef; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
 .modal {z-index: 4000; padding-top: 100px;}
 
 .list-group-item {margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
@@ -147,8 +148,9 @@ blockquote, .well blockquote {margin: 0; padding: 2px 5px; border: 1px solid #0e
 body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0;
     background: #f0ffff; line-height: 1.4;}
 
-h1 {font-size: 18px; color: #999; margin-bottom: 10px;}
-h2 {font-size: 16px; color: #999; margin-bottom: 0px;}
+h1, h2 {color: #999; margin: 10px 0;}
+h1 {font-size: 18px;}
+h2 {font-size: 16px;}
 
 .form {padding: 0; color: #fff; clear: both;}
     .form .form-row {margin-bottom: 10px;}
@@ -380,7 +382,7 @@ nav#header {z-index: 2002; box-shadow: 0 1px 5px #000000;}
         nav#header > .masthead .monarch {height: 20px; margin-top: -4px;}
         nav#header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-teal.png"); background-repeat: no-repeat; background-size: 100% auto;}
             nav#header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
-        nav#header > .masthead .logo {width: 100px; margin: 0 -5px 5px 5px;}
+        nav#header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     /* GOBAL USER INPUT */
@@ -424,7 +426,7 @@ nav#header {z-index: 2002; box-shadow: 0 1px 5px #000000;}
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
 #pages {padding: 40px 0 600px;}
-body.message-panel #pages {padding-top: 95px;}
+body.message-panel #pages {padding-top: 85px;}
     #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
@@ -463,6 +465,12 @@ body.message-panel #pages {padding-top: 95px;}
         #join-conversation .conversation-lists .form-control {display: none; height: 200px; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
         #join-conversation .conversation-lists .form-control.active {display: block;}
 
+    /* PAGE CONVERSATION */
+    #page-conversation {}
+        #page-conversation .connection-items-con > .well {box-shadow: none; background-color: #f0ffff; border: none;}
+            #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
+                #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
+
 /* FOOTER */
 nav#footer {display: none;}
 body.footer nav#footer {display: block;}
@@ -471,10 +479,10 @@ body.footer nav#footer {display: block;}
         .control-panel {}
 
     /* CONTROL TABS */
-    #tab-stream.tab-lucid {left: 15px;}
-    #tab-filter.tab-lucid {left: 85px;}
-    #tab-people.tab-lucid {left: 155px;}
-    #tab-alerts.tab-lucid {left: 225px;}
+    #tab-people.tab-lucid {left: 15px; font-size: 12px;}
+    #tab-stream.tab-lucid {left: 85px;}
+    #tab-filter.tab-lucid {left: 155px; font-size: 12px;}
+    /*#tab-alerts.tab-lucid {left: 225px;}*/
     
     /* PEOPLE PANEL */ 
     #people-panel {}
@@ -506,7 +514,7 @@ body.footer nav#footer {display: block;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* ALERTS PANEL */
-    #alerts-panel {background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
+    #alerts-panel {height: 5px; background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
         #alerts-panel #alert-items.horizontal-sliding-nav-con {height: 85px; padding: 5px;}
             #alerts-panel #alert-items.horizontal-sliding-nav-con 
     /*
@@ -548,7 +556,7 @@ body.footer nav#footer {display: block;}
         #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
     
     body[data-page=page-conversation] #people-panel {}
-        body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #0cd; box-shadow: 0 -1px 17px #056 inset; white-space: nowrap; overflow: auto;}
+        body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
             body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
         body[data-page=page-conversation] #people-panel .panel-body #connection-items-header {display: none;}
 
@@ -558,46 +566,57 @@ body.footer nav#footer {display: block;}
             #connection-items-header .btn.active {color: #ff6;}
 
         .connection-items-con {display: none;}
+        #page-conversation .connection-items-con {display: block;}
         .connection-items-con .btn-lucid-normal,
         .connection-items-con .btn-lucid-normal,
         .connection-items-con .btn-lucid-normal:hover,
         .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
             .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
-            .connection-items-list {height: 100px; overflow: auto; padding: 5px;}
+            .connection-items-list {height: 190px; overflow: auto; padding: 5px;}
             /*@media all and (max-height: 360px) {
                 .connection-items-list {max-height: 124px;}
             }*/
 
                 .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0; padding: 0;}
-                .connection-items-list > li.list-group-item:not(.day-header) {min-height: 80px; margin: 0 0 10px 55px;}
+                .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 60px 10px;}
                 /*.connection-items-list > li.viewed {display: none;}*/
                 .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                 .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
                 .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
-                    .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute; width: 45px;}
-                    .connection-items-list > li.list-group-item:not([data-you]) .connection-item-panel .panel-header {left: -55px;} 
+                    .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
+                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -60px;} 
                         .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                         .connection-item-panel .panel-header .username {display: block;}
                         .connection-item-panel .panel-header .status {color: #0ab;}
-                            .connection-item-panel .panel-header .status .sent {display: block;}
-                            .connection-item-panel .panel-header .status .viewed-icon {display: none;}
-                            .connection-item-panel .panel-header .status .not-viewed-icon {display: none; color: #0ab;}
-                            .connection-item-panel .panel-header .status .btn.like {margin-top: -5px; font-size: 10px;}
-        body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
-                            .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
-                    .connection-item-panel .panel-body {padding: 0;}
-                        .connection-item-panel .panel-body .connection-content {}
-                        .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
-                        .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
+                            
+                        .connection-item-panel .panel-body {position: relative; padding: 0;}
+                            .connection-item-panel .panel-body .connection-content {}
+                            .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
+                            .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
+                                .connection-items-list > li.list-group-item .connection-item-panel .panel-body .callout-pointer {position: absolute; top: 8px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
+                                .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-body .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: none;}
+                            .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
+                                .connection-item-panel .status .viewed-icon {display: none;}
+                                .connection-item-panel .status .not-viewed-icon {display: none; color: #0ab;}
+                                /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
+                                body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
+                                .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
+                                */
+                        .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
+                        .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-footer {right: -65px;}
+                            
                 .connection-items-list > li.viewed {border-color: #0ab;}
-                    .connection-items-list > li.viewed .connection-item-panel .panel-header .status .viewed-icon {display: none;}
-                    .connection-items-list > li.viewed .connection-item-panel .panel-header .status .not-viewed-icon {display: none;}
+                    .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
+                    .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
                 /* If is User switch profile pic to right side */
-                .connection-items-list > li.list-group-item[data-you] {margin: 0 55px 10px 0;}
-                    .connection-items-list > li.list-group-item[data-you] .connection-item-panel .panel-header {right: -50px;}
-                    .connection-items-list > li.list-group-item[data-you] blockquote {}
+                .connection-items-list > li.list-group-item.you {margin: 0 60px 10px;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -60px;}
+                    .connection-items-list > li.list-group-item.you blockquote {}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: none;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -65px;}
+        .connection-item-panel .btn-like {display: none;}   
         .connection-items-con.specific-user {}
 
     /* APP COMPONENTS */
