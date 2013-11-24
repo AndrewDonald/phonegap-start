@@ -393,13 +393,13 @@ function initEventHandlers(){
             $(this).removeClass('active');
             $('#send-message').prop('placeholder', 'message everyone');
             $('.connection-items-con.active').removeClass('active');
-            $('#connection-items-header, .connection-items-con[data-userid="' + $(this).data('userid') + '"]').slideUp('fast');
+            $('OMIT#connection-items-header, .connection-items-con[data-userid="' + $(this).data('userid') + '"]').slideUp('fast');
         }else{
             $('#people-panel.vertical > #people-nav').scrollTo($(this), 1000);
             $('body.filter-controls .filter-controls-toggle, #people-controls .btn.grid-toggle.active').click();
             $(this).addClass('active').siblings('.active').removeClass('active');
             $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
-            $('#connection-items-header').slideDown('fast');
+            $('OMIT#connection-items-header').slideDown('fast');
             $('.connection-items-con[data-userid="' + $(this).data('userid') + '"]').addClass('active').slideDown('fast')
                 .siblings('.active').removeClass('active').slideUp('fast');  
         }
