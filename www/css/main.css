@@ -8,7 +8,7 @@ label {margin-bottom: 0;}
 .nav > li > a:focus,
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
-.navbar {border: none; background: none; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+.navbar {border: none; background: none;}
     .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
 .form-group {margin-bottom: 0 !important;}
@@ -370,8 +370,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
-nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000000;}
-    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #0ab; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
+nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
+    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 5px #0ef inset, 0 0 2px #000; z-index: 2001; background-color: #0ab;}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
         #control-panels-toggle {width: 40px;}
@@ -384,11 +384,14 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000000;}
         nav#header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
-    /* GOBAL USER INPUT */
-    #message-panel {display: none; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -1px 3px #000;}
+    /* MESSAGE PANEL */
+    #message-panel {display: none; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
     #message-panel.active {display: block;}
         #send-message.private {background-color: #cff;}
 
+    /* NOTIFICATIONS PANEL */
+    #notifications-panel {display: none; background-color: rgba(0,0,0,0.75); color: #0bf; font-size: 12px; padding: 0 5px; border-bottom: 1px solid #0bf;}
+    #notifications-panel.active {display: block;}
     /* STREAM CONTROLS */
     .btn-stream-controls > .stream-icon {margin-top: 5px;}
         .stream-filters > .btn .added-stream {font-size: 20px; line-height: 14px;}

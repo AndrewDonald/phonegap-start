@@ -129,7 +129,7 @@ function initEventHandlers(){
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
         }else{
-            var pageTarget = $(this).data('toggle-item');
+            var target = $(this).data('toggle-item');
             /*
             var classTarget = $(this).data('class-target');
             if(typeof classTarget == "undefined"){
@@ -137,23 +137,30 @@ function initEventHandlers(){
             }
             */
             
-            $('#pages > .page.active').removeClass('active');
-            switch(pageTarget){
+            
+            switch(target){
                 case 'page-conversation':
-                    $('body').toggleClass('footer message-panel').attr('data-page', pageTarget);
+                    $('#pages > .page.active').removeClass('active');
+                    $('body').toggleClass('footer message-panel').attr('data-page', target);
                     $('#message-panel').toggleClass('active');
                     $('#alerts-panel').toggleClass('active');
                     $('#page-conversation').toggleClass('active');
                     break;
                 case 'page-people':
+                    $('#pages > .page.active').removeClass('active');
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
                     $('#people-panel').addClass('vertical');
                     $('#people-panel').toggleClass('active').show();
                     $('.people-controls-toggle').click();
                     break;
+                case 'notifications-panel':
+                    $('body').toggleClass(target);
+                    $('#notifications-panel').addClass('.active').slideToggle();
+                    break;
                 default:
-                    $('#pages > .page#' + pageTarget).addClass('active');
+                    $('#pages > .page.active').removeClass('active');
+                    $('#pages > .page#' + target).addClass('active');
                     break;
             }
         }
