@@ -471,7 +471,7 @@ body.message-panel #pages {padding-top: 85px;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
 /* FOOTER */
-nav#footer {display: none; min-height: 5px; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
+nav#footer {display: none; min-height: 15px; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
 body.footer nav#footer {display: block;}
     /* CONTROLS PANELS */
     #controls-panel {}
@@ -485,53 +485,6 @@ body.footer nav#footer {display: block;}
     
     /* PEOPLE PANEL */ 
     #people-panel {}
-        
-    /* STREAM PANEL */
-    #stream-panel {}
-        /* Stream */
-        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
-        #stream-name:before {content: "~";}
-        .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
-        /* Associated Streams */
-        .slider-status-con .list-group > li > a {}
-            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
-            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
-        .slider-status-con .list-group > li.active {}
-            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
-                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
-                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
-    
-    /* FILTER PANEL */
-    #filter-panel {}
-        .filter-status {display: none;}
-        .filter-controls {display: none;}
-        .filter-info {margin: -5px 0 -11px 25px; line-height: 1.5; color: #fff; font-weight: bold; overflow: hidden; font-size: 12px;}
-            .filter-info > .badge {top: -10px; left: 5px;}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
-    
-    /* ALERTS PANEL */
-    /*
-    #alerts-panel {height: 5px; background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
-        #alerts-panel #alert-items.horizontal-sliding-nav-con {height: 85px; padding: 5px;}
-            #alerts-panel #alert-items.horizontal-sliding-nav-con 
-    /*
-    #alerts-panel {display: none; padding: 5px; box-shadow: 0 -3px 5px #000, 0 0 3px #0ef inset; background-color: #078;}
-    #alerts-panel.active {display: block;}
-        .alerts-con {color: #0ef; padding: 2px 5px; box-shadow: 0 0px 3px #000 inset; background-color: #000; border-radius: 3px;}
-    */
-    /* 
-        #people-panel .legend {color: #045; font-size: 12px;}
-            #people-panel .legend > .legend-item  {line-height: 0.5;}
-            #people-panel .legend > .legend-item:before {content: '/'; padding: 0 1px 0 3px;}
-             #people-panel .legend > .legend-item:first-child:before {content: ''; padding: 0;}
-                #people-panel .legend > .legend-item > span {font-size: 22px; color: #034;}
-                #people-panel .legend > span > span.glyphicon {font-size: 12px; color: #034;}
-    */
         #people-panel #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
         
             #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
@@ -557,6 +510,37 @@ body.footer nav#footer {display: block;}
                     #people-panel:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
         #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
     
+    /* STREAM PANEL */
+    #stream-panel {}
+        /* Stream */
+        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
+        #stream-name:before {content: "~";}
+        .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
+        /* Associated Streams */
+        .slider-status-con .list-group > li > a {}
+            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
+            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
+        .slider-status-con .list-group > li.active {}
+            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
+                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
+                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
+    
+    /* FILTER PANEL */
+    #filter-panel {}
+        .filter-controls {display: none;}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
+    
+    /* FILTER PANEL */
+    #stream-status-panel {font-size: 9px; font-weight: normal; overflow: hidden; color: #fff; padding: 0 5px; box-shadow: 0 0 5px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+        #stream-status-panel .glyphicon-filter {font-size: 6px; padding-right: 2px;}
+        #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 1px 3px; font-weight: normal; font-size: 9px;}
+
+    /* CONVERSATION PAGE */
     body[data-page=page-conversation] #people-panel {}
         body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
             body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
