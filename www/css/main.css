@@ -536,8 +536,8 @@ body.footer nav#footer {display: block;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* FILTER PANEL */
-    #stream-status-panel {font-size: 9px; font-weight: normal; overflow: hidden; color: #fff; padding: 0 5px; box-shadow: 0 0 5px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
-        #stream-status-panel .glyphicon-filter {font-size: 6px; padding-right: 2px;}
+    #stream-status-panel {font-size: 10px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 5px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+        #stream-status-panel .glyphicon-filter {font-size: 8px;}
         #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 1px 3px; font-weight: normal; font-size: 9px;}
 
     /* CONVERSATION PAGE */
