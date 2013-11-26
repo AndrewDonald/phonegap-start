@@ -8,7 +8,7 @@ label {margin-bottom: 0;}
 .nav > li > a:focus,
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
-.navbar {background: none; min-height: 0;}
+.navbar {border: none; background: none; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
     .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
 .form-group {margin-bottom: 0 !important;}
@@ -40,7 +40,6 @@ pre.active {background-color: #0bc; border-color: #0ef;}
     background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #333; display: block; font-size: 12px; font-weight: bold; height: 34px;
     line-height: 1.42857; padding: 3px 5px; vertical-align: middle; width: 97%;}
-.navbar {border: none;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
     .alert a.alert-link {text-decoration: none;}
 .carousel {padding: 5px;}
@@ -341,7 +340,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
-.tab-lucid {color: #fff; background-color: #078; height: 30px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 -1px 5px #000;}
+.tab-lucid {color: #fff; background-color: #078; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 -1px 5px #000;}
     .tab-lucid.active {background-color: #0ab; box-shadow: 0 1px 2px #0ef inset, 0 -1px 5px #000;}
 
 .chevron-toggle {position: relative; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: rgba(255,255,255,0.8); color: #0bc; text-shadow: 0 0 2px #005566;}
@@ -371,7 +370,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 /* HEADER */   
-nav#header {z-index: 2002; box-shadow: 0 1px 5px #000000;}
+nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000000;}
     nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 3px #000; z-index: 2001; background-color: #0ab; background-image: linear-gradient(to bottom, #0ab 0px, #078 100%);}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         nav#header > .masthead .main-nav.left {left: 5px;}
@@ -472,7 +471,7 @@ body.message-panel #pages {padding-top: 85px;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
 /* FOOTER */
-nav#footer {display: none;}
+nav#footer {display: none; min-height: 5px; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
 body.footer nav#footer {display: block;}
     /* CONTROLS PANELS */
     #controls-panel {}
@@ -504,6 +503,8 @@ body.footer nav#footer {display: block;}
     
     /* FILTER PANEL */
     #filter-panel {}
+        .filter-status {display: none;}
+        .filter-controls {display: none;}
         .filter-info {margin: -5px 0 -11px 25px; line-height: 1.5; color: #fff; font-weight: bold; overflow: hidden; font-size: 12px;}
             .filter-info > .badge {top: -10px; left: 5px;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
@@ -514,6 +515,7 @@ body.footer nav#footer {display: block;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* ALERTS PANEL */
+    /*
     #alerts-panel {height: 5px; background-color: #0ab; background-image: linear-gradient(to bottom, #00AABB 30%, #007788 100%); box-shadow: 0 -1px 3px #000, 0 0 5px #0ef inset;}
         #alerts-panel #alert-items.horizontal-sliding-nav-con {height: 85px; padding: 5px;}
             #alerts-panel #alert-items.horizontal-sliding-nav-con 
