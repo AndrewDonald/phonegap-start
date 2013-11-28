@@ -9,6 +9,7 @@ var _session            = {};
     _session.stream.id  = 0;
     
 var _application                                = {};
+    _application.version                        = "0.2.2";
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
@@ -68,7 +69,8 @@ var _lucid                          = {};
 
 $(function() {
     initEventHandlers();
-    app.receivedEvent(); //app.initialize();
+    //app.initialize(); //app.initialize(); // app.receivedEvent();
+    aquireGeoLocation();
     
    // $('.max-height').css('max-height', $(window).height() - 128);
 });

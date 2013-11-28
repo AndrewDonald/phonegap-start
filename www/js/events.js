@@ -21,7 +21,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         // Display Loader Lightbox
-        $('#modal-loader .modal-body').html('LucidLife is initializing...');
+        $('#modal-loader .modal-body').html('Getting location...');
         $('#modal-loader').modal('show');
         
         // Aquire GEO Location

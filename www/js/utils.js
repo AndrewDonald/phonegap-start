@@ -56,11 +56,22 @@ $.fn.scrollTo = function( targetDom ){
 
 
 // GEO-LOCATION
+function aquireGeoLocation(){
+    // Display Loader Lightbox
+    $('#modal-loader .modal-body').html('Getting location...');
+    $('#modal-loader').modal({backdrop:false, keyboard:false});
+    //$('#modal-loader').modal('show');
+    
+    // Aquire GEO Location
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
+}
+
 // onSuccess Callback
 //   This method accepts a `Position` object, which contains
 //   the current GPS coordinates
 //
-var geoSuccess = function(position) {
+function geoSuccess(position) {
+    /*
     alert('GEO LOCATION INFO\n\n' +
           'Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
@@ -70,20 +81,24 @@ var geoSuccess = function(position) {
           'Heading: '           + position.coords.heading           + '\n' +
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
+    */
     _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
+    updateAbout();
     $('#modal-loader').modal('hide');
     $('#modal-loader .modal-body').html();
-    $("#page-device-loader").removeClass('active');
     $("#page-login").addClass('active');
-};
+}
 
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
     //alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS.');
-    $('#modal-loader').modal('hide');
-    $('#modal-loader .modal-body').html();
-    $("#page-device-loader").removeClass('active');
-    $("#page-login").addClass('active');
-};
+    alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS before continuing.');
+    aquireGeoLocation();
+}
+
+function updateAbout(){
+    $('#modal-about .version').html(_application.version);
+    $('#modal-about .latitude').html(_application.geo.latitude);
+    $('#modal-about .longitude').html(_application.geo.longitude);
+}
