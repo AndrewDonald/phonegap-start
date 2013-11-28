@@ -67,17 +67,11 @@ _lucid.panel.apps               = ["chat","polls","surveys","promos","games","fa
 _lucid.panel.apps.active        = 0;
 
 $(function() {
-    // Aquire GEO Location (Wait for App to load)
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-    /*
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-        //navigator.geolocation.getCurrentPosition(geoSuccess, geoError,{enableHighAccuracy:true});
-    }
-    */
-   // $('.max-height').css('max-height', $(window).height() - 128);
     initEventHandlers();
+
+    app.initialize();
+    
+   // $('.max-height').css('max-height', $(window).height() - 128);
 });
 
 // Show Step-1 of Create User Form

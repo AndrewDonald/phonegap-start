@@ -176,6 +176,25 @@ h2 {font-size: 16px;}
 .well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
     .menu-transparent .well-lucid {border-color: #078;}
 
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }

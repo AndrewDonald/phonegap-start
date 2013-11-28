@@ -51,6 +51,10 @@ $.fn.scrollTo = function( targetDom ){
     });
 }
 
+
+
+
+
 // GEO-LOCATION
 // onSuccess Callback
 //   This method accepts a `Position` object, which contains
@@ -71,6 +75,6 @@ var geoSuccess = function(position) {
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
-    alert('** GEO ERROR (DEV Message Only)**\ncode: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+    alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
     alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS.');
 }
