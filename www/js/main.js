@@ -68,7 +68,7 @@ var _lucid                          = {};
 
 $(function() {
     initEventHandlers();
-    app.initialize();
+    app.receivedEvent(); //app.initialize();
     
    // $('.max-height').css('max-height', $(window).height() - 128);
 });

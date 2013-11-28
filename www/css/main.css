@@ -147,7 +147,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
 body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0;
     background: #f0ffff; line-height: 1.4;}
 
-h1, h2 {color: #999; margin: 10px 0;}
+h1, h2 {color: #999; margin: 0 0 10px;}
 h1 {font-size: 18px;}
 h2 {font-size: 16px;}
 
@@ -170,30 +170,10 @@ h2 {font-size: 16px;}
 
 .label-lucid {color: #fff; padding: 1px 3px 0px 2px; border: 1px solid #0ef; border-radius: 5px; box-shadow: 1px 1px 1px #333; background-color: #0ab;}
 
-
 .menu-transparent-light {background-color: rgba(0,170,190,0.9);}
 
 .well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
     .menu-transparent .well-lucid {border-color: #078;}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
 
 @keyframes fade {
     from { opacity: 1.0; }
@@ -346,14 +326,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 1px #045; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #0bf;}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 0 2px #045; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #0bf;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0cd; box-shadow: 0 0 1px #FFFFFF inset;}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #e9df00; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
@@ -397,7 +377,7 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
         nav#header > .masthead .main-nav.right {right: 5px;}
         nav#header > .masthead center {padding-top: 5px;}
         nav#header > .masthead .logo-con {padding-right: 2px; width: 140px;}
-        nav#header > .masthead .monarch {height: 20px; margin-top: -4px;}
+        nav#header > .masthead .monarch {height: 20px; margin-top: -8px;}
         nav#header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-teal.png"); background-repeat: no-repeat; background-size: 100% auto;}
             nav#header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
         nav#header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
@@ -446,8 +426,8 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-#pages {padding: 40px 0 600px;}
-body.message-panel #pages {padding-top: 85px;}
+#pages {padding: 70px 0 600px;}
+body.message-panel #pages {padding-top: 105px;}
     #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
         #page-stream .show-stream,
@@ -592,7 +572,7 @@ body.footer nav#footer {display: block;}
                 .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
                 .connection-items-list .badge {font-weight: normal; font-size: 10px;}
                 .connection-items-list .alert-icon {color: #0ef;}
-                .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
+                .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none; min-height: 60px;}
                     .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
                     .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -60px;} 
                         .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
@@ -604,7 +584,7 @@ body.footer nav#footer {display: block;}
                             .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
                             .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
                                 .connection-items-list > li.list-group-item .connection-item-panel .panel-body .callout-pointer {position: absolute; top: 8px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
-                                .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-body .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: none;}
+                                .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-body .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: 1px solid #fff;}
                             .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
                                 .connection-item-panel .status .viewed-icon {display: none;}
                                 .connection-item-panel .status .not-viewed-icon {display: none; color: #0ab;}
@@ -622,7 +602,7 @@ body.footer nav#footer {display: block;}
                 .connection-items-list > li.list-group-item.you {margin: 0 60px 10px;}
                     .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -60px;}
                     .connection-items-list > li.list-group-item.you blockquote {}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: none;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 1px solid #fff;}
                     .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -65px;}
         .connection-item-panel .btn-like {display: none;}   
         .connection-items-con.specific-user {}

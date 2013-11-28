@@ -61,7 +61,8 @@ $.fn.scrollTo = function( targetDom ){
 //   the current GPS coordinates
 //
 var geoSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
+    alert('GEO LOCATION INFO\n\n' +
+          'Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
           'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -72,6 +73,8 @@ var geoSuccess = function(position) {
     _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
     $('#modal-loader').modal('hide');
     $('#modal-loader .modal-body').html();
+    $("#page-device-loader").removeClass('active');
+    $("#page-login").addClass('active');
 };
 
 // onError Callback receives a PositionError object
@@ -81,5 +84,6 @@ function geoError(error) {
     alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS.');
     $('#modal-loader').modal('hide');
     $('#modal-loader .modal-body').html();
+    $("#page-device-loader").removeClass('active');
+    $("#page-login").addClass('active');
 };
-}

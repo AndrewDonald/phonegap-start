@@ -20,21 +20,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        $('#modal-loader .modal-body').html('LucidLife Initializing...');
+        // Display Loader Lightbox
+        $('#modal-loader .modal-body').html('LucidLife is initializing...');
         $('#modal-loader').modal('show');
         
         // Aquire GEO Location
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
 
-        $("#page-device-loader").removeClass('active');
-        $("#page-login").addClass('active');
         //console.log('Received Event: ' + id);
     }
 };
