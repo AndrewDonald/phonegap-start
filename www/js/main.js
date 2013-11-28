@@ -49,26 +49,25 @@ var _application                                = {};
     _application.pic                            = {};
     _application.pic.height                     = 50;
     _application.pic.width                      = 50;
-    _application.mini                          = "-a."; // 50
+    _application.mini                           = "-a."; // 50
     _application.badge                          = "-b."; // 100
     _application.preview                        = "-c."; // 500
     _application.streamMember                   = {};
     _application.messageMember                  = {};
     _application.indicator                      = {unreadMessages:0,buddyrequests:0};
-    _application.geo                           = {"latitude":0,"longitude":0};
+    _application.geo                            = {"latitude":0,"longitude":0};
 
-var _lucid                      = {};
-_lucid.panel                    = {};
-_lucid.panel.stream             = {};
-_lucid.panel.stream.view        = ["all","people","chat","photos","videos","audio","stream","filter","profile"];
-_lucid.panel.stream.view.active = 0;
-_lucid.panel.pages              = ["stream","filter","profile"];
-_lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
-_lucid.panel.apps.active        = 0;
+var _lucid                          = {};
+    _lucid.panel                    = {};
+    _lucid.panel.stream             = {};
+    _lucid.panel.stream.view        = ["all","people","chat","photos","videos","audio","stream","filter","profile"];
+    _lucid.panel.stream.view.active = 0;
+    _lucid.panel.pages              = ["stream","filter","profile"];
+    _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
+    _lucid.panel.apps.active        = 0;
 
 $(function() {
     initEventHandlers();
-
     app.initialize();
     
    // $('.max-height').css('max-height', $(window).height() - 128);

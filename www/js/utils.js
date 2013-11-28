@@ -70,11 +70,16 @@ var geoSuccess = function(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
     _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
+    $('#modal-loader').modal('hide');
+    $('#modal-loader .modal-body').html();
 };
 
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
-    alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+    //alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
     alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS.');
+    $('#modal-loader').modal('hide');
+    $('#modal-loader .modal-body').html();
+};
 }
