@@ -18,72 +18,14 @@ function apiRequest(objMessage, callbackFunction, async) {
         data: 	  objMessage
     })
     .complete(function(response) {
-        $('#modal-loader .modal-body').html('Success! Created User #' + response.responseJSON.object.userid);
         return callbackFunction(response.responseJSON);
     })
     .fail(function() {
-        $('#modal-loader .modal-body').html('Failed.');
         return callbackFunction(0);
     });
 }
 
-
-// Login user
-function login(){
-    var objMessage = {};
-        objMessage.method      = "auth_user";
-        objMessage.email       = $('form#login-form input[name="username"]').val();
-        objMessage.password    = $('form#login-form input[name="password"]').val();
-    
-    apiRequest(objMessage, login_Callback, false);
-    
-    return false;
-}
-
-function login_Callback(result) {
-    if(result==0) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-	    initializeSession(result.object);
-	    executeLogin();
-            $('#Login-Lightbox').modal('hide');
-        }else{
-            // Server returned an error = failed authorization
-    	    if (result.message != undefined) {
-        		document.getElementById("login-password").setCustomValidity(result.message);
-        		setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
-        	}
-        }
-    }
-}
-
-// Logout User
-function logoutUser(){
-    var objMessage = {};
-        objMessage.method = "logout";
-
-    apiRequest(objMessage, logoutUser_Callback, false);
-    
-    return false;
-}
-
-function logoutUser_Callback(result) {
-    if(result==0) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-            // Successful
-        }else{
-            // Server returned an error = failed authorization
-        }
-
-	initializeSession();
-        executeLogout();
-    }
-}
-
-// Create User
+// CREATE USER
 function createUser(){
     var user = {};
     user.email          = $('#form-create-user [name=email]').val();
@@ -115,9 +57,8 @@ function createUser_Callback(result) {
         if(result.status > 0){
             // Successful
             _session.user = result.object;
-            alert('Created User #' + _session.user.userid);
-            $('#pages > .page').removeClass('active');
-            $('#page-new-thought').addClass('active');
+            //alert('Created User #' + _session.user.userid);
+            gotoPage('page-new-thought');
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
@@ -138,6 +79,61 @@ function createUser_Callback(result) {
     //$('form#form-create-user > .step1').addClass('active');
     //$('#form-thought').scrollTo();
 }
+
+
+// LOGIN USER
+function login(){
+    var objMessage = {};
+        objMessage.method      = "auth_user";
+        objMessage.email       = $('form#login-form input[name="username"]').val();
+        objMessage.password    = $('form#login-form input[name="password"]').val();
+    
+    apiRequest(objMessage, login_Callback, false);
+}
+
+function login_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+        alert('Login Rquest returned Failure');
+    }else{
+        if(result.status > 0){
+	       executeLogin();
+        }else{
+            // Server returned an error = failed authorization
+    	    if (result.message != undefined) {
+                alert('Failed Authorization.');
+        		//document.getElementById("login-password").setCustomValidity(result.message);
+        		//setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
+        	}
+        }
+    }
+}
+
+// Logout User
+function logoutUser(){
+    var objMessage = {};
+        objMessage.method = "logout";
+
+    apiRequest(objMessage, logoutUser_Callback, false);
+    
+    return false;
+}
+
+function logoutUser_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+        }else{
+            // Server returned an error = failed authorization
+        }
+
+	initializeSession();
+        executeLogout();
+    }
+}
+
 
 // Login user
 function ping(stream, status){

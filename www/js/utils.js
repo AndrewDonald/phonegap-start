@@ -51,7 +51,11 @@ $.fn.scrollTo = function( targetDom ){
     });
 }
 
-
+// GOTOPAGE
+function gotoPage(page){
+    $('#pages .page.active').removeClass('active');
+    $('#pages #' + page).addClass('active');
+}
 
 
 
@@ -60,7 +64,6 @@ function aquireGeoLocation(){
     // Display Loader Lightbox
     $('#modal-loader .modal-body').html('Getting location...');
     $('#modal-loader').modal({backdrop:false, keyboard:false});
-    //$('#modal-loader').modal('show');
     
     // Aquire GEO Location
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
@@ -86,7 +89,7 @@ function geoSuccess(position) {
     updateAbout();
     $('#modal-loader').modal('hide');
     $('#modal-loader .modal-body').html();
-    $("#page-login").addClass('active');
+    gotoPage("page-login");
 }
 
 // onError Callback receives a PositionError object
