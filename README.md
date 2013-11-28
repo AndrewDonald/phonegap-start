@@ -1,50 +1,24 @@
-# PhoneGap Build Starter Application
+# Apache Cordova Hello World Application
 
-> A Hello World application to get started with PhoneGap Build.
+Simple Hello World application. This is used as the default app template
+when creating new projects.
 
-## Usage
+## Versions and Tags
 
-### Run Application
+The Hello World's version is directly tied to an Apache Cordova release.
 
-    /www/index.html
+For example, Hello World `2.0.0` is compatible with Apache Cordova `2.0.0`.
 
-### Run Tests
+To update the snapshot within a platform repo, copy `www/` into the repo's
+template directory, and copy in the relevant files from `res/` as well.
 
-    /www/spec.html
+## How to Update
 
-### PhoneGap/Build
+Update to Apache Cordova x.x.x by:
 
-Create a new app with the following repository:
-
-    https://github.com/phonegap/phonegap-start.git
-
-## Updating the Application
-
-The application is based on the [Apache Cordova Hello World][cordova-app] app.
-
-### 1. Update the Source
-
-    cp cordova-app-hello-world/www www/
-
-__Do not replace `www/config.xml`.__
-
-__Do not replace `www/img/logo.png`.__
-
-### 2. Update index.html
-
-Replace `<h1>Apache Cordova</h1>` with `<h1>PhoneGap</h1>`.
-
-### 3. Update PhoneGap Version
-
-    <preference name="phonegap-version" value="x.x.x" />
-
-### 4. Commit
-
-    $ git commit -am "Version x.x.x"
-
-### 5. Tag
-
-    $ git tag x.x.x
-
-[cordova-app]: http://github.com/apache/cordova-app-hello-world
+1. `VERSION`
+    - Update the version
+2. Commit and Tag
+    - `git commit -am "[app] Version x.x.x"`
+    - `git tag x.x.x`
 
