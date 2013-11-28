@@ -68,7 +68,7 @@ _lucid.panel.apps.active        = 0;
 
 $(function() {
     // Aquire GEO Location (Wait for App to load)
-    //navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
     /*
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
