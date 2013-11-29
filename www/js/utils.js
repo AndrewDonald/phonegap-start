@@ -58,15 +58,27 @@ function gotoPage(page){
 }
 
 
+function openLoader(message, options){
+    $('#modal-loader .modal-body').html(message);
+
+    if(typeof secure != "undefined"){
+        $('#modal-loader').modal(options);
+    }else{
+        $('#modal-loader').modal('show');
+    }
+}
+
+function closeLoader(){
+    $('#modal-loader').modal('hide');
+}
 
 // GEO-LOCATION
 function acquireGeoLocation(){
     // Display Loader Lightbox
-    $('#modal-loader .modal-body').html('Acquiring location...');
-    $('#modal-loader').modal({backdrop:false, keyboard:false});
+    openLoader('Acquiring location...', {backdrop:false, keyboard:false});
     
     // Aquire GEO Location
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
+    return navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
 }
 
 // onSuccess Callback
@@ -87,9 +99,14 @@ function geoSuccess(position) {
     */
     _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
     updateAbout();
-    $('#modal-loader').modal('hide');
-    $('#modal-loader .modal-body').html();
+    closeLoader();
     gotoPage("page-login");
+
+    if(localStorage.getItem('email') && localStorage.getItem('password')){
+        $('#form-login input[name="email"]').val(localStorage.getItem('email'));
+        $('#form-login input[name="password"]').val( localStorage.getItem('password'));
+        loginUser();
+    }
 }
 
 // onError Callback receives a PositionError object
@@ -104,4 +121,14 @@ function updateAbout(){
     $('#modal-about .version').html(_application.version);
     $('#modal-about .latitude').html(_application.geo.latitude);
     $('#modal-about .longitude').html(_application.geo.longitude);
+    if(_session.user){
+        $('#modal-about .user-info-name').html(_session.user.fname + ' ' + _session.user.lname);
+        $('#modal-about .user-info-userid').html(_session.user.userid);
+        $('#modal-about .user-info-gender').html(_session.user.gender);
+        $('#modal-about .user-info-birthdate').html(_session.user.birthdate);
+        if(_session.user.userid){
+            $('#modal-about .user-info-status').html(_session.user.updatedate);
+        }
+        $('#modal-about .user-info-lastlogin').html(_session.user.lastlogin);
+    }
 }

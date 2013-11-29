@@ -158,7 +158,7 @@ function initEventHandlers(){
     */
 
     // Main Menu Items
-    $('#main-menu-items > li > a').on('click',function(){
+    $('#main-menu-items > li > a[data-toggle-item]').on('click',function(){
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
@@ -171,31 +171,26 @@ function initEventHandlers(){
             }
             */
             
-            
             switch(target){
                 case 'page-conversation':
                     $('body').toggleClass('footer message-panel').attr('data-page', target);
                     $('#message-panel').toggleClass('active');
                     $('#alerts-panel').toggleClass('active');
-                    gotPage(target);
                     break;
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
                     //$('#people-panel').addClass('vertical');
-                    gotPage(target);
                     //$('.people-controls-toggle').click();
                     break;
                 case 'notifications-panel':
                     $('body').toggleClass(target);
                     $('#notifications-panel').addClass('.active').slideToggle();
                     break;
-                case 'modal-about':
-                    break;
                 default:
-                    gotPage(target);
                     break;
             }
+            gotoPage(target);
         }
     });
 

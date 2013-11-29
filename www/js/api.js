@@ -2,8 +2,6 @@
 
 // Ajax request to server api methods (default async=true unless sent as false)
 function apiRequest(objMessage, callbackFunction, async) {
-    $('#modal-loader').modal('show');
-
     var asyncMethod = true;
     if(typeof async != "undefined" && async == false) {
 	   asyncMethod = false;
@@ -45,11 +43,13 @@ function createUser(){
         objMessage.latitude     = _application.geo.latitude;
         objMessage.longitude    = _application.geo.longitude;
 
+    openLoader('Creating your account and profile...');
     apiRequest(objMessage, createUser_Callback, false);
 }
 
 function createUser_Callback(result) {
-    $('#modal-loader').modal('hide');
+    closeLoader();
+
     if(result == 0) {
         // Ajax request failed
         alert('createUser Failed.');
@@ -82,26 +82,31 @@ function createUser_Callback(result) {
 
 
 // LOGIN USER
-function login(){
+function loginUser(email, password){
+
     var objMessage = {};
         objMessage.method      = "auth_user";
-        objMessage.email       = $('form#login-form input[name="username"]').val();
-        objMessage.password    = $('form#login-form input[name="password"]').val();
+        objMessage.email       = $('#form-login input[name="email"]').val();
+        objMessage.password    = $('#form-login input[name="password"]').val();
+        objMessage.geo         = _application.geo;
     
-    apiRequest(objMessage, login_Callback, false);
+    openLoader('Logging in...');
+    apiRequest(objMessage, loginUser_Callback, false);
 }
 
-function login_Callback(result) {
+function loginUser_Callback(result) {
+    closeLoader();
+
     if(result==0) {
         // Ajax request failed
-        alert('Login Rquest returned Failure');
+        alert('Login request returned failure');
     }else{
         if(result.status > 0){
-	       executeLogin();
+	       executeLogin(result.object, $('#form-login input[name="password"]').val());
         }else{
             // Server returned an error = failed authorization
     	    if (result.message != undefined) {
-                alert('Failed Authorization.');
+                alert('Login Failed.');
         		//document.getElementById("login-password").setCustomValidity(result.message);
         		//setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
         	}

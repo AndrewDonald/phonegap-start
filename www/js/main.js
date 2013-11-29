@@ -88,3 +88,13 @@ function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
 
+function executeLogin(objUser, password){
+    _session.user = objUser;
+    //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
+    localStorage.setItem('email', _session.user.email);
+    localStorage.setItem('password', password);
+    updateAbout();
+    gotoPage('page-new-thought');
+    //console.log(storage.get('login'));
+    console.log(localStorage.getItem('email'), localStorage.getItem('password'));
+}

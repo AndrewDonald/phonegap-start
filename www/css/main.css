@@ -12,7 +12,7 @@ label {margin-bottom: 0;}
 .nav > li > a:focus,
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
-.navbar {border: none; background: none;}
+.navbar {border: none; background: none; width: 100%;}
     .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
 .form-group {margin-bottom: 0 !important;}
@@ -77,7 +77,13 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
 blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px; border: 1px solid #0ef; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
-.modal {z-index: 4000; padding-top: 100px;}
+.modal {z-index: 4000; padding-top: 80px;}
+    .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
+        .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
+        .modal .modal-content .modal-body {padding: 15px;}
+.close {text-shadow: none; opacity: 1; color: #0ef;}
+.close:hover, .close:focus {color: #0ef;}
+.progress {margin-bottom: 0;}
 
 .list-group-item {margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
 .list-group-item.selected {color: #0ab; background-color: #ff6;}
@@ -337,7 +343,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #ef0; box-shadow: 0 0 1px #fff inset;}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #00d9ff; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
