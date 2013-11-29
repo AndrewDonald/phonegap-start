@@ -5,12 +5,8 @@
         version   = "1.0">
 
 <name>LucidLife</name>
-
 <description>Connect your thoughts</description>
-
-<author href="https://www.google.com" email="notexposed@gmail.com">
-Andrew Donald and Sharif Aly
-</author>
+<author href="https://www.google.com" email="notexposed@gmail.com">Andrew Donald and Sharif Aly</author>
 
 <!-- CORE Features -->
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
@@ -32,28 +28,24 @@ Andrew Donald and Sharif Aly
 <!-- Access Orgin -->
 <access origin="*" browserOnly="true"/>
 
-<!-- PG -->
+<!-- PLATFORMS -->
 <gap:platform name="ios" />
 <gap:platform name="android" />
 <gap:platform name="winphone" />
 
-
-
-
-
- <!-- PREFERENCES -->
- <!-- All Platforms -->
-<preference name="phonegap-version"           value="3.1.0" />          <!-- all: current version of PhoneGap -->
-<preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
-<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-<preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+<!-- PREFERENCES -->
+<!-- All Platforms -->
+<preference name="phonegap-version"           value="3.1.0" />      <!-- all: current version of PhoneGap -->
+<preference name="orientation"                value="default" />    <!-- all: default means both landscape and portrait are enabled -->
+<preference name="target-device"              value="universal" />  <!-- all: possible values handset, tablet, or universal -->
+<preference name="fullscreen"                 value="true" />       <!-- all: hides the status bar at the top of the screen -->
 <!-- BlackBerry -->
-<preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+<preference name="disable-cursor"             value="false" />      <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
 <!-- Android -->
 <preference name="splash-screen-duration"   value="60000" />
 <preference name="load-url-timeout"         value="60000" />
-<preference name="android-minSdkVersion"    value="11" />               <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
-<preference name="android-installLocation"  value="auto" />             <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+<preference name="android-minSdkVersion"    value="11" />           <!-- MIN SDK version supported on the target device. MAX version = blank by default -->
+<preference name="android-installLocation"  value="auto" />         <!-- App install location. 'auto', 'internalOnly'=device memory, 'preferExternal'=SDCard -->
 <!-- Apple -->
 <preference name="detect-data-types"                    value="false" />
 <preference name="auto-hide-splash-screen"              value="false" />
@@ -73,37 +65,37 @@ Andrew Donald and Sharif Aly
 <!-- ICONS -->
 <icon src="icon.png" />
 <!-- Android -->
-<icon src="img/device/icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
-<icon src="img/device/icons/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi" />
-<icon src="img/device/icons/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi" />
-<icon src="img/device/icons/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-<icon src="img/device/icons/android/icon-144-xxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
+<icon src="img/device/icons/android/icon-36-ldpi.png"       gap:platform="android" gap:density="ldpi" />
+<icon src="img/device/icons/android/icon-48-mdpi.png"       gap:platform="android" gap:density="mdpi" />
+<icon src="img/device/icons/android/icon-72-hdpi.png"       gap:platform="android" gap:density="hdpi" />
+<icon src="img/device/icons/android/icon-96-xhdpi.png"      gap:platform="android" gap:density="xhdpi" />
+<icon src="img/device/icons/android/icon-144-xxhdpi.png"    gap:platform="android" gap:density="xxhdpi" />
 <!-- Apple -->
-<icon src="img/device/icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
-<icon src="img/device/icons/ios/Icon-72.png" gap:platform="ios" width="72" height="72" />
-<icon src="img/device/icons/ios/Icon@2x.png" gap:platform="ios" width="114" height="114" />
-<icon src="img/device/icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144" />
-<icon src="img/device/icons/ios/AppIcon29x29@2x.png" gap:platform="ios" width="58" height="58" />
-<icon src="img/device/icons/ios/AppIcon76x76.png" gap:platform="ios" width="76" height="76" />
-<icon src="img/device/icons/ios/AppIcon60x60@2x.png" gap:platform="ios" width="120" height="120" />
-<icon src="img/device/icons/ios/AppIcon76x76@2x.png" gap:platform="ios" width="152" height="152" />
+<icon src="img/device/icons/ios/icon.png"                   gap:platform="ios" width="57" height="57" />
+<icon src="img/device/icons/ios/Icon-72.png"                gap:platform="ios" width="72" height="72" />
+<icon src="img/device/icons/ios/Icon@2x.png"                gap:platform="ios" width="114" height="114" />
+<icon src="img/device/icons/ios/Icon-72@2x.png"             gap:platform="ios" width="144" height="144" />
+<icon src="img/device/icons/ios/AppIcon29x29@2x.png"        gap:platform="ios" width="58" height="58" />
+<icon src="img/device/icons/ios/AppIcon76x76.png"           gap:platform="ios" width="76" height="76" />
+<icon src="img/device/icons/ios/AppIcon60x60@2x.png"        gap:platform="ios" width="120" height="120" />
+<icon src="img/device/icons/ios/AppIcon76x76@2x.png"        gap:platform="ios" width="152" height="152" />
 
 
 <!-- SPLASH SCREENS -->
 <gap:splash src="splash.png" />
 <!-- Android -->
-<gap:splash src="img/device/splash/android/splash-ldpi-portrait.png" gap:platform="android" gap:density="ldpi" />
-<gap:splash src="img/device/splash/android/splash-mdpi-portrait.png" gap:platform="android" gap:density="mdpi" />
-<gap:splash src="img/device/splash/android/splash-hdpi-portrait.png" gap:platform="android" gap:density="hdpi" />
-<gap:splash src="img/device/splash/android/splash-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+<gap:splash src="img/device/splash/android/splash-ldpi-portrait.png"    gap:platform="android" gap:density="ldpi" />
+<gap:splash src="img/device/splash/android/splash-mdpi-portrait.png"    gap:platform="android" gap:density="mdpi" />
+<gap:splash src="img/device/splash/android/splash-hdpi-portrait.png"    gap:platform="android" gap:density="hdpi" />
+<gap:splash src="img/device/splash/android/splash-xhdpi-portrait.png"   gap:platform="android" gap:density="xhdpi" />
 <!-- Apple -->
-<gap:splash src="img/device/splash/ios/Default.png" gap:platform="ios"  width="320" height="480" />
-<gap:splash src="img/device/splash/ios/Default_at_2x.png" gap:platform="ios" width="640" height="960" />
-<gap:splash src="img/device/splash/ios/Default_iphone5.png" gap:platform="ios" width="640" height="1136" />
-<gap:splash src="img/device/splash/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
-<gap:splash src="img/device/splash/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
-<gap:splash src="img/device/splash/ios/Default_iphone5.png" gap:platform="ios" width="640" height="1136" />
-<gap:splash src="img/device/splash/ios/Default-Landscape_at_2x.png" gap:platform="ios" width="2048" height="1496" />
-<gap:splash src="img/device/splash/ios/Default-Portrait_at_2x.png" gap:platform="ios" width="1536" height="2008" />
+<gap:splash src="img/device/splash/ios/Default.png"                     gap:platform="ios"  width="320" height="480" />
+<gap:splash src="img/device/splash/ios/Default_at_2x.png"               gap:platform="ios" width="640" height="960" />
+<gap:splash src="img/device/splash/ios/Default_iphone5.png"             gap:platform="ios" width="640" height="1136" />
+<gap:splash src="img/device/splash/ios/Default-Landscape.png"           gap:platform="ios" width="1024" height="768" />
+<gap:splash src="img/device/splash/ios/Default-Portrait.png"            gap:platform="ios" width="768" height="1024" />
+<gap:splash src="img/device/splash/ios/Default_iphone5.png"             gap:platform="ios" width="640" height="1136" />
+<gap:splash src="img/device/splash/ios/Default-Landscape_at_2x.png"     gap:platform="ios" width="2048" height="1496" />
+<gap:splash src="img/device/splash/ios/Default-Portrait_at_2x.png"      gap:platform="ios" width="1536" height="2008" />
 
 </widget>
