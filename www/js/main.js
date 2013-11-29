@@ -9,7 +9,7 @@ var _session            = {};
     _session.stream.id  = 0;
     
 var _application                                = {};
-    _application.version                        = "0.2.2";
+    _application.version                        = "0.2.3";
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
@@ -89,12 +89,14 @@ function verifyCreateAccount(){
 }
 
 function executeLogin(objUser, password){
+    closeLoader();
     _session.user = objUser;
     //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
     localStorage.setItem('email', _session.user.email);
     localStorage.setItem('password', password);
     updateAbout();
     gotoPage('page-new-thought');
+    
     //console.log(storage.get('login'));
     console.log(localStorage.getItem('email'), localStorage.getItem('password'));
 }

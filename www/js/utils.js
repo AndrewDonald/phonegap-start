@@ -69,7 +69,10 @@ function openLoader(message, options){
 }
 
 function closeLoader(){
-    $('#modal-loader').modal('hide');
+    // Wait for previous lightbox to fadeout then close
+    $('#modal-loader').animate({'delay':0},200, function(){
+        $(this).modal('hide');
+    });
 }
 
 // GEO-LOCATION
@@ -78,7 +81,7 @@ function acquireGeoLocation(){
     openLoader('Acquiring location...', {backdrop:false, keyboard:false});
     
     // Aquire GEO Location
-    return navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
 }
 
 // onSuccess Callback
@@ -113,7 +116,7 @@ function geoSuccess(position) {
 //
 function geoError(error) {
     //alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    alert('** GPS ERROR (USER Message)**\nYour GPS is not working or has not been turned on.\nPlease go to Settings and enable your GPS before continuing.');
+    alert("** GPS ERROR **\n\nYour GPS is not working or has not been turned on.\nPlease go to your phone's Settings and enable your GPS before continuing.");
     aquireGeoLocation();
 }
 

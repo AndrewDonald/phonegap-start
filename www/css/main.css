@@ -15,8 +15,7 @@ label {margin-bottom: 0;}
 .navbar {border: none; background: none; width: 100%;}
     .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
-.form-group {margin-bottom: 0 !important;}
-.form-control {height: 34px;}
+
 .label {font-size: 10px; padding: 0 3px;}
 .list-group {margin-bottom: 0;}
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {background: none; background-color: rgba(255,255,0,0.9); text-shadow: 0 -1px 0 #3071A9;}
@@ -38,10 +37,11 @@ pre {background-color: #09a; border-color: #0cd; padding: 1px 5px 4px; font-fami
 pre.active {background-color: #0bc; border-color: #0ef;}
 .badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
 
+.form-group {margin-bottom: 0 !important;}
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    background-color: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background-color: transparent; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #333; display: block; font-size: 12px; font-weight: bold; height: 34px;
     line-height: 1.42857; padding: 3px 5px; vertical-align: middle; width: 97%;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
@@ -81,6 +81,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
         .modal .modal-content .modal-body {padding: 15px;}
+
 .close {text-shadow: none; opacity: 1; color: #0ef;}
 .close:hover, .close:focus {color: #0ef;}
 .progress {margin-bottom: 0;}

@@ -82,8 +82,7 @@ function createUser_Callback(result) {
 
 
 // LOGIN USER
-function loginUser(email, password){
-
+function loginUser(){
     var objMessage = {};
         objMessage.method      = "auth_user";
         objMessage.email       = $('#form-login input[name="email"]').val();
@@ -95,7 +94,7 @@ function loginUser(email, password){
 }
 
 function loginUser_Callback(result) {
-    closeLoader();
+    //closeLoader();
 
     if(result==0) {
         // Ajax request failed
