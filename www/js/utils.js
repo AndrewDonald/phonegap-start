@@ -60,9 +60,9 @@ function gotoPage(page){
 
 
 // GEO-LOCATION
-function aquireGeoLocation(){
+function acquireGeoLocation(){
     // Display Loader Lightbox
-    $('#modal-loader .modal-body').html('Getting location...');
+    $('#modal-loader .modal-body').html('Acquiring location...');
     $('#modal-loader').modal({backdrop:false, keyboard:false});
     
     // Aquire GEO Location

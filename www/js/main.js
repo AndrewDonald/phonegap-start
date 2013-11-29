@@ -70,7 +70,7 @@ var _lucid                          = {};
 $(function() {
     initEventHandlers();
     //app.initialize(); //app.initialize(); // app.receivedEvent();
-    aquireGeoLocation();
+    acquireGeoLocation();
     
    // $('.max-height').css('max-height', $(window).height() - 128);
 });

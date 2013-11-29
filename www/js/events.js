@@ -174,27 +174,26 @@ function initEventHandlers(){
             
             switch(target){
                 case 'page-conversation':
-                    $('#pages > .page.active').removeClass('active');
                     $('body').toggleClass('footer message-panel').attr('data-page', target);
                     $('#message-panel').toggleClass('active');
                     $('#alerts-panel').toggleClass('active');
-                    $('#page-conversation').toggleClass('active');
+                    gotPage(target);
                     break;
                 case 'page-people':
-                    $('#pages > .page.active').removeClass('active');
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
-                    $('#people-panel').addClass('vertical');
-                    $('#people-panel').toggleClass('active').show();
-                    $('.people-controls-toggle').click();
+                    //$('#people-panel').addClass('vertical');
+                    gotPage(target);
+                    //$('.people-controls-toggle').click();
                     break;
                 case 'notifications-panel':
                     $('body').toggleClass(target);
                     $('#notifications-panel').addClass('.active').slideToggle();
                     break;
+                case 'modal-about':
+                    break;
                 default:
-                    $('#pages > .page.active').removeClass('active');
-                    $('#pages > .page#' + target).addClass('active');
+                    gotPage(target);
                     break;
             }
         }
