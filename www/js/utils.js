@@ -61,21 +61,15 @@ function openLoader(message, options){
     $('#modal-loader .modal-body').html(message);
 
     if(typeof secure != "undefined"){
-        $('#modal-loader').animate({'delay':0},200, function(){
-            $(this).modal(options);
-        });
+        $('#modal-loader').modal(options);
     }else{
-        $('#modal-loader').animate({'delay':0},200, function(){
-            $(this).modal('show');
-        });
+        $('#modal-loader').modal('show');
     }
 }
 
 function closeLoader(){
     // Wait for previous lightbox to fadeout then close
-    $('#modal-loader').animate({'delay':0},200, function(){
-        $(this).modal('hide');
-    });
+    $('#modal-loader')..modal('hide');
 }
 
 // GEO-LOCATION
