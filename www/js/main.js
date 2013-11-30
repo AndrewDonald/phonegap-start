@@ -70,12 +70,11 @@ var _lucid                          = {};
 
 $(function() {
     updateAbout();
-    initEventHandlers();
     gotoPage('page-login');
-    alert('gotopage login fired');
+    initEventHandlers();
+    
     // Auto-Login if previous authentication data exists in localStograge
     if(localStorage.getItem('email') && localStorage.getItem('password')){
-        alert('get localstorage login creds');
         $('#form-login input[name="email"]').val(localStorage.getItem('email'));
         $('#form-login input[name="password"]').val( localStorage.getItem('password'));
         loginUser();
