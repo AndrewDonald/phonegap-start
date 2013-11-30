@@ -69,7 +69,7 @@ function openLoader(message, options){
 
 function closeLoader(){
     // Wait for previous lightbox to fadeout then close
-    $('#modal-loader')..modal('hide');
+    $('#modal-loader').modal('hide');
 }
 
 // GEO-LOCATION
