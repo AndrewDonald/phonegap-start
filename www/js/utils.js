@@ -61,9 +61,13 @@ function openLoader(message, options){
     $('#modal-loader .modal-body').html(message);
 
     if(typeof secure != "undefined"){
-        $('#modal-loader').modal(options);
+        $('#modal-loader').animate({'delay':0},200, function(){
+            $(this).modal(options);
+        });
     }else{
-        $('#modal-loader').modal('show');
+        $('#modal-loader').animate({'delay':0},200, function(){
+            $(this).modal('show');
+        });
     }
 }
 
