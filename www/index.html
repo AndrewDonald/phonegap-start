@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="home filter" data-page="page-login">
+    <body class="logged-out home filter" data-page="page-login">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -68,12 +68,6 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a id="logout-toggle" data-toggle-item="page-logout">
-                                <span class="menu-icon glyphicon glyphicon-power-off"></span> Logout
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
                             <a id="login-toggle" data-toggle-item="page-login">
                                 <span class="menu-icon glyphicon glyphicon-power-off" style="color: #ff6;"></span> Login
                             </a>
@@ -91,6 +85,12 @@
                         <li>
                             <a class="menu-toggle-modal-about" data-toggle="modal" data-target="#modal-about">
                                 <span class="menu-icon glyphicon glyphicon-list-alt"></span> About
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="logout-toggle" data-toggle-item="page-login">
+                                <span class="menu-icon glyphicon glyphicon-power-off"></span> Logout
                             </a>
                         </li>
                     </ul>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="form-row password input-group input-group-md">
                             <span class="input-group-addon glyphicon glyphicon-lock"></span>
-                            <input name="password" type="text" class="form-control" placeholder="password">
+                            <input name="password" type="password" class="form-control" placeholder="password">
                         </div>
                         <button type="button" class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-8 col-sm-4" onclick="loginUser();">Login</button>
                         <button type="button" class="form-row btn btn-md btn-link btn-join" onclick="joinLucidLife();">Join Now</button>
@@ -235,70 +235,18 @@
                     <div id="join-conversation">
                         <h2>Join a Conversation</h2>
                         <div class="conversation-lists-nav toggle-nav btn-group btn-group-justified">
-                            <a class="btn-suggested-streams btn btn-lucid active">
-                                <span class="suggested-streams glyphicon glyphicon-thumbs-up"></span>
-                            </a>
-                            <a class="btn-hot-streams btn btn-lucid">
+                            <a class="btn-hot-streams btn btn-lucid active">
                                 <span class="glyphicon glyphicon-fire"></span>
+                            </a>
+                            <a class="btn-suggested-streams btn btn-lucid">
+                                <span class="suggested-streams glyphicon glyphicon-thumbs-up"></span>
                             </a>
                             <a class="btn-past-streams btn btn-lucid">
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </a>
                         </div>
                         <div class="conversation-lists">
-                            <ul class="suggested-conversation-list form-control list-inline full-width  active">
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream1</span><span class="badge">129</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream2</span><span class="badge">117</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream3</span><span class="badge">95</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream4</span><span class="badge">88</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream5</span><span class="badge">54</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream6</span><span class="badge">41</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream7</span><span class="badge">16</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream8</span><span class="badge">7</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item active">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream9</span><span class="badge">45</span>
-                                    </a>
-                                </li>
-                                <li class="list-group-item active">
-                                    <a class="btn btn-lucid-normal">
-                                        <span class="stream-name">SuggestedStream10</span><span class="badge">37</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="hot-conversation-list form-control list-inline full-width">
+                            <ul class="hot-conversation-list form-control list-inline full-width active">
                                 <li class="list-group-item">
                                     <a class="btn btn-lucid-normal">
                                         <span class="stream-name">HotStream1</span><span class="badge">129</span>
@@ -347,6 +295,58 @@
                                 <li class="list-group-item active">
                                     <a class="btn btn-lucid-normal">
                                         <span class="stream-name">HotStream10</span><span class="badge">37</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="suggested-conversation-list form-control list-inline full-width">
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream1</span><span class="badge">129</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream2</span><span class="badge">117</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream3</span><span class="badge">95</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream4</span><span class="badge">88</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream5</span><span class="badge">54</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream6</span><span class="badge">41</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream7</span><span class="badge">16</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream8</span><span class="badge">7</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item active">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream9</span><span class="badge">45</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item active">
+                                    <a class="btn btn-lucid-normal">
+                                        <span class="stream-name">SuggestedStream10</span><span class="badge">37</span>
                                     </a>
                                 </li>
                             </ul>

@@ -188,6 +188,11 @@ function initEventHandlers(){
                     $('body').toggleClass(target);
                     $('#notifications-panel').addClass('.active').slideToggle();
                     break;
+                case 'page-login':
+                    if($(this).attr('id') == 'logout-toggle'){
+                        executeLogout();
+                    }
+                    break;
                 default:
                     break;
             }

@@ -73,10 +73,10 @@ $(function() {
     gotoPage('page-login');
     initEventHandlers();
     
-    // Auto-Login if previous authentication data exists in localStograge
+    // Auto-Login if previous authentication data exists in localStorage
     if(localStorage.getItem('email') && localStorage.getItem('password')){
         $('#form-login input[name="email"]').val(localStorage.getItem('email'));
-        $('#form-login input[name="password"]').val( localStorage.getItem('password'));
+        $('#form-login input[name="password"]').val(localStorage.getItem('password'));
         loginUser();
     }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
@@ -98,10 +98,18 @@ function verifyCreateAccount(){
 }
 
 function executeLogin(){
+    $('body').removeClass('logged-out');
     _session.loggedIn = true;
     //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
     localStorage.setItem('email', _session.user.email);
     localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
     gotoPage('page-new-thought');
+}
+
+function executeLogout(){
+    $('body').addClass('logged-out');
+    _session.loggedIn = false;
+    updateAbout();
+    gotoPage('page-login');
 }
