@@ -87,25 +87,28 @@ function loginUser(){
         objMessage.method      = "auth_user";
         objMessage.email       = $('#form-login input[name="email"]').val();
         objMessage.password    = $('#form-login input[name="password"]').val();
-        objMessage.geo         = _application.geo;
+        //objMessage.geo         = _application.geo;
     
     openLoader('Logging in...');
     apiRequest(objMessage, loginUser_Callback, false);
 }
 
 function loginUser_Callback(result) {
-    //closeLoader();
+    closeLoader();
 
     if(result==0) {
         // Ajax request failed
         alert('Login request returned failure');
     }else{
         if(result.status > 0){
-	       executeLogin(result.object, $('#form-login input[name="password"]').val());
+            // Successful Authentication
+            _session.user = result.object;
+            acquireGeoLocation();
         }else{
             // Server returned an error = failed authorization
     	    if (result.message != undefined) {
-                alert('Login Failed.');
+                $('#modal-login-failed .modal-body').html(result.message);
+                $('#modal-login-failed').modal('show');
         		//document.getElementById("login-password").setCustomValidity(result.message);
         		//setTimeout('$("#login-submit").click()', 100); // must click to actually show the errors 
         	}

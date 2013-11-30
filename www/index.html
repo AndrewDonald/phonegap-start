@@ -36,6 +36,11 @@
                             </a>
                         </li>
                         <li>
+                            <a id="connections-toggle" data-toggle-item="page-connections">
+                                <span class="menu-icon glyphicon glyphicon-comment"></span> Connections
+                            </a>
+                        </li>
+                        <li>
                             <a id="conversation-toggle" data-toggle-item="page-conversation">
                                 <span class="menu-icon glyphicon glyphicon-comment"></span> Conversation
                             </a>
@@ -2494,7 +2499,7 @@
         </div>
         <!-- Modal Loader (End) -->
 
-        <!-- Modal Lightbox (Start) -->
+        <!-- Modal About (Start) -->
         <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -2527,7 +2532,29 @@
                 </div>
             </div>
         </div>
-        <!-- Modal Lightbox (End) -->
+        <!-- Modal About (End) -->
+
+        <!-- Modal Failed Login (Start) -->
+        <div class="modal fade" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login Failed</h4>
+                    </div>
+                    <div class="modal-body">
+                        Please try again.
+                    </div>
+                    <!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <!-- Modal Failed Login (End) -->
         <!-- UTIL HTML (END) -->
 
 

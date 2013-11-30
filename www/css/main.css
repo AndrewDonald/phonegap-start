@@ -4,6 +4,7 @@ h5, h6 {
   margin: 10px 0 0;
 }
 .btn {white-space: normal;}
+input[type=text], textarea {background-color: #fff;}
 .input-group-addon {background-color: #0ab;}
 label {margin-bottom: 0;}
 .nav-pills > li > a {background-color: rgba(0, 100, 115, 0.95); border: 1px solid #056; border-radius: 0 0 5px 5px; box-shadow: 1px 1px 3px #000; padding: 10px 17px; color: #0ef;}
@@ -484,7 +485,7 @@ body.message-panel #pages {padding-top: 105px;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
 /* FOOTER */
-nav#footer {display: none; min-height: 15px; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
+nav#footer {display: none; min-height: 15px; background-color: #0ab; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
 body.footer nav#footer {display: block;}
     /* CONTROLS PANELS */
     #controls-panel {}

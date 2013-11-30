@@ -57,7 +57,6 @@ function gotoPage(page){
     $('#pages #' + page).addClass('active');
 }
 
-
 function openLoader(message, options){
     $('#modal-loader .modal-body').html(message);
 
@@ -78,7 +77,7 @@ function closeLoader(){
 // GEO-LOCATION
 function acquireGeoLocation(){
     // Display Loader Lightbox
-    openLoader('Acquiring location...', {backdrop:false, keyboard:false});
+    openLoader('Acquiring location...', {"backdrop":false, "keyboard":false});
     
     // Aquire GEO Location
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
@@ -100,15 +99,13 @@ function geoSuccess(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
     */
-    _application.geo = {"latitude":position.coords.latitude,"longitude":position.coords.longitude};
-    updateAbout();
     closeLoader();
-    gotoPage("page-login");
-
-    if(localStorage.getItem('email') && localStorage.getItem('password')){
-        $('#form-login input[name="email"]').val(localStorage.getItem('email'));
-        $('#form-login input[name="password"]').val( localStorage.getItem('password'));
-        loginUser();
+    _application.geo = {"latitude":position.coords.latitude, "longitude":position.coords.longitude};
+    
+    if(!_session.loggedIn){
+        executeLogin();
+    }else{
+       updateAbout(); 
     }
 }
 
@@ -116,7 +113,7 @@ function geoSuccess(position) {
 //
 function geoError(error) {
     //alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    alert("** GPS ERROR **\n\nYour GPS is not working or has not been turned on.\nPlease go to your phone's Settings and enable your GPS before continuing.");
+    alert("GPS Error.\n\nYour GPS is not working or has not been turned on.\nPlease go to your phone's Settings and enable your GPS before continuing.");
     aquireGeoLocation();
 }
 

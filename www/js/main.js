@@ -5,11 +5,12 @@ function startApp(){
 }
 */
 var _session            = {};
+    _session.loggedIn   = false;
     _session.stream     = {};
     _session.stream.id  = 0;
     
 var _application                                = {};
-    _application.version                        = "0.2.3";
+    _application.version                        = "0.2.4";
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
@@ -69,8 +70,14 @@ var _lucid                          = {};
 
 $(function() {
     initEventHandlers();
+    gotoPage('page-login');
+    // Auto-Login if previous authentication data exists in localStograge
+    if(localStorage.getItem('email') && localStorage.getItem('password')){
+        $('#form-login input[name="email"]').val(localStorage.getItem('email'));
+        $('#form-login input[name="password"]').val( localStorage.getItem('password'));
+        loginUser();
+    }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
-    acquireGeoLocation();
     
    // $('.max-height').css('max-height', $(window).height() - 128);
 });
@@ -88,15 +95,11 @@ function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
 
-function executeLogin(objUser, password){
-    closeLoader();
-    _session.user = objUser;
+function executeLogin(){
+    _session.loggedIn = true;
     //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
     localStorage.setItem('email', _session.user.email);
-    localStorage.setItem('password', password);
+    localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
     gotoPage('page-new-thought');
-    
-    //console.log(storage.get('login'));
-    console.log(localStorage.getItem('email'), localStorage.getItem('password'));
 }

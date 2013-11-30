@@ -1,4 +1,5 @@
 //* DEVICE EVENT HANDLERS *//
+/*
 var app = {
     // Application Constructor
     initialize: function() {
@@ -30,7 +31,7 @@ var app = {
         //console.log('Received Event: ' + id);
     }
 };
-
+*/
 
 //* APP EVENT HANDLERS *//
 function initEventHandlers(){
