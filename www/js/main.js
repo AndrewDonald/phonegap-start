@@ -8,6 +8,7 @@ var _session            = {};
     _session.loggedIn   = false;
     _session.stream     = {};
     _session.stream.id  = 0;
+    _session.page       = "page-login";
     
 var _application                                = {};
     _application.version                        = "0.2.4";

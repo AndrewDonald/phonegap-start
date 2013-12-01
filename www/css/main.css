@@ -288,7 +288,7 @@ h2 {font-size: 16px;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
 button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-weight: bold;}
 
-#main-menu-toggle.btn-link-lucid, #control-panels-toggle.btn-link-lucid {opacity: 1; color: #f90;}
+#main-menu-toggle.btn-link-lucid, #new-thought-toggle.btn-link-lucid {opacity: 1; color: #f90;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
@@ -392,7 +392,7 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
         nav#header > .masthead .main-nav {position: absolute; top: 2px;}
         body.logged-out nav#header > .masthead .main-nav {display: none;}
         nav#header > .masthead .main-nav.left {left: 5px;}
-        #control-panels-toggle {width: 40px;}
+        #new-thought-toggle {width: 40px;}
         nav#header > .masthead .main-nav.right {right: 5px;}
         nav#header > .masthead center {padding-top: 5px;}
         nav#header > .masthead .logo-con {padding-right: 2px; width: 140px;}

@@ -55,6 +55,10 @@ $.fn.scrollTo = function( targetDom ){
 function gotoPage(page){
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
+    if(page != 'page-new-thought'){
+        $('#new-thought-toggle').removeClass('active');
+        _session.page = page;
+    }
 }
 
 function openLoader(message, options){

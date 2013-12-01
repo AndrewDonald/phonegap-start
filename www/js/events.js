@@ -159,7 +159,7 @@ function initEventHandlers(){
     */
 
     // Main Menu Items
-    $('#main-menu-items > li > a[data-toggle-item]').on('click',function(){
+    $('.main-nav [data-toggle-item]').on('click',function(){
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
@@ -173,22 +173,38 @@ function initEventHandlers(){
             */
             
             switch(target){
+                case 'page-new-thought':
+                    $('#new-thought-toggle').toggleClass('active');
+                    if($('#new-thought-toggle').is('.active')){
+                        $('body').removeClass('footer message-panel');
+                        $('#message-panel').removeClass('active');
+                        gotoPage('page-new-thought');
+                    }else{
+                        $('body').addClass('footer message-panel');
+                        $('#message-panel').addClass('active');
+                        gotoPage(_session.page);
+                    }
+                    break;
                 case 'page-conversation':
-                    $('body').toggleClass('footer message-panel').attr('data-page', target);
+                    $('body').addClass('footer message-panel').attr('data-page', target);
                     $('#message-panel').toggleClass('active');
                     $('#alerts-panel').toggleClass('active');
+                    gotoPage(target);
                     break;
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('nav#footer, #people-nav').toggleClass('active');
+                    gotoPage(target);
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
                     break;
                 case 'notifications-panel':
                     $('body').toggleClass(target);
                     $('#notifications-panel').addClass('.active').slideToggle();
+                    gotoPage(target);
                     break;
                 case 'page-login':
+                    gotoPage(target);
                     if($(this).attr('id') == 'logout-toggle'){
                         executeLogout();
                     }
@@ -196,7 +212,6 @@ function initEventHandlers(){
                 default:
                     break;
             }
-            gotoPage(target);
         }
     });
 
@@ -352,22 +367,6 @@ function initEventHandlers(){
         $('body').toggleClass($(this).data('toggle-item'));
     });
     */
-
-    // TOGGLE ON/OFF SELETOR BUTTONS
-    //$('.menu-toggle-controls-panel').on('click',function(){
-    $('#control-panels-toggle').on('click',function(){
-        $('#people-panel').removeClass('horizontal');
-        $('nav#footer').addClass('active');
-        
-        $(this).toggleClass('active');
-        if($(this).is('.active')){
-            $('body').removeClass('controls-panel').addClass('controls-panel-horizontal');
-            $('#controls-panel').addClass('active').slideDown();
-        }else{
-            $('body').removeClass('controls-panel-horizontal');
-            $('#controls-panel').removeClass('active').slideUp();
-        }
-    });
 
     // TOGGLE ON/OFF SELETOR BUTTONS
     $('.toggle-on-off').on('click',function(){

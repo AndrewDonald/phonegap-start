@@ -31,34 +31,29 @@
                     <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 dropdown-toggle" data-toggle="dropdown">&equiv;</button>
                     <ul id="main-menu-items" class="dropdown-menu" role="menu">
                         <li>
-                            <a id="new-thought-toggle" data-toggle-item="page-new-thought">
-                                <span class="menu-icon glyphicon glyphicon-search"></span> New Thought
-                            </a>
-                        </li>
-                        <li>
-                            <a id="connections-toggle" data-toggle-item="page-connections">
-                                <span class="menu-icon glyphicon glyphicon-comment"></span> Connections
+                            <a id="people-toggle" data-toggle-item="page-people">
+                                <span class="menu-icon glyphicon glyphicon-user"></span> ~People
                             </a>
                         </li>
                         <li>
                             <a id="conversation-toggle" data-toggle-item="page-conversation">
-                                <span class="menu-icon glyphicon glyphicon-comment"></span> Conversation
+                                <span class="menu-icon glyphicon glyphicon-comment"></span> ~Conversation
                             </a>
                         </li>
                         <li>
                             <a id="notifications-toggle" data-toggle-item="notifications-panel">
-                                <span class="menu-icon glyphicon glyphicon-bell"></span> Notifications
+                                <span class="menu-icon glyphicon glyphicon-bell"></span> ~Notifications
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a id="profile-toggle" data-toggle-item="page-profile">
-                                <span class="menu-icon glyphicon glyphicon-user"></span> Profile
+                            <a id="connections-toggle" data-toggle-item="page-connections">
+                                <span class="menu-icon glyphicon glyphicon-link"></span> Connections
                             </a>
                         </li>
                         <li>
-                            <a id="settings-toggle" data-toggle-item="page-settings">
-                                <span class="menu-icon glyphicon glyphicon-cog"></span> Settings
+                            <a id="profile-toggle" data-toggle-item="page-profile">
+                                <span class="menu-icon glyphicon glyphicon-user"></span> Profile
                             </a>
                         </li>
                         <li>
@@ -66,31 +61,26 @@
                                 <span class="menu-icon glyphicon glyphicon-folder-open"></span> Account
                             </a>
                         </li>
+                        <li>
+                            <a id="settings-toggle" data-toggle-item="page-settings">
+                                <span class="menu-icon glyphicon glyphicon-cog"></span> Settings
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="menu-toggle-modal-about" data-toggle="modal" data-target="#modal-about">
+                                <span class="about">?</span> About
+                            </a>
+                        </li>
                         <li class="divider"></li>
                         <li>
                             <a id="login-toggle" data-toggle-item="page-login">
-                                <span class="menu-icon glyphicon glyphicon-power-off" style="color: #ff6;"></span> Login
+                                <span class="menu-icon glyphicon glyphicon-lock" style="color: #ff6;"></span> Login
                             </a>
                         </li>
-                        <li>
-                            <a id="create-user-toggle" data-toggle-item="page-create-user">
-                                <span class="menu-icon glyphicon glyphicon-asterisk"></span> Create User
-                            </a>
-                        </li>
-                        <li>
-                            <a id="people-toggle" data-toggle-item="page-people">
-                                <span class="menu-icon glyphicon glyphicon-user"></span> People
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-toggle-modal-about" data-toggle="modal" data-target="#modal-about">
-                                <span class="menu-icon glyphicon glyphicon-list-alt"></span> About
-                            </a>
-                        </li>
-                        <li class="divider"></li>
                         <li>
                             <a id="logout-toggle" data-toggle-item="page-login">
-                                <span class="menu-icon glyphicon glyphicon-power-off"></span> Logout
+                                <span class="menu-icon glyphicon glyphicon-remove"></span> Logout
                             </a>
                         </li>
                     </ul>
@@ -102,7 +92,7 @@
                 </center>
                 <!--<img src="img/butterfly3-anim.gif" class="monarch animated">-->
                 <div class="main-nav right">
-                    <button id="control-panels-toggle" type="button" class="btn btn-link-lucid btn-lg">
+                    <button id="new-thought-toggle" type="button" class="btn btn-link-lucid btn-lg" data-toggle-item="page-new-thought">
                         <img src="img/lucid-butterfly.png" class="monarch">
                     </button>
                 </div>
