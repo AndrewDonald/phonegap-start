@@ -100,7 +100,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
     .list-inline.full-width.link-list .list-group-item {border: none; background-color: none; background: none; border-radius: 0; margin: 0;}
         .list-inline.full-width.link-list .list-group-item:nth-child(odd) {background: rgba(0, 240, 255, 0.2);}
             .list-inline.full-width.link-list .list-group-item .btn {border: none; background-color: none; background: none; color: #999; text-shadow: none;}
-                .list-inline.full-width.link-list .list-group-item .btn .badge {color: #999; border: 1px solid #ccc;}
+                .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
    
 /* GLOBAL: Vars */
 /* Orange */
