@@ -58,6 +58,8 @@ function gotoPage(page){
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;
+    }else{
+        getThoughts();
     }
 }
 
@@ -77,9 +79,9 @@ function closeLoader(){
 }
 
 // GEO-LOCATION
-function acquireGeoLocation(){
+function acquireGeolocation(){
     // Display Loader Lightbox
-    openLoader('Acquiring location...', {"backdrop":false, "keyboard":false});
+    openLoader('Acquiring geolocation...', {"backdrop":false, "keyboard":false});
     
     // Aquire GEO Location
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
@@ -101,28 +103,21 @@ function geoSuccess(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
     */
-    closeLoader();
-    _application.geo = {"latitude":position.coords.latitude, "longitude":position.coords.longitude};
-    
-    if(!_session.loggedIn){
-        executeLogin();
-    }else{
-       updateAbout(); 
-    }
+    _application.geolocation = {"latitude":position.coords.latitude.toFixed(7), "longitude":position.coords.longitude.toFixed(7)};
+    saveGeolocation();
 }
 
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
-    //alert('** GEO ERROR (DEV Message Only)**\ncode: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-    alert("GPS Error.\n\nYour GPS is not working or has not been turned on.\nPlease go to your phone's Settings and enable your GPS before continuing.");
-    aquireGeoLocation();
+    alert("LucidLife is unable to retrieve your current location.\n\nPlease ensure GPS is turned on and permissions are enabled for this application.");
+    aquireGeolocation();
 }
 
 function updateAbout(){
     $('#modal-about .version').html(_application.version);
-    $('#modal-about .latitude').html(_application.geo.latitude);
-    $('#modal-about .longitude').html(_application.geo.longitude);
+    $('#modal-about .latitude').html(_application.geolocation.latitude);
+    $('#modal-about .longitude').html(_application.geolocation.longitude);
     if(_session.user){
         $('#modal-about .user-info-name').html(_session.user.fname + ' ' + _session.user.lname);
         $('#modal-about .user-info-userid').html(_session.user.userid);
@@ -133,4 +128,14 @@ function updateAbout(){
         }
         $('#modal-about .user-info-lastlogin').html(_session.user.lastlogin);
     }
+}
+
+function populateThoughtList(thoughtList, objList){
+    var list = "";
+    $.each(objList, function(){
+        list += _template.thoughtListItem
+                .replace(/\{stream}/g, this.stream)
+                .replace(/\{activeusers}/g, this.activeusers);
+    });
+    $('.' + thoughtList + '-thought-list').html(list);
 }

@@ -83,7 +83,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
         .modal .modal-content .modal-body {padding: 15px;}
 
-.close {text-shadow: none; opacity: 1; color: #0ef;}
+.close {font-size: 30px; text-shadow: none; opacity: 1; color: #0ef;}
 .close:hover, .close:focus {color: #0ef;}
 .progress {margin-bottom: 0;}
 
@@ -295,12 +295,11 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 200, 220, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
-.btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
-    box-shadow: none; line-height: 1;
-    position: relative; cursor: pointer; font-size: 14px; color: #fff;
-    border-radius: 5px; background-color: #0ab; box-shadow: 0 0 3px #000, 0 0 3px #0cd inset;}
+.btn-lucid {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
+    background-color: #0ab; box-shadow: 0 0 3px #0cd inset;
+    line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #fff; border-radius: 5px;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff;}
-.btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
+.btn-lucid.active {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
     background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
@@ -449,7 +448,7 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
 body.message-panel #pages {padding-top: 105px;}
     #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
-    body.logged-out #pages > .page:not(#page-login) {display: none;}
+    body.logged-out #pages > .page:not(#page-login):(#page-create-user) {display: none;}
         #page-stream .show-stream,
         #page-stream .show-filter,
         #page-stream .show-people,
@@ -479,13 +478,13 @@ body.message-panel #pages {padding-top: 105px;}
     /* PAGE NEW-THOUGHT */
     #page-new-thought {padding: 0px;}
         #join-conversation {clear: both;}
-            #join-conversation .conversation-lists-nav {}
-                #join-conversation .conversation-lists-nav .btn:first-child {border-top-left-radius: 4px;}
-                #join-conversation .conversation-lists-nav .btn:last-child {border-top-right-radius: 4px;}
-                    #join-conversation .conversation-lists-nav .btn.btn-suggested-streams {display: none;}
-                    #join-conversation .conversation-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
-                #join-conversation .conversation-lists .form-control {padding: 0; background-color: #fff; display: none; height: 200px; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
-                #join-conversation .conversation-lists .form-control.active {display: block;}
+            #join-conversation .thought-lists-nav {}
+                #join-conversation .thought-lists-nav .btn:first-child {border-top-left-radius: 4px;}
+                #join-conversation .thought-lists-nav .btn:last-child {border-top-right-radius: 4px;}
+                    #join-conversation .thought-lists-nav .btn.btn-suggested-streams {display: none;}
+                    #join-conversation .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
+                #join-conversation .thought-lists .form-control {padding: 0; background-color: #fff; display: none; height: auto; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
+                #join-conversation .thought-lists .form-control.active {display: block;}
 
     /* PAGE CONVERSATION */
     #page-conversation {}

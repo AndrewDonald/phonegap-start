@@ -26,44 +26,42 @@ function apiRequest(objMessage, callbackFunction, async) {
 // CREATE USER
 function createUser(){
     var user = {};
-    user.email          = $('#form-create-user [name=email]').val();
-    user.password       = $('#form-create-user [name=password]').val();
-    user.fname          = $('#form-create-user [name=fname]').val();
-    user.lname          = $('#form-create-user [name=lname]').val();
-    user.gender         = $('#form-create-user [name=gender]:checked').val();
-    user.birthdate      = $('#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
-    user.pic            = "";
-    user.picextension   = "";
-    user.biography      = $('#form-create-user [name=biography]').val();
-    user.twitter        = ""; //$('input#join-twitter').val();
+        user.email          = $('#form-create-user [name=email]').val();
+        user.password       = $('#form-create-user [name=password]').val();
+        user.fname          = $('#form-create-user [name=fname]').val();
+        user.lname          = $('#form-create-user [name=lname]').val();
+        user.gender         = $('#form-create-user [name=gender]:checked').val();
+        user.birthdate      = $('#form-create-user [name=birthdate]').val(); //$('input#join-year').val() + "-" + $('input#join-month').val() + "-" + $('input#join-day').val();
+        user.pic            = "";
+        user.picextension   = "";
+        user.biography      = $('#form-create-user [name=biography]').val();
+        user.twitter        = ""; //$('input#join-twitter').val();
     
     var objMessage = {};
         objMessage.method       = "create_user";
         objMessage.user         = user;
-        objMessage.latitude     = _application.geo.latitude;
-        objMessage.longitude    = _application.geo.longitude;
 
     openLoader('Creating your account and profile...');
     apiRequest(objMessage, createUser_Callback, false);
 }
 
 function createUser_Callback(result) {
-    closeLoader();
-
     if(result == 0) {
         // Ajax request failed
+        closeLoader();
         alert('createUser Failed.');
     }else{
         if(result.status > 0){
             // Successful
             _session.user = result.object;
             //alert('Created User #' + _session.user.userid);
-            gotoPage('page-new-thought');
+            acquireGeolocation();
             //$('img#join-new-profile-pic').attr('src', getPic('profile', _session.user.userid, _application.preview));
             //$('section#PAGE_JOIN #join-content > *.active').removeClass('active');
             //$('section#PAGE_JOIN #join-content > #join-get-photo').addClass('active'); 
         }else{
             // Server returned an error = failed authorization
+            closeLoader();
             alert('createUser Failed with a response.');
             /*
             if (result.details != undefined) {
@@ -87,7 +85,6 @@ function loginUser(){
         objMessage.method      = "auth_user";
         objMessage.email       = $('#form-login input[name="email"]').val();
         objMessage.password    = $('#form-login input[name="password"]').val();
-        //objMessage.geo         = _application.geo;
     
     openLoader('Logging in...');
     apiRequest(objMessage, loginUser_Callback, false);
@@ -103,7 +100,7 @@ function loginUser_Callback(result) {
         if(result.status > 0){
             // Successful Authentication
             _session.user = result.object;
-            acquireGeoLocation();
+            acquireGeolocation();
         }else{
             // Server returned an error = failed authorization
     	    if (result.message != undefined) {
@@ -135,13 +132,72 @@ function logoutUser_Callback(result) {
         }else{
             // Server returned an error = failed authorization
         }
+        
+        //initializeSession();
+        deinitializeApp();
+    }
+}
 
-	initializeSession();
-        executeLogout();
+// GET USER GEO
+function saveGeolocation(){
+    var objMessage = {};
+        objMessage.method = "save_geolocation";
+        objMessage.geolocation    = _application.geolocation; //{"latitude": _application.geolocation.latitude, "longitude": _application.geolocation.longitude};
+    
+    $('#modal-loader .modal-body').html('Saving geolocation...');
+    apiRequest(objMessage, saveGeolocation_Callback, false);
+}
+
+function saveGeolocation_Callback(result) {
+    closeLoader();
+
+    if(result==0) {
+        // Ajax request failed
+        alert('Sending geolocation failed.');
+    }else{
+        if(result.status > 0){
+            // Successful
+            if(!_session.loggedIn){
+                initializeApp();
+            }else{
+                updateAbout(); 
+            }
+        }else{
+            // Server returned an error
+            if (result.message != undefined) {
+                alert('Sending geolocation response failed.');
+                //$('#modal-send-geo-failed .modal-body').html(result.message);
+                //$('#modal-send-geo-failed').modal('show');
+            }
+        }
+    }
+}
+
+// Get Thoughts (Hot & Past)
+function getThoughts(){
+    var objMessage = {};
+        objMessage.method = "get_thoughts";
+
+    apiRequest(objMessage, getThoughts_Callback);
+}
+
+function getThoughts_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+            populateThoughtList('hot', result.object.hot);
+            populateThoughtList('past', result.object.past);
+        }else{
+            // Server returned an error = failed authorization
+            alert("Failed to retrieve Thought Lists.");
+        }
     }
 }
 
 
+//************************* OLD METHODS BEGIN BELOW ******************************//
 // Login user
 function ping(stream, status){
 	// only logged in users can ping

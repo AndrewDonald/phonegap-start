@@ -6,12 +6,27 @@ function startApp(){
 */
 var _session            = {};
     _session.loggedIn   = false;
-    _session.stream     = {};
-    _session.stream.id  = 0;
     _session.page       = "page-login";
+    _session.stream     = {};
+        _session.stream.id              = 0;
+        _session.stream.name            = "LucidLife";
+/*
+        _session.stream.added = {};                             // Added Parallel Streams parent
+        _session.stream.added.streamid['{streamid}'] = {};      // (DATA: addedDate, new, name, people) *new = created
+        
+        _session.stream.people = {};                            // inStream People parent
+        _session.stream.people.userid['{userid}'] = {};         // (DATA: entryDate, streamid, fname, age, distance, picExt) *remove picExt and use url or convert all images to 1 format
+        
+        _session.stream.conversation = {};                      // inStream Conversation parent
+        _session.stream.conversationid['{conversationid}'] = {};// (DATA: sendDate, senderid, message, mediaid, mediaType) *mediaid = null forn none
+*/
+    //_session.user.filter = "My Filter";           // Filter to apply. "" = no filter 
+    //_session.user.filters = {};                   // Filters parent
+    //_session.user.filters.filter['My Filter'] = {gender:"B", ageFrom:25, ageTo:55, distance:3.5};
+    
     
 var _application                                = {};
-    _application.version                        = "0.2.4";
+    _application.version                        = "0.2.5";
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
@@ -58,7 +73,7 @@ var _application                                = {};
     _application.streamMember                   = {};
     _application.messageMember                  = {};
     _application.indicator                      = {unreadMessages:0,buddyrequests:0};
-    _application.geo                            = {"latitude":0,"longitude":0};
+    _application.geolocation                    = {"latitude":0,"longitude":0};
 
 var _lucid                          = {};
     _lucid.panel                    = {};
@@ -86,9 +101,8 @@ $(function() {
 });
 
 // Show Step-1 of Create User Form
-function joinLucidLife(){
-    $('#pages > .page').removeClass('active');
-    $('#page-create-user').addClass('active');
+function joinNow(){
+    gotoPage('page-create-user');
     $('#form-create-user > .steps').removeClass('active');
     $('#form-create-user > .steps.step-1').addClass('active');
 }
@@ -98,7 +112,7 @@ function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');
 }
 
-function executeLogin(){
+function initializeApp(){
     $('body').removeClass('logged-out');
     _session.loggedIn = true;
     //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
@@ -108,7 +122,7 @@ function executeLogin(){
     gotoPage('page-new-thought');
 }
 
-function executeLogout(){
+function deinitializeApp(){
     $('body').addClass('logged-out');
     _session.loggedIn = false;
     updateAbout();
