@@ -91,11 +91,17 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
 .list-group-item.selected {color: #0ab; background-color: #ff6;}
 .input-group-addon.align-top {vertical-align: top; padding-top: 9px;}
 .list-inline.full-width {width: 100%;}
+
     .list-inline.full-width > li.list-group-item {width: 100%;}
     .list-inline.full-width > li.list-group-item:last-child {margin-bottom: 6px;}
         .list-inline.full-width > li.list-group-item > .btn {width: 100%; text-align: left;}
-        .list-inline.full-width > li.list-group-item > .btn > .badge {float: right;} 
+        .list-inline.full-width > li.list-group-item > .btn > .badge {float: right;}
 
+    .list-inline.full-width.link-list .list-group-item {border: none; background-color: none; background: none; border-radius: 0; margin: 0;}
+        .list-inline.full-width.link-list .list-group-item:nth-child(odd) {background: rgba(0, 240, 255, 0.2);}
+            .list-inline.full-width.link-list .list-group-item .btn {border: none; background-color: none; background: none; color: #999; text-shadow: none;}
+                .list-inline.full-width.link-list .list-group-item .btn .badge {color: #999; border: 1px solid #ccc;}
+   
 /* GLOBAL: Vars */
 /* Orange */
 .color-1 {color: #f90;}
@@ -292,7 +298,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid {transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s; -webkit-transition: box-shadow 0.5s, background-color 0.5s, border-color 0.5s;
     box-shadow: none; line-height: 1;
     position: relative; cursor: pointer; font-size: 14px; color: #fff;
-    border-radius: 5px; background-color: #0ab; border: 1px solid #078; box-shadow: 0 0 3px #000, 0 0 3px #0cd inset;}
+    border-radius: 5px; background-color: #0ab; box-shadow: 0 0 3px #000, 0 0 3px #0cd inset;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff;}
 .btn-lucid.active {transition: color 0.5; -webkit-transition: box-shadow 0.5s;
     background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
@@ -338,14 +344,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #0bf;}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #00d9ff; box-shadow: 0 0 1px #fff inset;}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0bf; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
@@ -478,8 +484,7 @@ body.message-panel #pages {padding-top: 105px;}
                 #join-conversation .conversation-lists-nav .btn:last-child {border-top-right-radius: 4px;}
                     #join-conversation .conversation-lists-nav .btn.btn-suggested-streams {display: none;}
                     #join-conversation .conversation-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
-
-                #join-conversation .conversation-lists .form-control {display: none; height: 200px; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
+                #join-conversation .conversation-lists .form-control {padding: 0; background-color: #fff; display: none; height: 200px; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
                 #join-conversation .conversation-lists .form-control.active {display: block;}
 
     /* PAGE CONVERSATION */
