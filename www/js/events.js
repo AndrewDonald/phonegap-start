@@ -198,11 +198,6 @@ function initEventHandlers(){
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
                     break;
-                case 'notifications-panel':
-                    $('body').toggleClass(target);
-                    $('#notifications-panel').addClass('.active').slideToggle();
-                    gotoPage(target);
-                    break;
                 case 'page-login':
                     gotoPage(target);
                     if($(this).attr('id') == 'logout-toggle'){

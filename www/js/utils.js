@@ -55,6 +55,7 @@ $.fn.scrollTo = function( targetDom ){
 function gotoPage(page){
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
+    $('body').attr('data-page',page);
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;

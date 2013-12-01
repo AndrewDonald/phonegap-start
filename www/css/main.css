@@ -343,14 +343,16 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
+    text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
     .btn-lucid-normal > .toggle-icon > span:first-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {color: #fff; background-color: #0bf; box-shadow: 0 0 1px #fff inset;}
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
+    color: #fff; background-color: #0bf; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
@@ -407,8 +409,9 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
         #send-message.private {background-color: #cff;}
 
     /* NOTIFICATIONS PANEL */
-    #notifications-panel {display: none; background-color: rgba(0,0,0,0.75); color: #0bf; font-size: 12px; padding: 0 5px; border-bottom: 1px solid #0bf;}
-    #notifications-panel.active {display: block;}
+    #notifications-panel {background-color: rgba(0,0,0,0.75); color: #0bf; font-size: 12px; padding: 0 5px; border-bottom: 1px solid #0ab;}
+    body[data-page="page-login"]#notifications-panel.active,
+    body[data-page="page-create-user"] #notifications-panel.active {display: none;}
     /* STREAM CONTROLS */
     .btn-stream-controls > .stream-icon {margin-top: 5px;}
         .stream-filters > .btn .added-stream {font-size: 20px; line-height: 14px;}
@@ -559,9 +562,9 @@ body.logged-out.footer  nav#footer {display: none;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* FILTER PANEL */
-    #stream-status-panel {font-size: 10px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000, 0 1px 3px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+    #stream-status-panel {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000, 0 1px 3px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
         #stream-status-panel .glyphicon-filter {font-size: 8px;}
-        #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 1px 3px; font-weight: normal; font-size: 9px;}
+        #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px;}
 
     /* CONVERSATION PAGE */
     body[data-page=page-conversation] #people-panel {}
