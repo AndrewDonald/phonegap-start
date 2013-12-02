@@ -111,9 +111,8 @@ function geoSuccess(position) {
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
-    $('#modal-loader .modal-body').html("LucidLife is unable to retrieve your current location.\n\nPlease ensure GPS is turned on and permissions are enabled for this application.");
-    $('#modal-loader .modal-footer').addClass('active').slideDown();
-    $('#modal-loader .modal-footer .btn-close').attr('onclick','aquireGeolocation();');
+    $('#modal-loader .modal-body').html("LucidLife is unable to retrieve your current location.\n\nPlease ensure GPS is turned on and permissions are enabled for this application then return and try to login again.");
+    $('#modal-loader .modal-footer').addClass('active');
 }
 
 function updateAbout(){
