@@ -210,6 +210,11 @@ h2 {font-size: 16px;}
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#modal-loader .modal-footer {display: none;}
+#modal-loader .modal-footer.active {display: block;}
+
+
 /*
 .alert{}
     .alert a.alert-link {position: relative; display: block; padding: 5px 35px 5px 25px; color: #fff; font-weight: normal; line-height: 1.15; border-bottom: 1px dotted #0ab;}
@@ -468,13 +473,14 @@ body.message-panel #pages {padding-top: 105px;}
         body.audio #page-stream .show-audio {display: block;}
     
     /* PAGE LOGIN */
-    #page-login {padding-top: 50px;}
+    #page-login {padding-top: 50px; text-align: center;}
         #form-login .btn-join {font-size: 16px; margin-left: -10px;}
 
     /* PAGE CREATE-USER */
     #page-create-user {}
         #form-create-user .steps {display: none;}
         #form-create-user .steps.active {display: block;}
+        #form-create-user .steps.step-2 .input-group-addon {text-align: right; min-width: 100px;}
             #form-create-user .gender > .form-control {padding: 0 5px;}
             #form-create-user .instructions {font-size: 10px; color: #0ab; margin-top: -5px;}
     
@@ -485,8 +491,8 @@ body.message-panel #pages {padding-top: 105px;}
                 #join-conversation .thought-lists-nav .btn:first-child {border-top-left-radius: 4px;}
                 #join-conversation .thought-lists-nav .btn:last-child {border-top-right-radius: 4px;}
                     #join-conversation .thought-lists-nav .btn.btn-suggested-streams {display: none;}
-                    #join-conversation .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
-                #join-conversation .thought-lists .form-control {padding: 0; background-color: #fff; display: none; height: auto; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
+                    #join-conversation.suggested .thought-lists-nav .btn.btn-suggested-streams {display: table-cell;}
+                #join-conversation .thought-lists .form-control {display: none; padding: 0; background-color: #fff; height: auto; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px; box-shadow: 0 1px 3px inset;}
                 #join-conversation .thought-lists .form-control.active {display: block;}
 
     /* PAGE CONVERSATION */

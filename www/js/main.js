@@ -107,6 +107,12 @@ function joinNow(){
     $('#form-create-user > .steps.step-1').addClass('active');
 }
 
+// Show Step-1 of Create User Form
+function joinBack(){
+    $('#form-create-user > .steps.step-2').removeClass('active');
+    $('#form-create-user > .steps.step-1').addClass('active');
+}
+
 // Show Step-2 of Create User Form 
 function verifyCreateAccount(){
     $('#form-create-user > .steps').toggleClass('active');

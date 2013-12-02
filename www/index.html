@@ -110,9 +110,11 @@
             <!-- MESSAGE PANEL (END) -->
 
             <!-- NOTIFICATIONS PANEL (START) -->
+            <!--
             <div id="notifications-panel">
                 <span>[Notifications] ie: ~stream has been added/removed.</span>
             </div>
+            -->
             <!-- NOTIFICATION PANEL (END) -->
         </nav>
         <!-- HEADER (END) -->
@@ -132,7 +134,7 @@
                             <span class="input-group-addon glyphicon glyphicon-lock"></span>
                             <input name="password" type="password" class="form-control" placeholder="password">
                         </div>
-                        <button type="button" class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-8 col-sm-4" onclick="loginUser();">Login</button>
+                        <button type="button" class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-12" onclick="loginUser();">Login</button>
                         <button type="button" class="form-row btn btn-md btn-link btn-join" onclick="joinNow();">Join Now</button>
                     </div>
                 </div>
@@ -158,9 +160,10 @@
                                 </span>
                                 <input name="verify-password" type="password" class="form-control" placeholder="verify password">
                             </div>
-                            <button type="button" class="form-row btn btn-md btn-warning btn-wide pull-right" onclick="$('#form-create-user > .steps').toggleClass('active');">Next</button>
+                            <button type="button" class="form-row btn btn-md btn-warning col-xs-12" onclick="$('#form-create-user > .steps').toggleClass('active');">Next</button>
                         </div>
                         <div class="steps step-2">
+                            <button type="button" class="form-row btn btn-md btn-link btn-back clearfix" onclick="joinBack();">&lt; Back</button>
                             <div class="form-row first-name input-group input-group-md">
                                 <span class="input-group-addon">First Name</span>
                                 <input name="fname" type="text" class="form-control" placeholder="first name">
@@ -194,8 +197,7 @@
                                 <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list some of your interests"></textarea>
                             </div>
                             <div class="form-row">
-                                <button type="button" class="form-row btn btn-md btn-link btn-back pull-left" onclick="joinLucidLife();">&lt; Back</button>
-                                <button class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right" onclickx="createUser(); return false;">Done</button>
+                                <button class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-12" onclickx="createUser(); return false;">Done</button>
                             </div>
                         </div>
                     </div> 
@@ -209,9 +211,9 @@
                     <div id="form-thought" class="form" onsubmit="return createAccount();" method="post">
                         <div class="form-row thought input-group input-group-md">
                             <span class="input-group-addon stream-icon"></span>
-                            <input type="text" class="form-control" placeholder="what's on your mind?">
+                            <input type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
                         </div>
-                        <button type="button" class="form-row btn btn-md btn-warning pull-right" onclick="alert('find people');">
+                        <button type="button" class="form-row btn btn-md btn-warning col-xs-12" onclick="alert('find people');">
                             Find People
                             <!--<span class="badge">426</span>-->
                         </button>
@@ -2330,12 +2332,9 @@
                         </div>
                     </div>
                     <div class="modal-body"></div>
-                    <!--
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn-close btn btn-link" data-dismiss="modal">ok</button>
                     </div>
-                    -->
                 </div>
             </div>
         </div>

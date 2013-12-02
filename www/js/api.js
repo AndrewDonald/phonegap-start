@@ -197,6 +197,40 @@ function getThoughts_Callback(result) {
 }
 
 
+// Live-Query
+function liveQuery(searchValue){
+    if(searchValue.length > 2){
+        var objMessage = {};
+            objMessage.method   = "get_thought_suggestions";
+            objMessage.keyword  = searchValue;
+
+        apiRequest(objMessage, liveQuery_CALLBACK);
+    }else{
+        $('#join-conversation').removeClass('suggested');
+        $('#join-conversation .btn-hot-streams').click();
+    }
+}
+
+function liveQuery_CALLBACK(result) {
+    if(result == 0) {
+        //ajax server request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+            if(result.object.length > 0){
+                populateThoughtList('suggested', result.object);
+                $('#join-conversation').addClass('suggested');
+                $('#join-conversation .btn-suggested-streams').click();
+            }else{
+                $('#join-conversation').removeClass('suggested');
+                $('#join-conversation .btn-hot-streams').click();
+            }
+        }else{
+            // Failed Response
+        }
+    }
+}
+
 //************************* OLD METHODS BEGIN BELOW ******************************//
 // Login user
 function ping(stream, status){
@@ -935,42 +969,7 @@ function updateUserFilter_CALLBACK(result){
     }   
 }
 
-// Live-Query
-function liveQuery(searchValue){
-    var objMessage = {};
-        objMessage.method   = "search_stream";
-        objMessage.keyword  = searchValue;
 
-    var callbackFunction;
-
-    apiRequest(objMessage, liveQuery_CALLBACK);
-}
-
-function liveQuery_CALLBACK(result) {
-    if(result == 0) {
-        //ajax server request failed
-    }else{
-        var arrMatches  = [];
-        $.each(result.object, function(index) {
-            arrMatches.push(result.object[index].stream + ' (' + result.object[index].activeusers + ')');
-	    //arrMatches.push(result.object[index].stream + '<sup class="qty-notification">(' + result.object[index].activeusers + ')</sup>');
-	});
-	
-	var currentSearchDom =  $('input.stream-search.active');
-        $(currentSearchDom).typeahead({
-		updater: function (item) {
-			item = item.replace(/ *\([^)]*\) */g, "");
-			$('input.stream-search').val(item);			
-			$(this).closest('form').trigger('submit');
-			return item;
-		},
-		items: 10, 
-		minLength: 1
-	});
-	// Keep this line separate, it doesn't refresh with a new list if combined with above
-        $(currentSearchDom).data("typeahead").source = arrMatches;
-    }
-}
 
 // Validate postal code
 function getGeo(country, postalcode){
