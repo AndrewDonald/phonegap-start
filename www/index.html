@@ -99,7 +99,7 @@
                 <div id="new-thought-panel" style="display: none;">
                     <form id="form-thought" class="navbar-form clearfix">
                         <div class="input-group">
-                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value); console.log('key');">
                             <span class="input-group-btn">
                                 <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
                                     <span class="stream-icon"></span><!--<span class="badge">426</span>-->
@@ -125,20 +125,11 @@
                 <!-- MESSAGE PANEL (END) -->
             </div>
             <!-- HEADER PANEL (END) -->
-
-            <!-- NOTIFICATIONS PANEL (START) -->
-            <!--
-            <div id="notifications-panel">
-                <span>[Notifications] ie: ~stream has been added/removed.</span>
-            </div>
-            -->
-            <!-- NOTIFICATION PANEL (END) -->
         </nav>
         <!-- HEADER (END) -->
 
         <!-- PAGES (START) -->
         <div id="pages">
-
             <!-- LOGIN (START) -->
             <div id="page-login" class="page row active">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -226,39 +217,27 @@
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                <!--
-                    <div id="form-thought" class="form" onsubmit="return createAccount();" method="post">
-                        <div class="form-row thought input-group input-group-md">
-                            <span class="input-group-addon stream-icon"></span>
-                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
-                        </div>
-                        <button type="button" name="submitThought" class="form-row btn btn-md btn-warning col-xs-12" onclick="submitThought($('#form-thought input[name=thought]').val());">
-                            Find People
-                            <span class="badge">426</span>
-                        </button>
-                    </div>
-                -->
                     <div id="join-conversation">
                         <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
-                            <a class="btn-hot-streams btn btn-lucid active">
-                                <span class="glyphicon glyphicon-fire"></span>
-                            </a>
                             <a class="btn-suggested-streams btn btn-lucid">
                                 <span class="suggested-streams glyphicon glyphicon-thumbs-up"></span>
+                            </a>
+                            <a class="btn-hot-streams btn btn-lucid active">
+                                <span class="glyphicon glyphicon-fire"></span>
                             </a>
                             <a class="btn-past-streams btn btn-lucid">
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </a>
                         </div>
                         <div class="thought-lists">
-                            <ul class="hot-thought-list form-control list-inline full-width link-list active">
-                                <li class="list-group-item">
-                                    No hot thoughts found.
-                                </li>
-                            </ul>
                             <ul class="suggested-thought-list form-control list-inline full-width link-list">
                                 <li class="list-group-item">
                                     No suggested thoughts found.
+                                </li>
+                            </ul>
+                            <ul class="hot-thought-list form-control list-inline full-width link-list active">
+                                <li class="list-group-item">
+                                    No hot thoughts found.
                                 </li>
                             </ul>
                             <ul class="past-thought-list form-control list-inline full-width link-list">

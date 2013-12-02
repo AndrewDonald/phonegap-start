@@ -176,15 +176,9 @@ function initEventHandlers(){
                 case 'page-new-thought':
                     $('#new-thought-toggle').toggleClass('active');
                     if($('#new-thought-toggle').is('.active')){
-                        $('#send-message-con').slideUp('fast', function(){
-                            $('#new-thought-panel').slideDown('fast');
-                            gotoPage('page-new-thought');
-                        });
+                        gotoPage('page-new-thought');
                     }else{
-                        $('#new-thought-panel').slideUp('fast', function(){
-                            $('#send-message-con').slideDown('fast');
-                            gotoPage(_session.page);
-                        });
+                        gotoPage(_session.page);
                     }
                     break;
                 case 'page-conversation':

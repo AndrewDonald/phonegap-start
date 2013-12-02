@@ -206,8 +206,8 @@ function liveQuery(searchValue){
 
         apiRequest(objMessage, liveQuery_CALLBACK);
     }else{
-        $('#join-conversation').removeClass('suggested');
-        $('#join-conversation .btn-hot-streams').click();
+        $('#join-conversation.suggested').removeClass('suggested');
+        $('#join-conversation .btn-hot-streams:not(".active")').click();
     }
 }
 
@@ -231,7 +231,7 @@ function liveQuery_CALLBACK(result) {
     }
 }
 
-// Sudmit Thought / Find People
+// Submit Thought
 function submitThought(thought){
     var objMessage = {};
         objMessage.method = "submit_thought";

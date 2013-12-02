@@ -126,7 +126,6 @@ function initializeApp(){
     localStorage.setItem('email', _session.user.email);
     localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
-    $('#new-thought-toggle').addClass('active');
     gotoPage('page-new-thought');
 }
 

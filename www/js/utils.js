@@ -58,8 +58,15 @@ function gotoPage(page){
     $('body').attr('data-page', page);
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
+        $('#new-thought-panel').slideUp('fast', function(){
+            $('#send-message-con').slideDown('fast');
+        });
         _session.page = page;
     }else{
+        $('#new-thought-toggle').addClass('active');
+        $('#send-message-con').slideUp('fast', function(){
+            $('#new-thought-panel').slideDown('fast');
+        });
         getThoughts();
     }
 }
