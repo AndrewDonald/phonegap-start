@@ -93,8 +93,24 @@
             </div>
             <!-- MASTHEAD (END) -->
 
-            <!-- MESSAGE PANEL (START) -->
-            <div id="message-panel">
+            <!-- HEADER PANEL (START) -->
+            <div id="header-panel">
+                <!-- NEW THOUGHT PANEL (START) -->
+                <div id="new-thought-panel" style="display: none;">
+                    <form id="form-thought" class="navbar-form clearfix">
+                        <div class="input-group">
+                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                            <span class="input-group-btn">
+                                <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
+                                    <span class="stream-icon"></span><!--<span class="badge">426</span>-->
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <!-- NEW THOUGHT PANEL (END) -->
+
+                <!-- MESSAGE PANEL (START) -->
                 <div id="send-message-con">
                     <form class="send-message-form navbar-form clearfix">
                         <div class="input-group">
@@ -106,8 +122,9 @@
                         </div>
                     </form>
                 </div>
+                <!-- MESSAGE PANEL (END) -->
             </div>
-            <!-- MESSAGE PANEL (END) -->
+            <!-- HEADER PANEL (END) -->
 
             <!-- NOTIFICATIONS PANEL (START) -->
             <!--
@@ -166,11 +183,11 @@
                             <button type="button" class="form-row btn btn-md btn-link btn-back clearfix" onclick="joinBack();">&lt; Back</button>
                             <div class="form-row first-name input-group input-group-md">
                                 <span class="input-group-addon">First Name</span>
-                                <input name="fname" type="text" class="form-control" placeholder="first name">
+                                <input name="fname" type="text" class="form-control">
                             </div>
                             <div class="form-row last-name input-group input-group-md">
                                 <span class="input-group-addon">Last Name</span>
-                                <input name="lname" type="text" class="form-control" placeholder="last name">
+                                <input name="lname" type="text" class="form-control">
                             </div>
                             <div class="form-row gender input-group input-group-md">
                                 <span class="input-group-addon">Gender</span>
@@ -191,10 +208,11 @@
                                 <span class="input-group-addon">Photo</span>
                                 <input name="photo" type="text" class="form-control" placeholder="select a profile photo">
                             </div>
-                            <div class="instructions clearfix"><span class="pull-right">*1000 characters max</span></div>
-                            <div class="form-row biography input-group input-group-md">
+                            
+                            <div class="form-row biography">
                                 <span class="input-group-addon align-top">Bio</span>
-                                <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list some of your interests"></textarea>
+                                <textarea name="biography" type="textarea" class="form-control" placeholder="Introduce yourself and list some interests"></textarea>
+                                <div class="instructions pull-right">*1000 characters max</div>
                             </div>
                             <div class="form-row">
                                 <button class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-12" onclickx="createUser(); return false;">Done</button>
@@ -208,16 +226,18 @@
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                <!--
                     <div id="form-thought" class="form" onsubmit="return createAccount();" method="post">
                         <div class="form-row thought input-group input-group-md">
                             <span class="input-group-addon stream-icon"></span>
-                            <input type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
                         </div>
-                        <button type="button" class="form-row btn btn-md btn-warning col-xs-12" onclick="alert('find people');">
+                        <button type="button" name="submitThought" class="form-row btn btn-md btn-warning col-xs-12" onclick="submitThought($('#form-thought input[name=thought]').val());">
                             Find People
-                            <!--<span class="badge">426</span>-->
+                            <span class="badge">426</span>
                         </button>
                     </div>
+                -->
                     <div id="join-conversation">
                         <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
                             <a class="btn-hot-streams btn btn-lucid active">

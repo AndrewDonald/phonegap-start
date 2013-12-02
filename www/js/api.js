@@ -231,6 +231,35 @@ function liveQuery_CALLBACK(result) {
     }
 }
 
+// Sudmit Thought / Find People
+function submitThought(thought){
+    var objMessage = {};
+        objMessage.method = "submit_thought";
+        objMessage.thought = thought;
+
+    apiRequest(objMessage, submitThought_Callback, false);
+    
+    return false;
+}
+
+function submitThought_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+            _session.stream     = result.object.stream;
+            _session.streamid   = result.object.streamid;
+            gotoPage('page-conversation');
+        }else{
+            // Server returned an error = failed authorization
+        }
+        
+        //initializeSession();
+        deinitializeApp();
+    }
+}
+
 //************************* OLD METHODS BEGIN BELOW ******************************//
 // Login user
 function ping(stream, status){
@@ -971,33 +1000,7 @@ function updateUserFilter_CALLBACK(result){
 
 
 
-// Validate postal code
-function getGeo(country, postalcode){
-    var objMessage = {};
-        objMessage.method 	= "get_geo";
-	objMessage.postalcode 	= postalcode;
-	objMessage.country 	= country;
 
-    apiRequest(objMessage, getGeo_Callback);
-}
-
-function getGeo_Callback(result) {
-    if(result==0) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-            // Successful
-	    $('form#form-join input#join-province').val(result.object.province);
-	    $('form#form-join input#join-city').val(result.object.city);
-        }else{
-            // Server returned an error = failed authorization
-	    if (result.message != undefined) {
-		document.getElementById('join-postalcode').setCustomValidity(result.message);
-		setTimeout('$("#join-submit").click()', 100); // must click to actually show the errors 
-	    }
-        }
-    }
-}
 
 // Keepalive
 function keepalive(){

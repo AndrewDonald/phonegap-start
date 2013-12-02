@@ -55,7 +55,7 @@ $.fn.scrollTo = function( targetDom ){
 function gotoPage(page){
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
-    $('body').attr('data-page',page);
+    $('body').attr('data-page', page);
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;
@@ -111,7 +111,7 @@ function geoSuccess(position) {
 // onError Callback receives a PositionError object
 //
 function geoError(error) {
-    $('#modal-loader .modal-body').html("LucidLife is unable to retrieve your current location.\n\nPlease ensure GPS is turned on and permissions are enabled for this application then return and try to login again.");
+    $('#modal-loader .modal-body').html("LucidLife is unable to retrieve your current location.\n\nPlease ensure GPS is turned on and permissions are enabled for this application then login again.");
     $('#modal-loader .modal-footer').addClass('active');
 }
 

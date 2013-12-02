@@ -8,8 +8,9 @@ var _session            = {};
     _session.loggedIn   = false;
     _session.page       = "page-login";
     _session.stream     = {};
-        _session.stream.id              = 0;
-        _session.stream.name            = "LucidLife";
+        _session.stream.id      = 0;
+        _session.stream.name = "LucidLife";
+
 /*
         _session.stream.added = {};                             // Added Parallel Streams parent
         _session.stream.added.streamid['{streamid}'] = {};      // (DATA: addedDate, new, name, people) *new = created
@@ -125,6 +126,7 @@ function initializeApp(){
     localStorage.setItem('email', _session.user.email);
     localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
+    $('#new-thought-toggle').addClass('active');
     gotoPage('page-new-thought');
 }
 

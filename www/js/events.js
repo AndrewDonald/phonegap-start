@@ -176,18 +176,19 @@ function initEventHandlers(){
                 case 'page-new-thought':
                     $('#new-thought-toggle').toggleClass('active');
                     if($('#new-thought-toggle').is('.active')){
-                        $('body').removeClass('footer message-panel');
-                        $('#message-panel').removeClass('active');
-                        gotoPage('page-new-thought');
+                        $('#send-message-con').slideUp('fast', function(){
+                            $('#new-thought-panel').slideDown('fast');
+                            gotoPage('page-new-thought');
+                        });
                     }else{
-                        $('body').addClass('footer message-panel');
-                        $('#message-panel').addClass('active');
-                        gotoPage(_session.page);
+                        $('#new-thought-panel').slideUp('fast', function(){
+                            $('#send-message-con').slideDown('fast');
+                            gotoPage(_session.page);
+                        });
                     }
                     break;
                 case 'page-conversation':
-                    $('body').addClass('footer message-panel').attr('data-page', target);
-                    $('#message-panel').toggleClass('active');
+                    $('body').attr('data-page', target);
                     $('#alerts-panel').toggleClass('active');
                     gotoPage(target);
                     break;
