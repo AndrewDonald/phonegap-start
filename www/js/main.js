@@ -34,6 +34,7 @@ var _application                                = {};
     _application.servercookie                   = "PHPSESSID";
     _application.detect                         = {};
     _application.detect.useragent               = navigator.userAgent.toLowerCase();
+    _application.node.streamserver              = "https://dev.lucidlife.co";
     /*
     _application.detect.touchEnabled            = Modernizr.touch || 
                                                     (_application.detect.useragent.match(/(iphone|ipod|ipad)/) ||

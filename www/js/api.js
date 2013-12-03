@@ -304,9 +304,10 @@ function updateNodeServer() {
 // never call this, only update will call this
 function initiateNodeServer() {
     if (window.location.hostname == "lucidlife.co") {
-    _application.node.socket = io.connect("https://stream.lucidlife.co:" + _application.node.port, {secure: true});
+        _application.node.socket = io.connect("https://stream.lucidlife.co:" + _application.node.port, {secure: true});
     } else {
-    _application.node.socket = io.connect("https://" + window.location.hostname + ":" + _application.node.port, {secure: true});
+        //_application.node.socket = io.connect("https://" + window.location.hostname + ":" + _application.node.port, {secure: true});
+        _application.node.socket = io.connect(_application.node.streamserver + ":" + _application.node.port, {secure: true});
     }
     
     _application.node.socket.on('connect', function () {
@@ -323,13 +324,13 @@ function initiateNodeServer() {
             break;
         case "chat":
             //addStreamActivity(msg.object, 0);
-            $('connection-items-con').append('StreamActivity: ' + msg.object);
+            $('connection-items-con').append('StreamActivity: ' + JSON.stringify(msg.object));
             break;
         case "subscription":
             _application.streamMember[msg.object.userid.toString()] = msg.object; 
             _application.streamMember[msg.object.userid.toString()].time = splitDate(_application.streamMember[msg.object.userid.toString()].createdate);
             //addStreamMember(msg.object, 0);
-            $('.connection-items-con').append('AddMember: ' + msg.object);
+            $('.connection-items-con').append('AddMember: ' + JSON.stringify(msg.object));
             break;
         case "add_connection":
             break;
