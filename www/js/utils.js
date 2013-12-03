@@ -58,15 +58,13 @@ function gotoPage(page){
     $('body').attr('data-page', page);
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
-        $('#new-thought-panel').slideUp('fast', function(){
-            $('#send-message-con').slideDown('fast');
-        });
+        $('#new-thought-panel').hide();
+        $('#send-message-con').show();
         _session.page = page;
     }else{
         $('#new-thought-toggle').addClass('active');
-        $('#send-message-con').slideUp('fast', function(){
-            $('#new-thought-panel').slideDown('fast');
-        });
+        $('#send-message-con').hide()
+        $('#new-thought-panel').show();
         getThoughts();
     }
 }
@@ -142,8 +140,46 @@ function populateThoughtList(thoughtList, objList){
     var list = "";
     $.each(objList, function(){
         list += _template.thoughtListItem
+                .replace(/\{streamid}/g, this.streamid)
                 .replace(/\{stream}/g, this.stream)
                 .replace(/\{activeusers}/g, this.activeusers);
     });
     $('.' + thoughtList + '-thought-list').html(list);
+}
+
+// Utility Functions
+function splitDate(date) {
+    if (date != null) { 
+        var first = date.split(" ");
+        var day = first[0].split("-");
+        day[1] = day[1] - 1; // month should be 0-11
+        var time = first[1].split(":");
+        var dt = day.concat(time);
+        return (new Date(Date.UTC(dt[0], dt[1], dt[2], dt[3], dt[4], dt[5]))).getTime();
+    }
+}
+
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function deleteCookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }

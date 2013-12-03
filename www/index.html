@@ -97,7 +97,7 @@
             <div id="header-panel">
                 <!-- NEW THOUGHT PANEL (START) -->
                 <div id="new-thought-panel" style="display: none;">
-                    <form id="form-thought" class="navbar-form clearfix">
+                    <div id="form-thought" class="navbar-form clearfix">
                         <div class="input-group">
                             <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value); console.log('key');">
                             <span class="input-group-btn">
@@ -106,7 +106,7 @@
                                 </button>
                             </span>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <!-- NEW THOUGHT PANEL (END) -->
 
@@ -2401,6 +2401,8 @@
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/storage.js"></script>
+        <script type="text/javascript" src="js/json2.js"></script>
+        <script type="text/javascript" src="js/socket.io.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/api.js"></script>
         <script type="text/javascript" src="js/events.js"></script>

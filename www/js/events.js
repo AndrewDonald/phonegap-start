@@ -53,6 +53,9 @@ function initEventHandlers(){
         $(this).toggleClass('active');
     });
 
+    
+    
+
 /*
     $('#send-message').on('focus',function(e) { 
         $('html,body').animate({

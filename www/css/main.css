@@ -365,8 +365,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
-.tab-lucid {color: #fff; background-color: #078; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 -1px 5px #000;}
-    .tab-lucid.active {background-color: #0ab; box-shadow: 0 1px 2px #0ef inset, 0 -1px 5px #000;}
+.tab-lucid {color: #fff; background-color: #0ab; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 -1px 5px #000;}
+    .tab-lucid.active {background-color: #0cd; box-shadow: 0 1px 2px #0ef inset, 0 -1px 5px #000;}
 
 .chevron-toggle {position: relative; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: rgba(255,255,255,0.8); color: #0bc; text-shadow: 0 0 2px #005566;}
     .chevron-toggle > span {position: absolute; top: 0; left: 0;}
@@ -452,7 +452,7 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-#pages {padding: 105px 0 600px;}
+#pages {padding: 105px 0 60px;}
 body.logged-out #pages {padding-top: 60px;}
     #pages > .page {display: none; margin: 0; padding: 0 10px; clear: both;}
     #pages > .page.active {display: block;}
@@ -484,7 +484,7 @@ body.logged-out #pages {padding-top: 60px;}
         #form-create-user .steps.step-2 .input-group-addon {text-align: right; min-width: 100px;}
             #form-create-user .steps.step-2 .gender > .form-control {padding: 0 5px;}
             #form-create-user .steps.step-2 .biography .input-group-addon {border-radius: 4px 4px 0 0; text-align: center;}
-            #form-create-user .steps.step-2 .biography textarea {width: 100%; height: 65px; border-radius: 0 0 4px 4px;}
+            #form-create-user .steps.step-2 .biography textarea {margin-top: -1px; width: 100%; height: 65px; border-radius: 0 0 4px 4px;}
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
     /* PAGE NEW-THOUGHT */

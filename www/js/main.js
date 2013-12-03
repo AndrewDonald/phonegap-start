@@ -8,8 +8,8 @@ var _session            = {};
     _session.loggedIn   = false;
     _session.page       = "page-login";
     _session.stream     = {};
-        _session.stream.id      = 0;
-        _session.stream.name = "LucidLife";
+        _session.stream.id   = 0;
+        _session.stream.name = "All";
 
 /*
         _session.stream.added = {};                             // Added Parallel Streams parent
@@ -27,7 +27,7 @@ var _session            = {};
     
     
 var _application                                = {};
-    _application.version                        = "0.2.5";
+    _application.version                        = "0.3.0";
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
@@ -91,9 +91,9 @@ $(function() {
     initEventHandlers();
     
     // Auto-Login if previous authentication data exists in localStorage
-    if(localStorage.getItem('email') && localStorage.getItem('password')){
-        $('#form-login input[name="email"]').val(localStorage.getItem('email'));
-        $('#form-login input[name="password"]').val(localStorage.getItem('password'));
+    if(storage.data('login')){
+        $('#form-login input[name="email"]').val(storage.data('login').email);
+        $('#form-login input[name="password"]').val(storage.data('login').password);
         loginUser();
     }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
@@ -122,11 +122,12 @@ function verifyCreateAccount(){
 function initializeApp(){
     $('body').removeClass('logged-out');
     _session.loggedIn = true;
-    //storage.set('login', {'email': _session.user.email, 'password': $('#form-login input[name="password"]').val()});
-    localStorage.setItem('email', _session.user.email);
-    localStorage.setItem('password', $('#form-login input[name="password"]').val());
+    storage.data("login", {"email": _session.user.email, "password": $('#form-login input[name="password"]').val()});
+    //localStorage.setItem('email', _session.user.email);
+    //localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
     gotoPage('page-new-thought');
+    updateNodeServer();
 }
 
 function deinitializeApp(){
@@ -134,4 +135,15 @@ function deinitializeApp(){
     _session.loggedIn = false;
     updateAbout();
     gotoPage('page-login');
+}
+
+// Changes Thought Stream
+function changeStream(objStream){
+    _session.stream     = objStream.stream;
+    _session.streamid   = objStream.streamid;
+            
+    gotoPage('page-conversation');
+    $('#page-conversation .connection-items-con').empty();
+    $('h1.stream-name').html(_session.stream);
+    //updateNodeServer();
 }

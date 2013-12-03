@@ -238,8 +238,6 @@ function submitThought(thought){
         objMessage.thought = thought;
 
     apiRequest(objMessage, submitThought_Callback, false);
-    
-    return false;
 }
 
 function submitThought_Callback(result) {
@@ -248,17 +246,104 @@ function submitThought_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful
-            _session.stream     = result.object.stream;
-            _session.streamid   = result.object.streamid;
-            gotoPage('page-conversation');
+            changeStream(result.object);
         }else{
-            // Server returned an error = failed authorization
+            // Server returned an error
         }
-        
-        //initializeSession();
-        deinitializeApp();
     }
 }
+
+// Subscribe Thought
+function subscribeThought(streamid){
+    var objMessage = {};
+        objMessage.method = "subscribe_thought";
+        objMessage.streamid = streamid;
+
+    apiRequest(objMessage, subscribeThought_Callback, false);
+}
+
+function subscribeThought_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+            changeStream(result.object);
+        }else{
+            // Server returned an error
+        }
+    }
+}
+
+
+////////////// NODE Server APIs ///////////////
+
+// always call this to initiate. 
+function updateNodeServer() {
+    // logged in, not on stream
+    //if (_session.lastpage != "#STREAM" && _session.user != null) {
+    if (_session.loggedIn && _session.stream.id == null) {
+        _session.stream = {};
+        if (_application.node.socket == null) {
+            initiateNodeServer();
+        } else {
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+        }
+    } 
+    // logged in or anonymous, in stream
+    else if (_session.loggedIn && _session.stream.id != null) {
+        if (_application.node.socket == null) {
+            initiateNodeServer();
+        } else {
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+            setTimeout("ping('"+_session.stream.name+"')", 1000); 
+        }
+    } 
+}
+
+// never call this, only update will call this
+function initiateNodeServer() {
+    if (window.location.hostname == "lucidlife.co") {
+    _application.node.socket = io.connect("https://stream.lucidlife.co:" + _application.node.port, {secure: true});
+    } else {
+    _application.node.socket = io.connect("https://" + window.location.hostname + ":" + _application.node.port, {secure: true});
+    }
+    
+    _application.node.socket.on('connect', function () {
+    _application.node.socket.on('message', function (msg) {
+        msg = JSON.parse(msg);
+        
+        // Identify and respond to messages
+        switch (msg.type) {
+        case "listen_details":
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+            if (_session.stream.name != null) {
+            setTimeout("ping('"+_session.stream.name+"')", 1000); 
+            }
+            break;
+        case "chat":
+            //addStreamActivity(msg.object, 0);
+            $('connection-items-con').append('StreamActivity: ' + msg.object);
+            break;
+        case "subscription":
+            _application.streamMember[msg.object.userid.toString()] = msg.object; 
+            _application.streamMember[msg.object.userid.toString()].time = splitDate(_application.streamMember[msg.object.userid.toString()].createdate);
+            //addStreamMember(msg.object, 0);
+            $('.connection-items-con').append('AddMember: ' + msg.object);
+            break;
+        case "add_connection":
+            break;
+        case "send_message":
+            getUnreadMessages();
+            $('#connections-unread-messages-link > .qty-notification').flash();
+            break;
+        default:
+            break;
+        }
+    });
+    });
+}
+
 
 //************************* OLD METHODS BEGIN BELOW ******************************//
 // Login user
@@ -1040,70 +1125,5 @@ function keepalive_CALLBACK(result) {
 	    }
         }
     }
-}
-
-////////////// NODE Server APIs ///////////////
-
-// always call this, not initiate. 
-function updateNodeServer() {
-    // logged in, not on stream
-    if (_session.lastpage != "#STREAM" && _session.user != null) {
-		_session.stream = {};
-		if (_application.node.socket == null) {
-			initiateNodeServer();
-		} else {
-			_application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
-		}
-    } 
-    // logged in or anonymous, in stream
-    else if (_session.lastpage == "#STREAM") {
-		if (_application.node.socket == null) {
-			initiateNodeServer();
-		} else {
-			_application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
-			setTimeout("ping('"+_session.stream.name+"')", 1000); 
-		}
-    } 
-}
-
-// never call this, only update will call this
-function initiateNodeServer() {
-    if (window.location.hostname == "lucidlife.co") {
-	_application.node.socket = io.connect("https://stream.lucidlife.co:" + _application.node.port, {secure: true});
-    } else {
-	_application.node.socket = io.connect("https://" + window.location.hostname + ":" + _application.node.port, {secure: true});
-    }
-    
-    _application.node.socket.on('connect', function () {
-	_application.node.socket.on('message', function (msg) {
-	    msg = JSON.parse(msg);
-	    
-	    // Identify and respond to messages
-	    switch (msg.type) {
-		case "listen_details":
-		    _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
-		    if (_session.stream.name != null) {
-			setTimeout("ping('"+_session.stream.name+"')", 1000); 
-		    }
-		    break;
-		case "chat":
-		    addStreamActivity(msg.object, 0);
-		    break;
-		case "subscription":
-		    _application.streamMember[msg.object.userid.toString()] = msg.object; 
-		    _application.streamMember[msg.object.userid.toString()].time = splitDate(_application.streamMember[msg.object.userid.toString()].createdate);
-		    addStreamMember(msg.object, 0);
-		    break;
-		case "add_connection":
-		    break;
-		case "send_message":
-		    getUnreadMessages();
-		    $('#connections-unread-messages-link > .qty-notification').flash();
-		    break;
-		default:
-		    break;
-	    }
-	});
-    });
 }
 

@@ -1,5 +1,5 @@
 var _template = {};
-	_template.thoughtListItem = '<li class="list-group-item"><a class="btn btn-lucid-normal"><span class="stream-name">{stream}</span><span class="badge">{activeusers}</span></a></li>';
+	_template.thoughtListItem = '<li class="list-group-item"><a class="btn btn-lucid-normal" data-streamid="{streamid}" onclick="subscribeThought($(this).data(\'streamid\'));"><span class="stream-name">{stream}</span><span class="badge">{activeusers}</span></a></li>';
 
 
 
