@@ -382,30 +382,30 @@ function initEventHandlers(){
         if($(this).is('.active')){
             $('#people-nav').addClass('active').slideDown('fast');
             switch($(this).data('filter')){
-                case 'connecting':
-                    $('#people-nav > .panel-menu > .btn').hide();
-                    $('#people-nav > .panel-menu > .btn.connecting').show();
-                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
-                    break;
-                case 'connections':
+                case 'connected':
                     $('#people-nav > .panel-menu > .btn').hide();
                     $('#people-nav > .panel-menu > .btn.connected').show();
                     $('#people-nav > .panel-menu').sortDom('.btn:visible', 'username');
                     break;
-                case 'viewed':
+                case 'connection-request':
                     $('#people-nav > .panel-menu > .btn').hide();
-                    $('#people-nav > .panel-menu > .btn.viewed-profile').show();
-                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-date');
+                    $('#people-nav > .panel-menu > .btn.connection-request').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connection-request');
                     break;
-                case 'love-request':
+                case 'connecting':
                     $('#people-nav > .panel-menu > .btn').hide();
                     $('#people-nav > .panel-menu > .btn.connecting').show();
-                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting-qty');
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'connecting');
+                    break;
+                case 'viewed-your-profile':
+                    $('#people-nav > .panel-menu > .btn').hide();
+                    $('#people-nav > .panel-menu > .btn.viewed-your-profile').show();
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'viewed-your-profile');
                     break;
                 default: // All people in stream
                     //$('#people-nav .viewed-profile, #people-nav .in-stream, #people-nav .added-stream').show();
                     $('#people-nav > .panel-menu > .btn').show();
-                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'arrival-time');
+                    $('#people-nav > .panel-menu').sortDom('.btn:visible', 'entry-date');
                     break;
             }
         }else{

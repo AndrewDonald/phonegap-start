@@ -201,12 +201,18 @@ function getThoughts_Callback(result) {
 // Live-Query
 function liveQuery(searchValue){
     if(searchValue.length > 2){
+        // Enable thought submittal if less than 3 char thought
+        $('#form-thought .btn[name=submitThought]').removeClass('disabled');
+        
         var objMessage = {};
             objMessage.method   = "get_thought_suggestions";
             objMessage.keyword  = searchValue;
 
         apiRequest(objMessage, liveQuery_CALLBACK);
     }else{
+        // Disable thought submittal if less than 3 char thought
+        $('#form-thought .btn[name=submitThought]').addClass('disabled');
+
         $('#join-conversation.suggested').removeClass('suggested');
         $('#join-conversation .btn-hot-streams:not(".active")').click();
     }
@@ -235,8 +241,8 @@ function liveQuery_CALLBACK(result) {
 // Submit Thought
 function submitThought(thought){
     var objMessage = {};
-        objMessage.method = "submit_thought";
-        objMessage.thought = thought;
+    objMessage.method   = "submit_thought";
+    objMessage.thought  = thought;
 
     apiRequest(objMessage, submitThought_Callback, false);
 }

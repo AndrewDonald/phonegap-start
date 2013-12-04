@@ -16,7 +16,7 @@
         <!--
         <div class="app">
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
+                <p class="event listening">connecting to Device</p>
                 <p class="event received" onclick="startApp();">Device is Ready</p>
             </div>
         </div>
@@ -99,7 +99,7 @@
                 <div id="new-thought-panel" style="display: none;">
                     <div id="form-thought" class="navbar-form clearfix">
                         <div class="input-group">
-                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value); console.log('key');">
+                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
                             <span class="input-group-btn">
                                 <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
                                     <span class="stream-icon"></span><!--<span class="badge">426</span>-->
@@ -220,7 +220,7 @@
                     <div id="join-conversation">
                         <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
                             <a class="btn-suggested-streams btn btn-lucid">
-                                <span class="suggested-streams glyphicon glyphicon-thumbs-up"></span>
+                                <span class="suggested-streams glyphicon glyphicon-link"></span>
                             </a>
                             <a class="btn-hot-streams btn btn-lucid active">
                                 <span class="glyphicon glyphicon-fire"></span>
@@ -281,18 +281,25 @@
 
             <!-- STREAM PAGE (START) -->
             <div id="page-conversation" class="page row">
-                <h1 class="stream-name">LucidLife</h1>
-                <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="1">
+                <h1 class="stream-name">Conversation</h1>
+                <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                     <div class="well well-lucid">
                         <ul class="list-group connection-items-list">
                             <li class="list-group-item day-header">
                                 <label class="day">Today</label>
                             </li>
-                            <li class="list-group-item chat">
+                            <li class="list-group-item chat connected">
                                 <div class="connection-item-panel panel">
                                     <div class="panel-header">
-                                        <img src="img/profile/profile-1.jpg"/>
-                                        <span class="username">Mary</span>
+                                        <button class="btn btn-lucid user in-stream connecting connected viewed-your-profile" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid"></sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">Elizabeth</span><span class="lname">Hullahan</span></label>
+                                        </button>
                                     </div>
                                     <div class="panel-body">
                                         <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
@@ -304,16 +311,22 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item chat you">
                                 <div class="connection-item-panel panel">
                                     <div class="panel-header">
-                                        <img src="img/profile/profile-5.jpg"/>
-                                        <span class="username">You</span>
+                                        <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">You</span></label>
+                                        </button>
                                     </div>
                                     <div class="panel-body">
                                         <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
@@ -325,15 +338,22 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item chat">
                                 <div class="connection-item-panel panel">
                                     <div class="panel-header">
-                                        <img src="img/profile/profile-2.jpg"/>
-                                        <span class="username">Mary</span>
+                                        <button class="btn btn-lucid user added-stream connecting viewed-your-profile" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid">3</sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">Joanne</span></label>
+                                        </button>
                                     </div>
                                     <div class="panel-body">
                                         <blockquote class="connection-content">LucidLife chatting is awesome!</blockquote>
@@ -345,21 +365,28 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item day-header viewed">
                                 <label class="day">Sunday, November 3, 2013</label>
                             </li>
-                            <li class="list-group-item chat viewed">
+                            <li class="list-group-item chat connected">
                                 <div class="connection-item-panel panel">
                                     <div class="panel-header">
-                                        <img src="img/profile/profile-3.jpg"/>
-                                        <span class="username">Mary</span>
+                                        <button class="btn btn-lucid user in-stream connecting connected viewed-your-profile" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid">2</sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">Meredith</span><span class="lname">Hanover</span></label>
+                                        </button>
                                     </div>
                                     <div class="panel-body">
-                                        <blockquote class="connection-content">Get ready for the charity event and I haven't even started to look at the list of volunteers.</blockquote>
+                                        <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
                                         <div class="callout-pointer"></div>
                                         <div class="status">
                                             <span class="sent">10:55pm</span>
@@ -368,140 +395,22 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item chat you">
                                 <div class="connection-item-panel panel">
                                     <div class="panel-header">
-                                        <img src="img/profile/profile-5.jpg"/>
-                                        <span class="username">You</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">One day I will finish this app and get a regular weekend to chillax. I think?</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item chat viewed">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-4.jpg"/>
-                                        <span class="username">Mary</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">When are you coming back online?! We have to get ready.</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item chat viewed">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-6.jpg"/>
-                                        <span class="username">Mary</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item day-header viewed">
-                                <label class="day">Saturday, November 2, 2013</label>
-                            </li>
-                            <li class="list-group-item chat viewed">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-1.jpg"/>
-                                        <span class="username">Mary</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                     
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item chat viewed">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-2.jpg"/>
-                                        <span class="username">Mary</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">Hey, when are you coming back online?!</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item chat you">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-5.jpg"/>
-                                        <span class="username">You</span>
-                                    </div>
-                                    <div class="panel-body">
-                                        <blockquote class="connection-content">I hope that day willcome soon when we can push this app out and show the world what LucidLife is all about!</blockquote>
-                                        <div class="callout-pointer"></div>
-                                        <div class="status">
-                                            <span class="sent">10:55pm</span>
-                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                     
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item chat viewed">
-                                <div class="connection-item-panel panel">
-                                    <div class="panel-header">
-                                        <img src="img/profile/profile-3.jpg"/>
-                                        <span class="username">Mary</span>
+                                        <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">You</span></label>
+                                        </button>
                                     </div>
                                     <div class="panel-body">
                                         <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
@@ -513,7 +422,34 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item chat viewed">
+                                <div class="connection-item-panel panel">
+                                    <div class="panel-header">
+                                        <button class="btn btn-lucid user added-stream connecting viewed-your-profile" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
+                                            <sub>
+                                                <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                            </sub>
+                                            <label><span class="fname">Joseph</span></label>
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+                                        <blockquote class="connection-content">LucidLife chatting is awesome!</blockquote>
+                                        <div class="callout-pointer"></div>
+                                        <div class="status">
+                                            <span class="sent">10:55pm</span>
+                                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                     </div>
                                 </div>
                             </li>
@@ -604,7 +540,7 @@
                                 </button>
                                 <!--
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-link"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                                 -->
@@ -617,7 +553,7 @@
                                 </button>
                                 <!--
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-link"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                                 -->
@@ -629,7 +565,7 @@
                                     <label class="badge">14</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-link"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -640,7 +576,7 @@
                                     <label class="badge">11</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-link"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -651,7 +587,7 @@
                                     <label class="badge">8</label>
                                 </button>
                                 <button class="vote-remove btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-link"></span>
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </span>
@@ -732,29 +668,29 @@
                                 <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
                                 <label class="badge"l>137</label>
                             </button>
+                            <button type="button" class="btn btn-lucid-normal" data-filter="connected">
+                                <span class="item-icon glyphicon glyphicon-link"></span>
+                                Connected
+                                <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                <label class="badge">7</label>
+                            </button>
+                            <button type="button" class="btn btn-lucid-normal" data-filter="connection-request">
+                                <span class="item-icon glyphicon glyphicon-link"></span>
+                                Connection Requests
+                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                <label class="badge">4</label>
+                            </button>
                             <button type="button" class="btn btn-lucid-normal" data-filter="connecting">
                                 <span class="item-icon glyphicon glyphicon-bell"></span>
                                 Connecting
                                 <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                                 <label class="badge">5</label>
                             </button>
-                            <button type="button" class="btn btn-lucid-normal" data-filter="connections">
-                                <span class="item-icon glyphicon glyphicon-link"></span>
-                                Connections
-                                <!--<sup class="people-connections badge label-lucid">9</sup>-->
-                                <label class="badge">7</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-filter="viewed">
+                            <button type="button" class="btn btn-lucid-normal" data-filter="viewed-your-profile">
                                 <span class="item-icon glyphicon glyphicon-eye-open"></span>
                                 Viewed Your Profile
                                 <!--<sup class="people-viewed badge label-lucid">22</sup>-->
                                 <label class="badge">5</label>
-                            </button>
-                            <button type="button" class="btn btn-lucid-normal" data-filter="love-request">
-                                <span class="item-icon glyphicon glyphicon-heart-empty"></span>
-                                Likes You Romantically
-                                <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                <label class="badge">4</label>
                             </button>
                             <!--<a class="grid-toggle btn btn-lucid-normal"><span class="glyphicon glyphicon-th"></span></a>-->
                         </div>
@@ -764,165 +700,165 @@
                     <div id="people-nav" class="panel-heading panel-nav active">
                         <!-- People Panel Menu -->
                         <div class="panel-menu">
-                            <pre class="connecting active" data-qty="3"><span class="header-icon glyphicon glyphicon-bell"></span><label>Connecting</label><span class="badge">3</span><span class="chevron-toggle pull-right">
+                            <pre class="connecting active" data-qty="3"><span class="header-icon glyphicon glyphicon-bell"></span><label>connecting</label><span class="badge">3</span><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
-                                <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span></pre>
-                            <button class="btn btn-lucid user added-stream connecting" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="2" data-streamname="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user added-stream connecting" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                                 <sup class="badge label-lucid">3</sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Mary</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-thumbs-up"></span></sup>
+                            <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Elizabeth</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
-                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
+                            <button class="btn btn-lucid user in-stream connecting connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Racheal</span></label>
                             </button>
-                            <pre class="viewed-profile active" data-qty="5"><span class="header-icon glyphicon glyphicon-eye-open"></span><label>New Arrivals</label><span class="badge">5</span><span class="chevron-toggle pull-right">
+                            <pre class="viewed-your-profile active" data-qty="5"><span class="header-icon glyphicon glyphicon-eye-open"></span><label>New Arrivals</label><span class="badge">5</span><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
-                                <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span></pre>
-                            <button class="btn btn-lucid user in-stream viewed-profile connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="5" data-username="Ted Mariopolis">
+                            <button class="btn btn-lucid user in-stream viewed-your-profile connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Ted Mariopolis">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile connected" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="3" data-username="Susanna Jameson">
+                            <button class="btn btn-lucid user added-stream viewed-your-profile connected" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3" data-username="Susanna Jameson">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Susanna</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
-                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
+                            <button class="btn btn-lucid user in-stream connecting connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Racheal</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream viewed-profile" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="6" data-username="Alyona Stephenson">
+                            <button class="btn btn-lucid user in-stream viewed-your-profile" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6" data-username="Alyona Stephenson">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user added-stream viewed-your-profile" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Theresa</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Stephanie Wilcox">
+                            <button class="btn btn-lucid user added-stream viewed-your-profile" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Stephanie Wilcox">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Stephanie</span></label>
                             </button>
-                            <pre class="in-stream active" data-qty="15" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamName="LucidLife"><label>LucidLife</label><span class="badge">3</span><span class="chevron-toggle pull-right">
+                            <pre class="in-stream active" data-qty="15" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife"><label>LucidLife</label><span class="badge">3</span><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down pull-right"></a></pre>
-                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="5" data-username="Jeremiah Dillenger">
+                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Jeremiah Dillenger">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Jeremiah</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="3" data-username="Annette Morgensen">
+                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3" data-username="Annette Morgensen">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Annette</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="4" data-username="Joanna Hazelton">
+                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Joanna Hazelton">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Joanna</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="6" data-username="Jeremy Reynolds">
+                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6" data-username="Jeremy Reynolds">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Jeremy</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="7" data-streamname="LucidLife" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user added-stream" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="7" data-stream="LucidLife" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Mary</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="8" data-username="Elizabeth Jasmin-Foster">
+                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="8" data-username="Elizabeth Jasmin-Foster">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Elizabeth</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream connecting love-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2" data-username="Rachael Davenport">
-                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-heart-empty"></span></sup>
+                            <button class="btn btn-lucid user in-stream connecting connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Racheal</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="10" data-username="Ted Mariopolis">
+                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="10" data-username="Ted Mariopolis">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
@@ -930,86 +866,86 @@
                                 </sub>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="11" data-username="Susanna Jameson">
+                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="11" data-username="Susanna Jameson">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Susanna</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="12" data-username="Alyona Stephenson">
+                            <button class="btn btn-lucid user in-stream " style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="12" data-username="Alyona Stephenson">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream " data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="13" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user in-stream " data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="13" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Theresa</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="14" data-username="Stephanie Wilcox">
+                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="14" data-username="Stephanie Wilcox">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Stephanie</span></label>
                             </button>
-                            <pre class="added-stream" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="2" data-streamname="LucidEngineering" data-qty="3"><label>LucidEngineeing</label><span class="badge">2</span><span class="chevron-toggle pull-right">
+                            <pre class="added-stream" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="LucidEngineering" data-qty="3"><label>LucidEngineeing</label><span class="badge">2</span><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down pull-right"></a></pre>
-                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="Lucid" data-userid="15" data-username="Jeremiah Dillenger">
+                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="Lucid" data-userid="15" data-username="Jeremiah Dillenger">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Jeremiah</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="2" data-streamname="Lucid" data-userid="16" data-username="Annette Morgensen">
+                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="16" data-username="Annette Morgensen">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Annette</span></label>
                             </button>
-                            <pre class="added-stream" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="3" data-streamname="LifeGoesOn" data-qty="1"><span class="chevron-toggle pull-right">
+                            <pre class="added-stream" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="3" data-stream="LifeGoesOn" data-qty="1"><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span><label>LifeGoesOn</label><span class="badge">1</span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down pull-right"></a></pre>
-                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="3" data-streamname="Life" data-userid="17" data-username="Joanna Hazelton">
+                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="3" data-stream="Life" data-userid="17" data-username="Joanna Hazelton">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Joanna</span></label>
                             </button>
-                            <pre class="added-stream" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="4" data-streamname="LivingItUpInTheCity" data-qty="1"><label>LivingItUpInTheCity</label><span class="badge">1</span><span class="chevron-toggle pull-right">
+                            <pre class="added-stream" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="4" data-stream="LivingItUpInTheCity" data-qty="1"><label>LivingItUpInTheCity</label><span class="badge">1</span><span class="chevron-toggle pull-right">
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                 <span class="glyphicon glyphicon-chevron-up"></span>
                             </span><a class="btn-vote-remove btn btn-sm btn-danger glyphicon glyphicon-thumbs-down pull-right"></a></pre>
-                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="4" data-streamname="LucidLiving" data-userid="18" data-username="Jeremy Reynolds">
+                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="4" data-stream="LucidLiving" data-userid="18" data-username="Jeremy Reynolds">
                                 <sup class="badge label-lucid"></sup>
                                 <sub>
                                     <span class="stream-indicator-icon"></span>
-                                    <span class="viewed-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                 </sub>
                                 <label><span class="name">Jeremy</span></label>
@@ -1030,7 +966,7 @@
                             <a class="btn-direction direction-right btn btn-lucid-normal pull-right" data-direction="right">&rsaquo;</a>
                         </div>
                         <div id="connections-items">
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="new">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="new">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item day-header">
@@ -1075,7 +1011,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1095,14 +1031,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="1">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item day-header">
@@ -1124,7 +1060,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1144,11 +1080,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item chat">
+                                        <li class="list-group-item chat added-stream">
                                             <div class="connection-item-panel panel">
                                                 <div class="panel-header">
                                                     <img src="img/profile/profile-2.jpg"/>
@@ -1164,7 +1100,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1187,7 +1123,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1207,11 +1143,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item chat viewed">
+                                        <li class="list-group-item chat viewed added-stream">
                                             <div class="connection-item-panel panel">
                                                 <div class="panel-header">
                                                     <img src="img/profile/profile-6.jpg"/>
@@ -1227,14 +1163,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item day-header viewed">
                                             <label class="day">Saturday, November 2, 2013</label>
                                         </li>
-                                        <li class="list-group-item chat viewed">
+                                        <li class="list-group-item chat viewed added-stream">
                                             <div class="connection-item-panel panel">
                                                 <div class="panel-header">
                                                     <img src="img/profile/profile-1.jpg"/>
@@ -1250,7 +1186,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1270,11 +1206,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="list-group-item chat viewed">
+                                        <li class="list-group-item chat viewed added-stream">
                                             <div class="connection-item-panel panel">
                                                 <div class="panel-header">
                                                     <img src="img/profile/profile-3.jpg"/>
@@ -1290,7 +1226,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1298,7 +1234,7 @@
                                 </div>
                             </div>
 <!--
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="4">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -1316,7 +1252,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="2">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -1334,7 +1270,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="5">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -1353,7 +1289,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1373,7 +1309,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1393,7 +1329,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1413,7 +1349,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1433,7 +1369,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                                    <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                                 </div>
                                             </div>
                                         </li>
@@ -1459,7 +1395,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1486,7 +1422,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1513,7 +1449,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1540,7 +1476,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1548,7 +1484,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="3">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -1573,7 +1509,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1600,7 +1536,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1627,7 +1563,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1654,7 +1590,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1681,7 +1617,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1708,7 +1644,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1735,7 +1671,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1762,7 +1698,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1789,7 +1725,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1797,7 +1733,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="6">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -1822,7 +1758,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1849,7 +1785,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1876,7 +1812,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1903,7 +1839,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1930,7 +1866,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1957,7 +1893,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -1984,7 +1920,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2011,7 +1947,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2038,7 +1974,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2046,7 +1982,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="connection-items-con" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="1" data-streamname="LucidLife" data-userid="7">
+                            <div class="connection-items-con" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="7">
                                 <div class="well well-lucid">
                                     <ul class="list-group connection-items-list">
                                         <li class="list-group-item chat">
@@ -2071,7 +2007,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2098,7 +2034,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2125,7 +2061,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2152,7 +2088,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2179,7 +2115,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2206,7 +2142,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2233,7 +2169,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2260,7 +2196,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2287,7 +2223,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
                                      
                                                 </div>
                                             </div>
@@ -2413,7 +2349,7 @@
 
 
 <!--
-                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-streamname="All" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
+                <div data-streamtype="people" data-chatid="[chatid]" data-picextension="[pic extension]" data-fname="[fname]" data-lname="[lname]" data-time="5d" data-time-created="1380315132000" data-stream="All" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="0" data-userid="2" data-current-user="true" class="User-Badge clearfix">
                     <div class="wrapper main-area clearfix pull-left">
                         <div class="badge-main pull-left">
                             <div class="id-wrapper">
@@ -2450,7 +2386,7 @@
                                         
                                     </div>
                                 </div>
-                                <a data-page="#STREAM~All" data-viewed-date="" data-connecting-qty="" data-arrival-time="100" data-streamid="All" class="stream">All</a>
+                                <a data-page="#STREAM~All" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="All" class="stream">All</a>
                             </div>
                         </div>
                     </div>
@@ -2489,7 +2425,7 @@
                             <!-- Panel Menu -->
                             <div class="panel-menu">
                                 <button id="stream-panel" class="btn-lucid status-icon glyphicon glyphicon-heart">~<span>connected</span><sup class="indicator"><span class="label label-primary">30</span></sup></button>
-                                <button id="filter-private-panel" class="btn-lucid status-icon glyphicon glyphicon-heart-empty"><span>requests</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
+                                <button id="filter-private-panel" class="btn-lucid status-icon glyphicon glyphicon-link"><span>requests</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
                                 <button id="connections-private-panel" class="btn-lucid status-icon glyphicon glyphicon-ban-circle"><span>blocked</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
                             </div> 
                         </div>

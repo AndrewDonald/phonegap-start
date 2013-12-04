@@ -65,6 +65,11 @@ function gotoPage(page){
         $('#new-thought-toggle').addClass('active');
         $('#send-message-con').hide()
         $('#new-thought-panel').show();
+        if($('#form-thought input[name=thought]').val().length < 3){
+            $('#form-thought .btn[name=submitThought]').addClass('disabled');
+        }else{
+            $('#form-thought .btn[name=submitThought]').removeClass('disabled');
+        }
         getThoughts();
     }
 }
