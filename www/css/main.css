@@ -491,7 +491,9 @@ body.logged-out #pages {padding-top: 60px;}
     #pages #page-new-thought {padding: 0px;}
         #join-conversation {clear: both;}
             #join-conversation .thought-lists-nav {}
-                #join-conversation .thought-lists-nav .btn:first-child {border-top-left-radius: 4px;}
+                #join-conversation .thought-lists-nav .btn:first-child,
+                #join-conversation .thought-lists-nav .btn:nth-child(1) {border-top-left-radius: 4px;}
+                #join-conversation.suggested .thought-lists-nav .btn:nth-child(1) {border-top-left-radius: 0px;}
                 #join-conversation .thought-lists-nav .btn:last-child {border-top-right-radius: 4px;}
                     #join-conversation .thought-lists-nav .btn.btn-suggested-streams {display: none;}
                     #join-conversation.suggested .thought-lists-nav .btn.btn-suggested-streams {display: table-cell;}

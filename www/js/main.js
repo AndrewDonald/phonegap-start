@@ -5,6 +5,7 @@ function startApp(){
 }
 */
 var _session            = {};
+    _session.id         = "";
     _session.loggedIn   = false;
     _session.page       = "page-login";
     _session.stream     = {};
@@ -31,7 +32,6 @@ var _application                                = {};
     _application.node                           = {};
     _application.node.port                      = 8787;
     _application.node.socket                    = null;
-    _application.servercookie                   = "PHPSESSID";
     _application.detect                         = {};
     _application.detect.useragent               = navigator.userAgent.toLowerCase();
     _application.node.streamserver              = "https://dev.lucidlife.co";
@@ -123,6 +123,7 @@ function verifyCreateAccount(){
 function initializeApp(){
     $('body').removeClass('logged-out');
     _session.loggedIn = true;
+    //setSessionID(value);
     storage.data("login", {"email": _session.user.email, "password": $('#form-login input[name="password"]').val()});
     //localStorage.setItem('email', _session.user.email);
     //localStorage.setItem('password', $('#form-login input[name="password"]').val());

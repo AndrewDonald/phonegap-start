@@ -15,7 +15,7 @@ function apiRequest(objMessage, callbackFunction, async) {
         cache: 	  false,
         data: 	  objMessage
     })
-    .complete(function(response) {
+    .complete(function(response, status, xhr) {
         return callbackFunction(response.responseJSON);
     })
     .fail(function() {
@@ -99,7 +99,8 @@ function loginUser_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful Authentication
-            _session.user = result.object;
+            _session.id     = result.sessionid;
+            _session.user   = result.object;
             acquireGeolocation();
         }else{
             // Server returned an error = failed authorization
@@ -287,7 +288,7 @@ function updateNodeServer() {
         if (_application.node.socket == null) {
             initiateNodeServer();
         } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
         }
     } 
     // logged in or anonymous, in stream
@@ -295,7 +296,7 @@ function updateNodeServer() {
         if (_application.node.socket == null) {
             initiateNodeServer();
         } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
             setTimeout("ping('"+_session.stream.name+"')", 1000); 
         }
     } 
@@ -317,7 +318,7 @@ function initiateNodeServer() {
         // Identify and respond to messages
         switch (msg.type) {
         case "listen_details":
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": readCookie(_application.servercookie)}));
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
             if (_session.stream.name != null) {
             setTimeout("ping('"+_session.stream.name+"')", 1000); 
             }
@@ -1091,7 +1092,7 @@ function updateUserFilter_CALLBACK(result){
 // Keepalive
 function keepalive(){
 
-    var servercookie = readCookie(_application.servercookie);
+    var servercookie = _session.id;
     
     if (servercookie != null && servercookie.length > 0 ) {
 	var objMessage = {};
