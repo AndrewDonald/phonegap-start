@@ -154,13 +154,16 @@ function populateThoughtList(thoughtList, objList){
 
 
 function getSessionID(){
-    storage.data('sessionid');
+    return storage.data('sessionid');
 }
 
 function setSessionID(value){
     storage.data('sessionid', value);
 }
 
+function getStreamID(){
+    return _session.stream.id;
+}
 
 // SplitDate
 function splitDate(date) {

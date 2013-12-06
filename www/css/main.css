@@ -5,7 +5,8 @@ h5, h6 {
 }
 .btn {white-space: normal;}
 input[type=text], textarea {background-color: #fff;}
-.input-group-addon {background-color: #0ab;}
+.input-group-addon {color: #0ef; background-color: #0ab;}
+.input-group-addon.active {color: #fff;}
 label {margin-bottom: 0;}
 .nav-pills > li > a {background-color: rgba(0, 100, 115, 0.95); border: 1px solid #056; border-radius: 0 0 5px 5px; box-shadow: 1px 1px 3px #000; padding: 10px 17px; color: #0ef;}
 .nav > li > a:hover,
@@ -93,14 +94,12 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
 .list-group-item.selected {color: #0ab; background-color: #ff6;}
 .input-group-addon.align-top {vertical-align: top; padding-top: 9px;}
 .list-inline.full-width {width: 100%;}
-
     .list-inline.full-width > li.list-group-item {width: 100%;}
         .list-inline.full-width > li.list-group-item > .btn {width: 100%; text-align: left;}
         .list-inline.full-width > li.list-group-item > .btn > .badge {float: right;}
-
     .list-inline.full-width.link-list .list-group-item {border: none; background-color: none; background: none; border-radius: 0; margin: 0;}
-        .list-inline.full-width.link-list .list-group-item:nth-child(odd) {background: rgba(0, 240, 255, 0.2);}
-            .list-inline.full-width.link-list .list-group-item .btn {border: none; background-color: none; background: none; color: #999; text-shadow: none;}
+        .list-inline.full-width.link-list .list-group-item:nth-child(even) {background: rgba(0, 240, 255, 0.2);}
+            .list-inline.full-width.link-list .list-group-item .btn {border: none; background-color: none; background: none; color: #777; text-shadow: none;}
                 .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
    
 /* GLOBAL: Vars */
@@ -161,6 +160,8 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
 .new-blue {color: #428bc7;}
 .orange {color: #f90;}
 
+.teal {color: #0ef;}
+
 /* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0;
@@ -168,7 +169,7 @@ body {font-family: arial; font-weight: normal; font-size: 14px; color: #333; pad
 
 h1, h2 {color: #999; margin: 0 0 10px;}
 h1 {font-size: 18px;}
-h1.stream-name {text-align: center;}
+h1.stream-name {text-align: center; margin: 10px 0 10px -15px;}
 h2 {font-size: 16px;}
 
 .form {padding: 0; color: #fff; clear: both;}
@@ -303,7 +304,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
 .btn-lucid {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
-    background-color: #0ab; box-shadow: 0 0 3px #0cd inset;
+    background-color: #0ab; box-shadow: 0 0 3px #0ef inset;
     line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #fff; border-radius: 5px;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff;}
 .btn-lucid.active {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
@@ -416,9 +417,15 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
     /* HEADER PANEL */
     #header-panel {display: block; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
     body.logged-out #header-panel {display: none;}
-        #form-thought {}
-        #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
-        #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
+        #new-thought-panel {}
+            #form-thought {}
+            #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
+            #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
+            .thought-lists-nav {margin-top: 4px;}
+                .thought-lists-nav .btn {color: #0ef;}
+                .thought-lists-nav .btn.active {color: #fff;}
+                .thought-lists-nav .btn.btn-suggested-streams {display: none;}
+                .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
         #send-message.private {background-color: #cff;}
 
     /* STREAM CONTROLS */
@@ -451,12 +458,11 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
                 .slider-status-con.vertical .toggle-expand {display: inline-block; top: -38px; border-radius: 4px 4px 0 0;}
         }
 
-        
 /* PAGES */
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-#pages {padding: 95px 0 60px;}
+#pages {padding: 85px 0 50px;}
 body.logged-out #pages {padding-top: 60px;}
     #pages > .page {display: none; margin: 0; clear: both;}
     #pages > .page.active {display: block;}
@@ -477,7 +483,7 @@ body.logged-out #pages {padding-top: 60px;}
         body.audio #page-stream .show-audio {display: block;}
     
     /* PAGE LOGIN */
-    #pages #page-login {padding-top: 50px; text-align: center;}
+    #pages #page-login {padding-top: 20px;}
         #form-login .btn-join {font-size: 16px; margin-left: -10px;}
 
     /* PAGE CREATE-USER */
@@ -492,17 +498,12 @@ body.logged-out #pages {padding-top: 60px;}
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
     /* PAGE NEW-THOUGHT */
-    #pages #page-new-thought {padding: 0px;}
-        #join-conversation {clear: both;}
-            #join-conversation .thought-lists-nav {}
-                #join-conversation .thought-lists-nav .btn {border-radius: 4px 4px 0 0;}
-                #join-conversation .thought-lists-nav .btn.btn-suggested-streams {display: none;}
-                #join-conversation.suggested .thought-lists-nav .btn.btn-suggested-streams {display: table-cell;}
-                #join-conversation .thought-lists .form-control {display: none; padding: 0; background-color: #fff; height: auto; overflow: auto; margin: -1px 0 0; border-radius: 0 0 5px 5px;}
-                #join-conversation .thought-lists .form-control.active {display: block;}
+    #pages #page-new-thought {padding-top: 40px;}
+        .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: none;}
+        .thought-lists .form-control.active {display: block;}
 
     /* PAGE CONVERSATION */
-    #pages #page-conversation {}
+    #pages #page-conversation {padding-top: 5px;}
         #page-conversation .connection-items-con > .well {box-shadow: none; background-color: #f0ffff; border: none;}
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
@@ -513,6 +514,8 @@ body.logged-out nav#footer {display: none;}
 
     /* CONTROLS PANELS */
     #controls-panel {}
+        .tab-menu > button {color: #0ef;}
+            .tab-menu > button.active {color: #fff;}
         .control-panel {}
 
     /* CONTROL TABS */
@@ -575,7 +578,7 @@ body.logged-out nav#footer {display: none;}
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
     
     /* FILTER PANEL */
-    #stream-status-panel {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000, 0 1px 3px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+    #stream-status-panel {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000; background-color: #000; border-top: 1px solid #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
         #stream-status-panel .glyphicon-filter {font-size: 8px;}
         #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
 

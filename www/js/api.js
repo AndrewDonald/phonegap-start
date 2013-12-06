@@ -132,6 +132,7 @@ function logoutUser_Callback(result) {
             // Successful
         }else{
             // Server returned an error = failed authorization
+            alert('Error: ' + result.message);
         }
         
         //initializeSession();
@@ -226,14 +227,15 @@ function liveQuery_CALLBACK(result) {
             // Successful
             if(result.object.length > 0){
                 populateThoughtList('suggested', result.object);
-                $('#join-conversation').addClass('suggested');
-                $('#join-conversation .btn-suggested-streams').click();
+                $('.thought-lists-nav').addClass('suggested');
+                $('.thought-lists-nav .btn-suggested-streams').click();
             }else{
-                $('#join-conversation').removeClass('suggested');
-                $('#join-conversation .btn-hot-streams').click();
+                $('.thought-lists-nav').removeClass('suggested');
+                $('.thought-lists-nav .btn-hot-streams').click();
             }
         }else{
             // Failed Response
+            alert('Error: ' + result.message);
         }
     }
 }
@@ -256,6 +258,7 @@ function submitThought_Callback(result) {
             changeStream(result.object);
         }else{
             // Server returned an error
+            alert('Error: ' + result.message);
         }
     }
 }
@@ -278,12 +281,60 @@ function subscribeThought_Callback(result) {
             changeStream(result.object);
         }else{
             // Server returned an error
+            alert('Error: ' + result.message);
+        }
+    }
+}
+
+
+// Send Chat
+function sendChat(objChat){
+    var msg = {};
+        msg.streamid    = objChat.streamid;
+        msg.chat        = objChat.chat;
+    
+    var objMessage = {};
+        objMessage.method   = "send_chat";
+        objMessage.chat     = msg;
+      
+    apiRequest(objMessage, sendChat_Callback);
+}
+
+function sendChat_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            // Successful
+            $('.send-message-form #send-message').empty();
+        }else{
+            // Server returned an error = failed authorization
+            alert('Error: ' + result.message);
         }
     }
 }
 
 
 ////////////// NODE Server APIs ///////////////
+/* Chat Response object data
+ public $chatid;
+ public $userid;
+ public $fname;
+ public $lname;
+ public $gender;
+ public $age;
+ public $latitude;
+ public $longitude;
+ public $distance;
+ public $picextension;
+ public $streamid;
+ public $stream;
+ public $chat;
+ public $chatpicextension;
+ public $createdate;
+ public $updatedate;
+ public $status;
+*/
 
 // always call this to initiate. 
 function updateNodeServer() {
@@ -330,8 +381,7 @@ function initiateNodeServer() {
             }
             break;
         case "chat":
-            //addStreamActivity(msg.object, 0);
-            $('connection-items-con').append('StreamActivity: ' + JSON.stringify(msg.object));
+            addChatItem(msg.object);
             break;
         case "subscription":
             _application.streamMember[msg.object.userid.toString()] = msg.object; 
@@ -467,7 +517,7 @@ function getActivities_Callback(result) {
         if(result.status > 0){
 	    //$('#stream-activity-con > .wrapper').empty();
 	    for (var x=0; x<result.object.length; x++) {
-		addStreamActivity(result.object[x], 1);
+		addChatItem(result.object[x], 1);
 		
 		/*
 		// Custom Scrollbars
@@ -811,35 +861,6 @@ function getUnreadMessages_CALLBACK(result) {
     }
 }
 
-// User-Badge Controls: Send Message
-function sendMessage(objMesg){
-    var msg         	= {};
-        msg.receiverid  = objMesg.receiverid;
-        msg.message     = objMesg.message;
-    
-    var objMessage = {};
-        objMessage.method   = "send_message";
-        objMessage.message  = msg;
-        
-    apiRequest(objMessage, sendMessage_CALLBACK);
-}
-
-function sendMessage_CALLBACK(result) {
-    if(result==0) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-            // Successful
-	    $('#Connect-Lightbox')
-		.find('.message-entry-area').slideUp()
-		    .children('textarea.message-entry').val('');
-	    $('#Connect-Lightbox-Message').html("Message sent successfully.").flash();
-        }else{
-            // Server returned an error = failed authorization
-	    errorHandler(result.status);
-        }
-    }
-}
 
 // Message Mark As Read
 function updateMessageMarkAsRead(senderid, messageid){

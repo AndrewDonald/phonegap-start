@@ -4,24 +4,23 @@ function startApp(){
     $('.page.home').removeClass('hide');
 }
 */
-var _session            = {};
-    _session.id         = "";
-    _session.loggedIn   = false;
-    _session.page       = "page-login";
-    _session.stream     = {};
+var _session                = {};
+    _session.id             = "";
+    _session.loggedIn       = false;
+    _session.page           = "page-login";
+    _session.user           = {};
+    _session.people         = {}; // Children: _session.people.user['userid']
+    _session.conversation   = {}; // Children: _session.conversation.chat['chatid']
+    _session.stream         = {};
         _session.stream.id   = 0;
         _session.stream.name = "All";
 
-/*
-        _session.stream.added = {};                             // Added Parallel Streams parent
-        _session.stream.added.streamid['{streamid}'] = {};      // (DATA: addedDate, new, name, people) *new = created
+        _session.stream.added = {};  // Children: _session.stream.added.stream['id']                           // Added Parallel Streams parent
+        //_session.stream.added.streamid['{streamid}'] = {};      // (DATA: addedDate, new, name, people) *new = created
         
-        _session.stream.people = {};                            // inStream People parent
-        _session.stream.people.userid['{userid}'] = {};         // (DATA: entryDate, streamid, fname, age, distance, picExt) *remove picExt and use url or convert all images to 1 format
-        
-        _session.stream.conversation = {};                      // inStream Conversation parent
-        _session.stream.conversationid['{conversationid}'] = {};// (DATA: sendDate, senderid, message, mediaid, mediaType) *mediaid = null forn none
-*/
+        _session.stream.conversation = {};  // Children: _session.stream.conversation.chat['chatid']     // inStream Conversation parent
+        //_session.stream.chat['{chatid}'] = {};          // (DATA: sendDate, senderid, message, mediaid, mediaType) *mediaid = null forn none
+
     //_session.user.filter = "My Filter";           // Filter to apply. "" = no filter 
     //_session.user.filters = {};                   // Filters parent
     //_session.user.filters.filter['My Filter'] = {gender:"B", ageFrom:25, ageTo:55, distance:3.5};
@@ -141,11 +140,124 @@ function deinitializeApp(){
 
 // Changes Thought Stream
 function changeStream(objStream){
-    _session.stream     = objStream.stream;
-    _session.streamid   = objStream.streamid;
-            
+    _session.stream         = objStream;
+    _session.stream.id      = objStream.streamid;
+    _session.stream.name    = objStream.stream;
+    
     gotoPage('page-conversation');
     $('#page-conversation .connection-items-con').empty();
-    $('h1.stream-name').html(_session.stream);
+    updteStreamStatus();
     //updateNodeServer();
+}
+
+// Changes Thought Stream
+function updteStreamStatus(){
+    $('#stream-status-panel .stream-name').html(_session.stream.name);
+    $('#stream-status-panel .stream-name .badge').html('1?');
+}
+
+function addStreamMember(objUser, direction) {
+    $('.stream-people > article.User-Badge[data-userid="' + objUser.userid + '"]').remove();
+//    var selector = " > .wrapper";
+//    if ($('html').is('.no-touch')) {
+//  selector += " > .jspContainer > .jspPane";
+//    }
+    if (direction == 0) {    
+        $('.stream-people').prepend(createUserBadge(objUser, "people")).children('article.User-Badge:first').hide().show(500).flash(500,2); //.removeAttr('style');
+    } else {
+        $('.stream-people').append(createUserBadge(objUser, "people")).children('article.User-Badge:first').show(); //.removeAttr('style');
+    }
+}
+
+/* Chat Response object data
+ public $chatid;
+ public $userid;
+ public $fname;
+ public $lname;
+ public $gender;
+ public $age;
+ public $latitude;
+ public $longitude;
+ public $distance;
+ public $picextension;
+ public $streamid;
+ public $stream;
+ public $chat;
+ public $chatpicextension;
+ public $createdate;
+ public $updatedate;
+ public $status;
+*/
+
+function addUser(objUser) {
+    _session.people.user[objUser.userid] = {userid:        objUser.userid,
+                                    fname:          objUser.fname,
+                                    lname:          objUser.lname,
+                                    gender:         objUser.gender,
+                                    age:            objUser.age,
+                                    latitude:       objUser.latitude,
+                                    longitude:      objUser.longitude,
+                                    distance:       objUser.distance,
+                                    picextension:   objUser.picextension,
+                                    streamid:       objUser.streamid,
+                                    entrydate:      objUser.createdate};
+}
+
+function addChatItem(objChat, direction) {
+    if(!_session.user[objChat.userid]){
+        addUser(objChat);
+    }
+
+    var user = objChat;
+
+    _session.stream.conversation.chat[user.chatid] =    {chatid:user.chatid,
+                                                        userid:user.userid,
+                                                        chat:user.chat,
+                                                        chatpic:user.chatpicextension,
+                                                        createdate:user.createdate,
+                                                        status:user.status};
+
+    if (objChat.updatedate != null) {
+        user.time = splitDate(objChat.updatedate);
+    }else{
+        user.time = splitDate(objChat.createdate);
+    }
+
+    if (objChat.chatpicextension != null) {
+        user.messageattachment = '<img alt="' + user.chatid + '" src="' + _application.url.fetch["activity"] + user.chatid + _application.preview + user.chatpicextension + '"/>';
+    }else{
+        user.messageattachment = "";
+    }
+    
+//    var selector = " > .wrapper";
+//    if ($('html').is('.no-touch')) {
+//  selector += " > .jspContainer > .jspPane";
+//    }
+    
+    var mediaType = "chat";
+    var mediaTypeMax = 3;
+    if (objChat.chatpicextension != null && objChat.chatpicextension.length > 0) {
+        if(_application.media.photoExtentionList.indexOf(objChat.chatpicextension) >= 0){
+            mediaType = "photo";
+            mediaTypeMax = 4;
+        }else if(_application.media.videoExtentionList.indexOf(objChat.chatpicextension) >= 0){
+            mediaType = "video";
+            mediaTypeMax = 1;
+        }else if(_application.media.audioExtentionList.indexOf(objChat.chatpicextension) >= 0){
+            mediaType = "audio";
+            mediaTypeMax = 1;
+        }
+    }
+        
+    if (direction == 0) { //$('ul.more_stories li:gt(2)').hide();
+        $('#stream-activity-con').prepend(createUserBadge(user, mediaType)).children('article.User-Badge:first').hide().slideDown(500).removeAttr('style');
+        if($('#stream-activity-con').size() > 0 && $(this).children().size() <= mediaTypeMax){
+            $('#stream-activity-con').children('li:gt(' + mediaTypeMax + ')').remove();
+        }
+    }else{
+        $('#stream-activity-con').append(createUserBadge(user, mediaType)).children('article.User-Badge:first');
+        if($('#stream-activity-con').size() > 0 && $(this).children().size() <= mediaTypeMax){
+            $('#stream-activity-con').children('li:gt(' + mediaTypeMax + ')').remove();
+        }
+    }
 }

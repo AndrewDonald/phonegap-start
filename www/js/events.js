@@ -44,8 +44,14 @@ function initEventHandlers(){
     // Toggle-Nav Custom Component (Shows/Hides content based on index of Nav Item clicked)
     $('.toggle-nav > .btn').on('click', function(){
         var index = $(this).index();
+        var target = $(this).data('target');
+        if(!target){
+            target = $(this).parent().next();
+        }
+
         $(this).addClass('active').siblings().removeClass('active');
-        $(this).parent().next().children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
+        $(target).children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
+        //$(this).parent().next().children(':eq(' + index + ')').addClass('active').siblings().removeClass('active');
     });
 
     // Tab-Lucid Custom Component (Shows/Hides content using collapse)
