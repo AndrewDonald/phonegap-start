@@ -93,49 +93,31 @@
             </div>
             <!-- MASTHEAD (END) -->
 
-            <!-- HEADER PANEL (START) -->
-            <div id="header-panel">
-                <!-- NEW THOUGHT PANEL (START) -->
-                <div id="new-thought-panel" style="display: none;">
-                    <div id="form-thought" class="navbar-form clearfix">
-                        <div class="input-group">
-                            <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
-                            <span class="input-group-btn">
-                                <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
-                                    <span class="stream-icon"></span><!--<span class="badge">426</span>-->
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
-                        <a class="btn-suggested-streams btn btn-lucid" data-target=".thought-lists">
-                            <span class="suggested-streams glyphicon glyphicon-link"></span>
-                        </a>
-                        <a class="btn-hot-streams btn btn-lucid active" data-target=".thought-lists">
-                            <span class="glyphicon glyphicon-fire"></span>
-                        </a>
-                        <a class="btn-past-streams btn btn-lucid" data-target=".thought-lists">
-                            <span class="glyphicon glyphicon-refresh"></span>
-                        </a>
+            <!-- NEW THOUGHT PANEL (START) -->
+            <div id="new-thought-panel" style="display: none;">
+                <div id="form-thought" class="navbar-form clearfix">
+                    <div class="input-group">
+                        <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                        <span class="input-group-btn">
+                            <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
+                                <span class="stream-icon"></span><!--<span class="badge">426</span>-->
+                            </button>
+                        </span>
                     </div>
                 </div>
-                <!-- NEW THOUGHT PANEL (END) -->
-
-                <!-- MESSAGE PANEL (START) -->
-                <div id="send-message-con">
-                    <div class="send-message-form navbar-form clearfix">
-                        <div class="input-group">
-                            <input id="send-message" type="text" class="form-control" placeholder="message everyone...">
-                            <span class="input-group-btn">
-                                <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>
-                                <button type="button" class="send-message-button btn btn-warning" onclick="sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()});"><span class="glyphicon glyphicon-share-alt"></span></button>
-                            </span>
-                        </div>
-                    </div>
+                <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
+                    <a class="btn-suggested-streams btn btn-lucid" data-target=".thought-lists">
+                        <span class="suggested-streams glyphicon glyphicon-link"></span>
+                    </a>
+                    <a class="btn-hot-streams btn btn-lucid active" data-target=".thought-lists">
+                        <span class="glyphicon glyphicon-fire"></span>
+                    </a>
+                    <a class="btn-past-streams btn btn-lucid" data-target=".thought-lists">
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </a>
                 </div>
-                <!-- MESSAGE PANEL (END) -->
             </div>
-            <!-- HEADER PANEL (END) -->
+            <!-- NEW THOUGHT PANEL (END) -->
         </nav>
         <!-- HEADER (END) -->
 
@@ -279,6 +261,22 @@
 
             <!-- STREAM PAGE (START) -->
             <div id="page-conversation" class="page row">
+                <nav id="conversation-header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <!-- MESSAGE PANEL (START) -->
+                    <div id="send-message-con">
+                        <div class="send-message-form navbar-form clearfix">
+                            <div class="input-group">
+                                <input id="send-message" type="text" class="form-control" placeholder="message everyone..." maxlength="140">
+                                <span class="input-group-btn">
+                                    <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>
+                                    <button type="button" class="send-message-button btn btn-warning" onclick="sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()});"><span class="glyphicon glyphicon-share-alt"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MESSAGE PANEL (END) -->
+                </nav>
+
                 <div class="connection-items-con public" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                     <div class="well well-lucid">
                         <ul class="list-group connection-items-list">
@@ -456,7 +454,7 @@
                 </div>
 
                 <!-- STREAM CONTROLS PANEL (START) -->
-                <div id="stream-controls-panel" class="navbar navbar-default navbar-fixed-bottom">
+                <nav id="stream-controls-panel" class="navbar navbar-default navbar-fixed-bottom">
                     <!-- CONTROLS NAV - TAB Menu (START) -->
                     <div class="tab-menu">
                         <button id="tab-people" class="tab-lucid" data-toggle="collapse" data-parent="#stream-controls-panel" data-target="#people-panel">
@@ -1182,7 +1180,18 @@
                         <!-- PEOPLE PANEL-BODY (END) -->
                     </div>
                     <!-- PEOPLE PANEL (END) -->
-                </div>
+
+                    <!-- Stream Status (Start) -->
+                    <div id="stream-status-panel" class="status-bar">
+                        <div class="stream-info pull-left">
+                            <span class="stream-name">LucidLife</span><span class="badge">?</span>
+                        </div>
+                        <div class="filter-info pull-right">
+                            <span class="filter-sign glyphicon glyphicon-filter"></span>m&amp;f / 18-25 / &lt;250km<span class="badge">97</span>
+                        </div> 
+                    </div>
+                    <!-- Stream Status (End) -->
+                </nav>
                 <!-- STREAM CONTROLS PANEL (END) -->
             </div>
             <!-- STREAM PAGE (END) -->
@@ -1242,18 +1251,11 @@
         <!-- PAGES (END) -->
 
         <!-- FOOTER (START) -->
+        <!--
         <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-            <!-- Stream Status (Start) -->
-            <div id="stream-status-panel" class="status-bar">
-                <div class="stream-info pull-left">
-                    <span class="stream-name">LucidLife</span><span class="badge">?</span>
-                </div>
-                <div class="filter-info pull-right">
-                    <span class="filter-sign glyphicon glyphicon-filter"></span>m&amp;f / 18-25 / &lt;250km<span class="badge">97</span>
-                </div> 
-            </div>
-            <!-- Stream Status (End) -->
+            
         </nav>
+        -->
         <!-- FOOTER (END) -->
 
         <!-- UTIL HTML (START) -->

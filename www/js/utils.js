@@ -114,7 +114,7 @@ function geoSuccess(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
     */
-    _application.geolocation = {"latitude":position.coords.latitude.toFixed(7), "longitude":position.coords.longitude.toFixed(7)};
+    _session.geolocation = {"latitude":position.coords.latitude.toFixed(7), "longitude":position.coords.longitude.toFixed(7)};
     saveGeolocation();
 }
 
@@ -127,8 +127,8 @@ function geoError(error) {
 
 function updateAbout(){
     $('#modal-about .version').html(_application.version);
-    $('#modal-about .latitude').html(_application.geolocation.latitude);
-    $('#modal-about .longitude').html(_application.geolocation.longitude);
+    $('#modal-about .latitude').html(_session.geolocation.latitude);
+    $('#modal-about .longitude').html(_session.geolocation.longitude);
     if(_session.user){
         $('#modal-about .user-info-name').html(_session.user.fname + ' ' + _session.user.lname);
         $('#modal-about .user-info-userid').html(_session.user.userid);

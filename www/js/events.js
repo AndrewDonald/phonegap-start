@@ -192,12 +192,11 @@ function initEventHandlers(){
                     break;
                 case 'page-conversation':
                     $('body').attr('data-page', target);
-                    $('#alerts-panel').toggleClass('active');
                     gotoPage(target);
                     break;
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
-                    $('nav#footer, #people-nav').toggleClass('active');
+                    $('#people-nav').toggleClass('active');
                     gotoPage(target);
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
@@ -491,6 +490,7 @@ function initEventHandlers(){
     */
 
     // STREAM PANE Swipe handler
+    /*
     function swipeStreamPanel(direction){
         if(direction.toLowerCase() == "left"){
             _lucid.panel.stream.show.active = (_lucid.panel.stream.show.active-- > 0) ? _lucid.panel.stream.show.active : (_lucid.panel.stream.show.length - 1);
@@ -507,18 +507,6 @@ function initEventHandlers(){
 
         $(".stream-pane-menu-con").scrollTo('#' + _lucid.panel.stream[_lucid.panel.stream.show.active].toLowerCase() + '-stream-pane');
     }
-
-    // Send Message (Enter)
-    $('input#send-message').on('click', function(event){
-        $('#footer').addClass('detach');
-    });
-
-    // Send Message (Entry Complete)
-    $('input#send-message').on('blur', function(event){
-        $('#footer').removeClass('detach'); 
-    });
-
-    
-
+    */
 }
 // initEventHandlers (END)

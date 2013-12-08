@@ -143,8 +143,8 @@ function logoutUser_Callback(result) {
 // GET USER GEO
 function saveGeolocation(){
     var objMessage = {};
-        objMessage.method = "save_geolocation";
-        objMessage.geolocation    = _application.geolocation; //{"latitude": _application.geolocation.latitude, "longitude": _application.geolocation.longitude};
+        objMessage.method       = "save_geolocation";
+        objMessage.geolocation  = _session.geolocation; //{"latitude": _session.geolocation.latitude, "longitude": _session.geolocation.longitude};
     
     $('#modal-loader .modal-body').html('Saving geolocation...');
     apiRequest(objMessage, saveGeolocation_Callback, false);
@@ -306,9 +306,41 @@ function sendChat_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful
-            $('.send-message-form #send-message').empty();
+            $('#send-message').val('');
         }else{
             // Server returned an error = failed authorization
+            alert('Error: ' + result.message);
+        }
+    }
+}
+
+// Get Chats (retrieve latest/recent chat items from stream for initial population)
+function getChats(stream) {
+    if (!stream || stream == ""){
+        stream = _session.stream.stream;
+    }
+
+    var objMessage = {};
+        objMessage.method    = "get_chats";
+        objMessage.stream    = stream;
+    
+    apiRequest(objMessage, getChats_Callback, false);
+    
+    return false;
+}
+
+function getChats_Callback(result) {
+    if(result==0) {
+        // Ajax request failed
+        alert('')
+    }else{
+        if(result.status > 0){
+            //$('#stream-activity-con > .wrapper').empty();
+            for (var x=0; x<result.object.length; x++) {
+                addChatItem(result.object[x], 1);
+            }
+        }else{
+            // Server returned an error
             alert('Error: ' + result.message);
         }
     }
@@ -384,10 +416,10 @@ function initiateNodeServer() {
             addChatItem(msg.object);
             break;
         case "subscription":
-            _application.streamMember[msg.object.userid.toString()] = msg.object; 
-            _application.streamMember[msg.object.userid.toString()].time = splitDate(_application.streamMember[msg.object.userid.toString()].createdate);
+            _session.people[msg.object.userid.toString()] = msg.object; 
+            _session.people[msg.object.userid.toString()].time = splitDate(_session.people[msg.object.userid.toString()].createdate);
             //addStreamMember(msg.object, 0);
-            $('.connection-items-con').append('AddMember: ' + JSON.stringify(msg.object));
+            $('.connection-items-con').prepend('AddMember: ' + JSON.stringify(msg.object));
             break;
         case "add_connection":
             break;
@@ -475,8 +507,8 @@ function getPings_Callback(result) {
 	    //$('#stream-activity-con > .wrapper').empty();
 
 	    for (var x=0; x<result.object.length; x++) {
-		_application.streamMember[result.object[x].userid.toString()] = result.object[x];
-		_application.streamMember[result.object[x].userid.toString()].time = splitDate(_application.streamMember[result.object[x].userid.toString()].createdate);
+		_session.people[result.object[x].userid.toString()] = result.object[x];
+		_session.people[result.object[x].userid.toString()].time = splitDate(_session.people[result.object[x].userid.toString()].createdate);
 		addStreamMember(result.object[x], 1);
 	    }
 	    /*
@@ -498,53 +530,7 @@ function getPings_Callback(result) {
     }
 }
 
-// get past chats
-function getActivities(stream) {
-    if (stream == "") stream = "All"; 
-    var objMessage = {};
-        objMessage.method    = "get_chats";
-        objMessage.stream    = stream;
-    
-    apiRequest(objMessage, getActivities_Callback, false);
-    
-    return false;
-}
 
-function getActivities_Callback(result) {
-    if(result==0) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-	    //$('#stream-activity-con > .wrapper').empty();
-	    for (var x=0; x<result.object.length; x++) {
-		addChatItem(result.object[x], 1);
-		
-		/*
-		// Custom Scrollbars
-		if ($('html').is('.no-touch')) {
-		    //var pane = $('.scroll-pane')
-		    //pane.jScrollPane(settings);
-		    var api = $('html.no-touch .stream-chat > .wrapper.scroll-pane').data('jsp');
-		    
-		//    api.getContentPane().append(
-		//	$('<p />').text('This is paragraph number ' + i++)
-		//    );
-		    // we could call "pane.jScrollPane(settings)" again but it is
-		    // more convenient to call via the API as then the original
-		    // settings we passed in are automatically remembered.
-		    api.reinitialise();
-		    //setTimeout(function(){$('html.no-touch .stream-chat > .wrapper.scroll-pane, html.no-touch .stream-photo > .wrapper.scroll-pane').jScrollPane();},3000);
-		}
-		*/
-	    }
-
-	    
-	}else{
-            // Server returned an error = failed authorization
-            errorHandler(result.status);
-        }
-    }
-}
 
 // the HTML5 form error validations 
 function validateInput(input) {

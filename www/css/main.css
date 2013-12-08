@@ -418,19 +418,17 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
         nav#header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
-    /* HEADER PANEL */
-    #header-panel {display: block; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
-    body.logged-out #header-panel {display: none;}
-        #new-thought-panel {}
-            #form-thought {}
-            #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
-            #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
-            .thought-lists-nav {margin-top: 4px;}
-                .thought-lists-nav .btn {color: #0ef;}
-                .thought-lists-nav .btn.active {color: #fff;}
-                .thought-lists-nav .btn.btn-suggested-streams {display: none;}
-                .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
-        #send-message.private {background-color: #cff;}
+    /* NEW THOUGHT PANEL */
+    #new-thought-panel {padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
+        #form-thought {}
+        #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
+        #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
+        .thought-lists-nav {margin-top: 4px;}
+            .thought-lists-nav .btn {color: #0ef;}
+            .thought-lists-nav .btn.active {color: #fff;}
+            .thought-lists-nav .btn.btn-suggested-streams {display: none;}
+            .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
+    #send-message.private {background-color: #cff;}
 
     /* STREAM CONTROLS */
     .btn-stream-controls > .stream-icon {margin-top: 5px;}
@@ -508,15 +506,16 @@ body.logged-out #pages {padding-top: 60px;}
 
     /* PAGE CONVERSATION */
     #pages #page-conversation {padding-top: 5px;}
+        #conversation-header {top: 40px; min-height: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
         #page-conversation .connection-items-con > .well {box-shadow: none; background-color: #f0ffff; border: none;}
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
         /* CONTROLS PANELS */
-        #stream-controls-panel {min-height: 28px;}
+        #stream-controls-panel {min-height: 23px;}
             .tab-menu > button {color: #0ef;}
                 .tab-menu > button.active {color: #fff;}
-            .control-panel {margin-bottom: 23px;}
+            .control-panel {}
             
         /* CONTROL TABS */
         #tab-people.tab-lucid {left: 10px; font-size: 12px;}
@@ -645,8 +644,10 @@ body.logged-out #pages {padding-top: 60px;}
             .connection-items-con.specific-user {}
 
 /* FOOTER */
+/*
 nav#footer {min-height: 15px; background-color: #0ab; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
 body.logged-out nav#footer {display: none;}
+*/
 
     /* STREAM STATUS PANEL */
     #stream-status-panel {}
