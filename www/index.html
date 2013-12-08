@@ -1270,7 +1270,7 @@
         <!-- User Button (Start) -->
         <div id="user-button" class="template">
             <button class="btn btn-lucid user {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
-                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
+                <sup class="badge label-lucid">{{connecting-qty}}{{connection-request-icon}}</sup>
                 <sub>
                     <span class="stream-indicator-icon"></span>
                     <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>

@@ -274,7 +274,8 @@ function createUserButton(objData){
     var userButton = _application.template.userButton
                     //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
                     //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
-                    //.replace(/\{{connecting-qty}}/g,    getConnectingQty(objData.userid))
+                    .replace(/\{{connecting-qty}}/g,    '') //getConnectingQty(objData.userid))
+                    .replace(/\{{connection-request-icon}}/g,    '') //<span class="connection-request-icon glyphicon glyphicon-link"></span>
                     //.replace(/\{{viewed-your-profile}}/g,getViewedYourProfileClass(objData.userid))
                     //.replace(/\{{viewed-your-profile-date}}/g,getViewedYourProfileDate(objData.userid))
                     //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
@@ -307,7 +308,6 @@ function createChatItem(objData){
                     .replace(/\{{you}}/g,               getUserClass(objData.userid))
                     .replace(/\{{viewed}}/g,            'viewed')
                     .replace(/\{{viewed-date}}/g,       objData.createdate)
-                    
                     .replace(/\{{entry-date}}/g,        objData.createdate)
                     .replace(/\{{streamid}}/g,          objData.streamid)
                     .replace(/\{{stream}}/g,            objData.stream)

@@ -610,7 +610,7 @@ body.logged-out #pages {padding-top: 60px;}
                     .connection-items-list .alert-icon {color: #0ef;}
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none; min-height: 80px;}
                         .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
-                        .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-header {left: -65px;}
+                        .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -65px;}
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
