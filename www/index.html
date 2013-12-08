@@ -128,7 +128,7 @@
                             <input id="send-message" type="text" class="form-control" placeholder="message everyone...">
                             <span class="input-group-btn">
                                 <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>
-                                <button type="button" class="send-message-button btn btn-warning" onclick="sendChat({streamid: _session.stream.id, chat:$('.send-message-form input#send-message').val()});"><span class="glyphicon glyphicon-share-alt"></span></button>
+                                <button type="button" class="send-message-button btn btn-warning" onclick="sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()});"><span class="glyphicon glyphicon-share-alt"></span></button>
                             </span>
                         </div>
                     </div>
@@ -292,6 +292,7 @@
                                             <sup class="badge label-lucid"></sup>
                                             <sub>
                                                 <span class="stream-indicator-icon"></span>
+                                                <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-close"></span>
                                                 <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                                                 <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                                             </sub>
@@ -2255,83 +2256,132 @@
         <!-- FOOTER (END) -->
 
         <!-- UTIL HTML (START) -->
-        <!-- Modal Loader (Start) -->
-        <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Please wait</h4>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                <span class="sr-only">Processing</span>
-                            </div>
+        <!-- Thought List Item (Start) -->
+        <div id="thought-list-item" class="template">
+            <li class="list-group-item">
+                <a class="btn btn-lucid-normal" data-streamid="{{streamid}}" onclick="subscribeThought({{streamid}});">
+                    <span class="stream-name">{{stream}}</span><span class="badge">{{activeusers}}</span>
+                </a>
+            </li>
+        </div>
+        <!-- Thought List Item (End) -->
+
+        <!-- User Button (Start) -->
+        <div id="user-button" class="template">
+            <button class="btn btn-lucid user {{you}} {{in/added-stream}} {{connecting}} {{connected}} {{viewed-your-profile}} {{online/inactive/offline}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
+                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
+                <sub>
+                    <span class="stream-indicator-icon"></span>
+                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                    <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                </sub>
+                <label><span class="fname">{{fname}}</span><span class="lname">{{lname}}</span></label>
+            </button>
+        </div>
+        <!-- User Button (End) -->
+
+        <!-- Chat Item (Start) -->
+        <div id="chat-item" class="template">
+            <li class="list-group-item chat {{added-stream}} {{you}} {{viewed}} {{connected}}" data-viewed-date="{{viewed-date}}" data-connecting="{{connecting-qty}}" data-entry-date="{{entry-date}}" data-streamid="{{streamid}}" data-stream="{{stream}}" data-userid="{{userid}}" data-user-fname="{{fname}}" data-user-lname="{{lname}}">
+                <div class="connection-item-panel panel">
+                    <div class="panel-header">
+                        {{button-user}}
+                    </div>
+                    <div class="panel-body">
+                        <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
+                        <div class="callout-pointer"></div>
+                        <div class="status">
+                            <span class="sent">{{create-date}}</span>
+                            <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                            <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                         </div>
                     </div>
-                    <div class="modal-body"></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
+                    <div class="panel-footer">
+                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
+                    
+                    </div>
+                </div>
+            </li>
+        </div>
+        <!-- Chat Item (End) -->
+
+        <!-- Modal Loader (Start) -->
+            <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Please wait</h4>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    <span class="sr-only">Processing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Modal Loader (End) -->
+            <!-- Modal Loader (End) -->
 
-        <!-- Modal About (Start) -->
-        <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">About</h4>
-                    </div>
-                    <div class="modal-body">
-                        <h5>LucidLife App Details</h5>
-                        <div>Version: <span class="version">0.2.2</span></div>
-                        
-                        <h5 class="geo-location">Geo Location</h5>
-                        <div>Latitude: <span class="latitude">No request made</span></div>
-                        <div>Longitude: <span class="longitude">No request made</span></div>
+            <!-- Modal About (Start) -->
+            <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">About</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h5>LucidLife App Details</h5>
+                            <div>Version: <span class="version">0.2.2</span></div>
+                            
+                            <h5 class="geo-location">Geo Location</h5>
+                            <div>Latitude: <span class="latitude">No request made</span></div>
+                            <div>Longitude: <span class="longitude">No request made</span></div>
 
-                        <h5 class="user-info">User Info</h5>
-                        <div>Name: <span class="user-info-name"></span></div>
-                        <div>Gender: <span class="user-info-gender"></span></div>
-                        <div>Birthdate: <span class="user-info-birthdate"></span></div>
-                        <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
-                        <div>Login: <span class="user-info-status">Logged out</span></div>
-                        <div>Last Login: <span class="user-info-lastlogin"></span></div>
+                            <h5 class="user-info">User Info</h5>
+                            <div>Name: <span class="user-info-name"></span></div>
+                            <div>Gender: <span class="user-info-gender"></span></div>
+                            <div>Birthdate: <span class="user-info-birthdate"></span></div>
+                            <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
+                            <div>Login: <span class="user-info-status">Logged out</span></div>
+                            <div>Last Login: <span class="user-info-lastlogin"></span></div>
+                        </div>
+                        <!--
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        -->
                     </div>
-                    <!--
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                    -->
                 </div>
             </div>
-        </div>
-        <!-- Modal About (End) -->
+            <!-- Modal About (End) -->
 
-        <!-- Modal Failed Login (Start) -->
-        <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login Failed</h4>
+            <!-- Modal Failed Login (Start) -->
+            <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Login Failed</h4>
+                        </div>
+                        <div class="modal-body">
+                            Please try again.
+                        </div>
+                        <!--
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        -->
                     </div>
-                    <div class="modal-body">
-                        Please try again.
-                    </div>
-                    <!--
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                    -->
                 </div>
             </div>
-        </div>
-        <!-- Modal Failed Login (End) -->
+            <!-- Modal Failed Login (End) -->
         <!-- UTIL HTML (END) -->
 
         <!-- SCRIPTS -->
@@ -2343,7 +2393,6 @@
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/api.js"></script>
         <script type="text/javascript" src="js/events.js"></script>
-        <script type="text/javascript" src="js/templates.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

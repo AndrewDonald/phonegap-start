@@ -144,10 +144,10 @@ function updateAbout(){
 function populateThoughtList(thoughtList, objList){
     var list = "";
     $.each(objList, function(){
-        list += _template.thoughtListItem
-                .replace(/\{streamid}/g, this.streamid)
-                .replace(/\{stream}/g, this.stream)
-                .replace(/\{activeusers}/g, this.activeusers);
+        list += _application.template.thoughtListItem
+                .replace(/\{{streamid}}/g, this.streamid)
+                .replace(/\{{stream}}/g, this.stream)
+                .replace(/\{{activeusers}}/g, this.activeusers);
     });
     $('.' + thoughtList + '-thought-list').html(list);
 }
@@ -162,7 +162,7 @@ function setSessionID(value){
 }
 
 function getStreamID(){
-    return _session.stream.id;
+    return _session.stream.streamid;
 }
 
 // SplitDate

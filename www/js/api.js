@@ -340,21 +340,21 @@ function sendChat_Callback(result) {
 function updateNodeServer() {
     // logged in, not on stream
     //if (_session.lastpage != "#STREAM" && _session.user != null) {
-    if (_session.loggedIn && _session.stream.id == null) {
+    if (_session.loggedIn && _session.stream.streamid == null) {
         _session.stream = {};
         if (_application.node.socket == null) {
             initiateNodeServer();
         } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
         }
     } 
     // logged in or anonymous, in stream
-    else if (_session.loggedIn && _session.stream.id != null) {
+    else if (_session.loggedIn && _session.stream.streamid != null) {
         if (_application.node.socket == null) {
             initiateNodeServer();
         } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
-            setTimeout("ping('"+_session.stream.name+"')", 1000); 
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
+            setTimeout("ping('" + _session.stream.stream + "')", 1000); 
         }
     } 
 }
@@ -375,9 +375,9 @@ function initiateNodeServer() {
         // Identify and respond to messages
         switch (msg.type) {
         case "listen_details":
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.name, "sessionid": _session.id}));
-            if (_session.stream.name != null) {
-            setTimeout("ping('"+_session.stream.name+"')", 1000); 
+            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
+            if (_session.stream.stream != null) {
+            setTimeout("ping('" + _session.stream.stream + "')", 1000); 
             }
             break;
         case "chat":
@@ -444,8 +444,8 @@ function ping_Callback(result) {
     }else{
         if(result.status > 0){
 	    _session.stream = {};
-	    _session.stream.id = result.object.streamid;
-	    _session.stream.name = result.object.stream;
+	    _session.stream.streamid = result.object.streamid;
+	    _session.stream.stream = result.object.stream;
 	    $('input.stream-search').val(result.object.stream);
         }else{
             // Server returned an error = failed authorization
@@ -615,7 +615,7 @@ function uploadPhoto(parentDOM){
     $.each($("#" + parentDOM + ' input.upload-file')[0].files, function(i, file) {
 	data.append('theFile', 	file);
 	data.append('method', 	method);
-	data.append('streamid',	_session.stream.id);
+	data.append('streamid',	_session.stream.streamid);
 	data.append('Submit', 	"Upload");
 	data.append('x1', 	$(form + 'input.upload-file-x1').val());
 	data.append('y1', 	$(form + 'input.upload-file-y1').val());

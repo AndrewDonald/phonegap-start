@@ -172,6 +172,7 @@ h1 {font-size: 18px;}
 h1.stream-name {text-align: center; margin: 10px 0 10px -15px;}
 h2 {font-size: 16px;}
 
+.template {display: none;}
 .form {padding: 0; color: #fff; clear: both;}
     .form .form-row {margin-bottom: 10px;}
         .form .btn-wide {padding: 6px 39px;}
@@ -614,7 +615,7 @@ body.logged-out nav#footer {display: none;}
                 .connection-items-list .alert-icon {color: #0ef;}
                 .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none; min-height: 60px;}
                     .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
-                    .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-header {left: -65px;} 
+                    .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-header {left: -65px;}
                         .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                         .connection-item-panel .panel-header .username {display: block;}
                         .connection-item-panel .panel-header .status {color: #0ab;}
@@ -624,33 +625,26 @@ body.logged-out nav#footer {display: none;}
                             .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
                             .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
                                 .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 20px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
-                                .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .callout-pointer {left: -7.5px; border-radius: 8px 0 0; border-right: 1px solid #fff;}
+                                .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: 2px solid #fff;}
                             .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
                                 .connection-item-panel .status .viewed-icon {display: none;}
-                                .connection-item-panel .status .not-viewed-icon {display: none; color: #0ab;}
+                                .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
                                 /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
                                 body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
                                 .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
                                 */
                         .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
-                        .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-footer {right: -63px;}
-                            
+                        .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-footer {right: -63px;}
+                       
                 .connection-items-list > li.viewed {border-color: #0ab;}
                     .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
                     .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
                 /* If is User switch profile pic to right side */
                 .connection-items-list > li.list-group-item.you,
                 .connection-items-list > li.list-group-item.added-stream {margin: 0 69px 10px;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header,
-                    .connection-items-list > li.list-group-item.added-stream .connection-item-panel .panel-header {right: -65px;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer,
-                    .connection-items-list > li.list-group-item.added-stream .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 1px solid #fff;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body blockquote {background-color: #ff9;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {background-color: #ff9; border-left: 1px solid #ff9;}
-                    .connection-items-list > li.list-group-item.connected .connection-item-panel .panel-body blockquote {background-color: #cff;}
-                    .connection-items-list > li.list-group-item.connected .connection-item-panel .panel-body .callout-pointer {background-color: #cff; border-right: 1px solid #cff;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer,
-                    .connection-items-list > li.list-group-item.added-streamu .connection-item-panel .panel-footer {left: -64px;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -65px;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff;}
+                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -64px;} 
         .connection-item-panel .btn-like {display: none;}   
         .connection-items-con.specific-user {}
 
