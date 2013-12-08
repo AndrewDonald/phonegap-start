@@ -218,6 +218,9 @@ h2 {font-size: 16px;}
 #modal-loader .modal-footer {display: none;}
 #modal-loader .modal-footer.active {display: block;}
 
+/* STATUS BAR */
+.status-bar {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000; background-color: #000; border-top: 1px solid #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+    .status-bar .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
 
 /*
 .alert{}
@@ -314,8 +317,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid.tilde:before {content: "~";}
         /*.btn-lucid.tilde .indicator {top: 0; left: 20px;}*/
     /*
-    .stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
-    .stream-controls-panel > .panel-heading .btn-lucid .glyphicon {font-size: 14px; margin-right: 2px;} 
+    .stream-stream-controls-panel > .panel-heading .btn-lucid .indicator {left: 6px; top: 4px;}
+    .stream-stream-controls-panel > .panel-heading .btn-lucid .glyphicon {font-size: 14px; margin-right: 2px;} 
     */ 
     .btn-lucid img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 4px;}
     .btn-lucid h1 {margin: 0; padding: 0; font-size: 12px;}
@@ -509,153 +512,154 @@ body.logged-out #pages {padding-top: 60px;}
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
+        /* CONTROLS PANELS */
+        #stream-controls-panel {min-height: 28px;}
+            .tab-menu > button {color: #0ef;}
+                .tab-menu > button.active {color: #fff;}
+            .control-panel {margin-bottom: 23px;}
+            
+        /* CONTROL TABS */
+        #tab-people.tab-lucid {left: 10px; font-size: 12px;}
+        #tab-stream.tab-lucid {left: 80px;}
+        #tab-filter.tab-lucid {left: 150px; font-size: 12px;}
+        /*#tab-alerts.tab-lucid {left: 225px;}*/
+        
+        /* PEOPLE PANEL */ 
+        #people-panel {}
+            #people-panel #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
+            
+                #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
+                            
+                    /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                    .btn.people-nav-toggle > .badge {font-size: 14px;}
+                    .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+                    .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
+                        .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
+
+                    #people-nav {display: none; padding: 2px 5px; border-radius: 0;}
+                    #people-nav.active {display: block;}
+                    #people-panel #people-nav .btn.btn-lucid.user {box-shadow: 0 0 5px #000;}
+                        #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
+                            #people-nav > .panel-menu > pre > label {padding-right: 5px;}
+                            #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
+                            #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
+                                #people-nav > .panel-menu > pre > .header-icon {padding-right: 5px;}
+                                #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+                                #people-panel.vertical #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+                                #people-nav > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+                                #people-panel.vertical > #people-nav > .panel-menu > pre > .btn-vote-remove {float: right;}
+                        #people-panel:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
+                        #people-panel:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
+            #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
+        
+        /* STREAM PANEL */
+        #stream-panel {}
+            /* Stream */
+            #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
+            #stream-name:before {content: "~";}
+            .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
+            /* Associated Streams */
+            .slider-status-con .list-group > li > a {}
+                .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
+                .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
+            .slider-status-con .list-group > li.active {}
+                .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
+                    .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
+                    .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
+        
+        /* FILTER PANEL */
+        #filter-panel {}
+            .filter-controls {display: none;}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
+            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
+        
+
+        /* CONVERSATION PAGE */
+        body[data-page=page-conversation] #people-panel {}
+            body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
+                body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
+            body[data-page=page-conversation] #people-panel .panel-body #connection-items-header {display: none;}
+
+            #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
+                #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
+                #connection-items-header .btn {background-color: transparent; box-shadow: none;}
+                #connection-items-header .btn.active {color: #ff6;}
+
+            .connection-items-con {display: none;}
+            #page-conversation .connection-items-con {display: block;}
+            .connection-items-con .btn-lucid-normal,
+            .connection-items-con .btn-lucid-normal,
+            .connection-items-con .btn-lucid-normal:hover,
+            .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
+                .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
+                .connection-items-list {height: 190px; overflow: auto; padding: 5px;}
+                /*@media all and (max-height: 360px) {
+                    .connection-items-list {max-height: 124px;}
+                }*/
+
+                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0; padding: 0;}
+                    .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 69px 10px;}
+                    /*.connection-items-list > li.viewed {display: none;}*/
+                    .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
+                    .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
+                    .connection-items-list .badge {font-weight: normal; font-size: 10px;}
+                    .connection-items-list .alert-icon {color: #0ef;}
+                    .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none; min-height: 80px;}
+                        .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
+                        .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-header {left: -65px;}
+                            .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
+                            .connection-item-panel .panel-header .username {display: block;}
+                            .connection-item-panel .panel-header .status {color: #0ab;}
+                                
+                            .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
+                                .connection-item-panel .panel-body .connection-content {}
+                                .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
+                                .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
+                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 20px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: 2px solid #fff;}
+                                .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
+                                    .connection-item-panel .status .viewed-icon {display: none;}
+                                    .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
+                                    .connection-items-con.public .connection-item-panel .status .not-viewed-icon {display: none;}
+                                    /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
+                                    body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
+                                    .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
+                                    */
+                            .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
+                            .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-footer {right: -63px;}
+                           
+                    .connection-items-list > li.viewed {border-color: #0ab;}
+                        .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
+                        .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
+                    /* If is User switch profile pic to right side */
+                    .connection-items-list > li.list-group-item.you,
+                    .connection-items-list > li.list-group-item.added-stream {margin: 0 69px 10px;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -65px;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -64px;} 
+            .connection-item-panel .btn-like {display: none;}   
+            .connection-items-con.specific-user {}
+
 /* FOOTER */
 nav#footer {min-height: 15px; background-color: #0ab; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
 body.logged-out nav#footer {display: none;}
 
-    /* CONTROLS PANELS */
-    #controls-panel {}
-        .tab-menu > button {color: #0ef;}
-            .tab-menu > button.active {color: #fff;}
-        .control-panel {}
-
-    /* CONTROL TABS */
-    #tab-people.tab-lucid {left: 15px; font-size: 12px;}
-    #tab-stream.tab-lucid {left: 85px;}
-    #tab-filter.tab-lucid {left: 155px; font-size: 12px;}
-    /*#tab-alerts.tab-lucid {left: 225px;}*/
+    /* STREAM STATUS PANEL */
+    #stream-status-panel {}
     
-    /* PEOPLE PANEL */ 
-    #people-panel {}
-        #people-panel #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
-        
-            #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
-                        
-                /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                .btn.people-nav-toggle > .badge {font-size: 14px;}
-                .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
-                    .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
 
-                #people-nav {display: none; padding: 2px 5px; border-radius: 0;}
-                #people-nav.active {display: block;}
-                #people-panel #people-nav .btn.btn-lucid.user {box-shadow: 0 0 5px #000;}
-                    #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
-                        #people-nav > .panel-menu > pre > label {padding-right: 5px;}
-                        #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
-                        #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
-                            #people-nav > .panel-menu > pre > .header-icon {padding-right: 5px;}
-                            #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-                            #people-panel.vertical #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-                            #people-nav > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-                            #people-panel.vertical > #people-nav > .panel-menu > pre > .btn-vote-remove {float: right;}
-                    #people-panel:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
-                    #people-panel:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
-        #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
-    
-    /* STREAM PANEL */
-    #stream-panel {}
-        /* Stream */
-        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
-        #stream-name:before {content: "~";}
-        .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
-        /* Associated Streams */
-        .slider-status-con .list-group > li > a {}
-            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
-            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
-        .slider-status-con .list-group > li.active {}
-            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
-                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
-                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
-    
-    /* FILTER PANEL */
-    #filter-panel {}
-        .filter-controls {display: none;}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
-        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
-    
-    /* FILTER PANEL */
-    #stream-status-panel {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 0 3px #000; background-color: #000; border-top: 1px solid #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
-        #stream-status-panel .glyphicon-filter {font-size: 8px;}
-        #stream-status-panel .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
-
-    /* CONVERSATION PAGE */
-    body[data-page=page-conversation] #people-panel {}
-        body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
-            body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
-        body[data-page=page-conversation] #people-panel .panel-body #connection-items-header {display: none;}
-
-        #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
-            #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
-            #connection-items-header .btn {background-color: transparent; box-shadow: none;}
-            #connection-items-header .btn.active {color: #ff6;}
-
-        .connection-items-con {display: none;}
-        #page-conversation .connection-items-con {display: block;}
-        .connection-items-con .btn-lucid-normal,
-        .connection-items-con .btn-lucid-normal,
-        .connection-items-con .btn-lucid-normal:hover,
-        .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
-            .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
-            .connection-items-list {height: 190px; overflow: auto; padding: 5px;}
-            /*@media all and (max-height: 360px) {
-                .connection-items-list {max-height: 124px;}
-            }*/
-
-                .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0; padding: 0;}
-                .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 69px 10px;}
-                /*.connection-items-list > li.viewed {display: none;}*/
-                .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
-                .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
-                .connection-items-list .badge {font-weight: normal; font-size: 10px;}
-                .connection-items-list .alert-icon {color: #0ef;}
-                .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none; min-height: 60px;}
-                    .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute;}
-                    .connection-items-list > li.list-group-item:not(.you):not(.added-stream) .connection-item-panel .panel-header {left: -65px;}
-                        .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
-                        .connection-item-panel .panel-header .username {display: block;}
-                        .connection-item-panel .panel-header .status {color: #0ab;}
-                            
-                        .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                            .connection-item-panel .panel-body .connection-content {}
-                            .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
-                            .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
-                                .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 20px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
-                                .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: 2px solid #fff;}
-                            .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
-                                .connection-item-panel .status .viewed-icon {display: none;}
-                                .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
-                                /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
-                                body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
-                                .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
-                                */
-                        .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
-                        .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-footer {right: -63px;}
-                       
-                .connection-items-list > li.viewed {border-color: #0ab;}
-                    .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
-                    .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
-                /* If is User switch profile pic to right side */
-                .connection-items-list > li.list-group-item.you,
-                .connection-items-list > li.list-group-item.added-stream {margin: 0 69px 10px;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -65px;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff;}
-                    .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -64px;} 
-        .connection-item-panel .btn-like {display: none;}   
-        .connection-items-con.specific-user {}
-
-    /* APP COMPONENTS */
-    ._connections-book {}   /* See a list of people from your connections book who are online now */
-    ._contact-summary {}    /* See who has contacted, viewed, messaged or requested to be friends with you recently */
-    ._private-game {}       /* play games against other person (1:1) */
-    ._private-chat {}       /* privately chat with someone */
-    ._user-badge {}         /* See who is contacting you */
-        ._user-badge .user-pic {width: 50px; margin: 0 10px 3px 0; box-shadow: 0px 0px 2px #666; height: 50px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #999;}
-        ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
+/* APP COMPONENTS */
+._connections-book {}   /* See a list of people from your connections book who are online now */
+._contact-summary {}    /* See who has contacted, viewed, messaged or requested to be friends with you recently */
+._private-game {}       /* play games against other person (1:1) */
+._private-chat {}       /* privately chat with someone */
+._user-badge {}         /* See who is contacting you */
+    ._user-badge .user-pic {width: 50px; margin: 0 10px 3px 0; box-shadow: 0px 0px 2px #666; height: 50px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #999;}
+    ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
 /******** FOR TESTING ONLY!! ********/
 /*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

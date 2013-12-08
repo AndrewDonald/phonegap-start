@@ -176,3 +176,21 @@ function splitDate(date) {
         return (new Date(Date.UTC(dt[0], dt[1], dt[2], dt[3], dt[4], dt[5]))).getTime();
     }
 }
+
+function getStreamClass(streamid){
+    var streamClass = "in-stream"; 
+    if(streamid == _session.stream.streamid){
+        streamClass = "added-stream";
+    }
+
+    return streamClass;
+}
+
+function getUserClass(userid){
+    var userClass = ""; 
+    if(userid == _session.user.userid){
+        userClass = "you";
+    }
+
+    return userClass;
+}

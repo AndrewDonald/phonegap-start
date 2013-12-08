@@ -148,7 +148,7 @@ function changeStream(objStream){
     _session.stream         = objStream;
     
     gotoPage('page-conversation');
-    $('#page-conversation .connection-items-con').empty();
+    $('#page-conversation .connection-items-con .connection-items-list').empty();
     updteStreamStatus();
     //updateNodeServer();
 }
@@ -252,12 +252,11 @@ function addChatItem(objChat) {
         }
     }
 
-    var chatItem = createChatItem(objChat).replace(/\{{user-button}}/g, createUserButton(objChat));
+    //var chatItem = createChatItem(objChat);
         
     //if (direction == 0) { //$('ul.more_stories li:gt(2)').hide();
-    $('.connection-items-con .connection-items-list').prepend(chatItem)
-        //.children('article.User-Badge:first')
-        .hide().slideDown(500).removeAttr('style');
+    $('#page-conversation .connection-items-con .connection-items-list').prepend(createChatItem(objChat));
+    $('#page-conversation .connection-items-con .connection-items-list .list-group-item:first').hide().slideDown(500).removeAttr('style');
     /*
         //if($('#page-conversation > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
         //   $('#page-conversation > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
@@ -272,13 +271,52 @@ function addChatItem(objChat) {
 }
 
 function createUserButton(objData){
-    var userButton = _application.template.userButton;
+    var userButton = _application.template.userButton
+                    //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
+                    //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
+                    //.replace(/\{{connecting-qty}}/g,    getConnectingQty(objData.userid))
+                    //.replace(/\{{viewed-your-profile}}/g,getViewedYourProfileClass(objData.userid))
+                    //.replace(/\{{viewed-your-profile-date}}/g,getViewedYourProfileDate(objData.userid))
+                    //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
+                    //.replace(/\{{user-status}}/g,       getUserStatusClass(objData.userid))
+                    .replace(/\{{stream-class}}/g,      getStreamClass(objData.streamid))
+                    .replace(/\{{you}}/g,               getUserClass(objData.userid))
+                    .replace(/\{{viewed}}/g,            'viewed')
+                    .replace(/\{{viewed-date}}/g,       objData.createdate)
+                    .replace(/\{{streamid}}/g,          objData.streamid)
+                    .replace(/\{{stream}}/g,            objData.stream)
+                    .replace(/\{{fname}}/g,             objData.fname)
+                    .replace(/\{{lname}}/g,             objData.lname)
+                    .replace(/\{{userid}}/g,            objData.userid)
+                    .replace(/\{{createdate}}/g,        objData.createdate);
     
     return userButton;
 }
 
 function createChatItem(objData){
-    var chatItem = _application.template.userButton;
+    var chatItem = _application.template.chatItem
+                    .replace(/\{{user-button}}/g,       createUserButton(objData))
+                    //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
+                    //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
+                    //.replace(/\{{connecting-qty}}/g,    getConnectingQty(objData.userid))
+                    //.replace(/\{{viewed-your-profile}}/g,getViewedYourProfileClass(objData.userid))
+                    //.replace(/\{{viewed-your-profile-date}}/g,getViewedYourProfileDate(objData.userid))
+                    //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
+                    //.replace(/\{{user-status}}/g,       getUserStatusClass(objData.userid))
+                    .replace(/\{{stream-class}}/g,      getStreamClass(objData.streamid))
+                    .replace(/\{{you}}/g,               getUserClass(objData.userid))
+                    .replace(/\{{viewed}}/g,            'viewed')
+                    .replace(/\{{viewed-date}}/g,       objData.createdate)
+                    
+                    .replace(/\{{entry-date}}/g,        objData.createdate)
+                    .replace(/\{{streamid}}/g,          objData.streamid)
+                    .replace(/\{{stream}}/g,            objData.stream)
+                    .replace(/\{{fname}}/g,             objData.fname)
+                    .replace(/\{{lname}}/g,             objData.lname)
+                    .replace(/\{{userid}}/g,            objData.userid)
+                    .replace(/\{{chat}}/g,              objData.chat)
+                    .replace(/\{{chatpicextension}}/g,  objData.chatpicextension)
+                    .replace(/\{{createdate}}/g,        objData.createdate);
     
     return chatItem;
 }

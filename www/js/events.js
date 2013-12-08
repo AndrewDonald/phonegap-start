@@ -139,7 +139,7 @@ function initEventHandlers(){
 
 
         //Open Panels
-        //$('.menu-toggle-controls-panel, .menu-toggle-connections').click();
+        //$('.menu-toggle-stream-controls-panel, .menu-toggle-connections').click();
 
 
 
@@ -380,7 +380,7 @@ function initEventHandlers(){
             $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
             $('#people-panel').toggleClass('vertical');
             if($('#people-panel').is('.vertical')){
-                $('.menu-toggle-controls-panel.active, #people-nav .btn.user.active').click();
+                $('.menu-toggle-stream-controls-panel.active, #people-nav .btn.user.active').click();
             }
         */
 
@@ -427,7 +427,7 @@ function initEventHandlers(){
 
     // TOGGLE CONNECTION PANEL USERS
     $('#people-nav .btn.user').on('click',function(){
-        $('.menu-toggle-controls-panel.active').click();
+        $('.menu-toggle-stream-controls-panel.active').click();
         if($(this).is('.active')){
             $(this).removeClass('active');
             $('#send-message').prop('placeholder', 'message everyone');
