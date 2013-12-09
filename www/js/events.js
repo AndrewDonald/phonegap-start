@@ -154,7 +154,11 @@ function initEventHandlers(){
     // Main Menu Toggle
     $('#main-menu-toggle').on('click',function(){
         $(this).toggleClass('active');
-        $('body').toggleClass('main-menu-active');
+        if($(this).is('.active')){
+            $('body').addClass('main-menu-active');
+        }else{
+            $('body').removeClass('main-menu-active');
+        }
     });
 
 
@@ -169,9 +173,12 @@ function initEventHandlers(){
 
     // Main Menu Items
     $('.main-nav [data-toggle-item]').on('click',function(){
+        $('#main-menu-toggle').removeClass('active');
+        $('body').removeClass('main-menu-active');
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
+
         }else{
             var target = $(this).data('toggle-item');
             /*

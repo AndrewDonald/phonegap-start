@@ -10,11 +10,11 @@ var _session                    = {};
     _session.page               = "page-login";
     _session.user               = {};
     _session.geolocation        = {"latitude":0,"longitude":0};
-    _session.people             = {"user":{}}; // Children: _session.people.user['userid']
-    _session.conversation       = {"chat":{}}; // Children: _session.conversation.chat['chatid']
+    _session.people             = {"user":{}};      // Children: _session.people.user['userid']
+    _session.conversation       = {"chat":{}};      // Children: _session.conversation.chat['chatid']
     _session.stream             = {"streamid":0, "stream":"All"};
-    _session.streamAdded        = {"stream":{}};  // Children: _session.streamAdded.stream['id']  // Added Parallel Streams parent
-    _session.streamConversation = {"chat":{}};  // Children: _session.streamConversation.chat['chatid']     // inStream Conversation parent
+    _session.streamAdded        = {"stream":{}};    // Children: _session.streamAdded.stream['id']  // Added Parallel Streams parent
+    _session.streamConversation = {"chat":{}};      // Children: _session.streamConversation.chat['chatid']     // inStream Conversation parent
         
     //_session.user.filter = "My Filter";           // Filter to apply. "" = no filter 
     //_session.user.filters = {};                   // Filters parent
@@ -52,7 +52,10 @@ var _application                                = {};
     _application.template                       = {};
     _application.template.thoughtListItem       = $('#thought-list-item.template').html();
     _application.template.userButton            = $('#user-button.template').html();
+    _application.template.streamAddedButton     = $('#stream-added-button.template').html();
     _application.template.chatItem              = $('#chat-item.template').html();
+    _application.template.notificationItem      = $('#notification-item.template').html();
+    
     /*
     _application.template                       = {};
     _application.template["Message-Area"]       = $('#Message-Area').html();
@@ -125,7 +128,7 @@ function initializeApp(){
     //localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
     gotoPage('page-new-thought');
-    updateNodeServer();
+    //updateNodeServer();
 }
 
 function deinitializeApp(){
@@ -138,6 +141,8 @@ function deinitializeApp(){
 // Changes Thought Stream
 function changeStream(objStream){
     _session.stream  = objStream;
+    _session.streamAdded = {"stream":{}}; 
+    _session.streamConversation = {"chat":{}}; 
     
     gotoPage('page-conversation');
     $('#page-conversation .connection-items-con .connection-items-list').empty();
@@ -145,7 +150,7 @@ function changeStream(objStream){
 
     // Pre populate stream with recent/latest conversation
     getChats();
-    //updateNodeServer();
+    updateNodeServer();
 }
 
 // Changes Thought Stream
@@ -202,7 +207,7 @@ function addUser(objUser) {
 }
 
 function addChatItem(objChat) {
-    if(!_session.user[objChat.userid]){
+    if(!_session.people.user[objChat.userid]){
         addUser(objChat);
     }
 
@@ -314,4 +319,22 @@ function createChatItem(objData){
                     .replace(/\{{createdate}}/g,        objData.createdate);
     
     return chatItem;
+}
+
+function addNotificationItem(objData) {
+    if(!_session.streamAdded.stream[objData.streamid]){
+        _session.streamAdded.stream[objData.streamid](objData);
+    }
+
+    $('#page-conversation .connection-items-con .connection-items-list').prepend(createNotificationItem(objData))
+        .parent().children('.list-group-item:first').hide().slideDown(500).removeAttr('style');
+}
+
+function createNotificationItem(objData){
+    var notificationItem = _application.template.notificationItem
+                            .replace(/\{{stream-added-button}}/g, _application.template.streamAdded)
+                            .replace(/\{{streamid}}/g, objData.streamid)
+                            .replace(/\{{stream}}/g, objData.stream);
+
+    return notificationItem;
 }

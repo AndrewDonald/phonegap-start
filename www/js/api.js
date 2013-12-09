@@ -336,8 +336,11 @@ function getChats_Callback(result) {
     }else{
         if(result.status > 0){
             //$('#stream-activity-con > .wrapper').empty();
-            for (var x=0; x<result.object.length; x++) {
-                addChatItem(result.object[x], 1);
+            if(result.object.length > 0){
+                var chats = result.object.reverse();
+                for (var x=0; x<chats.length; x++) {
+                    addChatItem(chats[x], 1);
+                }
             }
         }else{
             // Server returned an error
@@ -409,11 +412,14 @@ function initiateNodeServer() {
         case "listen_details":
             _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
             if (_session.stream.stream != null) {
-            setTimeout("ping('" + _session.stream.stream + "')", 1000); 
+            setTimeout('ping("' + _session.stream.stream + '")', 1000); 
             }
             break;
         case "chat":
             addChatItem(msg.object);
+            break;
+        case "notification":
+            addNotificationItem(msg.object);
             break;
         case "subscription":
             _session.people[msg.object.userid.toString()] = msg.object; 
