@@ -99,7 +99,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
         .list-inline.full-width > li.list-group-item > .btn > .badge {float: right;}
     .list-inline.full-width.link-list .list-group-item {border: none; background-color: none; background: none; border-radius: 0; margin: 0;}
         .list-inline.full-width.link-list .list-group-item:nth-child(even) {background: rgba(0, 240, 255, 0.2);}
-            .list-inline.full-width.link-list .list-group-item .btn {border: none; background-color: none; background: none; color: #777; text-shadow: none;}
+            .list-inline.full-width.link-list .list-group-item .btn {padding: 10px; border: none; background-color: none; background: none; color: #777; text-shadow: none;}
                 .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
    
 /* GLOBAL: Vars */
@@ -181,7 +181,7 @@ h2 {font-size: 16px;}
     /* PROFILE FORM */
 .stream-name:before {content: '∼';}
 .stream-icon {line-height: 10px;}
-.stream-icon:before {content: '∼'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
+.stream-icon:before {content: '~'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
 .btn-stream-controls .stream-icon:before {font-size: 37px; line-height: 6px;}
 .added-stream-name:before {content: '≅'; font-size: 18px;}
 .filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 9px;}
@@ -403,7 +403,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 nav {transition: left 0.5s; -webkit-transition: left 0.5s; left: 0;}
-body.main-menu-active nav {transition: left 0.5s; -webkit-transition: left 0.5s; left: 87%;}
+body.main-menu-active nav {transition: left 0.5s; -webkit-transition: left 0.5s; left: 275px;}
 
 /* HEADER */   
 nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 1px 5px #000;}
@@ -504,7 +504,7 @@ body.logged-out #pages {padding-top: 60px;}
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
     /* PAGE NEW-THOUGHT */
-    #pages #page-new-thought {padding-top: 40px;}
+    #pages #page-new-thought {padding-top: 35px;}
         .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: none;}
         .thought-lists .form-control.active {display: block;}
 
@@ -646,6 +646,9 @@ body.logged-out #pages {padding-top: 60px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {left: -64px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}
+
+            #page-conversation .connection-items-con .connection-items-list > li.list-group-item.notification {margin: 10px 5px; text-align: center;}
+                #page-conversation .connection-items-con .connection-items-list > li.list-group-item.notification .added-stream-plus-icon {color: #6cf; text-shadow: none;}
 
 /* FOOTER */
 /*

@@ -323,16 +323,18 @@ function createChatItem(objData){
 
 function addNotificationItem(objData) {
     if(!_session.streamAdded.stream[objData.streamid]){
-        _session.streamAdded.stream[objData.streamid](objData);
+        _session.streamAdded.stream[objData.streamid] = {"streamid":objData.streamid, "stream":objData.stream};
+        
+        // Display in-stream notification
+        $('#page-conversation .connection-items-con .connection-items-list')
+            .prepend(createNotificationItem(objData))
+            .parent().children('.list-group-item:first').hide().slideDown(500).removeAttr('style');
     }
-
-    $('#page-conversation .connection-items-con .connection-items-list').prepend(createNotificationItem(objData))
-        .parent().children('.list-group-item:first').hide().slideDown(500).removeAttr('style');
 }
 
 function createNotificationItem(objData){
     var notificationItem = _application.template.notificationItem
-                            .replace(/\{{stream-added-button}}/g, _application.template.streamAdded)
+                            .replace(/\{{stream-added-button}}/g, _application.template.streamAddedButton)
                             .replace(/\{{streamid}}/g, objData.streamid)
                             .replace(/\{{stream}}/g, objData.stream);
 
