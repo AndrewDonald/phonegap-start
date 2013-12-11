@@ -29,6 +29,7 @@ var _application                                = {};
     _application.detect                         = {};
     _application.detect.useragent               = navigator.userAgent.toLowerCase();
     _application.node.streamserver              = "https://dev.lucidlife.co";
+    _application.gmtOffset                      = new Date().getTimezoneOffset();
     /*
     _application.detect.touchEnabled            = Modernizr.touch || 
                                                     (_application.detect.useragent.match(/(iphone|ipod|ipad)/) ||
@@ -84,6 +85,19 @@ var _lucid                          = {};
     _lucid.panel.pages              = ["stream","filter","profile"];
     _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
     _lucid.panel.apps.active        = 0;
+
+
+// moment.js Initialization
+moment.lang('en', {
+    calendar : {
+        lastDay : '[yesterday @] LT',
+        sameDay : '[today @] LT',
+        nextDay : '[tomorrow at] LT',
+        lastWeek : '[last] dddd [@] LT',
+        nextWeek : 'dddd [@] LT',
+        sameElse : 'L'
+    }
+});
 
 $(function() {
     updateAbout();
@@ -326,7 +340,7 @@ function createChatItem(objData){
                     .replace(/\{{userid}}/g,            objData.userid)
                     .replace(/\{{chat}}/g,              objData.chat)
                     .replace(/\{{chatpicextension}}/g,  objData.chatpicextension)
-                    .replace(/\{{createdate}}/g,        objData.createdate);
+                    .replace(/\{{createdate}}/g,        getElapsedTime(objData.createdate));
     
     return chatItem;
 }
