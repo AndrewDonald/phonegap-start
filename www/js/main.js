@@ -120,8 +120,11 @@ function verifyCreateAccount(){
 }
 
 function initializeApp(){
-    $('body').removeClass('logged-out');
     _session.loggedIn = true;
+    $('body').removeClass('logged-out');
+    $('#main-menu .header .btn.login-toggle').addClass('active');
+    $('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
+    
     //setSessionID(value);
     storage.data("login", {"email": _session.user.email, "password": $('#form-login input[name="password"]').val()});
     //localStorage.setItem('email', _session.user.email);
@@ -132,8 +135,10 @@ function initializeApp(){
 }
 
 function deinitializeApp(){
-    $('body').addClass('logged-out');
     _session.loggedIn = false;
+    $('body').removeClass('logged-out');
+    $('#main-manu .header .btn.login-toggle').removeClass('active');
+    
     updateAbout();
     gotoPage('page-login');
 }
@@ -155,8 +160,13 @@ function changeStream(objStream){
 
 // Changes Thought Stream
 function updteStreamStatus(){
-    $('#stream-status-panel .stream-name').html(_session.stream.stream);
-    $('#stream-status-panel .stream-name .badge').html('?');
+    if($(window).width() <= 360 && _session.stream.stream.length > 30 ){
+        $('#stream-status-panel .filter-info').removeClass('pull-right').addClass('pull-left');
+    }else{
+        $('#stream-status-panel .filter-info').removeClass('pull-left').addClass('pull-right');
+    }
+    $('#stream-status-panel .stream-info .stream-name').html(_session.stream.stream);
+    $('#stream-status-panel .stream-info .badge').html('9999');
 }
 
 function addStreamMember(objUser, direction) {

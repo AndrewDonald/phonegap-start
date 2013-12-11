@@ -159,9 +159,12 @@ function saveGeolocation_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful
+            $('#main-menu .header .btn.login-toggle').addClass('active');
+            $('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
             if(!_session.loggedIn){
                 initializeApp();
             }else{
+
                 updateAbout(); 
             }
         }else{

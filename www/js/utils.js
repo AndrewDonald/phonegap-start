@@ -58,13 +58,9 @@ function gotoPage(page){
     $('body').attr('data-page', page);
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
-        $('#new-thought-panel').hide();
-        $('#send-message-con').show();
         _session.page = page;
     }else{
         $('#new-thought-toggle').addClass('active');
-        $('#send-message-con').hide()
-        $('#new-thought-panel').show();
         if($('#form-thought input[name=thought]').val().length < 3){
             $('#form-thought .btn[name=submitThought]').addClass('disabled');
         }else{

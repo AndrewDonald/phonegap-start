@@ -155,9 +155,13 @@ function initEventHandlers(){
     $('#main-menu-toggle').on('click',function(){
         $(this).toggleClass('active');
         if($(this).is('.active')){
-            $('body').addClass('main-menu-active');
+            $('body').addClass('main-menu-active').animate({delay:0}, 500, function(){
+                $(this).addClass('no-overflow');
+            });
         }else{
-            $('body').removeClass('main-menu-active');
+            $('body').removeClass('main-menu-active').animate({delay:0}, 500, function(){
+                $(this).removeClass('no-overflow');
+            });
         }
     });
 
@@ -172,13 +176,12 @@ function initEventHandlers(){
     */
 
     // Main Menu Items
-    $('.main-nav [data-toggle-item]').on('click',function(){
+    $('[data-toggle-item]').on('click',function(){
         $('#main-menu-toggle').removeClass('active');
-        $('body').removeClass('main-menu-active');
+        $('body').removeClass('main-menu-active no-overflow');
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
-
         }else{
             var target = $(this).data('toggle-item');
             /*
@@ -192,9 +195,9 @@ function initEventHandlers(){
                 case 'page-new-thought':
                     $('#new-thought-toggle').toggleClass('active');
                     if($('#new-thought-toggle').is('.active')){
-                        gotoPage('page-new-thought');
+                        gotoPage('page-new-thought'); // Go to New Thought Page
                     }else{
-                        gotoPage(_session.page);
+                        gotoPage(_session.page);    // Return to last page
                     }
                     break;
                 case 'page-conversation':

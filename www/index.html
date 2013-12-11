@@ -22,62 +22,58 @@
         </div>
         -->
 
+        <!-- MAIN MENU (START) -->
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="header">
+                <button class="login-toggle btn btn-lucid glyphicon glyphicon-off" data-toggle-item="page-login"></button><span class="username">{{username}}</span>
+            </div>
+            <ul id="main-menu-items" class="list-group" role="menu">
+                <li class="list-group-item">
+                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>People
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a id="conversation-toggle" data-toggle-item="page-conversation" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-comment"></span>Conversation
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a id="connections-toggle" data-toggle-item="page-connections" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-link"></span>Connections
+                    </a>
+                </li>
+                <li class="list-group-item divider">
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a id="account-toggle" data-toggle-item="page-account" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-folder-open"></span>Account
+                    </a>
+                </li>
+                <li class="list-group-item divider">
+                    <a id="settings-toggle" data-toggle-item="page-settings" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-cog"></span>Settings
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="menu-toggle-modal-about btn btn-lucid" data-toggle="modal" data-target="#modal-about">
+                        <span class="menu-icon about-icon"></span>About
+                    </a>
+                </li>
+            </ul>
+            <!--<div class="footer"></div>-->
+        </nav>
+        <!-- MAIN MENU (END) -->
+
         <!-- HEADER (START) -->
-        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav id="header" class="navbar navbar-default navbar-fixed-top" role="">
             <!-- MASTHEAD (START) -->
             <div class="masthead">
                 <div class="main-nav left">
-                    <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1 dropdown-toggle" data-toggle="dropdown">&equiv;</button>
-                    <ul id="main-menu-items" class="dropdown-menu" role="menu">
-                        <li>
-                            <a id="people-toggle" data-toggle-item="page-people">
-                                <span class="menu-icon glyphicon glyphicon-user"></span> ~People
-                            </a>
-                        </li>
-                        <li>
-                            <a id="conversation-toggle" data-toggle-item="page-conversation">
-                                <span class="menu-icon glyphicon glyphicon-comment"></span> ~Conversation
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a id="connections-toggle" data-toggle-item="page-connections">
-                                <span class="menu-icon glyphicon glyphicon-link"></span> Connections
-                            </a>
-                        </li>
-                        <li>
-                            <a id="profile-toggle" data-toggle-item="page-profile">
-                                <span class="menu-icon glyphicon glyphicon-user"></span> Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a id="account-toggle" data-toggle-item="page-account">
-                                <span class="menu-icon glyphicon glyphicon-folder-open"></span> Account
-                            </a>
-                        </li>
-                        <li>
-                            <a id="settings-toggle" data-toggle-item="page-settings">
-                                <span class="menu-icon glyphicon glyphicon-cog"></span> Settings
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="menu-toggle-modal-about" data-toggle="modal" data-target="#modal-about">
-                                <span class="about">?</span> About
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a id="login-toggle" data-toggle-item="page-login">
-                                <span class="menu-icon glyphicon glyphicon-lock" style="color: #ff6;"></span> Login
-                            </a>
-                        </li>
-                        <li>
-                            <a id="logout-toggle" data-toggle-item="page-login">
-                                <span class="menu-icon glyphicon glyphicon-remove"></span> Logout
-                            </a>
-                        </li>
-                    </ul>
+                    <button id="main-menu-toggle" type="button" class="btn btn-link-lucid btn-lg color-1">&equiv;</button>
                 </div>
                 <center>
                     <div class="logo-con">
@@ -92,32 +88,6 @@
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
-
-            <!-- NEW THOUGHT PANEL (START) -->
-            <div id="new-thought-panel" style="display: none;">
-                <div id="form-thought" class="navbar-form clearfix">
-                    <div class="input-group">
-                        <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
-                        <span class="input-group-btn">
-                            <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
-                                <span class="stream-icon"></span><!--<span class="badge">426</span>-->
-                            </button>
-                        </span>
-                    </div>
-                </div>
-                <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
-                    <a class="btn-suggested-streams btn btn-lucid" data-target=".thought-lists">
-                        <span class="suggested-streams glyphicon glyphicon-link"></span>
-                    </a>
-                    <a class="btn-hot-streams btn btn-lucid active" data-target=".thought-lists">
-                        <span class="glyphicon glyphicon-fire"></span>
-                    </a>
-                    <a class="btn-past-streams btn btn-lucid" data-target=".thought-lists">
-                        <span class="glyphicon glyphicon-refresh"></span>
-                    </a>
-                </div>
-            </div>
-            <!-- NEW THOUGHT PANEL (END) -->
         </nav>
         <!-- HEADER (END) -->
 
@@ -136,7 +106,7 @@
                             <input name="password" type="password" class="form-control" placeholder="password">
                         </div>
                         <button type="button" class="btn-submit form-row btn btn-md btn-warning btn-wide pull-right col-xs-12" onclick="loginUser();">Login</button>
-                        <button type="button" class="form-row btn btn-md btn-link btn-join" onclick="joinNow();">Join Now</button>
+                        <button type="button" class="form-row btn btn-md btn-link btn-join pull-right" onclick="joinNow();">Join Now</button>
                     </div>
                 </div>
             </div>
@@ -209,6 +179,34 @@
 
             <!-- NEW THOUGHT (START) -->
             <div id="page-new-thought" class="page row">
+                <nav id="new-thought-header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <!-- NEW THOUGHT PANEL (START) -->
+                    <div id="new-thought-panel">
+                        <div id="form-thought" class="navbar-form clearfix">
+                            <div class="input-group">
+                                <input name="thought" type="text" class="form-control stream-name" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                                <span class="input-group-btn">
+                                    <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
+                                        <span class="stream-icon"></span><!--<span class="badge">426</span>-->
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
+                            <a class="btn-suggested-streams btn btn-lucid" data-target=".thought-lists">
+                                <span class="suggested-streams glyphicon glyphicon-link"></span>
+                            </a>
+                            <a class="btn-hot-streams btn btn-lucid active" data-target=".thought-lists">
+                                <span class="glyphicon glyphicon-fire"></span>
+                            </a>
+                            <a class="btn-past-streams btn btn-lucid" data-target=".thought-lists">
+                                <span class="glyphicon glyphicon-refresh"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- NEW THOUGHT PANEL (END) -->
+                </nav>
+
                 <div id="join-conversation">
                     <div class="thought-lists">
                         <ul class="suggested-thought-list form-control list-inline full-width link-list">
@@ -261,14 +259,14 @@
 
             <!-- STREAM PAGE (START) -->
             <div id="page-conversation" class="page row">
-                <nav id="conversation-header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <nav id="conversation-header" class="navbar navbar-default navbar-fixed-top" role="">
                     <!-- MESSAGE PANEL (START) -->
                     <div id="send-message-con">
                         <div class="send-message-form navbar-form clearfix">
                             <div class="input-group">
                                 <input id="send-message" type="text" class="form-control" placeholder="message everyone..." maxlength="140">
                                 <span class="input-group-btn">
-                                    <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>
+                                    <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-camera"></span></button>
                                     <button type="button" class="send-message-button btn btn-warning" onclick="sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()});"><span class="glyphicon glyphicon-share-alt"></span></button>
                                 </span>
                             </div>
@@ -1182,7 +1180,7 @@
                             <span class="stream-name">LucidLife</span><span class="badge">?</span>
                         </div>
                         <div class="filter-info pull-right">
-                            <span class="filter-sign glyphicon glyphicon-filter"></span>m&amp;f / 18-25 / &lt;250km<span class="badge">97</span>
+                            <span class="filter-sign glyphicon glyphicon-filter"></span>m/f 18-25 &lt;250<sup>km</sup><span class="badge">97</span>
                         </div> 
                     </div>
                     <!-- Stream Status (End) -->
@@ -1315,94 +1313,94 @@
             <span class="btn-group">
                 <button type="button" class="btn-stream btn btn-lucid-normal" data-item="{{stream}}">
                     <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                    <span class="added-stream-name">{{stream}}</span>
+                    <span class="stream-name">{{stream}}</span>
                     <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                     <label class="badge">?</label>
                 </button>
                 <button class="vote-remove btn btn-sm btn-danger">
-                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    <span class="glyphicon glyphicon-minus-sign"></span>
                 </button>
             </span>
         </div>
         <!-- Added Stream Button (Start) -->
 
         <!-- Modal Loader (Start) -->
-            <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Please wait</h4>
-                            <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                    <span class="sr-only">Processing</span>
-                                </div>
+        <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please wait</h4>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <span class="sr-only">Processing</span>
                             </div>
                         </div>
-                        <div class="modal-body"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
-                        </div>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
                     </div>
                 </div>
             </div>
-            <!-- Modal Loader (End) -->
+        </div>
+        <!-- Modal Loader (End) -->
 
-            <!-- Modal About (Start) -->
-            <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">About</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h5>LucidLife App Details</h5>
-                            <div>Version: <span class="version">0.2.2</span></div>
-                            
-                            <h5 class="geo-location">Geo Location</h5>
-                            <div>Latitude: <span class="latitude">No request made</span></div>
-                            <div>Longitude: <span class="longitude">No request made</span></div>
-
-                            <h5 class="user-info">User Info</h5>
-                            <div>Name: <span class="user-info-name"></span></div>
-                            <div>Gender: <span class="user-info-gender"></span></div>
-                            <div>Birthdate: <span class="user-info-birthdate"></span></div>
-                            <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
-                            <div>Login: <span class="user-info-status">Logged out</span></div>
-                            <div>Last Login: <span class="user-info-lastlogin"></span></div>
-                        </div>
-                        <!--
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        -->
+        <!-- Modal About (Start) -->
+        <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">About</h4>
                     </div>
+                    <div class="modal-body">
+                        <h5>LucidLife App Details</h5>
+                        <div>Version: <span class="version">0.2.2</span></div>
+                        
+                        <h5 class="geo-location">Geo Location</h5>
+                        <div>Latitude: <span class="latitude">No request made</span></div>
+                        <div>Longitude: <span class="longitude">No request made</span></div>
+
+                        <h5 class="user-info">User Info</h5>
+                        <div>Name: <span class="user-info-name"></span></div>
+                        <div>Gender: <span class="user-info-gender"></span></div>
+                        <div>Birthdate: <span class="user-info-birthdate"></span></div>
+                        <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
+                        <div>Login: <span class="user-info-status">Logged out</span></div>
+                        <div>Last Login: <span class="user-info-lastlogin"></span></div>
+                    </div>
+                    <!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    -->
                 </div>
             </div>
-            <!-- Modal About (End) -->
+        </div>
+        <!-- Modal About (End) -->
 
-            <!-- Modal Failed Login (Start) -->
-            <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Login Failed</h4>
-                        </div>
-                        <div class="modal-body">
-                            Please try again.
-                        </div>
-                        <!--
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        -->
+        <!-- Modal Failed Login (Start) -->
+        <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login Failed</h4>
                     </div>
+                    <div class="modal-body">
+                        Please try again.
+                    </div>
+                    <!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    -->
                 </div>
             </div>
-            <!-- Modal Failed Login (End) -->
+        </div>
+        <!-- Modal Failed Login (End) -->
         <!-- UTIL HTML (END) -->
 
         <!-- SCRIPTS -->
