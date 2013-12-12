@@ -14,8 +14,7 @@ label {margin-bottom: 0;}
 .nav > li > a:focus,
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
-.navbar {border: none; background: none; width: 100%;}
-    .navbar.navbar-fixed-top, .navbar.navbar-fixed-bottom,  {z-index: 2000;} 
+.navbar, .navbar-fixed-top, .navbar-fixed-bottom,  {z-index: 2000; border: none; background: none; width: 100%;} 
 .navbar-form {padding: 0; margin: 0; border: none;}
 
 .label {font-size: 10px; padding: 0 3px;}
@@ -78,7 +77,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px; border: 1px solid #0ef; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
+blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -308,11 +307,11 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -25px; left: -15px; background-color: rgba(0, 200, 220, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -20px; left: -8px; background-color: rgba(0, 200, 220, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
 .btn-lucid {transition: color 0.5s, background-color 0.5s; -webkit-transition: color 0.5s, background-color 0.5s;
-    background-color: #0ab; box-shadow: 0 0 3px #0ef inset;
+    background-color: #0ab; box-shadow: 1px 1px 3px #000, 0 0 3px #0ef inset;
     line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #0ef; border-radius: 5px;}
 .btn-lucid:hover, .btn-lucid:focus {color: #fff;}
 .btn-lucid.active {transition: color 0.5s, background-color 0.5s; -webkit-transition: color 0.5s, background-color 0.5s;
@@ -406,41 +405,46 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .slider-status-con.vertical .associated-plus {left: 22px;}
     .active > .associated-plus {color: #0cd;}
 
-.no-overflow {overflow: hidden;} /* Applied to <body> when sliding Main Menu */
+.fixed {position: fixed; top: 0; left: 0; margin: 0; width: 100%; height: 100%;}
 
-nav:not(#main-menu) {transition: left 0.5s; -webkit-transition: left 0.5s; left: 0;}
-body.main-menu-active nav:not(#main-menu) {transition: left 0.5s; -webkit-transition: left 0.5s; left: 275px;}
+#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #056;}
+body.main-menu-active #CONTAINER {transition: all 0.5s ease-in-out 0s; left: 275px;}
+body.main-menu-active .navbar-fixed-top,
+body.main-menu-active .navbar-fixed-bottom {transition: all 0.5s ease-in-out 0s; position: absolute;}
+body:not(.main-menu-active) .navbar-fixed-top.delay-fixed,
+body:not(.main-menu-active) .navbar-fixed-bottom.delay-fixed {position: absolute;}
+body.main-menu-active .navbar-fixed-top.shifted-fixed,
+body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left: 275px;}
 
 /* MAIN MENU */
-nav#main-menu {transition: left 0.5s; -webkit-transition: left 0.5s; overflow: hidden; left: -275px; margin: 0; width: 275px; height: 10000px; background-color: #056; box-shadow: -1px -5px 5px #000 inset;}
-body.main-menu-active nav#main-menu {transition: left 0.5s; -webkit-transition: left 0.5s; left: 0;}
-    #main-menu .header {padding: 10px 10px 4px 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 5px #000;}
-        nav#main-menu .header .btn.login-toggle {color: #0ef; margin-top: -8px; padding: 8px 10px 10px; background-color: #056;}
-        nav#main-menu .header .btn.login-toggle.active {color: #fff; background-color: #0cd;}
-        nav#main-menu .header .username {padding-left: 10px;}
-    ul#main-menu-items {position: relative; z-index: -1; box-shadow: 0 1px 5px #000, 0 0 5px #000 inset; border-radius: 0;}
+#main-menu {width: 275px; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
+    #main-menu .header {position: absolute; z-index: 1; top:0; left: 0; width: 100%; padding: 10px 10px 4px 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 1px 5px #000, 0 0 5px #0ab inset;}
+        #main-menu .header .btn.login-toggle {color: #0ef; margin-top: -8px; padding: 8px 10px 10px; background-color: #056;}
+        #main-menu .header .btn.login-toggle.active {color: #fff; background-color: #0cd;}
+        #main-menu .header .username {padding-left: 10px;}
+    ul#main-menu-items {margin-top: 40px;}
         ul#main-menu-items .list-group-item {width: 275px; margin: 0; padding: 0; box-shadow: none; background-color: rgba(0, 240, 255, 0.2); border: none; border-bottom: 1px solid #056; border-radius: 0;}
         ul#main-menu-items .list-group-item:last-child {border-width: 2px;}
         ul#main-menu-items .list-group-item.divider {border-width: 2px;}
             ul#main-menu-items .list-group-item .btn {display: block; margin-right: 2px; padding: 15px; color: #056; text-align: left; box-shadow: none; border-radius: 0;}
             ul#main-menu-items .list-group-item .btn.active {color: #fff;}
                 ul#main-menu-items .list-group-item .btn .menu-icon {padding-right: 10px;}
-    /*nav#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
+    /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
 /* HEADER */   
-nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 0 3px #000;}
-    nav#header > .masthead {position: relative; height: 40px; box-shadow: 0 0 5px #0ef inset; z-index: 2001; background-color: #0ab;}
-        nav#header > .masthead .main-nav {position: absolute; top: 2px;}
+#header {box-shadow: 0 0 3px #000;}
+    #header > .masthead {position: relative; height: 40px; box-shadow: 0 0 5px #0ef inset; background-color: #0ab;}
+        #header > .masthead .main-nav {position: absolute; top: 2px;}
         body.logged-out nav#header > .masthead .main-nav {display: none;}
-        nav#header > .masthead .main-nav.left {left: 5px;}
+        #header > .masthead .main-nav.left {left: 5px;}
         #new-thought-toggle {width: 40px;}
-        nav#header > .masthead .main-nav.right {right: 5px;}
-        nav#header > .masthead center {padding-top: 5px;}
-        nav#header > .masthead .logo-con {padding-right: 2px; width: 140px;}
-        nav#header > .masthead .monarch {height: 20px; margin-top: -8px;}
-        nav#header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-teal.png"); background-repeat: no-repeat; background-size: 100% auto;}
-            nav#header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
-        nav#header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
+        #header > .masthead .main-nav.right {right: 5px;}
+        #header > .masthead center {padding-top: 5px;}
+        #header > .masthead .logo-con {padding-right: 2px; width: 140px;}
+        #header > .masthead .monarch {height: 20px; margin-top: -8px;}
+        #header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-teal.png"); background-repeat: no-repeat; background-size: 100% auto;}
+            #header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
+        #header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     /* STREAM CONTROLS */
@@ -477,7 +481,7 @@ nav#header {z-index: 2002; min-height: 40px; box-shadow: 0 0 3px #000;}
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-nav#pages {position: relative; padding: 85px 0 50px;}
+#pages {position: relative; padding: 85px 0 50px;}
 body.logged-out #pages {padding-top: 60px;}
     #pages > .page {display: none; margin: 0; clear: both;}
     #pages > .page.active {display: block;}
@@ -528,18 +532,18 @@ body.logged-out #pages {padding-top: 60px;}
                         .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
         #send-message.private {background-color: #cff;}
 
-        .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: none;}
+        .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: 0;}
         .thought-lists .form-control.active {display: block;}
 
     /* PAGE CONVERSATION */
     #pages #page-conversation {padding-top: 5px;}
         nav#conversation-header {top: 40px; min-height: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
-        #page-conversation .connection-items-con > .well {box-shadow: none; background-color: #f0ffff; border: none;}
+        #page-conversation .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
         /* CONTROLS PANELS */
-        #stream-controls-panel {min-height: 18px;}
+        #stream-controls-panel {z-index: 2000;}
             .tab-menu > button {color: #0ef;}
                 .tab-menu > button.active {color: #fff;}
             .control-panel {}
@@ -642,7 +646,8 @@ body.logged-out #pages {padding-top: 60px;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {}
+                                .connection-item-panel .panel-body .connection-content {box-shadow: 2px 2px 5px #000, -2px -2px 2px #0ab inset;}
+                                .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 2px 2px 5px #000, 2px -2px 2px #0ab inset;}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
                                     .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 20px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
@@ -665,7 +670,7 @@ body.logged-out #pages {padding-top: 60px;}
                     .connection-items-list > li.list-group-item.you,
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 52px 10px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -52px;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff; box-shadow: 2px 2px 1px #000;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}
