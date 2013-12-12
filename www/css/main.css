@@ -77,7 +77,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 5px;}
+blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -165,7 +165,7 @@ blockquote, .well blockquote {margin: 0; padding: 5px 5px 15px; font-size: 13px;
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
 body {overflow: auto; font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0; background: #f0ffff; line-height: 1.4;}
 
-h1, h2 {color: #999; margin: 0 0 10px;}
+h1, h2 {color: #0bf; margin: 5px 0;}
 h1 {font-size: 18px;}
 h1.stream-name {text-align: center; margin: 10px 0 10px -15px;}
 h2 {font-size: 16px;}
@@ -183,7 +183,7 @@ h2 {font-size: 16px;}
 .stream-icon:before {content: '~'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
 .btn-stream-controls .stream-icon:before {font-size: 37px; line-height: 6px;}
 .added-stream-name:before {content: '≅'; font-size: 18px;}
-.filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 9px;}
+.filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 11px;}
 .about-icon:before {content: "?"; font-weight: bold; font-size: 15px; padding-left: 5px;}
 
 .hide {display: none;}
@@ -219,7 +219,7 @@ h2 {font-size: 16px;}
 #modal-loader .modal-footer.active {display: block;}
 
 /* STATUS BAR */
-.status-bar {font-size: 12px; font-weight: normal; overflow: hidden; color: #fff; padding: 0 5px; box-shadow: 0 0 3px #000; background-color: #000; border-top: 1px solid #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+.status-bar {font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 -2px 5px #000, 0 3px 3px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
     .status-bar .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
  @media (max-width: 360px) {
     .status-bar {font-size: 10px;}
@@ -268,8 +268,10 @@ h2 {font-size: 16px;}
 .stream-controls-carousel.carousel > .carousel-indicators {}
 
 /* HORIZONTAL SLIDING NAV */
-.horizontal-sliding-nav-con {overflow: hidden; white-space: nowrap; background-color: #0ab; padding: 5px 0 0; box-shadow: 0 0 3px #000, 0 1px 3px #0ef inset;}
-    .horizontal-sliding-nav-con .horizontal-sliding-nav {background-color: #0ab; border-top: 1px solid #078; box-shadow: 0 5px 10px rgba(0, 50, 60, 0.8) inset; overflow: auto; padding: 4px 5px; white-space: nowrap;}
+/*.horizontal-sliding-nav-con {overflow: hidden; white-space: nowrap; background-color: #0ab; padding: 5px 0 0; box-shadow: 0 0 3px #000, 0 1px 3px #0ef inset;}
+    .horizontal-sliding-nav-con .horizontal-sliding-nav {background-color: #0ab; border-top: 1px solid #078; box-shadow: 0 5px 10px rgba(0, 50, 60, 0.8) inset; overflow: auto; padding: 4px 5px; white-space: nowrap;}*/
+.horizontal-sliding-nav-con {overflow: hidden; white-space: nowrap; background-color: #09d; padding: 5px 0 0; box-shadow: 0 0 3px #000, 0 1px 3px #0bf inset;}
+    .horizontal-sliding-nav-con .horizontal-sliding-nav {background-color: #06a; border-top: 1px solid #09d; box-shadow: 0 5px 10px rgba(0, 50, 160, 0.8) inset; overflow: auto; padding: 4px 5px; white-space: nowrap;}
         .horizontal-sliding-nav-con .horizontal-sliding-nav .btn.btn-stream {min-width: 70px;}
             .horizontal-sliding-nav-con .horizontal-sliding-nav > .btn,
             .horizontal-sliding-nav-con .horizontal-sliding-nav .btn-group {box-shadow: 0 0 1px #fff inset, 0 0 5px #000; border-radius: 4px;}
@@ -307,14 +309,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 0 1px #000; top: -20px; left: -8px; background-color: rgba(0, 200, 220, 0.85); font-family: Arial; color: #fff; margin-right: 5px; min-width: 25px; text-align: center;}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 1px 1px #000; top: -20px; left: -10px; background-color: rgba(0, 200, 220, 0.85);}
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
-.btn-lucid {transition: color 0.5s, background-color 0.5s; -webkit-transition: color 0.5s, background-color 0.5s;
-    background-color: #0ab; box-shadow: 1px 1px 3px #000, 0 0 3px #0ef inset;
-    line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #0ef; border-radius: 5px;}
-.btn-lucid:hover, .btn-lucid:focus {color: #fff;}
-.btn-lucid.active {transition: color 0.5s, background-color 0.5s; -webkit-transition: color 0.5s, background-color 0.5s;
+.btn-lucid {transition: all 0.5s;
+    background-color: #0ab; box-shadow: 0 0 5px #0ef inset;
+    line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #0ef; border-radius: 50%;}
+.btn-lucid:hover, .btn-lucid:focus {transition: all 0.5s; color: #fff; border-color: #fff; border-radius: 10%;}
+.btn-lucid.active {transition: all 0.5s;
     color: #fff; background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
     .btn-lucid.tilde:before {content: "~";}
@@ -330,9 +332,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef;}
+.btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
     .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}
-        .btn-lucid.user > label {margin: 0 -6px; color: #0cd; top: 40px; left: 0; position: absolute; text-align: center; width: 50px; text-align: center;}
+        .btn-lucid.user > label {margin: 0 -6px; top: 42px; left: 0; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .fname {display: block;}
             .btn-lucid.user > label > .lname {display: none;}
@@ -341,13 +343,13 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
 
-        .btn-lucid.user > sub {width: 100%; height: 12px; left: 0; text-align: left; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 8px; background-color: rgba(255, 255, 255, 0.3);}
-            .btn-lucid.user > sub > .stream-indicator-icon {font-size: 16px;}
+        .btn-lucid.user > sub {width: 40px; height: 9px; left: -1px; color: #0ef; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
+            .btn-lucid.user > sub > .stream-indicator-icon {font-size: 14px;}
             .btn-lucid.user.in-stream > sub > .stream-indicator-icon:after {content: '∼'; padding-left: 1px; padding-top: 3px;}
             .btn-lucid.user.added-stream > sub > .stream-indicator-icon:after {content: '≅';}
-            .btn-lucid.user > sub > .viewed-your-profile-indicator-icon {display: none; top: 0;}
+            .btn-lucid.user > sub > .viewed-your-profile-indicator-icon {display: none; top: -1px;}
             .btn-lucid.user.viewed-your-profile:not(.connected) > sub > .viewed-your-profile-indicator-icon {display: inline-block;}
-            .btn-lucid.user > sub > .connected-indicator-icon {display: none; top: 0;}
+            .btn-lucid.user > sub > .connected-indicator-icon {display: none; top: -1px;}
             .btn-lucid.user.connected > sub > .connected-indicator-icon {display: inline-block;}
         .you .btn-lucid.user > sup, .you .btn-lucid.user > sub {display: none;}
 /* btn-lucid-transparent */
@@ -376,8 +378,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
-.tab-lucid {color: #fff; background-color: #0ab; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
-    .tab-lucid.active {background-color: #0cd; box-shadow: 0 1px 2px #0ef inset, 0 0 3px #000;}
+.tab-lucid {color: #fff; background-color: #09d; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
+.tab-lucid.active {background-color: #0bf; box-shadow: 0 1px 2px #0ef inset, 0 0 3px #000;}
 
 .chevron-toggle {position: relative; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: rgba(255,255,255,0.8); color: #0bc; text-shadow: 0 0 2px #005566;}
     .chevron-toggle > span {position: absolute; top: 0; left: 0;}
@@ -390,6 +392,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
+.date-header {margin: 0; padding: 0 0 2px; text-align: center; color: #0bf;}
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -432,8 +435,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
     /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
 /* HEADER */   
-#header {box-shadow: 0 0 3px #000;}
-    #header > .masthead {position: relative; height: 40px; box-shadow: 0 0 5px #0ef inset; background-color: #0ab;}
+#header {background-color: #0ab; box-shadow: 0 3px 5px #000;}
+    #header > .masthead {position: relative; height: 40px; box-shadow: 0 3px 5px #0ef inset;}
         #header > .masthead .main-nav {position: absolute; top: 2px;}
         body.logged-out nav#header > .masthead .main-nav {display: none;}
         #header > .masthead .main-nav.left {left: 5px;}
@@ -481,8 +484,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 /*
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
-#pages {position: relative; padding: 85px 0 50px;}
-body.logged-out #pages {padding-top: 60px;}
+#pages {position: relative; padding-top: 40px;}
     #pages > .page {display: none; margin: 0; clear: both;}
     #pages > .page.active {display: block;}
     body.logged-out #pages > .page:not(#page-login):(#page-create-user) {display: none;}
@@ -506,7 +508,7 @@ body.logged-out #pages {padding-top: 60px;}
         #form-login .btn-join {font-size: 16px; margin-left: -10px;}
 
     /* PAGE CREATE-USER */
-    #pages #page-create-user {}
+    #pages #page-create-user {padding-top: 20px;}
         #form-create-user .steps {display: none;}
         #form-create-user .steps.active {display: block;}
         #form-create-user .steps.step-2 .btn-back {margin: -10px 0 5px;}
@@ -517,8 +519,8 @@ body.logged-out #pages {padding-top: 60px;}
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
     /* PAGE NEW-THOUGHT */
-    #pages #page-new-thought {padding-top: 35px;}
-        nav#new-thought-header {top: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
+    #pages #page-new-thought {padding-top: 78px;}
+        nav#new-thought-header {top: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
             /* New Thought Panel */
             #new-thought-panel {}
                 #form-thought {}
@@ -535,16 +537,45 @@ body.logged-out #pages {padding-top: 60px;}
         .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: 0;}
         .thought-lists .form-control.active {display: block;}
 
+    /* PEOPLE PAGE */ 
+    #page-people {padding-top: 50px; padding-bottom: 50px;}
+        #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
+        
+            #page-people.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
+                        
+                /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                .btn.people-nav-toggle > .badge {font-size: 14px;}
+                .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+                .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
+                    .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
+
+                #people-nav {display: none; padding: 2px 5px; border-radius: 0;}
+                #people-nav.active {display: block;}
+                #people-nav .btn.btn-lucid.user {box-shadow: 0 0 5px #000;}
+                    #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
+                        #people-nav > .panel-menu > pre > label {padding-right: 5px;}
+                        #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
+                        #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
+                            #people-nav > .panel-menu > pre > .header-icon {padding-right: 5px;}
+                            #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+                            #page-people.vertical #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+                            #people-nav > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+                            #page-people.vertical > #people-nav > .panel-menu > pre > .btn-vote-remove {float: right;}
+                    #page-people:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
+                    #page-people:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
+        #page-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
+
     /* PAGE CONVERSATION */
-    #pages #page-conversation {padding-top: 5px;}
-        nav#conversation-header {top: 40px; min-height: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 0 3px #000;}
+    #pages #page-conversation {padding-top: 50px; padding-bottom: 50px;}
+        nav#conversation-header {top: 40px; min-height: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
+
         #page-conversation .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
 
         /* CONTROLS PANELS */
         #stream-controls-panel {z-index: 2000;}
-            .tab-menu > button {color: #0ef;}
+            .tab-menu > button {color: #fff;}
                 .tab-menu > button.active {color: #fff;}
             .control-panel {}
             
@@ -554,65 +585,38 @@ body.logged-out #pages {padding-top: 60px;}
         #tab-filter.tab-lucid {left: 150px; font-size: 12px;}
         /*#tab-alerts.tab-lucid {left: 225px;}*/
         
-        /* PEOPLE PANEL */ 
-        #people-panel {}
-            #people-panel #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
-            
-                #people-panel.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
-                            
-                    /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                    .btn.people-nav-toggle > .badge {font-size: 14px;}
-                    .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                    .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
-                        .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
-
-                    #people-nav {display: none; padding: 2px 5px; border-radius: 0;}
-                    #people-nav.active {display: block;}
-                    #people-panel #people-nav .btn.btn-lucid.user {box-shadow: 0 0 5px #000;}
-                        #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
-                            #people-nav > .panel-menu > pre > label {padding-right: 5px;}
-                            #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
-                            #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
-                                #people-nav > .panel-menu > pre > .header-icon {padding-right: 5px;}
-                                #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-                                #people-panel.vertical #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-                                #people-nav > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-                                #people-panel.vertical > #people-nav > .panel-menu > pre > .btn-vote-remove {float: right;}
-                        #people-panel:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
-                        #people-panel:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
-            #people-panel > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
         
-        /* STREAM PANEL */
-        #stream-panel {}
-            /* Stream */
-            #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
-            #stream-name:before {content: "~";}
-            .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
-            /* Associated Streams */
-            .slider-status-con .list-group > li > a {}
-                .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
-                .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
-            .slider-status-con .list-group > li.active {}
-                .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
-                    .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
-                    .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
-        
-        /* FILTER PANEL */
-        #filter-panel {}
-            .filter-controls {display: none;}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
-            #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
+    /* PAGE STREAM */
+    #page-stream {padding-top: 50px; padding-bottom: 50px;}
+        /* Stream */
+        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
+        #stream-name:before {content: "~";}
+        .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
+        /* Associated Streams */
+        .slider-status-con .list-group > li > a {}
+            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
+            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
+        .slider-status-con .list-group > li.active {}
+            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
+                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
+                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
+    
+    /* PAGE FILTER */
+    #filter-panel {padding-top: 50px; padding-bottom: 50px;}
+        .filter-controls {display: none;}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter] .badge:before{content:"off";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=filter].active .badge:before{content:"on";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations] .badge:before{content:"off";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=associations].active .badge:before{content:"on";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details] .badge:before{content:"less";}
+        #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
         
 
         /* CONVERSATION PAGE */
-        body[data-page=page-conversation] #people-panel {}
-            body[data-page=page-conversation] #people-panel #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
+        body[data-page=page-conversation] #page-people {}
+            body[data-page=page-conversation] #page-people #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
                 body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
-            body[data-page=page-conversation] #people-panel .panel-body #connection-items-header {display: none;}
+            body[data-page=page-conversation] #page-people .panel-body #connection-items-header {display: none;}
 
             #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
                 #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
@@ -631,28 +635,27 @@ body.logged-out #pages {padding-top: 60px;}
                     .connection-items-list {max-height: 124px;}
                 }*/
 
-                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #045; margin: 0; padding: 0;}
-                    .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 52px 10px;}
+                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #333; margin: 0; padding: 0;}
+                    .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 60px 10px;}
                     /*.connection-items-list > li.viewed {display: none;}*/
                     .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                     .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
-                    .connection-items-list .badge {font-weight: normal; font-size: 10px;}
+                    .connection-items-list .badge {font-weight: normal; font-size: 10px; box-shadow: 0 0 5px #000, 0 0 1px #000 inset;}
                     .connection-items-list .alert-icon {color: #0ef;}
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
-                        .connection-item-panel .panel-header {color: #078; font-size: 10px; position: absolute; overflow-x: hidden;}
-                        .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -52px;}
+                        .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
+                        .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {box-shadow: 2px 2px 5px #000, -2px -2px 2px #0ab inset;}
-                                .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 2px 2px 5px #000, 2px -2px 2px #0ab inset;}
+                                .connection-item-panel .panel-body .connection-content {color: #0ef; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; background-color: rgba(0, 200, 220, 0.2);}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
-                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 20px; height: 8px; width: 8px; background-color: #fff; border: 1px solid #0ef;}
-                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -7px; border-radius: 8px 0 0; border-right: 2px solid #fff;}
-                                .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #0ab; font-size: 10px;}
+                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #078; border: 1px solid #0ab;}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8.5px; border-radius: 8px 0 0; border-right: none; box-shadow: -3px 2px 3px #000;}
+                                .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #09d; font-size: 10px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
                                     .connection-items-con.public .connection-item-panel .status .not-viewed-icon {display: none;}
@@ -665,12 +668,14 @@ body.logged-out #pages {padding-top: 60px;}
                            
                     .connection-items-list > li.viewed {border-color: #0ab;}
                         .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
+                        .connection-items-con.public .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: none;}
                         .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
                     /* If is User switch profile pic to right side */
                     .connection-items-list > li.list-group-item.you,
-                    .connection-items-list > li.list-group-item.added-stream {margin: 0 52px 10px;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -52px;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -7px; border-radius: 0 8px 0 0; border-left: 2px solid #fff; box-shadow: 2px 2px 1px #000;}
+                    .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -57px;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; border-left: none; border-right: 1px solid #0ab;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; box-shadow: 3px 2px 3px #000;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}

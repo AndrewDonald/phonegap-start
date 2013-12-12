@@ -202,11 +202,7 @@ function initEventHandlers(){
                     }else{
                         gotoPage(_session.page);    // Return to last page
                     }
-                    break;
-                case 'page-conversation':
-                    $('body').attr('data-page', target);
-                    gotoPage(target);
-                    break;
+                    break;  
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
                     $('#people-nav').toggleClass('active');
@@ -221,6 +217,8 @@ function initEventHandlers(){
                     }
                     break;
                 default:
+                    $('body').attr('data-page', target);
+                        gotoPage(target);
                     break;
             }
         }

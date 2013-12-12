@@ -89,6 +89,24 @@ var _lucid                          = {};
 
 // moment.js Initialization
 moment.lang('en', {
+    relativeTime : {
+        future: "in %s",
+        past:   "%s ago",
+        s:  "secs",
+        m:  "a min",
+        mm: "%d mins",
+        h:  "an hr",
+        hh: "%d hrs",
+        d:  "a day",
+        dd: "%d days",
+        M:  "a mth",
+        MM: "%d mths",
+        y:  "a yr",
+        yy: "%d yrs"
+    }
+});
+
+moment.lang('en', {
     calendar : {
         lastDay : '[yesterday @] LT',
         sameDay : '[today @] LT',
@@ -164,6 +182,7 @@ function changeStream(objStream){
     _session.streamConversation = {"chat":{}}; 
     
     gotoPage('page-conversation');
+    $('#page-conversation h2#today').html('TODAY: ' + moment().format("dddd, MMMM Do YYYY"));
     $('#page-conversation .connection-items-con .connection-items-list').empty();
     updteStreamStatus();
 
@@ -304,6 +323,7 @@ function createUserButton(objData){
                     //.replace(/\{{viewed-your-profile-date}}/g,getViewedYourProfileDate(objData.userid))
                     //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
                     //.replace(/\{{user-status}}/g,       getUserStatusClass(objData.userid))
+                    //.replace(/\{{active}}/g,            '')
                     .replace(/\{{stream-class}}/g,      getStreamClass(objData.streamid))
                     .replace(/\{{you}}/g,               getUserClass(objData.userid))
                     .replace(/\{{viewed}}/g,            'viewed')
