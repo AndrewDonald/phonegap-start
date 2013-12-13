@@ -415,7 +415,7 @@ function initiateNodeServer() {
         case "listen_details":
             _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
             if (_session.stream.stream != null) {
-            setTimeout('ping("' + _session.stream.stream + '")', 1000); 
+                setTimeout('ping("' + _session.stream.stream + '")', 1000); 
             }
             break;
         case "chat":
@@ -425,10 +425,7 @@ function initiateNodeServer() {
             addNotificationItem(msg.object);
             break;
         case "subscription":
-            _session.people[msg.object.userid.toString()] = msg.object; 
-            _session.people[msg.object.userid.toString()].time = splitDate(_session.people[msg.object.userid.toString()].createdate);
-            //addStreamMember(msg.object, 0);
-            $('.connection-items-con').prepend('AddMember: ' + JSON.stringify(msg.object));
+            addMemberNotificationItem(msg.object);
             break;
         case "add_connection":
             break;

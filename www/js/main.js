@@ -56,6 +56,8 @@ var _application                                = {};
     _application.template.streamAddedButton     = $('#stream-added-button.template').html();
     _application.template.chatItem              = $('#chat-item.template').html();
     _application.template.notificationItem      = $('#notification-item.template').html();
+    _application.template.memberAdded           = $('#member-added.template').html();
+    
     
     /*
     _application.template                       = {};
@@ -86,6 +88,8 @@ var _lucid                          = {};
     _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
     _lucid.panel.apps.active        = 0;
 
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 // moment.js Initialization
 moment.lang('en', {
@@ -118,9 +122,11 @@ moment.lang('en', {
 });
 
 $(function() {
+    initEventHandlers();
+    
+
     updateAbout();
     gotoPage('page-login');
-    initEventHandlers();
     
     // Auto-Login if previous authentication data exists in localStorage
     if(storage.data('login')){
@@ -372,22 +378,38 @@ function createChatItem(objData){
     return chatItem;
 }
 
+function displayNotificationItem(objHtml){
+    // Display in-stream notification
+    $('#page-conversation .connection-items-con .connection-items-list').prepend(objHtml)
+        .children('.list-group-item:first').hide().slideDown(500, function(){
+            $(this).find('.exit').removeClass('exit');
+        }).removeAttr('style');
+}
+
 function addNotificationItem(objData) {
-    if(!_session.streamAdded.stream[objData.streamid]){
-        _session.streamAdded.stream[objData.streamid] = {"streamid":objData.streamid, "stream":objData.stream};
+    if(!_session.streamAdded.stream[objData.streamid.toString()]){
+        _session.streamAdded.stream[objData.streamid.toString()] = {"streamid":objData.streamid, "stream":objData.stream};
         
-        // Display in-stream notification
-        $('#page-conversation .connection-items-con .connection-items-list')
-            .prepend(createNotificationItem(objData))
-            .parent().children('.list-group-item:first').hide().slideDown(500).removeAttr('style');
+        var notificationItem = _application.template.notificationItem
+                                .replace(/\{{notification-item}}/g, _application.template.streamAddedButton)
+                                .replace(/\{{streamid}}/g, objData.streamid)
+                                .replace(/\{{stream}}/g, objData.stream);
+
+        displayNotificationItem(notificationItem);
     }
 }
 
-function createNotificationItem(objData){
-    var notificationItem = _application.template.notificationItem
-                            .replace(/\{{stream-added-button}}/g, _application.template.streamAddedButton)
-                            .replace(/\{{streamid}}/g, objData.streamid)
-                            .replace(/\{{stream}}/g, objData.stream);
+function addMemberNotificationItem(objData) {
+    if(!_session.people.user[objData.userid.toString()]){
+        _session.people.user[objData.userid.toString()]         = objData; 
+        _session.people.user[objData.userid.toString()].time    = splitDate(_session.people.user[objData.userid.toString()].createdate);
+        
+        var notificationItem = _application.template.notificationItem
+                                .replace(/\{{notification-item}}/g, _application.template.memberAdded.replace(/\{{user-button}}/g, createUserButton(objData)));
+                                //.replace(/\{{streamid}}/g, objData.streamid)
+                                //.replace(/\{{stream}}/g, objData.stream);
 
-    return notificationItem;
+       displayNotificationItem(notificationItem);
+    }
 }
+

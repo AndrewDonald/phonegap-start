@@ -25,7 +25,7 @@
         <!-- MAIN MENU (START) -->
         <nav id="main-menu" class="fixed" role="navigation">
             <div class="header">
-                <button class="login-toggle btn btn-link-lucid glyphicon glyphicon-off" data-toggle-item="page-login"></button><span class="username">{{username}}</span>
+                <span class="username">{{username}}</span>
             </div>
             <ul id="main-menu-items" class="list-group" role="menu">
                 <li class="list-group-item">
@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="people-toggle" data-toggle-item="page-dtream" class="btn btn-lucid">
+                    <a id="people-toggle" data-toggle-item="page-stream" class="btn btn-lucid">
                         <span class="menu-icon stream-icon"></span>Streams
                     </a>
                 </li>
@@ -64,8 +64,8 @@
                     </a>
                 </li>
                 <li class="list-group-item divider">
-                    <a id="settings-toggle" data-toggle-item="page-settings" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-cog"></span>Settings
+                    <a id="settings-toggle" data-toggle-item="page-login" class="btn btn-lucid login-toggle btn btn-link-lucid">
+                        <span class="menu-icon glyphicon glyphicon-off"></span>Login
                     </a>
                 </li>
                 <li class="list-group-item">
@@ -846,7 +846,7 @@
                     </nav>
                     <!-- CONVERSATION HEADER (END) -->
 
-                    <h2 id="today" class="date-header"></h2>
+                    <h2 id="today" class="stream-message"></h2>
 
                     <!-- CONVERSATION (START) -->
                     <div class="connection-items-con public" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
@@ -1292,10 +1292,17 @@
         <!-- Notification Item (Start) -->
         <div id="notification-item" class="template">
             <li class="list-group-item notification">
-                {{stream-added-button}}
+                {{notification-item}}
             </li>
         </div>
         <!-- Notification Item (End) -->
+
+        <!-- Member Added (Start) -->
+        <div id="member-added" class="template">
+            {{user-button}}
+            <span class="stream-message exit"> has joined this thought stream.</span>
+        </div>
+        <!-- Member Added (End) -->
 
         <!-- Added Stream Button (Start) -->
         <div id="stream-added-button" class="template">
@@ -1306,7 +1313,7 @@
                     <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                     <label class="badge">?</label>
                 </button>
-                <button class="vote-remove btn btn-sm btn-danger">
+                <button class="vote-remove btn btn-danger">
                     <span class="glyphicon glyphicon-minus-sign"></span>
                 </button>
             </span>

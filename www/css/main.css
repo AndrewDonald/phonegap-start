@@ -89,7 +89,7 @@ blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; font-size: 13px;
 .close:hover, .close:focus {color: #0ef;}
 .progress {margin-bottom: 0;}
 
-.list-group-item {margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
+.list-group-item {position: relative; margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
 .list-group-item.selected {color: #0ab; background-color: #ff6;}
 .input-group-addon.align-top {vertical-align: top; padding-top: 9px;}
 .list-inline.full-width {width: 100%;}
@@ -334,7 +334,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
 .btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
-    .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}
+    .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}   
         .btn-lucid.user > label {margin: 0; top: 42px; left: -7px; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .fname {display: block;}
@@ -358,6 +358,13 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
             .btn-lucid.user > sub > .connected-indicator-icon {display: none; top: -1px;}
             .btn-lucid.user.connected > sub > .connected-indicator-icon {display: inline-block;}
         .you .btn-lucid.user > sup, .you .btn-lucid.user > sub {display: none;}
+    /* Exit Animation */
+    .btn-lucid.user {transition: all 0.5; transform:rotate(0deg); left: 0; opacity: 1;}
+    .btn-lucid.user.exit {transition: all 0.5s; transform:rotate(-180deg); left: -100px; opacity: 0;}
+    .btn-lucid.user.exit.you {transition: all 0.5s; transform:rotate(180deg); left: 100px; opacity: 0;}
+        .btn-lucid.user label {transition: top 1s; top: 42px;}
+        .btn-lucid.user.exit label {transition: top 1s; top: 30px;}
+                             
 /* btn-lucid-transparent */
 .btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {height: 32px; text-shadow: 0 0 5px #666; color: #fff; box-shadow: 0 0 1px #0ef, 0 0 1px #0ef inset; border-color: #078; background-color: rgba(0,240,255,0.3);}
 .btn-lucid-transparent.active {background-color: rgba(255,255,255,0.5); color: #fff; text-shadow: 0 0 5px #000;} 
@@ -398,7 +405,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
-.date-header {margin: 0; padding: 0 0 2px; font-size: 10px; text-align: center; color: #0bf;}
+.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; left: 0; position: relative; margin: 0; padding: 0 0 2px; font-size: 12px; text-align: center; color: #0bf;}
+.stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
+
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -427,10 +436,9 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 /* MAIN MENU */
 #main-menu {width: 275px; overflow-y: auto; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
-    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px 10px 4px 3px; background-color: #056; color: #0de; font-weight: bold; box-shadow: 0 2px 5px #000;}
+    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold; box-shadow: 0 2px 5px #000;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
-        #main-menu .header .username {padding-left: 2px;}
     ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000;}
         ul#main-menu-items .list-group-item {width: 275px; margin: 0; padding: 0; box-shadow: none; background-color: rgba(0, 240, 255, 0.2); border: none; border-bottom: 1px solid #056; border-radius: 0;}
         ul#main-menu-items .list-group-item:last-child {border-width: 2px;}
@@ -635,7 +643,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal:hover,
-            .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
+            .connection-items-con .btn-lucid-normal:not(.active):focus {}
                 .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
 
                     .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #333; margin: 0; padding: 0;}
@@ -648,12 +656,6 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
                         .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
                         .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
-                            
-                            .connection-item-panel .panel-header .btn.btn-lucid.user {transition: all 0.5s, transform 0.5s; transform:rotate(0deg); left: 0;}
-                            .connection-item-panel .panel-header .btn.btn-lucid.user.exit {transition: all 0.5s, transform 0.5s; transform:rotate(-180deg); left: -50px; }
-                            .connection-item-panel .panel-header .btn.btn-lucid.user.exit.you {transition: all 0.5s, transform 0.5s; transform:rotate(180deg); left: 50px;}
-                                .connection-item-panel .panel-header .btn.btn-lucid.user label {transition: top 1s; top: 42px;}
-                                .connection-item-panel .panel-header .btn.btn-lucid.user.exit label {transition: top 1s; top: 30px;}
 
                             .connection-item-panel .panel-body {transition: opacity 0.5s; opacity: 1;}
                             .connection-item-panel .panel-body.exit {transition: opacity 0.5s; opacity: 0;}
