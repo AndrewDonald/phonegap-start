@@ -846,37 +846,17 @@
                     </nav>
                     <!-- CONVERSATION HEADER (END) -->
 
-                    <h2 id="today" class="stream-message"></h2>
+                    <h2 id="today" class="stream-message"><b>TODAY</b><br>Friday, December 13th 2013</h2>
 
                     <!-- CONVERSATION (START) -->
                     <div class="connection-items-con public" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
-                                <li class="list-group-item day-header">
-                                    <label class="day">Today</label>
+                                <!-- DATE LABEL -->
+                                <li class="list-group-item stream-message">
+                                    <label class="day">Sunday, November 3, 2013</label>
                                 </li>
-                                <li class="list-group-item chat connected">
-                                    <div class="connection-item-panel panel">
-                                        <div class="panel-header">
-                                            <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid connecting">3</sup>
-                                                <label><span class="fname">Connected</span><span class="lname"></span></label>
-                                            </button>
-                                        </div>
-                                        <div class="panel-body">
-                                            <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
-                                            <div class="callout-pointer"></div>
-                                            <div class="status">
-                                                <span class="sent">10:55pm</span>
-                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                            </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
-                                        </div>
-                                    </div>
-                                </li>
+                                <!-- YOU -->
                                 <li class="list-group-item chat you">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
@@ -886,7 +866,7 @@
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
+                                            <blockquote class="connection-content">I represent you. This is where you will appear in thought stream conversations.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -899,16 +879,65 @@
                                         </div>
                                     </div>
                                 </li>
+                                <!-- DEFAULT IN-STREAM -->
+                                <li class="list-group-item chat connected">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Elizabeth Jasmin-Foster">
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <label><span class="fname">Default</span><span class="lname"></span></label>
+                                            </button>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">I'm a member who is in your thought stream.</blockquote>
+                                            <div class="callout-pointer"></div>
+                                            <div class="status">
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- DEFAULT ADDED-STREAM -->
+                                <li class="list-group-item chat connected">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Elizabeth Jasmin-Foster">
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <label><span class="fname">Default</span><span class="lname"></span></label>
+                                            </button>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">I'm a member who was added to your thought stream from another stream because LucidLife found that both streams are currently talking about the same things.</blockquote>
+                                            <div class="callout-pointer"></div>
+                                            <div class="status">
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- VIEWED YOUR PROFILE -->
                                 <li class="list-group-item chat">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
-                                            <button class="btn btn-lucid user added-stream viewed-your-profile" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid connecting">3</sup>
+                                            <button class="btn btn-lucid user in-stream viewed-your-profile" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                                <sup class="badge label-lucid connecting">
+                                                    <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                                </sup>
                                                 <label><span class="fname">Viewed</span><span class="lname" style="display: block">Profile</span></label>
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">LucidLife chatting is awesome!</blockquote>
+                                            <blockquote class="connection-content">I'm a member who has viewed your profile.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -921,19 +950,19 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="list-group-item day-header viewed">
-                                    <label class="day">Sunday, November 3, 2013</label>
-                                </li>
+                                <!-- CONNECTION REQUEST -->
                                 <li class="list-group-item chat connected">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user in-stream connection-request" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid connecting"></sup>
+                                                <sup class="badge label-lucid connecting">
+                                                    <span class="not-viewed-icon glyphicon glyphicon-link"></span>
+                                                </sup>
                                                 <label><span class="fname">Connection</span><span class="lname" style="display: block;">Request</span></label>
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">I hope we can finish this app soon!</blockquote>
+                                            <blockquote class="connection-content">I'm a member who has requested to connnect with you so that we can also chat privately with one another.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -946,16 +975,17 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="list-group-item chat you">
+                                <!-- CONNECTED -->
+                                <li class="list-group-item chat connected">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
-                                            <button class="btn btn-lucid user in-stream" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                            <button class="btn btn-lucid user in-stream connected" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
                                                 <sup class="badge label-lucid connecting"></sup>
-                                                <label><span class="fname">You</span></label>
+                                                <label><span class="fname">Connected</span><span class="lname"></span></label>
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">Hey, when are you coming back online?! We have to get ready for the charity event and I haven't even started to look at the list of volunteers. Maybe we can work on that together today.</blockquote>
+                                            <blockquote class="connection-content">I'm a member who's request to connect you accepted and so we are now both connected!</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -968,16 +998,42 @@
                                         </div>
                                     </div>
                                 </li>
+                                <!-- CONNECTED & CONNECTING -->
+                                <li class="list-group-item chat connected">
+                                    <div class="connection-item-panel panel">
+                                        <div class="panel-header">
+                                            <button class="btn btn-lucid user in-stream connected connecting" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                                <sup class="badge label-lucid connecting">3</sup>
+                                                <label><span class="fname">Connected</span><span class="lname">Connecting</span></label>
+                                            </button>
+                                        </div>
+                                        <div class="panel-body">
+                                            <blockquote class="connection-content">Becuase we are connected we can send private messages to each other. This shows how many unviewed messages you have waiting from me.</blockquote>
+                                            <div class="callout-pointer"></div>
+                                            <div class="status">
+                                                <span class="sent">10:55pm</span>
+                                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-link"></span></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- BLOCKED -->
                                 <li class="list-group-item chat viewed">
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
-                                            <button class="btn btn-lucid user added-stream blocked" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid connecting"></sup>
+                                            <button class="btn btn-lucid user in-stream blocked" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
+                                                <sup class="badge label-lucid connecting">
+                                                    <span class="viewed-icon glyphicon glyphicon-ban-circle"></span>
+                                                </sup>
                                                 <label><span class="fname">Blocked</span></label>
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">LucidLife chatting is awesome!</blockquote>
+                                            <blockquote class="connection-content">I'm a member you have blocked. I can no longer send you any messages or connection requests.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>

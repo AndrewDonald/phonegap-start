@@ -7,7 +7,7 @@ h5, h6 {
 input[type=text], textarea {background-color: #fff;}
 .input-group-addon {color: #0ef; background-color: #0ab;}
 .input-group-addon.active {color: #fff;}
-label {margin-bottom: 0;}
+label {margin-bottom: 0; font-weight: normal;}
 .nav-pills > li > a {background-color: rgba(0, 100, 115, 0.95); border: 1px solid #056; border-radius: 0 0 5px 5px; box-shadow: 1px 1px 3px #000; padding: 10px 17px; color: #0ef;}
 .nav > li > a:hover,
 .nav-pills > li.active > a:hover {background-color: rgba(0,200,215, 0.95); color: #fff;}
@@ -342,15 +342,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         
         .btn-lucid.user > sup {position: absolute; height: 15px;}
         .btn-lucid.user > sup.connecting {top: -5px; left: -5px;}
-        .btn-lucid.user.viewed-your-profile {border-color: #0f0;}
-            .btn-lucid.user.viewed-your-profile > label {border-color: #0f0;}
-        .btn-lucid.user.connection-request {border-color: #ff6;}
-            .btn-lucid.user.connection-request > label {border-color: #ff6;}
+        .btn-lucid.user.viewed-your-profile {border-color: #ff6;}
+            .btn-lucid.user.viewed-your-profile > sup.badge {border-color: #ff6; background-color: #fc3;}
+        .btn-lucid.user.connection-request {border-color: #0f0;}
+            .btn-lucid.user.connection-request > sup.badge {border-color: #0f0; background-color: #0b0;}
         .btn-lucid.user.blocked {border-color: #f00;}
-            .btn-lucid.user.blocked > label {border-color: #f00;}
+            .btn-lucid.user.blocked > sup.badge {border-color: #f00; background-color: #f00;}
         .btn-lucid.user.connected {border-color: #f90;}
-            /*.btn-lucid.user.connected > sup.badge.connecting {border-color: #f90;}*/
-            .btn-lucid.user.connected > label {border-color: #f90;}
+            .btn-lucid.user.connected > sup.badge {border-color: #f90; background-color: #f90;}
                 .btn-lucid.user.connected > label > .lname {display: block;}
 
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
@@ -412,7 +411,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
-.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; left: 0; position: relative; margin: 0; padding: 0 0 2px; font-size: 12px; text-align: center; color: #0bf;}
+.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 0 5px; font-size: 12px; text-align: center; color: #0ab;}
 .stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
 
 /*
@@ -593,7 +592,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
         #page-conversation .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
-                #page-conversation .connection-items-con > .well > .connection-items-list .day-header {display: none;}
+                /*#page-conversation .connection-items-con > .well > .connection-items-list .stream-message {display: none;}*/
 
         /* CONTROLS PANELS */
         #stream-controls-panel {z-index: 2000;}
@@ -653,11 +652,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-items-con .btn-lucid-normal:not(.active):focus {}
                 .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
 
-                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #333; margin: 0; padding: 0;}
-                    .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 60px 10px;}
+                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; margin: 0; padding: 0;}
+                    .connection-items-list > li.list-group-item:not(.stream-message) {margin: 0 60px 10px;}
                     /*.connection-items-list > li.viewed {display: none;}*/
                     .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
-                    .connection-items-list > li.day-header {margin-bottom: 5px; text-align: center; color: #0ab;}
                     .connection-items-list .badge {font-weight: normal; font-size: 10px; box-shadow: 0 0 5px #000, 0 0 1px #000 inset;}
                     .connection-items-list .alert-icon {color: #0ef;}
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
@@ -676,11 +674,11 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; background-color: rgba(0, 200, 255, 0.5);}
-                                .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
-                                .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
+                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; background-color: rgba(0, 200, 255, 0.5);}
+                                .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-right: 1px;}
+                                .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-left: 1px;}
                                     .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #008fb3;}
-                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000;}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000, 0 0 4px #0cd inset;}
                                 .connection-item-panel .status {position: absolute; right: 10px; bottom: 3px; color: #056; font-size: 9px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
@@ -700,8 +698,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-items-list > li.list-group-item.you,
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -57px;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; border-left: none; border-right: 1px solid #0ab;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; background-color: #009AB5; box-shadow: 4px 2px 5px #000;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; border-left: none; border-right: 1px solid #0ab;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; background-color: #009AB5; box-shadow: 4px 2px 5px #000, 0 0 4px #0cd inset;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}
