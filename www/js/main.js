@@ -91,18 +91,18 @@ var _lucid                          = {};
 moment.lang('en', {
     relativeTime : {
         future: "in %s",
-        past:   "%s ago",
+        past:   "%s",
         s:  "secs",
         m:  "a min",
-        mm: "%d mins",
-        h:  "an hr",
-        hh: "%d hrs",
+        mm: "%dmins",
+        h:  "anhr",
+        hh: "%dhrs",
         d:  "a day",
-        dd: "%d days",
+        dd: "%ddays",
         M:  "a mth",
-        MM: "%d mths",
+        MM: "%dmths",
         y:  "a yr",
-        yy: "%d yrs"
+        yy: "%dyrs"
     }
 });
 
@@ -182,7 +182,7 @@ function changeStream(objStream){
     _session.streamConversation = {"chat":{}}; 
     
     gotoPage('page-conversation');
-    $('#page-conversation h2#today').html('TODAY: ' + moment().format("dddd, MMMM Do YYYY"));
+    $('#page-conversation h2#today').html('<b>TODAY</b><br>' + moment().format("dddd, MMMM Do YYYY"));
     $('#page-conversation .connection-items-con .connection-items-list').empty();
     updteStreamStatus();
 
@@ -296,10 +296,15 @@ function addChatItem(objChat) {
     }
 
     //var chatItem = createChatItem(objChat);
-        
     //if (direction == 0) { //$('ul.more_stories li:gt(2)').hide();
-    $('#page-conversation .connection-items-con .connection-items-list').prepend(createChatItem(objChat))
-        .parent().children('.list-group-item:first').hide().slideDown(500).removeAttr('style');
+    $('#page-conversation .connection-items-con .connection-items-list').prepend(createChatItem(objChat));
+    var convoItem = $('#page-conversation .connection-items-con .connection-items-list [data-userid=' + objChat.userid + ']:first');
+    $(convoItem).slideDown(500, function(){
+        $(this).removeAttr('style').find('.btn-lucid.user').removeClass('exit').animate({delay:0}, function(){
+            $(convoItem).find('.panel-body').removeClass('exit');
+        });
+    });
+    
     /*
         //if($('#page-conversation > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
         //   $('#page-conversation > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
@@ -315,12 +320,14 @@ function addChatItem(objChat) {
 
 function createUserButton(objData){
     var userButton = _application.template.userButton
-                    //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
                     //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
-                    .replace(/\{{connecting-qty}}/g,    '') //getConnectingQty(objData.userid))
-                    .replace(/\{{connection-request-icon}}/g,    '') //<span class="connection-request-icon glyphicon glyphicon-link"></span>
+                    .replace(/\{{connecting-qty}}/g,      '') //getConnectingQty(objData.userid))
+                    //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
                     //.replace(/\{{viewed-your-profile}}/g,getViewedYourProfileClass(objData.userid))
+                    .replace(/\{{viewed-your-profile-icon}}/g, '')
                     //.replace(/\{{viewed-your-profile-date}}/g,getViewedYourProfileDate(objData.userid))
+                    .replace(/\{{connected-icon}}/g,      '')
+                    .replace(/\{{connection-request-icon}}/g,    '') //<span class="connection-request-icon glyphicon glyphicon-link"></span>
                     //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
                     //.replace(/\{{user-status}}/g,       getUserStatusClass(objData.userid))
                     //.replace(/\{{active}}/g,            '')

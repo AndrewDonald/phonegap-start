@@ -27,7 +27,7 @@ label {margin-bottom: 0;}
         .btn.btn-radio:active, .btn.btn-radio.active {color: #000;}
 .btn.btn-radio > label {padding: 0 20px 0 0;}
 .btn-lg {padding: 9px 16px;}
-.btn .badge {right: 0px; padding: 2px 4px;}
+.btn .badge {padding: 2px 4px;}
 .btn-group-justified  > a {border-radius: 0;}
 .btn-group > label.btn {padding: 0; margin-right: 15px;}
     .btn-group > label.btn:last-child {margin-right: 0;}
@@ -42,7 +42,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 .form-control::-moz-placeholder, .form-control::-webkit-placeholder {color: #468; text-shadow: 0 0 0 #000;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    background-color: #fff; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background-color: #fff; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 3px #000 inset;
     color: #333; display: block; font-size: 12px; font-weight: bold; height: 34px;
     line-height: 1.42857; padding: 3px 5px; vertical-align: middle; width: 97%;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
@@ -194,7 +194,7 @@ h2 {font-size: 16px;}
 
 .menu-transparent-light {background-color: rgba(0,170,190,0.9);}
 
-.well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0; overflow: auto;}
+.well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0;}
     .menu-transparent .well-lucid {border-color: #078;}
 
 @keyframes fade {
@@ -219,7 +219,7 @@ h2 {font-size: 16px;}
 #modal-loader .modal-footer.active {display: block;}
 
 /* STATUS BAR */
-.status-bar {font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 -2px 5px #000, 0 3px 3px #0ef inset; background-color: #0ab; background-image: linear-gradient(to bottom, #oab 30%, #078 100%);}
+.status-bar {font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 -2px 5px #000; background-color: #000; border-top: 1px solid #0ab;}
     .status-bar .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
  @media (max-width: 360px) {
     .status-bar {font-size: 10px;}
@@ -309,7 +309,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
-    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 1px 1px #000; top: -20px; left: -10px; background-color: rgba(0, 200, 220, 0.85);}
+    sup.badge, .btn-link-lucid .badge, .btn-lucid .badge {text-shadow: 0 1px 1px #000; box-shadow: 0 0 5px #000000, 0 0 1px #000000 inset;
+    font-size: 10px; font-weight: normal; background-color: rgba(0, 200, 220, 0.85); border-radius: 10px;}
     sup.badge .glyphicon {font-size: 10px;}
     .btn-link-lucid.active .badge, .btn-lucid.active .badge {box-shadow: 0 0 3px #ff6;}
 .btn-lucid {transition: all 0.5s;
@@ -334,16 +335,21 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     
 .btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
     .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}
-        .btn-lucid.user > label {margin: 0 -6px; top: 42px; left: 0; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
+        .btn-lucid.user > label {margin: 0; top: 42px; left: -7px; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6;}
             .btn-lucid.user > label > .fname {display: block;}
             .btn-lucid.user > label > .lname {display: none;}
             .btn-lucid.user.connected > label > .lname {display: block;}
         .btn-lucid.user.active > label {background-color: transparent;}
-
+        .btn-lucid.user > sup {position: absolute; height: 15px;}
+        .btn-lucid.user > sup.connecting {top: -5px; left: -5px;}
+        .btn-lucid.user > sup.viewed-your-profile {top: -5px; right: -5px; width: 15px;}
+        .btn-lucid.user > sup.connected {top: 26px; left: -5px; width: 15px;}
+        .btn-lucid.user > sup.connection-request {top: 26px; right: -10px;}
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
-
-        .btn-lucid.user > sub {width: 40px; height: 9px; left: -1px; color: #0ef; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
+            .btn-lucid.user > sup > span {font-size: 8px; margin-left: -1px;}
+        .btn-lucid.user > sub {transition: opacity 0.5s; opacity: 0; width: 40px; height: 9px; left: -1px; color: #fff; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
+        .btn-lucid.user:focus > sub, .btn-lucid.user:hover > sub {transition: opacity 0.5s; opacity: 1;}
             .btn-lucid.user > sub > .stream-indicator-icon {font-size: 14px;}
             .btn-lucid.user.in-stream > sub > .stream-indicator-icon:after {content: '∼'; padding-left: 1px; padding-top: 3px;}
             .btn-lucid.user.added-stream > sub > .stream-indicator-icon:after {content: '≅';}
@@ -392,7 +398,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-left {opacity: 0.8; position: absolute; left: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
-.date-header {margin: 0; padding: 0 0 2px; text-align: center; color: #0bf;}
+.date-header {margin: 0; padding: 0 0 2px; font-size: 10px; text-align: center; color: #0bf;}
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -420,18 +426,19 @@ body.main-menu-active .navbar-fixed-top.shifted-fixed,
 body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left: 275px;}
 
 /* MAIN MENU */
-#main-menu {width: 275px; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
-    #main-menu .header {position: absolute; z-index: 1; top:0; left: 0; width: 100%; padding: 10px 10px 4px 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 1px 5px #000, 0 0 5px #0ab inset;}
-        #main-menu .header .btn.login-toggle {color: #0ef; margin-top: -8px; padding: 8px 10px 10px; background-color: #056;}
-        #main-menu .header .btn.login-toggle.active {color: #fff; background-color: #0cd;}
-        #main-menu .header .username {padding-left: 10px;}
-    ul#main-menu-items {margin-top: 40px;}
+#main-menu {width: 275px; overflow-y: auto; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
+    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px 10px 4px 3px; background-color: #056; color: #0de; font-weight: bold; box-shadow: 0 2px 5px #000;}
+        #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
+        #main-menu .header .btn.login-toggle.active {color: #fff;}
+        #main-menu .header .username {padding-left: 2px;}
+    ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000;}
         ul#main-menu-items .list-group-item {width: 275px; margin: 0; padding: 0; box-shadow: none; background-color: rgba(0, 240, 255, 0.2); border: none; border-bottom: 1px solid #056; border-radius: 0;}
         ul#main-menu-items .list-group-item:last-child {border-width: 2px;}
         ul#main-menu-items .list-group-item.divider {border-width: 2px;}
-            ul#main-menu-items .list-group-item .btn {display: block; margin-right: 2px; padding: 15px; color: #056; text-align: left; box-shadow: none; border-radius: 0;}
+            ul#main-menu-items .list-group-item .btn {display: block; margin-right: 2px; padding: 15px; text-align: left; box-shadow: none; border-radius: 0;}
             ul#main-menu-items .list-group-item .btn.active {color: #fff;}
                 ul#main-menu-items .list-group-item .btn .menu-icon {padding-right: 10px;}
+                ul#main-menu-items .list-group-item .btn.menu-toggle-modal-about {padding: 13px 15px;}
     /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
 /* HEADER */   
@@ -630,10 +637,6 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-items-con .btn-lucid-normal:hover,
             .connection-items-con .btn-lucid-normal:not(.active):focus {padding: 2px 5px;}
                 .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
-                .connection-items-list {height: 190px; overflow: auto; padding: 5px;}
-                /*@media all and (max-height: 360px) {
-                    .connection-items-list {max-height: 124px;}
-                }*/
 
                     .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; color: #333; margin: 0; padding: 0;}
                     .connection-items-list > li.list-group-item:not(.day-header) {margin: 0 60px 10px;}
@@ -645,17 +648,31 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
                         .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
                         .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
+                            
+                            .connection-item-panel .panel-header .btn.btn-lucid.user {transition: all 0.5s, transform 0.5s; transform:rotate(0deg); left: 0;}
+                            .connection-item-panel .panel-header .btn.btn-lucid.user.exit {transition: all 0.5s, transform 0.5s; transform:rotate(-180deg); left: -50px; }
+                            .connection-item-panel .panel-header .btn.btn-lucid.user.exit.you {transition: all 0.5s, transform 0.5s; transform:rotate(180deg); left: 50px;}
+                                .connection-item-panel .panel-header .btn.btn-lucid.user label {transition: top 1s; top: 42px;}
+                                .connection-item-panel .panel-header .btn.btn-lucid.user.exit label {transition: top 1s; top: 30px;}
+
+                            .connection-item-panel .panel-body {transition: opacity 0.5s; opacity: 1;}
+                            .connection-item-panel .panel-body.exit {transition: opacity 0.5s; opacity: 0;}
+                            .connection-item-panel .panel-body.exit.you {transition: opacity 0.5s; opacity: 0;}
+                                .connection-item-panel .panel-body.exit blockquote {transition: border-radius 0.5s; border-radius: 0;}
+                                .connection-item-panel .panel-body blockquote {transition: border-radius 0.5s; border-radius: 15px;}
+
+
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {color: #0ef; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; background-color: rgba(0, 200, 220, 0.2);}
+                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; background-color: rgba(0, 200, 255, 0.5);}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-right: 3px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 20px; font-family: serif; line-height: 12px; padding-left: 3px;}
-                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #078; border: 1px solid #0ab;}
-                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8.5px; border-radius: 8px 0 0; border-right: none; box-shadow: -3px 2px 3px #000;}
-                                .connection-item-panel .status {position: absolute; right: 5px; bottom: 3px; color: #09d; font-size: 10px;}
+                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #008fb3;}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000;}
+                                .connection-item-panel .status {position: absolute; right: 10px; bottom: 3px; color: #056; font-size: 9px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
                                     .connection-items-con.public .connection-item-panel .status .not-viewed-icon {display: none;}
@@ -675,7 +692,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -57px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 3px #0ab inset; border-left: none; border-right: 1px solid #0ab;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; box-shadow: 3px 2px 3px #000;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; background-color: #009AB5; box-shadow: 4px 2px 5px #000;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}

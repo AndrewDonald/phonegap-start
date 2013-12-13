@@ -192,18 +192,19 @@ function getUserClass(userid){
 }
 
 function getElapsedTime(date){
-    var elapsedTime;
     var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
     // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
         if(secondsDiff < 0){dateNowGMT = date;}
-    
-    //var daysDiff    = dateNowGMT.diff(date, 'days');
-    //if(daysDiff > 6){
-    //    elapsedTime = moment().add('days', daysDiff).calendar();
-    //}else{
-        elapsedTime = moment(date).from(dateNowGMT);
-    //}
 
-    return elapsedTime;
+    return "~" + moment(date).from(dateNowGMT);
+}
+
+function getFormatedDate(date){
+    var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
+    // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
+    var secondsDiff = dateNowGMT.diff(date, 'seconds');
+        if(secondsDiff < 0){dateNowGMT = date;}
+
+    return moment(dateNowGMT).calendar();
 }

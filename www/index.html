@@ -25,9 +25,14 @@
         <!-- MAIN MENU (START) -->
         <nav id="main-menu" class="fixed" role="navigation">
             <div class="header">
-                <button class="login-toggle btn btn-lucid glyphicon glyphicon-off" data-toggle-item="page-login"></button><span class="username">{{username}}</span>
+                <button class="login-toggle btn btn-link-lucid glyphicon glyphicon-off" data-toggle-item="page-login"></button><span class="username">{{username}}</span>
             </div>
             <ul id="main-menu-items" class="list-group" role="menu">
+                <li class="list-group-item">
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
+                    </a>
+                </li>
                 <li class="list-group-item">
                     <a id="connections-toggle" data-toggle-item="page-connections" class="btn btn-lucid">
                         <span class="menu-icon glyphicon glyphicon-link"></span>Connections
@@ -45,17 +50,12 @@
                 </li>
                 <li class="list-group-item">
                     <a id="people-toggle" data-toggle-item="page-dtream" class="btn btn-lucid">
-                        <span class="menu-icon stream-name"></span>Stream
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-filter"></span>Filter
+                        <span class="menu-icon stream-icon"></span>Streams
                     </a>
                 </li>
                 <li class="list-group-item divider">
-                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
+                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
                     </a>
                 </li>
                 <li class="list-group-item">
@@ -859,13 +859,10 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user in-stream connecting connected viewed-your-profile" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid"></sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon">9</span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-close"></span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open" style="display: inline-block"></span>
-                                                    <span class="connected-indicator-icon glyphicon glyphicon-link" style="display: inline-block"></span>
-                                                </sub>
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <sup class="badge label-lucid viewed-your-profile"></sup>
+                                                <sup class="badge label-lucid connected"></sup>
+                                                <sup class="badge label-lucid connection-request"></sup>
                                                 <label><span class="fname">Elizabeth</span><span class="lname">Hullahan</span></label>
                                             </button>
                                         </div>
@@ -887,12 +884,10 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon"></span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
-                                                    <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
-                                                </sub>
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <sup class="badge label-lucid viewed-your-profile"></sup>
+                                                <sup class="badge label-lucid connected"></sup>
+                                                <sup class="badge label-lucid connection-request"></sup>
                                                 <label><span class="fname">You</span></label>
                                             </button>
                                         </div>
@@ -914,12 +909,12 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user added-stream connecting viewed-your-profile" style="background-image: url(img/profile/profile-1.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid">3</sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon"></span>
+                                                <sup class="badge label-lucid connecting">3</sup>
+                                                <sup class="badge label-lucid viewed-your-profile">
                                                     <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
-                                                    <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
-                                                </sub>
+                                                </sup>
+                                                <sup class="badge label-lucid connected"></sup>
+                                                <sup class="badge label-lucid connection-request"></sup>
                                                 <label><span class="fname">Joanne</span></label>
                                             </button>
                                         </div>
@@ -944,12 +939,12 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user in-stream connecting connected viewed-your-profile" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid">2</sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon"></span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
+                                                <sup class="badge label-lucid connecting">2</sup>
+                                                <sup class="badge label-lucid viewed-your-profile"></sup>
+                                                <sup class="badge label-lucid connected">
                                                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
-                                                </sub>
+                                                </sup>
+                                                <sup class="badge label-lucid connection-request"></sup>
                                                 <label><span class="fname">Meredith</span><span class="lname">Hanover</span></label>
                                             </button>
                                         </div>
@@ -971,12 +966,10 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user in-stream connecting connected" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid">1<span class="glyphicon glyphicon-link"></span></sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon"></span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
-                                                    <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
-                                                </sub>
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <sup class="badge label-lucid viewed-your-profile"></sup>
+                                                <sup class="badge label-lucid connected"></sup>
+                                                <sup class="badge label-lucid connectioin-request"></sup>
                                                 <label><span class="fname">You</span></label>
                                             </button>
                                         </div>
@@ -998,12 +991,12 @@
                                     <div class="connection-item-panel panel">
                                         <div class="panel-header">
                                             <button class="btn btn-lucid user added-stream connecting viewed-your-profile" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="4" data-username="Elizabeth Jasmin-Foster">
-                                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
-                                                <sub>
-                                                    <span class="stream-indicator-icon"></span>
-                                                    <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
-                                                    <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
-                                                </sub>
+                                                <sup class="badge label-lucid connecting"></sup>
+                                                <sup class="badge label-lucid viewed-your-profile"></sup>
+                                                <sup class="badge label-lucid connected"></sup>
+                                                <sup class="badge label-lucid connection-request">
+                                                    <sup>+</sup><span class="connected-indicator-icon glyphicon glyphicon-link"></span>
+                                                </sup>
                                                 <label><span class="fname">Joseph</span></label>
                                             </button>
                                         </div>
@@ -1256,13 +1249,17 @@
 
         <!-- User Button (Start) -->
         <div id="user-button" class="template">
-            <button class="btn btn-lucid user {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
-                <sup class="badge label-lucid">{{connecting-qty}}{{connection-request-icon}}</sup>
+            <button class="btn btn-lucid user exit {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
+                <sup class="badge label-lucid connecting">{{connecting-qty}}{{connection-request-icon}}</sup>
+                <sup class="badge label-lucid connected">{{connected-icon}}</sup>
+                <sup class="badge label-lucid viewed-your-profile">{{viewed-your-profile-icon}}</sup>
+                <!--
                 <sub>
                     <span class="stream-indicator-icon"></span>
                     <span class="viewed-your-profile-indicator-icon glyphicon glyphicon-eye-open"></span>
                     <span class="connected-indicator-icon glyphicon glyphicon-link"></span>
                 </sub>
+                -->
                 <label><span class="fname">{{fname}}</span><span class="lname">{{lname}}</span></label>
             </button>
         </div>
@@ -1275,7 +1272,7 @@
                     <div class="panel-header">
                         {{user-button}}
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body exit">
                         <blockquote class="connection-content">{{chat}}</blockquote>
                         <div class="callout-pointer"></div>
                         <div class="status">
