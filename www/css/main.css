@@ -336,16 +336,23 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
     .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}   
         .btn-lucid.user > label {margin: 0; top: 42px; left: -7px; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
-        .btn-lucid.user.active > label {color: #ff6;}
+        .btn-lucid.user.active > label {color: #ff6; background-color: transparent;}
             .btn-lucid.user > label > .fname {display: block;}
             .btn-lucid.user > label > .lname {display: none;}
-            .btn-lucid.user.connected > label > .lname {display: block;}
-        .btn-lucid.user.active > label {background-color: transparent;}
+        
         .btn-lucid.user > sup {position: absolute; height: 15px;}
         .btn-lucid.user > sup.connecting {top: -5px; left: -5px;}
-        .btn-lucid.user > sup.viewed-your-profile {top: -5px; right: -5px; width: 15px;}
-        .btn-lucid.user > sup.connected {top: 26px; left: -5px; width: 15px;}
-        .btn-lucid.user > sup.connection-request {top: 26px; right: -10px;}
+        .btn-lucid.user.viewed-your-profile {border-color: #0f0;}
+            .btn-lucid.user.viewed-your-profile > label {border-color: #0f0;}
+        .btn-lucid.user.connection-request {border-color: #ff6;}
+            .btn-lucid.user.connection-request > label {border-color: #ff6;}
+        .btn-lucid.user.blocked {border-color: #f00;}
+            .btn-lucid.user.blocked > label {border-color: #f00;}
+        .btn-lucid.user.connected {border-color: #f90;}
+            /*.btn-lucid.user.connected > sup.badge.connecting {border-color: #f90;}*/
+            .btn-lucid.user.connected > label {border-color: #f90;}
+                .btn-lucid.user.connected > label > .lname {display: block;}
+
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
             .btn-lucid.user > sup > span {font-size: 8px; margin-left: -1px;}
         .btn-lucid.user > sub {transition: opacity 0.5s; opacity: 0; width: 40px; height: 9px; left: -1px; color: #fff; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
