@@ -56,6 +56,7 @@ var _application                                = {};
     _application.template.streamAddedButton     = $('#stream-added-button.template').html();
     _application.template.chatItem              = $('#chat-item.template').html();
     _application.template.notificationItem      = $('#notification-item.template').html();
+    _application.template.dateHeader            = $('#date-header.template').html();
     _application.template.memberAdded           = $('#member-added.template').html();
     
     
@@ -96,7 +97,7 @@ moment.lang('en', {
         s:  "secs",
         m:  "a min",
         mm: "%dmins",
-        h:  "anhr",
+        h:  "an hr",
         hh: "%dhrs",
         d:  "a day",
         dd: "%ddays",

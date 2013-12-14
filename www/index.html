@@ -846,16 +846,12 @@
                     </nav>
                     <!-- CONVERSATION HEADER (END) -->
 
-                    <h2 id="today" class="stream-message"><b>TODAY</b><br>Friday, December 13th 2013</h2>
+                    <div id="today" class="date-header"><b>TODAY</b><br>Friday, December 13th 2013</div>
 
                     <!-- CONVERSATION (START) -->
                     <div class="connection-items-con public" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
-                                <!-- DATE LABEL -->
-                                <li class="list-group-item stream-message">
-                                    <label class="day">Sunday, November 3, 2013</label>
-                                </li>
                                 <!-- YOU -->
                                 <li class="list-group-item chat you">
                                     <div class="connection-item-panel panel">
@@ -985,7 +981,7 @@
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">I'm a member who's request to connect you accepted and so we are now both connected!</blockquote>
+                                            <blockquote class="connection-content">I'm a member who is connected to you. You accepted my connection request so now we are both able to engage in private conversations with one another.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -1046,6 +1042,10 @@
                                         </div>
                                     </div>
                                 </li>
+                                <!-- DATE HEADER -->
+                                <li class="list-group-item notification">
+                                    <div class="date-header"><b>YESTERDAY</b><br>Thursday, December 12, 2013</div>
+                                </li>
                                 <li class="list-group-item notification">
                                     <button class="btn btn-lucid user {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-1.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
                                         <sup class="badge label-lucid connecting"></sup>
@@ -1065,7 +1065,7 @@
                                             <span class="glyphicon glyphicon-minus-sign"></span>
                                         </button>
                                     </span>
-                                    <div class="stream-message" style="color: #fff; text-align: left;">*You can vote to remove this stream if you feel it is not relevant. If enough members in your stream feel the same way, it will be removed.</div>
+                                    <div class="comment">You can vote to remove an added stream if you feel it's not relevant. If enough members in your stream feel the same way, it will be removed.</div>
                                 </li>
                             </ul>
                         </div>
@@ -1340,6 +1340,12 @@
             </li>
         </div>
         <!-- Notification Item (End) -->
+
+        <!-- Date Header (Start) -->
+        <div id="date-header" class="template">
+            <div class="date-header">Sunday, November 3, 2013</div>
+        </div>
+        <!-- Date Label (Start) -->
 
         <!-- Member Added (Start) -->
         <div id="member-added" class="template">
