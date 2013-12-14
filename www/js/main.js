@@ -88,9 +88,6 @@ var _lucid                          = {};
     _lucid.panel.apps               = ["chat","polls","surveys","promos","games","favorites","app1","app2","app3","app4"];
     _lucid.panel.apps.active        = 0;
 
-
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
 // moment.js Initialization
 moment.lang('en', {
     relativeTime : {
