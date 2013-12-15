@@ -846,7 +846,7 @@
 
                     <!-- CONVERSATION HEADER (END) -->
                     <div id="today" class="date-header-item">
-                        <b>TODAY</b><br>Friday, December 13th 2013
+                        <span class="message"><b>TODAY</b><br>Friday, December 13th 2013</span>
                     </div>
 
                     <!-- CONVERSATION (START) -->
@@ -1045,14 +1045,14 @@
                                 </li>
                                 <!-- DATE HEADER -->
                                 <li class="list-group-item date-header-item">
-                                    <span><b>YESTERDAY</b><br>Thursday, December 12, 2013</span>
+                                    <span class="message"><b>YESTERDAY</b><br>Thursday, December 12, 2013</span>
                                 </li>
                                 <li class="list-group-item added-member-item">
                                     <button class="btn btn-lucid user {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-1.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
                                         <sup class="badge label-lucid connecting"></sup>
                                         <label><span class="fname">+Member</span><span class="lname"></span></label>
                                     </button>
-                                    <span class="stream-message">Joined the conversation.</span>
+                                    <span class="message">joined the conversation</span>
                                 </li>
                                 <li class="list-group-item added-stream-item">
                                     <span class="btn-group stream-button added-stream">
@@ -1066,7 +1066,7 @@
                                             <span class="glyphicon glyphicon-minus-sign"></span>
                                         </button>
                                     </span>
-                                    <div class="comment">You can vote to remove an added stream if you feel it's not relevant. If enough members in your stream feel the same way, it will be removed.</div>
+                                    <div class="message-box">You can vote to remove an added stream if you feel it's not relevant. If enough members in your stream feel the same way, it will be removed.</div>
                                 </li>
                             </ul>
                         </div>
@@ -1269,54 +1269,38 @@
                 <!-- FILTER (END) -->
 
                 <div id="page-profile" class="page row">
-                    <h2>PROFILE</h2>
-                    <div class="_promo">
-                        <div class="header">
-                            <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                            LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
-                        </div>
-                        <div class="body">
+                    <div class="user-profile">
+                        <button class="btn btn-lucid user square {{stream-class}} {{connecting}} {{connected}} {{viewed-your-profile}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-2.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-your-profile-date="{{viewed-your-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
+                            <sup class="badge label-lucid"></sup>
+                            <label><span class="fname">First</span><span class="lname">Last</span></label>
+                        </button>
+                        <div style="color: #FFFFFF; font-size: 16px; margin-bottom: -20px; position: relative; right: 20px; text-align: right; text-shadow: 1px 1px 3px #000000; top: -40px;">1/3</div>
+                        <div class="biography">
                             Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
 
                             Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-                            <button class="btn btn-warning">ok</button>
                         </div>
                     </div>
 
-                    <div class="_promo">
-                        <div class="header">
-                            <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                            LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
+                    <!-- PROFILE FOOTER (START) -->
+                    <nav id="profile-footer" class="navbar-default navbar-fixed-bottom" role="navigation">
+                        <div class="profile-nav toggle-nav btn-group btn-group-justified">
+                            <a class="btn-home btn btn-lucid-normal active" data-target=".profile-lists">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </a>
+                            <a class="btn-pictures btn btn-lucid-normal" data-target=".profile-lists">
+                                <span class="glyphicon glyphicon-camera"></span>
+                            </a>
+                            <a class="btn-connections btn btn-lucid-normal" data-target=".profile-lists">
+                                <span class="suggested-streams glyphicon glyphicon-link"></span>
+                            </a>
+                            <a class="btn-streams btn btn-lucid-normal" data-target=".profile-lists">
+                                <span class="stream-icon"></span>
+                            </a>
+                            
                         </div>
-                        <div class="body">
-                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                            Omnium delenit vix ea, ad graeci recteque ullamcorper vim. Indoctum efficiantur sit ea, putent quidam eirmod nec ex. Eu pro unum quodsi incorrupte, alterum quaestio perpetua eu eos, mea ex viris nobis eloquentiam. Ne semper saperet aliquando est. Oportere consequat quaerendum vel ad, vis deseruisse signiferumque ne, est malis dicit in. Quis appetere no vis, et vim munere elaboraret eloquentiam, et dicat ignota pri.
-
-                            Utamur iracundia qui an, ei deleniti disputationi mea, et alii phaedrum omittantur vel. Ut has veri magna senserit, etiam eleifend usu ea, et vis nibh aeque prodesset. Utroque scaevola definiebas nam in, mea suscipit singulis pertinax no, ut nostrud quaeque pri. Ceteros accommodare mea at, quis vide laudem ad vim.
-
-                            Sea hinc soluta timeam ex, libris omnesque ea usu. Ad vis paulo virtute, quodsi scripta sea eu, at harum utroque eum. Cu vim paulo lucilius, et partem expetendis mea, dicat consequat has ne. Civibus propriae copiosae his ad, vidisse delicatissimi no ius, cu tritani hendrerit cotidieque qui. Iudico aliquip posidonium ex pro. Cu dolorum similique nec.
-
-                            Eripuit corpora ius an, sea consul euripidis ut. Ancillae electram ius eu. Reque audire epicurei an vel. Ex graeci fabulas mei, atqui possim aliquid id vis, nobis choro posidonium id eum. Est in inermis denique fabellas. Habemus menandri adolescens te usu. Cum cu suscipiantur concludaturque.
-                        </div>
-                    </div>
-
-                    <div class="_promo">
-                        <div class="header">
-                            <img class="pic" src="img/logo-with-name-big.png" alt="LucidLife" align="left">
-                            LucidLife is offering a free 1 year premium user membership! Enjoy all the extra features like this and that all free for a year. If you are interested please click OK at the bottom of this promotion.
-                        </div>
-                        <div class="body">
-                            Lorem ipsum dolor sit amet, ne eam animal aliquam, sed ex impedit ancillae moderatius. Novum disputationi nam in. Perpetua dignissim reprimique his no, pri at ornatus principes. In vis dicam sensibus maluisset, vel case melius cu. Eu ipsum inani probatus pri, veri utinam suscipiantur ei sea.
-
-                            <button class="btn btn-warning">ok</button>
-                        </div>
-                    </div>
-
-                    
-                    <p><b>START</b></p>
-                    <p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
-                    <p><b>END</b></p>
+                    </nav>
+                    <!-- PROFILE FOOTER (END) -->
                 </div>
             </div>
             <!-- PAGES (END) -->
@@ -1379,7 +1363,7 @@
                 <!-- Date Header Item (Start) -->
                 <div id="date-header-item" class="template">
                     <li class="list-group-item date-header-item">
-                        <span>Sunday, November 3, 2013</span>
+                        <span class="message">Sunday, November 3, 2013</span>
                     </li>
                 </div>
                 <!-- Date Header Item (Start) -->

@@ -321,7 +321,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid {transition: all 0.5s;
     background-color: #0ab; box-shadow: 0 0 5px #0ef inset;
     line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #0ef; border-radius: 50%;}
-.btn-lucid:hover, .btn-lucid:focus {transition: all 0.5s; color: #fff; border-color: #fff; border-radius: 10%;}
+.btn-lucid:hover, .btn-lucid:focus, .btn-lucid.square {transition: all 0.5s; color: #fff; border-color: #fff; border-radius: 10%;}
 .btn-lucid.active {transition: all 0.5s;
     color: #fff; background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
@@ -358,7 +358,6 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
             .btn-lucid.user > sup > span {font-size: 8px; margin-left: -1px;}
-
 
 /*
         .btn-lucid.user > sub {transition: opacity 0.5s; opacity: 0; width: 40px; height: 9px; left: -1px; color: #fff; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
@@ -446,6 +445,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
+.btn-group-justified .btn-lucid-normal,
+.btn-group-justified .btn-lucid-normal:hover,
+.btn-group-justified .btn-lucid-normal:focus {box-shadow: 0 0 1px #fff inset;}
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
 .tab-lucid {color: #fff; background-color: #09d; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
@@ -463,10 +465,10 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
 /* Stream Messaging */
-.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
+.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; line-height: 14px; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
 .stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
-.comment {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
-
+.message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
+.message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -618,6 +620,15 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 .thought-lists-nav .btn.btn-suggested-streams {display: none;}
                 .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
 
+
+ /* PEOPLE PROFILE */ 
+     #pages #page-profile {padding-top: 20px; padding-bottom: 50px; color: #eee;}
+        .user-profile {padding: 10px 10px 0;}
+            .user-profile .btn-lucid.user {margin: 0 0 10px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
+                .user-profile .btn-lucid.user > label {top: -25px; color: #0ef; font-size: 20px; padding-left: 5px;}
+                    .user-profile .btn-lucid.user > label .fname {display: inline; padding-right: 8px;}
+                    .user-profile .btn-lucid.user > label .lname {display: inline;}
+
     /* PEOPLE PAGE */ 
     #page-people {padding-top: 50px; padding-bottom: 50px;}
         #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
@@ -715,7 +726,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-items-list > li.list-group-item {margin: 0 60px 10px; padding: 0; text-align: center; background-color: transparent; border: none; border-radius: 0;}
                     .connection-items-list > li.list-group-item.added-stream-item {margin: 0 5px 10px;}
                     .connection-items-list > li.list-group-item.added-member-item {margin-top: -5px;}
-                    .date-header-item {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
+                    .date-header-item {text-align: center;}
+                    
                     /*.connection-items-list > li.viewed {display: none;}*/
                     .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                     .connection-items-list .badge {font-weight: normal; font-size: 10px; box-shadow: 0 0 5px #000, 0 0 1px #000 inset;}
