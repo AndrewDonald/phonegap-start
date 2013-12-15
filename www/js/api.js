@@ -342,7 +342,7 @@ function getChats_Callback(result) {
             if(result.object.length > 0){
                 var chats = result.object.reverse();
                 for (var x=0; x<chats.length; x++) {
-                    addChatItem(chats[x], 1);
+                    addChatItem(chats[x]);
                 }
             }
         }else{
@@ -421,15 +421,16 @@ function initiateNodeServer() {
         case "chat":
             addChatItem(msg.object);
             break;
-        case "notification":
-            addNotificationItem(msg.object);
+        case "notification": // add_stream
+            addStreamItem(msg.object);
             break;
         case "subscription":
-            addMemberNotificationItem(msg.object);
+            addMemberItem(msg.object);
             break;
         case "add_connection":
             break;
         case "send_message":
+            console.log('NODE: send_message= ', msg.object);
             getUnreadMessages();
             $('#connections-unread-messages-link > .qty-notification').flash();
             break;

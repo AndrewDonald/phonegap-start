@@ -77,7 +77,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
+blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; text-align: left; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -177,7 +177,12 @@ h2 {font-size: 16px;}
             .form .form-row sup > span {background-color: rgba(0, 0, 0, 0); border: medium none; font-size: 7px; left: -1px; padding: 0; position: absolute; width: 9px;}
     
     /* PROFILE FORM */
-.stream-name {text-transform: capitalize;}
+.stream-name {text-transform: capitalize; word-wrap: break-word; display: inline-block;}
+@media (max-width: 360px) {
+    .btn-stream {height: 34px; padding: 1px 10px;}
+    .stream-name {font-size: 12px; line-height: 15px; max-width: 208px;}
+}
+
 .stream-name:before {content: '∼';}
 .stream-icon {line-height: 10px;}
 .stream-icon:before {content: '~'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
@@ -340,8 +345,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
             .btn-lucid.user > label > .fname {display: block;}
             .btn-lucid.user > label > .lname {display: none;}
         
-        .btn-lucid.user > sup {position: absolute; min-width: 15px; padding: 2px 0 2px 1px;}
-        .btn-lucid.user > sup.connecting {top: -5px; left: -5px;}
+        .btn-lucid.user > sup {position: absolute; top: -5px; left: -5px; min-width: 15px; padding: 2px 0 2px 1px;}
         .btn-lucid.user.viewed-your-profile {border-color: #ff6;}
             .btn-lucid.user.viewed-your-profile > sup.badge {border-color: #ff6; background-color: #fc3;}
         .btn-lucid.user.connection-request {border-color: #0f0;}
@@ -354,6 +358,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
             .btn-lucid.user > sup > span {font-size: 8px; margin-left: -1px;}
+
+
+/*
         .btn-lucid.user > sub {transition: opacity 0.5s; opacity: 0; width: 40px; height: 9px; left: -1px; color: #fff; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
         .btn-lucid.user:focus > sub, .btn-lucid.user:hover > sub {transition: opacity 0.5s; opacity: 1;}
             .btn-lucid.user > sub > .stream-indicator-icon {font-size: 14px;}
@@ -364,12 +371,49 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
             .btn-lucid.user > sub > .connected-indicator-icon {display: none; top: -1px;}
             .btn-lucid.user.connected > sub > .connected-indicator-icon {display: inline-block;}
         .you .btn-lucid.user > sup, .you .btn-lucid.user > sub {display: none;}
+*/
     /* Exit Animation */
-    .btn-lucid.user {transition: all 0.5; transform:rotate(0deg); left: 0; opacity: 1;}
-    .btn-lucid.user.exit {transition: all 0.5s; transform:rotate(-180deg); left: -100px; opacity: 0;}
-    .btn-lucid.user.exit.you {transition: all 0.5s; transform:rotate(180deg); left: 100px; opacity: 0;}
-        .btn-lucid.user label {transition: top 1s; top: 42px;}
-        .btn-lucid.user.exit label {transition: top 1s; top: 30px;}
+    .btn-lucid.user {transition: all 0.5; transform:rotate(0deg); -webkit-transform: rotate(0deg); left: 0;}
+    .btn-lucid.user.exit {transition: all 0.5s; transform:rotate(-180deg); -webkit-transform: rotate(-180deg); left: -100px;}
+    .btn-lucid.user.exit.you {transition: all 0.5s; transform:rotate(180deg); -webkit-transform: rotate(180deg); left: 100px;}
+        .btn-lucid.user label {transition: top 0.25s ease-out 0.75s; top: 42px;}
+        .btn-lucid.user.exit label {transition: top 0.25s ease-out 0.75s; top: 30px;}
+
+    
+/* User Connection-Request/Connecting Badge animations */
+@keyframes orbit {
+    from {transform: rotate(0deg); transform-origin: 24px 24px;}
+    60%  {transform: rotate(0deg); transform-origin: 24px 24px;}
+    to   {transform: rotate(360deg); transform-origin: 24px 24px;}
+}
+@-webkit-keyframes orbit {
+    from { transform: rotate(0deg); transform-origin: 24px 24px;}
+    60% { transform: rotate(0deg); transform-origin: 24px 24px;}
+    to { transform: rotate(360deg); transform-origin: 24px 24px;}
+}
+@keyframes reverse-rotate {
+    from {transform: rotate(0deg);}
+    60%  {transform: rotate(0deg);}
+    to   {transform: rotate(-360deg);}
+}
+@-webkit-keyframes reverse-rotate {
+    from { transform: rotate(0deg);}
+    60%  { transform: rotate(0deg);}
+    to   { transform: rotate(-360deg);}
+}
+
+.btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge:not(:empty),
+.btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge:not(:empty) {
+    animation: orbit 5s infinite;
+    -webkit-animation: orbit 5s infinite;
+}
+.btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge > *,
+.btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge > * {
+    animation: reverse-rotate 5s infinite;
+    -webkit-animation: reverse-rotate 5s infinite;
+}
+
+    /*.btn-lucid.user sup.badge:(not:empty) {transition: transform 2s; transform: rotate(360deg); transform-origin: 20px 20px;}*/
                              
 /* btn-lucid-transparent */
 .btn-lucid-transparent, .btn-lucid-transparent:hover, .btn-lucid-transparent:focus {height: 32px; text-shadow: 0 0 5px #666; color: #fff; box-shadow: 0 0 1px #0ef, 0 0 1px #0ef inset; border-color: #078; background-color: rgba(0,240,255,0.3);}
@@ -383,7 +427,13 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
 .btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
-    text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
+    text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 2px 5px #000, 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
+.btn-group.stream-button {box-shadow: 0 2px 5px #000;}
+.btn-group.stream-button > .btn-lucid-normal,
+.btn-group.stream-button > .btn-lucid-normal:hover,
+.btn-group.stream-button > .btn-lucid-normal:not(.active):focus {box-shadow:  0 0 1px #fff inset;}
+    .added-stream > .btn.btn-lucid-normal.btn-stream .added-stream-plus-icon {display: none; color: #6cf; text-shadow: none; opacity: 0.5; vertical-align: top;}
+    .added-stream > .btn.btn-lucid-normal.btn-stream .added-stream-plus-icon {display: inline-block;}
     .btn.btn-lucid-normal > .badge {padding: 3px 4px;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
@@ -413,10 +463,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .chevron-right {opacity: 0.8; position: absolute; right: 0px; top: 12px; z-index: 100; color: #0ef; font-size: 10px; text-shadow: 0 0 3px #000;}
 
 /* Stream Messaging */
-.date-header {text-align: center; font-size: 12px; color: #fff;}
-.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
+.stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
 .stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
-.comment {border: 1px solid #fff; border-radius: 5px; color: #fff; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px;}
+.comment {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
 
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
@@ -544,23 +593,30 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
     /* PAGE NEW-THOUGHT */
-    #pages #page-new-thought {padding-top: 78px;}
+    #pages #page-new-thought {padding-top: 45px; padding-bottom: 32px;}
         nav#new-thought-header {top: 40px; padding: 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
             /* New Thought Panel */
-            #new-thought-panel {}
                 #form-thought {}
                     #form-thought input[name=thought] {}
                     #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
                     #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
-                    .thought-lists-nav {margin-top: 4px;}
-                        .thought-lists-nav .btn {color: #0ef;}
-                        .thought-lists-nav .btn.active {color: #fff;}
-                        .thought-lists-nav .btn.btn-suggested-streams {display: none;}
-                        .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
+                    
         #send-message.private {background-color: #cff;}
 
-        .thought-lists .form-control {display: none; padding: 0; height: auto; border: none; border-radius: 0;}
+        .thought-lists .form-control {display: none; margin: 0; padding: 0; height: auto; border: none; border-radius: 0;}
         .thought-lists .form-control.active {display: block;}
+        .thought-lists .btn-lucid-normal,
+        .thought-lists .btn-lucid-normal:hover,
+        .thought-lists .btn-lucid-normal:not(.active):focus {box-shadow: none;}
+        .thought-lists .stream-name {max-width: none;}
+
+        #new-thought-footer {}
+            .thought-lists-nav {}
+                .thought-lists-nav .btn-lucid-normal,
+                .thought-lists-nav .btn-lucid-normal:hover,
+                .thought-lists-nav .btn-lucid-normal:not(.active):focus {box-shadow: 0 0 3px #fff inset;}
+                .thought-lists-nav .btn.btn-suggested-streams {display: none;}
+                .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
 
     /* PEOPLE PAGE */ 
     #page-people {padding-top: 50px; padding-bottom: 50px;}
@@ -614,9 +670,9 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
     /* PAGE STREAM */
     #page-stream {padding-top: 50px; padding-bottom: 50px;}
         /* Stream */
-        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; max-width: 183px; color: #fff; font-weight: bold; overflow: auto; font-size: 12px;}
+        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; color: #fff; font-weight: bold; overflow: auto; font-size: 12px; word-wrap: break-word;}
         #stream-name:before {content: "~";}
-        .history-list .stream-name {display: inline-block; margin-right: 40px; max-width: 235px; overflow: auto;}
+        .history-list .stream-name {display: inline-block; margin-right: 40px;/* max-width: 235px;*/ overflow: auto;}
         /* Associated Streams */
         .slider-status-con .list-group > li > a {}
             .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
@@ -656,8 +712,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-items-con .btn-lucid-normal:not(.active):focus {}
                 .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
 
-                    .connection-items-list > li.list-group-item {background-color: transparent; border: none; border-radius: 0; margin: 0; padding: 0;}
-                    .connection-items-list > li.list-group-item:not(.stream-message) {margin: 0 60px 10px;}
+                    .connection-items-list > li.list-group-item {margin: 0 60px 10px; padding: 0; text-align: center; background-color: transparent; border: none; border-radius: 0;}
+                    .connection-items-list > li.list-group-item.added-stream-item {margin: 0 5px 10px;}
+                    .connection-items-list > li.list-group-item.added-member-item {margin-top: -5px;}
+                    .date-header-item {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
                     /*.connection-items-list > li.viewed {display: none;}*/
                     .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
                     .connection-items-list .badge {font-weight: normal; font-size: 10px; box-shadow: 0 0 5px #000, 0 0 1px #000 inset;}
@@ -666,19 +724,16 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                         .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
                         .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
 
-                            .connection-item-panel .panel-body {transition: opacity 0.5s; opacity: 1;}
-                            .connection-item-panel .panel-body.exit {transition: opacity 0.5s; opacity: 0;}
-                            .connection-item-panel .panel-body.exit.you {transition: opacity 0.5s; opacity: 0;}
-                                .connection-item-panel .panel-body.exit blockquote {transition: border-radius 0.5s; border-radius: 0;}
-                                .connection-item-panel .panel-body blockquote {transition: border-radius 0.5s; border-radius: 15px;}
-
+                            .chat-item .panel-body {transition: all 0.25s ease-out 0.5s; transform: scale(1); -webkit-transform: scale(1); left: 0;}
+                            .chat-item .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: -50%;}
+                            .chat-item.you .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: 50%;}
 
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; background-color: rgba(0, 200, 255, 0.5);}
+                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; background-color: rgba(0, 200, 255, 0.5); text-shadow: 0 1px 1px #000;}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-right: 1px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-left: 1px;}
                                     .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #008fb3;}
@@ -709,7 +764,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-items-con.specific-user {}
 
             #page-conversation .connection-items-con .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
-                #page-conversation .connection-items-con .connection-items-list > li.list-group-item.notification .added-stream-plus-icon {color: #6cf; text-shadow: none;}
+                
 
 /* FOOTER */
 /*
