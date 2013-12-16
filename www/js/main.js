@@ -194,6 +194,8 @@ function changeStream(objStream){
     // Pre populate stream with recent/latest conversation
     getChats();
     updateNodeServer();
+    // Show all People in People Page
+    $('#people-controls .btn[data-filter=blocked]').click();
 }
 
 // Changes Thought Stream

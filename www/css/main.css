@@ -77,7 +77,7 @@ pre.active {background-color: #0bc; border-color: #0ef;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; text-align: left; font-size: 13px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
+blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -426,7 +426,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
 .btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
-    text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 2px 5px #000, 0 0 1px #fff inset; border-color: transparent; background-color: #09d;}
+    text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 2px 5px #000, 0 0 1px #fff inset; border-color: transparent; background-color: #0ab;}
 .btn-group.stream-button {box-shadow: 0 2px 5px #000;}
 .btn-group.stream-button > .btn-lucid-normal,
 .btn-group.stream-button > .btn-lucid-normal:hover,
@@ -441,10 +441,15 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
 .btn-lucid-normal.active, .btn-lucid-normal.active:focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
-    color: #fff; background-color: #0bf; box-shadow: 0 0 1px #fff inset;}
+    color: #fff; background-color: #0ef; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
+
+.btn-lucid-normal.blue {background-color: #09d;}
+.btn-lucid-normal.blue.active, .btn-lucid-normal.blue.active:focus,
+.btn-lucid-normal.blue:hover {background-color: #0bf;}
+
 .btn-group-justified .btn-lucid-normal,
 .btn-group-justified .btn-lucid-normal:hover,
 .btn-group-justified .btn-lucid-normal:focus {box-shadow: 0 0 1px #fff inset;}
@@ -622,39 +627,48 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 
  /* PEOPLE PROFILE */ 
-     #pages #page-profile {padding-top: 20px; padding-bottom: 50px; color: #eee;}
-        .user-profile {padding: 10px 10px 0;}
-            .user-profile .btn-lucid.user {margin: 0 0 10px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
-                .user-profile .btn-lucid.user > label {top: -25px; color: #0ef; font-size: 20px; padding-left: 5px;}
-                    .user-profile .btn-lucid.user > label .fname {display: inline; padding-right: 8px;}
-                    .user-profile .btn-lucid.user > label .lname {display: inline;}
+     #pages #page-profile {padding-bottom: 30px; color: #eee;}
+        .user-profile {padding: 35px 10px 0 320px;}
+            .user-profile > .profile-photo {position: absolute; top: 75px; left: 0; padding: 0 10px; width: 320px;}
+                .user-profile .btn-lucid.user {margin: 0 0 10px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
+                    .user-profile .btn-lucid.user > label {top: -30px; color: #ddd; font-size: 20px; padding-left: 5px;}
+                        .user-profile .btn-lucid.user > label .fname {display: inline; padding-right: 8px;}
+                        .user-profile .btn-lucid.user > label .lname {display: inline;}
+                .user-profile > .profile-photo > .stats {}
+                .user-profile > .profile-photo > .profile-actions {margin-top: 5px;}
+                    .user-profile > .profile-photo > .profile-actions > .btn:first-child {border-radius: 5px 0 0 5px;}
+                    .user-profile > .profile-photo > .profile-actions > .btn:last-child {border-radius: 0 5px 5px 0;}
+            .user-profile > .profile-info {}
+        @media (max-width: 480px) {
+            .user-profile {padding: 415px 10px 0;}
+        }
 
     /* PEOPLE PAGE */ 
-    #page-people {padding-top: 50px; padding-bottom: 50px;}
-        #people-nav {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
+    #page-people {padding-top: 5px; padding-bottom: 50px;}
+        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
         
-            #page-people.vertical #people-nav .btn.btn-lucid.user {margin-bottom: 20px;}
+            #page-people.vertical #people-list .btn.btn-lucid.user {margin-bottom: 20px;}
                         
-                /*.btn.people-nav-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                .btn.people-nav-toggle > .badge {font-size: 14px;}
-                .btn.people-nav-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                .btn.people-nav-toggle > sup.close-left {margin-right: -12px;}
-                    .btn.people-nav-toggle > sup > .glyphicon {font-size: 9px;}
+                /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+                .btn.people-list-toggle > .badge {font-size: 14px;}
+                .btn.people-list-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+                .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
+                    .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
 
-                #people-nav {display: none; padding: 2px 5px; border-radius: 0;}
-                #people-nav.active {display: block;}
-                #people-nav .btn.btn-lucid.user {box-shadow: 0 0 5px #000;}
-                    #people-nav > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
-                        #people-nav > .panel-menu > pre > label {padding-right: 5px;}
-                        #people-nav > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
-                        #people-nav > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
-                            #people-nav > .panel-menu > pre > .header-icon {padding-right: 5px;}
-                            #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-                            #page-people.vertical #people-nav > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-                            #people-nav > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-                            #page-people.vertical > #people-nav > .panel-menu > pre > .btn-vote-remove {float: right;}
-                    #page-people:not(.vertical) > #people-nav > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
-                    #page-people:not(.vertical) > #people-nav > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
+                #people-list {display: none; padding: 2px 5px; border-radius: 0;}
+                #people-list.active {display: block;}
+                #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;}
+                    #people-list > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
+                        #people-list > .panel-menu > pre > label {padding-right: 5px;}
+                        #people-list > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
+                        #people-list > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
+                            #people-list > .panel-menu > pre > .header-icon {padding-right: 5px;}
+                            #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+                            #page-people.vertical #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+                            #people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+                            #page-people.vertical > #people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
+                    #page-people:not(.vertical) > #people-list > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
+                    #page-people:not(.vertical) > #people-list > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
         #page-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
 
     /* PAGE CONVERSATION */
@@ -706,8 +720,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
         /* CONVERSATION PAGE */
         body[data-page=page-conversation] #page-people {}
-            body[data-page=page-conversation] #page-people #people-nav {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
-                body[data-page=page-conversation] #people-nav > .panel-menu > pre {display: none;}   
+            body[data-page=page-conversation] #page-people #people-list {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
+                body[data-page=page-conversation] #people-list > .panel-menu > pre {display: none;}   
             body[data-page=page-conversation] #page-people .panel-body #connection-items-header {display: none;}
 
             #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
@@ -745,11 +759,11 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
-                                .connection-item-panel .panel-body .connection-content {color: #aff; border-left: 1px solid #0ab; border-top: 1px solid #0ab; box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; background-color: rgba(0, 200, 255, 0.5); text-shadow: 0 1px 1px #000;}
+                                .connection-item-panel .panel-body .connection-content {color: #333; border: none; box-shadow: 0 2px 5px #000, 0 0px 5px #045 inset; background-color: rgba(255, 255, 255, 0.85);}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-right: 1px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-left: 1px;}
-                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: #008fb3;}
-                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -8px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000, 0 0 4px #0cd inset;}
+                                    .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: rgba(255, 255, 255, 0.85);}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -9px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000, 0 0 4px #045 inset;}
                                 .connection-item-panel .status {position: absolute; right: 10px; bottom: 3px; color: #056; font-size: 9px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
@@ -769,8 +783,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-items-list > li.list-group-item.you,
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -57px;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 4px #0cd inset; border-left: none; border-right: 1px solid #0ab;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -8px; border-radius: 0 8px 0 0; border-left: none; background-color: #009AB5; box-shadow: 4px 2px 5px #000, 0 0 4px #0cd inset;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 5px #045 inset; border: none;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -9px; border-radius: 0 8px 0 0; border-left: none; background-color: rgba(255, 255, 255, 0.85); box-shadow: 4px 2px 5px #000, 0 0 4px #045 inset;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}
@@ -798,4 +812,4 @@ body.logged-out nav#footer {display: none;}
     ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
 /******** FOR TESTING ONLY!! ********/
-/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-nav, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-list, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
