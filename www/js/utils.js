@@ -59,6 +59,9 @@ function gotoPage(page){
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;
+        if(page == "page-profile"){
+            $('#page-profile .user-profile').empty();
+        }
     }else{
         $('#new-thought-toggle').addClass('active');
         if($('#form-thought input[name=thought]').val().length < 3){
@@ -197,7 +200,7 @@ function getElapsedTime(date){
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
         if(secondsDiff < 0){dateNowGMT = date;}
 
-    return "~" + moment(date).from(dateNowGMT);
+    return moment(date).from(dateNowGMT);
 }
 
 function getFormatedDate(date){
@@ -207,4 +210,15 @@ function getFormatedDate(date){
         if(secondsDiff < 0){dateNowGMT = date;}
 
     return moment(dateNowGMT).calendar();
+}
+
+function getFormatedGender(gender){
+    if(gender == "M"){
+        formatedGender = "Male";
+    }else{
+        formatedGender = "Female";
+    }
+
+    return formatedGender;
+
 }

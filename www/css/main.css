@@ -202,23 +202,7 @@ h2 {font-size: 16px;}
 .well-lucid {background-color: rgba(0,100,125,0.5); background-image: none; border-color: #0ab; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) inset, 1px 1px 3px #fff; margin: 0; padding: 0;}
     .menu-transparent .well-lucid {border-color: #078;}
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    color: #ff6;
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
+
 
 #modal-loader .modal-footer {display: none;}
 #modal-loader .modal-footer.active {display: block;}
@@ -372,14 +356,41 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .you .btn-lucid.user > sup, .you .btn-lucid.user > sub {display: none;}
 */
     /* Exit Animation */
-    .btn-lucid.user {transition: all 0.5; transform:rotate(0deg); -webkit-transform: rotate(0deg); left: 0;}
-    .btn-lucid.user.exit {transition: all 0.5s; transform:rotate(-180deg); -webkit-transform: rotate(-180deg); left: -100px;}
-    .btn-lucid.user.exit.you {transition: all 0.5s; transform:rotate(180deg); -webkit-transform: rotate(180deg); left: 100px;}
-        .btn-lucid.user label {transition: top 0.25s ease-out 0.75s; top: 42px;}
-        .btn-lucid.user.exit label {transition: top 0.25s ease-out 0.75s; top: 30px;}
+    .btn-lucid.user {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
+    /*.btn-lucid.user {transition: all 0.25; transform: scale(0); -webkit-transform: scale(0); transform: scale(1);}*/
+    .btn-lucid.user.exit {transition: all 0.25s ease-in-out 0; transform: scale(0); -webkit-transform: scale(0);}
 
-    
-/* User Connection-Request/Connecting Badge animations */
+    /*.btn-lucid.panel-body {animation: zoom 0.25s ease-in-out 0.25; -webkit-animation: zoom 0.25s ease-in-out 0.25; transform: scale(0); -webkit-transform: scale(0);}*/
+
+/* Animations */
+@keyframes zoom {
+    from {transform: scale(0);}
+    95%  {transform: scale(1.1);}
+    99%  {transform: scale(1.1);}
+    to   {transform: scale(1);}
+}
+@-webkit-keyframes zoom {
+    from {transform: scale(0);}
+    95%  {transform: scale(1.1);}
+    99%  {transform: scale(1.1);}
+    to   {transform: scale(1);}
+}
+
+@keyframes zoom-pop {
+    from {transform: scale(0);}
+    94%  {transform: scale(0);}
+    95%  {transform: scale(1.1);}
+    99%  {transform: scale(1.1);}
+    to   {transform: scale(1);}
+}
+@-webkit-keyframes zoom-pop {
+    from {transform: scale(0);}
+    94%  {transform: scale(0);}
+    95%  {transform: scale(1.1);}
+    99%  {transform: scale(1.1);}
+    to   {transform: scale(1);}
+}
+
 @keyframes orbit {
     from {transform: rotate(0deg); transform-origin: 24px 24px;}
     60%  {transform: rotate(0deg); transform-origin: 24px 24px;}
@@ -399,6 +410,24 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     from { transform: rotate(0deg);}
     60%  { transform: rotate(0deg);}
     to   { transform: rotate(-360deg);}
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    color: #ff6;
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
 }
 
 .btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge:not(:empty),
@@ -474,6 +503,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
 .message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
 .message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
+
+
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -499,10 +530,12 @@ body:not(.main-menu-active) .navbar-fixed-top.delay-fixed,
 body:not(.main-menu-active) .navbar-fixed-bottom.delay-fixed {position: absolute;}
 body.main-menu-active .navbar-fixed-top.shifted-fixed,
 body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left: 275px;}
+.navbar-fixed-top {box-shadow: 0 3px 5px #000;}
+.navbar-fixed-bottom {box-shadow: 0 -3px 5px #000;}
 
 /* MAIN MENU */
 #main-menu {width: 275px; overflow-y: auto; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
-    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold; box-shadow: 0 2px 5px #000;}
+    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
     ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000;}
@@ -630,8 +663,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
      #pages #page-profile {padding-bottom: 30px; color: #eee;}
         .user-profile {padding: 35px 10px 0 320px;}
             .user-profile > .profile-photo {position: absolute; top: 75px; left: 0; padding: 0 10px; width: 320px;}
-                .user-profile .btn-lucid.user {margin: 0 0 10px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
-                    .user-profile .btn-lucid.user > label {top: -30px; color: #ddd; font-size: 20px; padding-left: 5px;}
+                .user-profile .btn-lucid.user {margin: 0 0 5px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
+                    .user-profile .btn-lucid.user > label {top: -28px; color: #ddd; font-size: 18px; padding-left: 5px; width: 100%; text-align: left;}
                         .user-profile .btn-lucid.user > label .fname {display: inline; padding-right: 8px;}
                         .user-profile .btn-lucid.user > label .lname {display: inline;}
                 .user-profile > .profile-photo > .stats {}
@@ -678,6 +711,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #page-conversation .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
             #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
                 /*#page-conversation .connection-items-con > .well > .connection-items-list .stream-message {display: none;}*/
+                #page-conversation .connection-items-con > .well > .connection-items-list .panel-body.pop {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
 
         /* CONTROLS PANELS */
         #stream-controls-panel {z-index: 2000;}

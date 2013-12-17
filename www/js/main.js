@@ -54,6 +54,7 @@ var _application                                = {};
     _application.template                       = {};
     _application.template.streamButton          = $('#stream-button.template').html();
     _application.template.userButton            = $('#user-button.template').html();
+    _application.template.userProfile           = $('#user-profile.template').html();
     _application.template.thoughtListItem       = $('#thought-list-item.template').html();
     _application.template.notificationItem      = $('#notification-item.template').html();
     _application.template.dateHeaderItem        = $('#date-header-item.template').html();
@@ -167,6 +168,7 @@ function initializeApp(){
     //localStorage.setItem('email', _session.user.email);
     //localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
+    $('#profile-toggle').attr('data-userid', _session.user.userid); // Profile Initialization
     gotoPage('page-new-thought');
     //updateNodeServer();
 }
@@ -189,7 +191,7 @@ function changeStream(objStream){
     gotoPage('page-conversation');
     $('#page-conversation h2#today').html('<b>TODAY</b><br>' + moment().format("dddd, MMMM Do YYYY"));
     $('#page-conversation .connection-items-con .connection-items-list').empty();
-    updteStreamStatus();
+    updateStreamStatus();
 
     // Pre populate stream with recent/latest conversation
     getChats();
@@ -199,7 +201,7 @@ function changeStream(objStream){
 }
 
 // Changes Thought Stream
-function updteStreamStatus(){
+function updateStreamStatus(){
     if($(window).width() <= 360 && _session.stream.stream.length > 30 ){
         $('#stream-status-panel .filter-info').removeClass('pull-right').addClass('pull-left');
     }else{
@@ -325,7 +327,16 @@ function addChatItem(objChat) {
     */
 }
 
-function createUserButton(objData){
+function createUserButton(objData, objSettingsOverrides){
+    var objSettings = {square: false};
+    $.extend(objSettings, objSettingsOverrides);
+
+    if(objSettings.square == true){
+        objSettings.square = 'square';
+    }else{
+        objSettings.square = ''
+    }
+
     var userButton = _application.template.userButton
                     //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
                     .replace(/\{{badge}}/g,      '') //getConnectingQty(objData.userid))
@@ -345,14 +356,27 @@ function createUserButton(objData){
                     .replace(/\{{fname}}/g,             objData.fname)
                     .replace(/\{{lname}}/g,             objData.lname)
                     .replace(/\{{userid}}/g,            objData.userid)
-                    .replace(/\{{createdate}}/g,        objData.createdate);
+                    .replace(/\{{createdate}}/g,        objData.createdate)
+                    //.replace(/\{{exit}}/g,              objSettings.exit)
+                    .replace(/\{{square}}/g,            objSettings.square);
     
     return userButton;
 }
 
+function createUserProfile(objData){
+    var userProfile = _application.template.userProfile
+                    .replace(/\{{user-button}}/g,       createUserButton(objData, {square: true}))
+                    .replace(/\{{gender}}/g,            getFormatedGender(objData.gender))
+                    .replace(/\{{age}}/g,               objData.age)
+                    //.replace(/\{{last-active-date}}/g,  getLastActiveDate(objData.userid))
+                    .replace(/\{{biography}}/g,         objData.biography ? null : '');
+    
+    return userProfile;
+}
+
 function createChatItem(objData){
     var chatItem = _application.template.chatItem
-                    .replace(/\{{user-button}}/g,       createUserButton(objData))
+                    .replace(/\{{user-button}}/g,       createUserButton(objData, true))
                     //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
                     //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
                     //.replace(/\{{connecting-qty}}/g,    getConnectingQty(objData.userid))
@@ -379,11 +403,8 @@ function createChatItem(objData){
 
 // Displays a line item in the COnversation Stream
 function displayStreamItem(objHtml){
-
     $('#page-conversation .connection-items-con .connection-items-list').prepend(objHtml)
-        .children('.list-group-item:first').hide().slideDown(500, function(){
-            $(this).find('.exit').removeClass('exit');
-        }).removeAttr('style');
+        .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
 }
 
 function addNotificationItem(notification) {                       
@@ -411,7 +432,7 @@ function addMemberItem(objData) {
         _session.people.user[objData.userid.toString()].time    = splitDate(_session.people.user[objData.userid.toString()].createdate);
         
         var userButton = createUserButton(objData);
-        var addMemberItem = _application.template.addMemberItem
+        var addMemberItem = _application.template.addedMemberItem
                             .replace(/\{{user-button}}/g, userButton);
 
        displayStreamItem(addMemberItem);
@@ -432,7 +453,7 @@ function addChatItem(objData) {
                             .replace(/\{{user-button}}/g,   createUserButton(objData))
                             .replace(/\{{you}}/g,           you)
                             .replace(/\{{chat}}/g,          objData.chat)
-                            .replace(/\{{createdate}}/g,    objData.createdate);
+                            .replace(/\{{createdate}}/g,    getElapsedTime(objData.createdate));
 
        displayStreamItem(chatItem);
     }

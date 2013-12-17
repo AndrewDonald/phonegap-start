@@ -352,6 +352,30 @@ function getChats_Callback(result) {
     }
 }
 
+// Get User Profile
+function getUserProfile(userid) {
+    var objMessage = {};
+        objMessage.method    = "get_user";
+        objMessage.userid    = userid;
+    
+    apiRequest(objMessage, getUserProfile_Callback, false);
+
+}
+
+function getUserProfile_Callback(result) {
+    if(result==0 || result == undefined) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            gotoPage('page-profile');
+            $('#page-profile .user-profile').html(createUserProfile(result.object), {square:true});
+            //getSavedStreams(result.object.userid);
+        }else{
+            // Server returned an error
+            alert('Error: ' + result.message);
+        }
+    }
+}
 
 ////////////// NODE Server APIs ///////////////
 /* Chat Response object data
@@ -564,30 +588,6 @@ function validateInput(input) {
     }
 }
 
-// get user profile
-function getUserProfile(userid) {
-    var objMessage = {};
-        objMessage.method    = "get_user";
-        objMessage.userid    = userid;
-    
-    apiRequest(objMessage, getUserProfile_Callback, false);
-    
-    return false;
-}
-
-function getUserProfile_Callback(result) {
-    if(result==0 || result == undefined) {
-        // Ajax request failed
-    }else{
-        if(result.status > 0){
-	    	$('#PAGE_PROFILE > .section-body').html(createUserBadge(result.object, "profile")); // True = get more data to display for Profile
-		getSavedStreams(result.object.userid);
-        }else{
-            // Server returned an error = failed authorization
-            errorHandler(result.status);
-        }
-    }
-}
 
 
 

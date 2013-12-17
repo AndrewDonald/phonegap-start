@@ -210,6 +210,10 @@ function initEventHandlers(){
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
                     break;
+                case 'page-profile':
+                    gotoPage(target);
+                    $('#page-profile .user-profile').html(createUserProfile(_session.user, {square: true}));
+                    break;
                 case 'page-login':
                     gotoPage(target);
                     if($(this).attr('id') == 'logout-toggle'){
