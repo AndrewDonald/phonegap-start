@@ -122,8 +122,8 @@ moment.lang('en', {
 });
 
 $(function() {
+populatePeopleList();
     initEventHandlers();
-    
 
     updateAbout();
     gotoPage('page-login');
@@ -197,6 +197,7 @@ function changeStream(objStream){
     getChats();
     updateNodeServer();
     // Show all People in People Page
+    populatePeopleList();
     $('#people-controls .btn[data-filter=blocked]').click();
 }
 
@@ -328,13 +329,16 @@ function addChatItem(objChat) {
 }
 
 function createUserButton(objData, objSettingsOverrides){
-    var objSettings = {square: false};
+    var objSettings = {animate:false, square:false, class:""};
     $.extend(objSettings, objSettingsOverrides);
 
+
     if(objSettings.square == true){
-        objSettings.square = 'square';
-    }else{
-        objSettings.square = ''
+        objSettings.class += ' square';
+    }
+
+    if(objSettings.animate == true){
+        objSettings.class += ' pop';
     }
 
     var userButton = _application.template.userButton
@@ -357,8 +361,7 @@ function createUserButton(objData, objSettingsOverrides){
                     .replace(/\{{lname}}/g,             objData.lname)
                     .replace(/\{{userid}}/g,            objData.userid)
                     .replace(/\{{createdate}}/g,        objData.createdate)
-                    //.replace(/\{{exit}}/g,              objSettings.exit)
-                    .replace(/\{{square}}/g,            objSettings.square);
+                    .replace(/\{{class}}/g,             objSettings.class);
     
     return userButton;
 }
@@ -376,7 +379,7 @@ function createUserProfile(objData){
 
 function createChatItem(objData){
     var chatItem = _application.template.chatItem
-                    .replace(/\{{user-button}}/g,       createUserButton(objData, true))
+                    .replace(/\{{user-button}}/g,       createUserButton(objData, {animate:true}))
                     //.replace(/\{{connected}}/g,         getConnectedClass(objData.userid))
                     //.replace(/\{{connecting}}/g,        getConnectingClass(objData.userid))
                     //.replace(/\{{connecting-qty}}/g,    getConnectingQty(objData.userid))
@@ -431,9 +434,8 @@ function addMemberItem(objData) {
         _session.people.user[objData.userid.toString()]         = objData; 
         _session.people.user[objData.userid.toString()].time    = splitDate(_session.people.user[objData.userid.toString()].createdate);
         
-        var userButton = createUserButton(objData);
         var addMemberItem = _application.template.addedMemberItem
-                            .replace(/\{{user-button}}/g, userButton);
+                            .replace(/\{{user-button}}/g, createUserButton(objData, {animate:true}));
 
        displayStreamItem(addMemberItem);
     }
@@ -450,7 +452,7 @@ function addChatItem(objData) {
         }
 
         var chatItem = _application.template.chatItem
-                            .replace(/\{{user-button}}/g,   createUserButton(objData))
+                            .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
                             .replace(/\{{you}}/g,           you)
                             .replace(/\{{chat}}/g,          objData.chat)
                             .replace(/\{{createdate}}/g,    getElapsedTime(objData.createdate));
@@ -459,3 +461,6 @@ function addChatItem(objData) {
     }
 }
 
+function populatePeopleList(){
+    $('#people-list').html($('#sample-people.template').html());
+}

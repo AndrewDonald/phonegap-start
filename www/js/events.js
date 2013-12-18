@@ -400,40 +400,43 @@ function initEventHandlers(){
 
         $(this).toggleClass('active').siblings().removeClass('active');
         if($(this).is('.active')){
-            $('#people-list').addClass('active').slideDown('fast');
+            //$('#people-list').addClass('active').slideDown('fast');
             switch($(this).data('filter')){
-                case 'connected':
-                    $('#people-list > .panel-menu > .btn').hide();
-                    $('#people-list > .panel-menu > .btn.connected').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'username');
-                    break;
-                case 'connection-request':
-                    $('#people-list > .panel-menu > .btn').hide();
-                    $('#people-list > .panel-menu > .btn.connection-request').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connection-request');
-                    break;
-                case 'connecting':
-                    $('#people-list > .panel-menu > .btn').hide();
-                    $('#people-list > .panel-menu > .btn.connecting').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connecting');
-                    break;
-                case 'viewed-your-profile':
-                    $('#people-list > .panel-menu > .btn').hide();
+                 case 'viewed-your-profile':
+                    $('#people-list > .panel-menu > *').hide();
                     $('#people-list > .panel-menu > .btn.viewed-your-profile').show();
                     $('#people-list > .panel-menu').sortDom('.btn:visible', 'viewed-your-profile');
                     break;
+                case 'connection-request':
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connection-request').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connection-request');
+                    break;
+                case 'connected':
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connected').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'username');
+                    break;
+                case 'connecting':
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connecting').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connecting');
+                    break;
                  case 'blocked':
-                    $('#people-list > .panel-menu > .btn').hide();
+                    $('#people-list > .panel-menu > *').hide();
                     $('#people-list > .panel-menu > .btn.blocked').show();
                     $('#people-list > .panel-menu').sortDom('.btn:visible', 'blocked');
                     break;
                 default: // All people in stream
                     //$('#people-list .viewed-profile, #people-list .in-stream, #people-list .added-stream').show();
-                    $('#people-list > .panel-menu > .btn').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'entry-date');
+                    //$('#people-list > .panel-menu > *').show();
+                    //$('#people-list > .panel-menu').sortDom('.btn:visible', 'entry-date');
+                    populatePeopleList();
                     break;
             }
-        }else{
+        }
+/*
+        else{
             $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
             //if($(this).is('.people-stream-toggle')){
                 $('#people-list .btn.user.active').click(); // Close Active User Panel
@@ -442,6 +445,7 @@ function initEventHandlers(){
             //    alert('hide connections');
             //}
         }
+        */
     });
 
     // TOGGLE CONNECTION PANEL USERS
@@ -486,13 +490,21 @@ function initEventHandlers(){
         }
     });
 
-    /*
+
     // Chevron Toggle
-    $('.chevron-toggle').parent().on('click',function(){
-        $(this).toggleClass('active .btn.active').click();
+    $('.btn-accordion').on('click', function(){
+        $(this).toggleClass('active')
             .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+        
+        // People List Accordions
+        if($(this).parents('#people-list').size() > 0){
+            //$(this).nextUntil('pre').toggleClass('reverse-pop').animate({delay:0}, 250, function(){
+            //    $(this).toggle();
+            //});
+            $(this).nextUntil('pre').slideToggle(250);
+        }
     });
-    */
+    
 
     /*
     // PANEL MENU

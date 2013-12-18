@@ -34,8 +34,6 @@ label {margin-bottom: 0; font-weight: normal;}
 .btn-link {color: #0ab;}
 .btn-link:hover, .btn-link:focus {color: #0cd;}
 
-pre {background-color: #09a; border-color: #0cd; padding: 1px 5px 4px; font-family: arial; font-size: 12px; color: #fff;}
-pre.active {background-color: #0bc; border-color: #0ef;}
 .badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
 
 .form-group {margin-bottom: 0 !important;}
@@ -100,7 +98,9 @@ blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; text-align: left
         .list-inline.full-width.link-list .list-group-item:nth-child(even) {background: rgba(0, 240, 255, 0.2);}
             .list-inline.full-width.link-list .list-group-item .btn {padding: 10px; border: none; background-color: none; background: none; color: #777; text-shadow: none;}
                 .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
-   
+ 
+.glyphicon-send {transform: rotate(50deg); -webkit-transform: rotate(50deg);}
+
 /* GLOBAL: Vars */
 /* Orange */
 .color-1 {color: #f90;}
@@ -286,9 +286,12 @@ h2 {font-size: 16px;}
 
 .indicator {display: none; font-family: Arial}
 
+.btn-accordion {cursor: pointer; margin: 10px 0 5px; padding: 8px 5px 8px 10px; font-family: arial; font-size: 13px; line-height: normal; transition: all 0.5s; -webkit-transition: all 0.5; color: #fff; text-align: left; border-radius: 4px; box-shadow: 0 0 3px #000, 0 0 3px #fff inset; background-color: #09d; text-shadow: 0 0 1px #000;}
+.btn-accordion.active, .btn-accordion:hover, .btn-accordion:focus {transition: all 0.5s; -webkit-transition: all 0.5; background-color: #0bf;}
+
 .btn-link-lucid {font-size: 13px; line-height: normal; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1; color: #0ab; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
 .btn-link-lucid:hover, .btn-link-lucid:focus {color: #0ab; text-decoration: none; box-shadow: none;}
-.btn-link-lucid.glyphicon {padding-left: 10px;} 
+.btn-link-lucid.glyphicon {padding-left: 10px;}
 .active > .btn-link-lucid {transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1;}
 .list-group-item.active > .btn-link-lucid {color: #078;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
@@ -322,7 +325,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {margin: 8px 3.5px 12px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
+.btn-lucid.user {margin: 8px 3.5px 15px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
     .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}   
         .btn-lucid.user > label {margin: 0; top: 42px; left: -7px; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center;}
         .btn-lucid.user.active > label {color: #ff6; background-color: transparent;}
@@ -330,6 +333,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
             .btn-lucid.user > label > .lname {display: none;}
         
         .btn-lucid.user > sup {position: absolute; top: -5px; left: -5px; min-width: 15px; padding: 2px 0 2px 1px;}
+        .btn-lucid.user.new {border-color: #0bf;}
         .btn-lucid.user.viewed-your-profile {border-color: #ff6;}
             .btn-lucid.user.viewed-your-profile > sup.badge {border-color: #ff6; background-color: #fc3;}
         .btn-lucid.user.connection-request {border-color: #0f0;}
@@ -343,22 +347,23 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.user.active > sup {border-color: #ff6; background-color: rgba(200, 200, 0, 0.7);}
             .btn-lucid.user > sup > span {font-size: 8px; margin-left: -1px;}
 
-/*
-        .btn-lucid.user > sub {transition: opacity 0.5s; opacity: 0; width: 40px; height: 9px; left: -1px; color: #fff; text-align: center; line-height: 0.6; text-shadow: 0 0 1px #000; position: absolute; bottom: 0; font-size: 7px; background-color: rgba(0, 120, 140, 0.9); box-shadow: 0 0 1px #fff inset; border-radius: 2px;}
-        .btn-lucid.user:focus > sub, .btn-lucid.user:hover > sub {transition: opacity 0.5s; opacity: 1;}
-            .btn-lucid.user > sub > .stream-indicator-icon {font-size: 14px;}
-            .btn-lucid.user.in-stream > sub > .stream-indicator-icon:after {content: '∼'; padding-left: 1px; padding-top: 3px;}
-            .btn-lucid.user.added-stream > sub > .stream-indicator-icon:after {content: '≅';}
-            .btn-lucid.user > sub > .viewed-your-profile-indicator-icon {display: none; top: -1px;}
-            .btn-lucid.user.viewed-your-profile:not(.connected) > sub > .viewed-your-profile-indicator-icon {display: inline-block;}
-            .btn-lucid.user > sub > .connected-indicator-icon {display: none; top: -1px;}
-            .btn-lucid.user.connected > sub > .connected-indicator-icon {display: inline-block;}
-        .you .btn-lucid.user > sup, .you .btn-lucid.user > sub {display: none;}
-*/
-    /* Exit Animation */
+    .btn-lucid.user.square {border-radius: 10%;}
+    .btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge.orbit:not(:empty),
+    .btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge.orbit:not(:empty) {
+        animation: orbit 1.5s;
+        -webkit-animation: orbit 1.5s;
+    }
+    .btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge.orbit > *,
+    .btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge.orbit > * {
+        animation: reverse-rotate 1.5s;
+        -webkit-animation: reverse-rotate 1.5s;
+    }
+
+    /* Animation */
     .btn-lucid.user {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
     /*.btn-lucid.user {transition: all 0.25; transform: scale(0); -webkit-transform: scale(0); transform: scale(1);}*/
-    .btn-lucid.user.exit {transition: all 0.25s ease-in-out 0; transform: scale(0); -webkit-transform: scale(0);}
+    /*.btn-lucid.user.pop {transition: all 0.25s ease-in-out 0; transform: scale(0); -webkit-transform: scale(0);}
+    .btn-lucid.user.reverse-pop {animation: reverse-zoom 0.25s; -webkit-animation: reverse-zoom 0.25s;}
 
     /*.btn-lucid.panel-body {animation: zoom 0.25s ease-in-out 0.25; -webkit-animation: zoom 0.25s ease-in-out 0.25; transform: scale(0); -webkit-transform: scale(0);}*/
 
@@ -376,39 +381,37 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     to   {transform: scale(1);}
 }
 
-@keyframes zoom-pop {
-    from {transform: scale(0);}
-    94%  {transform: scale(0);}
-    95%  {transform: scale(1.1);}
-    99%  {transform: scale(1.1);}
-    to   {transform: scale(1);}
+/* Reverse */
+@keyframes reverse-zoom {
+    from {transform: scale(1.1);}
+    5%  {transform: scale(1);}
+    to   {transform: scale(0);}
 }
-@-webkit-keyframes zoom-pop {
-    from {transform: scale(0);}
-    94%  {transform: scale(0);}
-    95%  {transform: scale(1.1);}
-    99%  {transform: scale(1.1);}
-    to   {transform: scale(1);}
+@-webkit-keyframes reverse-zoom {
+    from   {transform: scale(1.1);}
+    5%  {transform: scale(1);}
+    to   {transform: scale(0);}
 }
 
 @keyframes orbit {
     from {transform: rotate(0deg); transform-origin: 24px 24px;}
-    60%  {transform: rotate(0deg); transform-origin: 24px 24px;}
+    35%  {transform: rotate(0deg); transform-origin: 24px 24px;}
     to   {transform: rotate(360deg); transform-origin: 24px 24px;}
 }
 @-webkit-keyframes orbit {
     from { transform: rotate(0deg); transform-origin: 24px 24px;}
-    60% { transform: rotate(0deg); transform-origin: 24px 24px;}
+    35% { transform: rotate(0deg); transform-origin: 24px 24px;}
     to { transform: rotate(360deg); transform-origin: 24px 24px;}
 }
+
 @keyframes reverse-rotate {
     from {transform: rotate(0deg);}
-    60%  {transform: rotate(0deg);}
+    35%  {transform: rotate(0deg);}
     to   {transform: rotate(-360deg);}
 }
 @-webkit-keyframes reverse-rotate {
     from { transform: rotate(0deg);}
-    60%  { transform: rotate(0deg);}
+    35%  { transform: rotate(0deg);}
     to   { transform: rotate(-360deg);}
 }
 
@@ -430,16 +433,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     -webkit-animation:fade 3000ms infinite;
 }
 
-.btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge:not(:empty),
-.btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge:not(:empty) {
-    animation: orbit 5s infinite;
-    -webkit-animation: orbit 5s infinite;
-}
-.btn-lucid.user.connection-request:not(:focus):not(:hover) > sup.badge > *,
-.btn-lucid.user.connecting:not(:focus):not(:hover) > sup.badge > * {
-    animation: reverse-rotate 5s infinite;
-    -webkit-animation: reverse-rotate 5s infinite;
-}
+
 
     /*.btn-lucid.user sup.badge:(not:empty) {transition: transform 2s; transform: rotate(360deg); transform-origin: 20px 20px;}*/
                              
@@ -487,11 +481,11 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .tab-lucid {color: #fff; background-color: #09d; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
 .tab-lucid.active {background-color: #0bf; box-shadow: 0 1px 2px #0ef inset, 0 0 3px #000;}
 
-.chevron-toggle {position: relative; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: rgba(255,255,255,0.8); color: #0bc; text-shadow: 0 0 2px #005566;}
+.chevron-toggle {position: relative; top: 5px; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: #fff; text-shadow: 0 0 2px #000;}
     .chevron-toggle > span {position: absolute; top: 0; left: 0;}
     .chevron-toggle > span:first-child {display: none;}
     .chevron-toggle > span:last-child {display: inline-block;}
-.active > .chevron-toggle {color: #0ef;}
+.active > .chevron-toggle {}
     .active > .chevron-toggle > span:first-child {display: inline-block;}
     .active > .chevron-toggle > span:last-child {display: none;}
 .btn > .chevron-toggle, .btn .active > .chevron-toggle {color: #fff; text-shadow: 0 0 2px #333;}
@@ -500,7 +494,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 /* Stream Messaging */
 .stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; line-height: 14px; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
-.stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;} 
+/*.stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;}*/
 .message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
 .message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
 
@@ -677,10 +671,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         }
 
     /* PEOPLE PAGE */ 
-    #page-people {padding-top: 5px; padding-bottom: 50px;}
-        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 3px 3px 5px; border-radius: 0; overflow: auto;}
-        
-            #page-people.vertical #people-list .btn.btn-lucid.user {margin-bottom: 20px;}
+    #page-people {padding-top: 10px; padding-bottom: 60px;}
+        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
+            
+            #page-people #people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
                         
                 /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
                 .btn.people-list-toggle > .badge {font-size: 14px;}
@@ -688,21 +682,43 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
                     .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
 
-                #people-list {display: none; padding: 2px 5px; border-radius: 0;}
+               /* #people-list {display: none; border-radius: 0;}
                 #people-list.active {display: block;}
-                #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;}
-                    #people-list > .panel-menu > pre {display: none; color: 0.5; font-size: 10px; padding: 7px 4px 6px 5px;}
-                        #people-list > .panel-menu > pre > label {padding-right: 5px;}
-                        #people-list > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 16px; line-height: 1;}
-                        #people-list > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}
-                            #people-list > .panel-menu > pre > .header-icon {padding-right: 5px;}
+                #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
+                        #people-list > .panel-menu > pre.btn-accordion.new,
+                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals {background-color: #05a;}
+                        #people-list > .panel-menu > pre.btn-accordion.active.new,
+                        #people-list > .panel-menu > pre.btn-accordion.new:hover,
+                        #people-list > .panel-menu > pre.btn-accordion.new:focus,
+                        #people-list > .panel-menu > pre.btn-accordion.active.new-arrivals,
+                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals:hover,
+                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals:focus, {background-color: #06b;}
+
+                        #people-list > .panel-menu > pre:first-child {margin-top: 0;}
+                        #people-list > .panel-menu > pre > .header-icon,
+                        #people-list > .panel-menu > pre > label {padding-right: 5px; line-height: 18px;}
+                        #people-list > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 26px; font-weight: bold; margin-left: -2px; padding-right: 1px;}
+                        /*#people-list > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}*/
+                        #people-list > .panel-menu > pre.added-stream label:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
+                         
+                        #people-list > .panel-menu > pre > .badge {margin-right: 5px;}   
+
+/*
                             #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
                             #page-people.vertical #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
                             #people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
                             #page-people.vertical > #people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
-                    #page-people:not(.vertical) > #people-list > .panel-menu > pre {display: none; padding: 5px 5px 4px 5px;}
-                    #page-people:not(.vertical) > #people-list > .panel-menu > pre > .chevron-toggle {margin: 4px 0 0 5px; transform: rotate(90deg);}
+        */
+                    #page-people:not(.vertical) > #people-list > .panel-menu > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
         #page-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
+
+            #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
+            #people-controls .btn.active[data-filter=viewed-your-profile] {background-color: #ff6;}
+            #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
+            #people-controls .btn.active[data-filter=connected] {background-color: #f90;}
+            #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
+            #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
+
 
     /* PAGE CONVERSATION */
     #pages #page-conversation {padding-top: 50px; padding-bottom: 50px;}
@@ -783,10 +799,11 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
                         .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
                         .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
-
+                            /*
                             .chat-item .panel-body {transition: all 0.25s ease-out 0.5s; transform: scale(1); -webkit-transform: scale(1); left: 0;}
                             .chat-item .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: -50%;}
                             .chat-item.you .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: 50%;}
+                            */
 
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}

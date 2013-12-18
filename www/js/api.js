@@ -368,7 +368,7 @@ function getUserProfile_Callback(result) {
     }else{
         if(result.status > 0){
             gotoPage('page-profile');
-            $('#page-profile .user-profile').html(createUserProfile(result.object), {square:true});
+            $('#page-profile .user-profile').html(createUserProfile(result.object));
             //getSavedStreams(result.object.userid);
         }else{
             // Server returned an error
