@@ -222,4 +222,3 @@ function getFormatedGender(gender){
     return formatedGender;
 
 }
-

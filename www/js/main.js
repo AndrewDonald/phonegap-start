@@ -136,6 +136,7 @@ populatePeopleList();
     }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
     
+    
    // $('.max-height').css('max-height', $(window).height() - 128);
 });
 

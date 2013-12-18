@@ -377,6 +377,7 @@ function getUserProfile_Callback(result) {
     }
 }
 
+
 ////////////// NODE Server APIs ///////////////
 /* Chat Response object data
  public $chatid;

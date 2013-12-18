@@ -682,6 +682,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
                     .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
 
+
                /* #people-list {display: none; border-radius: 0;}
                 #people-list.active {display: block;}
                 #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
