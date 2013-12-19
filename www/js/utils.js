@@ -59,8 +59,15 @@ function gotoPage(page){
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;
-        if(page == "page-profile"){
-            $('#page-profile .user-profile').empty();
+        switch(page){
+            case "page-profile":
+                $('#page-profile .user-profile').empty();
+                break;
+            case "page-stream":
+                getThoughts(); // Change to getAddedThoughts
+                break;
+            default:
+                break;
         }
     }else{
         $('#new-thought-toggle').addClass('active');
@@ -141,11 +148,16 @@ function updateAbout(){
 }
 
 function populateThoughtList(thoughtList, objList){
+    var remove = "";
+    if(thoughtList == "added"){
+        remove = "remove";
+    }
     var list = "";
     $.each(objList, function(){
         list += _application.template.thoughtListItem
                 .replace(/\{{streamid}}/g, this.streamid)
                 .replace(/\{{stream}}/g, this.stream)
+                .replace(/\{{remove}}/g, remove)
                 .replace(/\{{activeusers}}/g, this.activeusers);
     });
     $('.' + thoughtList + '-thought-list').html(list);
@@ -220,5 +232,4 @@ function getFormatedGender(gender){
     }
 
     return formatedGender;
-
 }

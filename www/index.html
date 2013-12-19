@@ -204,24 +204,22 @@
                         </div>
                     </nav>
                     
-                    <div id="join-conversation">
-                        <div class="thought-lists">
-                            <ul class="suggested-thought-list form-control list-inline full-width link-list">
-                                <li class="list-group-item">
-                                    No suggested thoughts found.
-                                </li>
-                            </ul>
-                            <ul class="hot-thought-list form-control list-inline full-width link-list active">
-                                <li class="list-group-item">
-                                    No hot thoughts found.
-                                </li>
-                            </ul>
-                            <ul class="past-thought-list form-control list-inline full-width link-list">
-                                <li class="list-group-item">
-                                    No past thoughts found.
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="thought-lists">
+                        <ul class="suggested-thought-list form-control list-inline full-width link-list">
+                            <li class="list-group-item">
+                                No suggested thoughts found.
+                            </li>
+                        </ul>
+                        <ul class="hot-thought-list form-control list-inline full-width link-list active">
+                            <li class="list-group-item">
+                                No hot thoughts found.
+                            </li>
+                        </ul>
+                        <ul class="past-thought-list form-control list-inline full-width link-list">
+                            <li class="list-group-item">
+                                No past thoughts found.
+                            </li>
+                        </ul>
                     </div>
 
                     <nav id="new-thought-footer" class="navbar-default navbar-fixed-bottom" role="navigation">
@@ -258,7 +256,7 @@
                                 <label class="badge">999</label>
                             </a>
                             <a type="button" class="btn btn-lucid-normal" data-filter="connection-request">
-                                + <span class="item-icon glyphicon glyphicon-link"></span>
+                                <sup>+</sup><span class="item-icon glyphicon glyphicon-link"></span>
                                 <label class="badge">999</label>
                             </a>
                             <a type="button" class="btn btn-lucid-normal" data-filter="connected">
@@ -266,7 +264,7 @@
                                 <label class="badge">999</label>
                             </a>
                             <a type="button" class="btn btn-lucid-normal" data-filter="connecting">
-                                <span class="item-icon glyphicon glyphicon-envelope"></span>
+                                <sup>+</sup><span class="item-icon glyphicon glyphicon-envelope"></span>
                                 <label class="badge">999</label>
                             </a>
                             <a type="button" class="btn btn-lucid-normal" data-filter="blocked">
@@ -510,8 +508,7 @@
                                 <li class="list-group-item added-stream-item">
                                     <span class="btn-group stream-button added-stream">
                                         <button type="button" class="btn-stream btn btn-lucid-normal blue" data-item="{{stream}}">
-                                            <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                                            <span class="stream-name">Added Thought</span>
+                                            <span class="stream-name added">Added Thought</span>
                                             <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
                                             <label class="badge">32</label>
                                         </button>
@@ -545,81 +542,39 @@
 
                 <!-- STREAM (START) -->
                 <div id="page-stream" class="page row">
-                    <h1>Stream</h1>
-                    <ul class="stream-list form-control list-inline full-width link-list active">
-                        <li class="list-group-item stream-list-item">
-                            <span class="btn-group stream-button">
-                                <button type="button" class="btn-stream btn btn-lucid-normal" data-item="{{stream}}">
-                                    <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                                    <span class="stream-name">Sample Stream 1</span>
-                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                    <label class="badge">117</label>
-                                </button>
-                                <button class="vote-remove btn btn-danger">
-                                    <span class="glyphicon glyphicon-minus-sign"></span>
-                                </button>
-                            </span>
-                        </li>
-                        <li class="list-group-item stream-list-item">
-                            <span class="btn-group stream-button">
-                                <button type="button" class="btn-stream btn btn-lucid-normal" data-item="{{stream}}">
-                                    <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                                    <span class="stream-name">Sample Stream 2</span>
-                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                    <label class="badge">63</label>
-                                </button>
-                                <button class="vote-remove btn btn-danger">
-                                    <span class="glyphicon glyphicon-minus-sign"></span>
-                                </button>
-                            </span>
-                        </li>
-                        <li class="list-group-item stream-list-item">
-                            <span class="btn-group stream-button added-stream">
-                                <button type="button" class="btn-stream btn btn-lucid-normal" data-item="{{stream}}">
-                                    <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                                    <span class="stream-name">Sample Stream 3</span>
-                                    <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
-                                    <label class="badge">35</label>
-                                </button>
-                                <button class="vote-remove btn btn-danger">
-                                    <span class="glyphicon glyphicon-minus-sign"></span>
-                                </button>
-                            </span>
-                        </li>
-                    </ul>
+                    <!-- Added Thought Stream List (Start) -->
+                    <div class="thought-lists">
+                        <ul class="added-thought-list form-control list-inline full-width link-list active">
+                            <li class="list-group-item">
+                                No thoughts have been added.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Added Thought Stream List (End) -->
 
                     <!-- STREAM FOOTER (START) -->
+                    <!--
                     <nav id="stream-footer" class="navbar-default navbar-fixed-bottom">
                         <div id="stream-controls" class="horizontal-sliding-nav-con">
                             <div class="horizontal-sliding-nav">
                                 <span class="btn-group">
                                     <button type="button" class="btn-stream btn btn-lucid-normal active" data-item="default">
                                         <span class="stream-name">LucidLife + <span class="added-stream">&cong;</span></span>
-                                        <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                        <sup class="stream-alerts badge label-lucid">7</sup>
                                         <label class="badge">137</label>
                                     </button>
-                                    <!--
-                                    <button class="vote-remove btn btn-sm btn-danger">
-                                        <span class="glyphicon glyphicon-thumbs-down"></span>
-                                    </button>
-                                    -->
                                 </span>
                                 <span class="btn-group">
                                     <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LucidLife">
                                         <span class="stream-name">LucidLife</span>
-                                        <!--<sup class="people-in-stream-new badge label-lucid">137</sup>-->
+                                        <sup class="people-in-stream-new badge label-lucid">137</sup>
                                         <label class="badge"l>98</label>
                                     </button>
-                                    <!--
-                                    <button class="vote-remove btn btn-sm btn-danger">
-                                        <span class="glyphicon glyphicon-thumbs-down"></span>
-                                    </button>
-                                    -->
                                 </span>
                                 <span class="btn-group">
                                     <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LucidEngineering">
                                         <span class="stream-name">LucidEngineering</span>
-                                        <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                                        <sup class="stream-alerts badge label-lucid">7</sup>
                                         <label class="badge">14</label>
                                     </button>
                                     <button class="vote-remove btn btn-sm btn-danger">
@@ -629,7 +584,7 @@
                                 <span class="btn-group">
                                     <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LucidLovers">
                                         <span class="stream-name">LucidLovers</span>
-                                        <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                        <sup class="people-connections badge label-lucid">9</sup>
                                         <label class="badge">11</label>
                                     </button>
                                     <button class="vote-remove btn btn-sm btn-danger">
@@ -639,7 +594,7 @@
                                 <span class="btn-group">
                                     <button type="button" class="btn-stream btn btn-lucid-normal" data-item="LifeIsGood">
                                         <span class="stream-name">LifeIsGood</span>
-                                        <!--<sup class="people-viewed badge label-lucid">22</sup>-->
+                                        <sup class="people-viewed badge label-lucid">22</sup>
                                         <label class="badge">8</label>
                                     </button>
                                     <button class="vote-remove btn btn-sm btn-danger">
@@ -649,6 +604,7 @@
                             </div>
                         </div>
                     </nav>
+                    -->
                     <!-- STREAM FOOTER (END) -->
                 </div>
                 <!-- STREAM PAGE (END) -->
@@ -790,11 +746,9 @@
             <!-- STREAM ITEM (START) -->
                 <!-- Stream Button (Start) -->
                 <div id="stream-button" class="template">
-                    <span class="btn-group stream-button {{added-stream}} {{following}}">
+                    <span class="btn-group stream-button {{added}} {{following}}">
                         <button type="button" class="btn-stream btn btn-lucid-normal blue" data-item="{{stream}}">
-                            <span class="added-stream-plus-icon glyphicon glyphicon-plus-sign"></span>
-                            <span class="stream-name">{{stream}}</span>
-                            <!--<sup class="stream-alerts badge label-lucid">7</sup>-->
+                            <span class="stream-name {{added}}">{{stream}}</span>
                             <label class="badge">{{members}}</label>
                         </button>
                         <button class="vote-remove btn btn-danger">
@@ -848,7 +802,7 @@
                 <div id="thought-list-item" class="template">
                     <li class="list-group-item thought-list-item">
                         <a class="btn btn-lucid-normal" data-streamid="{{streamid}}" onclick="subscribeThought({{streamid}});">
-                            <span class="stream-name">{{stream}}</span><span class="badge">{{activeusers}}</span>
+                            <span class="stream-name {{remove}}">{{stream}}</span><span class="badge">{{activeusers}}</span>
                         </a>
                     </li>
                 </div>
@@ -915,7 +869,7 @@
             <!-- PEOPLE PAGE (START) -->
                 <!-- People Accordion Tab (Start) -->
                 <div id="people-accordion-tab" class="template">
-                    <pre class="{{stream-type}} btn-accordion" data-qty="{{qty}}" data-streamid="{{streamid}}" data-stream="{{stream}}"><label>{{stream}}</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">{{qty}}</span></pre>
+                    <pre class="{{stream-type}} btn-accordion" data-qty="{{qty}}" data-streamid="{{streamid}}" data-stream="{{stream}}"><label class="stream-name {{added}}">{{stream}}</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">{{qty}}</span></pre>
                 </div>
                 <!-- People Accordion Tab (End) -->
             <!-- PEOPLE PAGE (END) -->
@@ -1006,7 +960,7 @@
                 <div id="sample-people" class="template">
 <!-- People Panel Menu -->
                         <div class="panel-menu">
-                            <pre class="new btn-accordion" data-qty="3"><span class="header-icon glyphicon glyphicon-leaf"></span><label>New Users</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">3</span></pre>
+                            <pre class="new btn-accordion active" data-qty="3"><span class="header-icon glyphicon glyphicon-user"></span><label class="stream-name no-tilde">New to LucidLife</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">3</span></pre>
                             <button class="btn btn-lucid user added-stream new" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Mary</span></label>
@@ -1019,7 +973,7 @@
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Racheal</span></label>
                             </button>
-                            <pre class="new-arrivals btn-accordion" data-qty="5"><span class="header-icon glyphicon glyphicon-send"></span><label>New Arrivals</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">6</span></pre>
+                            <pre class="new-arrivals btn-accordion active" data-qty="5"></span><label class="stream-name added">Newest Thought Members</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">6</span></pre>
                             <button class="btn btn-lucid user in-stream viewed-your-profile" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Ted Mariopolis">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Ted</span></label>
@@ -1046,7 +1000,7 @@
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Stephanie</span></label>
                             </button>
-                            <pre class="in-stream btn-accordion" data-qty="15" data-streamid="1" data-stream="LucidLife" onclick="accordionButton(this);"><label>LucidLife</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">12</span></pre>
+                            <pre class="in-stream btn-accordion" data-qty="15" data-streamid="1" data-stream="LucidLife" onclick="accordionButton(this);"><label class="stream-name">LucidLife</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">12</span></pre>
                             <button class="btn btn-lucid user in-stream connected connecting" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Jeremiah Dillenger">
                                 <sup class="badge label-lucid">1</sup>
                                 <label><span class="name">Jeremiah</span></label>
@@ -1097,7 +1051,7 @@
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Stephanie</span></label>
                             </button>
-                            <pre class="added-stream btn-accordion" data-streamid="2" data-stream="LucidEngineering" data-qty="3" onclick="accordionButton(this);"><label>LucidEngineeing</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">2</span></pre>
+                            <pre class="added-stream btn-accordion" data-streamid="2" data-stream="LucidEngineering" data-qty="3" onclick="accordionButton(this);"><label class="stream-name added">LucidEngineeing</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">2</span></pre>
                             <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="Lucid" data-userid="15" data-username="Jeremiah Dillenger">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Jeremiah</span></label>
@@ -1106,12 +1060,12 @@
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Annette</span></label>
                             </button>
-                            <pre class="added-stream btn-accordion" data-streamid="3" data-stream="LifeGoesOn" data-qty="1"><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><label>LifeGoesOn</label><span class="badge pull-right">1</span></pre>
+                            <pre class="added-stream btn-accordion" data-streamid="3" data-stream="LifeGoesOn" data-qty="1"><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><label class="stream-name added">LifeGoesOn</label><span class="badge pull-right">1</span></pre>
                             <button class="btn btn-lucid user added-stream" style="background-image: url(img/profile/profile-4.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="3" data-stream="Life" data-userid="17" data-username="Joanna Hazelton">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Joanna</span></label>
                             </button>
-                            <pre class="added-stream btn-accordion" data-streamid="4" data-stream="LivingItUpInTheCity" data-qty="1" onclick="accordionButton(this);"><label>LivingItUpInTheCity</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">1</span></pre>
+                            <pre class="added-stream btn-accordion" data-streamid="4" data-stream="LivingItUpInTheCity" data-qty="1" onclick="accordionButton(this);"><label class="stream-name added">LivingItUpInTheCity</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">1</span></pre>
                             <button class="btn btn-lucid user added-stream blocked" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="6" data-stream="LucidLiving" data-userid="18" data-username="Jeremy Reynolds">
                                 <sup class="badge label-lucid">
                                     <span class="glyphicon glyphicon-ban-circle"></span>

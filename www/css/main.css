@@ -178,16 +178,18 @@ h2 {font-size: 16px;}
     
     /* PROFILE FORM */
 .stream-name {text-transform: capitalize; word-wrap: break-word; display: inline-block;}
+.stream-name:not(.no-tilde):before {content: '∼'; font-size: 16px;}
+.stream-icon {line-height: 10px;}
+.stream-icon:before {content: '~'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
+.btn-stream-controls .stream-icon:before {font-size: 37px; line-height: 6px;}
+.stream-name.added:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
+#page-stream .stream-name.remove:before, .stream-name.remove:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
+/*{content: '≅'; font-size: 18px;}*/
 @media (max-width: 360px) {
     .btn-stream {height: 34px; padding: 1px 10px;}
     .stream-name {font-size: 12px; line-height: 15px; max-width: 208px;}
 }
 
-.stream-name:before {content: '∼';}
-.stream-icon {line-height: 10px;}
-.stream-icon:before {content: '~'; font-size: 25px; font-weight: bold; vertical-align: text-top;}
-.btn-stream-controls .stream-icon:before {font-size: 37px; line-height: 6px;}
-.added-stream-name:before {content: '≅'; font-size: 18px;}
 .filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 11px;}
 .about-icon:before {content: "?"; font-weight: bold; font-size: 15px; padding-left: 5px;}
 
@@ -286,7 +288,7 @@ h2 {font-size: 16px;}
 
 .indicator {display: none; font-family: Arial}
 
-.btn-accordion {cursor: pointer; margin: 10px 0 5px; padding: 8px 5px 8px 10px; font-family: arial; font-size: 13px; line-height: normal; transition: all 0.5s; -webkit-transition: all 0.5; color: #fff; text-align: left; border-radius: 4px; box-shadow: 0 0 3px #000, 0 0 3px #fff inset; background-color: #09d; text-shadow: 0 0 1px #000;}
+.btn-accordion {cursor: pointer; margin: 10px 0 5px; padding: 8px 5px 8px 10px; border: none; font-family: arial; font-size: 13px; line-height: normal; transition: all 0.5s; -webkit-transition: all 0.5; color: #fff; text-align: left; border-radius: 4px; box-shadow: 0 0 3px #000, 0 0 3px #fff inset; background-color: #09d; text-shadow: 0 0 1px #000;}
 .btn-accordion.active, .btn-accordion:hover, .btn-accordion:focus {transition: all 0.5s; -webkit-transition: all 0.5; background-color: #0bf;}
 
 .btn-link-lucid {font-size: 13px; line-height: normal; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1; color: #0ab; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
@@ -454,8 +456,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-group.stream-button > .btn-lucid-normal,
 .btn-group.stream-button > .btn-lucid-normal:hover,
 .btn-group.stream-button > .btn-lucid-normal:not(.active):focus {box-shadow:  0 0 1px #fff inset;}
-    .added-stream > .btn.btn-lucid-normal.btn-stream .added-stream-plus-icon {display: none; color: #6cf; text-shadow: none; opacity: 0.5; vertical-align: top;}
-    .added-stream > .btn.btn-lucid-normal.btn-stream .added-stream-plus-icon {display: inline-block;}
+
     .btn.btn-lucid-normal > .badge {padding: 3px 4px;}
     .btn.btn-lucid-normal > sup.badge {left: 7px; font-size: 10px;}
     .btn-lucid-normal > .toggle-icon {margin: 0 -5px; border: 1px solid #fff; border-radius: 50% 50%; padding: 4px 5px 0px 4px; background-color: rgba(255, 160, 0, 0.9);}
@@ -687,7 +688,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 #people-list.active {display: block;}
                 #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
                         #people-list > .panel-menu > pre.btn-accordion.new,
-                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals {background-color: #05a;}
+                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
                         #people-list > .panel-menu > pre.btn-accordion.active.new,
                         #people-list > .panel-menu > pre.btn-accordion.new:hover,
                         #people-list > .panel-menu > pre.btn-accordion.new:focus,
@@ -698,9 +699,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                         #people-list > .panel-menu > pre:first-child {margin-top: 0;}
                         #people-list > .panel-menu > pre > .header-icon,
                         #people-list > .panel-menu > pre > label {padding-right: 5px; line-height: 18px;}
-                        #people-list > .panel-menu > pre.in-stream > label:before {content: '∼'; font-size: 26px; font-weight: bold; margin-left: -2px; padding-right: 1px;}
                         /*#people-list > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}*/
-                        #people-list > .panel-menu > pre.added-stream label:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
+                        
                          
                         #people-list > .panel-menu > pre > .badge {margin-right: 5px;}   
 
@@ -744,12 +744,15 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         
         
     /* PAGE STREAM */
-    #page-stream {padding-top: 50px; padding-bottom: 50px;}
+    #page-stream {}
         /* Stream */
+        /*
         #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; color: #fff; font-weight: bold; overflow: auto; font-size: 12px; word-wrap: break-word;}
         #stream-name:before {content: "~";}
         .history-list .stream-name {display: inline-block; margin-right: 40px;/* max-width: 235px;*/ overflow: auto;}
+        */
         /* Associated Streams */
+        /*
         .slider-status-con .list-group > li > a {}
             .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
             .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
@@ -757,7 +760,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
                 .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
                 .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
-    
+        */
+
     /* PAGE FILTER */
     #filter-panel {padding-top: 50px; padding-bottom: 50px;}
         .filter-controls {display: none;}

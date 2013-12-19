@@ -124,6 +124,7 @@ moment.lang('en', {
 $(function() {
 populatePeopleList();
     initEventHandlers();
+$('.btn-accordion.new, .btn-accordion.new-arrivals').click();
 
     updateAbout();
     gotoPage('page-login');
@@ -136,7 +137,7 @@ populatePeopleList();
     }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
     
-    
+
    // $('.max-height').css('max-height', $(window).height() - 128);
 });
 
@@ -424,7 +425,7 @@ function addStreamItem(objData) {
                                 .replace(/\{{streamid}}/g, objData.streamid)
                                 .replace(/\{{stream}}/g, objData.stream)
                                 .replace(/\{{members}}/g, '99') // objData.members
-                                .replace(/\{{added-stream}}/g, 'added-stream');
+                                .replace(/\{{added}}/g, 'added');
 
         displayStreamItem(addedStreamItem);
     }

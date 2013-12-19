@@ -192,6 +192,7 @@ function getThoughts_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful
+            populateThoughtList('added', result.object.hot);
             populateThoughtList('hot', result.object.hot);
             populateThoughtList('past', result.object.past);
         }else{
