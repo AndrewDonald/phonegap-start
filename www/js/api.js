@@ -360,7 +360,6 @@ function getUserProfile(userid) {
         objMessage.userid    = userid;
     
     apiRequest(objMessage, getUserProfile_Callback, false);
-
 }
 
 function getUserProfile_Callback(result) {
@@ -377,6 +376,56 @@ function getUserProfile_Callback(result) {
         }
     }
 }
+
+// Protest Added Stream
+function protestStream(streamid) {
+    var objMessage = {};
+        objMessage.method   = "protest_stream";
+        objMessage.streamid = streamid;
+    
+    apiRequest(objMessage, protestStream_Callback, false);
+}
+
+function protestStream_Callback(result) {
+    if(result==0 || result == undefined) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            removeStream(result.object);
+        }else{
+            // Server returned an error
+            alert('Error: ' + result.message);
+        }
+    }
+}
+
+// Get Stream *Array of Added Streams with each containing child arrays of Users
+function getStream(streamid) {
+    if(!streamid){
+        streamid = _session.stream.streamid;
+    }
+
+    var objMessage = {};
+        objMessage.method    = "get_stream";
+        objMessage.streamid = streamid;
+    
+    apiRequest(objMessage, getStream_Callback, false);
+}
+
+function getStream_Callback(result) {
+    if(result==0 || result == undefined) {
+        // Ajax request failed
+    }else{
+        if(result.status > 0){
+            _session.streamsandpeople = result.object;
+            populateStreamsAndPeople();
+        }else{
+            // Server returned an error
+            alert('Error getStream_Callback: ' + result.message);
+        }
+    }
+}
+
 
 
 ////////////// NODE Server APIs ///////////////
@@ -447,8 +496,11 @@ function initiateNodeServer() {
         case "chat":
             addChatItem(msg.object);
             break;
-        case "notification": // add_stream
-            addStreamItem(msg.object);
+        case "add_stream":
+            addStream(msg.object);
+            break;
+        case "remove_stream":
+            removeStream(msg.object);
             break;
         case "subscription":
             addMemberItem(msg.object);

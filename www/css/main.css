@@ -299,7 +299,7 @@ h2 {font-size: 16px;}
 button.btn-link-lucid:hover, button.btn-link-lucid:focus {color: #f90;}
 button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-weight: bold;}
 
-#main-menu-toggle.btn-link-lucid, #new-thought-toggle.btn-link-lucid {opacity: 1; color: #f90;}
+.main-nav.btn-link-lucid {opacity: 1; color: #f90;}
 
 .btn-link-lucid.tilde {font-size: 40px; line-height: 0;}
 .btn-link-lucid .icon {font-size: 8px; position: absolute; right: 2px; top: 4px;}
@@ -336,8 +336,8 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         
         .btn-lucid.user > sup {position: absolute; top: -5px; left: -5px; min-width: 15px; padding: 2px 0 2px 1px;}
         .btn-lucid.user.new {border-color: #0bf;}
-        .btn-lucid.user.viewed-your-profile {border-color: #ff6;}
-            .btn-lucid.user.viewed-your-profile > sup.badge {border-color: #ff6; background-color: #fc3;}
+        .btn-lucid.user.viewed-profile {border-color: #ff6;}
+            .btn-lucid.user.viewed-profile > sup.badge {border-color: #ff6; background-color: #fc3;}
         .btn-lucid.user.connection-request {border-color: #0f0;}
             .btn-lucid.user.connection-request > sup.badge {border-color: #0f0; background-color: #0b0;}
         .btn-lucid.user.blocked {border-color: #f00;}
@@ -549,6 +549,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #header > .masthead .main-nav {position: absolute; top: 2px;}
         body.logged-out nav#header > .masthead .main-nav {display: none;}
         #header > .masthead .main-nav.left {left: 5px;}
+            #main-menu-toggle {margin-top: -4px; margin-left: -4px;}
         #new-thought-toggle {width: 40px;}
         #header > .masthead .main-nav.right {right: 5px;}
         #header > .masthead center {padding-top: 5px;}
@@ -672,10 +673,14 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         }
 
     /* PEOPLE PAGE */ 
-    #page-people {padding-top: 10px; padding-bottom: 60px;}
-        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
+    #page-streams-and-people {padding-top: 10px; padding-bottom: 60px;}
+        #page-streams-and-people.streams #people-footer {display: none;}
+        #page-streams-and-people.streams .btn-accordion.newest-members,
+        #page-streams-and-people.streams .btn.newest-member {display: none;}
+
+        #streams-and-people {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
             
-            #page-people #people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
+            #page-streams-and-people #streams-and-people .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
                         
                 /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
                 .btn.people-list-toggle > .badge {font-size: 14px;}
@@ -684,37 +689,33 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
 
 
-               /* #people-list {display: none; border-radius: 0;}
-                #people-list.active {display: block;}
-                #people-list .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
-                        #people-list > .panel-menu > pre.btn-accordion.new,
-                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
-                        #people-list > .panel-menu > pre.btn-accordion.active.new,
-                        #people-list > .panel-menu > pre.btn-accordion.new:hover,
-                        #people-list > .panel-menu > pre.btn-accordion.new:focus,
-                        #people-list > .panel-menu > pre.btn-accordion.active.new-arrivals,
-                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals:hover,
-                        #people-list > .panel-menu > pre.btn-accordion.new-arrivals:focus, {background-color: #06b;}
+               /* #streams-and-people {display: none; border-radius: 0;}
+                #streams-and-people.active {display: block;}
+                #streams-and-people .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
+                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
+                        #streams-and-people > .panel-menu > pre.btn-accordion.active.newest-members,
+                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members:hover,
+                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
 
-                        #people-list > .panel-menu > pre:first-child {margin-top: 0;}
-                        #people-list > .panel-menu > pre > .header-icon,
-                        #people-list > .panel-menu > pre > label {padding-right: 5px; line-height: 18px;}
-                        /*#people-list > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}*/
+                        #streams-and-people > .panel-menu > pre:first-child {margin-top: 0;}
+                        #streams-and-people > .panel-menu > pre > .header-icon,
+                        #streams-and-people > .panel-menu > pre > label {padding-right: 5px; line-height: 18px;}
+                        /*#streams-and-people > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}*/
                         
                          
-                        #people-list > .panel-menu > pre > .badge {margin-right: 5px;}   
+                        #streams-and-people > .panel-menu > pre > .badge {margin-right: 5px;}   
 
 /*
-                            #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-                            #page-people.vertical #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-                            #people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-                            #page-people.vertical > #people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
+                            #streams-and-people > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+                            #page-streams-and-people.vertical #streams-and-people > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+                            #streams-and-people > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+                            #page-streams-and-people.vertical > #streams-and-people > .panel-menu > pre > .btn-vote-remove {float: right;}
         */
-                    #page-people:not(.vertical) > #people-list > .panel-menu > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
-        #page-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
+                    #page-streams-and-people:not(.vertical) > #streams-and-people > .panel-menu > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
+        #page-streams-and-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
 
             #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
-            #people-controls .btn.active[data-filter=viewed-your-profile] {background-color: #ff6;}
+            #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
             #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
             #people-controls .btn.active[data-filter=connected] {background-color: #f90;}
             #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
@@ -741,26 +742,6 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #tab-stream.tab-lucid {left: 80px;}
         #tab-filter.tab-lucid {left: 150px; font-size: 12px;}
         /*#tab-alerts.tab-lucid {left: 225px;}*/
-        
-        
-    /* PAGE STREAM */
-    #page-stream {}
-        /* Stream */
-        /*
-        #stream-name {margin: 3px 0 -5px 7px; display: inline-block; line-height: 1; color: #fff; font-weight: bold; overflow: auto; font-size: 12px; word-wrap: break-word;}
-        #stream-name:before {content: "~";}
-        .history-list .stream-name {display: inline-block; margin-right: 40px;/* max-width: 235px;*/ overflow: auto;}
-        */
-        /* Associated Streams */
-        /*
-        .slider-status-con .list-group > li > a {}
-            .slider-status-con .list-group > li > a > .stream-name {margin-bottom: -4px; padding-right: 5px;}
-            .slider-status-con .list-group > li > a > .badge {font-weight: normal;}
-        .slider-status-con .list-group > li.active {}
-            .slider-status-con .list-group > li.active > a > .badge {font-weight: bold;}
-                .slider-status-con.vertical .list-group > li > button.remove {display: inline-block;}
-                .slider-status-con.vertical .list-group > li > a > .stream-name {display: inline-block; overflow: auto; font-weight: bold;}
-        */
 
     /* PAGE FILTER */
     #filter-panel {padding-top: 50px; padding-bottom: 50px;}
@@ -774,10 +755,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         
 
         /* CONVERSATION PAGE */
-        body[data-page=page-conversation] #page-people {}
-            body[data-page=page-conversation] #page-people #people-list {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
-                body[data-page=page-conversation] #people-list > .panel-menu > pre {display: none;}   
-            body[data-page=page-conversation] #page-people .panel-body #connection-items-header {display: none;}
+        body[data-page=page-conversation] #page-streams-and-people {}
+            body[data-page=page-conversation] #page-streams-and-people #streams-and-people {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
+                body[data-page=page-conversation] #streams-and-people > .panel-menu > pre {display: none;}   
+            body[data-page=page-conversation] #page-streams-and-people .panel-body #connection-items-header {display: none;}
 
             #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
                 #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
@@ -868,4 +849,4 @@ body.logged-out nav#footer {display: none;}
     ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
 /******** FOR TESTING ONLY!! ********/
-/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-list, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #streams-and-people, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

@@ -52,7 +52,7 @@ $.fn.scrollTo = function( targetDom ){
 }
 
 // GOTOPAGE
-function gotoPage(page){
+function gotoPage(page, option){
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
     $('body').attr('data-page', page);
@@ -64,7 +64,14 @@ function gotoPage(page){
                 $('#page-profile .user-profile').empty();
                 break;
             case "page-stream":
-                getThoughts(); // Change to getAddedThoughts
+                $('#pages #page-streams-and-people').addClass('active').removeClass('people').addClass('streams');
+                //getThoughts(); // Change to getAddedThoughts
+                _temp.openStreamAccordionTab = option;
+                getStream();
+                break;
+            case "page-people":
+                $('#pages #page-streams-and-people').addClass('active').removeClass('streams').addClass('people');
+                getStream();
                 break;
             default:
                 break;
@@ -210,7 +217,7 @@ function getElapsedTime(date){
     var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
     // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
-        if(secondsDiff < 0){dateNowGMT = date;}
+        if(secondsDiff <= 0){dateNowGMT = date;}
 
     return moment(date).from(dateNowGMT);
 }
@@ -219,7 +226,7 @@ function getFormatedDate(date){
     var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
     // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
-        if(secondsDiff < 0){dateNowGMT = date;}
+        if(secondsDiff <= 0){dateNowGMT = date;}
 
     return moment(dateNowGMT).calendar();
 }
@@ -232,4 +239,13 @@ function getFormatedGender(gender){
     }
 
     return formatedGender;
+}
+
+// Accordion Button Click
+function accordionButton(objDom){
+    $(objDom).toggleClass('active')
+        .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+
+    // ** Stream and People List Accordion Only **
+    $(objDom).nextUntil('#streams-and-people .btn-accordion').slideToggle(250);
 }
