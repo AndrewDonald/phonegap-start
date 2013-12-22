@@ -29,38 +29,28 @@
             </div>
             <ul id="main-menu-items" class="list-group" role="menu">
                 <li class="list-group-item">
-                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="connections-toggle" data-toggle-item="page-connections" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-link"></span>Connections
-                    </a>
-                </li>
-                <li class="list-group-item">
                     <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid">
                         <span class="menu-icon glyphicon glyphicon-user"></span>People
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="conversation-toggle" data-toggle-item="page-conversation" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-comment"></span>Conversation
+                    <a id="public-toggle" data-toggle-item="page-public" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-comment"></span>Public
+                    </a>
+                </li>
+                <li class="list-group-item divider">
+                    <a id="private-toggle" data-toggle-item="page-private" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-comment"></span><sup class="menu-icon glyphicon glyphicon-ban-circle"></sup>Private
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="people-toggle" data-toggle-item="page-stream" class="btn btn-lucid">
-                        <span class="menu-icon stream-icon"></span>Streams
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
                     </a>
                 </li>
                 <li class="list-group-item divider">
                     <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid">
                         <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="account-toggle" data-toggle-item="page-account" class="btn btn-lucid">
-                        <span class="menu-icon glyphicon glyphicon-folder-open"></span>Account
                     </a>
                 </li>
                 <li class="list-group-item divider">
@@ -240,15 +230,14 @@
                 </div>
                 <!-- NEW THOUGHT (END) -->
 
-                <!-- PEOPLE PAGE (START) -->
-                <div id="page-streams-and-people" class="page row people">
-                    <!-- Streams And People (Start) -->
-                    <div id="streams-and-people" class="panel-heading panel-nav active">
-                        <div class="panel-menu"></div>
-                    </div>
-                    <!-- Streams And People (End) -->
+                <!-- people PAGE (START) -->
+                <div id="page-people" class="page row people">
+                    <!-- people-List (Start) -->
+                    <div id="people-list" class="panel-heading panel-nav active"></div>
+                    <!-- people-List (End) -->
 
                     <!-- PEOPLE PANEL (START) -->
+                    <!--
                     <nav id="people-footer" class="navbar-fixed-bottom" role="">
                         <div id="people-controls" class="btn-group btn-group-justified">
                             <a type="button" class="btn btn-lucid-normal active" data-filter="default">
@@ -277,13 +266,14 @@
                             </a>
                         </div>
                     </nav>
+                    -->
                 </div>
-                <!-- PEOPLE PAGE (END) -->
+                <!-- people PAGE (END) -->
 
-                <!-- CONVERSATION PAGE (START) -->
-                <div id="page-conversation" class="page row">
-                    <!-- CONVERSATION HEADER (START) -->
-                    <nav id="conversation-header" class="navbar-fixed-top" role="">
+                <!-- public PAGE (START) -->
+                <div id="page-public" class="page row">
+                    <!-- public HEADER (START) -->
+                    <nav id="public-header" class="navbar-fixed-top" role="">
                         <!-- Message Panel (START) -->
                         <div id="send-message-con">
                             <form class="send-message-form navbar-form clearfix" onsubmit="javascript:sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()});return false;">
@@ -297,14 +287,32 @@
                             </form>
                         </div>
                         <!-- Message Panel (END) -->
+
+                        <!-- Stream Slider Nav (Start) -->
+                        <div id="stream-slider-nav" class="slider-nav btn-group btn-group-justified">
+                            <button class="btn btn-link slide-left">&laquo;</button>
+                            <span class="slider-items">
+                                <a class="btn-connection-request btn btn-lucid-normal">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                <a class="btn-message-user btn btn-lucid-normal active">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                </a>
+                                <a class="btn-block-user btn btn-lucid-normal">
+                                    <span class="glyphicon glyphicon-comment private-chat"></span>
+                                </a>
+                            </span>
+                            <button class="btn btn-link slide-right">&raquo;</button>
+                        </div>
+                        <!-- Stream Slider Nav (End) -->
                     </nav>
 
-                    <!-- CONVERSATION HEADER (END) -->
+                    <!-- public HEADER (END) -->
                     <div id="today" class="date-header-item">
-                        <span class="message"><b>TODAY</b><br>Friday, December 13th 2013</span>
+                        <span class="message"><b>TODAY</b></span>
                     </div>
 
-                    <!-- CONVERSATION (START) -->
+                    <!-- public (START) -->
                     <div class="connection-items-con public" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1">
                         <div class="well well-lucid">
                             <ul class="list-group connection-items-list">
@@ -318,7 +326,7 @@
                                             </button>
                                         </div>
                                         <div class="panel-body">
-                                            <blockquote class="connection-content">I represent you. This is where you will appear in thought stream conversations.</blockquote>
+                                            <blockquote class="connection-content">I represent you. This is where you will appear in thought stream publics.</blockquote>
                                             <div class="callout-pointer"></div>
                                             <div class="status">
                                                 <span class="sent">10:55pm</span>
@@ -507,7 +515,7 @@
                                         <sup class="badge label-lucid connecting"></sup>
                                         <label><span class="fname">+Member</span><span class="lname"></span></label>
                                     </button>
-                                    <span class="message">joined the conversation</span>
+                                    <span class="message">joined the public</span>
                                 </li>
                                 <li class="list-group-item added-stream-item">
                                     <span class="btn-group stream-button added-stream">
@@ -525,24 +533,24 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- CONVERSATION (END) -->
+                    <!-- public (END) -->
 
-                    <!-- CONVERSATION FOOTER (START) -->
-                    <nav id="conversation-footer" class="navbar-fixed-bottom" role="">
+                    <!-- public FOOTER (START) -->
+                    <nav id="public-footer" class="navbar-fixed-bottom" role="">
                         <!-- Stream Status (Start) -->
                         <div id="stream-status-panel" class="status-bar">
                             <div class="stream-info pull-left">
-                                <span class="stream-name">LucidLife</span><span class="badge">?</span>
+                                <span class="stream-name">LucidLife</span><span class="badge"></span>
                             </div>
                             <div class="filter-info pull-right">
-                                <span class="filter-sign glyphicon glyphicon-filter"></span>m/f 18-25 &lt;250<sup>km</sup><span class="badge">97</span>
+                                <span class="filter-sign glyphicon glyphicon-filter"></span>m/f 18-25 &lt;250<sup>km</sup><span class="badge"></span>
                             </div> 
                         </div>
                         <!-- Stream Status (End) -->
                     </nav>
-                    <!-- CONVERSATION FOOTER (END) -->
+                    <!-- public FOOTER (END) -->
                 </div>
-                <!-- CONVERSATION PAGE (END) -->
+                <!-- public PAGE (END) -->
 
                 <!-- FILTER (START) -->
                 <div id="page-filter" class="page row">
@@ -596,7 +604,7 @@
                                     </button>
                                     <button type="button" class="btn btn-lucid-normal" data-item="LucidLovers">
                                         <span class="filter-name">College Students</span>
-                                        <!--<sup class="people-connections badge label-lucid">9</sup>-->
+                                        <!--<sup class="people-private badge label-lucid">9</sup>-->
                                         <label class="badge">11</label>
                                     </button>
                                     <button type="button" class="btn btn-lucid-normal" data-item="LifeIsGood">
@@ -623,6 +631,7 @@
                                 <span class="pull-left">34 Female</span>
                                 <span class="pull-right">Last active 2 days ago</span>
                             </div>
+                            <!--
                             <div class="profile-actions btn-group btn-group-justified">
                                 <a class="btn-connection-request btn btn-lucid-normal blue">
                                     +<span class="glyphicon glyphicon-link"></span>
@@ -634,6 +643,7 @@
                                     <span class="glyphicon glyphicon-ban-circle"></span>
                                 </a>
                             </div>
+                            -->
                         </div>
                         <div class="profile-info">
                             <div class="biography">
@@ -645,6 +655,7 @@
                     </div>
 
                     <!-- PROFILE FOOTER (START) -->
+                    <!--
                     <nav id="profile-footer" class="navbar-default navbar-fixed-bottom" role="navigation">
                         <div class="profile-nav toggle-nav btn-group btn-group-justified">
                             <a class="btn-home btn btn-lucid-normal active" data-target=".profile-lists">
@@ -653,7 +664,7 @@
                             <a class="btn-pictures btn btn-lucid-normal" data-target=".profile-lists">
                                 <span class="glyphicon glyphicon-camera"></span>
                             </a>
-                            <a class="btn-connections btn btn-lucid-normal" data-target=".profile-lists">
+                            <a class="btn-private btn btn-lucid-normal" data-target=".profile-lists">
                                 <span class="suggested-streams glyphicon glyphicon-link"></span>
                             </a>
                             <a class="btn-streams btn btn-lucid-normal" data-target=".profile-lists">
@@ -662,6 +673,7 @@
                             
                         </div>
                     </nav>
+                    -->
                     <!-- PROFILE FOOTER (END) -->
                 </div>
             </div>
@@ -763,7 +775,7 @@
                 <div id="added-member-item" class="template">
                     <li class="list-group-item added-member-item">
                         {{user-button}}
-                        <span class="stream-message exit">Joined the stream.</span>
+                        <span class="message exit time-elapse">Joined {{time}}</span>
                     </li>
                 </div>
                 <!-- Added Member Item (End) -->
@@ -772,6 +784,7 @@
                 <div id="added-stream-item" class="template">
                     <li class="list-group-item added-stream-item">
                         {{stream-button}}
+                        <span class="message time-elapse">{{time}}</span>
                     </li>
                 </div>
                 <!-- Added Stream Item (Start) -->
@@ -787,7 +800,7 @@
                                 <blockquote class="connection-content">{{chat}}</blockquote>
                                 <div class="callout-pointer"></div>
                                 <div class="status">
-                                    <span class="sent">{{createdate}}</span>
+                                    <span class="sent time-elapse">{{createdate}}</span>
                                     <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                     <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                                 </div>
@@ -1077,7 +1090,7 @@
                                             <span class="email">[email]</span>
                                             <span class="phone">[phone]</span>
                                         </div>
-                                        <div class="connections-info">
+                                        <div class="private-info">
                                         <span class="stream-info">
                                             <span class="streams">[streams]</span> <span class="streams-common">/ [streams common]</span>
                                         </span>
@@ -1128,12 +1141,12 @@
                             <div class="panel-menu">
                                 <button id="stream-panel" class="btn-lucid status-icon glyphicon glyphicon-heart">~<span>connected</span><sup class="indicator"><span class="label label-primary">30</span></sup></button>
                                 <button id="filter-private-panel" class="btn-lucid status-icon glyphicon glyphicon-link"><span>requests</span><sup class="indicator"><span class="label label-primary">5</span></sup></button>
-                                <button id="connections-private-panel" class="btn-lucid status-icon glyphicon glyphicon-ban-circle"><span>blocked</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
+                                <button id="private-private-panel" class="btn-lucid status-icon glyphicon glyphicon-ban-circle"><span>blocked</span><sup class="indicator"><span class="label label-primary">2</span></sup></button>
                             </div> 
                         </div>
                         <!-- Panel-Body (Start) -->
                         <div class="panel-body">
-                            Connections Stuff goes here
+                            private Stuff goes here
                             <div class="_user-badge">
                                 <img class="user-pic" src="img/logo-with-name.png" alt="LucidLife" align="left">
                                 <div class="user-bio">

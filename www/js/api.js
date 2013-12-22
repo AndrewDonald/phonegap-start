@@ -218,8 +218,8 @@ function liveQuery(searchValue){
         // Disable thought submittal if less than 3 char thought
         $('#form-thought .btn[name=submitThought]').addClass('disabled');
 
-        $('#join-conversation.suggested').removeClass('suggested');
-        $('#join-conversation .btn-hot-streams:not(".active")').click();
+        $('#join-public.suggested').removeClass('suggested');
+        $('#join-public .btn-hot-streams:not(".active")').click();
     }
 }
 
@@ -417,8 +417,8 @@ function getStream_Callback(result) {
         // Ajax request failed
     }else{
         if(result.status > 0){
-            _session.streamsandpeople = result.object;
-            populateStreamsAndPeople();
+            _session.peopleThought = result.object;
+            populatepeopleThought();
         }else{
             // Server returned an error
             alert('Error getStream_Callback: ' + result.message);
@@ -502,15 +502,19 @@ function initiateNodeServer() {
         case "remove_stream":
             removeStream(msg.object);
             break;
-        case "subscription":
+        case "add_user":
             addMemberItem(msg.object);
+            break;
+        case "remove_user":
+            console.log('remove_user:', msg.object)
+            removeUser(msg.object);
             break;
         case "add_connection":
             break;
         case "send_message":
             console.log('NODE: send_message= ', msg.object);
             getUnreadMessages();
-            $('#connections-unread-messages-link > .qty-notification').flash();
+            $('#private-unread-messages-link > .qty-notification').flash();
             break;
         default:
             break;
@@ -823,15 +827,15 @@ function getUnreadMessages_CALLBACK(result) {
         // Ajax request failed
     }else{
         if(result.status > 0){
-            $('#connections-unread-messages li:not(".header")').remove();
+            $('#private-unread-messages li:not(".header")').remove();
             
             if (result.object == 0){	// Server returned no results
-                $('#connections-unread-messages').append('<li class="none">none</li>');
+                $('#private-unread-messages').append('<li class="none">none</li>');
             }else{	// Server returned results
 		// Update Message Notification # of messages
-		//if ($('#connections-unread-messages-link').parent('.btn-group').is(':not(".open")')) {
+		//if ($('#private-unread-messages-link').parent('.btn-group').is(':not(".open")')) {
 		
-		//$('#connections-link > .qty-notification').html('+' + parseInt(_application.indicator.unreadMessages + _application.indicator.buddyrequests));
+		//$('#private-link > .qty-notification').html('+' + parseInt(_application.indicator.unreadMessages + _application.indicator.buddyrequests));
 		
 		// Update Messages list by storing and correlating
 		var arrSenders = [];
@@ -863,7 +867,7 @@ function getUnreadMessages_CALLBACK(result) {
 			_application.messageMember[senderid].messages[result.object[index].messageid.toString()].read 		= result.object[index].read;
 			
 			// Display Member user-badge in Unread Messages List Dropdown
-			$('#connections-unread-messages')
+			$('#private-unread-messages')
 			    .append(_application.template["Member-List-Item"]
 			       //.replace(/\[receiverid]/g,      _application.messageMember[index].receiverid)
 			       .replace(/\[senderid]/g,    _application.messageMember[senderid].senderid)
@@ -890,7 +894,7 @@ function getUnreadMessages_CALLBACK(result) {
 		// Display # of messages indicator for each mail member and correlate mail messages
 		for (var key in _application.messageMember) {
 		    if(_application.messageMember.hasOwnProperty(key)) {
-			$('#connections-unread-messages > li[data-senderid="' + key + '"]')
+			$('#private-unread-messages > li[data-senderid="' + key + '"]')
 			    .find('.member-list-item-link[data-senderid="' + _application.messageMember[key].senderid + '"] > sup.message-qty')
 				.html(Object.keys(_application.messageMember[key].messages).length)
 			    .parent().siblings('ul.nav-list').append(createMessageMemberList(_application.messageMember[key]));
@@ -899,7 +903,7 @@ function getUnreadMessages_CALLBACK(result) {
 		
 		// Update Message Indicator
 		_application.indicator.unreadMessages = unread;
-		$('#connections-unread-messages-link > .qty-notification').html(_application.indicator.unreadMessages);
+		$('#private-unread-messages-link > .qty-notification').html(_application.indicator.unreadMessages);
             }
         }else{
             // Server returned an error
@@ -1016,20 +1020,20 @@ function displayActiveMenuBuddyRequests_CALLBACK(result) {
     }else{
         if(result.status > 0){
             _session.buddyrequests = result.object;
-            $('#connections-buddy-requests li:not(".header")').remove();
+            $('#private-buddy-requests li:not(".header")').remove();
             
             if (result.object == 0){
                 // Server returned no results
-                $('#connections-buddy-requests').append('<li class="none">none</li>');
+                $('#private-buddy-requests').append('<li class="none">none</li>');
             }else{
 		// Update Notification # of buddy requests
 		_application.indicator.buddyrequests = result.object.length;
-		$('#connections-buddy-requests-link > .qty-notification').html('+' + _application.indicator.buddyrequests);
-		$('#connections-link > .qty-notification').html('+' + parseInt(_application.indicator.unreadMessages + _application.indicator.buddyrequests));
+		$('#private-buddy-requests-link > .qty-notification').html('+' + _application.indicator.buddyrequests);
+		$('#private-link > .qty-notification').html('+' + parseInt(_application.indicator.unreadMessages + _application.indicator.buddyrequests));
 		
                 // Server returned results
                 $.each(result.object, function(index) {
-                    $('#connections-buddy-requests')
+                    $('#private-buddy-requests')
                         .append($('template#Buddy-List-Item').html()
                             .replace('[userid]',    _session.buddyrequests[index].userid)
                             .replace(/".."/g,       '"' + getPic('profile', _session.messages[index], _application.badge) + '"')

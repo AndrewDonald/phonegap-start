@@ -56,6 +56,8 @@ function gotoPage(page, option){
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
     $('body').attr('data-page', page);
+    $('#main-menu-items .btn').removeClass('active');
+    $('#main-menu-items [data-toggle-item=' + page + ']').addClass('active');
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
         _session.page = page;
@@ -63,14 +65,10 @@ function gotoPage(page, option){
             case "page-profile":
                 $('#page-profile .user-profile').empty();
                 break;
-            case "page-stream":
-                $('#pages #page-streams-and-people').addClass('active').removeClass('people').addClass('streams');
+            case "page-people":
+                $('#pages #page-people').addClass('active');
                 //getThoughts(); // Change to getAddedThoughts
                 _temp.openStreamAccordionTab = option;
-                getStream();
-                break;
-            case "page-people":
-                $('#pages #page-streams-and-people').addClass('active').removeClass('streams').addClass('people');
                 getStream();
                 break;
             default:
@@ -247,5 +245,5 @@ function accordionButton(objDom){
         .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 
     // ** Stream and People List Accordion Only **
-    $(objDom).nextUntil('#streams-and-people .btn-accordion').slideToggle(250);
+    $(objDom).nextUntil('#people-list .btn-accordion').slideToggle(250);
 }

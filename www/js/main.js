@@ -4,25 +4,24 @@ function startApp(){
     $('.page.home').removeClass('hide');
 }
 */
-var _temp                       = {};
+var _temp                   = {};
 
-var _session                    = {};
-    _session.id                 = "";
-    _session.loggedIn           = false;
-    _session.page               = "page-login";
-    _session.user               = {};
-    _session.geolocation        = {"latitude":0,"longitude":0};
-    _session.people             = {"user":{}};      // Children: _session.people.user['userid']
-    _session.conversation       = {"chat":{}};      // Children: _session.conversation.chat['chatid']
-    _session.stream             = {"streamid":null, "stream":null};
-    _session.streamAdded        = {"stream":{}};    // Children: _session.streamAdded.stream['id']  // Added Parallel Streams parent
-    _session.streamConversation = {"chat":{}};      // Children: _session.streamConversation.chat['chatid']     // inStream Conversation parent
-    _session.streamsandpeople   = {};
+var _session                = {};
+    _session.id             = "";
+    _session.loggedIn       = false;
+    _session.page           = "page-login";
+    _session.user           = {};
+    _session.geolocation    = {"latitude":0,"longitude":0};
+    _session.people         = {"user":{}};      // Children: _session.people.user['userid']
+    _session.public         = {"chat":{}};      // Children: _session.public.chat['chatid']
+    _session.stream         = {"streamid":null, "stream":null};
+    _session.streamAdded    = {"stream":{}};    // Children: _session.streamAdded.stream['id']  // Added Parallel Streams parent
+    _session.streampublic   = {"chat":{}};      // Children: _session.streampublic.chat['chatid']     // inStream public parent
+    _session.peopleThought  = {};
 
     //_session.user.filter = "My Filter";           // Filter to apply. "" = no filter 
     //_session.user.filters = {};                   // Filters parent
     //_session.user.filters.filter['My Filter'] = {gender:"B", ageFrom:25, ageTo:55, distance:3.5};
-    
     
 var _application                                = {};
     _application.version                        = "0.4.0";
@@ -33,18 +32,8 @@ var _application                                = {};
     _application.detect.useragent               = navigator.userAgent.toLowerCase();
     _application.node.streamserver              = "https://dev.lucidlife.co";
     _application.gmtOffset                      = new Date().getTimezoneOffset();
-    /*
-    _application.detect.touchEnabled            = Modernizr.touch || 
-                                                    (_application.detect.useragent.match(/(iphone|ipod|ipad)/) ||
-                                                    _application.detect.useragent.match(/(android)/)  || 
-                                                    _application.detect.useragent.match(/(iemobile)/) || 
-                                                    _application.detect.useragent.match(/iphone/i) || 
-                                                    _application.detect.useragent.match(/ipad/i) || 
-                                                    _application.detect.useragent.match(/ipod/i) || 
-                                                    _application.detect.useragent.match(/blackberry/i) || 
-                                                    _application.detect.useragent.match(/bada/i));
-    */
     _application.streamtimer                    = false;
+    
     _application.url                            = {};
     _application.url.api                        = "https://dev.lucidlife.co/api/ajax.php"; 
     _application.url.fetch                      = {};
@@ -65,18 +54,8 @@ var _application                                = {};
     _application.template.addedMemberItem       = $('#added-member-item.template').html();
     _application.template.addedStreamItem       = $('#added-stream-item.template').html();
     _application.template.chatItem              = $('#chat-item.template').html();
-    
-    /*
-    _application.template                       = {};
-    _application.template["Message-Area"]       = $('#Message-Area').html();
-    _application.template["User-Badge"]         = $('#User-Badge').html().replace('{Message-Area}', _application.template["Message-Area"]);
-    _application.template["Member-List-Item"]   = $('#Member-List-Item').html();
-    _application.template["List-Item"]          = $('#List-Item').html().replace('{Message-Area}', _application.template["Message-Area"]);
-    _application.template.hotStreamsList        = $('#Hot-Streams-List-Item').html();
-    _application.template["Stream-List-Item"]   = $('#Stream-List-Item').html();
-//  _application.template["Buddy-List-Item"]    = $('#Buddy-List-Item').html();
-    _application.template["Upload-File-Photo"]  = $('#Upload-File-Photo').html();
-    */
+    //_application.template["Upload-File-Photo"]  = $('#Upload-File-Photo').html();
+
     _application.pic                            = {};
     _application.pic.height                     = 50;
     _application.pic.width                      = 50;
@@ -100,7 +79,7 @@ moment.lang('en', {
     relativeTime : {
         future: "in %s",
         past:   "%s",
-        s:      "now",
+        s:      "a moment ago",
         m:      "1 min ago",
         mm:     "%d mins ago",
         h:      "1 hr ago",
@@ -126,7 +105,7 @@ moment.lang('en', {
 });
 
 $(function() {
-populateStreamsAndPeople();
+populatepeopleThought();
 $('.btn-accordion.new, .btn-accordion.new-arrivals').click();
     initEventHandlers();
 
@@ -193,14 +172,14 @@ function deinitializeApp(){
 function changeStream(objStream){
     _session.stream             = objStream;
     _session.streamAdded        = {"stream":{}}; 
-    _session.streamConversation = {"chat":{}}; 
+    _session.streampublic = {"chat":{}}; 
     
-    gotoPage('page-conversation');
-    $('#page-conversation h2#today').html('<b>TODAY</b><br>' + moment().format("dddd, MMMM Do YYYY"));
-    $('#page-conversation .connection-items-con .connection-items-list').empty();
+    gotoPage('page-public');
+    $('#page-public h2#today').html('<b>TODAY</b><br>' + moment().format("dddd, MMMM Do YYYY"));
+    $('#page-public .connection-items-con .connection-items-list').empty();
     updateStreamStatus();
 
-    // Pre populate stream with recent/latest conversation
+    // Pre populate stream with recent/latest public
     getChats();
     updateNodeServer();
     // Show all People in People Page
@@ -215,41 +194,18 @@ function updateStreamStatus(){
         $('#stream-status-panel .filter-info').removeClass('pull-left').addClass('pull-right');
     }
     $('#stream-status-panel .stream-info .stream-name').html(_session.stream.stream);
-    $('#stream-status-panel .stream-info .badge').html('9999');
+    //$('#stream-status-panel .stream-info .badge').html();
 }
 
 function addStreamMember(objUser, direction) {
     $('.stream-people > article.User-Badge[data-userid="' + objUser.userid + '"]').remove();
-//    var selector = " > .wrapper";
-//    if ($('html').is('.no-touch')) {
-//  selector += " > .jspContainer > .jspPane";
-//    }
+
     if (direction == 0) {    
         $('.stream-people').prepend(createUserBadge(objUser, "people")).children('article.User-Badge:first').hide().show(500).flash(500,2); //.removeAttr('style');
     } else {
         $('.stream-people').append(createUserBadge(objUser, "people")).children('article.User-Badge:first').show(); //.removeAttr('style');
     }
 }
-
-/* Chat Response object data
- public $chatid;
- public $userid;
- public $fname;
- public $lname;
- public $gender;
- public $age;
- public $latitude;
- public $longitude;
- public $distance;
- public $picextension;
- public $streamid;
- public $stream;
- public $chat;
- public $chatpicextension;
- public $createdate;
- public $updatedate;
- public $status;
-*/
 
 function addUser(objUser) {
     _session.people.user[objUser.userid] = {userid:         objUser.userid,
@@ -272,7 +228,7 @@ function addChatItem(objChat) {
 
     var user = objChat;
 
-    _session.streamConversation.chat[user.chatid] =   {chatid:user.chatid,
+    _session.streampublic.chat[user.chatid] =   {chatid:user.chatid,
                                                         userid:user.userid,
                                                         chat:user.chat,
                                                         chatpic:user.chatpicextension,
@@ -313,8 +269,8 @@ function addChatItem(objChat) {
 
     //var chatItem = createChatItem(objChat);
     //if (direction == 0) { //$('ul.more_stories li:gt(2)').hide();
-    $('#page-conversation .connection-items-con .connection-items-list').prepend(createChatItem(objChat));
-    var convoItem = $('#page-conversation .connection-items-con .connection-items-list [data-userid=' + objChat.userid + ']:first');
+    $('#page-public .connection-items-con .connection-items-list').prepend(createChatItem(objChat));
+    var convoItem = $('#page-public .connection-items-con .connection-items-list [data-userid=' + objChat.userid + ']:first');
     $(convoItem).slideDown(500, function(){
         $(this).removeAttr('style').find('.btn-lucid.user').removeClass('exit').animate({delay:0}, function(){
             $(convoItem).find('.panel-body').removeClass('exit');
@@ -322,13 +278,13 @@ function addChatItem(objChat) {
     });
     
     /*
-        //if($('#page-conversation > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
-        //   $('#page-conversation > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
+        //if($('#page-public > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
+        //   $('#page-public > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
         //}
     }else{
-        $('#page-conversation > .connection-items-con .connection-items-list').append(createUserBadge(user, mediaType)).children('article.User-Badge:first');
-        //if($('#page-conversation > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
-        //    $('#page-conversation > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
+        $('#page-public > .connection-items-con .connection-items-list').append(createUserBadge(user, mediaType)).children('article.User-Badge:first');
+        //if($('#page-public > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
+        //    $('#page-public > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
         //}
     }
     */
@@ -410,9 +366,9 @@ function createChatItem(objData){
     return chatItem;
 }
 
-// Displays a line item in the COnversation Stream
+// Displays a line item in the public Stream
 function displayStreamItem(objHtml){
-    $('#page-conversation .connection-items-con .connection-items-list').prepend(objHtml)
+    $('#page-public .connection-items-con .connection-items-list').prepend(objHtml)
         .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
 }
 
@@ -429,7 +385,8 @@ function addStream(objData) {
                                 .replace(/\{{streamid}}/g, objData.streamid)
                                 .replace(/\{{stream}}/g, objData.stream)
                                 .replace(/\{{activeusers}}/g, '99') // objData.members
-                                .replace(/\{{added}}/g, 'added');
+                                .replace(/\{{added}}/g, 'added')
+                                .replace(/\{{time}}/g, 'Added ' + getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
 
         displayStreamItem(addedStreamItem);
     }
@@ -437,7 +394,7 @@ function addStream(objData) {
 
 function removeStream(streamid){
     delete _session.streamAdded.stream[streamid];
-    $('#page-conversation .stream-button[data-streamid=' + streamid + '] .btn').addClass('btn-default disabled');
+    $('#page-public .stream-button[data-streamid=' + streamid + '] .btn').addClass('btn-default disabled');
 }
 
 function addMemberItem(objData) {
@@ -446,16 +403,30 @@ function addMemberItem(objData) {
         _session.people.user[objData.userid.toString()].time    = splitDate(_session.people.user[objData.userid.toString()].createdate);
         
         var addMemberItem = _application.template.addedMemberItem
-                            .replace(/\{{user-button}}/g, createUserButton(objData, {animate:true}));
+                            .replace(/\{{user-button}}/g, createUserButton(objData, {animate:true}))
+                            .replace(/\{{time}}/g, getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
 
        displayStreamItem(addMemberItem);
     }
 }
 
+function removeUser(objData) {
+    if(!_session.people.user[objData.userid.toString()]){
+        _session.people.user[objData.userid.toString()]         = objData; 
+        _session.people.user[objData.userid.toString()].time    = splitDate(_session.people.user[objData.userid.toString()].createdate);
+        
+        var removeMemberItem = _application.template.addedMemberItem
+                                .replace(/\{{user-button}}/g, createUserButton(objData, {animate:true}))
+                                .replace(/\{{time}}/g, getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
+
+       displayStreamItem(removeMemberItem);
+    }
+}
+
 function addChatItem(objData) {
-    if(!_session.conversation.chat[objData.chatid.toString()]){
-        _session.conversation.chat[objData.chatid.toString()]       = objData; 
-        _session.conversation.chat[objData.chatid.toString()].time  = splitDate(_session.conversation.chat[objData.chatid.toString()].createdate);
+    if(!_session.public.chat[objData.chatid.toString()]){
+        _session.public.chat[objData.chatid.toString()]       = objData; 
+        _session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
         
         var you = "";
         if(objData.userid == _session.user.userid){
@@ -479,10 +450,10 @@ function createStreamAccordionTab(objData){
     }
 
     var streamAccordionTab = _application.template.streamAccordionTab
-                    .replace(/\{{stream-type}}/g,   streamType)
-                    .replace(/\{{streamid}}/g,      objData.streamid)
-                    .replace(/\{{stream}}/g,        objData.stream)
-                    .replace(/\{{activeusers}}/g,   objData.activeusers);
+                            .replace(/\{{stream-type}}/g,   streamType)
+                            .replace(/\{{streamid}}/g,      objData.streamid)
+                            .replace(/\{{stream}}/g,        objData.stream)
+                            .replace(/\{{activeusers}}/g,   objData.activeusers);
     
     return streamAccordionTab;
 }
@@ -491,42 +462,42 @@ function createNewestMembers(){
     return $('#sample-newest-people.template').html();
 }
 
-function populateStreamsAndPeople(objStream){
+function populatepeopleThought(objStream){
     if(typeof objStream == "undefined"){
-        objStream = _session.streamsandpeople;
+        objStream = _session.peopleThought;
     }
     
-    var listStreamsAndPeople = "";
+    var listpeopleThought = "";
 
     // Iterate through object to create list of html objects (StreamAccordionTabs=streams & userButtons=people)
     var streamCount = 0;
     $.each(objStream, function(){
         streamCount++;
         var streamid = this.streamid;
-        listStreamsAndPeople += createStreamAccordionTab(this);
+        listpeopleThought += createStreamAccordionTab(this);
 
         // Iterate through active users in stream
         $.each(this.users, function(){
-            listStreamsAndPeople += createUserButton(this);
+            listpeopleThought += createUserButton(this);
         });
     });
 
     // Display HTML objects list 
-    $('#streams-and-people > .panel-menu').html(createNewestMembers() + listStreamsAndPeople);
+    $('#people-list').html(createNewestMembers() + listpeopleThought);
 
     // Set Stream Members to active state as default 
     $('#people-controls .btn[data-filter=default]:not(.active)').click();
     
     // Open Stream accordion if there are no added streams for default
     if(streamCount == 1){
-        $('#streams-and-people .btn-accordion[data-streamid=' +  _session.stream.streamid + ']:not(.active)').click();
+        $('#people-list .btn-accordion[data-streamid=' +  _session.stream.streamid + ']:not(.active)').click();
     }
 
     // Expand Newest Stream Members as default if another tab (openStreamAccordionTab) has been set 
     if(typeof _temp.openStreamAccordionTab != "undefined"){
-        $('#streams-and-people .btn-accordion[data-streamid=' + _temp.openStreamAccordionTab + ']:not(.active)').click();
+        $('#people-list .btn-accordion[data-streamid=' + _temp.openStreamAccordionTab + ']:not(.active)').click();
     }else{
-        $('#streams-and-people .btn-accordion.newest-members:not(.active)').click();
+        $('#people-list .btn-accordion.newest-members:not(.active)').click();
     }
     
     delete _temp.openStreamAccordionTab;

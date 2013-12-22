@@ -75,7 +75,7 @@ label {margin-bottom: 0; font-weight: normal;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; padding: 7px 7px 15px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
+blockquote, .well blockquote {margin: 0; display: inline-block; padding: 7px 7px 15px; min-width: 70px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -310,7 +310,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid {transition: all 0.5s;
     background-color: #0ab; box-shadow: 0 0 5px #0ef inset;
     line-height: 1; position: relative; cursor: pointer; font-size: 14px; color: #0ef; border-radius: 50%;}
-.btn-lucid:hover, .btn-lucid:focus, .btn-lucid.square {transition: all 0.5s; color: #fff; border-color: #fff; border-radius: 10%;}
+.btn-lucid:hover, .btn-lucid:focus, .btn-lucid.square {transition: all 0.5s; color: #fff; border-color: #fff; border-radius: 10%;} 
 .btn-lucid.active {transition: all 0.5s;
     color: #fff; background-color: #0cd; box-shadow: 0 0 3px #fff inset;}
     .btn-lucid.tilde {font-size: 40px; line-height: 0.45;}
@@ -478,6 +478,15 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-group-justified .btn-lucid-normal:hover,
 .btn-group-justified .btn-lucid-normal:focus {box-shadow: 0 0 1px #fff inset;}
 
+.slider-nav .btn-lucid-normal {position: relative; padding: 0; box-shadow: none; text-shadow: none; color: #0ef;}
+        .slider-items {}
+        .slider-nav .slide-left {position: absolute; top: -2px; left: 0; color: #0ef; padding: 0;}
+        .slider-nav .slide-right {position: absolute; top: -2px; right: 7px; color: #0ef; padding: 0;}
+        .slider-nav .slide-left:hover, .slider-nav .slide-left:focus,
+        .slider-nav .slide-right:hover, .slider-nav .slide-right:focus {text-decoration: none;}
+        .slider-nav .btn-lucid-normal.active {border: 1px solid #0ef; background-color: transparent;}
+
+
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
 .tab-lucid {color: #fff; background-color: #09d; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
 .tab-lucid.active {background-color: #0bf; box-shadow: 0 1px 2px #0ef inset, 0 0 3px #000;}
@@ -541,6 +550,16 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             ul#main-menu-items .list-group-item .btn.active {color: #fff;}
                 ul#main-menu-items .list-group-item .btn .menu-icon {padding-right: 10px;}
                 ul#main-menu-items .list-group-item .btn.menu-toggle-modal-about {padding: 13px 15px;}
+                
+                ul#main-menu-items .list-group-item .btn#private-toggle .menu-icon {padding-right: 3px;}
+                ul#main-menu-items .list-group-item .btn#private-toggle sup.menu-icon {color: #0ab; font-size: 7px; left: -11px; padding: 0; top: -4px;}
+                
+                ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {border: 1px solid #0ef; border-radius: 4px; height: 18px; padding: 2px 1px; width: 18px; margin-right: 8px; margin-left: -2px;}
+                ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {transition: border-color 0.5s; border-color: #0ef;}
+                ul#main-menu-items .list-group-item .btn#profile-toggle.active .menu-icon,
+                ul#main-menu-items .list-group-item .btn#profile-toggle:hover .menu-icon,
+                ul#main-menu-items .list-group-item .btn#profile-toggle:focus .menu-icon {transition: border-color 0.5s; border-color: #fff;}
+                
     /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
 /* HEADER */   
@@ -618,7 +637,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #form-login .btn-join {font-size: 16px; margin-left: -10px;}
 
     /* PAGE CREATE-USER */
-    #pages #page-create-user {padding-top: 20px;}
+    #pages #page-create-user {padding-top: 20px; padding-bottom: 200px;}
         #form-create-user .steps {display: none;}
         #form-create-user .steps.active {display: block;}
         #form-create-user .steps.step-2 .btn-back {margin: -10px 0 5px;}
@@ -672,64 +691,51 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .user-profile {padding: 415px 10px 0;}
         }
 
-    /* PEOPLE PAGE */ 
-    #page-streams-and-people {padding-top: 10px; padding-bottom: 60px;}
-        #page-streams-and-people.streams #people-footer {display: none;}
-        #page-streams-and-people.streams .btn-accordion.newest-members,
-        #page-streams-and-people.streams .btn.newest-member {display: none;}
+    /* people PAGE */ 
+    #page-people {padding-top: 10px; padding-bottom: 60px;}
+        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
+        #people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
+        #people-list > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
+        #people-list > pre.btn-accordion.active.newest-members,
+        #people-list > pre.btn-accordion.newest-members:hover,
+        #people-list > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
+        #people-list > pre:first-child {margin-top: 0;}
+        #people-list > pre > .header-icon,
+        #people-list > pre > label {padding-right: 5px; line-height: 18px;}
+        #people-list > pre > .badge {margin-right: 5px;}
+        #page-people:not(.vertical) > #people-list > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
 
-        #streams-and-people {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
-            
-            #page-streams-and-people #streams-and-people .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
-                        
-                /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-                .btn.people-list-toggle > .badge {font-size: 14px;}
-                .btn.people-list-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-                .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
-                    .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
-
-
-               /* #streams-and-people {display: none; border-radius: 0;}
-                #streams-and-people.active {display: block;}
-                #streams-and-people .btn.btn-lucid.user {margin-left: 8px; margin-right: 2px;} */
-                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
-                        #streams-and-people > .panel-menu > pre.btn-accordion.active.newest-members,
-                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members:hover,
-                        #streams-and-people > .panel-menu > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
-
-                        #streams-and-people > .panel-menu > pre:first-child {margin-top: 0;}
-                        #streams-and-people > .panel-menu > pre > .header-icon,
-                        #streams-and-people > .panel-menu > pre > label {padding-right: 5px; line-height: 18px;}
-                        /*#streams-and-people > .panel-menu > pre.added-stream label:before {content: '≅'; font-size: 16px; line-height: 1;}*/
-                        
-                         
-                        #streams-and-people > .panel-menu > pre > .badge {margin-right: 5px;}   
-
-/*
-                            #streams-and-people > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-                            #page-streams-and-people.vertical #streams-and-people > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-                            #streams-and-people > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-                            #page-streams-and-people.vertical > #streams-and-people > .panel-menu > pre > .btn-vote-remove {float: right;}
+        /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+        .btn.people-list-toggle > .badge {font-size: 14px;}
+        .btn.people-list-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+        .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
+            .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
+        
+        /*
+        #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+        #page-people.vertical #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+        #people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+        #page-people.vertical > #people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
         */
-                    #page-streams-and-people:not(.vertical) > #streams-and-people > .panel-menu > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
-        #page-streams-and-people > .panel-body {padding: 0; box-shadow: 0 0 3px #0ef inset;}
-
-            #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
-            #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
-            #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
-            #people-controls .btn.active[data-filter=connected] {background-color: #f90;}
-            #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
-            #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
+        
+        #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
+        #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
+        #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
+        #people-controls .btn.active[data-filter=connected] {background-color: #f90;}
+        #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
+        #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
 
 
-    /* PAGE CONVERSATION */
-    #pages #page-conversation {padding-top: 50px; padding-bottom: 50px;}
-        nav#conversation-header {top: 40px; min-height: 40px; padding: 0 5px 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
+    /* PAGE public */
+    #pages #page-public {padding-top: 50px; padding-bottom: 50px;}
+        nav#public-header {top: 40px; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
 
-        #page-conversation .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
-            #page-conversation .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
-                /*#page-conversation .connection-items-con > .well > .connection-items-list .stream-message {display: none;}*/
-                #page-conversation .connection-items-con > .well > .connection-items-list .panel-body.pop {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
+        #stream-slider-nav {padding: 0 80px; margin-top: 4px;}
+
+        #page-public .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
+            #page-public .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
+                /*#page-public .connection-items-con > .well > .connection-items-list .stream-message {display: none;}*/
+                #page-public .connection-items-con > .well > .connection-items-list .panel-body.pop {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
 
         /* CONTROLS PANELS */
         #stream-controls-panel {z-index: 2000;}
@@ -754,11 +760,11 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #filter-toggle-menu .filter-toggle-menu-list a[data-stream-filter=details].active .badge:before{content:"more";}
         
 
-        /* CONVERSATION PAGE */
-        body[data-page=page-conversation] #page-streams-and-people {}
-            body[data-page=page-conversation] #page-streams-and-people #streams-and-people {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
-                body[data-page=page-conversation] #streams-and-people > .panel-menu > pre {display: none;}   
-            body[data-page=page-conversation] #page-streams-and-people .panel-body #connection-items-header {display: none;}
+        /* public PAGE */
+        body[data-page=page-public] #page-people {}
+            body[data-page=page-public] #page-people #people-list {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
+                body[data-page=page-public] #people-list > .panel-menu > pre {display: none;}   
+            body[data-page=page-public] #page-people .panel-body #connection-items-header {display: none;}
 
             #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
                 #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
@@ -766,7 +772,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 #connection-items-header .btn.active {color: #ff6;}
 
             .connection-items-con {display: none;}
-            #page-conversation .connection-items-con {display: block;}
+            #page-public .connection-items-con {display: block;}
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal:hover,
@@ -775,6 +781,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
                     .connection-items-list > li.list-group-item {margin: 0 60px 10px; padding: 0; text-align: center; background-color: transparent; border: none; border-radius: 0;}
                     .connection-items-list > li.list-group-item.added-stream-item {margin: 0 5px 10px;}
+                        .connection-items-list > li.list-group-item.added-stream-item .message {display: block;}
                     .connection-items-list > li.list-group-item.added-member-item {margin-top: -5px;}
                     .date-header-item {text-align: center;}
                     
@@ -795,7 +802,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                             .connection-item-panel .panel-header .username {display: block;}
                             .connection-item-panel .panel-header .status {color: #0ab;}
                                 
-                            .connection-item-panel .panel-body {position: relative; padding: 8px 0 0;}
+                            .connection-item-panel .panel-body {position: relative; padding: 8px 0 0; text-align: left;}
+                            .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body {text-align: right;}
                                 .connection-item-panel .panel-body .connection-content {color: #333; border: none; box-shadow: 0 2px 5px #000, 0 0px 5px #045 inset; background-color: rgba(255, 255, 255, 0.85);}
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-right: 1px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-left: 1px;}
@@ -806,7 +814,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
                                     .connection-items-con.public .connection-item-panel .status .not-viewed-icon {display: none;}
                                     /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
-                                    body[data-page=page-conversation] .connection-item-panel .panel-header .status .btn.like {display: none;}
+                                    body[data-page=page-public] .connection-item-panel .panel-header .status .btn.like {display: none;}
                                     .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
                                     */
                             .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
@@ -826,7 +834,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .connection-item-panel .btn-like {display: none;}   
             .connection-items-con.specific-user {}
 
-            #page-conversation .connection-items-con .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
+            #page-public .connection-items-con .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
                 
 
 /* FOOTER */
@@ -840,7 +848,7 @@ body.logged-out nav#footer {display: none;}
     
 
 /* APP COMPONENTS */
-._connections-book {}   /* See a list of people from your connections book who are online now */
+._private-book {}   /* See a list of people from your private book who are online now */
 ._contact-summary {}    /* See who has contacted, viewed, messaged or requested to be friends with you recently */
 ._private-game {}       /* play games against other person (1:1) */
 ._private-chat {}       /* privately chat with someone */
@@ -849,4 +857,4 @@ body.logged-out nav#footer {display: none;}
     ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
 /******** FOR TESTING ONLY!! ********/
-/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #streams-and-people, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-list, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

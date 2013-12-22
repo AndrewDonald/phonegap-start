@@ -157,7 +157,7 @@ function initEventHandlers(){
 
 
         //Open Panels
-        //$('.menu-toggle-stream-controls-panel, .menu-toggle-connections').click();
+        //$('.menu-toggle-stream-controls-panel, .menu-toggle-private').click();
 
 
 
@@ -188,7 +188,7 @@ function initEventHandlers(){
     // Lucid Menu Toggle
     $('#control-panels-toggle').on('click',function(){
         $(this).toggleClass('active');
-        $('body').toggleClass('connections');
+        $('body').toggleClass('private');
     });
     */
 
@@ -223,7 +223,7 @@ function initEventHandlers(){
                     break;  
                 case 'page-people':
                     $('body').removeClass('people-panel-peek').addClass('people-panel');
-                    $('#streams-and-people').toggleClass('active');
+                    $('#people-list').toggleClass('active');
                     gotoPage(target);
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
@@ -285,8 +285,8 @@ function initEventHandlers(){
     /*
     // Toggle Stream New
     $('.stream-new-toggle').on('click',function(){
-        // Close Connections Panel
-        $('#streams-and-people button.user.active').click();
+        // Close private Panel
+        $('#people-list button.user.active').click();
         $('.filter-controls-toggle.active').click();
         // Display Stream options
         $(this).toggleClass('active');
@@ -325,8 +325,8 @@ function initEventHandlers(){
 
     // Filter Controls Toggles (*only one allowed open at a time)
     $('.filter-controls-toggle').on('click', function(){
-        // Close Connections Panel
-        $('#streams-and-people button.user.active').click();
+        // Close private Panel
+        $('#people-list button.user.active').click();
         $('body').toggleClass('filter-controls');
         $('.filter-controls-con').slideToggle('fast');
     });
@@ -404,7 +404,7 @@ function initEventHandlers(){
         $(this).toggleClass('on');
     });
 
-    // TOGGLE OPEN/CLOSE CONNECTIONS PANEL
+    // TOGGLE OPEN/CLOSE private PANEL
     $('#people-controls .btn').on('click',function(){
         /*
         // Grid: Show People with Vertical Scrolling
@@ -412,44 +412,44 @@ function initEventHandlers(){
             $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
             $('#people-panel').toggleClass('vertical');
             if($('#people-panel').is('.vertical')){
-                $('.menu-toggle-stream-controls-panel.active, #streams-and-people .btn.user.active').click();
+                $('.menu-toggle-stream-controls-panel.active, #people-list .btn.user.active').click();
             }
         */
 
         $(this).toggleClass('active').siblings().removeClass('active');
         if($(this).is('.active')){
-            //$('#streams-and-people').addClass('active').slideDown('fast');
+            //$('#people-list').addClass('active').slideDown('fast');
             switch($(this).data('filter')){
                  case 'viewed-profile':
-                    $('#streams-and-people > .panel-menu > *').hide();
-                    $('#streams-and-people > .panel-menu > .btn.viewed-profile').show();
-                    $('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'viewed-profile');
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.viewed-profile').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'viewed-profile');
                     break;
                 case 'connection-request':
-                    $('#streams-and-people > .panel-menu > *').hide();
-                    $('#streams-and-people > .panel-menu > .btn.connection-request').show();
-                    $('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'connection-request');
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connection-request').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connection-request');
                     break;
                 case 'connected':
-                    $('#streams-and-people > .panel-menu > *').hide();
-                    $('#streams-and-people > .panel-menu > .btn.connected').show();
-                    $('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'username');
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connected').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'username');
                     break;
                 case 'connecting':
-                    $('#streams-and-people > .panel-menu > *').hide();
-                    $('#streams-and-people > .panel-menu > .btn.connecting').show();
-                    $('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'connecting');
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.connecting').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connecting');
                     break;
                  case 'blocked':
-                    $('#streams-and-people > .panel-menu > *').hide();
-                    $('#streams-and-people > .panel-menu > .btn.blocked').show();
-                    $('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'blocked');
+                    $('#people-list > .panel-menu > *').hide();
+                    $('#people-list > .panel-menu > .btn.blocked').show();
+                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'blocked');
                     break;
                 default: // All people in stream
-                    //$('#streams-and-people .viewed-profile, #streams-and-people .in-stream, #streams-and-people .added-stream').show();
-                    //$('#streams-and-people > .panel-menu > *').show();
-                    //$('#streams-and-people > .panel-menu').sortDom('.btn:visible', 'entry-date');
-                    populateStreamsAndPeople();
+                    //$('#people-list .viewed-profile, #people-list .in-stream, #people-list .added-stream').show();
+                    //$('#people-list > .panel-menu > *').show();
+                    //$('#people-list > .panel-menu').sortDom('.btn:visible', 'entry-date');
+                    populatepeopleThought();
                     break;
             }
         }
@@ -457,17 +457,17 @@ function initEventHandlers(){
         else{
             $('#people-panel .legend').remove(); // Remove Legend after user sees it first time
             //if($(this).is('.people-stream-toggle')){
-                $('#streams-and-people .btn.user.active').click(); // Close Active User Panel
-                $('#streams-and-people').removeClass('active').slideUp('fast'); // Close People Nav
-            //}else if($(this).is('.people-connections-toggle')){
-            //    alert('hide connections');
+                $('#people-list .btn.user.active').click(); // Close Active User Panel
+                $('#people-list').removeClass('active').slideUp('fast'); // Close People Nav
+            //}else if($(this).is('.people-private-toggle')){
+            //    alert('hide private');
             //}
         }
         */
     });
 
     // TOGGLE CONNECTION PANEL USERS
-    $('#streams-and-people .btn.user').on('click',function(){
+    $('#people-list .btn.user').on('click',function(){
         $('.menu-toggle-stream-controls-panel.active').click();
         if($(this).is('.active')){
             $(this).removeClass('active');
@@ -475,7 +475,7 @@ function initEventHandlers(){
             $('.connection-items-con.active').removeClass('active');
             $('OMIT#connection-items-header, .connection-items-con[data-userid="' + $(this).data('userid') + '"]').slideUp('fast');
         }else{
-            $('#people-panel.vertical > #streams-and-people').scrollTo($(this), 1000);
+            $('#people-panel.vertical > #people-list').scrollTo($(this), 1000);
             $('body.filter-controls .filter-controls-toggle, #people-controls .btn.grid-toggle.active').click();
             $(this).addClass('active').siblings('.active').removeClass('active');
             $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
@@ -485,7 +485,7 @@ function initEventHandlers(){
         }
     });
 
-    $('#streams-and-people .alert-link').on('click',function(){
+    $('#people-list .alert-link').on('click',function(){
         //$(this).remove();
         alert('selected a user item');
     });
