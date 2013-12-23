@@ -336,16 +336,9 @@ function getChats(stream) {
 function getChats_Callback(result) {
     if(result==0) {
         // Ajax request failed
-        alert('')
     }else{
         if(result.status > 0){
-            //$('#stream-activity-con > .wrapper').empty();
-            if(result.object.length > 0){
-                var chats = result.object.reverse();
-                for (var x=0; x<chats.length; x++) {
-                    addChatItem(chats[x]);
-                }
-            }
+            addChats(result.object);
         }else{
             // Server returned an error
             alert('Error: ' + result.message);
@@ -417,8 +410,8 @@ function getStream_Callback(result) {
         // Ajax request failed
     }else{
         if(result.status > 0){
-            _session.peopleThought = result.object;
-            populatepeopleThought();
+            _session.people = result.object;
+            populatePeople();
         }else{
             // Server returned an error
             alert('Error getStream_Callback: ' + result.message);
@@ -506,13 +499,11 @@ function initiateNodeServer() {
             addMemberItem(msg.object);
             break;
         case "remove_user":
-            console.log('remove_user:', msg.object)
             removeUser(msg.object);
             break;
         case "add_connection":
             break;
         case "send_message":
-            console.log('NODE: send_message= ', msg.object);
             getUnreadMessages();
             $('#private-unread-messages-link > .qty-notification').flash();
             break;
@@ -596,8 +587,8 @@ function getPings_Callback(result) {
 	    //$('#stream-activity-con > .wrapper').empty();
 
 	    for (var x=0; x<result.object.length; x++) {
-		_session.people[result.object[x].userid.toString()] = result.object[x];
-		_session.people[result.object[x].userid.toString()].time = splitDate(_session.people[result.object[x].userid.toString()].createdate);
+		_session.users.user[result.object[x].userid.toString()] = result.object[x];
+		_session.users.user[result.object[x].userid.toString()].time = splitDate(_session.users.user[result.object[x].userid.toString()].createdate);
 		addStreamMember(result.object[x], 1);
 	    }
 	    /*

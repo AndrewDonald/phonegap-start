@@ -31,8 +31,8 @@ label {margin-bottom: 0; font-weight: normal;}
 .btn-group-justified  > a {border-radius: 0;}
 .btn-group > label.btn {padding: 0; margin-right: 15px;}
     .btn-group > label.btn:last-child {margin-right: 0;}
-.btn-link {color: #0ab;}
-.btn-link:hover, .btn-link:focus {color: #0cd;}
+.btn-link {color: #0ab; text-decoration: none;}
+.btn-link:hover, .btn-link:focus {color: #0cd; text-decoration: none;}
 
 .badge {font-family: arial; background-color: rgba(255, 255, 255, 0.5);}
 
@@ -75,7 +75,7 @@ label {margin-bottom: 0; font-weight: normal;}
 
 .caret {border-top-color: #fff;}
 .well {min-height: 0px;}
-blockquote, .well blockquote {margin: 0; display: inline-block; padding: 7px 7px 15px; min-width: 70px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
+blockquote, .well blockquote {position: relative; margin: 0; display: inline-block; padding: 7px 7px 15px; min-width: 80px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
     .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
         .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
@@ -100,6 +100,15 @@ blockquote, .well blockquote {margin: 0; display: inline-block; padding: 7px 7px
                 .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
  
 .glyphicon-send {transform: rotate(50deg); -webkit-transform: rotate(50deg);}
+
+
+
+
+/* OWL CAROUSEL OVERRIDES */
+.owl-theme .owl-controls {position: absolute; top: 38px; z-index: 1100; margin: 0;}
+
+
+
 
 /* GLOBAL: Vars */
 /* Orange */
@@ -163,7 +172,7 @@ blockquote, .well blockquote {margin: 0; display: inline-block; padding: 7px 7px
 
 /* GLOBAL */
 * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-body {overflow: auto; font-family: arial; font-weight: normal; font-size: 14px; color: #333; padding: 0; margin: 0; background: #f0ffff; line-height: 1.4;}
+body {overflow: auto; font-family: arial; font-weight: normal; font-size: 14px; color: #eee; padding: 0; margin: 0; background: #f0ffff; line-height: 1.4;}
 
 h1, h2 {color: #0bf; margin: 5px 0;}
 h1 {font-size: 18px;}
@@ -210,7 +219,7 @@ h2 {font-size: 16px;}
 #modal-loader .modal-footer.active {display: block;}
 
 /* STATUS BAR */
-.status-bar {font-weight: normal; overflow: hidden; color: #fff; padding: 2px 5px; box-shadow: 0 -2px 5px #000; background-color: #000; border-top: 1px solid #0ab;}
+.status-bar {font-weight: normal; overflow: hidden; color: #fff; min-height: 25px; padding: 2px 5px; box-shadow: 0 -2px 5px #000; background-color: #000; border-top: 1px solid #0ab;}
     .status-bar .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
  @media (max-width: 360px) {
     .status-bar {font-size: 10px;}
@@ -470,7 +479,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
 
-.btn-lucid-normal.blue {background-color: #09d;}
+.btn-lucid-normal.blue {background-color: #08c;}
 .btn-lucid-normal.blue.active, .btn-lucid-normal.blue.active:focus,
 .btn-lucid-normal.blue:hover {background-color: #0bf;}
 
@@ -480,11 +489,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .slider-nav .btn-lucid-normal {position: relative; padding: 0; box-shadow: none; text-shadow: none; color: #0ef;}
         .slider-items {}
-        .slider-nav .slide-left {position: absolute; top: -2px; left: 0; color: #0ef; padding: 0;}
-        .slider-nav .slide-right {position: absolute; top: -2px; right: 7px; color: #0ef; padding: 0;}
-        .slider-nav .slide-left:hover, .slider-nav .slide-left:focus,
-        .slider-nav .slide-right:hover, .slider-nav .slide-right:focus {text-decoration: none;}
-        .slider-nav .btn-lucid-normal.active {border: 1px solid #0ef; background-color: transparent;}
+            .slider-items .glyphicon {line-height: normal;}
+        .slider-nav .btn-slider:hover, .slider-nav .btn-slider:focus {text-decoration: none;}
+        .slider-nav .btn-slider.active {border: 1px solid #0ef; background-color: transparent;}
 
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
@@ -506,7 +513,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; line-height: 14px; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
 /*.stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;}*/
 .message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
-.message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 0 1px 1px #000;}
+.message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 1px 1px 1px #000;}
 
 
 /*
@@ -524,9 +531,38 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .slider-status-con.vertical .associated-plus {left: 22px;}
     .active > .associated-plus {color: #0cd;}
 
+.private-chat-icon {position: relative; padding-right: 3px;}
+    .private-chat-icon > span {position: absolute; color: #0ab; font-size: 9px; left: 3px; top: 2px;}
+
 .fixed {position: fixed; top: 0; left: 0; margin: 0; width: 100%; height: 100%;}
 
-#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #056;}
+.people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
+    .people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
+    .people-list > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
+    .people-list > pre.btn-accordion.active.newest-members,
+    .people-list > pre.btn-accordion.newest-members:hover,
+    .people-list > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
+    .people-list > pre:first-child {margin-top: 0;}
+    .people-list > pre > .header-icon,
+    .people-list > pre > label {padding-right: 5px; line-height: 18px;}
+    .people-list > pre > .badge {margin-right: 5px;}
+    #page-people:not(.vertical) > .people-list > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
+
+    /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
+    .btn.people-list-toggle > .badge {font-size: 14px;}
+    .btn.people-list-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
+    .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
+        .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
+    
+    /*
+    .people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
+    #page-people.vertical .people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
+    .people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
+    #page-people.vertical > .people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
+    */
+
+/**** START SPECIFIC CSS ****/
+#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #07b; box-shadow: 0 -5px 20px #013 inset;}
 body.main-menu-active #CONTAINER {transition: all 0.5s ease-in-out 0s; left: 275px;}
 body.main-menu-active .navbar-fixed-top,
 body.main-menu-active .navbar-fixed-bottom {transition: all 0.5s ease-in-out 0s; position: absolute;}
@@ -537,8 +573,9 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 .navbar-fixed-top {box-shadow: 0 3px 5px #000;}
 .navbar-fixed-bottom {box-shadow: 0 -3px 5px #000;}
 
+
 /* MAIN MENU */
-#main-menu {width: 275px; overflow-y: auto; background-color: #045; box-shadow: -2px 5px 5px #000 inset;}
+#main-menu {width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
     #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
@@ -550,10 +587,6 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             ul#main-menu-items .list-group-item .btn.active {color: #fff;}
                 ul#main-menu-items .list-group-item .btn .menu-icon {padding-right: 10px;}
                 ul#main-menu-items .list-group-item .btn.menu-toggle-modal-about {padding: 13px 15px;}
-                
-                ul#main-menu-items .list-group-item .btn#private-toggle .menu-icon {padding-right: 3px;}
-                ul#main-menu-items .list-group-item .btn#private-toggle sup.menu-icon {color: #0ab; font-size: 7px; left: -11px; padding: 0; top: -4px;}
-                
                 ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {border: 1px solid #0ef; border-radius: 4px; height: 18px; padding: 2px 1px; width: 18px; margin-right: 8px; margin-left: -2px;}
                 ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {transition: border-color 0.5s; border-color: #0ef;}
                 ul#main-menu-items .list-group-item .btn#profile-toggle.active .menu-icon,
@@ -564,7 +597,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 /* HEADER */   
 #header {background-color: #0ab; box-shadow: 0 3px 5px #000;}
-    #header > .masthead {position: relative; height: 40px; box-shadow: 0 3px 5px #0ef inset;}
+    #header > .masthead {position: relative; z-index: 1100; height: 40px; background-color: #0ab; box-shadow: 0 3px 5px #0ef inset;}
         #header > .masthead .main-nav {position: absolute; top: 2px;}
         body.logged-out nav#header > .masthead .main-nav {display: none;}
         #header > .masthead .main-nav.left {left: 5px;}
@@ -614,9 +647,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 #pages {position: absolute; top: 0; left: 0; min-width: -moz-available; min-width: -webkit-available; width: auto; height: 100%; padding: 110px 10px 60px;}
 */
 #pages {position: relative; padding-top: 40px;}
-    #pages > .page {display: none; margin: 0; clear: both;}
-    #pages > .page.active {display: block;}
-    body.logged-out #pages > .page:not(#page-login):(#page-create-user) {display: none;}
+    #pages .page {margin: 0;}
+    #pages .page:not(.page-carousel-item) {display: none; clear: both;}
+    #pages .page.active {display: block;}
+    body.logged-out #pages .page:not(#page-login):not(#page-create-user) {display: none;}
         #page-stream .show-stream,
         #page-stream .show-filter,
         #page-stream .show-people,
@@ -631,6 +665,16 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         body.photos #page-stream .show-photos,
         body.videos #page-stream .show-videos,
         body.audio #page-stream .show-audio {display: block;}
+
+    /* PUBLIC HEADER */
+    #public-header {transition: top 0.5s ease-in-out 0s; -webkit-transition: top 0.5s ease-in-out 0s; top: -25px; position: absolute; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
+    #public-header.active, 
+    body[data-page=page-people] #public-header,
+    body[data-page=page-public] #public-header, 
+    body[data-page=page-private] #public-header {transition: top 0.5s ease-in-out 0s; -webkit-transition: top 0.5s ease-in-out 0s; top: 40px;}
+
+    #stream-slider-nav {height: 30px; padding: 0 80px 3px; margin-top: 4px; border-radius: 0;}
+    .page-carousel-con {clear: both;}
     
     /* PAGE LOGIN */
     #pages #page-login {padding-top: 20px;}
@@ -674,8 +718,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
 
 
- /* PEOPLE PROFILE */ 
-     #pages #page-profile {padding-bottom: 30px; color: #eee;}
+    /* PAGE PROFILE */ 
+    #pages #page-profile {padding-bottom: 30px; color: #eee;}
         .user-profile {padding: 35px 10px 0 320px;}
             .user-profile > .profile-photo {position: absolute; top: 75px; left: 0; padding: 0 10px; width: 320px;}
                 .user-profile .btn-lucid.user {margin: 0 0 5px; width: 300px; height: 300px; border-width: 3px; background-size: 100% 100%;}
@@ -691,33 +735,14 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             .user-profile {padding: 415px 10px 0;}
         }
 
-    /* people PAGE */ 
-    #page-people {padding-top: 10px; padding-bottom: 60px;}
-        #people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
-        #people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
-        #people-list > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
-        #people-list > pre.btn-accordion.active.newest-members,
-        #people-list > pre.btn-accordion.newest-members:hover,
-        #people-list > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
-        #people-list > pre:first-child {margin-top: 0;}
-        #people-list > pre > .header-icon,
-        #people-list > pre > label {padding-right: 5px; line-height: 18px;}
-        #people-list > pre > .badge {margin-right: 5px;}
-        #page-people:not(.vertical) > #people-list > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
+    /* THOUGHT PAGE CAROUSEL */
+    #thought-page-carousel {display: none !important;}
+    body[data-page=page-people] #thought-page-carousel,
+    body[data-page=page-public] #thought-page-carousel,
+    body[data-page=page-private] #thought-page-carousel {display: block !important;}
 
-        /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
-        .btn.people-list-toggle > .badge {font-size: 14px;}
-        .btn.people-list-toggle > sup {top: -8px; left: -5px; font-weight: bold; font-size: 16px;}
-        .btn.people-list-toggle > sup.close-left {margin-right: -12px;}
-            .btn.people-list-toggle > sup > .glyphicon {font-size: 9px;}
-        
-        /*
-        #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin: -4px 0px 0 5px;}
-        #page-people.vertical #people-list > .panel-menu > pre > .btn.btn-vote-remove {margin-right: 5px;}
-        #people-list > .panel-menu > pre.in-stream > .btn.btn-vote-remove {display: none;}
-        #page-people.vertical > #people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
-        */
-        
+    /* PAGE PEOPLE */ 
+    #page-people {padding-top: 75px; padding-bottom: 60px;}
         #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
         #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
         #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
@@ -726,16 +751,15 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
 
 
-    /* PAGE public */
-    #pages #page-public {padding-top: 50px; padding-bottom: 50px;}
-        nav#public-header {top: 40px; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
+    /* PAGE PUBLIC */
+    #page-public {padding-top: 75px; padding-bottom: 50px;}
+        
 
-        #stream-slider-nav {padding: 0 80px; margin-top: 4px;}
-
-        #page-public .connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;} /*background-color: #f0ffff; */
-            #page-public .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
-                /*#page-public .connection-items-con > .well > .connection-items-list .stream-message {display: none;}*/
-                #page-public .connection-items-con > .well > .connection-items-list .panel-body.pop {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
+        /*.connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;}
+            .connection-items-con > .well > .connection-items-list {height: auto; padding: 0;}
+                **#page-public .connection-items-con > .well > .connection-items-list .stream-message {display: none;}
+                .connection-items-con > .well > .connection-items-list .panel-body.pop {animation: zoom 0.25s; -webkit-animation: zoom 0.25s;}
+        */
 
         /* CONTROLS PANELS */
         #stream-controls-panel {z-index: 2000;}
@@ -748,6 +772,11 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #tab-stream.tab-lucid {left: 80px;}
         #tab-filter.tab-lucid {left: 150px; font-size: 12px;}
         /*#tab-alerts.tab-lucid {left: 225px;}*/
+
+
+    /* PAGE PRIVATE */ 
+    #page-private {padding-top: 75px; padding-bottom: 50px;}
+
 
     /* PAGE FILTER */
     #filter-panel {padding-top: 50px; padding-bottom: 50px;}
@@ -762,41 +791,43 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
         /* public PAGE */
         body[data-page=page-public] #page-people {}
-            body[data-page=page-public] #page-people #people-list {padding: 3px 5px 7px; background-color: #078; box-shadow: 0 0px 20px #045 inset; white-space: nowrap; overflow: auto;}
-                body[data-page=page-public] #people-list > .panel-menu > pre {display: none;}   
+            body[data-page=page-public] #page-people .people-list {padding: 3px 5px 7px; white-space: nowrap; overflow: auto;}
+                body[data-page=page-public] .people-list > .panel-menu > pre {display: none;}   
             body[data-page=page-public] #page-people .panel-body #connection-items-header {display: none;}
 
             #connection-items-header {display: none; text-align: center; padding-bottom: 2px; background-color: #078; box-shadow: 0 1px 3px #000 inset;}
                 #connection-items-header .btn.btn-direction {border: none; padding: 4px 15px 0;} 
                 #connection-items-header .btn {background-color: transparent; box-shadow: none;}
                 #connection-items-header .btn.active {color: #ff6;}
-
-            .connection-items-con {display: none;}
-            #page-public .connection-items-con {display: block;}
+/*
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal,
             .connection-items-con .btn-lucid-normal:hover,
             .connection-items-con .btn-lucid-normal:not(.active):focus {}
-                .connection-items-con > .well {background-color: #cff; border-radius: 0 0 4px 4px;}
-
+                .connection-items-con > .well {border-radius: 0;}
+*/
+                    .connection-items-list {padding: 0 5px;}
                     .connection-items-list > li.list-group-item {margin: 0 60px 10px; padding: 0; text-align: center; background-color: transparent; border: none; border-radius: 0;}
                     .connection-items-list > li.list-group-item.added-stream-item {margin: 0 5px 10px;}
                         .connection-items-list > li.list-group-item.added-stream-item .message {display: block;}
                     .connection-items-list > li.list-group-item.added-member-item {margin-top: -5px;}
                     .date-header-item {text-align: center;}
-                    
-                    /*.connection-items-list > li.viewed {display: none;}*/
+                   
+                    /*.connection-items-list > li.viewed {display: none;}
                     .panel-body.show-viewed > .connection-items-con li.viewed {display: block;}
+                    */
+
                     .connection-items-list .badge {font-weight: normal; font-size: 10px; box-shadow: 0 0 5px #000, 0 0 1px #000 inset;}
                     .connection-items-list .alert-icon {color: #0ef;}
                     .connection-item-panel {position: relative; background-color: transparent; border: none; box-shadow: none;}
                         .connection-item-panel .panel-header {min-height: 62px; color: #078; font-size: 10px; position: absolute;}
-                        .connection-items-con .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
-                            /*
+                        .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-header {left: -57px;}
+
+                            
                             .chat-item .panel-body {transition: all 0.25s ease-out 0.5s; transform: scale(1); -webkit-transform: scale(1); left: 0;}
                             .chat-item .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: -50%;}
                             .chat-item.you .panel-body.exit {transition: all 0.25s ease-out 0.5s; transform: scale(0); -webkit-transform: scale(0); left: 50%;}
-                            */
+                            
 
                             .connection-item-panel .panel-header img {display: block; border: 1px solid #0ab; border-radius: 4px; height: 50px; width: 50px;}
                             .connection-item-panel .panel-header .username {display: block;}
@@ -805,25 +836,28 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                             .connection-item-panel .panel-body {position: relative; padding: 8px 0 0; text-align: left;}
                             .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body {text-align: right;}
                                 .connection-item-panel .panel-body .connection-content {color: #333; border: none; box-shadow: 0 2px 5px #000, 0 0px 5px #045 inset; background-color: rgba(255, 255, 255, 0.85);}
-                                .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-right: 1px;}
-                                .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: 14px; padding-left: 1px;}
+                                .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: normal; margin-right: -2px;}
+                                .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: normal; margin-left: -2px;}
                                     .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: rgba(255, 255, 255, 0.85);}
                                     .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -9px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000, 0 0 4px #045 inset;}
                                 .connection-item-panel .status {position: absolute; right: 10px; bottom: 3px; color: #056; font-size: 9px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
-                                    .connection-items-con.public .connection-item-panel .status .not-viewed-icon {display: none;}
+                                    #page-public .connection-items-list .connection-item-panel .status .not-viewed-icon {display: none;}
+
                                     /*.connection-item-panel .btn.like {margin-top: -5px; font-size: 10px;}
                                     body[data-page=page-public] .connection-item-panel .panel-header .status .btn.like {display: none;}
                                     .connection-item-panel .panel-header .status .btn.like > span {font-family: arial; font-size: 10px;}
                                     */
+
                             .connection-item-panel .panel-footer {position: absolute; top: 0px; color: #0ab; font-size: 10px; width: 55px;}
                             .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .panel-footer {top: 8px; right: -48px; height: 40px; width: 40px;}
                            
                     .connection-items-list > li.viewed {border-color: #0ab;}
                         .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: inline-block;}
-                        .connection-items-con.public .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: none;}
+                        #page-public .connection-items-list > li.viewed .connection-item-panel .status .viewed-icon {display: none;}
                         .connection-items-list > li.viewed .connection-item-panel .status .not-viewed-icon {display: none;}
+
                     /* If is User switch profile pic to right side */
                     .connection-items-list > li.list-group-item.you,
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
@@ -832,9 +866,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -9px; border-radius: 0 8px 0 0; border-left: none; background-color: rgba(255, 255, 255, 0.85); box-shadow: 4px 2px 5px #000, 0 0 4px #045 inset;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
-            .connection-items-con.specific-user {}
 
-            #page-public .connection-items-con .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
+            #page-public .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
                 
 
 /* FOOTER */
@@ -843,8 +876,11 @@ nav#footer {min-height: 15px; background-color: #0ab; box-shadow: 0 -1px 5px #00
 body.logged-out nav#footer {display: none;}
 */
 
-    /* STREAM STATUS PANEL */
-    #stream-status-panel {}
+    /* THOUGHT STATUS */
+    #thought-status {transition: bottom 0.5s ease-in-out 0s; -webkit-transition: bottom 0.5s ease-in-out 0s; position: absolute; bottom: -27px; width: 100%;}
+        body[data-page=page-people] #thought-status,
+        body[data-page=page-public] #thought-status,
+        body[data-page=page-private] #thought-status {transition: bottom 0.5s ease-in-out 0s; -webkit-transition: bottom 0.5s ease-in-out 0s; bottom: 0;}    
     
 
 /* APP COMPONENTS */
@@ -857,4 +893,4 @@ body.logged-out nav#footer {display: none;}
     ._user-badge .user-bio {padding: 3px 5px; background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9); border-radius: 5px 5px 5px 5px; border: 1px solid #ddd;}
 
 /******** FOR TESTING ONLY!! ********/
-/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, #people-list, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}
+/*.horizontal-sliding-nav, #stream-name, .filter-info, .stream-associations, .list-group, #filter-toggle-menu, .people-list, .stream-history-list {overflow-x: hidden !important; overflow-y: hidden !important; overflow: hidden !important;}

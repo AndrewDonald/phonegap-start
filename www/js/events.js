@@ -77,7 +77,12 @@ function initEventHandlers(){
         $(this).toggleClass('active');
     });
 
-    
+    // Owl Carousel - Thought Page Group
+    $('#thought-page-carousel').owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem:true
+    });
     
 
 /*
@@ -216,20 +221,19 @@ function initEventHandlers(){
                 case 'page-new-thought':
                     $('#new-thought-toggle').toggleClass('active');
                     if($('#new-thought-toggle').is('.active')){
-                        gotoPage('page-new-thought'); // Go to New Thought Page
+                        gotoPage(target); // Go to New Thought Page
                     }else{
                         gotoPage(_session.page);    // Return to last page
                     }
                     break;  
                 case 'page-people':
-                    $('body').removeClass('people-panel-peek').addClass('people-panel');
-                    $('#people-list').toggleClass('active');
                     gotoPage(target);
+                    $('#page-people .people-list').toggleClass('active');
                     //$('#people-panel').addClass('vertical');
                     //$('.people-controls-toggle').click();
                     break;
                 case 'page-profile':
-                    gotoPage(target);
+                    gotoPage(target, true); // Let Page Handler know it's user and highlight Menu item
                     $('#page-profile .user-profile').html(createUserProfile(_session.user, {square: true}));
                     break;
                 case 'page-login':
@@ -419,37 +423,38 @@ function initEventHandlers(){
         $(this).toggleClass('active').siblings().removeClass('active');
         if($(this).is('.active')){
             //$('#people-list').addClass('active').slideDown('fast');
+            var page = '#page-people';
             switch($(this).data('filter')){
                  case 'viewed-profile':
-                    $('#people-list > .panel-menu > *').hide();
-                    $('#people-list > .panel-menu > .btn.viewed-profile').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'viewed-profile');
+                    $(page + ' .people-list > .panel-menu > *').hide();
+                    $(page + ' .people-list > .panel-menu > .btn.viewed-profile').show();
+                    $(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'viewed-profile');
                     break;
                 case 'connection-request':
-                    $('#people-list > .panel-menu > *').hide();
-                    $('#people-list > .panel-menu > .btn.connection-request').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connection-request');
+                    $(page + ' .people-list > .panel-menu > *').hide();
+                    $(page + ' .people-list > .panel-menu > .btn.connection-request').show();
+                    $(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'connection-request');
                     break;
                 case 'connected':
-                    $('#people-list > .panel-menu > *').hide();
-                    $('#people-list > .panel-menu > .btn.connected').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'username');
+                    $(page + ' .people-list > .panel-menu > *').hide();
+                    $(page + ' .people-list > .panel-menu > .btn.connected').show();
+                    $(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'username');
                     break;
                 case 'connecting':
-                    $('#people-list > .panel-menu > *').hide();
-                    $('#people-list > .panel-menu > .btn.connecting').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'connecting');
+                    $(page + ' .people-list > .panel-menu > *').hide();
+                    $(page + ' .people-list > .panel-menu > .btn.connecting').show();
+                    $(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'connecting');
                     break;
                  case 'blocked':
-                    $('#people-list > .panel-menu > *').hide();
-                    $('#people-list > .panel-menu > .btn.blocked').show();
-                    $('#people-list > .panel-menu').sortDom('.btn:visible', 'blocked');
+                    $(page + ' .people-list > .panel-menu > *').hide();
+                    $(page + ' .people-list > .panel-menu > .btn.blocked').show();
+                    $(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'blocked');
                     break;
                 default: // All people in stream
                     //$('#people-list .viewed-profile, #people-list .in-stream, #people-list .added-stream').show();
-                    //$('#people-list > .panel-menu > *').show();
-                    //$('#people-list > .panel-menu').sortDom('.btn:visible', 'entry-date');
-                    populatepeopleThought();
+                    //$(page + ' .people-list > .panel-menu > *').show();
+                    //$(page + ' .people-list > .panel-menu').sortDom('.btn:visible', 'entry-date');
+                    populatePeople();
                     break;
             }
         }
@@ -466,12 +471,13 @@ function initEventHandlers(){
         */
     });
 
+
     // TOGGLE CONNECTION PANEL USERS
     $('#people-list .btn.user').on('click',function(){
         $('.menu-toggle-stream-controls-panel.active').click();
         if($(this).is('.active')){
             $(this).removeClass('active');
-            $('#send-message').prop('placeholder', 'message everyone');
+            $('#send-message').prop('placeholder', "What's on your mind...");
             $('.connection-items-con.active').removeClass('active');
             $('OMIT#connection-items-header, .connection-items-con[data-userid="' + $(this).data('userid') + '"]').slideUp('fast');
         }else{
@@ -484,6 +490,7 @@ function initEventHandlers(){
                 .siblings('.active').removeClass('active').slideUp('fast');  
         }
     });
+
 
     $('#people-list .alert-link').on('click',function(){
         //$(this).remove();

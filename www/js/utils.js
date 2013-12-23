@@ -52,7 +52,13 @@ $.fn.scrollTo = function( targetDom ){
 }
 
 // GOTOPAGE
-function gotoPage(page, option){
+function gotoPage(page, optional){
+    clearInterval(_session.timeElapse);
+    timeElapse(page);
+    var option = "";
+    if(typeof optional != "undefined"){
+        option = optional;
+    }
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
     $('body').attr('data-page', page);
@@ -63,6 +69,10 @@ function gotoPage(page, option){
         _session.page = page;
         switch(page){
             case "page-profile":
+                // Only highlight Profile Main Menu item if it's the user's
+                if(!option){
+                    $('#main-menu-items [data-toggle-item=' + page + ']').removeClass('active');
+                }
                 $('#page-profile .user-profile').empty();
                 break;
             case "page-people":
@@ -70,6 +80,9 @@ function gotoPage(page, option){
                 //getThoughts(); // Change to getAddedThoughts
                 _temp.openStreamAccordionTab = option;
                 getStream();
+                break;
+            case "page-public":
+                _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
             default:
                 break;
@@ -245,5 +258,15 @@ function accordionButton(objDom){
         .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 
     // ** Stream and People List Accordion Only **
-    $(objDom).nextUntil('#people-list .btn-accordion').slideToggle(250);
+    $(objDom).nextUntil('.btn-accordion').slideToggle(250);
+}
+
+function timeElapse(page){
+    $('#' + page + ' .time-elapse').each(function (){
+        $(this).html(getElapsedTime($(this).data('time')));
+    });
+}
+
+function getTimeNow(){
+    return moment.utc().add('minutes', _application.gmtOffset);
 }
