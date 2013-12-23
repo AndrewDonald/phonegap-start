@@ -79,11 +79,31 @@ function initEventHandlers(){
 
     // Owl Carousel - Thought Page Group
     $('#thought-page-carousel').owlCarousel({
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        singleItem:true
+        slideSpeed:         300,
+        paginationSpeed:    400,
+        singleItem:         true,
+        pagination:         false, 
+        addClassActive:     true,
+        afterMove:          sliderMarkActive
     });
     
+    // Owl Carousel - Item Select Navigation Control
+    $('.btn-slider').click(function(){
+        sliderDom       = '#' + $(this).parents('.slider-nav:first').attr('id').replace('-nav', '');
+        sliderItemIndex = $(this).index();
+
+        $(sliderDom).trigger('owl.goTo', sliderItemIndex);
+    });
+
+    // Highlight active Slider Nav item
+    function sliderMarkActive(sliderDom){
+        sliderItemActiveIndex = $(sliderDom).find('.owl-item.active').index();
+
+        $('#' + $(sliderDom).attr('id') + '-nav').children('.btn-slider:eq(' + sliderItemActiveIndex + ')')
+            .addClass('active')
+            .siblings().removeClass('active');
+    }
+
 
 /*
     $('#send-message').on('focus',function(e) { 

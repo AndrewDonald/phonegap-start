@@ -99,9 +99,8 @@ blockquote, .well blockquote {position: relative; margin: 0; display: inline-blo
             .list-inline.full-width.link-list .list-group-item .btn {padding: 10px; border: none; background-color: none; background: none; color: #777; text-shadow: none;}
                 .list-inline.full-width.link-list .list-group-item .btn .badge {top: 1px; color: #999; border: 1px solid #ccc;}
  
+.glyphicon {line-height: normal;}
 .glyphicon-send {transform: rotate(50deg); -webkit-transform: rotate(50deg);}
-
-
 
 
 /* OWL CAROUSEL OVERRIDES */
@@ -194,8 +193,9 @@ h2 {font-size: 16px;}
 .stream-name.added:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
 #page-stream .stream-name.remove:before, .stream-name.remove:before {content: '∼'; font-family: 'Glyphicons Halflings'; font-size: 16px; line-height: 1;}
 /*{content: '≅'; font-size: 18px;}*/
+.btn-stream {min-height: 35px;}
 @media (max-width: 360px) {
-    .btn-stream {height: 34px; padding: 1px 10px;}
+    .btn-stream {max-height: 35px; padding: 1px 10px;}
     .stream-name {font-size: 12px; line-height: 15px; max-width: 208px;}
 }
 
@@ -219,7 +219,7 @@ h2 {font-size: 16px;}
 #modal-loader .modal-footer.active {display: block;}
 
 /* STATUS BAR */
-.status-bar {font-weight: normal; overflow: hidden; color: #fff; min-height: 25px; padding: 2px 5px; box-shadow: 0 -2px 5px #000; background-color: #000; border-top: 1px solid #0ab;}
+.status-bar {font-weight: normal; overflow: hidden; color: #fff; min-height: 25px; padding: 2px 5px; background-color: #000; border-top: 1px solid #0ab;}
     .status-bar .badge {margin: 2px 0 0 4px; padding: 2px 5px 1px; text-shadow: 0 0 1px #000;}
  @media (max-width: 360px) {
     .status-bar {font-size: 10px;}
@@ -459,9 +459,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-lucid-transparent.power.active {font-size: 6px; color: #ff6; padding: 7px 10px 0; border: 1px solid #ff6;}
     .btn-lucid-transparent.power.active > .glyphicon-off {transition: transform 0.5; -webkit-transition: transform 0.5; transform: rotate(180deg);}
 
-.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
+.btn-lucid-normal, .btn-lucid-normal:hover, .btn-lucid-normal:not(.active):focus {transition: all 0.5s; -webkit-transition: all 0.5s;
     text-shadow: 0 1px 3px #000; color: #fff; box-shadow: 0 2px 5px #000, 0 0 1px #fff inset; border-color: transparent; background-color: #0ab;}
-.btn-group.stream-button {box-shadow: 0 2px 5px #000;}
+.btn-group.stream-button {box-shadow: 0 2px 5px #000; border-radius: 4px;}
 .btn-group.stream-button > .btn-lucid-normal,
 .btn-group.stream-button > .btn-lucid-normal:hover,
 .btn-group.stream-button > .btn-lucid-normal:not(.active):focus {box-shadow:  0 0 1px #fff inset;}
@@ -473,7 +473,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {transition: background-color 0.5s; -webkit-transition: background-color 0.5s;
+.btn-lucid-normal.active, .btn-lucid-normal.active:focus {transition: all 0.5s; -webkit-transition: all 0.5s;
     color: #fff; background-color: #0ef; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
@@ -487,11 +487,10 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .btn-group-justified .btn-lucid-normal:hover,
 .btn-group-justified .btn-lucid-normal:focus {box-shadow: 0 0 1px #fff inset;}
 
-.slider-nav .btn-lucid-normal {position: relative; padding: 0; box-shadow: none; text-shadow: none; color: #0ef;}
-        .slider-items {}
-            .slider-items .glyphicon {line-height: normal;}
-        .slider-nav .btn-slider:hover, .slider-nav .btn-slider:focus {text-decoration: none;}
-        .slider-nav .btn-slider.active {border: 1px solid #0ef; background-color: transparent;}
+.slider-nav {margin: 0 auto;}
+    .slider-nav .btn-slider {position: relative; padding: 0; border-radius: 5px !important; background-color: transparent; box-shadow: none; text-shadow: 0 1px 3px #333;; color: #0bc;}
+    .slider-nav .btn-slider:hover, .slider-nav .btn-slider:focus {text-decoration: none; box-shadow: 0 0 3px #089 inset;}
+    .slider-nav .btn-slider.active {color: #0ef; background-color: transparent; border: 1px solid #0bc; box-shadow: 0 0 3px #089 inset;}
 
 
 /*.tab-panel {position: relative; border-top: 1px solid #00AABB; box-shadow: 0 -1px 5px #000000;}*/
@@ -532,7 +531,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .active > .associated-plus {color: #0cd;}
 
 .private-chat-icon {position: relative; padding-right: 3px;}
-    .private-chat-icon > span {position: absolute; color: #0ab; font-size: 9px; left: 3px; top: 2px;}
+    .private-chat-icon > span {position: absolute; color: #078; font-size: 7px; left: 5px; top: 3px; text-shadow: none; font-weight: normal;}
 
 .fixed {position: fixed; top: 0; left: 0; margin: 0; width: 100%; height: 100%;}
 
@@ -562,7 +561,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     */
 
 /**** START SPECIFIC CSS ****/
-#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #07b; box-shadow: 0 -5px 20px #013 inset;}
+#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #068; box-shadow: 0 0 20px rgba(0,0,0,0.8) inset;}
 body.main-menu-active #CONTAINER {transition: all 0.5s ease-in-out 0s; left: 275px;}
 body.main-menu-active .navbar-fixed-top,
 body.main-menu-active .navbar-fixed-bottom {transition: all 0.5s ease-in-out 0s; position: absolute;}
@@ -611,6 +610,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
             #header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
         #header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
+
+    #thought-page-carousel-nav {width: 200px; padding: 1px 0 3px;}
 
     /* STREAM CONTROLS */
     .btn-stream-controls > .stream-icon {margin-top: 5px;}
@@ -667,13 +668,12 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         body.audio #page-stream .show-audio {display: block;}
 
     /* PUBLIC HEADER */
-    #public-header {transition: top 0.5s ease-in-out 0s; -webkit-transition: top 0.5s ease-in-out 0s; top: -25px; position: absolute; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
-    #public-header.active, 
-    body[data-page=page-people] #public-header,
-    body[data-page=page-public] #public-header, 
-    body[data-page=page-private] #public-header {transition: top 0.5s ease-in-out 0s; -webkit-transition: top 0.5s ease-in-out 0s; top: 40px;}
+    #thought-header {transition: top 0.5s ease-in-out 0.5s; -webkit-transition: top 0.5s ease-in-out 0.5s; top: -25px; position: absolute; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 5px #0ef inset, 0 0 20px rgba(0,0,0,0.8);}
+    #thought-header.active, 
+    body[data-page=page-people] #thought-header,
+    body[data-page=page-public] #thought-header, 
+    body[data-page=page-private] #thought-header {transition: top 0.5s ease-in-out 0.5s; -webkit-transition: top 0.5s ease-in-out 0.5s; top: 40px;}
 
-    #stream-slider-nav {height: 30px; padding: 0 80px 3px; margin-top: 4px; border-radius: 0;}
     .page-carousel-con {clear: both;}
     
     /* PAGE LOGIN */
@@ -742,7 +742,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
     body[data-page=page-private] #thought-page-carousel {display: block !important;}
 
     /* PAGE PEOPLE */ 
-    #page-people {padding-top: 75px; padding-bottom: 60px;}
+    #page-people {padding-top: 70px; padding-bottom: 60px;}
         #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
         #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
         #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
@@ -752,7 +752,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 
     /* PAGE PUBLIC */
-    #page-public {padding-top: 75px; padding-bottom: 50px;}
+    #page-public {padding-top: 70px; padding-bottom: 60px;}
         
 
         /*.connection-items-con > .well {box-shadow: none; background-color: transparent; border: none;}
@@ -775,8 +775,10 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 
     /* PAGE PRIVATE */ 
-    #page-private {padding-top: 75px; padding-bottom: 50px;}
+    #page-private {padding-top: 70px; padding-bottom: 60px;}
 
+    /* PAGE HELP */ 
+    #page-help {padding: 10px;}
 
     /* PAGE FILTER */
     #filter-panel {padding-top: 50px; padding-bottom: 50px;}
@@ -872,15 +874,14 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 /* FOOTER */
 /*
-nav#footer {min-height: 15px; background-color: #0ab; box-shadow: 0 -1px 5px #000, 0 0 5px #0ef inset;}
+nav#footer {min-height: 0; background-color: #0ab;}
 body.logged-out nav#footer {display: none;}
 */
-
     /* THOUGHT STATUS */
-    #thought-status {transition: bottom 0.5s ease-in-out 0s; -webkit-transition: bottom 0.5s ease-in-out 0s; position: absolute; bottom: -27px; width: 100%;}
+    #thought-status {transition: bottom 0.5s ease-in-out 0.5s; -webkit-transition: bottom 0.5s ease-in-out 0.5s; position: absolute; bottom: -30px; width: 100%;}
         body[data-page=page-people] #thought-status,
         body[data-page=page-public] #thought-status,
-        body[data-page=page-private] #thought-status {transition: bottom 0.5s ease-in-out 0s; -webkit-transition: bottom 0.5s ease-in-out 0s; bottom: 0;}    
+        body[data-page=page-private] #thought-status {transition: bottom 0.5s ease-in-out 0.5s; -webkit-transition: bottom 0.5s ease-in-out 0.5s; bottom: 0; box-shadow: 0 0 20px rgba(0,0,0,0.8);}    
     
 
 /* APP COMPONENTS */

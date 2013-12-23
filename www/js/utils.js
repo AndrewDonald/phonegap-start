@@ -76,12 +76,24 @@ function gotoPage(page, optional){
                 $('#page-profile .user-profile').empty();
                 break;
             case "page-people":
-                $('#pages #page-people').addClass('active');
+                //$('#pages #page-people').addClass('active');
                 //getThoughts(); // Change to getAddedThoughts
+                $('body').animate({delay:0}, 100, function(){
+                    $('#btn-people-page').click();
+                });
                 _temp.openStreamAccordionTab = option;
                 getStream();
                 break;
             case "page-public":
+                $('body').animate({delay:0}, 100, function(){
+                    $('#btn-public-page').click();
+                });
+                _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
+                break;
+            case "page-private":
+                $('body').animate({delay:0}, 100, function(){
+                    $('#btn-private-page').click();
+                });
                 _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
             default:

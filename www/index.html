@@ -31,44 +31,44 @@
             </div>
             <ul id="main-menu-items" class="list-group" role="menu">
                 <li class="list-group-item">
-                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid">
+                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid-normal">
                         <span class="menu-icon glyphicon glyphicon-user"></span>People
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="public-toggle" data-toggle-item="page-public" class="btn btn-lucid">
+                    <a id="public-toggle" data-toggle-item="page-public" class="btn btn-lucid-normal">
                         <span class="menu-icon glyphicon glyphicon-comment"></span>Public
                     </a>
                 </li>
                 <li class="list-group-item divider">
-                    <a id="private-toggle" data-toggle-item="page-private" class="btn btn-lucid">
+                    <a id="private-toggle" data-toggle-item="page-private" class="btn btn-lucid-normal">
                         <span class="menu-icon glyphicon glyphicon-comment private-chat-icon">
-                            <span class="glyphicon glyphicon-ban-circle"></span>
+                            <span class="glyphicon glyphicon-lock"></span>
                         </span>Private
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid">
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid-normal">
                         <span class="menu-icon glyphicon glyphicon-user"></span>Profile
                     </a>
                 </li>
                 <li class="list-group-item divider">
-                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid">
+                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid-normal">
                         <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
                     </a>
                 </li>
                 <li class="list-group-item divider">
-                    <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid login-toggle btn btn-link-lucid">
+                    <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid-normal login-toggle btn btn-link-lucid">
                         <span class="menu-icon glyphicon glyphicon-off"></span>Login
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a id="help-toggle" class="btn btn-lucid" data-toggle-item="page-help">
+                    <a id="help-toggle" class="btn btn-lucid-normal" data-toggle-item="page-help">
                         <span class="menu-icon about-icon"></span>Help
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a class="menu-toggle-modal-about btn btn-lucid" data-toggle="modal" data-target="#modal-about">
+                    <a class="menu-toggle-modal-about btn btn-lucid-normal" data-toggle="modal" data-target="#modal-about">
                         <span class="menu-icon about-icon"></span>About
                     </a>
                 </li>
@@ -105,7 +105,7 @@
                     <!-- MASTHEAD (END) -->
 
                     <!-- public HEADER (START) -->
-                    <nav id="public-header" class="navbar-fixed-top" role="">
+                    <nav id="thought-header" class="navbar-fixed-top" role="">
                         <!-- Message Panel (START) -->
                         <div id="send-message-con">
                             <form class="send-message-form navbar-form clearfix" onsubmit="javascript:sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()}); return false;">
@@ -121,20 +121,18 @@
                         <!-- Message Panel (END) -->
 
                         <!-- Stream Slider Nav (Start) -->
-                        <div id="stream-slider-nav" class="slider-nav btn-group btn-group-justified">
-                            <span class="slider-items">
-                                <a class="btn-connection-request btn btn-lucid-normal btn-slider">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                </a>
-                                <a class="btn-message-user btn btn-lucid-normal btn-slider active">
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                </a>
-                                <a class="btn-block-user btn btn-lucid-normal">
-                                    <span class="menu-icon glyphicon glyphicon-comment btn-slider private-chat-icon">
-                                        <span class="glyphicon glyphicon-lock"></span>
-                                    </span>
-                                </a>
-                            </span>
+                        <div id="thought-page-carousel-nav" class="slider-nav btn-group btn-group-justified">
+                            <a id="btn-people-page" class="btn btn-lucid-normal btn-slider active">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </a>
+                            <a id="btn-public-page" class="btn btn-lucid-normal btn-slider">
+                                <span class="glyphicon glyphicon-comment"></span>
+                            </a>
+                            <a id="btn-private-page" class="btn btn-lucid-normal btn-slider">
+                                <span class="menu-icon glyphicon glyphicon-comment private-chat-icon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>
+                            </a>
                         </div>
                         <!-- Stream Slider Nav (End) -->
                     </nav>
@@ -147,7 +145,7 @@
                     <div class="welcome">
                         <h1>Welcome to LucidLife.</h1>
                         <p>
-                            Let us be your social butler. Just type away &mdash; whatever is on your mind and we will find people talking about what you are thinking, right now.
+                            Let us be your social butler. Just type whatever is on your mind and we will find people talking about what you are thinking, right now.
                         </p>
                         <p>
                             But first, let's start you off with a quick tutorial on how LucidLife works. The first thing you should know is that the people you chat with have colour codes and indicators that tell you things like if they have viewed your profile or that you are friends:
@@ -580,7 +578,7 @@
                     <!-- PRIVATE PAGE (START) -->
                     <div id="page-private" class="page row page-carousel-item">
                         <!-- private-List (Start) -->
-                        <div class="people-list panel-heading panel-nav active">PRIVATE</div>
+                        <div class="people-list panel-heading panel-nav active" style="text-align: center;">PRIVATE</div>
                         <!-- private-List (End) -->
 
                         <!-- PEOPLE PANEL (START) -->
