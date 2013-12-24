@@ -142,13 +142,19 @@
 
                 <!-- LOGIN (START) -->
                 <div id="page-help" class="page row">
-                    <div class="welcome">
-                        <h1>Welcome to LucidLife.</h1>
+                    <div class="content">
+                        <h1>Welcome to LucidLife</h1>
+                        <h2>Your Social Butler.</h2>
                         <p>
-                            Let us be your social butler. Just type whatever is on your mind and we will find people talking about what you are thinking, right now.
+                            LucidLife would like to thank you for supporting our concept and mission, which is to make connecting people with other people as easy and effortless as possible. All you have to do is type what's on your mind and allow us to search on your behalf. We will serve you people whom you can connect with, that are talking about your current thought, right now.
+                        </p>
+
+                        <h2>How Does LucidLife Work?</h2>
+                        <p>
+                            The first thing you should know is that the people you will meet have color codes to let you know things like; if they have viewed your profile or, if you have connected as friends.
                         </p>
                         <p>
-                            But first, let's start you off with a quick tutorial on how LucidLife works. The first thing you should know is that the people you chat with have colour codes and indicators that tell you things like if they have viewed your profile or that you are friends:
+                            Take a look below at all the possible color codes, indicators and notifications you may encounter during your Lucid conversations...
                         </p>
                     </div>
 
@@ -383,7 +389,7 @@
                                     <span class="glyphicon glyphicon-minus-sign"></span>
                                 </button>
                             </span>
-                            <div class="message-box">You can vote to remove an added stream if you feel it's not relevant. If enough members in your stream feel the same way, it will be removed.</div>
+                            <div class="message-box">Lucidlife will periodically merge thoughts based on conversation similarities. You may vote to remove added thoughts. If there are enough votes, it will be removed.</div>
                         </li>
                     </ul>
                     <!-- Example: Public Chat (End) -->
@@ -817,7 +823,48 @@
                         </div>
                     </div>
                 </div>
-                <!-- User Profile (End) -->
+
+                <!-- User Profile Modal (Start) -->
+                <div id="user-profile-modal" class="template">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">{{fname}} {{lname}}</h4>
+                        <div class="stats clearfix">
+                            <span class="pull-left">{{gender}}, {{age}}</span>
+                            <span class="pull-right"><span class="time-elapse" data-time="{{time}}">{{last-login-date}}</span></span>
+                        </div>
+
+                    </div>
+                    <div class="modal-body">
+                        <!-- User Profile (Start) -->
+                        <div class="profile-photo">
+                            <div style="height: 250px; width: 250px; background-image: url('img/profile/profile-5.jpg'); background-size: 100% 100%;"></div>
+                            <!--
+                            <span style="color: #fff; font-size: 16px; position: absolute; left: 260px; text-align: right; text-shadow: 1px 1px 3px #000; top: 270px;">1/3</span>
+                            -->
+                        </div>
+                        <div class="profile-info">
+                            <div class="biography">
+                                {{biography}}
+                            </div>
+                        </div>
+                        <!-- User Profile (End) -->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="profile-actions btn-group btn-group-justified">
+                            <a class="btn-connection-request btn btn-lucid-normal blue">
+                                + <span class="glyphicon glyphicon-link"></span>
+                            </a>
+                            <a class="btn-message-user btn btn-lucid-normal blue">
+                                + <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                            <a class="btn-block-user btn btn-lucid-normal blue">
+                                + <span class="glyphicon glyphicon-ban-circle"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- User Profile Modal (End) -->
 
                 <!-- Thought List Item (Start) -->
                 <div id="thought-list-item" class="template">
@@ -974,34 +1021,44 @@
                     </div>
                 </div>
                 <!-- Modal Failed Login (End) -->
+
+                <!-- Modal Profile (Start) -->
+                <div class="modal" id="modal-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            {{profile-user-modal}}
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Profile (End) -->
             <!-- LIGHTBOXES (END) -->
 
 <!-- SAMPLE PEOPLE TEST (Start) -->
                 <div id="sample-newest-people" class="template">
                             <pre class="newest-members btn-accordion" data-qty="5" onclick="accordionButton(this);"></span><label class="stream-name no-tilde">Newest Members</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">6</span></pre>
-                            <button class="btn btn-lucid user in-stream viewed-profile" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Ted Mariopolis">
+                            <button class="btn btn-lucid user in-stream viewed-profile" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Ted Mariopolis" onclick="$('#modal-profile .modal-content').html(createUserProfileModal('+ _session.user + ')); $('#modal-profile').modal('show');">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream new" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user added-stream new" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);" onclick="getUserProfile(2);">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Mary</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3" data-username="Susanna Jameson">
+                            <button class="btn btn-lucid user added-stream viewed-profile" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3" data-username="Susanna Jameson" onclick="getUserProfile(3);">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Susanna</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream viewed-profile connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport">
+                            <button class="btn btn-lucid user in-stream viewed-profile connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport" onclick="getUserProfile(4);">
                                 <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
                                 <label><span class="name">Stephanie</span></label>
                             </button>
-                            <button class="btn btn-lucid user in-stream blocked" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6" data-username="Alyona Stephenson">
+                            <button class="btn btn-lucid user in-stream blocked" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6" data-username="Alyona Stephenson" onclick="getUserProfile(5);">
                                 <sup class="badge label-lucid">
                                     <span class="glyphicon glyphicon-ban-circle"></span>
                                 </sup>
                                 <label><span class="name">Ted</span></label>
                             </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);">
+                            <button class="btn btn-lucid user added-stream viewed-profile" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);" onclick="getUserProfile(6);">
                                 <sup class="badge label-lucid"></sup>
                                 <label><span class="name">Theresa</span></label>
                             </button>

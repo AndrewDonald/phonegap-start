@@ -360,9 +360,12 @@ function getUserProfile_Callback(result) {
         // Ajax request failed
     }else{
         if(result.status > 0){
-            gotoPage('page-profile');
-            $('#page-profile .user-profile').html(createUserProfile(result.object));
-            //getSavedStreams(result.object.userid);
+            //gotoPage('page-profile');
+            //$('#page-profile .user-profile').html(createUserProfile(result.object));
+            ////getSavedStreams(result.object.userid);
+
+            $('#modal-profile .modal-content').html(createUserProfileModal(_session.user));
+            $('#modal-profile').modal('show');
         }else{
             // Server returned an error
             alert('Error: ' + result.message);

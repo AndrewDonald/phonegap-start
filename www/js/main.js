@@ -48,6 +48,7 @@ var _application                                = {};
     _application.template.streamButton          = $('#stream-button.template').html();
     _application.template.userButton            = $('#user-button.template').html();
     _application.template.userProfile           = $('#user-profile.template').html();
+    _application.template.userProfileModal      = $('#user-profile-modal.template').html();
     _application.template.streamAccordionTab    = $('#stream-accordion-tab.template').html();
     _application.template.thoughtListItem       = $('#thought-list-item.template').html();
     _application.template.notificationItem      = $('#notification-item.template').html();
@@ -198,6 +199,7 @@ function updateStreamStatus(){
     //$('#stream-status-panel .stream-info .badge').html();
 }
 
+/*
 function addStreamMember(objUser, direction) {
     $('.stream-people > article.User-Badge[data-userid="' + objUser.userid + '"]').remove();
 
@@ -207,6 +209,7 @@ function addStreamMember(objUser, direction) {
         $('.stream-people').append(createUserBadge(objUser, "people")).children('article.User-Badge:first').show(); //.removeAttr('style');
     }
 }
+*/
 
 function addUser(objUser) {
     _session.users.user[objUser.userid] = {userid:         objUser.userid,
@@ -222,12 +225,9 @@ function addUser(objUser) {
                                             entrydate:      objUser.createdate};
 }
 
-
-
 function createUserButton(objData, objSettingsOverrides){
     var objSettings = {animate:false, square:false, class:""};
     $.extend(objSettings, objSettingsOverrides);
-
 
     if(objSettings.square == true){
         objSettings.class += ' square';
@@ -272,6 +272,20 @@ function createUserProfile(objData){
                     .replace(/\{{biography}}/g,         objData.biography ? objData.biography : '');
     
     return userProfile;
+}
+
+function createUserProfileModal(objData){
+    var userProfileModal = _application.template.userProfileModal
+                    .replace(/\{{fname}}/g,             objData.fname)
+                    .replace(/\{{lname}}/g,             objData.lname)
+                    .replace(/\{{userid}}/g,            objData.userid)
+                    .replace(/\{{gender}}/g,            getFormatedGender(objData.gender))
+                    .replace(/\{{age}}/g,               objData.age)
+                    .replace(/\{{time}}/g,              objData.lastlogindate)
+                    .replace(/\{{last-login-date}}/g,   getElapsedTime(objData.lastlogindate))
+                    .replace(/\{{biography}}/g,         objData.biography ? objData.biography : '');
+    
+    return userProfileModal;
 }
 
 function createChatItem(objData){
@@ -342,7 +356,7 @@ function addMemberItem(objData) {
         var addMemberItem = _application.template.addedMemberItem
                             .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
                             .replace(/\{{time}}/g,          getTimeNow())
-                            .replace(/\{{entrytime}}/g,     getElapsedTime(getTimeNow()));
+                            .replace(/\{{entrydate}}/g,     getElapsedTime(getTimeNow()));
 
        displayStreamItem(addMemberItem);
     }
