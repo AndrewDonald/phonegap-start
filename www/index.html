@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="logged-out-XXX home filter" data-page="page-login">
+    <body class="logged-out home filter" data-page="page-login">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -59,7 +59,8 @@
                 </li>
                 <li class="list-group-item divider">
                     <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid-normal login-toggle btn btn-link-lucid">
-                        <span class="menu-icon glyphicon glyphicon-off"></span>Login
+                        <span class="menu-icon glyphicon glyphicon-off"></span>
+                        <span class="login-label"></span>
                     </a>
                 </li>
                 <li class="list-group-item">
@@ -827,17 +828,19 @@
                 <!-- User Profile Modal (Start) -->
                 <div id="user-profile-modal" class="template">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
                         <h4 class="modal-title">{{fname}} {{lname}}</h4>
                         <div class="stats clearfix">
                             <span class="pull-left">{{gender}}, {{age}}</span>
                             <span class="last-login pull-right"><span class="time-elapse" data-time="{{time}}">Last logged in {{last-login-date}}</span></span>
                         </div>
                     </div>
-                    <div class="modal-body clearfix">
+                    <div class="modal-body">
                         <!-- User Profile (Start) -->
-                        <div class="profile-photo pull-left" style="background-image: url('img/profile/profile-5.jpg');"></div>
-                        <div class="biography pull-right">x{{biography}}</div>
+                        <div class="profile-photo" style="background-image: url('img/profile/profile-{{userid}}.jpg');"></div>
+                        <div class="biography">x{{biography}}</div>
                         <!-- User Profile (End) -->
                     </div>
                     <div class="modal-footer">
@@ -960,7 +963,9 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
                                 <h4 class="modal-title">About</h4>
                             </div>
                             <div class="modal-body">
@@ -995,7 +1000,9 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
                                 <h4 class="modal-title">Login Failed</h4>
                             </div>
                             <div class="modal-body">

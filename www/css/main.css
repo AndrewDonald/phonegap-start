@@ -77,25 +77,15 @@ label {margin-bottom: 0; font-weight: normal;}
 .well {min-height: 0px;}
 blockquote, .well blockquote {position: relative; margin: 0; display: inline-block; padding: 7px 7px 15px; min-width: 80px; text-align: left; font-size: 14px; border: none; border-left: 1px solid #0ef; background-color: #fff; border-radius: 15px;}
 .modal {z-index: 4000; padding-top: 80px;}
-    .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
-        .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
-        .modal .modal-content .modal-body {padding: 15px;}
-        .modal .modal-content .modal-footer {padding: 10px;}
-            .modal .modal-content .modal-footer .btn-close {font-size: 20px; width: 100%; text-align: center;}
-#modal-profile.modal {padding-top: 110px;}
-    #modal-profile .modal-header {padding: 5px;}
-    #modal-profile .modal-body {padding: 0;}
-    #modal-profile .modal-body .profile-photo {height: 150px; width: 150px; overflow: hidden; background-size: 100% auto;} 
-    #modal-profile .modal-body .biography {width: 148px; padding: 3px 5px; height: 150px; text-shadow: none; overflow-y: auto;}
-    #modal-profile .modal-footer {margin: 0; padding: 0;}
-    #modal-profile .profile-actions {width: 100%;}
-    #modal-profile .profile-actions .btn:first-child {border-radius: 0 0 0 5px;}
-    #modal-profile .profile-actions .btn:last-child {border-radius: 0 0 5px 0;}
+    .modal .modal-dialog {max-width: 600px;}
+        .modal .modal-content {color: #eee; text-shadow: 0 1px 2px #000; background-color: rgba(0, 120, 135, 0.85); border: 1px solid #0ef;}
+            .modal .modal-content .modal-header {padding: 10px 15px; border-bottom: 1px solid #0ef;}
+            .modal .modal-content .modal-body {padding: 15px;}
+            .modal .modal-content .modal-footer {padding: 10px;}
+                .modal .modal-content .modal-footer .btn-close {font-size: 20px; width: 100%; text-align: center;}
 
-
-
-.close {font-size: 30px; text-shadow: 0 1px 1px #000; opacity: 1; color: #fff; line-height: 0.9;}
-.close:hover, .close:focus {color: #0ef;}
+.close {font-size: 20px; text-shadow: 0 1px 1px #000; opacity: 1; color: #fff; border-radius: 5px;}
+.close:hover, .close:focus {color: #fff;}
 .progress {margin-bottom: 0;}
 
 .list-group-item {position: relative; margin: 2.5px 0; color: #fff; padding: 10px 5px; background-color: rgba(0,0,0,0.3); border: 1px solid #0ab; border-radius: 4px;}
@@ -189,12 +179,24 @@ h1 {font-size: 18px;}
 h1.stream-name {text-align: center; margin: 10px 0 10px -15px;}
 h2 {font-size: 16px;}
 
+
 .template {display: none;}
 .form {padding: 0; color: #fff; clear: both;}
     .form .form-row {margin-bottom: 10px;}
         .form .btn-wide {padding: 6px 39px;}
             .form .form-row sup > span {background-color: rgba(0, 0, 0, 0); border: medium none; font-size: 7px; left: -1px; padding: 0; position: absolute; width: 9px;}
-    
+
+/* Profile Lightbox */
+#modal-profile.modal {padding-top: 110px;}
+    #modal-profile .modal-header {padding: 5px;}
+    #modal-profile .modal-body {position: relative; padding: 0 0 0 153px;}
+    #modal-profile .modal-body .profile-photo {position: absolute; top: 0; left: 0; height: 150px; width: 150px; overflow: hidden; background-size: 100% auto;} 
+    #modal-profile .modal-body .biography {width: 100%; padding: 3px 5px; height: 150px; overflow-y: auto; text-shadow: none; overflow-y: auto;}
+    #modal-profile .modal-footer {margin: 0; padding: 0;}
+    #modal-profile .profile-actions {width: 100%;}
+    #modal-profile .profile-actions .btn:first-child {border-radius: 0 0 0 5px;}
+    #modal-profile .profile-actions .btn:last-child {border-radius: 0 0 5px 0;}
+
     /* PROFILE FORM */
 .stream-name {text-transform: capitalize; word-wrap: break-word; display: inline-block;}
 .stream-name:not(.no-tilde):before {content: '∼'; font-size: 16px;}
@@ -612,7 +614,9 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                 ul#main-menu-items .list-group-item .btn#profile-toggle.active .menu-icon,
                 ul#main-menu-items .list-group-item .btn#profile-toggle:hover .menu-icon,
                 ul#main-menu-items .list-group-item .btn#profile-toggle:focus .menu-icon {transition: border-color 0.5s; border-color: #fff;}
-                
+    .login-label:before {content: 'Logout';}
+    body.logged-out .login-label:before {content: 'Login';}  
+    
     /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
 /* HEADER */   
