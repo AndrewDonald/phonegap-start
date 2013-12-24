@@ -831,34 +831,24 @@
                         <h4 class="modal-title">{{fname}} {{lname}}</h4>
                         <div class="stats clearfix">
                             <span class="pull-left">{{gender}}, {{age}}</span>
-                            <span class="pull-right"><span class="time-elapse" data-time="{{time}}">{{last-login-date}}</span></span>
+                            <span class="last-login pull-right"><span class="time-elapse" data-time="{{time}}">Last logged in {{last-login-date}}</span></span>
                         </div>
-
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body clearfix">
                         <!-- User Profile (Start) -->
-                        <div class="profile-photo">
-                            <div style="height: 250px; width: 250px; background-image: url('img/profile/profile-5.jpg'); background-size: 100% 100%;"></div>
-                            <!--
-                            <span style="color: #fff; font-size: 16px; position: absolute; left: 260px; text-align: right; text-shadow: 1px 1px 3px #000; top: 270px;">1/3</span>
-                            -->
-                        </div>
-                        <div class="profile-info">
-                            <div class="biography">
-                                {{biography}}
-                            </div>
-                        </div>
+                        <div class="profile-photo pull-left" style="background-image: url('img/profile/profile-5.jpg');"></div>
+                        <div class="biography pull-right">x{{biography}}</div>
                         <!-- User Profile (End) -->
                     </div>
                     <div class="modal-footer">
                         <div class="profile-actions btn-group btn-group-justified">
-                            <a class="btn-connection-request btn btn-lucid-normal blue">
+                            <a class="btn-connection-request btn btn-lucid-normal transparent">
                                 + <span class="glyphicon glyphicon-link"></span>
                             </a>
-                            <a class="btn-message-user btn btn-lucid-normal blue">
+                            <a class="btn-message-user btn btn-lucid-normal transparent">
                                 + <span class="glyphicon glyphicon-envelope"></span>
                             </a>
-                            <a class="btn-block-user btn btn-lucid-normal blue">
+                            <a class="btn-block-user btn btn-lucid-normal transparent">
                                 + <span class="glyphicon glyphicon-ban-circle"></span>
                             </a>
                         </div>

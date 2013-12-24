@@ -82,15 +82,19 @@ blockquote, .well blockquote {position: relative; margin: 0; display: inline-blo
         .modal .modal-content .modal-body {padding: 15px;}
         .modal .modal-content .modal-footer {padding: 10px;}
             .modal .modal-content .modal-footer .btn-close {font-size: 20px; width: 100%; text-align: center;}
-#modal-profile.modal {margin: 0 auto; padding-top: 95px; width: 272px;}
+#modal-profile.modal {padding-top: 110px;}
     #modal-profile .modal-header {padding: 5px;}
     #modal-profile .modal-body {padding: 0;}
+    #modal-profile .modal-body .profile-photo {height: 150px; width: 150px; overflow: hidden; background-size: 100% auto;} 
+    #modal-profile .modal-body .biography {width: 148px; padding: 3px 5px; height: 150px; text-shadow: none; overflow-y: auto;}
     #modal-profile .modal-footer {margin: 0; padding: 0;}
+    #modal-profile .profile-actions {width: 100%;}
     #modal-profile .profile-actions .btn:first-child {border-radius: 0 0 0 5px;}
     #modal-profile .profile-actions .btn:last-child {border-radius: 0 0 5px 0;}
 
 
-.close {font-size: 30px; text-shadow: none; opacity: 1; color: #0ef;}
+
+.close {font-size: 30px; text-shadow: 0 1px 1px #000; opacity: 1; color: #fff; line-height: 0.9;}
 .close:hover, .close:focus {color: #0ef;}
 .progress {margin-bottom: 0;}
 
@@ -482,11 +486,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:first-child {display: inline-block;}
     .btn-lucid-normal > .toggle-icon > span:last-child,
     .btn-lucid-normal:not(.active):focus > .toggle-icon > span:last-child {display: none;}
-.btn-lucid-normal.active, .btn-lucid-normal.active:focus {transition: all 0.5s; -webkit-transition: all 0.5s;
+.btn-lucid-normal.active, .btn-lucid-normal:focus, .btn-lucid-normal:hover {transition: all 0.5s; -webkit-transition: all 0.5s;
     color: #fff; background-color: #0ef; box-shadow: 0 0 1px #fff inset;}
     .btn-lucid-normal.active > .toggle-icon, .btn-lucid-normal.active:focus > .toggle-icon {padding: 2px 4px 2px 5px; background-color: rgba(255, 255, 0, 0.9);}
     .btn-lucid-normal.active > .toggle-icon > span:first-child, .btn-lucid-normal.active:focus > .toggle-icon > span:first-child {display: none;}
     .btn-lucid-normal.active > .toggle-icon > span:last-child, .btn-lucid-normal.active:focus > .toggle-icon > span:last-child {display: inline-block;}
+
+        .btn-lucid-normal.transparent {background-color: rgba(0, 120, 135, 0.85);}
+    .btn-lucid-normal.active.transparent, .btn-lucid-normal.transparent:focus, .btn-lucid-normal.transparent:hover {background-color: rgba(0, 245, 255, 0.85);}
 
 .btn-lucid-normal.blue {background-color: #08c;}
 .btn-lucid-normal.blue.active, .btn-lucid-normal.blue.active:focus,
