@@ -532,7 +532,6 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
 .message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 1px 1px 1px #000;}
 
-
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
 .controls-toggle.active {box-shadow: 1px 0px 3px #333, 0 0 1px #fff inset;}
@@ -555,14 +554,14 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
     .people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
-    .people-list > pre.btn-accordion.newest-members {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
+    .newest-members-list > pre.btn-accordion {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
     .people-list > pre.btn-accordion.active.newest-members,
     .people-list > pre.btn-accordion.newest-members:hover,
     .people-list > pre.btn-accordion.newest-members:focus, {background-color: #06b;}
     .people-list > pre:first-child {margin-top: 0;}
     .people-list > pre > .header-icon,
     .people-list > pre > label {padding-right: 5px; line-height: 18px;}
-    .people-list > pre > .badge {margin-right: 5px;}
+    .people-list > pre > .badge, .newest-members-list > pre > .badge {margin-right: 5px;}
     #page-people:not(.vertical) > .people-list > pre > .chevron-toggle.horizontal {margin: 4px 0 0 5px; transform: rotate(90deg);}
 
     /*.btn.people-list-toggle > sup.indicator {display: inline-block; top: -9px; margin-right: -5px;}*/
@@ -775,6 +774,9 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
         #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
 
+        #page-people .newest-members-list {padding:0 5px;}
+            #page-people .newest-members-list .btn-accordion {margin: 0;}
+
 
     /* PAGE PUBLIC */
     #page-public {padding-top: 70px; padding-bottom: 60px;}
@@ -866,7 +868,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                                 .connection-item-panel .panel-body blockquote.connection-content:before {content: '\201C'; font-weight: bold; font-size: 14px; font-family: serif; line-height: normal; margin-right: -2px;}
                                 .connection-item-panel .panel-body blockquote.connection-content:after {content: '\201D'; font-weight: bold; font-size: 14px; font-family: serif; line-height: normal; margin-left: -2px;}
                                     .connection-items-list > li.list-group-item .connection-item-panel .callout-pointer {position: absolute; top: 22px; height: 8px; width: 9px; background-color: rgba(255, 255, 255, 0.85);}
-                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -9px; border-radius: 8px 0 0; border-right: none; box-shadow: -4px 2px 5px #000, 0 0 4px #045 inset;}
+                                    .connection-items-list > li.list-group-item:not(.you) .connection-item-panel .callout-pointer {left: -9px; border-radius: 8px 0 0; border-right: none; box-shadow: -1px 2px 5px #000, 0 0 4px #045 inset;}
                                 .connection-item-panel .status {position: absolute; right: 10px; bottom: 3px; color: #056; font-size: 9px;}
                                     .connection-item-panel .status .viewed-icon {display: none;}
                                     .connection-item-panel .status .not-viewed-icon {color: #0ab; opacity: 0.4;}
@@ -890,7 +892,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
                     .connection-items-list > li.list-group-item.added-stream {margin: 0 60px 10px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-header {right: -57px;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .connection-content {box-shadow: 0px 2px 5px #000, 0 0 5px #045 inset; border: none;}
-                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -9px; border-radius: 0 8px 0 0; border-left: none; background-color: rgba(255, 255, 255, 0.85); box-shadow: 4px 2px 5px #000, 0 0 4px #045 inset;}
+                        .connection-items-list > li.list-group-item.you .connection-item-panel .panel-body .callout-pointer {right: -9px; border-radius: 0 8px 0 0; border-left: none; background-color: rgba(255, 255, 255, 0.85); box-shadow: 1px 2px 5px #000, 0 0 4px #045 inset;}
                         .connection-items-list > li.list-group-item.you .connection-item-panel .panel-footer {top: 8px; left: -48px; height: 40px; width: 40px;} 
             .connection-item-panel .btn-like {display: none;}   
 

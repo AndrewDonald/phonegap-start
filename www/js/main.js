@@ -97,20 +97,23 @@ moment.lang('en', {
 
 moment.lang('en', {
     calendar : {
-        lastDay : '[yesterday @] LT',
-        sameDay : '[today @] LT',
-        nextDay : '[tomorrow at] LT',
-        lastWeek : '[last] dddd [@] LT',
-        nextWeek : 'dddd [@] LT',
-        sameElse : 'L'
+        lastDay:    '[Yesterday]',
+        sameDay:    '[Today]',
+        nextDay:    '[Tomorrow]',
+        lastWeek:   'dddd',
+        nextWeek:   'dddd',
+        sameElse:   'L'
     }
 });
 
 $(function() {
-populatePeople();
-$('.btn-accordion.new, .btn-accordion.new-arrivals').click();
-    initEventHandlers();
+    /* Test (Start) */
+    populatePeople();
+    //populateNewestMember({streamid:0, stream:"test", userid:"2", picextension:"jpg", fname:"TestNewUser"});
+    $('.btn-accordion.new, .btn-accordion.new-arrivals').click();
+    /* Test (End) */
 
+    initEventHandlers();
 
     updateAbout();
     gotoPage('page-login');
@@ -122,9 +125,6 @@ $('.btn-accordion.new, .btn-accordion.new-arrivals').click();
         loginUser();
     }
     //app.initialize(); //app.initialize(); // app.receivedEvent();
-    
-
-   // $('.max-height').css('max-height', $(window).height() - 128);
 });
 
 // Show Step-1 of Create User Form
@@ -176,9 +176,12 @@ function changeStream(objStream){
     _session.streamAdded    = {"stream":{}}; 
     _session.public         = {"chat":{}}; 
     
-    gotoPage('page-public');
-    $('#page-public h2#today').html('<b>TODAY</b><br>' + moment().format("dddd, MMMM Do YYYY"));
+    gotoPage('page-people');
+    // Display Today's Date Header
+    $('#page-public h2#today').html('Today');
+    // Clear Public Chat
     $('#page-public .connection-items-list').empty();
+    populateNewestMember(_session.user);
     updateStreamStatus();
 
     // Pre populate stream with recent/latest public
@@ -198,18 +201,6 @@ function updateStreamStatus(){
     $('#stream-status-panel .stream-info .stream-name').html(_session.stream.stream);
     //$('#stream-status-panel .stream-info .badge').html();
 }
-
-/*
-function addStreamMember(objUser, direction) {
-    $('.stream-people > article.User-Badge[data-userid="' + objUser.userid + '"]').remove();
-
-    if (direction == 0) {    
-        $('.stream-people').prepend(createUserBadge(objUser, "people")).children('article.User-Badge:first').hide().show(500).flash(500,2); //.removeAttr('style');
-    } else {
-        $('.stream-people').append(createUserBadge(objUser, "people")).children('article.User-Badge:first').show(); //.removeAttr('style');
-    }
-}
-*/
 
 function addUser(objUser) {
     _session.users.user[objUser.userid] = {userid:         objUser.userid,
@@ -317,9 +308,14 @@ function createChatItem(objData){
 }
 
 // Displays a line item in the public Stream
-function displayStreamItem(objHtml){
-    $('#page-public .connection-items-list').prepend(objHtml)
-        .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
+function displayStreamItem(objHtml, append){
+    if(append){
+        $('#page-public .connection-items-list').append(objHtml)
+            .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
+    }else{
+        $('#page-public .connection-items-list').prepend(objHtml)
+            .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
+    }
 }
 
 function addNotificationItem(notification) {                       
@@ -359,6 +355,7 @@ function addMemberItem(objData) {
                             .replace(/\{{entrydate}}/g,     getElapsedTime(getTimeNow()));
 
        displayStreamItem(addMemberItem);
+       displayNewMember(addMemberItem);
     }
 }
 
@@ -376,16 +373,24 @@ function removeUser(objData) {
     }
 }
 
+// Iterate through and display all chat items
 function addChats(objData) {
     if(objData.length > 0){
-        var chats = objData.reverse();
+        var chats = objData;
+        var day = getTimeNow();
         for (var x=0; x<chats.length; x++) {
-            addChatItem(chats[x]);
+            // Insert Date Header for each different day except "today"
+            if(moment(chats[x].createdate).calendar().toLowerCase() != "today" && moment(chats[x].createdate).isBefore(day, 'day')){
+                day = chats[x].createdate;
+                displayStreamItem(_application.template.dateHeaderItem.replace(/\{{date}}/g, moment(day).calendar()), true);
+            }
+
+            addChatItem(chats[x], true);
         }
     }
 }
 
-function addChatItem(objData) {
+function addChatItem(objData, append) {
     if(!_session.public.chat[objData.chatid.toString()]){
         _session.public.chat[objData.chatid.toString()]       = objData; 
         _session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
@@ -402,80 +407,9 @@ function addChatItem(objData) {
                         .replace(/\{{time}}/g,          objData.createdate)
                         .replace(/\{{createdate}}/g,    getElapsedTime(objData.createdate));
 
-       displayStreamItem(chatItem);
+        displayStreamItem(chatItem, append);
     }
 }
-
-/* OLD
-function addChatItem(objChat) {
-    if(!_session.users.user[objChat.userid]){
-        addUser(objChat);
-    }
-
-    var user = objChat;
-
-    _session.streampublic.chat[user.chatid] =   {chatid:user.chatid,
-                                                        userid:user.userid,
-                                                        chat:user.chat,
-                                                        chatpic:user.chatpicextension,
-                                                        createdate:user.createdate,
-                                                        status:user.status};
-
-    if (objChat.updatedate != null) {
-        user.time = splitDate(objChat.updatedate);
-    }else{
-        user.time = splitDate(objChat.createdate);
-    }
-
-    if (objChat.chatpicextension != null) {
-        user.messageattachment = '<img alt="' + user.chatid + '" src="' + _application.url.fetch["activity"] + user.chatid + _application.preview + user.chatpicextension + '"/>';
-    }else{
-        user.messageattachment = "";
-    }
-    
-//    var selector = " > .wrapper";
-//    if ($('html').is('.no-touch')) {
-//  selector += " > .jspContainer > .jspPane";
-//    }
-    
-    var mediaType = "chat";
-    var mediaTypeMax = 3;
-    if (objChat.chatpicextension != null && objChat.chatpicextension.length > 0) {
-        if(_application.media.photoExtentionList.indexOf(objChat.chatpicextension) >= 0){
-            mediaType = "photo";
-            mediaTypeMax = 4;
-        }else if(_application.media.videoExtentionList.indexOf(objChat.chatpicextension) >= 0){
-            mediaType = "video";
-            mediaTypeMax = 1;
-        }else if(_application.media.audioExtentionList.indexOf(objChat.chatpicextension) >= 0){
-            mediaType = "audio";
-            mediaTypeMax = 1;
-        }
-    }
-
-    //var chatItem = createChatItem(objChat);
-    //if (direction == 0) { //$('ul.more_stories li:gt(2)').hide();
-    $('#page-public .connection-items-con .connection-items-list').prepend(createChatItem(objChat));
-    var convoItem = $('#page-public .connection-items-con .connection-items-list [data-userid=' + objChat.userid + ']:first');
-    $(convoItem).slideDown(500, function(){
-        $(this).removeAttr('style').find('.btn-lucid.user').removeClass('exit').animate({delay:0}, function(){
-            $(convoItem).find('.panel-body').removeClass('exit');
-        });
-    });
-    
-    
-    //if($('#page-public > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
-        //   $('#page-public > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
-        //}
-    //}else{
-        $('#page-public > .connection-items-con .connection-items-list').append(createUserBadge(user, mediaType)).children('article.User-Badge:first');
-        //if($('#page-public > .connection-items-con .connection-items-list').size() > 0 && $(this).children().size() <= mediaTypeMax){
-        //    $('#page-public > .connection-items-con .connection-items-list').children('li:gt(' + mediaTypeMax + ')').remove();
-        //}
-    //}
-    
-}
-*/
 
 function createStreamAccordionTab(objData){
     var streamType = "in-stream";
@@ -492,8 +426,10 @@ function createStreamAccordionTab(objData){
     return streamAccordionTab;
 }
 
-function createNewestMembers(){
-    return $('#sample-newest-people.template').html();
+function populateNewestMember(objUser){
+    $('#page-people .newest-members-list .btn-accordion').after(createUserButton(objUser));
+    var newestMembersQty = $('#page-people .newest-members-list .btn').size();
+    $('#page-people .newest-members-list .btn-accordion .badge').html(newestMembersQty);
 }
 
 function populatePeople(objStream){
@@ -517,7 +453,7 @@ function populatePeople(objStream){
     });
 
     // Display HTML objects list 
-    $('#page-people .people-list').html(createNewestMembers() + listpeopleThought);
+    $('#page-people .people-list').html(listpeopleThought);
 
     // Set Stream Members to active state as default 
     $('#page-people #people-controls .btn[data-filter=default]:not(.active)').click();

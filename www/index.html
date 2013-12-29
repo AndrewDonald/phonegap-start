@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="logged-out home filter" data-page="page-login">
+    <body class="logged-out-xxx home filter" data-page="page-login">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -534,6 +534,12 @@
                 <div id="thought-page-carousel" class="page-carousel-con">
                     <!-- PEOPLE PAGE (START) -->
                     <div id="page-people" class="page row page-carousel-item">
+                        <!-- newest-members-List (Start) -->
+                        <div class="newest-members-list panel-heading panel-nav active">
+                            <pre onclick="accordionButton(this);" class="btn-accordion"><label class="stream-name">Newest Members</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right"></span></pre>
+                        </div>
+                        <!-- newest-members-List (End) -->
+
                         <!-- people-List (Start) -->
                         <div class="people-list panel-heading panel-nav active"></div>
                         <!-- people-List (End) -->
@@ -575,7 +581,7 @@
                     <!-- PUBLIC PAGE (START) -->
                     <div id="page-public" class="page row page-carousel-item">
                         <div id="today" class="date-header-item">
-                            <span class="message"><b>TODAY</b></span>
+                            <span class="message">Today</span>
                         </div>
 
                         <div class="connection-items-list" data-viewed-date="" data-connecting="" data-entry-date="" data-streamid="" data-stream="" data-userid=""></div>
@@ -768,300 +774,267 @@
         </div>
         <!-- CONTAINER (END) -->
 
-        <!-- HTML TEMPLATES (START) -->
-            <!-- STREAM ITEM (START) -->
-                <!-- Stream Button (Start) -->
-                <div id="stream-button" class="template">
-                    <span class="btn-group stream-button {{added}} {{following}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
-                        <button type="button" class="btn-stream btn btn-lucid-normal blue" onclick="gotoPage('page-stream', {{streamid}});">
-                            <span class="stream-name {{added}}">{{stream}}</span>
-                            <label class="badge">{{activeusers}}</label>
-                        </button>
-                        <button class="vote-remove btn btn-danger" onclick="protestStream({{streamid}});">
-                            <span class="glyphicon glyphicon-minus-sign"></span>
-                        </button>
-                    </span>
-                </div>
-                <!-- Stream Button (Start) -->
+    <!-- HTML TEMPLATES (START) -->
+        <!-- STREAM ITEMS (START) -->
+        <!-- Stream Button (Start) -->
+        <div id="stream-button" class="template">
+            <span class="btn-group stream-button {{added}} {{following}}" data-streamid="{{streamid}}" data-stream="{{stream}}">
+                <button type="button" class="btn-stream btn btn-lucid-normal blue" onclick="gotoPage('page-stream', {{streamid}});">
+                    <span class="stream-name {{added}}">{{stream}}</span>
+                    <label class="badge">{{activeusers}}</label>
+                </button>
+                <button class="vote-remove btn btn-danger" onclick="protestStream({{streamid}});">
+                    <span class="glyphicon glyphicon-minus-sign"></span>
+                </button>
+            </span>
+        </div>
+        <!-- Stream Button (Start) -->
 
-                <!-- User Button (Start) -->
-                <div id="user-button" class="template">
-                    <button class="btn btn-lucid user {{class}} {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-profile}} {{blocked}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-profile-date="{{viewed-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="getUserProfile({{userid}});">
-                        <sup class="badge label-lucid">{{badge}}</sup>
-                        <label><span class="fname">{{fname}}</span><span class="lname">{{lname}}</span></label>
-                    </button>
-                </div>
-                <!-- User Button (End) -->
+        <!-- User Button (Start) -->
+        <div id="user-button" class="template">
+            <button class="btn btn-lucid user {{class}} {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-profile}} {{blocked}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-profile-date="{{viewed-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="getUserProfile({{userid}});">
+                <sup class="badge label-lucid">{{badge}}</sup>
+                <label><span class="fname">{{fname}}</span><span class="lname">{{lname}}</span></label>
+            </button>
+        </div>
+        <!-- User Button (End) -->
 
+        <!-- User Profile (Start) -->
+        <div id="user-profile" class="template">
+            <div class="profile-photo">
+                {{user-button}}
+                <!--
+                <span style="color: #fff; font-size: 16px; position: absolute; left: 260px; text-align: right; text-shadow: 1px 1px 3px #000; top: 270px;">1/3</span>
+                -->
+                <div class="stats clearfix">
+                    <span class="pull-left">{{gender}}, {{age}}</span>
+                    <span class="pull-right">Last logged in <span class="time-elapse" data-time="{{time}}">{{last-login-date}}</span></span>
+                </div>
+                <!--
+                <div class="profile-actions btn-group btn-group-justified">
+                    <a class="btn-connection-request btn btn-lucid-normal blue">
+                        + <span class="glyphicon glyphicon-link"></span>
+                    </a>
+                    <a class="btn-message-user btn btn-lucid-normal blue">
+                        + <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                    <a class="btn-block-user btn btn-lucid-normal blue">
+                        + <span class="glyphicon glyphicon-ban-circle"></span>
+                    </a>
+                </div>
+                -->
+            </div>
+            <div class="profile-info">
+                <div class="biography">
+                    {{biography}}
+                </div>
+            </div>
+        </div>
+
+        <!-- User Profile Modal (Start) -->
+        <div id="user-profile-modal" class="template">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+                <h4 class="modal-title">{{fname}} {{lname}}</h4>
+                <div class="stats clearfix">
+                    <span class="pull-left">{{gender}}, {{age}}</span>
+                    <span class="last-login pull-right"><span class="time-elapse" data-time="{{time}}">Last logged in {{last-login-date}}</span></span>
+                </div>
+            </div>
+            <div class="modal-body">
                 <!-- User Profile (Start) -->
-                <div id="user-profile" class="template">
-                    <div class="profile-photo">
+                <div class="profile-photo" style="background-image: url('img/profile/profile-{{userid}}.jpg');"></div>
+                <div class="biography">x{{biography}}</div>
+                <!-- User Profile (End) -->
+            </div>
+            <div class="modal-footer">
+                <div class="profile-actions btn-group btn-group-justified">
+                    <a class="btn-connection-request btn btn-lucid-normal transparent">
+                        + <span class="glyphicon glyphicon-link"></span>
+                    </a>
+                    <a class="btn-message-user btn btn-lucid-normal transparent">
+                        + <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                    <a class="btn-block-user btn btn-lucid-normal transparent">
+                        + <span class="glyphicon glyphicon-ban-circle"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- User Profile Modal (End) -->
+
+        <!-- Thought List Item (Start) -->
+        <div id="thought-list-item" class="template">
+            <li class="list-group-item thought-list-item">
+                <a class="btn btn-lucid-normal" data-streamid="{{streamid}}" onclick="subscribeThought({{streamid}});">
+                    <span class="stream-name {{remove}}">{{stream}}</span><span class="badge">{{activeusers}}</span>
+                </a>
+            </li>
+        </div>
+        <!-- Thought List Item (End) -->
+
+        <!-- Notification Item (Start) -->
+        <div id="notification-item" class="template">
+            <li class="list-group-item notification-item">
+                {{notification}}
+            </li>
+        </div>
+        <!-- Notification Item (End) -->
+
+        <!-- Date Header Item (Start) -->
+        <div id="date-header-item" class="template">
+            <li class="list-group-item date-header-item">
+                <span class="message">{{date}}</span>
+            </li>
+        </div>
+        <!-- Date Header Item (Start) -->
+
+        <!-- Added Member Item (Start) -->
+        <div id="added-member-item" class="template">
+            <li class="list-group-item added-member-item">
+                {{user-button}}
+                <span class="message exit">Joined <span class="time-elapse" data-time="{{time}}">{{entrydate}}</span></span>
+            </li>
+        </div>
+        <!-- Added Member Item (End) -->
+
+        <!-- Added Stream Item (Start) -->
+        <div id="added-stream-item" class="template">
+            <li class="list-group-item added-stream-item">
+                {{stream-button}}
+                <span class="message time-elapse" data-time="{{time}}">{{entrytime}}</span>
+            </li>
+        </div>
+        <!-- Added Stream Item (Start) -->
+
+        <!-- Chat Item (Start) -->
+        <div id="chat-item" class="template">
+            <li class="list-group-item chat-item {{stream-class}} {{you}} {{viewed}} {{connected}}" data-viewed-date="{{viewed-date}}" data-connecting="{{connecting-qty}}" data-entry-date="{{entry-date}}" data-streamid="{{streamid}}" data-stream="{{stream}}" data-userid="{{userid}}" data-user-fname="{{fname}}" data-user-lname="{{lname}}">
+                <div class="connection-item-panel panel">
+                    <div class="panel-header">
                         {{user-button}}
-                        <!--
-                        <span style="color: #fff; font-size: 16px; position: absolute; left: 260px; text-align: right; text-shadow: 1px 1px 3px #000; top: 270px;">1/3</span>
-                        -->
-                        <div class="stats clearfix">
-                            <span class="pull-left">{{gender}}, {{age}}</span>
-                            <span class="pull-right">Last logged in <span class="time-elapse" data-time="{{time}}">{{last-login-date}}</span></span>
-                        </div>
-                        <!--
-                        <div class="profile-actions btn-group btn-group-justified">
-                            <a class="btn-connection-request btn btn-lucid-normal blue">
-                                + <span class="glyphicon glyphicon-link"></span>
-                            </a>
-                            <a class="btn-message-user btn btn-lucid-normal blue">
-                                + <span class="glyphicon glyphicon-envelope"></span>
-                            </a>
-                            <a class="btn-block-user btn btn-lucid-normal blue">
-                                + <span class="glyphicon glyphicon-ban-circle"></span>
-                            </a>
-                        </div>
-                        -->
                     </div>
-                    <div class="profile-info">
-                        <div class="biography">
-                            {{biography}}
-                        </div>
+                    <div class="panel-body">
+                        <div class="callout-pointer"></div>
+                        <blockquote class="connection-content">
+                            {{chat}}
+                            <div class="status">
+                                <span class="sent time-elapse" data-time="{{time}}">{{createdate}}</span>
+                                <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
+                                <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
+                            </div>
+                        </blockquote>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
                     </div>
                 </div>
+            </li>
+        </div>
+        <!-- Chat Item (End) -->
+        <!-- STREAM ITEM (END) -->
 
-                <!-- User Profile Modal (Start) -->
-                <div id="user-profile-modal" class="template">
+        <!-- Stream Accordion Tab (Start) -->
+        <div id="stream-accordion-tab" class="template">
+            <pre class="{{stream-type}} btn-accordion" data-members="{{activeusers}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="accordionButton(this);"><label class="stream-name {{added}} {{no-tilde}}">{{stream}}</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">{{activeusers}}</span></pre>
+        </div>
+        <!-- Stream Accordion Tab (End) -->
+
+        <!-- LIGHTBOXES (START) -->
+        <!-- Modal Loader (Start) -->
+        <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please wait</h4>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <span class="sr-only">Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Loader (End) -->
+
+        <!-- Modal About (Start) -->
+        <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             <span class="glyphicon glyphicon-remove-circle"></span>
                         </button>
-                        <h4 class="modal-title">{{fname}} {{lname}}</h4>
-                        <div class="stats clearfix">
-                            <span class="pull-left">{{gender}}, {{age}}</span>
-                            <span class="last-login pull-right"><span class="time-elapse" data-time="{{time}}">Last logged in {{last-login-date}}</span></span>
-                        </div>
+                        <h4 class="modal-title">About</h4>
                     </div>
                     <div class="modal-body">
-                        <!-- User Profile (Start) -->
-                        <div class="profile-photo" style="background-image: url('img/profile/profile-{{userid}}.jpg');"></div>
-                        <div class="biography">x{{biography}}</div>
-                        <!-- User Profile (End) -->
+                        <h5>LucidLife App Details</h5>
+                        <div>Version: <span class="version">0.2.2</span></div>
+                        
+                        <h5 class="geo-location">Geo Location</h5>
+                        <div>Latitude: <span class="latitude">No request made</span></div>
+                        <div>Longitude: <span class="longitude">No request made</span></div>
+
+                        <h5 class="user-info">User Info</h5>
+                        <div>Name: <span class="user-info-name"></span></div>
+                        <div>Gender: <span class="user-info-gender"></span></div>
+                        <div>Birthdate: <span class="user-info-birthdate"></span></div>
+                        <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
+                        <div>Login: <span class="user-info-status">Logged out</span></div>
+                        <div>Last Login: <span class="user-info-lastlogin"></span></div>
                     </div>
+                    <!--
                     <div class="modal-footer">
-                        <div class="profile-actions btn-group btn-group-justified">
-                            <a class="btn-connection-request btn btn-lucid-normal transparent">
-                                + <span class="glyphicon glyphicon-link"></span>
-                            </a>
-                            <a class="btn-message-user btn btn-lucid-normal transparent">
-                                + <span class="glyphicon glyphicon-envelope"></span>
-                            </a>
-                            <a class="btn-block-user btn btn-lucid-normal transparent">
-                                + <span class="glyphicon glyphicon-ban-circle"></span>
-                            </a>
-                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
+                    -->
                 </div>
-                <!-- User Profile Modal (End) -->
-
-                <!-- Thought List Item (Start) -->
-                <div id="thought-list-item" class="template">
-                    <li class="list-group-item thought-list-item">
-                        <a class="btn btn-lucid-normal" data-streamid="{{streamid}}" onclick="subscribeThought({{streamid}});">
-                            <span class="stream-name {{remove}}">{{stream}}</span><span class="badge">{{activeusers}}</span>
-                        </a>
-                    </li>
-                </div>
-                <!-- Thought List Item (End) -->
-
-                <!-- Notification Item (Start) -->
-                <div id="notification-item" class="template">
-                    <li class="list-group-item notification-item">
-                        {{notification}}
-                    </li>
-                </div>
-                <!-- Notification Item (End) -->
-
-                <!-- Date Header Item (Start) -->
-                <div id="date-header-item" class="template">
-                    <li class="list-group-item date-header-item">
-                        <span class="message">Sunday, November 3, 2013</span>
-                    </li>
-                </div>
-                <!-- Date Header Item (Start) -->
-
-                <!-- Added Member Item (Start) -->
-                <div id="added-member-item" class="template">
-                    <li class="list-group-item added-member-item">
-                        {{user-button}}
-                        <span class="message exit">Joined <span class="time-elapse" data-time="{{time}}">{{entrydate}}</span></span>
-                    </li>
-                </div>
-                <!-- Added Member Item (End) -->
-
-                <!-- Added Stream Item (Start) -->
-                <div id="added-stream-item" class="template">
-                    <li class="list-group-item added-stream-item">
-                        {{stream-button}}
-                        <span class="message time-elapse" data-time="{{time}}">{{entrytime}}</span>
-                    </li>
-                </div>
-                <!-- Added Stream Item (Start) -->
-
-                <!-- Chat Item (Start) -->
-                <div id="chat-item" class="template">
-                    <li class="list-group-item chat-item {{stream-class}} {{you}} {{viewed}} {{connected}}" data-viewed-date="{{viewed-date}}" data-connecting="{{connecting-qty}}" data-entry-date="{{entry-date}}" data-streamid="{{streamid}}" data-stream="{{stream}}" data-userid="{{userid}}" data-user-fname="{{fname}}" data-user-lname="{{lname}}">
-                        <div class="connection-item-panel panel">
-                            <div class="panel-header">
-                                {{user-button}}
-                            </div>
-                            <div class="panel-body">
-                                <blockquote class="connection-content">
-                                    {{chat}}
-                                    <div class="status">
-                                        <span class="sent time-elapse" data-time="{{time}}">{{createdate}}</span>
-                                        <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
-                                        <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
-                                    </div>
-                                </blockquote>
-                                <div class="callout-pointer"></div>
-                            </div>
-                            <div class="panel-footer">
-                                <button class="btn-like btn btn-lucid-normal">Like<span class="glyphicon glyphicon-thumbs-up"></span></button>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-                <!-- Chat Item (End) -->
-            <!-- STREAM ITEM (END) -->
-
-            <!-- Stream Accordion Tab (Start) -->
-            <div id="stream-accordion-tab" class="template">
-                <pre class="{{stream-type}} btn-accordion" data-members="{{activeusers}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="accordionButton(this);"><label class="stream-name {{added}} {{no-tilde}}">{{stream}}</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">{{activeusers}}</span></pre>
             </div>
-            <!-- Stream Accordion Tab (End) -->
+        </div>
+        <!-- Modal About (End) -->
 
-            <!-- LIGHTBOXES (START) -->
-                <!-- Modal Loader (Start) -->
-                <div class="modal" id="modal-loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Please wait</h4>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                        <span class="sr-only">Processing</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-body"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn-close btn btn-link-lucid" data-dismiss="modal" onclick="$(this).parent().removeClass('active')">ok</button>
-                            </div>
-                        </div>
+        <!-- Modal Failed Login (Start) -->
+        <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+                        <h4 class="modal-title">Login Failed</h4>
                     </div>
-                </div>
-                <!-- Modal Loader (End) -->
-
-                <!-- Modal About (Start) -->
-                <div class="modal" id="modal-about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <span class="glyphicon glyphicon-remove-circle"></span>
-                                </button>
-                                <h4 class="modal-title">About</h4>
-                            </div>
-                            <div class="modal-body">
-                                <h5>LucidLife App Details</h5>
-                                <div>Version: <span class="version">0.2.2</span></div>
-                                
-                                <h5 class="geo-location">Geo Location</h5>
-                                <div>Latitude: <span class="latitude">No request made</span></div>
-                                <div>Longitude: <span class="longitude">No request made</span></div>
-
-                                <h5 class="user-info">User Info</h5>
-                                <div>Name: <span class="user-info-name"></span></div>
-                                <div>Gender: <span class="user-info-gender"></span></div>
-                                <div>Birthdate: <span class="user-info-birthdate"></span></div>
-                                <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
-                                <div>Login: <span class="user-info-status">Logged out</span></div>
-                                <div>Last Login: <span class="user-info-lastlogin"></span></div>
-                            </div>
-                            <!--
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            -->
-                        </div>
+                    <div class="modal-body">
+                        Please try again.
                     </div>
-                </div>
-                <!-- Modal About (End) -->
-
-                <!-- Modal Failed Login (Start) -->
-                <div class="modal" id="modal-login-failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <span class="glyphicon glyphicon-remove-circle"></span>
-                                </button>
-                                <h4 class="modal-title">Login Failed</h4>
-                            </div>
-                            <div class="modal-body">
-                                Please try again.
-                            </div>
-                            <!--
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            -->
-                        </div>
+                    <!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
+                    -->
                 </div>
-                <!-- Modal Failed Login (End) -->
+            </div>
+        </div>
+        <!-- Modal Failed Login (End) -->
 
-                <!-- Modal Profile (Start) -->
-                <div class="modal" id="modal-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            {{profile-user-modal}}
-                        </div>
-                    </div>
+        <!-- Modal Profile (Start) -->
+        <div class="modal" id="modal-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    {{profile-user-modal}}
                 </div>
-                <!-- Modal Profile (End) -->
-            <!-- LIGHTBOXES (END) -->
-
-<!-- SAMPLE PEOPLE TEST (Start) -->
-                <div id="sample-newest-people" class="template">
-                            <pre class="newest-members btn-accordion" data-qty="5" onclick="accordionButton(this);"></span><label class="stream-name no-tilde">Newest Members</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right">6</span></pre>
-                            <button class="btn btn-lucid user in-stream viewed-profile" style="background-image: url(img/profile/profile-5.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="5" data-username="Ted Mariopolis" onclick="$('#modal-profile .modal-content').html(createUserProfileModal('+ _session.user + ')); $('#modal-profile').modal('show');">
-                                <sup class="badge label-lucid"></sup>
-                                <label><span class="name">Ted</span></label>
-                            </button>
-                            <button class="btn btn-lucid user added-stream new" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="2" data-stream="Lucid" data-userid="1" data-username="Mary Seager-Wilson" style="background-image: url(img/profile/profile-1.jpg);" onclick="getUserProfile(2);">
-                                <sup class="badge label-lucid"></sup>
-                                <label><span class="name">Mary</span></label>
-                            </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" style="background-image: url(img/profile/profile-3.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="3" data-username="Susanna Jameson" onclick="getUserProfile(3);">
-                                <sup class="badge label-lucid"></sup>
-                                <label><span class="name">Susanna</span></label>
-                            </button>
-                            <button class="btn btn-lucid user in-stream viewed-profile connection-request" style="background-image: url(img/profile/profile-2.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="2" data-username="Rachael Davenport" onclick="getUserProfile(4);">
-                                <sup class="badge label-lucid"><span class="glyphicon glyphicon-link"></span></sup>
-                                <label><span class="name">Stephanie</span></label>
-                            </button>
-                            <button class="btn btn-lucid user in-stream blocked" style="background-image: url(img/profile/profile-6.jpg);" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="6" data-username="Alyona Stephenson" onclick="getUserProfile(5);">
-                                <sup class="badge label-lucid">
-                                    <span class="glyphicon glyphicon-ban-circle"></span>
-                                </sup>
-                                <label><span class="name">Ted</span></label>
-                            </button>
-                            <button class="btn btn-lucid user added-stream viewed-profile" data-viewed-date="" data-connecting="" data-entry-date="100" data-streamid="1" data-stream="LucidLife" data-userid="1" data-username="Theresa Porter" style="background-image: url(img/profile/profile-1.jpg);" onclick="getUserProfile(6);">
-                                <sup class="badge label-lucid"></sup>
-                                <label><span class="name">Theresa</span></label>
-                            </button>
-                </div>
-        <!-- HTML TEMPLATES (END) -->
-
+            </div>
+        </div>
+        <!-- Modal Profile (End) -->
+        <!-- LIGHTBOXES (END) -->
 
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
