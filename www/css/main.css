@@ -171,7 +171,7 @@ blockquote, .well blockquote {position: relative; margin: 0; display: inline-blo
 .teal {color: #0ef;}
 
 /* GLOBAL */
-* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-overflow-scrolling: touch;}
 body {overflow: auto; font-family: arial; font-weight: normal; font-size: 14px; color: #eee; padding: 0; margin: 0; background: #f0ffff; line-height: 1.4;}
 
 h1, h2 {color: #0bf; margin: 5px 0;}
@@ -188,11 +188,14 @@ h2 {font-size: 16px;}
 
 /* Profile Lightbox */
 #modal-profile.modal {padding-top: 110px;}
+@media (max-height: 360px){
+    #modal-profile.modal {padding-top: 30px;}
+}
     #modal-profile .modal-header {padding: 5px;}
     #modal-profile .modal-body {position: relative; padding: 0 0 0 153px;}
     #modal-profile .modal-body .profile-photo {position: absolute; top: 0; left: 0; height: 150px; width: 150px; overflow: hidden; background-size: 100% auto;} 
     #modal-profile .modal-body .biography {width: 100%; padding: 3px 5px; height: 150px; overflow-y: auto; text-shadow: none; overflow-y: auto;}
-    #modal-profile .modal-footer {margin: 0; padding: 0;}
+    #modal-profile .modal-footer {margin: 0; padding: 5px;}
     #modal-profile .profile-actions {width: 100%;}
     #modal-profile .profile-actions .btn:first-child {border-radius: 0 0 0 5px;}
     #modal-profile .profile-actions .btn:last-child {border-radius: 0 0 5px 0;}
@@ -209,7 +212,7 @@ h2 {font-size: 16px;}
 .btn-stream {min-height: 35px;}
 @media (max-width: 360px) {
     .btn-stream {max-height: 35px; padding: 1px 10px;}
-    .stream-name {font-size: 12px; line-height: 15px; max-width: 208px;}
+    .stream-name {font-size: 12px; line-height: 15px;}
 }
 
 .filter-name:before {content: ''; font-family: 'Glyphicons Halflings'; font-weight: normal; font-size: 11px;}
@@ -312,7 +315,7 @@ h2 {font-size: 16px;}
 
 .indicator {display: none; font-family: Arial}
 
-.btn-accordion {cursor: pointer; margin: 10px 0 5px; padding: 8px 5px 8px 10px; border: none; font-family: arial; font-size: 13px; line-height: normal; transition: all 0.5s; -webkit-transition: all 0.5; color: #fff; text-align: left; border-radius: 4px; box-shadow: 0 0 3px #000, 0 0 3px #fff inset; background-color: #09d; text-shadow: 0 0 1px #000;}
+.btn-accordion {cursor: pointer; margin: 10px 0 0; padding: 8px 5px 8px 10px; border: none; font-family: arial; font-size: 13px; line-height: normal; transition: all 0.5s; -webkit-transition: all 0.5; color: #fff; text-align: left; border-radius: 4px; box-shadow: 0 0 3px #000, 0 0 3px #fff inset; background-color: #09d; text-shadow: 0 0 1px #000;}
 .btn-accordion.active, .btn-accordion:hover, .btn-accordion:focus {transition: all 0.5s; -webkit-transition: all 0.5; background-color: #0bf;}
 
 .btn-link-lucid {font-size: 13px; line-height: normal; transition: opacity 0.5s; -webkit-transition: opacity 0.5; opacity: 1; color: #0ab; text-align: left; padding: 0; border-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0); box-shadow: none; text-shadow: none;}
@@ -597,7 +600,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 /* MAIN MENU */
 #main-menu {width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
-    #main-menu .header {position: fixed; z-index: 1; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
+    #main-menu .header {position: fixed; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
     ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000;}
@@ -774,8 +777,8 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
         #people-controls .btn.active[data-filter=connecting] {background-color: #f90;}
         #people-controls .btn.active[data-filter=blocked] {background-color: #f00;}
 
-        #page-people .newest-members-list {padding:0 5px;}
-            #page-people .newest-members-list .btn-accordion {margin: 0;}
+        #page-people .newest-members-list {margin-bottom: 10px; padding:0 5px;}
+            #page-people .newest-members-list .btn-accordion {margin-top: 0;}
 
 
     /* PAGE PUBLIC */
@@ -909,8 +912,10 @@ body.logged-out nav#footer {display: none;}
         body[data-page=page-people] #thought-status,
         body[data-page=page-public] #thought-status,
         body[data-page=page-private] #thought-status {transition: bottom 0.5s ease-in-out 0.5s; -webkit-transition: bottom 0.5s ease-in-out 0.5s; bottom: 0; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}    
-    
-
+        #thought-status .filter-info {}
+        @media (max-width: 360px) {
+            #thought-status .stream-name {/*max-width: 208px;*/}
+        }
 /* APP COMPONENTS */
 ._private-book {}   /* See a list of people from your private book who are online now */
 ._contact-summary {}    /* See who has contacted, viewed, messaged or requested to be friends with you recently */

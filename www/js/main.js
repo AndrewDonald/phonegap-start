@@ -109,7 +109,6 @@ moment.lang('en', {
 $(function() {
     /* Test (Start) */
     populatePeople();
-    //populateNewestMember({streamid:0, stream:"test", userid:"2", picextension:"jpg", fname:"TestNewUser"});
     $('.btn-accordion.new, .btn-accordion.new-arrivals').click();
     /* Test (End) */
 
@@ -176,12 +175,18 @@ function changeStream(objStream){
     _session.streamAdded    = {"stream":{}}; 
     _session.public         = {"chat":{}}; 
     
-    gotoPage('page-people');
+    gotoPage('page-public');
     // Display Today's Date Header
     $('#page-public h2#today').html('Today');
+
+    // Clear People
+    $('#page-people .newest-members-list .btn').remove();
+    $('#page-people .people-list').empty();
+
     // Clear Public Chat
     $('#page-public .connection-items-list').empty();
-    populateNewestMember(_session.user);
+    $('#send-message').val('');
+    //populateNewestMember(_session.user);
     updateStreamStatus();
 
     // Pre populate stream with recent/latest public
@@ -194,11 +199,11 @@ function changeStream(objStream){
 // Changes Thought Stream
 function updateStreamStatus(){
     if($(window).width() <= 360 && _session.stream.stream.length > 30 ){
-        $('#stream-status-panel .filter-info').removeClass('pull-right').addClass('pull-left');
+        $('#thought-status .filter-info').removeClass('pull-right').addClass('pull-left');
     }else{
-        $('#stream-status-panel .filter-info').removeClass('pull-left').addClass('pull-right');
+        $('#thought-status .filter-info').removeClass('pull-left').addClass('pull-right');
     }
-    $('#stream-status-panel .stream-info .stream-name').html(_session.stream.stream);
+    $('#thought-status .stream-info .stream-name').html(_session.stream.stream);
     //$('#stream-status-panel .stream-info .badge').html();
 }
 
@@ -248,7 +253,8 @@ function createUserButton(objData, objSettingsOverrides){
                     .replace(/\{{lname}}/g,             objData.lname)
                     .replace(/\{{userid}}/g,            objData.userid)
                     .replace(/\{{createdate}}/g,        objData.createdate)
-                    .replace(/\{{class}}/g,             objSettings.class);
+                    .replace(/\{{class}}/g,             objSettings.class)
+                    .replace(/\{{profile-pic}}/g,       getPic('profile', objData.userid, _application.badge));
     
     return userButton;
 }
@@ -267,14 +273,15 @@ function createUserProfile(objData){
 
 function createUserProfileModal(objData){
     var userProfileModal = _application.template.userProfileModal
-                    .replace(/\{{fname}}/g,             objData.fname)
-                    .replace(/\{{lname}}/g,             objData.lname)
-                    .replace(/\{{userid}}/g,            objData.userid)
-                    .replace(/\{{gender}}/g,            getFormatedGender(objData.gender))
-                    .replace(/\{{age}}/g,               objData.age)
-                    .replace(/\{{time}}/g,              objData.lastlogindate)
-                    .replace(/\{{last-login-date}}/g,   getElapsedTime(objData.lastlogindate))
-                    .replace(/\{{biography}}/g,         objData.biography ? objData.biography : '');
+                            .replace(/\{{fname}}/g,             objData.fname)
+                            .replace(/\{{lname}}/g,             objData.lname)
+                            .replace(/\{{userid}}/g,            objData.userid)
+                            .replace(/\{{profile-pic}}/g,       getPic('profile', objData.userid, _application.badge))
+                            .replace(/\{{gender}}/g,            getFormatedGender(objData.gender))
+                            .replace(/\{{age}}/g,               objData.age)
+                            .replace(/\{{time}}/g,              objData.lastlogindate)
+                            .replace(/\{{last-login-date}}/g,   getElapsedTime(objData.lastlogin))
+                            .replace(/\{{biography}}/g,         objData.biography ? objData.biography : '');
     
     return userProfileModal;
 }
@@ -301,6 +308,7 @@ function createChatItem(objData){
                     .replace(/\{{userid}}/g,            objData.userid)
                     .replace(/\{{chat}}/g,              objData.chat)
                     .replace(/\{{chatpicextension}}/g,  objData.chatpicextension)
+                    .replace(/\{{time-elapse}}/g,       'time-elapse')
                     .replace(/\{{time}}/g,              objData.createdate)
                     .replace(/\{{createdate}}/g,        getElapsedTime(objData.createdate));
     
@@ -382,7 +390,7 @@ function addChats(objData) {
             // Insert Date Header for each different day except "today"
             if(moment(chats[x].createdate).calendar().toLowerCase() != "today" && moment(chats[x].createdate).isBefore(day, 'day')){
                 day = chats[x].createdate;
-                displayStreamItem(_application.template.dateHeaderItem.replace(/\{{date}}/g, moment(day).calendar()), true);
+                displayStreamItem(_application.template.dateHeaderItem.replace(/\{{date}}/g, getFormatedDate(day, true)), true);
             }
 
             addChatItem(chats[x], true);
@@ -393,19 +401,27 @@ function addChats(objData) {
 function addChatItem(objData, append) {
     if(!_session.public.chat[objData.chatid.toString()]){
         _session.public.chat[objData.chatid.toString()]       = objData; 
-        _session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
+       //_session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
         
         var you = "";
         if(objData.userid == _session.user.userid){
             you = "you";
         }
 
+        var chatDate = getFormatedDate(objData.createdate);
+        var timeElapse = "";
+        if(moment(objData.createdate).calendar().toLowerCase() == "today" || moment(objData.createdate).isSame(getTimeNow, 'day')){
+            chatDate = getElapsedTime(objData.createdate);
+            timeElapse = "time-elapse";
+        }
+
         var chatItem = _application.template.chatItem
                         .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
                         .replace(/\{{you}}/g,           you)
                         .replace(/\{{chat}}/g,          objData.chat)
+                        .replace(/\{{time-elapse}}/g,   timeElapse)
                         .replace(/\{{time}}/g,          objData.createdate)
-                        .replace(/\{{createdate}}/g,    getElapsedTime(objData.createdate));
+                        .replace(/\{{createdate}}/g,    chatDate);
 
         displayStreamItem(chatItem, append);
     }
@@ -426,11 +442,13 @@ function createStreamAccordionTab(objData){
     return streamAccordionTab;
 }
 
+/* Feature Disabled
 function populateNewestMember(objUser){
     $('#page-people .newest-members-list .btn-accordion').after(createUserButton(objUser));
     var newestMembersQty = $('#page-people .newest-members-list .btn').size();
     $('#page-people .newest-members-list .btn-accordion .badge').html(newestMembersQty);
 }
+*/
 
 function populatePeople(objStream){
     if(typeof objStream == "undefined"){

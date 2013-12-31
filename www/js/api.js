@@ -101,7 +101,9 @@ function loginUser_Callback(result) {
             // Successful Authentication
             _session.id     = result.sessionid;
             _session.user   = result.object;
-            acquireGeolocation();
+
+// **** Until we enable Geolocating act as if we have saved the Geoloaction. Replace aquireGeolocation() when ready ****
+            saveGeolocation_Callback({status:1}); //acquireGeolocation();
         }else{
             // Server returned an error = failed authorization
     	    if (result.message != undefined) {
@@ -164,7 +166,6 @@ function saveGeolocation_Callback(result) {
             if(!_session.loggedIn){
                 initializeApp();
             }else{
-
                 updateAbout(); 
             }
         }else{
@@ -364,7 +365,7 @@ function getUserProfile_Callback(result) {
             //$('#page-profile .user-profile').html(createUserProfile(result.object));
             ////getSavedStreams(result.object.userid);
 
-            $('#modal-profile .modal-content').html(createUserProfileModal(_session.user));
+            $('#modal-profile .modal-content').html(createUserProfileModal(result.object));
             $('#modal-profile').modal('show');
         }else{
             // Server returned an error

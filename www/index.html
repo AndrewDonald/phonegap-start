@@ -24,60 +24,6 @@
         </div>
         -->
 
-        <!-- MAIN MENU (START) -->
-        <nav id="main-menu" class="fixed" role="navigation">
-            <div class="header">
-                <span class="username">{{username}}</span>
-            </div>
-            <ul id="main-menu-items" class="list-group" role="menu">
-                <li class="list-group-item">
-                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid-normal">
-                        <span class="menu-icon glyphicon glyphicon-user"></span>People
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="public-toggle" data-toggle-item="page-public" class="btn btn-lucid-normal">
-                        <span class="menu-icon glyphicon glyphicon-comment"></span>Public
-                    </a>
-                </li>
-                <li class="list-group-item divider">
-                    <a id="private-toggle" data-toggle-item="page-private" class="btn btn-lucid-normal">
-                        <span class="menu-icon glyphicon glyphicon-comment private-chat-icon">
-                            <span class="glyphicon glyphicon-lock"></span>
-                        </span>Private
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid-normal">
-                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
-                    </a>
-                </li>
-                <li class="list-group-item divider">
-                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid-normal">
-                        <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
-                    </a>
-                </li>
-                <li class="list-group-item divider">
-                    <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid-normal login-toggle btn btn-link-lucid">
-                        <span class="menu-icon glyphicon glyphicon-off"></span>
-                        <span class="login-label"></span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a id="help-toggle" class="btn btn-lucid-normal" data-toggle-item="page-help">
-                        <span class="menu-icon about-icon"></span>Help
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a class="menu-toggle-modal-about btn btn-lucid-normal" data-toggle="modal" data-target="#modal-about">
-                        <span class="menu-icon about-icon"></span>About
-                    </a>
-                </li>
-            </ul>
-            <!--<div class="footer"></div>-->
-        </nav>
-        <!-- MAIN MENU (END) -->
-
         <!-- CONTAINER (START) -->
         <div id="CONTAINER" class="fixed">
             <!-- PAGES (START) -->
@@ -121,19 +67,22 @@
                         </div>
                         <!-- Message Panel (END) -->
 
-                        <!-- Stream Slider Nav (Start) -->
+                        <!-- Thought Slider Nav (Start) -->
                         <div id="thought-page-carousel-nav" class="slider-nav btn-group btn-group-justified">
-                            <a id="btn-people-page" class="btn btn-lucid-normal btn-slider active">
+                            <a id="btn-people-page" class="btn btn-lucid-normal btn-slider active" onclick="gotoPage('page-people');">
                                 <span class="glyphicon glyphicon-user"></span>
                             </a>
                             <a id="btn-public-page" class="btn btn-lucid-normal btn-slider">
                                 <span class="glyphicon glyphicon-comment"></span>
                             </a>
+                            <!-- *** HIDDEN UNTIL PRIVATE CHAT ENABLED *** -->
+                            <!--
                             <a id="btn-private-page" class="btn btn-lucid-normal btn-slider">
                                 <span class="menu-icon glyphicon glyphicon-comment private-chat-icon">
                                     <span class="glyphicon glyphicon-lock"></span>
                                 </span>
                             </a>
+                            -->
                         </div>
                         <!-- Stream Slider Nav (End) -->
                     </nav>
@@ -535,9 +484,11 @@
                     <!-- PEOPLE PAGE (START) -->
                     <div id="page-people" class="page row page-carousel-item">
                         <!-- newest-members-List (Start) -->
+                        <!--
                         <div class="newest-members-list panel-heading panel-nav active">
                             <pre onclick="accordionButton(this);" class="btn-accordion"><label class="stream-name">Newest Members</label><span class="chevron-toggle glyphicon glyphicon-chevron-down pull-right"></span><span class="badge pull-right"></span></pre>
                         </div>
+                        -->
                         <!-- newest-members-List (End) -->
 
                         <!-- people-List (Start) -->
@@ -588,10 +539,14 @@
                     </div>
                     <!-- PUBLIC PAGE (END) -->
 
+                </div>
+                
+                    <!-- *** HIDDEN UNTIL PRIVATE CHAT ENABLED *** -->
                     <!-- PRIVATE PAGE (START) -->
+                    <!--
                     <div id="page-private" class="page row page-carousel-item">
                         <!-- private-List (Start) -->
-                        <div class="people-list panel-heading panel-nav active" style="text-align: center;">PRIVATE</div>
+                        <!-- <div class="people-list panel-heading panel-nav active" style="text-align: center;">PRIVATE</div>-->
                         <!-- private-List (End) -->
 
                         <!-- PEOPLE PANEL (START) -->
@@ -625,9 +580,8 @@
                             </div>
                         </nav>
                         -->
-                    </div>
+                    <!--</div>-->
                     <!-- PRIVATE PAGE (END) -->
-                </div>
                 <!-- THOUGHT PAGE-GROUP (END) -->
 
                 <!-- FILTER (START) -->
@@ -764,15 +718,78 @@
                     <div class="stream-info pull-left">
                         <span class="stream-name">LucidLife</span><span class="badge"></span>
                     </div>
+                    <!--
                     <div class="filter-info pull-right">
                         <span class="filter-sign glyphicon glyphicon-filter"></span>m/f 18-25 &lt;250<sup>km</sup><span class="badge"></span>
                     </div> 
+                    -->
                 </div>
                 <!-- Stream Status (End) -->
             </nav>
             <!-- FOOTER (END) -->
         </div>
         <!-- CONTAINER (END) -->
+
+        <!-- MAIN MENU (START) -->
+        <nav id="main-menu" class="fixed" role="navigation">
+            <div class="header">
+                <span class="username">{{username}}</span>
+            </div>
+            <ul id="main-menu-items" class="list-group" role="menu">
+                <li class="list-group-item">
+                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>People
+                    </a>
+                </li>
+                <!--
+                <li class="list-group-item divider">
+                    <a id="public-toggle" data-toggle-item="page-public" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-comment"></span>Public
+                    </a>
+                </li>
+                <li class="list-group-item divider">
+                    <a id="private-toggle" data-toggle-item="page-private" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-comment private-chat-icon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>Private
+                    </a>
+                </li>
+                -->
+                <li class="list-group-item divider">
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
+                    </a>
+                </li>
+                <!--
+                <li class="list-group-item divider">
+                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
+                    </a>
+                </li>
+                -->
+                <li class="list-group-item divider">
+                    <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid-normal login-toggle btn btn-link-lucid">
+                        <span class="menu-icon glyphicon glyphicon-off"></span>
+                        <span class="login-label"></span>
+                    </a>
+                </li>
+                <!--
+                <li class="list-group-item">
+                    <a id="help-toggle" class="btn btn-lucid-normal" data-toggle-item="page-help">
+                        <span class="menu-icon about-icon"></span>Help
+                    </a>
+                </li>
+                -->
+                <li class="list-group-item">
+                    <a class="menu-toggle-modal-about btn btn-lucid-normal" data-toggle="modal" data-target="#modal-about">
+                        <span class="menu-icon about-icon"></span>About
+                    </a>
+                </li>
+            </ul>
+            <!--<div class="footer"></div>-->
+        </nav>
+        <!-- MAIN MENU (END) -->
+
 
     <!-- HTML TEMPLATES (START) -->
         <!-- STREAM ITEMS (START) -->
@@ -792,7 +809,7 @@
 
         <!-- User Button (Start) -->
         <div id="user-button" class="template">
-            <button class="btn btn-lucid user {{class}} {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-profile}} {{blocked}} {{user-status}} {{active}}" style="background-image: url(img/profile/profile-{{userid}}.jpg);" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-profile-date="{{viewed-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="getUserProfile({{userid}});">
+            <button class="btn btn-lucid user {{class}} {{you}} {{stream-class}} {{connecting}} {{connected}} {{viewed-profile}} {{blocked}} {{user-status}} {{active}}" style="background-image: url({{profile-pic}});" last-active-date="{{last-active-date}}" data-connecting="{{connecting-qty}}" data-viewed-profile-date="{{viewed-profile-date}}" data-userid="{{userid}}" data-streamid="{{streamid}}" data-stream="{{stream}}" onclick="getUserProfile({{userid}});">
                 <sup class="badge label-lucid">{{badge}}</sup>
                 <label><span class="fname">{{fname}}</span><span class="lname">{{lname}}</span></label>
             </button>
@@ -838,18 +855,21 @@
                     <span class="glyphicon glyphicon-remove-circle"></span>
                 </button>
                 <h4 class="modal-title">{{fname}} {{lname}}</h4>
+                
+            </div>
+            <div class="modal-body">
+                <!-- User Profile (Start) -->
+                <div class="profile-photo" style="background-image: url({{profile-pic}});"></div>
+                <div class="biography">{{biography}}</div>
+                <!-- User Profile (End) -->
+            </div>
+            
+            <div class="modal-footer">
                 <div class="stats clearfix">
                     <span class="pull-left">{{gender}}, {{age}}</span>
                     <span class="last-login pull-right"><span class="time-elapse" data-time="{{time}}">Last logged in {{last-login-date}}</span></span>
                 </div>
-            </div>
-            <div class="modal-body">
-                <!-- User Profile (Start) -->
-                <div class="profile-photo" style="background-image: url('img/profile/profile-{{userid}}.jpg');"></div>
-                <div class="biography">x{{biography}}</div>
-                <!-- User Profile (End) -->
-            </div>
-            <div class="modal-footer">
+                <!--
                 <div class="profile-actions btn-group btn-group-justified">
                     <a class="btn-connection-request btn btn-lucid-normal transparent">
                         + <span class="glyphicon glyphicon-link"></span>
@@ -861,6 +881,7 @@
                         + <span class="glyphicon glyphicon-ban-circle"></span>
                     </a>
                 </div>
+                -->
             </div>
         </div>
         <!-- User Profile Modal (End) -->
@@ -921,7 +942,7 @@
                         <blockquote class="connection-content">
                             {{chat}}
                             <div class="status">
-                                <span class="sent time-elapse" data-time="{{time}}">{{createdate}}</span>
+                                <span class="sent {{time-elapse}}" data-time="{{time}}">{{createdate}}</span>
                                 <span class="not-viewed-icon glyphicon glyphicon-eye-close"></span>
                                 <span class="viewed-icon glyphicon glyphicon-eye-open"></span>
                             </div>
@@ -975,9 +996,9 @@
                         <h4 class="modal-title">About</h4>
                     </div>
                     <div class="modal-body">
-                        <h5>LucidLife App Details</h5>
+                        <!--<h5>LucidLife App Details</h5>-->
                         <div>Version: <span class="version">0.2.2</span></div>
-                        
+                        <!--
                         <h5 class="geo-location">Geo Location</h5>
                         <div>Latitude: <span class="latitude">No request made</span></div>
                         <div>Longitude: <span class="longitude">No request made</span></div>
@@ -989,6 +1010,7 @@
                         <div>UserID: <span class="user-info-userid">Not Authenticated</span></div>
                         <div>Login: <span class="user-info-status">Logged out</span></div>
                         <div>Last Login: <span class="user-info-lastlogin"></span></div>
+                        -->
                     </div>
                     <!--
                     <div class="modal-footer">

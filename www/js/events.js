@@ -93,6 +93,11 @@ function initEventHandlers(){
         sliderItemIndex = $(this).index();
 
         $(sliderDom).trigger('owl.goTo', sliderItemIndex);
+
+        // Repopulate People List if Sliding to People Page
+        if($(this).attr('id') == 'btn-people-page'){
+            getStream();
+        }
     });
 
     // Highlight active Slider Nav item

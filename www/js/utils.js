@@ -66,6 +66,7 @@ function gotoPage(page, optional){
     $('#main-menu-items [data-toggle-item=' + page + ']').addClass('active');
     if(page != 'page-new-thought'){
         $('#new-thought-toggle').removeClass('active');
+        $('#send-message').attr('placeholder','');
         _session.page = page;
         switch(page){
             case "page-profile":
@@ -90,16 +91,19 @@ function gotoPage(page, optional){
                 });
                 _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
+            /*
             case "page-private":
                 $('body').animate({delay:0}, 100, function(){
                     $('#btn-private-page').click();
                 });
                 _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
+            */
             default:
                 break;
         }
     }else{
+        $('#send-message').attr('placeholder',"What's on your mind...");
         $('#new-thought-toggle').addClass('active');
         if($('#form-thought input[name=thought]').val().length < 3){
             $('#form-thought .btn[name=submitThought]').addClass('disabled');
@@ -128,7 +132,7 @@ function closeLoader(){
 // GEO-LOCATION
 function acquireGeolocation(){
     // Display Loader Lightbox
-    openLoader('Acquiring geolocation...', {"backdrop":false, "keyboard":false});
+    openLoader('Acquiring location...', {"backdrop":false, "keyboard":false});
     
     // Aquire GEO Location
     navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy:true});
@@ -237,7 +241,7 @@ function getUserClass(userid){
 }
 
 function getElapsedTime(date){
-    var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
+    var dateNowGMT  = getTimeNow();
     // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
         if(secondsDiff <= 0){dateNowGMT = date;}
@@ -245,13 +249,22 @@ function getElapsedTime(date){
     return moment(date).from(dateNowGMT);
 }
 
-function getFormatedDate(date){
-    var dateNowGMT  = moment.utc().add('minutes', _application.gmtOffset);
+function getFormatedDate(date, calendar){
+    var dateNowGMT  = getTimeNow();
     // Client's clock may be behind so adjust to equal sent date if so to equal "a few seconds ago" instead of "in a few seconds"
     var secondsDiff = dateNowGMT.diff(date, 'seconds');
-        if(secondsDiff <= 0){dateNowGMT = date;}
+    if(secondsDiff <= 0){dateNowGMT = date;}
 
-    return moment(dateNowGMT).calendar();
+    var formatedDate = moment(date).format("h:mm:ssa");
+    if(calendar){
+        formatedDate = moment(date).calendar();
+        /*
+        if(moment(date).isBefore(dateNowGMT, 'week')){
+            formatedDate = moment(date).format("dddd, MMMM Do YYYY");
+        }
+        */
+    }
+    return formatedDate;
 }
 
 function getFormatedGender(gender){
@@ -281,4 +294,40 @@ function timeElapse(page){
 
 function getTimeNow(){
     return moment.utc().add('minutes', _application.gmtOffset);
+}
+
+// Gets Profile Picture (if none gender specific Silohuette if no profile uploaded)
+function getPic(type, userid, size) {
+    // If userid is current user
+    if (typeof _session.user != "undefined" && userid == _session.user.userid) {
+        //age       = _session.user.age;
+        //gender    = _session.user.gender;
+        picextension    = _session.user.picextension;
+    }else if (typeof _session.users.user[userid] != "undefined") {
+        // If Object is present in the current streamMember cache
+        //age           = _session.users.user[userid].age;
+        //gender        = _session.users.user[userid].gender;
+        picextension    = _session.users.user[userid].picextension;
+    }else{
+        // If Object is not present in the current streamMember cache
+        //age           = 0;
+        //gender        = ""
+        //picextension  = ""
+    }
+    
+    // If no profile pic exists
+    if(typeof picextension == "undefined" || picextension == null || picextension.length == 0){
+        // Display age appropriate Silohoutte *TODO: Get Age from results
+        if(userid < 50){
+            gender  = "M";
+        } else {
+            gender  = "F";
+        }
+        
+        imgSrc = 'img/profiles/no-picture-' + gender.toLowerCase() + '.png';
+    }else{
+        imgSrc = _application.url.fetch[type] + userid + size + picextension;
+    }
+    
+    return imgSrc;
 }
