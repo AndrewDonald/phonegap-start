@@ -193,7 +193,7 @@ function changeStream(objStream){
     getChats();
     updateNodeServer();
     // Show all People in People Page
-    getStream();
+    //getStream(); // Now performed on slide or People slider nav button press
 }
 
 // Changes Thought Stream

@@ -84,29 +84,29 @@ function initEventHandlers(){
         singleItem:         true,
         pagination:         false, 
         addClassActive:     true,
-        afterMove:          sliderMarkActive
+        afterMove:          updateThoughtSlider
     });
     
     // Owl Carousel - Item Select Navigation Control
     $('.btn-slider').click(function(){
         sliderDom       = '#' + $(this).parents('.slider-nav:first').attr('id').replace('-nav', '');
         sliderItemIndex = $(this).index();
-
         $(sliderDom).trigger('owl.goTo', sliderItemIndex);
-
-        // Repopulate People List if Sliding to People Page
-        if($(this).attr('id') == 'btn-people-page'){
-            getStream();
-        }
     });
 
     // Highlight active Slider Nav item
-    function sliderMarkActive(sliderDom){
-        sliderItemActiveIndex = $(sliderDom).find('.owl-item.active').index();
-
-        $('#' + $(sliderDom).attr('id') + '-nav').children('.btn-slider:eq(' + sliderItemActiveIndex + ')')
+    function updateThoughtSlider(sliderDom){
+        var sliderItemActiveIndex = $(sliderDom).find('.owl-item.active').index();
+        var sliderNavItem = $('#' + $(sliderDom).attr('id') + '-nav').children('.btn-slider:eq(' + sliderItemActiveIndex + ')');
+        $(sliderNavItem)
             .addClass('active')
             .siblings().removeClass('active');
+
+        // Repopulate People List if Sliding to People Page
+        if($(sliderNavItem).attr('id') == 'btn-people-page'){
+            $('#page-people').animate({scrollTop: '0px'}, 0);
+            getStream();
+        }
     }
 
 
@@ -211,7 +211,6 @@ function initEventHandlers(){
             });
         }
     });
-
 
 
     /*

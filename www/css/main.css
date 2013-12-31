@@ -518,7 +518,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .tab-lucid {color: #fff; background-color: #09d; height: 35px; position: absolute; top: -30px; width: 60px; border-radius: 10px 10px 0 0; border: none; z-index: -1; box-shadow: 0 1px 2px #0cd inset, 0 0 3px #000;}
 .tab-lucid.active {background-color: #0bf; box-shadow: 0 1px 2px #0ef inset, 0 0 3px #000;}
 
-.chevron-toggle {position: relative; top: 5px; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: #fff; text-shadow: 0 0 2px #000;}
+.chevron-toggle {position: relative; top: 3px; width: 12px; height: 12px; overflow: hidden; display: inline-block; margin: 0; font-size: 10px; color: #fff; text-shadow: 0 0 2px #000;}
     .chevron-toggle > span {position: absolute; top: 0; left: 0;}
     .chevron-toggle > span:first-child {display: none;}
     .chevron-toggle > span:last-child {display: inline-block;}
@@ -533,7 +533,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 .stream-message {transition: opacity 0.5s, left 0.5s; opacity: 1; position: relative; margin: 0; padding: 10px; color: #fff; font-size: 12px; text-align: center; line-height: 14px; text-shadow: 0 1px 1px #000; background-color: rgba(0, 160, 255, 0.7); border-radius: 5px; box-shadow: 0 2px 5px #000000, 0 0 5px #00EEFF inset;}
 /*.stream-message.exit {transition: opacity 0.5s, left 0.5s; opacity: 0; left: 100px;}*/
 .message-box {border: 1px solid #fff; border-radius: 5px; color: #fff; box-shadow: 0 1px 1px #000; margin: 10px 0; padding: 2px 5px; text-align: left; font-size: 12px; text-shadow: 0 1px 1px #000;}
-.message {text-align: center; color: #fff; font-size: 12px; line-height: 14px; text-shadow: 1px 1px 1px #000;}
+.message {text-align: center; color: #fff; font-size: 14px; line-height: 14px; text-shadow: 1px 1px 1px #000;}
 
 /*
 .controls-toggle {position: absolute; left: 5px; top: 4px; width: 46px; height: 35px; padding: 6px 5px; border-radius: 4px 0 0 4px; box-shadow: 1px 0px 5px #333;}
@@ -555,7 +555,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
 
 .fixed {position: fixed; top: 0; left: 0; margin: 0; width: 100%; height: 100%;}
 
-.people-list {white-space: normal; width: 100%; overflow: auto; padding: 0 5px; border-radius: 0; overflow: auto;}
+.people-list {white-space: normal; width: 100%; padding: 0 5px; border-radius: 0; overflow: auto;}
     .people-list .btn.btn-lucid.user {display: none; margin-bottom: 20px;}
     .newest-members-list > pre.btn-accordion {background-color: #05a; box-shadow: 0 0 3px #000, 0 0 3px #07c inset;}
     .people-list > pre.btn-accordion.active.newest-members,
@@ -586,10 +586,10 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .content h2 {margin: 15px 0 0; font-size: 15px;}
 
 /**** START SPECIFIC CSS ****/
-#CONTAINER {transition: all 0.5s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #068; box-shadow: 0 0 20px rgba(0,0,0,0.8) inset;}
-body.main-menu-active #CONTAINER {transition: all 0.5s ease-in-out 0s; left: 275px;}
+#CONTAINER {transition: all 0.25s ease-in-out 0s; -webkit-transition: all 0.25s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #068; box-shadow: 0 0 20px rgba(0,0,0,0.8) inset;}
+body.main-menu-active #CONTAINER {transition: all 0.25s ease-in-out 0s; -webkit-transition: all 0.25s ease-in-out 0s; left: 275px;}
 body.main-menu-active .navbar-fixed-top,
-body.main-menu-active .navbar-fixed-bottom {transition: all 0.5s ease-in-out 0s; position: absolute;}
+body.main-menu-active .navbar-fixed-bottom {transition: all 0.25s ease-in-out 0s; position: absolute;}
 body:not(.main-menu-active) .navbar-fixed-top.delay-fixed,
 body:not(.main-menu-active) .navbar-fixed-bottom.delay-fixed {position: absolute;}
 body.main-menu-active .navbar-fixed-top.shifted-fixed,
@@ -599,23 +599,20 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 
 /* MAIN MENU */
-#main-menu {width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
+#main-menu {transition: opacity 0s ease-in-out 0.25s; -webkit-transition: opacity 0s ease-in-out 0.25s; opacity: 0; width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
+body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}
     #main-menu .header {position: fixed; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
-    ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000;}
-        ul#main-menu-items .list-group-item {width: 275px; margin: 0; padding: 0; box-shadow: none; background-color: rgba(0, 240, 255, 0.2); border: none; border-bottom: 1px solid #056; border-radius: 0;}
+    ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000; width: 100%;}
+        ul#main-menu-items .list-group-item {width: 100%; margin: 0; padding: 0; box-shadow: none; background-color: rgba(0, 240, 255, 0.2); border: none; border-bottom: 1px solid #056; border-radius: 0;}
         ul#main-menu-items .list-group-item:last-child {border-width: 2px;}
         ul#main-menu-items .list-group-item.divider {border-width: 2px;}
             ul#main-menu-items .list-group-item .btn {display: block; margin-right: 2px; padding: 15px; text-align: left; box-shadow: none; border-radius: 0;}
             ul#main-menu-items .list-group-item .btn.active {color: #fff;}
                 ul#main-menu-items .list-group-item .btn .menu-icon {padding-right: 10px;}
                 ul#main-menu-items .list-group-item .btn.menu-toggle-modal-about {padding: 13px 15px;}
-                ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {border: 1px solid #0ef; border-radius: 4px; height: 18px; padding: 2px 1px; width: 18px; margin-right: 8px; margin-left: -2px;}
-                ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {transition: border-color 0.5s; border-color: #0ef;}
-                ul#main-menu-items .list-group-item .btn#profile-toggle.active .menu-icon,
-                ul#main-menu-items .list-group-item .btn#profile-toggle:hover .menu-icon,
-                ul#main-menu-items .list-group-item .btn#profile-toggle:focus .menu-icon {transition: border-color 0.5s; border-color: #fff;}
+                ul#main-menu-items .list-group-item .btn#profile-toggle .menu-icon {border: 1px solid #fff; border-radius: 4px; height: 18px; padding: 0 1px; width: 18px; margin-right: 8px; margin-left: -2px;}
     .login-label:before {content: 'Logout';}
     body.logged-out .login-label:before {content: 'Login';}  
     
