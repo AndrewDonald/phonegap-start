@@ -53,7 +53,7 @@ $.fn.scrollTo = function( targetDom ){
 
 // GOTOPAGE
 function gotoPage(page, optional){
-    clearInterval(_session.timeElapse);
+    timeElapseStop();
     timeElapse(page);
     var option = "";
     if(typeof optional != "undefined"){
@@ -290,6 +290,14 @@ function timeElapse(page){
     $('#' + page + ' .time-elapse').each(function (){
         $(this).html(getElapsedTime($(this).data('time')));
     });
+}
+
+function timeElapseStart(page){
+    _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
+}
+
+function timeElapseStop(){
+    clearInterval(_session.timeElapse);
 }
 
 function getTimeNow(){

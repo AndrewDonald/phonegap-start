@@ -104,28 +104,36 @@ function initEventHandlers(){
 
         // Repopulate People List if Sliding to People Page
         if($(sliderNavItem).attr('id') == 'btn-people-page'){
-            $('#page-people').animate({scrollTop: '0px'}, 0);
+            $('body').attr('data-page', 'page-people');
+            //$('#page-people').animate({scrollTop: '0px'}, 0);
             getStream();
+            timeElapseStop();
+        }
+
+        if($(sliderNavItem).attr('id') == 'btn-public-page'){
+            $('body').attr('data-page', 'page-public');
+            timeElapseStart('page-public');
         }
     }
 
-
-/*
-    $('#send-message').on('focus',function(e) { 
-        $('html,body').animate({
-              scrollTop: 0
-         });
-        $('nav#footer').addClass('detach');
+    // Show Character Counter on maxLength text inputs
+    $('input[maxlength]').on('focus keyup',function() { 
+        var maxChars = $(this).attr('maxlength');
+        var numChars = $(this).val().length;
+        $(this).parent().next('.character-counter').html(maxChars - numChars);
+        //$('nav#footer').addClass('detach');
         //$('nav#footer').css('position','absolute');
         //$('nav#footer').css('top','0px');
     });
-    
-    $('#send-message').on('blur',function(e) {
-        $('nav#footer').removeClass('detach');
+
+    // Clear Character Counter on maxLength text inputs onblur
+    $('input[maxlength]').on('blur',function() {
+        $(this).parent().next('.character-counter').empty();
+        //$('nav#footer').removeClass('detach');
         //$('nav#footer').css('position','fixed');
         //$('nav#footer').css('top','0px');
     });
-*/
+
     /*
     // ENABLE BOOTSTRAP CAROUSELS
     $('.carousel').carousel({interval: false});

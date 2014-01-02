@@ -57,12 +57,13 @@
                         <div id="send-message-con">
                             <form class="send-message-form navbar-form clearfix" onsubmit="javascript:sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()}); return false;">
                                 <div class="input-group">
-                                    <input id="send-message" type="text" class="form-control" placeholder="What's on your mind..." maxlength="140" onkeyup="">
+                                    <input id="send-message" type="text" class="form-control" placeholder="What's on your mind..." maxlength="140">
                                     <span class="input-group-btn">
                                         <button type="button" class="attach-media-button btn btn-warning"><span class="glyphicon glyphicon-camera"></span></button>
                                         <button type="submit" class="send-message-button btn btn-warning"><span class="glyphicon glyphicon-share-alt"></span></button>
                                     </span>
                                 </div>
+                                <div class="character-counter"></div>
                             </form>
                         </div>
                         <!-- Message Panel (END) -->
@@ -435,13 +436,14 @@
                     <nav id="new-thought-header" class="navbar-default navbar-fixed-top" role="navigation">
                         <div id="form-thought" class="navbar-form clearfix">
                             <div class="input-group">
-                                <input name="thought" type="text" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                                <input name="thought" type="text" maxlength="50" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
                                 <span class="input-group-btn">
                                     <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
                                         <span class="stream-icon"></span><!--<span class="badge">426</span>-->
                                     </button>
                                 </span>
                             </div>
+                            <div class="character-counter"></div>
                         </div>
                     </nav>
                     

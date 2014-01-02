@@ -41,7 +41,7 @@ label {margin-bottom: 0; font-weight: normal;}
 .form-control {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     background-color: #fff; border: 1px solid #CCCCCC; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 3px #000 inset;
-    color: #333; display: block; font-size: 12px; font-weight: bold; height: 34px;
+    color: #333; display: block; font-size: 12px; font-weight: bold; height: 36px;
     line-height: 1.42857; padding: 3px 5px; vertical-align: middle; width: 97%;}
 .alert {margin: 0; padding: 0; border-radius: 0 0 5px 5px;}
     .alert a.alert-link {text-decoration: none;}
@@ -580,6 +580,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     #page-people.vertical > .people-list > .panel-menu > pre > .btn-vote-remove {float: right;}
     */
 
+.character-counter {position: absolute; right: 43px; top: 23px; color: #ccc; font-size: 10px;}
 
 .content{}
     .content h1 {margin: 0 0 10px;}
@@ -692,11 +693,13 @@ body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit
         body.audio #page-stream .show-audio {display: block;}
 
     /* PUBLIC HEADER */
-    #thought-header {transition: top 0.5s ease-in-out 0.5s; -webkit-transition: top 0.5s ease-in-out 0.5s; top: -25px; position: absolute; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 5px #0ef inset, 0 0 20px rgba(0, 0, 0, 0.5);}
+    #thought-header {transition: top 0.25s ease-in-out 0s; -webkit-transition: top 0.25s ease-in-out 0s; top: -25px; position: absolute; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 5px #0ef inset, 0 0 20px rgba(0, 0, 0, 0.5);}
     #thought-header.active, 
-    body[data-page=page-people] #thought-header,
     body[data-page=page-public] #thought-header, 
-    body[data-page=page-private] #thought-header {transition: top 0.5s ease-in-out 0.5s; -webkit-transition: top 0.5s ease-in-out 0.5s; top: 40px;}
+    body[data-page=page-private] #thought-header {transition: top 0.25s ease-in-out 0s; -webkit-transition: top 0.25s ease-in-out 0s; top: 40px;}
+    body[data-page=page-people] #thought-header {transition: top 0.25s ease-in-out 0s; -webkit-transition: top 0.25s ease-in-out 0s; top: 3px;}
+        #send-message-con form.send-message-form {position: relative;}
+            #send-message-con form.send-message-form .character-counter {right: 83px;}
 
     .page-carousel-con {clear: both;}
     
@@ -721,9 +724,10 @@ body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit
             /* New Thought Panel */
                 #form-thought {}
                     #form-thought input[name=thought] {}
-                    #form-thought .btn[name=submitThought] {height: 34px; width: 39px;}
+                    #form-thought .btn[name=submitThought] {height: 36px; width: 39px; padding-top: 11px;}
                     #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
-                    
+                    #form-thought {position: relative;}
+
         #send-message.private {background-color: #cff;}
 
         .thought-lists .form-control {display: none; margin: 0; padding: 0; height: auto; border: none; border-radius: 0;}
@@ -766,7 +770,7 @@ body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit
     body[data-page=page-private] #thought-page-carousel {display: block !important;}
 
     /* PAGE PEOPLE */ 
-    #page-people {padding-top: 70px; padding-bottom: 60px;}
+    #page-people {padding-top: 35px; padding-bottom: 60px;}
         #people-controls .btn.active[data-filter=default] {background-color: #0bf;}
         #people-controls .btn.active[data-filter=viewed-profile] {background-color: #ff6;}
         #people-controls .btn.active[data-filter=connection-request] {background-color: #0f0;}
@@ -897,7 +901,8 @@ body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit
             .connection-item-panel .btn-like {display: none;}   
 
             #page-public .connection-items-list > li.list-group-item.notification {margin: 0 5px; text-align: center;}
-                
+            #page-public .connection-items-list > .no-activity {text-align: center; padding: 5px 0 15px; color: #ccc;}
+            #page-public .connection-items-list > .no-activity:before {content:'no activity';} 
 
 /* FOOTER */
 /*
@@ -905,10 +910,10 @@ nav#footer {min-height: 0; background-color: #0ab;}
 body.logged-out nav#footer {display: none;}
 */
     /* THOUGHT STATUS */
-    #thought-status {transition: bottom 0.5s ease-in-out 0.5s; -webkit-transition: bottom 0.5s ease-in-out 0.5s; position: absolute; bottom: -30px; width: 100%;}
-        body[data-page=page-people] #thought-status,
+    #thought-status {transition: bottom 0.25s ease-in-out 0s; -webkit-transition: bottom 0.25s ease-in-out 0s; position: absolute; bottom: -30px; width: 100%;}
+        body[data-page=page-people] #thought-status, 
         body[data-page=page-public] #thought-status,
-        body[data-page=page-private] #thought-status {transition: bottom 0.5s ease-in-out 0.5s; -webkit-transition: bottom 0.5s ease-in-out 0.5s; bottom: 0; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}    
+        body[data-page=page-private] #thought-status {transition: bottom 0.25s ease-in-out 0s; -webkit-transition: bottom 0.25s ease-in-out 0s; bottom: 0; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}    
         #thought-status .filter-info {}
         @media (max-width: 360px) {
             #thought-status .stream-name {/*max-width: 208px;*/}

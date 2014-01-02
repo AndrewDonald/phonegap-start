@@ -191,6 +191,12 @@ function changeStream(objStream){
 
     // Pre populate stream with recent/latest public
     getChats();
+
+    // Display No activity message if none occured today yet
+    if($('#page-public .connection-items-list > :eq(0)').is('.date-header-item')){
+       addNotificationItem('no activity');
+    }
+    
     updateNodeServer();
     // Show all People in People Page
     //getStream(); // Now performed on slide or People slider nav button press
