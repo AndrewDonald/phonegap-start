@@ -251,6 +251,7 @@ function submitThought(thought){
     objMessage.method   = "submit_thought";
     objMessage.thought  = thought;
 
+    updateNodeServer("disconnect");
     apiRequest(objMessage, submitThought_Callback, false);
 }
 
@@ -266,6 +267,7 @@ function submitThought_Callback(result) {
             alert('Error: ' + result.message);
         }
     }
+    updateNodeServer();
 }
 
 // Subscribe Thought
@@ -274,6 +276,7 @@ function subscribeThought(streamid){
         objMessage.method = "subscribe_thought";
         objMessage.streamid = streamid;
 
+    updateNodeServer("disconnect");
     apiRequest(objMessage, subscribeThought_Callback, false);
 }
 
@@ -289,6 +292,7 @@ function subscribeThought_Callback(result) {
             alert('Error: ' + result.message);
         }
     }
+    updateNodeServer();
 }
 
 
@@ -301,8 +305,10 @@ function sendChat(objChat){
     var objMessage = {};
         objMessage.method   = "send_chat";
         objMessage.chat     = msg;
-      
-    apiRequest(objMessage, sendChat_Callback);
+    
+    if(msg.chat.length > 0){
+        apiRequest(objMessage, sendChat_Callback);
+    }
 }
 
 function sendChat_Callback(result) {
@@ -311,6 +317,7 @@ function sendChat_Callback(result) {
     }else{
         if(result.status > 0){
             // Successful
+            $('#send-message-con .character-counter').empty();
             $('#send-message').val('');
         }else{
             // Server returned an error = failed authorization
@@ -447,26 +454,31 @@ function getStream_Callback(result) {
 */
 
 // always call this to initiate. 
-function updateNodeServer() {
-    // logged in, not on stream
-    //if (_session.lastpage != "#STREAM" && _session.user != null) {
-    if (_session.loggedIn && _session.stream.streamid == null) {
-        _session.stream = {};
-        if (_application.node.socket == null) {
-            initiateNodeServer();
-        } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
+function updateNodeServer(disconnect) {
+    // Used when switching Thoughts
+    if(disconnect && _application.node.socket != null){ 
+        _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": null, "sessionid": _session.id}));
+    }else{
+        // logged in, not on stream
+        //if (_session.lastpage != "#STREAM" && _session.user != null) {
+        if (_session.loggedIn && _session.stream.streamid == null) {
+            _session.stream = {};
+            if (_application.node.socket == null) {
+                initiateNodeServer();
+            } else {
+                _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
+            }
+        } 
+        // logged in or anonymous, in stream
+        else if (_session.loggedIn && _session.stream.streamid != null) {
+            if (_application.node.socket == null) {
+                initiateNodeServer();
+            } else {
+                _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
+                setTimeout("ping('" + _session.stream.stream + "')", 1000); 
+            }
         }
-    } 
-    // logged in or anonymous, in stream
-    else if (_session.loggedIn && _session.stream.streamid != null) {
-        if (_application.node.socket == null) {
-            initiateNodeServer();
-        } else {
-            _application.node.socket.send(JSON.stringify({"type":"listen_details","stream": _session.stream.stream, "sessionid": _session.id}));
-            setTimeout("ping('" + _session.stream.stream + "')", 1000); 
-        }
-    } 
+    }
 }
 
 // never call this, only update will call this
@@ -500,10 +512,12 @@ function initiateNodeServer() {
             removeStream(msg.object);
             break;
         case "add_user":
+console.log("add_user",msg.object);
             addMemberItem(msg.object);
             break;
         case "remove_user":
-            removeUser(msg.object);
+console.log("remove_user",msg.object);
+            exitMember(msg.object);
             break;
         case "add_connection":
             break;

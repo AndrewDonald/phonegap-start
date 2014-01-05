@@ -233,10 +233,12 @@ function initEventHandlers(){
     $('[data-toggle-item]').on('click',function(){
         $('#main-menu-toggle').removeClass('active');
         $('body').removeClass('main-menu-active');
+        /*
         $('.navbar-fixed-top, .navbar-fixed-bottom').addClass('delay-fixed');
         $('body').removeClass('main-menu-active').animate({delay:0}, 500, function(){
             $('.navbar-fixed-top, .navbar-fixed-bottom').removeClass('delay-fixed');
         });
+        */
         //$(this).toggleClass('active');
         if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
             $($(this).data('target')).collapse('hide');
@@ -517,7 +519,6 @@ function initEventHandlers(){
             $('body.filter-controls .filter-controls-toggle, #people-controls .btn.grid-toggle.active').click();
             $(this).addClass('active').siblings('.active').removeClass('active');
             $('#send-message').addClass('private').prop('placeholder', 'message ' + $(this).data('username'));
-            $('OMIT#connection-items-header').slideDown('fast');
             $('.connection-items-con[data-userid="' + $(this).data('userid') + '"]').addClass('active').slideDown('fast')
                 .siblings('.active').removeClass('active').slideUp('fast');  
         }

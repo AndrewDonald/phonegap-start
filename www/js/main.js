@@ -16,7 +16,6 @@ var _session                = {};
     _session.public         = {"chat":{}};      // Children: _session.public.chat['chatid']
     _session.stream         = {"streamid":null, "stream":null};
     _session.streamAdded    = {"stream":{}};    // Children: _session.streamAdded.stream['id']  // Added Parallel Streams parent
-    _session.streampublic   = {"chat":{}};      // Children: _session.streampublic.chat['chatid']     // inStream public parent
     _session.people         = {};
     _session.timeElapse     = 0; //setInterval(function(){timeElapse()}, 30000);
 
@@ -54,6 +53,7 @@ var _application                                = {};
     _application.template.notificationItem      = $('#notification-item.template').html();
     _application.template.dateHeaderItem        = $('#date-header-item.template').html();
     _application.template.addedMemberItem       = $('#added-member-item.template').html();
+    _application.template.exitMember            = $('#exit-member-item.template').html();
     _application.template.addedStreamItem       = $('#added-stream-item.template').html();
     _application.template.chatItem              = $('#chat-item.template').html();
     //_application.template["Upload-File-Photo"]  = $('#Upload-File-Photo').html();
@@ -66,6 +66,9 @@ var _application                                = {};
     _application.preview                        = "-c."; // 500
     _application.messageMember                  = {};
     _application.indicator                      = {unreadMessages:0,buddyrequests:0};
+
+    _application.audio              = {};
+    _application.audio.chatEntry    = new Audio("audio/chat-entry.mp3");
 
 var _lucid                          = {};
     _lucid.panel                    = {};
@@ -175,9 +178,11 @@ function changeStream(objStream){
     _session.streamAdded    = {"stream":{}}; 
     _session.public         = {"chat":{}}; 
     
+    $('.thought-lists-nav').removeClass('suggested');
+    $('.btn-hot-streams').click();
+
     gotoPage('page-public');
-    // Display Today's Date Header
-    $('#page-public h2#today').html('Today');
+    $('#people-toggle').addClass('active');
 
     // Clear People
     $('#page-people .newest-members-list .btn').remove();
@@ -186,18 +191,13 @@ function changeStream(objStream){
     // Clear Public Chat
     $('#page-public .connection-items-list').empty();
     $('#send-message').val('');
+
     //populateNewestMember(_session.user);
     updateStreamStatus();
 
     // Pre populate stream with recent/latest public
     getChats();
 
-    // Display No activity message if none occured today yet
-    if($('#page-public .connection-items-list > :eq(0)').is('.date-header-item')){
-       addNotificationItem('no activity');
-    }
-    
-    updateNodeServer();
     // Show all People in People Page
     //getStream(); // Now performed on slide or People slider nav button press
 }
@@ -292,6 +292,7 @@ function createUserProfileModal(objData){
     return userProfileModal;
 }
 
+/*
 function createChatItem(objData){
     var chatItem = _application.template.chatItem
                     .replace(/\{{user-button}}/g,       createUserButton(objData, {animate:true}))
@@ -320,15 +321,14 @@ function createChatItem(objData){
     
     return chatItem;
 }
+*/
 
 // Displays a line item in the public Stream
 function displayStreamItem(objHtml, append){
     if(append){
-        $('#page-public .connection-items-list').append(objHtml)
-            .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
+        $('#page-public .connection-items-list').append(objHtml);
     }else{
-        $('#page-public .connection-items-list').prepend(objHtml)
-            .children('.list-group-item:first').hide().slideDown(250).removeAttr('style');
+        $('#page-public .connection-items-list').prepend(objHtml);
     }
 }
 
@@ -341,13 +341,14 @@ function addStream(objData) {
         _session.streamAdded.stream[objData.streamid.toString()] = {"streamid":objData.streamid, "stream":objData.stream};
         
         var addedStreamItem = _application.template.addedStreamItem
-                                .replace(/\{{stream-button}}/g, _application.template.streamButton)
-                                .replace(/\{{streamid}}/g,      objData.streamid)
-                                .replace(/\{{stream}}/g,        objData.stream)
-                                .replace(/\{{activeusers}}/g,   '99') // objData.members
-                                .replace(/\{{added}}/g,         'added')
-                                .replace(/\{{time}}/g,          getTimeNow())
-                                .replace(/\{{entrytime}}/g,     'Added ' + getElapsedTime(getTimeNow()));
+                                .replace(/\{{stream-button}}/g,     _application.template.streamButton)
+                                .replace(/\{{onclick}}/g,          "gotoPage('page-people', " + objData.streamid + ");")
+                                .replace(/\{{streamid}}/g,          objData.streamid)
+                                .replace(/\{{stream}}/g,            objData.stream)
+                                .replace(/\{{activeusers}}/g,       objData.activeusers ? objData.activeusers : '') // objData.members
+                                .replace(/\{{added}}/g,             'added')
+                                .replace(/\{{time}}/g,              getTimeNow())
+                                .replace(/\{{entrytime}}/g,         getElapsedTime(getTimeNow()));
 
         displayStreamItem(addedStreamItem);
     }
@@ -355,7 +356,7 @@ function addStream(objData) {
 
 function removeStream(streamid){
     delete _session.streamAdded.stream[streamid];
-    $('#page-public .stream-button[data-streamid=' + streamid + '] .btn').addClass('btn-default disabled');
+    $('.stream-button[data-streamid=' + streamid + '] .btn.vote-remove, .btn-accordion[data-streamid=' + streamid + '] .btn.vote-remove').addClass('btn-default disabled');
 }
 
 function addMemberItem(objData) {
@@ -366,25 +367,25 @@ function addMemberItem(objData) {
         var addMemberItem = _application.template.addedMemberItem
                             .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
                             .replace(/\{{time}}/g,          getTimeNow())
-                            .replace(/\{{entrydate}}/g,     getElapsedTime(getTimeNow()));
+                            .replace(/\{{entrytime}}/g,     getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
 
        displayStreamItem(addMemberItem);
-       displayNewMember(addMemberItem);
     }
 }
 
-function removeUser(objData) {
-    if(!_session.users.user[objData.userid.toString()]){
-        _session.users.user[objData.userid.toString()]         = objData; 
-        _session.users.user[objData.userid.toString()].time    = splitDate(_session.users.user[objData.userid.toString()].createdate);
-        
-        var removeMemberItem = _application.template.addedMemberItem
-                                .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
-                                .replace(/\{{time}}/g,          getTimeNow())
-                                .replace(/\{{entrytime}}/g,     getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
-
-       displayStreamItem(removeMemberItem);
-    }
+function exitMember(objData) {
+    var exitMember = _application.template.exitMember
+                        .replace(/\{{stream-button}}/g, _application.template.streamButton)
+                        .replace(/\{{onclick}}/g,       "subscribeThought(" + objData.streamid + ")")
+                        .replace(/\{{streamid}}/g,      objData.streamid)
+                        .replace(/\{{stream}}/g,        objData.stream)
+                        .replace(/\{{activeusers}}/g,   objData.activeusers ? objData.activeusers : '')
+                        .replace(/\{{user-button}}/g,   createUserButton(objData, {animate:true}))
+                        .replace(/\{{time}}/g,          getTimeNow())
+                        .replace(/\{{entrytime}}/g,     getElapsedTime(moment.utc().add('minutes', _application.gmtOffset)));
+                        
+   displayStreamItem(exitMember);
+   delete _session.users.user[objData.userid.toString()]; 
 }
 
 // Iterate through and display all chat items
@@ -399,16 +400,25 @@ function addChats(objData) {
                 displayStreamItem(_application.template.dateHeaderItem.replace(/\{{date}}/g, getFormatedDate(day, true)), true);
             }
 
-            addChatItem(chats[x], true);
+            addChatItem(chats[x], {append:true});
         }
     }
 }
 
-function addChatItem(objData, append) {
+function addChatItem(objData, options) {
     if(!_session.public.chat[objData.chatid.toString()]){
         _session.public.chat[objData.chatid.toString()]       = objData; 
-       //_session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
+        //_session.public.chat[objData.chatid.toString()].time  = splitDate(_session.public.chat[objData.chatid.toString()].createdate);
         
+        var params = {append:false};
+        $.extend(params, options);
+
+        // PLay Chat Entry Sound
+        //_application.audio.chatEntry;
+        if(!params.append){
+            _application.audio.chatEntry.play();
+        }
+
         var you = "";
         if(objData.userid == _session.user.userid){
             you = "you";
@@ -429,11 +439,11 @@ function addChatItem(objData, append) {
                         .replace(/\{{time}}/g,          objData.createdate)
                         .replace(/\{{createdate}}/g,    chatDate);
 
-        displayStreamItem(chatItem, append);
+        displayStreamItem(chatItem, params.append);
     }
 }
 
-function createStreamAccordionTab(objData){
+function createStreamAccordionTab(objData, added){
     var streamType = "in-stream";
     if(objData.streamid != _session.stream.streamid){
         streamType = "added-stream";
@@ -443,6 +453,7 @@ function createStreamAccordionTab(objData){
                             .replace(/\{{stream-type}}/g,   streamType)
                             .replace(/\{{streamid}}/g,      objData.streamid)
                             .replace(/\{{stream}}/g,        objData.stream)
+                            .replace(/\{{added}}/g,         added ? added : '')
                             .replace(/\{{activeusers}}/g,   objData.activeusers);
     
     return streamAccordionTab;
@@ -468,7 +479,12 @@ function populatePeople(objStream){
     $.each(objStream, function(){
         streamCount++;
         var streamid = this.streamid;
-        listpeopleThought += createStreamAccordionTab(this);
+        var added = null;
+
+        if(streamid != _session.stream.streamid){
+            added = "added";
+        }
+        listpeopleThought += createStreamAccordionTab(this, added);
 
         // Iterate through active users in stream
         $.each(this.users, function(){
@@ -489,11 +505,14 @@ function populatePeople(objStream){
 
     // Expand Newest Members as default if another tab (openStreamAccordionTab) has been set 
     if(typeof _temp.openStreamAccordionTab != "undefined"){
-        $('#page-people .people-list .btn-accordion[data-streamid=' + _temp.openStreamAccordionTab + ']:not(.active)').click();
-    }else{
+        $('#page-people .people-list .btn-accordion[data-streamid=' + _temp.openStreamAccordionTab + '] .stream-wrapper:not(.active)').click();
+    }
+
+    /*else{
         $('#page-people .people-list .btn-accordion.newest-members:not(.active)').click();
     }
-    
+    */
+
     delete _temp.openStreamAccordionTab;
 }
 

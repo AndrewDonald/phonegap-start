@@ -61,7 +61,9 @@ function gotoPage(page, optional){
     }
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
-    $('body').attr('data-page', page);
+    if(page != 'page-people'){
+        $('body').attr('data-page', page);
+    }
     $('#main-menu-items .btn').removeClass('active');
     $('#main-menu-items [data-toggle-item=' + page + ']').addClass('active');
     if(page != 'page-new-thought'){
@@ -77,25 +79,18 @@ function gotoPage(page, optional){
                 $('#page-profile .user-profile').empty();
                 break;
             case "page-people":
-                //$('#pages #page-people').addClass('active');
                 //getThoughts(); // Change to getAddedThoughts
-                $('body').animate({delay:0}, 100, function(){
-                    $('#btn-people-page').click();
-                });
+                $('#btn-people-page').click();
                 _temp.openStreamAccordionTab = option;
                 getStream();
                 break;
             case "page-public":
-                $('body').animate({delay:0}, 100, function(){
-                    $('#btn-public-page').click();
-                });
+                $('#btn-public-page').click();
                 _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
             /*
             case "page-private":
-                $('body').animate({delay:0}, 100, function(){
-                    $('#btn-private-page').click();
-                });
+                $('#btn-private-page').click();
                 _session.timeElapse = setInterval(function(){timeElapse(page)}, 60000);
                 break;
             */
@@ -103,13 +98,20 @@ function gotoPage(page, optional){
                 break;
         }
     }else{
+        
         $('#send-message').attr('placeholder',"What's on your mind...");
         $('#new-thought-toggle').addClass('active');
+        $('#form-thought input[name=thought]').val('');
         if($('#form-thought input[name=thought]').val().length < 3){
             $('#form-thought .btn[name=submitThought]').addClass('disabled');
         }else{
             $('#form-thought .btn[name=submitThought]').removeClass('disabled');
         }
+
+        $('.suggested-thought-list').removeClass('active');
+        $('.thought-lists-nav').removeClass('suggested');
+        $('.btn-hot-streams').click();
+
         getThoughts();
     }
 }
@@ -258,11 +260,11 @@ function getFormatedDate(date, calendar){
     var formatedDate = moment(date).format("h:mm:ssa");
     if(calendar){
         formatedDate = moment(date).calendar();
-        /*
+        
         if(moment(date).isBefore(dateNowGMT, 'week')){
-            formatedDate = moment(date).format("dddd, MMMM Do YYYY");
+            formatedDate = moment(date).format("dddd, MMMM Do, YYYY");
         }
-        */
+        
     }
     return formatedDate;
 }
@@ -283,7 +285,7 @@ function accordionButton(objDom){
         .children('.chevron-toggle').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
 
     // ** Stream and People List Accordion Only **
-    $(objDom).nextUntil('.btn-accordion').slideToggle(250);
+    $(objDom).parent().nextUntil('.btn-accordion').slideToggle(250);
 }
 
 function timeElapse(page){
