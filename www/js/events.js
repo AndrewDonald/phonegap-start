@@ -210,14 +210,36 @@ function initEventHandlers(){
     // Main Menu Toggle
     $('#main-menu-toggle').on('click',function(){
         $(this).toggleClass('active');
-        if($(this).is('.active')){
-            $('body').addClass('main-menu-active');
+        $('body').toggleClass('main-menu-active');
+    });
+
+    // Main Menu Toggle
+    $('#new-thought-toggle').on('click',function(){
+        $(this).toggleClass('active');
+        $('body').toggleClass('new-thought-active');
+
+        $('#send-message').attr('placeholder',"What's on your mind...");
+        $('#new-thought-toggle').addClass('active');
+        $('#form-thought input[name=thought]').val('');
+        if($('#form-thought input[name=thought]').val().length < 3){
+            $('#form-thought .btn[name=submitThought]').addClass('disabled');
         }else{
-            $('.navbar-fixed-top, .navbar-fixed-bottom').addClass('delay-fixed');
-            $('body').removeClass('main-menu-active').animate({delay:0}, 500, function(){
-                $('.navbar-fixed-top, .navbar-fixed-bottom').removeClass('delay-fixed');
-            });
+            $('#form-thought .btn[name=submitThought]').removeClass('disabled');
         }
+
+        $('.suggested-thought-list').removeClass('active');
+        $('.thought-lists-nav').removeClass('suggested');
+        $('.btn-hot-streams').click();
+
+        getThoughts();
+/*
+                    if($('#new-thought-toggle').is('.active')){
+                        gotoPage(target); // Go to New Thought Page
+                    }else{
+                        gotoPage(_session.page);    // Return to last page
+                    }
+                    break; 
+*/
     });
 
 
@@ -252,6 +274,7 @@ function initEventHandlers(){
             */
             
             switch(target){
+                /*
                 case 'page-new-thought':
                     $('#new-thought-toggle').toggleClass('active');
                     if($('#new-thought-toggle').is('.active')){
@@ -259,7 +282,8 @@ function initEventHandlers(){
                     }else{
                         gotoPage(_session.page);    // Return to last page
                     }
-                    break;  
+                    break; 
+                */ 
                 case 'page-people':
                     gotoPage(target);
                     $('#page-people .people-list').toggleClass('active');

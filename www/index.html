@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <title>LucidLife</title>
     </head>
-    <body class="logged-out" data-page="page-login">
+    <body class="logged-out-XXX" data-page="page-login">
         <!-- LOADER -->
         <!--
         <div class="app">
@@ -368,27 +368,7 @@
                 </div>
                 <!-- CREATE USER (END) -->
 
-                <!-- NEW THOUGHT (START) -->
-                <div id="page-new-thought" class="page row">
-                    <div class="thought-lists">
-                        <ul class="suggested-thought-list form-control list-inline full-width link-list">
-                            <li class="list-group-item">
-                                No suggested thoughts found.
-                            </li>
-                        </ul>
-                        <ul class="hot-thought-list form-control list-inline full-width link-list active">
-                            <li class="list-group-item">
-                                No hot thoughts found.
-                            </li>
-                        </ul>
-                        <ul class="past-thought-list form-control list-inline full-width link-list">
-                            <li class="list-group-item">
-                                No past thoughts found.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- NEW THOUGHT (END) -->
+                
 
                 <!-- THOUGHT PAGE-GROUP (START) -->
                 <div id="thought-page-carousel" class="page-carousel-con">
@@ -680,6 +660,60 @@
         </nav>
         <!-- MAIN MENU (END) -->
 
+        <!-- NEW THOUGHT (START) -->
+        <nav id="new-thought" class="fixed" role="navigation">
+            <!-- NEW THOUGHT HEADER (START) -->
+            <div id="new-thought-header" class="navbar-fixed-top" role="navigation">
+                <div id="form-thought" class="navbar-form clearfix">
+                    <div class="input-group">
+                        <input name="thought" type="text" maxlength="50" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
+                        <span class="input-group-btn">
+                            <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
+                                <span class="stream-icon"></span><!--<span class="badge">426</span>-->
+                            </button>
+                        </span>
+                    </div>
+                    <div class="character-counter"></div>
+                </div>
+            </div>
+            <!-- NEW THOUGHT HEADER (END) -->
+
+            <div class="thought-lists">
+                <ul class="suggested-thought-list form-control list-inline full-width link-list">
+                    <li class="list-group-item">
+                        No suggested thoughts found.
+                    </li>
+                </ul>
+                <ul class="hot-thought-list form-control list-inline full-width link-list active">
+                    <li class="list-group-item">
+                        No hot thoughts found.
+                    </li>
+                </ul>
+                <ul class="past-thought-list form-control list-inline full-width link-list">
+                    <li class="list-group-item">
+                        No past thoughts found.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- New Thought Footer (Start) -->
+            <div id="new-thought-footer" class="navbar-fixed-bottom" role="navigation">
+                <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
+                    <a class="btn-suggested-streams btn btn-lucid-normal" data-target=".thought-lists">
+                        <span class="suggested-streams glyphicon glyphicon-link"></span>
+                    </a>
+                    <a class="btn-hot-streams btn btn-lucid-normal active" data-target=".thought-lists">
+                        <span class="glyphicon glyphicon-fire"></span>
+                    </a>
+                    <a class="btn-past-streams btn btn-lucid-normal" data-target=".thought-lists">
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- New Thought Footer (End) -->
+        </nav>
+        <!-- NEW THOUGHT (END) -->
+
         <!-- HEADER (START) -->
         <nav id="header" class="navbar-fixed-top" role="">
             <!-- MASTHEAD (START) -->
@@ -695,31 +729,19 @@
                     </div>
                 </center>
                 <div class="main-nav right">
-                    <button id="new-thought-toggle" type="button" class="btn btn-link-lucid btn-lg" data-toggle-item="page-new-thought">
+                    <button id="new-thought-toggle" type="button" class="btn btn-link-lucid btn-lg" data-toggle-itemXXX="page-new-thought">
                         <span class="glyphicon glyphicon-random"></span>
                     </button>
                 </div>
             </div>
             <!-- MASTHEAD (END) -->
 
-            <!-- NEW THOUGHT HEADER (START) -->
-            <nav id="new-thought-header" class="navbar-default navbar-fixed-top" role="navigation">
-                <div id="form-thought" class="navbar-form clearfix">
-                    <div class="input-group">
-                        <input name="thought" type="text" maxlength="50" class="form-control" placeholder="what's on your mind?" onkeyup="liveQuery(this.value);">
-                        <span class="input-group-btn">
-                            <button type="button" name="submitThought" class="form-row btn btn-warning" onclick="submitThought($('#form-thought input[name=thought]').val());">
-                                <span class="stream-icon"></span><!--<span class="badge">426</span>-->
-                            </button>
-                        </span>
-                    </div>
-                    <div class="character-counter"></div>
-                </div>
-            </nav>
-            <!-- NEW THOUGHT HEADER (END) -->
+            
+
+
 
             <!-- PUBLIC HEADER (START) -->
-            <nav id="thought-header" class="navbar-fixed-top" role="">
+            <nav id="thought-header" role="">
                 <!-- Message Panel (START) -->
                 <div id="send-message-con">
                     <form class="send-message-form navbar-form clearfix" onsubmit="javascript:sendChat({streamid: _session.stream.streamid, chat:$('.send-message-form input#send-message').val()}); return false;">
@@ -761,38 +783,24 @@
         <!-- FOOTER (START) -->
         <nav id="footer" class="navbar-fixed-bottom" role="navigation">
             <!-- Logged Out Footer (Start) -->
-            <nav id="logged-out-footer" class="navbar-default navbar-fixed-bottom" role="navigation">
+            <div id="logged-out-footer" role="navigation">
                 [Logged Out Footer]
-            </nav>
+            </div>
             <!-- Logged Out Footer (End) -->
 
-            <!-- New Thought Footer (Start) -->
-            <nav id="new-thought-footer" class="navbar-default navbar-fixed-bottom" role="navigation">
-                <div class="thought-lists-nav toggle-nav btn-group btn-group-justified">
-                    <a class="btn-suggested-streams btn btn-lucid-normal" data-target=".thought-lists">
-                        <span class="suggested-streams glyphicon glyphicon-link"></span>
-                    </a>
-                    <a class="btn-hot-streams btn btn-lucid-normal active" data-target=".thought-lists">
-                        <span class="glyphicon glyphicon-fire"></span>
-                    </a>
-                    <a class="btn-past-streams btn btn-lucid-normal" data-target=".thought-lists">
-                        <span class="glyphicon glyphicon-refresh"></span>
-                    </a>
-                </div>
-            </nav>
-            <!-- New Thought Footer (End) -->
-
             <!-- Stream Status (Start) -->
+            <!--
             <div id="thought-status" class="status-bar">
                 <div class="stream-info pull-left">
                     <span class="stream-name">LucidLife</span><span class="badge"></span>
                 </div>
-                <!--
+                
                 <div class="filter-info pull-right">
                     <span class="filter-sign glyphicon glyphicon-filter"></span>m/f 18-25 &lt;250<sup>km</sup><span class="badge"></span>
                 </div> 
-                -->
+                
             </div>
+            -->
             <!-- Stream Status (End) -->
         </nav>
         <!-- FOOTER (END) -->

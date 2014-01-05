@@ -59,6 +59,7 @@ function gotoPage(page, optional){
     if(typeof optional != "undefined"){
         option = optional;
     }
+    $('body').removeClass('main-menu-active new-thought-active');
     $('#pages .page.active').removeClass('active');
     $('#pages #' + page).addClass('active');
     if(page != 'page-people'){

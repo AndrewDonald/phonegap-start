@@ -159,7 +159,7 @@ function initializeApp(){
     //localStorage.setItem('password', $('#form-login input[name="password"]').val());
     updateAbout();
     $('#profile-toggle').attr('data-userid', _session.user.userid); // Profile Initialization
-    gotoPage('page-new-thought');
+    $('#new-thought-toggle:not(.active)').click();
     //updateNodeServer();
 }
 

@@ -1,4 +1,5 @@
 /* BOTSTRAP OVERRIDES */
+nav {width: 100%;}
 h5, h6 {
   font-weight: bold;
   margin: 10px 0 0;
@@ -15,7 +16,7 @@ label {margin-bottom: 0; font-weight: normal;}
 .nav > li > a:focus,
 .nav-pills > li.active > a:focus {background-color: rgba(0,200,215, 0.95); color: #fff;}
 .nav-pills > li.active > a  {background-color: rgba(255,180,0, 0.95); color: #fff;}
-.navbar, .navbar-fixed-top, .navbar-fixed-bottom,  {z-index: 2000; border: none; background: none; width: 100%;} 
+.navbar, .navbar-fixed-top, .navbar-fixed-bottom,  {z-index: 2000; border: none; background: none; width: 100%; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
 .navbar-form {padding: 0; margin: 0; border: none;}
 
 .label {font-size: 10px; padding: 0 3px;}
@@ -371,7 +372,7 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
         .btn-lucid.tilde label {margin-top: -4px;}
     /*.btn-lucid .indicator {display: block; position: absolute; top: -6px; left: -6px;}*/
     
-.btn-lucid.user {margin: 8px 3.5px 15px; height: 40px; width: 40px; background-size: 40px 40px; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
+.btn-lucid.user {margin: 8px 3.5px 15px; height: 40px; width: 40px; background-size: 100% 100%; border: 1px solid #0ef; box-shadow: 0 2px 5px #000, 0 0 5px #000 inset;}
     .btn-lucid.user.active {border: 1px solid #ff6; box-shadow: 0 0 5px #ff6, 0 0 5px #fff inset;}   
         .btn-lucid.user > label {margin: 0; top: 42px; left: -7px; position: absolute; text-shadow: 1px 1px 2px #000; text-align: center; width: 50px; text-align: center; word-wrap: break-word;}
         .btn-lucid.user.active > label {color: #ff6; background-color: transparent;}
@@ -623,8 +624,9 @@ button.btn-link-lucid {font-size: 36px; padding: 0 5px; line-height: 1; font-wei
     .content h2 {margin: 15px 0 0; font-size: 15px;}
 
 /**** START SPECIFIC CSS ****/
-#CONTAINER {transition: all 0.25s ease-in-out 0s; -webkit-transition: all 0.25s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #067; box-shadow: 0 0 20px rgba(0,0,0,0.8) inset;}
-body.main-menu-active #CONTAINER {transition: all 0.25s ease-in-out 0s; -webkit-transition: all 0.25s ease-in-out 0s; left: 275px;}
+#CONTAINER {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 0px; overflow-y: scroll; z-index: 1; background-color: #067; box-shadow: 0 0 20px rgba(0,0,0,0.8) inset;}
+body.main-menu-active #CONTAINER {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 275px;}
+body.new-thought-active #CONTAINER {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: -275px;}
 /*
 body.main-menu-active .navbar-fixed-top,
 body.main-menu-active .navbar-fixed-bottom {transition: all 0.25s ease-in-out 0s; position: absolute;}
@@ -633,13 +635,13 @@ body:not(.main-menu-active) .navbar-fixed-bottom.delay-fixed {position: absolute
 body.main-menu-active .navbar-fixed-top.shifted-fixed,
 body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left: 275px;}
 */
-.navbar-fixed-top {box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
-.navbar-fixed-bottom {box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}
+
 
 /* MAIN MENU */
-#main-menu {width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
+#main-menu {transition: opacity 0s ease-in-out 0.25s; -webkit-transition: opacity 0s ease-in-out 0.25s; opacity: 0; width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
+body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}
 /*body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}*/
-    #main-menu .header {position: fixed; top:0; left: 0; width: 100%; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
+    #main-menu .header {position: fixed; top:0; left: 0; width: 275px; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}
         #main-menu .header .btn.login-toggle {font-size: 14px; font-weight: normal; color: #0ab; margin-top: -8px; padding: 8px 10px 10px;}
         #main-menu .header .btn.login-toggle.active {color: #fff;}
     ul#main-menu-items {margin-top: 40px; box-shadow: 0 2px 5px #000; width: 100%;}
@@ -656,25 +658,62 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
     
     /*#main-menu .footer {padding: 3px; background-color: #056; color: #fff; font-weight: bold; box-shadow: 0 2px 3px #000;}*/
 
+/* NEW-THOUGHT */
+#new-thought {transition: opacity 0s ease-in-out 0.25s; -webkit-transition: opacity 0s ease-in-out 0.25s; opacity: 0; left: auto; right: 0; width: 275px; padding-top: 40px; overflow-y: auto; background-color: #067;}
+body.new-thought-active #new-thought {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}
+
+    #new-thought-header {left: auto; right: 0; width: 275px; padding: 2px 5px; color: #fff; background-color: #0ab; box-shadow: 0 3px 5px #0ef inset, 0 3px 5px #000;}
+        #form-thought {}
+            #form-thought input[name=thought] {}
+            #form-thought .btn[name=submitThought] {height: 36px; width: 39px; padding-top: 11px;}
+            #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
+            #form-thought {position: relative;}
+            #send-message.private {background-color: #cff;}
+
+    #thought-header {display: none; position: absolute; top: 40px; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 5px #0ef inset, 0 0 20px rgba(0, 0, 0, 0.5);}
+    #thought-header.active, 
+    body[data-page=page-people] #thought-header,
+    body[data-page=page-public] #thought-header, 
+    body[data-page=page-private] #thought-header {display: block;}
+        #send-message-con form.send-message-form {position: relative;}
+            #send-message-con form.send-message-form .character-counter {right: 83px;}
+
+    .thought-lists .form-control {display: none; margin: 0; padding: 0; height: auto; border: none; border-radius: 0;}
+    .thought-lists .form-control.active {display: block;}
+    .thought-lists .btn-lucid-normal,
+    .thought-lists .btn-lucid-normal:hover,
+    .thought-lists .btn-lucid-normal:not(.active):focus {box-shadow: none;}
+    .thought-lists .stream-name {max-width: none;}
+
+    #new-thought-footer {left: auto; right: 0; width: 275px;} 
+        .thought-lists-nav {}
+            .thought-lists-nav .btn-lucid-normal,
+            .thought-lists-nav .btn-lucid-normal:hover,
+            .thought-lists-nav .btn-lucid-normal:not(.active):focus {box-shadow: 0 0 3px #fff inset;}
+            .thought-lists-nav .btn.btn-suggested-streams {display: none;}
+            .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
+
+
 /* HEADER */   
 #header {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 0px; z-index: 1100; width: 100%; background-color: #0ab;}
-body.main-menu-active #header {transition: all 0.25s ease-in-out 0s; -webkit-transition: all 0.25s ease-in-out 0s; left: 275px;}
+body.main-menu-active #header {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 275px;}
+body.new-thought-active #header {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: -275px;}
     #header > .masthead {position: relative; height: 40px; background-color: #0ab; box-shadow: 0 3px 5px #0ef inset;}
         #header > .masthead .main-nav {position: absolute; top: 2px;}
-        body.logged-out nav#header > .masthead .main-nav {display: none;}
+        body.logged-out #header > .masthead .main-nav {display: none;}
         #header > .masthead .main-nav.left {left: 5px;}
             #main-menu-toggle {margin-top: -4px; padding: 0;}
                 #main-menu-toggle img {border-radius: 3px;}
         #new-thought-toggle {padding-top: 2px; font-size: 21px; color: #fff;}
         #header > .masthead .main-nav.right {right: 5px;}
         #header > .masthead center {padding-top: 5px;}
-        #header > .masthead .logo-con {position: relative; padding: 2px 0 0; width: 140px; height: auto;}
+        #header > .masthead .logo-con {position: relative; padding: 0; width: 140px; height: auto;}
         #header > .masthead .butterfly {position: absolute; top: 5px; left: 9px; height: 24px;}
         #header > .masthead .plug {height: 20px; margin-top: -8px;}
         #header > .masthead .bulb {height: 24px; margin-top: -8px; margin-left: 10px;}
         #header > .masthead .monarch-icon {height: 20px; width: 30px; margin-top: 8px; background-image: url("../img/lucid-butterfly-teal.png"); background-repeat: no-repeat; background-size: 100% auto;}
             #header > .masthead .monarch-icon.active {background-image: url("../img/lucid-butterfly-white.png");}
-        #header > .masthead .logo {width: 100px; margin: 0 0 5px 5px;}
+        #header > .masthead .logo {height: 37px; width: auto; margin: -3px 0 5px 5px;}
         /*nav#header .masthead .monarch.animated {position: absolute; left: 120px; top: -1; height: 25px;}*/
 
     #thought-page-carousel-nav {width: 200px; padding: 1px 0 3px;}
@@ -736,23 +775,6 @@ body.main-menu-active #header {transition: all 0.25s ease-in-out 0s; -webkit-tra
     */
 
     /* PUBLIC HEADER */
-    nav#new-thought-header {display: none; position: absolute; top: 40px; padding: 0 5px 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 3px #0ef inset, 0 3px 5px #000;}
-    body[data-page=page-new-thought] #new-thought-header {display: block;}
-        #form-thought {}
-            #form-thought input[name=thought] {}
-            #form-thought .btn[name=submitThought] {height: 36px; width: 39px; padding-top: 11px;}
-            #form-thought .btn[name=submitThought].disabled {background: #ddd; box-shadow: none; opacity: 1; text-shadow: none; border: 0;}
-            #form-thought {position: relative;}
-            #send-message.private {background-color: #cff;}
-
-    #thought-header {display: none; position: absolute; top: 40px; min-height: 40px; padding: 0 5px; color: #fff; background-color: #0ab; box-shadow: 0 -2px 5px #0ef inset, 0 0 20px rgba(0, 0, 0, 0.5);}
-    #thought-header.active, 
-    body[data-page=page-people] #thought-header,
-    body[data-page=page-public] #thought-header, 
-    body[data-page=page-private] #thought-header {display: block;}
-        #send-message-con form.send-message-form {position: relative;}
-            #send-message-con form.send-message-form .character-counter {right: 83px;}
-
     .page-carousel-con {clear: both;}
     
     /* PAGE LOGIN */
@@ -770,15 +792,6 @@ body.main-menu-active #header {transition: all 0.25s ease-in-out 0s; -webkit-tra
             #form-create-user .steps.step-2 .biography textarea {margin-top: -1px; width: 100%; height: 65px; border-radius: 0 0 4px 4px;}
             #form-create-user .steps.step-2 .biography .instructions {font-size: 10px; color: #0ab; margin-bottom: 10px;}
     
-    /* PAGE NEW-THOUGHT */
-    #pages #page-new-thought {padding-top: 40px; padding-bottom: 32px;}
-        .thought-lists .form-control {display: none; margin: 0; padding: 0; height: auto; border: none; border-radius: 0;}
-        .thought-lists .form-control.active {display: block;}
-        .thought-lists .btn-lucid-normal,
-        .thought-lists .btn-lucid-normal:hover,
-        .thought-lists .btn-lucid-normal:not(.active):focus {box-shadow: none;}
-        .thought-lists .stream-name {max-width: none;}
-
     /* PAGE PROFILE */ 
     #pages #page-profile {padding-bottom: 30px; color: #eee;}
         .user-profile {padding: 35px 10px 0 320px;}
@@ -945,21 +958,13 @@ body.main-menu-active #header {transition: all 0.25s ease-in-out 0s; -webkit-tra
             #page-public .connection-items-list > .no-activity:before {content:'no activity';} 
 
 /* FOOTER */
-nav#footer {z-index: 1100;}
+#footer {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 0px; z-index: 1100; width: 100%;}
+body.main-menu-active #footer {transition: left 0.25s ease-in-out 0s; -webkit-transition: left 0.25s ease-in-out 0s; left: 275px;}
     #logged-out-footer {display: none;}
     body.logged-out #logged-out-footer {display: block;}
 
-    #new-thought-footer {display: none;}
-    body[data-page=page-new-thought] #new-thought-footer {display: block;} 
-        .thought-lists-nav {}
-            .thought-lists-nav .btn-lucid-normal,
-            .thought-lists-nav .btn-lucid-normal:hover,
-            .thought-lists-nav .btn-lucid-normal:not(.active):focus {box-shadow: 0 0 3px #fff inset;}
-            .thought-lists-nav .btn.btn-suggested-streams {display: none;}
-            .thought-lists-nav.suggested .btn.btn-suggested-streams {display: table-cell;}
-
     /* THOUGHT STATUS */
-    #thought-status {position: absolute; display:none; width: 100%;}
+    #thought-status {display: none;}
         body[data-page=page-people] #thought-status, 
         body[data-page=page-public] #thought-status,
         body[data-page=page-private] #thought-status {display: block; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);}    
