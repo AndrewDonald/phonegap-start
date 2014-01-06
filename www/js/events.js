@@ -178,9 +178,9 @@ function initEventHandlers(){
 
     // Main Menu Toggle
     $('#main-menu-toggle').on('click',function(){
+        $(this).toggleClass('active');
 		toggleDrawer();
-        //$(this).toggleClass('active');
-        //$('body').toggleClass('main-menu-active'); 
+        $('body').toggleClass('main-menu-active'); 
 	});
 		
 	function toggleDrawer() { 
@@ -196,8 +196,9 @@ function initEventHandlers(){
 			onSuccess: function() {
 			},
 			onFailure: function(error) {
-                $(this).toggleClass('active');
-                $('body').toggleClass('main-menu-active'); 
+                if($('#main-menu-toggle').is('.active')){
+                    $('body').toggleClass('main-menu-active'); 
+                }
 				alert("failure");
 			}
 		  });
