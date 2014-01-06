@@ -30,12 +30,12 @@ var _application                                = {};
     _application.node.socket                    = null;
     _application.detect                         = {};
     _application.detect.useragent               = navigator.userAgent.toLowerCase();
-    _application.node.streamserver              = "https://dev.lucidlife.co";
+    _application.node.streamserver              = "http://dev.lucidlife.co";
     _application.gmtOffset                      = new Date().getTimezoneOffset();
     _application.streamtimer                    = false;
     
     _application.url                            = {};
-    _application.url.api                        = "https://dev.lucidlife.co/api/ajax.php"; 
+    _application.url.api                        = "http://dev.lucidlife.co/api/ajax.php"; 
     _application.url.fetch                      = {};
     _application.url.fetch["profile"]           = "/img/fetch.php?k=profile_";   // + userid + size="","-b" or "-c" + picext
     _application.url.fetch["activity"]          = "/img/fetch.php?k=activity_";  // + activityid + size="","-b" or "-c" + picext
@@ -151,8 +151,8 @@ function initializeApp(){
     _session.loggedIn = true;
     $('body').removeClass('logged-out');
     $('#main-menu .header .btn.login-toggle').addClass('active');
-    $('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
-    
+    //$('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
+
     //setSessionID(value);
     storage.data("login", {"email": _session.user.email, "password": $('#form-login input[name="password"]').val()});
     //localStorage.setItem('email', _session.user.email);

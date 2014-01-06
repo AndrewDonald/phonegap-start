@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.lucidlife.mobile" version="2.0.0" xmlns="http://www.w3.org/ns/widgets">
+    <name>LucidLife</name>
+    <description>
+        Connect your thoughts
+    </description>
+    <author email="info@lucidlife.co" href="http://www.lucidlife.co">
+        LucidLife Development Team
+    </author>
+  <access origin="*" />
+</widget>

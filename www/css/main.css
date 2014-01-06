@@ -638,7 +638,7 @@ body.main-menu-active .navbar-fixed-bottom.shifted-fixed {position: fixed; left:
 
 
 /* MAIN MENU */
-#main-menu {transition: opacity 0s ease-in-out 0.25s; -webkit-transition: opacity 0s ease-in-out 0.25s; opacity: 0; width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
+#main-menu {transition: opacity 0s ease-in-out 0.25s; -webkit-transition: opacity 0s ease-in-out 0.25s; opacity: 100; width: 275px; overflow-y: auto; background-color: #333; box-shadow: -2px 5px 5px #000 inset;}
 body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}
 /*body.main-menu-active #main-menu {transition: opacity 0s ease-in-out 0s; -webkit-transition: opacity 0s ease-in-out 0s; opacity: 1;}*/
     #main-menu .header {position: fixed; top:0; left: 0; width: 275px; padding: 10px; background-color: #056; color: #0de; font-weight: bold;}

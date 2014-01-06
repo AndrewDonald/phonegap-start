@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.andrewdonald.lucidlife"
+        id        = "com.lucidlife.mobile"
         version   = "1.0">
 
 <name>LucidLife</name>
 <description>Connect your thoughts</description>
-<author href="https://www.google.com" email="notexposed@gmail.com">Andrew Donald and Sharif Aly</author>
+<author href="http://www.lucidlife.co" email="info@lucidlife.co">LucidLife Development Team</author>
 
 <!-- CORE Features -->
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
@@ -26,7 +26,7 @@
 <gap:plugin name="org.apache.cordova.core.splashscreen" />
 
 <!-- Access Orgin -->
-<access origin="*" browserOnly="true"/>
+<access origin="*" />
 
 <!-- PLATFORMS -->
 <gap:platform name="ios" />

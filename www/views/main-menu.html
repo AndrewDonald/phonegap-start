@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/owl.carousel.css" />
+        <link rel="stylesheet" type="text/css" href="../css/owl.theme.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
+        <title>LucidLife</title>
+    </head>
+    
+    <body>
+
+    <!-- MAIN MENU (START) -->
+        <nav id="main-menu" class="fixed" role="navigation">
+            <div class="header">
+                <span class="username">{{username}}</span>
+            </div>
+            <ul id="main-menu-items" class="list-group" role="menu">
+                <li class="list-group-item" ontouchend="closeDrawerAndSendMessage('page-people')">
+                    <a id="people-toggle" data-toggle-item="page-people" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>People
+                    </a>
+                </li>
+                <li class="list-group-item divider" ontouchend="closeDrawerAndSendMessage('page-profile')">
+                    <a id="profile-toggle" data-toggle-item="page-profile" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-user"></span>Profile
+                    </a>
+                </li>
+                <!--
+                <li class="list-group-item divider" ontouchend="closeDrawerAndSendMessage('page-filters')">
+                    <a id="people-toggle" data-toggle-item="page-filter" class="btn btn-lucid-normal">
+                        <span class="menu-icon glyphicon glyphicon-filter"></span>Filters
+                    </a>
+                </li>
+                -->
+                <li class="list-group-item divider"  ontouchend="closeDrawerAndSendMessage('page-login')">
+                    <a id="login-toggle" data-toggle-item="page-login" class="btn btn-lucid-normal login-toggle btn btn-link-lucid">
+                        <span class="menu-icon glyphicon glyphicon-off"></span>
+                        <span class="login-label"></span>
+                    </a>
+                </li>
+                <li class="list-group-item"  ontouchend="closeDrawerAndSendMessage('modal-about')">
+                    <a class="menu-toggle-modal-about btn btn-lucid-normal" data-toggle="modal" data-target="#modal-about">
+                        <span class="menu-icon about-icon"></span>About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- MAIN MENU (END) -->
+        
+        <script type="text/javascript" src="../js/drawer.js"></script>
+        <script type="text/javascript" src="../components/steroids-js/steroids.js"></script>
+        <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+        
+        </body>
+    
+</html>
+    

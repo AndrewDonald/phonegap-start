@@ -162,7 +162,8 @@ function saveGeolocation_Callback(result) {
         if(result.status > 0){
             // Successful
             $('#main-menu .header .btn.login-toggle').addClass('active');
-            $('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
+            //$('#main-menu .header .username').html(_session.user.fname + " " + _session.user.lname);
+			window.postMessage({ name: _session.user.fname + " " + _session.user.lname }, "*");
             if(!_session.loggedIn){
                 initializeApp();
             }else{

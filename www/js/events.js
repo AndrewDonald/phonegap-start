@@ -36,6 +36,37 @@ var app = {
 //* APP EVENT HANDLERS *//
 function initEventHandlers(){
 
+	window.addEventListener("message", function(msg) {
+	  	var target = msg.data.selection;
+	  	if (target != null) {
+			switch(target){
+				case 'page-people':
+					gotoPage(target);
+					$('#page-people .people-list').toggleClass('active');
+					break;
+				case 'page-profile':
+					gotoPage(target, true); // Let Page Handler know it's user and highlight Menu item
+					$('#page-profile .user-profile').html(createUserProfile(_session.user, {square: true}));
+					break;
+				case 'page-login':
+					gotoPage(target);
+					if($(this).attr('id') == 'logout-toggle'){
+						executeLogout();
+					}
+					break;
+				case 'modal-about':
+					$('#modal-about').modal();
+					break;
+				default:
+					$('body').attr('data-page', target);
+					gotoPage(target);
+					break;
+			}
+			menuStatus = 0;
+			steroids.drawers.hideAll();     
+	    }   
+	});
+	
     // Submit Login
     $('#form-login input[name=email], #form-login input[name=password]').on('keypress', function(e) {
         if (e.which == 13 || e.keyCode == 13) {
@@ -134,86 +165,49 @@ function initEventHandlers(){
         //$('nav#footer').css('top','0px');
     });
 
-    /*
-    // ENABLE BOOTSTRAP CAROUSELS
-    $('.carousel').carousel({interval: false});
+	// main menu toggle
+	var menuStatus = 0;
+	var menuView = new steroids.views.WebView( "/www/views/main-menu.html" );
+	menuView.preload();
 
-    // ENABLE BOOTSTRAP CAROUSEL SWIPING GESTURES
-    $(".carousel-inner").swipe( {
-        //Generic swipe handler for all directions
-        swipeLeft:function(event, direction, distance, duration, fingerCount) {
-            $(this).parent().carousel('next'); 
-        },
-        swipeRight: function() {
-            $(this).parent().carousel('prev'); 
-        },
-        threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
-    });
-
-
-    // ENABLE BOOTSTRAP CAROUSEL SWIPING GESTURES
-    $(".stream-content").swipe({
-        //Generic swipe handler for all directions
-        swipeLeft:function(event, direction, distance, duration, fingerCount) {
-            swipeStreamPanel('right'); 
-        },
-        swipeRight: function() {
-            swipeStreamPanel('left'); 
-        },
-        threshold: 0 // Default is 75px, set to 0 for demo so any distance triggers swipe
-    });
-    */
-    /*
-        // STREAM PANES CONTROLLER: Slide through the various Stream Panes
-        $('.stream-content #home').on('click',function(){
-            // STREAM PANES
-            _lucid.panel.stream.view.active = (_lucid.panel.stream.view.active++ < _lucid.panel.stream.show.length - 1) ? _lucid.panel.stream.view.active : 0;
-            $('body')
-                .alterClass('stream-pane-active-*','')
-                .addClass('stream-pane-active-' + _lucid.panel.stream.view.active);
-
-            $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn').removeClass('active')
-            $('.stream-show-panel > panel-heading.panel-nav > .panel-menu > .btn:eq(' + _lucid.panel.stream.view.active + ')').addClass('active');
-    */
-    /*
-            var offset = $('#' + _lucid.panel.stream[_lucid.panel.stream.active].toLowerCase() + '-stream-pane').offset();
-    $(".stream-pane-menu-con").animate({
-        scrollTop: offset.top,
-        scrollLeft: offset.left
-    });
-    */
-    /*
-            // PRIVATE PANES
-            _lucid.panel.private.active = (_lucid.panel.private.active++ < _lucid.panel.private.length - 1) ? _lucid.panel.private.active : 0;
-            $('body')
-                .alterClass('private-pane-active-*','')
-                .addClass('private-pane-active-' + _lucid.panel.private.active);
-
-            $('.private-pane-menu > .status-icon').removeClass('active')
-            $('.private-pane-menu > .status-icon:eq(' + _lucid.panel.private.active + ')').addClass('active');
-    */
-
-
-        //Open Panels
-        //$('.menu-toggle-stream-controls-panel, .menu-toggle-private').click();
-
-
-
-    
-    /*
-    // Lucid Menu Hold Open until clicked/tapped outside of menu
-    $('#people-panel-items.dropdown-menu').click(function(e) {
-        e.stopPropagation();
-    });
-    */
+	var menuViewAnimation = new steroids.Animation({
+	  transition: "slideFromLeft",
+	  duration: 0.3,
+	  curve: "linear"
+	});
 
     // Main Menu Toggle
     $('#main-menu-toggle').on('click',function(){
-        $(this).toggleClass('active');
-        $('body').toggleClass('main-menu-active');
-    });
+		toggleDrawer();
+        //$(this).toggleClass('active');
+        //$('body').toggleClass('main-menu-active'); 
+	});
+		
+	function toggleDrawer() { 
+	  //$('body').toggleClass('main-menu-active');      
+	  if (menuStatus == 0) {
+	  	  menuStatus = 1;
+		  window.postMessage({ name: _session.user.fname + " " + _session.user.lname }, "*");
+		  steroids.drawers.show( {
+			view: menuView,
+			edge: steroids.screen.edges.LEFT,
+			animation: menuViewAnimation
+		  }, {
+			onSuccess: function() {
+			},
+			onFailure: function(error) {
+                $(this).toggleClass('active');
+                $('body').toggleClass('main-menu-active'); 
+				alert("failure");
+			}
+		  });
+	  } else {
+	  	  menuStatus = 0;
+		  steroids.drawers.hideAll();
+	  }
+	}
 
-    // Main Menu Toggle
+	// Thoughts Menu Toggle
     $('#new-thought-toggle').on('click',function(){
         $(this).toggleClass('active');
         $('body').toggleClass('new-thought-active');
@@ -232,89 +226,8 @@ function initEventHandlers(){
         $('.btn-hot-streams').click();
 
         getThoughts();
-/*
-                    if($('#new-thought-toggle').is('.active')){
-                        gotoPage(target); // Go to New Thought Page
-                    }else{
-                        gotoPage(_session.page);    // Return to last page
-                    }
-                    break; 
-*/
+
     });
-
-
-    /*
-    // Lucid Menu Toggle
-    $('#control-panels-toggle').on('click',function(){
-        $(this).toggleClass('active');
-        $('body').toggleClass('private');
-    });
-    */
-
-    // Main Menu Items
-    $('[data-toggle-item]').on('click',function(){
-        $('#main-menu-toggle').removeClass('active');
-        $('body').removeClass('main-menu-active');
-        /*
-        $('.navbar-fixed-top, .navbar-fixed-bottom').addClass('delay-fixed');
-        $('body').removeClass('main-menu-active').animate({delay:0}, 500, function(){
-            $('.navbar-fixed-top, .navbar-fixed-bottom').removeClass('delay-fixed');
-        });
-        */
-        //$(this).toggleClass('active');
-        if($(this).is('.active') && typeof $(this).data('class-target') != "undefined"){
-            $($(this).data('target')).collapse('hide');
-        }else{
-            var target = $(this).data('toggle-item');
-            /*
-            var classTarget = $(this).data('class-target');
-            if(typeof classTarget == "undefined"){
-                classTarget = "";
-            }
-            */
-            
-            switch(target){
-                /*
-                case 'page-new-thought':
-                    $('#new-thought-toggle').toggleClass('active');
-                    if($('#new-thought-toggle').is('.active')){
-                        gotoPage(target); // Go to New Thought Page
-                    }else{
-                        gotoPage(_session.page);    // Return to last page
-                    }
-                    break; 
-                */ 
-                case 'page-people':
-                    gotoPage(target);
-                    $('#page-people .people-list').toggleClass('active');
-                    //$('#people-panel').addClass('vertical');
-                    //$('.people-controls-toggle').click();
-                    break;
-                case 'page-profile':
-                    gotoPage(target, true); // Let Page Handler know it's user and highlight Menu item
-                    $('#page-profile .user-profile').html(createUserProfile(_session.user, {square: true}));
-                    break;
-                case 'page-login':
-                    gotoPage(target);
-                    if($(this).attr('id') == 'logout-toggle'){
-                        executeLogout();
-                    }
-                    break;
-                default:
-                    $('body').attr('data-page', target);
-                        gotoPage(target);
-                    break;
-            }
-        }
-    });
-
-
-    /*
-    // Select User
-    $('.btn-lucid.user').on('click',function(){
-        $(this).toggleClass('active').siblings().removeClass('active');
-    });
-    */
 
     // Toggle Stream Select (blur on click to remove active state)
     $('.select-toggle').on('click blur', function(e){
